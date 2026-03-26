@@ -1,0 +1,194 @@
+/**
+ * Стили компонента SearchBar
+ */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    background: var(--color-paper);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(201, 169, 89, 0.15);
+}
+
+.search-bar-large {
+    padding: 0.75rem;
+    gap: 1rem;
+}
+
+/* Поле ввода */
+.search-input-wrap {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-light);
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 2.75rem;
+    font-size: 1rem;
+    border: none;
+    background: transparent;
+    color: var(--color-text);
+}
+
+.search-bar-large .search-input {
+    padding: 1rem 2.5rem 1rem 3rem;
+    font-size: 1.125rem;
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.search-input::placeholder {
+    color: var(--color-text-light);
+}
+
+.search-clear {
+    position: absolute;
+    right: 0.5rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-alt);
+    border: none;
+    border-radius: 50%;
+    color: var(--color-text-muted);
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.search-clear:hover {
+    background: var(--color-text-light);
+    color: white;
+}
+
+/* Переключатель языка */
+.search-lang-switch {
+    display: flex;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    padding: 3px;
+}
+
+.lang-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.search-bar-large .lang-btn {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+}
+
+.lang-btn:hover:not(.active) {
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.lang-btn.active {
+    background: var(--color-paper);
+    box-shadow: var(--shadow-sm);
+}
+
+.lang-btn.active.ru {
+    color: var(--color-primary);
+}
+
+.lang-btn.active.uz {
+    color: var(--color-uzbek);
+}
+
+.lang-btn.active.both {
+    color: var(--color-text);
+}
+
+/* Кнопка поиска */
+.search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    min-width: 100px;
+}
+
+.search-bar-large .search-btn {
+    padding: 1rem 1.75rem;
+    min-width: 120px;
+}
+
+.search-btn:hover:not(:disabled) {
+    background: var(--color-primary-light);
+    transform: translateY(-1px);
+}
+
+.search-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.search-btn-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Адаптив */
+@media (max-width: 640px) {
+    .search-bar {
+        flex-wrap: wrap;
+    }
+    
+    .search-input-wrap {
+        width: 100%;
+    }
+    
+    .search-lang-switch {
+        flex: 1;
+    }
+    
+    .search-btn {
+        flex: none;
+    }
+    
+    .search-btn-text {
+        display: none;
+    }
+    
+    .search-btn {
+        min-width: auto;
+        padding: 0.75rem;
+    }
+}

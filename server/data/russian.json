@@ -1,0 +1,200 @@
+{
+  "words": [
+    {
+      "id": "ru_001",
+      "word": "собака",
+      "language": "ru",
+      "definition": "Домашнее млекопитающее семейства псовых, одно из наиболее распространённых домашних животных",
+      "hypernyms": ["ru_002"],
+      "hyponyms": ["ru_010", "ru_011", "ru_012", "ru_013"],
+      "related_uz": "uz_001"
+    },
+    {
+      "id": "ru_002",
+      "word": "псовые",
+      "language": "ru",
+      "definition": "Семейство млекопитающих отряда хищных, включающее собак, волков, лисиц",
+      "hypernyms": ["ru_003"],
+      "hyponyms": ["ru_001", "ru_014", "ru_015"],
+      "related_uz": "uz_002"
+    },
+    {
+      "id": "ru_003",
+      "word": "хищник",
+      "language": "ru",
+      "definition": "Животное, питающееся другими животными",
+      "hypernyms": ["ru_004"],
+      "hyponyms": ["ru_002", "ru_016"],
+      "related_uz": "uz_003"
+    },
+    {
+      "id": "ru_004",
+      "word": "млекопитающее",
+      "language": "ru",
+      "definition": "Класс позвоночных животных, вскармливающих детёнышей молоком",
+      "hypernyms": ["ru_005"],
+      "hyponyms": ["ru_003", "ru_017"],
+      "related_uz": "uz_004"
+    },
+    {
+      "id": "ru_005",
+      "word": "животное",
+      "language": "ru",
+      "definition": "Живой организм, обладающий способностью к активному передвижению и питающийся готовыми органическими веществами",
+      "hypernyms": ["ru_006"],
+      "hyponyms": ["ru_004", "ru_018"],
+      "related_uz": "uz_005"
+    },
+    {
+      "id": "ru_006",
+      "word": "существо",
+      "language": "ru",
+      "definition": "Живой организм, живое создание",
+      "hypernyms": [],
+      "hyponyms": ["ru_005"],
+      "related_uz": "uz_006"
+    },
+    {
+      "id": "ru_010",
+      "word": "овчарка",
+      "language": "ru",
+      "definition": "Порода служебных собак, используемая для охраны и пастьбы скота",
+      "hypernyms": ["ru_001"],
+      "hyponyms": [],
+      "related_uz": "uz_010"
+    },
+    {
+      "id": "ru_011",
+      "word": "бульдог",
+      "language": "ru",
+      "definition": "Порода короткошёрстных собак с широкой грудью и приплюснутой мордой",
+      "hypernyms": ["ru_001"],
+      "hyponyms": [],
+      "related_uz": "uz_011"
+    },
+    {
+      "id": "ru_012",
+      "word": "такса",
+      "language": "ru",
+      "definition": "Порода охотничьих собак с короткими ногами и длинным туловищем",
+      "hypernyms": ["ru_001"],
+      "hyponyms": [],
+      "related_uz": "uz_012"
+    },
+    {
+      "id": "ru_013",
+      "word": "лабрадор",
+      "language": "ru",
+      "definition": "Порода крупных собак-ретриверов, известных дружелюбным характером",
+      "hypernyms": ["ru_001"],
+      "hyponyms": [],
+      "related_uz": "uz_013"
+    },
+    {
+      "id": "ru_014",
+      "word": "волк",
+      "language": "ru",
+      "definition": "Хищное млекопитающее семейства псовых, предок домашней собаки",
+      "hypernyms": ["ru_002"],
+      "hyponyms": [],
+      "related_uz": "uz_014"
+    },
+    {
+      "id": "ru_015",
+      "word": "лисица",
+      "language": "ru",
+      "definition": "Хищное млекопитающее семейства псовых с пушистым хвостом и заострённой мордой",
+      "hypernyms": ["ru_002"],
+      "hyponyms": [],
+      "related_uz": "uz_015"
+    },
+    {
+      "id": "ru_016",
+      "word": "кошачьи",
+      "language": "ru",
+      "definition": "Семейство млекопитающих отряда хищных, включающее кошек, львов, тигров",
+      "hypernyms": ["ru_003"],
+      "hyponyms": ["ru_020", "ru_021"],
+      "related_uz": "uz_016"
+    },
+    {
+      "id": "ru_017",
+      "word": "грызун",
+      "language": "ru",
+      "definition": "Отряд млекопитающих с характерными резцами для грызения",
+      "hypernyms": ["ru_004"],
+      "hyponyms": ["ru_022", "ru_023"],
+      "related_uz": "uz_017"
+    },
+    {
+      "id": "ru_018",
+      "word": "птица",
+      "language": "ru",
+      "definition": "Теплокровное позвоночное животное, покрытое перьями и имеющее крылья",
+      "hypernyms": ["ru_005"],
+      "hyponyms": ["ru_024", "ru_025"],
+      "related_uz": "uz_018"
+    },
+    {
+      "id": "ru_020",
+      "word": "кошка",
+      "language": "ru",
+      "definition": "Домашнее млекопитающее семейства кошачьих, одно из популярных домашних животных",
+      "hypernyms": ["ru_016"],
+      "hyponyms": [],
+      "related_uz": "uz_020"
+    },
+    {
+      "id": "ru_021",
+      "word": "лев",
+      "language": "ru",
+      "definition": "Крупное хищное млекопитающее семейства кошачьих, обитающее в Африке",
+      "hypernyms": ["ru_016"],
+      "hyponyms": [],
+      "related_uz": "uz_021"
+    },
+    {
+      "id": "ru_022",
+      "word": "мышь",
+      "language": "ru",
+      "definition": "Мелкий грызун с длинным хвостом и острой мордочкой",
+      "hypernyms": ["ru_017"],
+      "hyponyms": [],
+      "related_uz": "uz_022"
+    },
+    {
+      "id": "ru_023",
+      "word": "белка",
+      "language": "ru",
+      "definition": "Грызун с пушистым хвостом, обитающий на деревьях",
+      "hypernyms": ["ru_017"],
+      "hyponyms": [],
+      "related_uz": "uz_023"
+    },
+    {
+      "id": "ru_024",
+      "word": "воробей",
+      "language": "ru",
+      "definition": "Мелкая птица семейства воробьиных, распространённая в населённых пунктах",
+      "hypernyms": ["ru_018"],
+      "hyponyms": [],
+      "related_uz": "uz_024"
+    },
+    {
+      "id": "ru_025",
+      "word": "орёл",
+      "language": "ru",
+      "definition": "Крупная хищная птица с мощным клювом и острыми когтями",
+      "hypernyms": ["ru_018"],
+      "hyponyms": [],
+      "related_uz": "uz_025"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2025-01-20",
+    "totalWords": 21,
+    "language": "ru",
+    "description": "База гиперонимо-гипонимических отношений русского языка"
+  }
+}

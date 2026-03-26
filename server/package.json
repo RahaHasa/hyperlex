@@ -1,0 +1,23 @@
+{
+  "name": "hyperlex-server",
+  "version": "1.0.0",
+  "description": "Backend сервер для платформы анализа гиперонимов HyperLex",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "linguistics",
+    "hypernym",
+    "hyponym",
+    "russian",
+    "uzbek"
+  ],
+  "author": "HyperLex Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}

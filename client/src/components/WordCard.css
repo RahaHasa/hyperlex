@@ -1,0 +1,172 @@
+/**
+ * Стили компонента WordCard
+ */
+
+.word-card {
+    background: var(--color-paper);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(201, 169, 89, 0.15);
+    transition: all var(--transition-base);
+}
+
+.word-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.word-card.compact {
+    padding: 1rem;
+}
+
+/* Акцентная полоса по языку */
+.word-card.lang-ru {
+    border-left: 3px solid var(--color-primary);
+}
+
+.word-card.lang-uz {
+    border-left: 3px solid var(--color-uzbek);
+}
+
+/* Заголовок */
+.word-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.word-card-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.word-card.compact .word-card-title {
+    font-size: 1.25rem;
+}
+
+/* Определение */
+.word-card-definition {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--color-bg-alt);
+}
+
+.word-card.compact .word-card-definition {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+/* Связанное слово */
+.word-card-related {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.word-card-related:hover {
+    background: var(--color-bg-alt);
+}
+
+.related-label {
+    font-size: 0.8125rem;
+    color: var(--color-text-light);
+}
+
+.related-word {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.lang-badge.small {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.375rem;
+}
+
+/* Связи */
+.word-card-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.links-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.links-label {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    white-space: nowrap;
+    padding-top: 0.25rem;
+}
+
+.links-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+}
+
+.link-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    background: var(--color-bg);
+    border: 1px solid var(--color-bg-alt);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.link-btn:hover {
+    background: var(--color-bg-alt);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.link-btn.hypernym:hover {
+    border-color: var(--color-primary-light);
+    color: var(--color-primary);
+}
+
+.link-btn.hyponym:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* ID слова */
+.word-card-id {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-bg-alt);
+}
+
+.word-card-id code {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    background: var(--color-bg);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
+.word-card.compact .word-card-id {
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+}

@@ -1,0 +1,263 @@
+{
+  "words": [
+    {
+      "id": "uz_001",
+      "word": "it",
+      "language": "uz",
+      "definition": "Itlar oilasiga mansub uy hayvoni, eng keng tarqalgan uy hayvonlaridan biri",
+      "hypernyms": ["uz_002"],
+      "hyponyms": ["uz_010", "uz_011", "uz_012", "uz_013"],
+      "related_ru": "ru_001",
+      "translation": {
+        "ru": "собака"
+      }
+    },
+    {
+      "id": "uz_002",
+      "word": "itlar oilasi",
+      "language": "uz",
+      "definition": "Yirtqich hayvonlar turkumiga mansub sut emizuvchilar oilasi",
+      "hypernyms": ["uz_003"],
+      "hyponyms": ["uz_001", "uz_014", "uz_015"],
+      "related_ru": "ru_002",
+      "translation": {
+        "ru": "псовые"
+      }
+    },
+    {
+      "id": "uz_003",
+      "word": "yirtqich",
+      "language": "uz",
+      "definition": "Boshqa hayvonlar bilan oziqlanadigan hayvon",
+      "hypernyms": ["uz_004"],
+      "hyponyms": ["uz_002", "uz_016"],
+      "related_ru": "ru_003",
+      "translation": {
+        "ru": "хищник"
+      }
+    },
+    {
+      "id": "uz_004",
+      "word": "sut emizuvchi",
+      "language": "uz",
+      "definition": "Bolalarini sut bilan oziqlantiruvchi umurtqali hayvonlar sinfi",
+      "hypernyms": ["uz_005"],
+      "hyponyms": ["uz_003", "uz_017"],
+      "related_ru": "ru_004",
+      "translation": {
+        "ru": "млекопитающее"
+      }
+    },
+    {
+      "id": "uz_005",
+      "word": "hayvon",
+      "language": "uz",
+      "definition": "Faol harakat qilish qobiliyatiga ega va tayyor organik moddalar bilan oziqlanadigan tirik organizm",
+      "hypernyms": ["uz_006"],
+      "hyponyms": ["uz_004", "uz_018"],
+      "related_ru": "ru_005",
+      "translation": {
+        "ru": "животное"
+      }
+    },
+    {
+      "id": "uz_006",
+      "word": "jonzot",
+      "language": "uz",
+      "definition": "Tirik organizm, tirik mavjudot",
+      "hypernyms": [],
+      "hyponyms": ["uz_005"],
+      "related_ru": "ru_006",
+      "translation": {
+        "ru": "существо"
+      }
+    },
+    {
+      "id": "uz_010",
+      "word": "ovcharka",
+      "language": "uz",
+      "definition": "Qo'riqlash va chorvachilikda foydalaniladigan xizmat itlari zoti",
+      "hypernyms": ["uz_001"],
+      "hyponyms": [],
+      "related_ru": "ru_010",
+      "translation": {
+        "ru": "овчарка"
+      }
+    },
+    {
+      "id": "uz_011",
+      "word": "buldog",
+      "language": "uz",
+      "definition": "Keng ko'krak va yassi burunli qisqa junli itlar zoti",
+      "hypernyms": ["uz_001"],
+      "hyponyms": [],
+      "related_ru": "ru_011",
+      "translation": {
+        "ru": "бульдог"
+      }
+    },
+    {
+      "id": "uz_012",
+      "word": "taksa",
+      "language": "uz",
+      "definition": "Qisqa oyoqli va uzun tanali ov itlari zoti",
+      "hypernyms": ["uz_001"],
+      "hyponyms": [],
+      "related_ru": "ru_012",
+      "translation": {
+        "ru": "такса"
+      }
+    },
+    {
+      "id": "uz_013",
+      "word": "labrador",
+      "language": "uz",
+      "definition": "Do'stona xarakteri bilan mashhur yirik retriyer itlar zoti",
+      "hypernyms": ["uz_001"],
+      "hyponyms": [],
+      "related_ru": "ru_013",
+      "translation": {
+        "ru": "лабрадор"
+      }
+    },
+    {
+      "id": "uz_014",
+      "word": "bo'ri",
+      "language": "uz",
+      "definition": "Itlar oilasiga mansub yirtqich sut emizuvchi, uy itining ajdodi",
+      "hypernyms": ["uz_002"],
+      "hyponyms": [],
+      "related_ru": "ru_014",
+      "translation": {
+        "ru": "волк"
+      }
+    },
+    {
+      "id": "uz_015",
+      "word": "tulki",
+      "language": "uz",
+      "definition": "Mo'yinli dumi va o'tkir burnli itlar oilasiga mansub yirtqich sut emizuvchi",
+      "hypernyms": ["uz_002"],
+      "hyponyms": [],
+      "related_ru": "ru_015",
+      "translation": {
+        "ru": "лисица"
+      }
+    },
+    {
+      "id": "uz_016",
+      "word": "mushuklar oilasi",
+      "language": "uz",
+      "definition": "Mushuk, sher, yo'lbarslarni o'z ichiga olgan yirtqichlar turkumiga mansub sut emizuvchilar oilasi",
+      "hypernyms": ["uz_003"],
+      "hyponyms": ["uz_020", "uz_021"],
+      "related_ru": "ru_016",
+      "translation": {
+        "ru": "кошачьи"
+      }
+    },
+    {
+      "id": "uz_017",
+      "word": "kemiruvchi",
+      "language": "uz",
+      "definition": "Kemirish uchun xarakterli kesuvchi tishlarga ega sut emizuvchilar turkumi",
+      "hypernyms": ["uz_004"],
+      "hyponyms": ["uz_022", "uz_023"],
+      "related_ru": "ru_017",
+      "translation": {
+        "ru": "грызун"
+      }
+    },
+    {
+      "id": "uz_018",
+      "word": "qush",
+      "language": "uz",
+      "definition": "Patlar bilan qoplangan va qanotlarga ega iliq qonli umurtqali hayvon",
+      "hypernyms": ["uz_005"],
+      "hyponyms": ["uz_024", "uz_025"],
+      "related_ru": "ru_018",
+      "translation": {
+        "ru": "птица"
+      }
+    },
+    {
+      "id": "uz_020",
+      "word": "mushuk",
+      "language": "uz",
+      "definition": "Mushuklar oilasiga mansub uy sut emizuvchisi, mashhur uy hayvonlaridan biri",
+      "hypernyms": ["uz_016"],
+      "hyponyms": [],
+      "related_ru": "ru_020",
+      "translation": {
+        "ru": "кошка"
+      }
+    },
+    {
+      "id": "uz_021",
+      "word": "sher",
+      "language": "uz",
+      "definition": "Afrikada yashovchi mushuklar oilasiga mansub yirik yirtqich sut emizuvchi",
+      "hypernyms": ["uz_016"],
+      "hyponyms": [],
+      "related_ru": "ru_021",
+      "translation": {
+        "ru": "лев"
+      }
+    },
+    {
+      "id": "uz_022",
+      "word": "sichqon",
+      "language": "uz",
+      "definition": "Uzun dumi va o'tkir burnli mayda kemiruvchi",
+      "hypernyms": ["uz_017"],
+      "hyponyms": [],
+      "related_ru": "ru_022",
+      "translation": {
+        "ru": "мышь"
+      }
+    },
+    {
+      "id": "uz_023",
+      "word": "olmaxon",
+      "language": "uz",
+      "definition": "Daraxtlarda yashovchi mo'yinli dumli kemiruvchi",
+      "hypernyms": ["uz_017"],
+      "hyponyms": [],
+      "related_ru": "ru_023",
+      "translation": {
+        "ru": "белка"
+      }
+    },
+    {
+      "id": "uz_024",
+      "word": "chumchuq",
+      "language": "uz",
+      "definition": "Aholi punktlarida keng tarqalgan chumchuqsimonlar oilasiga mansub mayda qush",
+      "hypernyms": ["uz_018"],
+      "hyponyms": [],
+      "related_ru": "ru_024",
+      "translation": {
+        "ru": "воробей"
+      }
+    },
+    {
+      "id": "uz_025",
+      "word": "burgut",
+      "language": "uz",
+      "definition": "Kuchli tumshuq va o'tkir tirnoqlarga ega yirik yirtqich qush",
+      "hypernyms": ["uz_018"],
+      "hyponyms": [],
+      "related_ru": "ru_025",
+      "translation": {
+        "ru": "орёл"
+      }
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2025-01-20",
+    "totalWords": 21,
+    "language": "uz",
+    "description": "O'zbek tili giperonim-giponim munosabatlari bazasi"
+  }
+}
