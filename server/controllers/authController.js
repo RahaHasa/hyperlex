@@ -113,9 +113,18 @@ async function login(req, res) {
             });
         }
 
+        // Определение роли - если админ эмейл, то админ
+        let userRole = user.role;
+        if (user.email === 'admin@hyperlex.com' && userRole !== 'admin') {
+            userRole = 'admin';
+            // Обновляем роль в БД также
+            user.role = 'admin';
+            await user.save();
+        }
+
         // Создание JWT токена
         const token = jwt.sign(
-            { id: user._id, email: user.email, username: user.username, role: user.role },
+            { id: user._id, email: user.email, username: user.username, role: userRole },
             JWT_SECRET,
             { expiresIn: '7d' }
         );
@@ -127,7 +136,7 @@ async function login(req, res) {
                 id: user._id,
                 username: user.username,
                 email: user.email,
-                role: user.role
+                role: userRole
             }
         });
     } catch (error) {
