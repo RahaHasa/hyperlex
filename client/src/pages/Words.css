@@ -1,0 +1,93 @@
+/* Страница гиперонимических слов */
+
+.words-page {
+    min-height: calc(100vh - 70px);
+    background-color: #f8f5ef;
+    padding: 40px 20px;
+}
+
+.words-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.words-header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #2d5a27;
+}
+
+.words-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2d5a27;
+    margin: 0 0 10px 0;
+}
+
+.words-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+.words-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.words-empty {
+    background: white;
+    border-radius: 12px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #c9a959;
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.words-empty h2 {
+    font-size: 24px;
+    color: #2d5a27;
+    margin: 0 0 10px 0;
+}
+
+.words-empty p {
+    color: #999;
+    font-size: 16px;
+    margin: 0;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #666;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .words-page {
+        padding: 20px 10px;
+    }
+
+    .words-header h1 {
+        font-size: 24px;
+    }
+
+    .words-empty {
+        padding: 40px 20px;
+    }
+}

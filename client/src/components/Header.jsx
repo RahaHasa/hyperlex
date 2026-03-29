@@ -13,11 +13,26 @@ export default function Header() {
     const [user, setUser] = useState(null);
     const [showUserMenu, setShowUserMenu] = useState(false);
     
-    useEffect(() => {
+    const loadUser = () => {
         const userData = localStorage.getItem('user');
         if (userData) {
             setUser(JSON.parse(userData));
         }
+    };
+    
+    useEffect(() => {
+        loadUser();
+        
+        // Слушаем изменения localStorage (из других вкладок или этой же страницы)
+        window.addEventListener('storage', loadUser);
+        
+        // Также слушаем кастомное событие когда меняется пользователь
+        window.addEventListener('userUpdated', loadUser);
+        
+        return () => {
+            window.removeEventListener('storage', loadUser);
+            window.removeEventListener('userUpdated', loadUser);
+        };
     }, []);
     
     // Определяем активный пункт меню
@@ -85,7 +100,7 @@ export default function Header() {
                                 className="user-button"
                                 onClick={() => setShowUserMenu(!showUserMenu)}
                             >
-                                👤 {user.username}
+                                {user.username}
                             </button>
                             
                             {showUserMenu && (
@@ -93,6 +108,16 @@ export default function Header() {
                                     <Link to="/profile" className="user-menu-item">
                                         Профиль
                                     </Link>
+                                    {user && user.role === 'admin' && (
+                                        <>
+                                            <Link to="/words" className="user-menu-item">
+                                                Гиперонимические слова
+                                            </Link>
+                                            <Link to="/admin" className="user-menu-item admin-menu-item">
+                                                Админка пользователей
+                                            </Link>
+                                        </>
+                                    )}
                                     <button 
                                         className="user-menu-item logout-btn"
                                         onClick={handleLogout}

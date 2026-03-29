@@ -3,7 +3,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Profile.css';
 
 export default function Profile() {
@@ -39,11 +39,11 @@ export default function Profile() {
             <div className="profile-container">
                 <div className="profile-card">
                     <div className="profile-header">
-                        <div className="profile-avatar">👤</div>
+                        <div className="profile-avatar"></div>
                         <div className="profile-title">
                             <h1>{user.username}</h1>
                             <p className="profile-role">
-                                {user.role === 'admin' ? '👑 Администратор' : 'Пользователь'}
+                                {user.role === 'admin' ? 'Администратор' : 'Пользователь'}
                             </p>
                         </div>
                     </div>
@@ -74,7 +74,10 @@ export default function Profile() {
                         {user.role === 'admin' && (
                             <div className="profile-admin">
                                 <h2>Доступ администратора</h2>
-                                <p>У вас есть права администратора. Вы можете управлять пользователями на <a href="/admin">панели администратора</a>.</p>
+                                <p>У вас есть права администратора. Вы можете управлять пользователями и ролями в системе.</p>
+                                <Link to="/admin" className="admin-panel-btn">
+                                    Открыть панель управления
+                                </Link>
                             </div>
                         )}
                     </div>

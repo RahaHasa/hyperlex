@@ -38,7 +38,7 @@ export default function Home() {
                 <section className="admin-quick-access">
                     <div className="admin-banner">
                         <div className="admin-banner-content">
-                            <div className="admin-banner-icon">⚙️</div>
+                            <div className="admin-banner-icon"></div>
                             <div className="admin-banner-text">
                                 <h3>Панель управления</h3>
                                 <p>Управляйте пользователями и ролями в системе</p>
@@ -53,7 +53,7 @@ export default function Home() {
             
             {/* Герой */}
             <section className="hero">
-                <div className="hero-decoration">❧</div>
+                <div className="hero-decoration"></div>
                 
                 <h1 className="hero-title">HyperLex</h1>
                 <p className="hero-subtitle">
@@ -80,7 +80,7 @@ export default function Home() {
             <section className="about">
                 <div className="about-grid">
                     <div className="about-card">
-                        <div className="about-icon">🔍</div>
+                        <div className="about-icon"></div>
                         <h3>Поиск связей</h3>
                         <p>
                             Введите любое слово и мгновенно увидите его 
@@ -89,7 +89,7 @@ export default function Home() {
                     </div>
                     
                     <div className="about-card">
-                        <div className="about-icon">🌳</div>
+                        <div className="about-icon"></div>
                         <h3>Визуализация</h3>
                         <p>
                             Интерактивный граф показывает иерархию понятий. 
@@ -98,7 +98,7 @@ export default function Home() {
                     </div>
                     
                     <div className="about-card">
-                        <div className="about-icon">🔄</div>
+                        <div className="about-icon"></div>
                         <h3>Сравнение языков</h3>
                         <p>
                             Сопоставляйте структуры русского и узбекского языков. 
@@ -115,7 +115,7 @@ export default function Home() {
                         <div className="stats-number">{stats.russian.totalWords}</div>
                         <div className="stats-label">слов на русском</div>
                     </div>
-                    <div className="stats-divider">✦</div>
+                    <div className="stats-divider\"></div>
                     <div className="stats-card">
                         <div className="stats-number">{stats.uzbek.totalWords}</div>
                         <div className="stats-label">слов на узбекском</div>

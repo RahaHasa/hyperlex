@@ -24,6 +24,10 @@ export default function Login() {
             // Сохраняем токен
             localStorage.setItem('token', data.token);
             localStorage.setItem('user', JSON.stringify(data.user));
+            
+            // Уведомляем другие компоненты об обновлении пользователя
+            window.dispatchEvent(new Event('userUpdated'));
+            
             navigate('/');
         } catch (err) {
             setError(err.message || 'Ошибка при входе');

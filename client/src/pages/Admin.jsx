@@ -122,7 +122,7 @@ export default function Admin() {
             <div className="admin-container">
                 <div className="admin-header">
                     <div className="admin-title-section">
-                        <div className="admin-icon">⚙️</div>
+                        <div className="admin-icon"></div>
                         <div>
                             <h1>Панель администратора</h1>
                             <p className="admin-subtitle">Управление пользователями и ролями</p>
@@ -132,27 +132,25 @@ export default function Admin() {
 
                 {error && (
                     <div className="alert alert-error">
-                        <span>❌</span>
                         <span>{error}</span>
                     </div>
                 )}
                 {success && (
                     <div className="alert alert-success">
-                        <span>✅</span>
                         <span>{success}</span>
                     </div>
                 )}
 
                 <div className="stats">
                     <div className="stat-card">
-                        <div className="stat-icon">👥</div>
+                        <div className="stat-icon"></div>
                         <div className="stat-content">
                             <h3>Всего пользователей</h3>
                             <p className="stat-number">{users.length}</p>
                         </div>
                     </div>
                     <div className="stat-card">
-                        <div className="stat-icon">👑</div>
+                        <div className="stat-icon"></div>
                         <div className="stat-content">
                             <h3>Администраторов</h3>
                             <p className="stat-number">{users.filter(u => u.role === 'admin').length}</p>
@@ -165,7 +163,7 @@ export default function Admin() {
                         <div className="table-header">
                             <h2>Список пользователей</h2>
                             <button className="refresh-btn-icon" onClick={loadUsers} title="Обновить">
-                                🔄 Обновить
+                                Обновить
                             </button>
                         </div>
                         <table className="users-table">
@@ -189,8 +187,8 @@ export default function Admin() {
                                                 onChange={(e) => changeRole(user._id, e.target.value)}
                                                 className={`role-select role-${user.role}`}
                                             >
-                                                <option value="user">👤 Пользователь</option>
-                                                <option value="admin">👑 Администратор</option>
+                                                <option value="user">Пользователь</option>
+                                                <option value="admin">Администратор</option>
                                             </select>
                                         </td>
                                         <td>{new Date(user.createdAt).toLocaleDateString('ru-RU')}</td>
@@ -200,7 +198,7 @@ export default function Admin() {
                                                 onClick={() => deleteUserById(user._id)}
                                                 title="Удалить пользователя"
                                             >
-                                                🗑️ Удалить
+                                                Удалить
                                             </button>
                                         </td>
                                     </tr>
@@ -212,7 +210,7 @@ export default function Admin() {
 
                 {!loading && users.length === 0 && (
                     <div className="empty-state">
-                        <div className="empty-icon">📭</div>
+                        <div className="empty-icon"></div>
                         <h2>Нет пользователей</h2>
                         <p>Пока в системе нет зарегистрированных пользователей</p>
                     </div>
