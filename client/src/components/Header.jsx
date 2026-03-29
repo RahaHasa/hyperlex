@@ -3,16 +3,35 @@
  * Навигация и логотип
  */
 
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import './Header.css';
 
 export default function Header() {
     const location = useLocation();
+    const navigate = useNavigate();
+    const [user, setUser] = useState(null);
+    const [showUserMenu, setShowUserMenu] = useState(false);
+    
+    useEffect(() => {
+        const userData = localStorage.getItem('user');
+        if (userData) {
+            setUser(JSON.parse(userData));
+        }
+    }, []);
     
     // Определяем активный пункт меню
     const isActive = (path) => {
         if (path === '/') return location.pathname === '/';
         return location.pathname.startsWith(path);
+    };
+    
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        setUser(null);
+        setShowUserMenu(false);
+        navigate('/');
     };
     
     return (
@@ -47,13 +66,48 @@ export default function Header() {
                     >
                         Сравнение
                     </Link>
-                    <Link 
-                        to="/admin" 
-                        className={`nav-link nav-admin ${isActive('/admin') ? 'active' : ''}`}
-                    >
-                        Админ
-                    </Link>
+                    
+                    {user && user.role === 'admin' && (
+                        <Link 
+                            to="/admin" 
+                            className={`nav-link nav-admin ${isActive('/admin') ? 'active' : ''}`}
+                        >
+                            Админ
+                        </Link>
+                    )}
                 </nav>
+                
+                {/* Аутентификация */}
+                <div className="header-auth">
+                    {user ? (
+                        <div className="user-menu-wrapper">
+                            <button 
+                                className="user-button"
+                                onClick={() => setShowUserMenu(!showUserMenu)}
+                            >
+                                👤 {user.username}
+                            </button>
+                            
+                            {showUserMenu && (
+                                <div className="user-menu">
+                                    <Link to="/profile" className="user-menu-item">
+                                        Профиль
+                                    </Link>
+                                    <button 
+                                        className="user-menu-item logout-btn"
+                                        onClick={handleLogout}
+                                    >
+                                        Выход
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    ) : (
+                        <Link to="/login" className="nav-link nav-login">
+                            Войти
+                        </Link>
+                    )}
+                </div>
             </div>
         </header>
     );

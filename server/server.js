@@ -5,13 +5,16 @@
  * Запуск: npm start или node server.js
  */
 
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const { connectDB } = require('./config/database');
 
 // Импорт маршрутов
 const wordsRoutes = require('./routes/words');
 const adminRoutes = require('./routes/admin');
+const authRoutes = require('./routes/auth');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -22,7 +25,7 @@ const PORT = process.env.PORT || 3001;
 app.use(cors({
     origin: ['http://localhost:3000', 'http://localhost:5173'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type']
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Парсинг JSON
@@ -36,6 +39,9 @@ app.use((req, res, next) => {
 });
 
 // === МАРШРУТЫ ===
+
+// Аутентификация
+app.use('/api/auth', authRoutes);
 
 // Публичное API
 app.use('/api', wordsRoutes);
@@ -91,16 +97,29 @@ app.use((err, req, res, next) => {
 
 // === ЗАПУСК СЕРВЕРА ===
 
-app.listen(PORT, () => {
-    console.log('');
-    console.log('╔════════════════════════════════════════════════╗');
-    console.log('║            🔤 HyperLex Server 🔤               ║');
-    console.log('╠════════════════════════════════════════════════╣');
-    console.log(`║  Сервер запущен на порту ${PORT}                  ║`);
-    console.log(`║  API: http://localhost:${PORT}/api                ║`);
-    console.log('║  Языки: русский, узбекский                     ║');
-    console.log('╚════════════════════════════════════════════════╝');
-    console.log('');
-});
+async function startServer() {
+    try {
+        // Подключение к MongoDB
+        await connectDB();
+        
+        app.listen(PORT, () => {
+            console.log('');
+            console.log('╔════════════════════════════════════════════════╗');
+            console.log('║            🔤 HyperLex Server 🔤               ║');
+            console.log('╠════════════════════════════════════════════════╣');
+            console.log(`║  Server running on port ${PORT}                  ║`);
+            console.log(`║  API: http://localhost:${PORT}/api                ║`);
+            console.log('║  Languages: Russian, Uzbek                     ║');
+            console.log('║  Database: MongoDB                             ║');
+            console.log('╚════════════════════════════════════════════════╝');
+            console.log('');
+        });
+    } catch (error) {
+        console.error('Failed to start server:', error);
+        process.exit(1);
+    }
+}
+
+startServer();
 
 module.exports = app;

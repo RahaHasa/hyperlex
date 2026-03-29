@@ -17,6 +17,18 @@ const api = axios.create({
     }
 });
 
+// Перехватчик для добавления токена авторизации
+api.interceptors.request.use(
+    config => {
+        const token = localStorage.getItem('token');
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    },
+    error => Promise.reject(error)
+);
+
 // Перехватчик для обработки ошибок
 api.interceptors.response.use(
     response => response.data,
@@ -25,6 +37,37 @@ api.interceptors.response.use(
         return Promise.reject(error.response?.data || { error: 'Ошибка соединения с сервером' });
     }
 );
+
+// === АУТЕНТИФИКАЦИЯ ===
+
+/**
+ * Вход пользователя
+ * @param {string} email - Email пользователя
+ * @param {string} password - Пароль
+ */
+export async function loginUser(email, password) {
+    return api.post('/auth/login', { email, password });
+}
+
+/**
+ * Регистрация пользователя
+ * @param {Object} userData - Данные пользователя
+ * @param {string} userData.username - Имя пользователя
+ * @param {string} userData.email - Email
+ * @param {string} userData.password - Пароль
+ */
+export async function registerUser(userData) {
+    return api.post('/auth/register', userData);
+}
+
+/**
+ * Выход пользователя
+ */
+export async function logoutUser() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    return Promise.resolve();
+}
 
 /**
  * Поиск слов по запросу
@@ -127,6 +170,9 @@ export async function importData(data) {
 
 // Экспорт всех методов как объект
 export default {
+    loginUser,
+    registerUser,
+    logoutUser,
     searchWords,
     getWord,
     getWordTree,

@@ -1,0 +1,181 @@
+.profile-page {
+    min-height: calc(100vh - 70px);
+    background-color: var(--color-bg);
+    padding: 40px 20px;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-card {
+    background: var(--color-paper);
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.profile-header {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-avatar {
+    font-size: 4rem;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.profile-title h1 {
+    color: white;
+    font-size: 1.875rem;
+    margin: 0 0 0.25rem 0;
+}
+
+.profile-role {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9375rem;
+    margin: 0;
+}
+
+.profile-content {
+    padding: 30px;
+}
+
+.profile-section {
+    margin-bottom: 30px;
+}
+
+.profile-section h2 {
+    color: var(--color-primary-dark);
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.info-group {
+    display: grid;
+    gap: 15px;
+}
+
+.info-item {
+    padding: 15px;
+    background: var(--color-bg-alt);
+    border-radius: 8px;
+    border-left: 4px solid var(--color-accent);
+}
+
+.info-item label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.role-badge.admin {
+    background: rgba(45, 90, 39, 0.15);
+    color: var(--color-primary);
+}
+
+.role-badge.user {
+    background: rgba(201, 169, 89, 0.15);
+    color: var(--color-accent);
+}
+
+.profile-admin {
+    background: rgba(45, 90, 39, 0.05);
+    border-left: 4px solid var(--color-primary);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.profile-admin h2 {
+    color: var(--color-primary);
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    border: none;
+    padding-bottom: 0;
+}
+
+.profile-admin p {
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.profile-admin a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.profile-admin a:hover {
+    text-decoration: underline;
+}
+
+.loading {
+    text-align: center;
+    color: var(--color-text);
+    padding: 40px;
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    .profile-page {
+        padding: 20px 15px;
+    }
+
+    .profile-header {
+        padding: 30px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-avatar {
+        font-size: 3rem;
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-content {
+        padding: 20px;
+    }
+
+    .profile-section h2 {
+        font-size: 1.125rem;
+    }
+}

@@ -3,6 +3,10 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Compare from './pages/Compare';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Admin from './pages/Admin';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -14,6 +18,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
             <Route path="/compare" element={<Compare />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
       </div>

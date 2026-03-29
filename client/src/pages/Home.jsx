@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 import { getStats } from '../services/api';
 import './Home.css';
@@ -12,9 +12,15 @@ import './Home.css';
 export default function Home() {
     const navigate = useNavigate();
     const [stats, setStats] = useState(null);
+    const [user, setUser] = useState(null);
     
-    // Загрузка статистики
+    // Загрузка информации о пользователе и статистики
     useEffect(() => {
+        const userData = localStorage.getItem('user');
+        if (userData) {
+            setUser(JSON.parse(userData));
+        }
+        
         getStats()
             .then(data => setStats(data.stats))
             .catch(console.error);
@@ -27,6 +33,24 @@ export default function Home() {
     
     return (
         <div className="home-page">
+            {/* Админ панель быстрого доступа */}
+            {user && user.role === 'admin' && (
+                <section className="admin-quick-access">
+                    <div className="admin-banner">
+                        <div className="admin-banner-content">
+                            <div className="admin-banner-icon">⚙️</div>
+                            <div className="admin-banner-text">
+                                <h3>Панель управления</h3>
+                                <p>Управляйте пользователями и ролями в системе</p>
+                            </div>
+                            <Link to="/admin" className="admin-banner-btn">
+                                Открыть панель →
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+            )}
+            
             {/* Герой */}
             <section className="hero">
                 <div className="hero-decoration">❧</div>
