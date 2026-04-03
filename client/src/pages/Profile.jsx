@@ -71,15 +71,7 @@ export default function Profile() {
                             </div>
                         </div>
 
-                        {user.role === 'admin' && (
-                            <div className="profile-admin">
-                                <h2>Доступ администратора</h2>
-                                <p>У вас есть права администратора. Вы можете управлять пользователями и ролями в системе.</p>
-                                <Link to="/admin" className="admin-panel-btn">
-                                    Открыть панель управления
-                                </Link>
-                            </div>
-                        )}
+                      
                     </div>
                 </div>
             </div>

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Settings, Users, BookOpen, AlertCircle } from 'lucide-react';
 import './Admin.css';
 import AdminUsersList from '../components/AdminUsersList';
 
 /**
- * Admin Dashboard - управление пользователями (главная админка)
+ * Admin Users Dashboard - управление пользователями
  */
-export default function Admin() {
+export default function AdminUsers() {
     const navigate = useNavigate();
     const [refreshTrigger, setRefreshTrigger] = useState(0);
     const [isAdmin, setIsAdmin] = useState(false);
@@ -41,50 +40,34 @@ export default function Admin() {
     }, [navigate]);
     
     if (loading) {
-        return (
-            <div className="admin-loading">
-                <div>Загрузка...</div>
-            </div>
-        );
+        return <div style={{ textAlign: 'center', padding: '40px', fontSize: '1.2rem' }}>⏳ Загрузка...</div>;
     }
     
     if (!isAdmin) {
-        return (
-            <div className="admin-error-page">
-                <AlertCircle size={48} />
-                <div>У вас нет доступа к админ панели</div>
-            </div>
-        );
+        return <div style={{ textAlign: 'center', padding: '40px', fontSize: '1.2rem' }}>❌ У вас нет доступа к админ панели</div>;
     }
     
     return (
         <div className="admin-container">
             <header className="admin-header">
-                <div className="admin-header-content">
-                    <Settings size={32} className="admin-icon" />
-                    <div>
-                        <h1>Администраторская панель</h1>
-                        <p className="admin-subtitle">Управление пользователями и словарём</p>
-                    </div>
-                </div>
+                <h1>⚙️ Администраторская панель</h1>
+                <p className="admin-subtitle">Управление пользователями и ролями</p>
             </header>
             
-            <nav className="admin-nav-buttons">
+            <div className="admin-nav-buttons">
                 <button 
                     className="admin-nav-btn active"
                     onClick={() => navigate('/admin')}
                 >
-                    <Users size={20} />
-                    Пользователи
+                    👥 Пользователи
                 </button>
                 <button 
                     className="admin-nav-btn"
                     onClick={() => navigate('/admin/words')}
                 >
-                    <BookOpen size={20} />
-                    Управление словами
+                    📚 Управление словами
                 </button>
-            </nav>
+            </div>
             
             <div className="admin-content">
                 <AdminUsersList refreshTrigger={refreshTrigger} />

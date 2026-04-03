@@ -110,9 +110,6 @@ export default function Header() {
                                     </Link>
                                     {user && user.role === 'admin' && (
                                         <>
-                                            <Link to="/words" className="user-menu-item">
-                                                Гиперонимические слова
-                                            </Link>
                                             <Link to="/admin" className="user-menu-item admin-menu-item">
                                                 Админка пользователей
                                             </Link>

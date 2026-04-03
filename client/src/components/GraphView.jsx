@@ -11,13 +11,14 @@ import './GraphView.css';
 export default function GraphView({ 
     treeData, 
     onNodeClick,
-    width = 800,
-    height = 500 
+    width = 1000,
+    height = 700 
 }) {
     const svgRef = useRef(null);
     const containerRef = useRef(null);
     const [dimensions, setDimensions] = useState({ width, height });
     const [tooltip, setTooltip] = useState({ show: false, x: 0, y: 0, content: null });
+    const [selectedNode, setSelectedNode] = useState(null);
     
     // Обновление размеров при ресайзе
     useEffect(() => {
@@ -98,7 +99,14 @@ export default function GraphView({
         
         // Круги узлов
         node.append('circle')
-            .attr('r', d => d.type === 'center' ? 28 : 22)
+            .attr('r', d => {
+                const wordLength = d.word.length;
+                if (d.type === 'center') {
+                    return Math.max(35, 20 + wordLength * 1.2);
+                } else {
+                    return Math.max(20, 12 + wordLength * 0.8);
+                }
+            })
             .attr('fill', d => getNodeColor(d))
             .attr('stroke', 'white')
             .attr('stroke-width', 2);
@@ -108,25 +116,44 @@ export default function GraphView({
             .attr('dy', '0.35em')
             .attr('text-anchor', 'middle')
             .attr('fill', 'white')
-            .attr('font-size', d => d.type === 'center' ? '11px' : '10px')
+            .attr('font-size', d => d.type === 'center' ? '12px' : '9px')
             .attr('font-weight', d => d.type === 'center' ? '600' : '500')
-            .text(d => formatWord(d.word, 10));
+            .text(d => formatWord(d.word, d.type === 'center' ? 15 : 8));
         
         // События узлов
-        node.on('click', (event, d) => {
+        const handleNodeClick = (event, d) => {
             event.stopPropagation();
-            if (onNodeClick) onNodeClick(d.id);
-        })
+            event.preventDefault();
+            setSelectedNode(d);
+        };
+        
+        node.on('click', handleNodeClick)
         .on('mouseover', (event, d) => {
-            const [x, y] = d3.pointer(event, containerRef.current);
+            // Подсвечиваем узел
+            d3.select(event.currentTarget)
+                .select('circle')
+                .transition()
+                .duration(200)
+                .attr('stroke-width', 3);
+            
+            // Показываем tooltip
+            const [x, y] = d3.pointer(event, svgRef.current);
             setTooltip({
                 show: true,
-                x,
+                x: x + 10,
                 y: y - 10,
                 content: d
             });
         })
-        .on('mouseout', () => {
+        .on('mouseout', (event, d) => {
+            // Гасим подсветку
+            d3.select(event.currentTarget)
+                .select('circle')
+                .transition()
+                .duration(200)
+                .attr('stroke-width', 2);
+            
+            // Скрываем tooltip
             setTooltip({ show: false, x: 0, y: 0, content: null });
         });
         
@@ -162,7 +189,7 @@ export default function GraphView({
         
         return () => simulation.stop();
         
-    }, [treeData, dimensions, onNodeClick]);
+    }, [treeData, dimensions]);
     
     if (!treeData) {
         return (
@@ -197,17 +224,47 @@ export default function GraphView({
                 </div>
             </div>
             
-            {/* Тултип */}
+            {/* Тултип при клике */}
+            {selectedNode && (
+                <div className="graph-tooltip-modal">
+                    <div className="tooltip-content">
+                        <button 
+                            className="tooltip-close"
+                            onClick={() => setSelectedNode(null)}
+                        >
+                            ✕
+                        </button>
+                        <div className="tooltip-header">
+                            <span className={`tooltip-type ${selectedNode.type}`}>
+                                {selectedNode.type === 'center' ? '🎯 Текущее слово' : 
+                                 selectedNode.type === 'hypernym' ? '📤 Гипероним' : 
+                                 '📥 Гипоним'}
+                            </span>
+                        </div>
+                        <h3 className="tooltip-word">{selectedNode.word}</h3>
+                        {selectedNode.definition && (
+                            <p className="tooltip-def">{selectedNode.definition}</p>
+                        )}
+                        <div className="tooltip-id">ID: <code>{selectedNode.id}</code></div>
+                    </div>
+                    <div 
+                        className="tooltip-overlay"
+                        onClick={() => setSelectedNode(null)}
+                    />
+                </div>
+            )}
+            
+            {/* Тултип при наведении */}
             {tooltip.show && tooltip.content && (
                 <div 
                     className="graph-tooltip"
-                    style={{ left: tooltip.x, top: tooltip.y }}
+                    style={{ left: `${tooltip.x}px`, top: `${tooltip.y}px` }}
                 >
                     <div className="tooltip-word">{tooltip.content.word}</div>
                     {tooltip.content.definition && (
                         <div className="tooltip-def">{tooltip.content.definition}</div>
                     )}
-                    <div className="tooltip-id">{tooltip.content.id}</div>
+                    <div className="tooltip-hint">Кликни для подробнее</div>
                 </div>
             )}
             

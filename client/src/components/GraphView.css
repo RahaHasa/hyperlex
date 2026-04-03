@@ -4,13 +4,12 @@
 
 .graph-view {
     position: relative;
-    background: var(--color-paper);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(201, 169, 89, 0.15);
-    overflow: hidden;
-}
-
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  overflow: hidden;
+  height: 100%;
 .graph-empty {
     display: flex;
     align-items: center;
@@ -58,6 +57,52 @@
     stroke-dasharray: 4 2;
 }
 
+/* Тултип при наведении */
+.graph-tooltip {
+    position: fixed;
+    z-index: 500;
+    padding: 0.75rem 1rem;
+    background: var(--color-paper);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(201, 169, 89, 0.2);
+    pointer-events: none;
+    max-width: 250px;
+    animation: tooltipFadeIn 0.15s ease;
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.graph-tooltip .tooltip-word {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    margin: 0 0 0.25rem 0;
+}
+
+.graph-tooltip .tooltip-def {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+    margin: 0 0 0.25rem 0;
+}
+
+.graph-tooltip .tooltip-hint {
+    font-size: 0.65rem;
+    color: var(--color-text-light);
+    font-style: italic;
+}
+
 /* Легенда */
 .graph-legend {
     position: absolute;
@@ -96,39 +141,133 @@
     background: #6b9d62;
 }
 
-/* Тултип */
-.graph-tooltip {
+/* Тултип при клике */
+.graph-tooltip-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.tooltip-overlay {
     position: absolute;
-    z-index: 10;
-    padding: 0.75rem 1rem;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    z-index: -1;
+}
+
+.tooltip-content {
+    position: relative;
     background: var(--color-paper);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
     border: 1px solid rgba(201, 169, 89, 0.2);
-    transform: translate(-50%, -100%);
-    pointer-events: none;
-    max-width: 250px;
+    padding: 1.25rem;
+    max-width: 320px;
+    width: 90%;
+    animation: slideUp 0.3s ease;
+    z-index: 1;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.tooltip-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--color-text-light);
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.tooltip-close:hover {
+    color: var(--color-primary);
+    background: rgba(45, 90, 39, 0.1);
+    border-radius: var(--radius-md);
+}
+
+.tooltip-header {
+    margin-bottom: 1rem;
+}
+
+.tooltip-type {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    background: rgba(45, 90, 39, 0.1);
+    color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .tooltip-word {
     font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: var(--color-primary-dark);
-    margin-bottom: 0.25rem;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.3;
 }
 
 .tooltip-def {
-    font-size: 0.8125rem;
-    color: var(--color-text-muted);
-    line-height: 1.4;
-    margin-bottom: 0.375rem;
+    font-size: 0.8rem;
+    color: var(--color-text);
+    line-height: 1.5;
+    margin: 0 0 0.75rem 0;
+    padding: 0.625rem;
+    background: rgba(45, 90, 39, 0.05);
+    border-left: 2px solid var(--color-primary);
+    border-radius: var(--radius-sm);
 }
 
 .tooltip-id {
     font-family: var(--font-mono);
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
     color: var(--color-text-light);
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: var(--radius-sm);
+}
+
+.tooltip-id code {
+    color: var(--color-primary);
+    font-weight: 500;
 }
 
 /* Подсказка */
