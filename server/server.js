@@ -11,6 +11,9 @@ const cors = require('cors');
 const path = require('path');
 const { connectDB } = require('./config/database');
 
+// Импорт моделей
+const Word = require('./models/Word');
+
 // Импорт маршрутов
 const wordsRoutes = require('./routes/words');
 const adminRoutes = require('./routes/admin');
@@ -23,7 +26,7 @@ const PORT = process.env.PORT || 3001;
 
 // Разрешаем CORS для фронтенда
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:5173'],
+    origin: ['http://localhost:3000', 'http://localhost:3002', 'http://localhost:5173'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -63,7 +66,7 @@ app.get('/', (req, res) => {
             languages: 'GET /api/languages',
             stats: 'GET /api/stats',
             admin: {
-                words: 'GET /api/admin/words?lang={ru|uz|both}',
+                words: 'GET /api/admin/words?lang={lang_ru|lang_uz|both}',
                 addWord: 'POST /api/admin/word',
                 updateWord: 'PUT /api/admin/word/:id',
                 deleteWord: 'DELETE /api/admin/word/:id',
@@ -71,7 +74,7 @@ app.get('/', (req, res) => {
                 import: 'POST /api/admin/import'
             }
         },
-        languages: ['ru', 'uz']
+        languages: ['lang_ru', 'lang_uz']
     });
 });
 

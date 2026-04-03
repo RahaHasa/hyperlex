@@ -4,6 +4,7 @@
  */
 
 const dataHelpers = require('../utils/dataHelpers');
+const Word = require('../models/Word');
 
 /**
  * Поиск слова по запросу
@@ -147,23 +148,34 @@ function getLanguages(req, res) {
  * Получение статистики базы
  * GET /api/stats
  */
-function getStats(req, res) {
-    const ruData = dataHelpers.readData('ru');
-    const uzData = dataHelpers.readData('uz');
-    
-    res.json({
-        success: true,
-        stats: {
-            russian: {
-                totalWords: ruData ? ruData.metadata.totalWords : 0,
-                lastUpdated: ruData ? ruData.metadata.lastUpdated : null
-            },
-            uzbek: {
-                totalWords: uzData ? uzData.metadata.totalWords : 0,
-                lastUpdated: uzData ? uzData.metadata.lastUpdated : null
+async function getStats(req, res) {
+    try {
+        // Подсчитываем слова из БД по языкам
+        const rusCount = await Word.countDocuments({ lang: 'lang_ru' });
+        const uzCount = await Word.countDocuments({ lang: 'lang_uz' });
+        const totalCount = await Word.countDocuments();
+        
+        res.json({
+            success: true,
+            stats: {
+                russian: {
+                    totalWords: rusCount,
+                    lastUpdated: new Date().toISOString()
+                },
+                uzbek: {
+                    totalWords: uzCount,
+                    lastUpdated: new Date().toISOString()
+                },
+                total: totalCount
             }
-        }
-    });
+        });
+    } catch (error) {
+        console.error('Get stats error:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Server error'
+        });
+    }
 }
 
 // === АДМИН-ФУНКЦИИ ===
