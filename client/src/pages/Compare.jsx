@@ -61,10 +61,10 @@ export default function Compare() {
             setRuTree(treeData.tree);
             
             // Если есть связанное узбекское слово — загружаем его
-            if (word.related_uz && !uzWord) {
-                const uzTreeData = await getWordTree(word.related_uz, 3);
+            if (word.related?.uz && !uzWord) {
+                const uzTreeData = await getWordTree(word.related.uz, 3);
                 if (uzTreeData.tree) {
-                    setUzWord(uzTreeData.tree.center);
+                    setUzWord(uzTreeData.tree);
                     setUzTree(uzTreeData.tree);
                 }
             }
@@ -83,10 +83,10 @@ export default function Compare() {
             setUzTree(treeData.tree);
             
             // Если есть связанное русское слово — загружаем его
-            if (word.related_ru && !ruWord) {
-                const ruTreeData = await getWordTree(word.related_ru, 3);
+            if (word.related?.ru && !ruWord) {
+                const ruTreeData = await getWordTree(word.related.ru, 3);
                 if (ruTreeData.tree) {
-                    setRuWord(ruTreeData.tree.center);
+                    setRuWord(ruTreeData.tree);
                     setRuTree(ruTreeData.tree);
                 }
             }
@@ -99,7 +99,7 @@ export default function Compare() {
     const handleRuNodeClick = async (nodeId) => {
         const treeData = await getWordTree(nodeId, 3);
         if (treeData.tree) {
-            setRuWord(treeData.tree.center);
+            setRuWord(treeData.tree);
             setRuTree(treeData.tree);
         }
     };
@@ -108,7 +108,7 @@ export default function Compare() {
     const handleUzNodeClick = async (nodeId) => {
         const treeData = await getWordTree(nodeId, 3);
         if (treeData.tree) {
-            setUzWord(treeData.tree.center);
+            setUzWord(treeData.tree);
             setUzTree(treeData.tree);
         }
     };

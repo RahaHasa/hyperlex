@@ -11,7 +11,12 @@ export default function AdminAddWord({ onSuccess }) {
         word: '',
         lang: 'lang_ru',
         definition: '',
-        hypernyms: []
+        hypernyms: [],
+        hyponyms: [],
+        related: {
+            ru: null,
+            uz: null
+        }
     });
     
     const [hypernymsInput, setHypernymsInput] = useState('');
@@ -23,7 +28,37 @@ export default function AdminAddWord({ onSuccess }) {
     // Обновление основных полей
     function handleChange(e) {
         const { name, value } = e.target;
-        setForm(prev => ({ ...prev, [name]: value }));
+        if (name.includes('.')) {
+            // Для вложенных объектов (related.ru, translations.uz)
+            const [parent, child] = name.split('.');
+            setForm(prev => ({
+                ...prev,
+                [parent]: {
+                    ...prev[parent],
+                    [child]: value || null
+                }
+            }));
+        } else {
+            setForm(prev => ({ ...prev, [name]: value }));
+        }
+    }
+    
+    // Добавить гипоним
+    function addHyponym(hyponymId) {
+        if (!form.hyponyms.includes(hyponymId)) {
+            setForm(prev => ({
+                ...prev,
+                hyponyms: [...prev.hyponyms, hyponymId]
+            }));
+        }
+    }
+    
+    // Удалить гипоним
+    function removeHyponym(id) {
+        setForm(prev => ({
+            ...prev,
+            hyponyms: prev.hyponyms.filter(h => h !== id && h._id !== id)
+        }));
     }
     
     // Поиск гиперонимов для автозаполнения
@@ -87,7 +122,9 @@ export default function AdminAddWord({ onSuccess }) {
                     word: '',
                     lang: 'lang_ru',
                     definition: '',
-                    hypernyms: []
+                    hypernyms: [],
+                    hyponyms: [],
+                    related: { ru: null, uz: null }
                 });
                 setSuccess(false);
                 onSuccess();
@@ -220,6 +257,64 @@ export default function AdminAddWord({ onSuccess }) {
                             ))}
                         </div>
                     )}
+                </div>
+                
+                {/* Гипонимы */}
+                <div className="form-group">
+                    <label>Гипонимы (виды, дочерние слова)</label>
+                    
+                    <div className="hyponyms-input-wrapper">
+                        <input
+                            type="text"
+                            placeholder="Введи ID гипонима (например: ru_101)"
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    e.preventDefault();
+                                    addHyponym(e.target.value);
+                                    e.target.value = '';
+                                }
+                            }}
+                            className="form-input"
+                        />
+                    </div>
+                    
+                    {form.hyponyms.length > 0 && (
+                        <div className="hyponyms-list">
+                            {form.hyponyms.map(hyponym => {
+                                const id = hyponym._id || hyponym;
+                                return (
+                                    <span key={id} className="hyponym-tag">
+                                        {id}
+                                        <button
+                                            type="button"
+                                            onClick={() => removeHyponym(id)}
+                                            className="remove-btn"
+                                        >
+                                            ✕
+                                        </button>
+                                    </span>
+                                );
+                            })}
+                        </div>
+                    )}
+                    <small>💡 Виды/подтипы данного слова</small>
+                </div>
+                
+                {/* Связанное слово (related) */}
+                <div className="form-group">
+                    <label>
+                        {form.lang === 'lang_ru' ? '🇺🇿 Связанное узбекское слово' : '🇷🇺 Связанное русское слово'}
+                    </label>
+                    
+                    <input
+                        type="text"
+                        name={form.lang === 'lang_ru' ? 'related.uz' : 'related.ru'}
+                        value={form.lang === 'lang_ru' ? (form.related.uz || '') : (form.related.ru || '')}
+                        onChange={handleChange}
+                        placeholder={form.lang === 'lang_ru' ? 'uz_001' : 'ru_001'}
+                        className="form-input"
+                    />
+                    <small>💡 ID соответствующего слова на другом языке для сравнения</small>
                 </div>
                 
                 {/* Кнопки */}

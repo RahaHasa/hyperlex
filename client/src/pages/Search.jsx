@@ -81,7 +81,7 @@ export default function Search() {
             if (treeResult.tree) {
                 const bc = createBreadcrumb(
                     treeResult.tree.hypernyms, 
-                    treeResult.tree.center
+                    treeResult.tree
                 );
                 setBreadcrumb(bc);
             }

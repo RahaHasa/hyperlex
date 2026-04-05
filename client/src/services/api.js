@@ -75,7 +75,18 @@ export async function logoutUser() {
  * @param {string} lang - Язык: 'ru', 'uz' или 'both'
  */
 export async function searchWords(query, lang = 'both') {
-    return api.get('/search', { params: { q: query, lang } });
+    const response = await api.get('/search', { params: { q: query, lang } });
+    
+    // Нормализуем результаты: преобразуем lang в language
+    if (response.results) {
+        response.results = response.results.map(word => ({
+            ...word,
+            language: word.lang === 'lang_ru' ? 'ru' : 'uz',
+            id: word._id // Добавляем id как alias для _id
+        }));
+    }
+    
+    return response;
 }
 
 /**
@@ -83,7 +94,23 @@ export async function searchWords(query, lang = 'both') {
  * @param {string} id - ID слова
  */
 export async function getWord(id) {
-    return api.get(`/word/${id}`);
+    const response = await api.get(`/word/${id}`);
+    
+    // Нормализуем слово и связанное слово
+    const normalizeWord = (w) => ({
+        ...w,
+        language: w.lang === 'lang_ru' ? 'ru' : 'uz',
+        id: w._id
+    });
+    
+    if (response.word) {
+        response.word = normalizeWord(response.word);
+    }
+    if (response.relatedWord) {
+        response.relatedWord = normalizeWord(response.relatedWord);
+    }
+    
+    return response;
 }
 
 /**
@@ -92,7 +119,28 @@ export async function getWord(id) {
  * @param {number} depth - Глубина дерева
  */
 export async function getWordTree(id, depth = 3) {
-    return api.get(`/word/${id}/tree`, { params: { depth } });
+    const response = await api.get(`/word/${id}/tree`, { params: { depth } });
+    
+    // Нормализуем узлы в дереве
+    const normalizeWord = (w) => ({
+        ...w,
+        language: w.lang === 'lang_ru' ? 'ru' : 'uz',
+        id: w._id
+    });
+    
+    const normalizeNode = (node) => {
+        if (!node) return node;
+        const normalized = normalizeWord(node);
+        if (node.hypernyms) normalized.hypernyms = node.hypernyms.map(normalizeNode);
+        if (node.hyponyms) normalized.hyponyms = node.hyponyms.map(normalizeNode);
+        return normalized;
+    };
+    
+    if (response.tree) {
+        response.tree = normalizeNode(response.tree);
+    }
+    
+    return response;
 }
 
 /**
@@ -101,7 +149,31 @@ export async function getWordTree(id, depth = 3) {
  * @param {string} uzId - ID узбекского слова
  */
 export async function compareWords(ruId, uzId) {
-    return api.get('/compare', { params: { ru: ruId, uz: uzId } });
+    const response = await api.get('/compare', { params: { ru: ruId, uz: uzId } });
+    
+    // Нормализуем узлы в деревьях
+    const normalizeWord = (w) => ({
+        ...w,
+        language: w.lang === 'lang_ru' ? 'ru' : 'uz',
+        id: w._id
+    });
+    
+    const normalizeNode = (node) => {
+        if (!node) return node;
+        const normalized = normalizeWord(node);
+        if (node.hypernyms) normalized.hypernyms = node.hypernyms.map(normalizeNode);
+        if (node.hyponyms) normalized.hyponyms = node.hyponyms.map(normalizeNode);
+        return normalized;
+    };
+    
+    if (response.ruTree) {
+        response.ruTree = normalizeNode(response.ruTree);
+    }
+    if (response.uzTree) {
+        response.uzTree = normalizeNode(response.uzTree);
+    }
+    
+    return response;
 }
 
 /**

@@ -7,7 +7,10 @@
       "definition": "Домашнее млекопитающее семейства псовых, одно из наиболее распространённых домашних животных",
       "hypernyms": ["ru_002"],
       "hyponyms": ["ru_010", "ru_011", "ru_012", "ru_013"],
-      "related_uz": "uz_001"
+      "related_uz": "uz_001",
+      "translation": {
+        "uz": "it"
+      }
     },
     {
       "id": "ru_002",
@@ -16,7 +19,10 @@
       "definition": "Семейство млекопитающих отряда хищных, включающее собак, волков, лисиц",
       "hypernyms": ["ru_003"],
       "hyponyms": ["ru_001", "ru_014", "ru_015"],
-      "related_uz": "uz_002"
+      "related_uz": "uz_002",
+      "translation": {
+        "uz": "itlar oilasi"
+      }
     },
     {
       "id": "ru_003",
@@ -25,7 +31,10 @@
       "definition": "Животное, питающееся другими животными",
       "hypernyms": ["ru_004"],
       "hyponyms": ["ru_002", "ru_016"],
-      "related_uz": "uz_003"
+      "related_uz": "uz_003",
+      "translation": {
+        "uz": "yirtqich"
+      }
     },
     {
       "id": "ru_004",
@@ -34,7 +43,10 @@
       "definition": "Класс позвоночных животных, вскармливающих детёнышей молоком",
       "hypernyms": ["ru_005"],
       "hyponyms": ["ru_003", "ru_017"],
-      "related_uz": "uz_004"
+      "related_uz": "uz_004",
+      "translation": {
+        "uz": "sut emizuvchi"
+      }
     },
     {
       "id": "ru_005",
@@ -43,7 +55,10 @@
       "definition": "Живой организм, обладающий способностью к активному передвижению и питающийся готовыми органическими веществами",
       "hypernyms": ["ru_006"],
       "hyponyms": ["ru_004", "ru_018"],
-      "related_uz": "uz_005"
+      "related_uz": "uz_005",
+      "translation": {
+        "uz": "hayvon"
+      }
     },
     {
       "id": "ru_006",
@@ -52,7 +67,10 @@
       "definition": "Живой организм, живое создание",
       "hypernyms": [],
       "hyponyms": ["ru_005"],
-      "related_uz": "uz_006"
+      "related_uz": "uz_006",
+      "translation": {
+        "uz": "mavjud"
+      }
     },
     {
       "id": "ru_010",
@@ -142,7 +160,10 @@
       "definition": "Домашнее млекопитающее семейства кошачьих, одно из популярных домашних животных",
       "hypernyms": ["ru_016"],
       "hyponyms": [],
-      "related_uz": "uz_020"
+      "related_uz": "uz_020",
+      "translation": {
+        "uz": "mushuk"
+      }
     },
     {
       "id": "ru_021",

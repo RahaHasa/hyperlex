@@ -289,6 +289,73 @@
     font-size: 1.1rem;
 }
 
+/* Гипонимы */
+.hyponyms-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hyponyms-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.hyponym-tag {
+    background: #e8f8f5;
+    border: 1px solid #a9dfbf;
+    color: #186a3b;
+    padding: 8px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.hyponym-tag .remove-btn {
+    background: none;
+    border: none;
+    color: #c0392b;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.hyponym-tag .remove-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Related inputs */
+.related-inputs,
+.translations-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.related-field,
+.translation-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.related-field label,
+.translation-field label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #34495e;
+    font-size: 0.95rem;
+}
+
+.related-field .form-input,
+.translation-field .form-input {
+    padding: 10px 12px;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .edit-word-form {
@@ -311,5 +378,10 @@
     
     .btn {
         width: 100%;
+    }
+    
+    .related-inputs,
+    .translations-inputs {
+        grid-template-columns: 1fr;
     }
 }

@@ -42,7 +42,7 @@ async function seedDatabase() {
             },
             translations: {
                 ru: null,
-                uz: word.word_uz || null
+                uz: word.translation?.uz || null
             }
         }));
         
@@ -60,7 +60,7 @@ async function seedDatabase() {
             },
             translations: {
                 uz: null,
-                ru: word.word_ru || null
+                ru: word.translation?.ru || null
             }
         }));
         

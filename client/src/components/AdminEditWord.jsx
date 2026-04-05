@@ -10,7 +10,11 @@ export default function AdminEditWord({ word, onSuccess, onCancel }) {
         word: '',
         definition: '',
         hypernyms: [],
-        hyponyms: []
+        hyponyms: [],
+        related: {
+            ru: null,
+            uz: null
+        }
     });
     
     const [hypernymsInput, setHypernymsInput] = useState('');
@@ -26,7 +30,8 @@ export default function AdminEditWord({ word, onSuccess, onCancel }) {
                 word: word.word || '',
                 definition: word.definition || '',
                 hypernyms: word.hypernyms || [],
-                hyponyms: word.hyponyms || []
+                hyponyms: word.hyponyms || [],
+                related: word.related || { ru: null, uz: null }
             });
         }
     }, [word]);
@@ -34,7 +39,37 @@ export default function AdminEditWord({ word, onSuccess, onCancel }) {
     // Обновление основных полей
     function handleChange(e) {
         const { name, value } = e.target;
-        setForm(prev => ({ ...prev, [name]: value }));
+        if (name.includes('.')) {
+            // Для вложенных объектов (related.ru, translations.uz)
+            const [parent, child] = name.split('.');
+            setForm(prev => ({
+                ...prev,
+                [parent]: {
+                    ...prev[parent],
+                    [child]: value || null
+                }
+            }));
+        } else {
+            setForm(prev => ({ ...prev, [name]: value }));
+        }
+    }
+    
+    // Добавить гипоним
+    function addHyponym(hyponymId) {
+        if (!form.hyponyms.includes(hyponymId)) {
+            setForm(prev => ({
+                ...prev,
+                hyponyms: [...prev.hyponyms, hyponymId]
+            }));
+        }
+    }
+    
+    // Удалить гипоним
+    function removeHyponym(id) {
+        setForm(prev => ({
+            ...prev,
+            hyponyms: prev.hyponyms.filter(h => h !== id && h._id !== id)
+        }));
     }
     
     // Поиск гиперонимов для автозаполнения
@@ -212,25 +247,86 @@ export default function AdminEditWord({ word, onSuccess, onCancel }) {
                     )}
                 </div>
                 
-                {/* Гипонимы (только просмотр) */}
-                {form.hyponyms.length > 0 && (
-                    <div className="form-group">
-                        <label>Гипонимы (дочерние слова)</label>
+                {/* Гипонимы */}
+                <div className="form-group">
+                    <label>Гипонимы (виды, дочерние слова)</label>
+                    
+                    <div className="hyponyms-input-wrapper">
+                        <input
+                            type="text"
+                            placeholder="Введи ID гипонима (например: ru_101)"
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    e.preventDefault();
+                                    addHyponym(e.target.value);
+                                    e.target.value = '';
+                                }
+                            }}
+                            className="form-input"
+                        />
+                    </div>
+                    
+                    {form.hyponyms.length > 0 && (
                         <div className="hyponyms-list">
                             {form.hyponyms.map(hyponym => {
                                 const id = hyponym._id || hyponym;
                                 const displayText = hyponym.word ? 
-                                    `${hyponym.word} (${hyponym.language})` : 
+                                    `${hyponym.word} (${id})` : 
                                     id;
                                 
                                 return (
                                     <span key={id} className="hyponym-tag">
                                         {displayText}
+                                        <button
+                                            type="button"
+                                            onClick={() => removeHyponym(id)}
+                                            className="remove-btn"
+                                        >
+                                            ✕
+                                        </button>
                                     </span>
                                 );
                             })}
                         </div>
-                        <small>💡 Гипонимы обновляются автоматически при изменении гиперонимов</small>
+                    )}
+                    <small>💡 Виды/подтипы данного слова</small>
+                </div>
+                
+                {/* Связанное слово (related) */}
+                <div className="form-group">
+                    <label>
+                        {word.lang === 'lang_ru' ? '🇺🇿 Связанное узбекское слово' : '🇷🇺 Связанное русское слово'}
+                    </label>
+                    
+                    <input
+                        type="text"
+                        name={word.lang === 'lang_ru' ? 'related.uz' : 'related.ru'}
+                        value={word.lang === 'lang_ru' ? (form.related.uz || '') : (form.related.ru || '')}
+                        onChange={handleChange}
+                        placeholder={word.lang === 'lang_ru' ? 'uz_001' : 'ru_001'}
+                        className="form-input"
+                    />
+                    <small>💡 ID соответствующего слова на другом языке для сравнения</small>
+                </div>
+                
+                {/* Гипонимы (только просмотр) */}
+                {word.hyponyms && word.hyponyms.length > 0 && (
+                    <div className="form-group">
+                        <label>📊 Это слово входит веществ-определяется другими:</label>
+                        <div className="info-list">
+                            {word.hyponyms.map(hyponym => {
+                                const id = hyponym._id || hyponym;
+                                const displayText = hyponym.word ? 
+                                    `${hyponym.word} (${id})` : 
+                                    id;
+                                
+                                return (
+                                    <span key={id} className="info-tag">
+                                        {displayText}
+                                    </span>
+                                );
+                            })}
+                        </div>
                     </div>
                 )}
                 

@@ -84,22 +84,30 @@ const adminAPI = {
      */
     async createWord(wordData) {
         const token = getAuthToken();
-        if (!token) throw new Error('❌ Требуется авторизация');
-        
-        const response = await fetch(`${API_URL}/words`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(wordData)
-        });
-        
-        if (!response.ok) {
-            const error = await response.json().catch(() => ({}));
-            throw new Error(error.error || 'Ошибка при создании слова');
+        if (!token) {
+            throw new Error('❌ Требуется авторизация. Пожалуйста, залогиньтесь.');
         }
-        return response.json();
+        
+        try {
+            const response = await fetch(`${API_URL}/words`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(wordData)
+            });
+            
+            if (!response.ok) {
+                const error = await response.json().catch(() => ({}));
+                console.error('API Error Response:', error);
+                throw new Error(error.error || `Error: ${response.status} ${response.statusText}`);
+            }
+            return response.json();
+        } catch (error) {
+            console.error('Create word error:', error);
+            throw error;
+        }
     },
     
     // === ОБНОВЛЕНИЕ ===

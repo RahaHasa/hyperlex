@@ -5,77 +5,106 @@
 
 /**
  * Преобразует дерево из API в формат nodes/links для D3
- * @param {Object} treeData - Данные дерева из API
+ * @param {Object} treeData - Данные дерева из API (корень это сам центральный узел)
  * @returns {Object} { nodes, links }
  */
 export function treeToGraph(treeData) {
-    if (!treeData || !treeData.center) return { nodes: [], links: [] };
+    if (!treeData) return { nodes: [], links: [] };
     
     const nodes = [];
     const links = [];
     const nodeMap = new Map();
+    const levelMap = new Map(); // Отслеживаем уровень каждого узла
     
-    // Добавляем центральный узел
+    // treeData сам является центральным узлом
     const centerNode = {
-        id: treeData.center.id,
-        word: treeData.center.word,
-        language: treeData.center.language,
-        definition: treeData.center.definition,
+        id: treeData.id,
+        word: treeData.word,
+        language: treeData.language,
+        definition: treeData.definition,
         type: 'center',
         level: 0
     };
     nodes.push(centerNode);
     nodeMap.set(centerNode.id, centerNode);
+    levelMap.set(centerNode.id, 0);
     
-    // Добавляем гиперонимы (родительские узлы)
-    if (treeData.hypernyms) {
-        treeData.hypernyms.forEach((hypernym, index) => {
+    // Рекурсивная функция для добавления гиперонимов
+    const addHypernyms = (parent, hypernyms, level) => {
+        if (!hypernyms || hypernyms.length === 0) return;
+        
+        hypernyms.forEach((hypernym, index) => {
+            if (nodeMap.has(hypernym.id)) return; // Уже добавлен
+            
+            const currentLevel = level - 1;
             const node = {
                 id: hypernym.id,
                 word: hypernym.word,
                 language: hypernym.language,
                 definition: hypernym.definition,
                 type: 'hypernym',
-                level: -(index + 1)
+                level: currentLevel
             };
             nodes.push(node);
             nodeMap.set(node.id, node);
+            levelMap.set(node.id, currentLevel);
             
-            // Связь с предыдущим узлом
-            const sourceId = index === 0 ? treeData.center.id : treeData.hypernyms[index - 1].id;
+            // Связь с текущим узлом
             links.push({
-                source: sourceId,
+                source: parent.id,
                 target: hypernym.id,
                 type: 'hypernym'
             });
-        });
-    }
-    
-    // Добавляем гипонимы (дочерние узлы)
-    if (treeData.hyponyms) {
-        treeData.hyponyms.forEach(hyponym => {
-            if (!nodeMap.has(hyponym.id)) {
-                const node = {
-                    id: hyponym.id,
-                    word: hyponym.word,
-                    language: hyponym.language,
-                    definition: hyponym.definition,
-                    type: 'hyponym',
-                    level: hyponym.level || 1,
-                    parentId: hyponym.parentId
-                };
-                nodes.push(node);
-                nodeMap.set(node.id, node);
+            
+            // Рекурсивно добавляем гиперонимы
+            if (hypernym.hypernyms && hypernym.hypernyms.length > 0) {
+                addHypernyms(node, hypernym.hypernyms, currentLevel);
             }
+        });
+    };
+    
+    // Рекурсивная функция для добавления гипонимов
+    const addHyponyms = (parent, hyponyms, level) => {
+        if (!hyponyms || hyponyms.length === 0) return;
+        
+        hyponyms.forEach(hyponym => {
+            if (nodeMap.has(hyponym.id)) return; // Уже добавлен
+            
+            const currentLevel = level + 1;
+            const node = {
+                id: hyponym.id,
+                word: hyponym.word,
+                language: hyponym.language,
+                definition: hyponym.definition,
+                type: 'hyponym',
+                level: currentLevel
+            };
+            nodes.push(node);
+            nodeMap.set(node.id, node);
+            levelMap.set(node.id, currentLevel);
             
             // Связь с родительским узлом
-            const parentId = hyponym.parentId || treeData.center.id;
             links.push({
-                source: parentId,
+                source: parent.id,
                 target: hyponym.id,
                 type: 'hyponym'
             });
+            
+            // Рекурсивно добавляем гипонимы
+            if (hyponym.hyponyms && hyponym.hyponyms.length > 0) {
+                addHyponyms(node, hyponym.hyponyms, currentLevel);
+            }
         });
+    };
+    
+    // Добавляем гиперонимы
+    if (treeData.hypernyms && treeData.hypernyms.length > 0) {
+        addHypernyms(centerNode, treeData.hypernyms, -1);
+    }
+    
+    // Добавляем гипонимы
+    if (treeData.hyponyms && treeData.hyponyms.length > 0) {
+        addHyponyms(centerNode, treeData.hyponyms, 1);
     }
     
     return { nodes, links };

@@ -83,7 +83,7 @@ async function getWordById(req, res) {
  */
 async function createWord(req, res) {
     try {
-        const { _id, word, lang, definition, hypernyms, hyponyms } = req.body;
+        const { _id, word, lang, definition, hypernyms, hyponyms, related } = req.body;
         
         // Валидация
         if (!_id || !word || !lang) {
@@ -117,6 +117,7 @@ async function createWord(req, res) {
             definition: definition || '',
             hypernyms: hypernyms || [],
             hyponyms: hyponyms || [],
+            related: related || { ru: null, uz: null },
             createdBy: req.user?.id
         });
         
@@ -139,7 +140,7 @@ async function createWord(req, res) {
         console.error('Create word error:', error);
         res.status(500).json({
             success: false,
-            error: 'Server error'
+            error: 'Server error: ' + error.message
         });
     }
 }
@@ -151,7 +152,7 @@ async function createWord(req, res) {
 async function updateWord(req, res) {
     try {
         const { id } = req.params;
-        const { word, definition, hypernyms, hyponyms } = req.body;
+        const { word, definition, hypernyms, hyponyms, related } = req.body;
         
         const existingWord = await Word.findById(id);
         if (!existingWord) {
@@ -181,6 +182,7 @@ async function updateWord(req, res) {
         if (definition !== undefined) updateData.definition = definition;
         if (hypernyms) updateData.hypernyms = hypernyms;
         if (hyponyms) updateData.hyponyms = hyponyms;
+        if (related) updateData.related = related;
         updateData.updatedBy = req.user?.id;
         updateData.updatedAt = new Date();
         
@@ -195,7 +197,7 @@ async function updateWord(req, res) {
         console.error('Update word error:', error);
         res.status(500).json({
             success: false,
-            error: 'Server error'
+            error: 'Server error: ' + error.message
         });
     }
 }
