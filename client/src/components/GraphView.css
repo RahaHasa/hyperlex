@@ -4,18 +4,23 @@
 
 .graph-view {
     position: relative;
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
-  border: none;
-  overflow: hidden;
-  height: 100%;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
 .graph-empty {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 300px;
     color: var(--color-text-light);
+    width: 100%;
 }
 
 .graph-svg {
@@ -23,6 +28,9 @@
     background: 
         radial-gradient(circle at 30% 40%, rgba(45, 90, 39, 0.02) 0%, transparent 50%),
         radial-gradient(circle at 70% 60%, rgba(201, 169, 89, 0.02) 0%, transparent 50%);
+    width: 100%;
+    height: auto;
+    max-width: 100%;
 }
 
 /* Узлы */

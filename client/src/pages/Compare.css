@@ -248,6 +248,11 @@
     gap: 1.25rem;
   }
 
+  .compare-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .word-card {
     padding: 1.1rem;
   }
@@ -263,8 +268,18 @@
     margin-bottom: 1rem;
   }
 
+  .compare-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   .compare-container {
     gap: 0.75rem;
+  }
+
+  .compare-column {
+    padding: 1.25rem;
+    max-height: none;
   }
 
   .word-card {
@@ -286,8 +301,27 @@
     margin-bottom: 0.75rem;
   }
 
+  .compare-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
   .compare-container {
     gap: 0.5rem;
+  }
+
+  .compare-column {
+    padding: 1rem;
+    max-height: none;
+  }
+
+  .column-header {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+  }
+
+  .column-header h2 {
+    font-size: 1.125rem;
   }
 
   .word-card {
@@ -296,5 +330,52 @@
 
   .search-results {
     max-height: 220px;
+  }
+
+  .column-graph {
+    height: 350px;
+  }
+}
+
+@media (max-width: 360px) {
+  .compare-page {
+    padding: 0.35rem;
+  }
+
+  .compare-page h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .compare-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .compare-column {
+    padding: 0.85rem;
+    max-height: none;
+  }
+
+  .column-header {
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .column-header h2 {
+    font-size: 1rem;
+  }
+
+  .lang-badge {
+    font-size: 0.65rem;
+  }
+
+  .column-search input {
+    font-size: 0.85rem;
+  }
+
+  .column-graph {
+    height: 300px;
   }
 }
