@@ -172,32 +172,142 @@
     font-size: 16px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .profile-page {
-        padding: 20px 15px;
+        padding: 1.25rem 1rem;
     }
 
     .profile-header {
-        padding: 30px 20px;
+        padding: 2rem 1.5rem;
         flex-direction: column;
         text-align: center;
     }
 
     .profile-avatar {
-        font-size: 3rem;
-        width: 80px;
-        height: 80px;
+        font-size: 2.5rem;
+        width: 85px;
+        height: 85px;
+    }
+
+    .profile-title h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .profile-title p {
+        font-size: 1rem;
+    }
+
+    .profile-content {
+        padding: 1.5rem;
+    }
+
+    .profile-section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-page {
+        padding: 1rem 0.75rem;
+    }
+
+    .profile-header {
+        padding: 1.75rem 1.25rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-avatar {
+        font-size: 2.2rem;
+        width: 75px;
+        height: 75px;
+        margin-bottom: 1rem;
     }
 
     .profile-title h1 {
         font-size: 1.5rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .profile-title p {
+        font-size: 0.95rem;
     }
 
     .profile-content {
-        padding: 20px;
+        padding: 1.25rem 1rem;
     }
 
     .profile-section h2 {
         font-size: 1.125rem;
+        margin-bottom: 1rem;
+    }
+
+    .profile-section {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-page {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .profile-header {
+        padding: 1.5rem 1rem;
+    }
+
+    .profile-avatar {
+        font-size: 2rem;
+        width: 65px;
+        height: 65px;
+        margin-bottom: 0.75rem;
+    }
+
+    .profile-title h1 {
+        font-size: 1.35rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .profile-title p {
+        font-size: 0.9rem;
+    }
+
+    .profile-content {
+        padding: 1rem 0.75rem;
+    }
+
+    .profile-section h2 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .profile-page {
+        padding: 0.5rem 0.4rem;
+    }
+
+    .profile-header {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .profile-avatar {
+        font-size: 1.75rem;
+        width: 60px;
+        height: 60px;
+    }
+
+    .profile-title h1 {
+        font-size: 1.2rem;
+    }
+
+    .profile-title p {
+        font-size: 0.85rem;
+    }
+
+    .profile-section h2 {
+        font-size: 0.95rem;
     }
 }

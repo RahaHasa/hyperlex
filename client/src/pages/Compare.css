@@ -208,9 +208,28 @@
   overflow: hidden;
 }
 
+@media (max-width: 1200px) {
+  .compare-page {
+    padding: 1.5rem;
+  }
+
+  .compare-page h1 {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .compare-container {
     grid-template-columns: 1fr;
+  }
+
+  .compare-page {
+    padding: 1.25rem;
+  }
+
+  .compare-page h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -221,5 +240,61 @@
   
   .compare-page h1 {
     font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .compare-container {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .word-card {
+    padding: 1.1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .compare-page {
+    padding: 0.75rem;
+  }
+
+  .compare-page h1 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+  }
+
+  .compare-container {
+    gap: 0.75rem;
+  }
+
+  .word-card {
+    padding: 0.9rem;
+  }
+
+  .search-results {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .compare-page {
+    padding: 0.5rem;
+  }
+
+  .compare-page h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .compare-container {
+    gap: 0.5rem;
+  }
+
+  .word-card {
+    padding: 0.75rem;
+  }
+
+  .search-results {
+    max-height: 220px;
   }
 }
