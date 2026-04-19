@@ -3,12 +3,12 @@
  */
 
 .header {
-    position: sticky;
     top: 0;
     z-index: 100;
     background: var(--color-paper);
     border-bottom: 1px solid rgba(201, 169, 89, 0.2);
     box-shadow: var(--shadow-sm);
+    width: 100%;
 }
 
 .header-container {
@@ -19,6 +19,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    overflow: visible;
 }
 
 /* Логотип */
@@ -105,9 +107,7 @@
 }
 
 .nav-admin {
-    margin-left: 0.5rem;
-    border-left: 1px solid var(--color-bg-alt);
-    padding-left: 1.25rem;
+    display: none; /* Hide админ link - он в user-menu */
 }
 
 /* Аутентификация */
@@ -115,6 +115,7 @@
     display: flex;
     align-items: center;
     margin-left: auto;
+    overflow: visible;
 }
 
 .nav-login {
@@ -131,6 +132,7 @@
 /* Меню пользователя */
 .user-menu-wrapper {
     position: relative;
+    overflow: visible;
 }
 
 .user-button {
@@ -161,7 +163,20 @@
     box-shadow: var(--shadow-lg);
     margin-top: 0.5rem;
     min-width: 150px;
-    z-index: 1000;
+    z-index: 1001;
+    animation: menuFadeIn 0.2s ease-out;
+    transform-origin: top right;
+}
+
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
 
 .user-menu-item {
@@ -210,10 +225,25 @@
 }
 
 /* Адаптив */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .header-container {
-        height: 60px;
-        padding: 0 1rem;
+        height: 65px;
+        padding: 0 1.2rem;
+        overflow: visible;
+    }
+    
+    .header-logo {
+        gap: 0.5rem;
+    }
+    
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1.3rem;
+    }
+    
+    .logo-name {
+        font-size: 1.2rem;
     }
     
     .logo-tagline {
@@ -228,11 +258,214 @@
     .nav-admin {
         margin-left: 0.25rem;
         padding-left: 0.75rem;
+        font-size: 0.8125rem;
     }
     
     .user-button {
         padding: 0.5rem 0.75rem;
         font-size: 0.8125rem;
         margin-left: 0.5rem;
+        min-height: 36px;
+    }
+    
+    .user-menu {
+        min-width: 140px;
+    }
+    
+    .user-menu-item {
+        padding: 0.65rem 0.8rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-container {
+        height: 60px;
+        padding: 0 0.75rem;
+        overflow: visible;
+    }
+    
+    .header-logo {
+        gap: 0.35rem;
+        min-width: 0;
+    }
+    
+    .logo-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+        border-width: 1.5px;
+    }
+    
+    .logo-name {
+        font-size: 1.1rem;
+    }
+    
+    .logo-tagline {
+        display: none;
+    }
+    
+    .header-nav {
+        gap: 0.1rem;
+    }
+    
+    .nav-link {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8125rem;
+        min-height: 36px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .nav-link.active::after {
+        width: 15px;
+        height: 1.5px;
+    }
+    
+    .nav-admin {
+        display: none; /* Hide админ на мобильке */
+    }
+    
+    .header-auth {
+        gap: 0.3rem;
+    }
+    
+    .user-button {
+        padding: 0.4rem 0.65rem;
+        font-size: 0.75rem;
+        margin-left: 0.3rem;
+        min-height: 36px;
+    }
+    
+    .user-menu {
+        min-width: 130px;
+        right: 0;
+        margin-top: 0.3rem;
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .user-menu-item {
+        padding: 0.6rem 0.7rem;
+        font-size: 0.8125rem;
+        min-height: 36px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        border-bottom-width: 0.5px;
+        overflow-y: visible;
+    }
+    
+    .header-container {
+        height: 56px;
+        padding: 0 0.6rem;
+        gap: 0.3rem;
+        overflow: visible;
+    }
+    
+    .header-logo {
+        gap: 0.25rem;
+        flex: 0 1 auto;
+    }
+    
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+    
+    .logo-name {
+        font-size: 1rem;
+    }
+    
+    .header-nav {
+        gap: 0.05rem;
+        flex: 0 1 auto;
+    }
+    
+    .nav-link {
+        padding: 0.3rem 0.4rem;
+        font-size: 0.75rem;
+        min-height: 34px;
+        margin: 0;
+        white-space: nowrap;
+    }
+    
+    .nav-admin {
+        display: none; /* Hide админ на мобильке - только в user-menu */
+    }
+    
+    .user-button {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.7rem;
+        margin-left: 0.2rem;
+        min-height: 34px;
+    }
+    
+    .user-menu {
+        min-width: 120px;
+        right: 0;
+        margin-top: 0.3rem;
+    }
+    
+    .user-menu-item {
+        padding: 0.5rem 0.6rem;
+        font-size: 0.75rem;
+        min-height: 32px;
+    }
+}
+
+@media (max-width: 360px) {
+    .header-container {
+        height: 52px;
+        padding: 0 0.5rem;
+        overflow: visible;
+    }
+    
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+    
+    .logo-name {
+        font-size: 0.95rem;
+    }
+    
+    .nav-link {
+        padding: 0.25rem 0.3rem;
+        font-size: 0.7rem;
+        min-height: 32px;
+    }
+    
+    .nav-admin {
+        padding: 0.25rem 0.4rem;
+        font-size: 0.65rem;
+        min-height: 30px;
+    }
+    
+    .user-button {
+        padding: 0.25rem 0.4rem;
+        font-size: 0.65rem;
+        min-height: 32px;
+    }
+    
+    .user-menu {
+        min-width: 110px;
+        right: 0;
+        margin-top: 0.2rem;
+    }
+    
+    .user-menu-item {
+        padding: 0.45rem 0.5rem;
+        font-size: 0.7rem;
+        min-height: 30px;
+    }
+    
+    .user-menu {
+        min-width: 110px;
     }
 }

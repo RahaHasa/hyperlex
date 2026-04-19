@@ -1,0 +1,59 @@
+version: '3.9'
+
+services:
+  # MongoDB База данных
+  mongo:
+    image: mongo:latest
+    container_name: hyperlex-mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: hyperlex
+    volumes:
+      - mongo_data:/data/db
+      - ./server/data/hyperlex.archive:/data/hyperlex.archive:ro
+    networks:
+      - hyperlex-network
+    restart: unless-stopped
+
+  # Backend сервер
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: hyperlex-server
+    ports:
+      - "3001:3001"
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/hyperlex
+      JWT_SECRET: your_super_secret_key
+      NODE_ENV: production
+      PORT: 3001
+    depends_on:
+      - mongo
+    networks:
+      - hyperlex-network
+    restart: unless-stopped
+
+  # Frontend сервер
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: hyperlex-client
+    ports:
+      - "3002:3002"
+    environment:
+      VITE_API_URL: http://localhost:3001
+    depends_on:
+      - server
+    networks:
+      - hyperlex-network
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
+
+networks:
+  hyperlex-network:
+    driver: bridge

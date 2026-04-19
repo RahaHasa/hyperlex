@@ -3,7 +3,7 @@
  * Поиск слов с выбором языка
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './SearchBar.css';
 
 export default function SearchBar({ 
@@ -15,6 +15,16 @@ export default function SearchBar({
 }) {
     const [query, setQuery] = useState(initialQuery);
     const [lang, setLang] = useState(initialLang);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
+    
+    // Отслеживаем размер экрана
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 640);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     
     // Обработка отправки формы
     const handleSubmit = (e) => {
@@ -26,9 +36,9 @@ export default function SearchBar({
     
     // Языки для переключателя
     const languages = [
-        { code: 'both', label: 'Оба', short: 'Все' },
-        { code: 'ru', label: 'Русский', short: 'RU' },
-        { code: 'uz', label: "O'zbek", short: 'UZ' }
+        { code: 'both', label: 'Оба', short: 'все' },
+        { code: 'ru', label: 'Русский', short: 'ru' },
+        { code: 'uz', label: "O'zbek", short: 'uz' }
     ];
     
     return (
@@ -74,7 +84,7 @@ export default function SearchBar({
                         disabled={loading}
                         title={l.label}
                     >
-                        {size === 'large' ? l.label : l.short}
+                        {isMobile || size !== 'large' ? l.short : l.label}
                     </button>
                 ))}
             </div>
@@ -88,12 +98,10 @@ export default function SearchBar({
                 {loading ? (
                     <span className="loader"></span>
                 ) : (
-                    <>
-                        <span className="search-btn-text">Найти</span>
-                        <svg className="search-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </>
+                    <svg className="search-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
                 )}
             </button>
         </form>

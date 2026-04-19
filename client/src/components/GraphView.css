@@ -4,18 +4,23 @@
 
 .graph-view {
     position: relative;
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
-  border: none;
-  overflow: hidden;
-  height: 100%;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
 .graph-empty {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 300px;
     color: var(--color-text-light);
+    width: 100%;
 }
 
 .graph-svg {
@@ -23,6 +28,9 @@
     background: 
         radial-gradient(circle at 30% 40%, rgba(45, 90, 39, 0.02) 0%, transparent 50%),
         radial-gradient(circle at 70% 60%, rgba(201, 169, 89, 0.02) 0%, transparent 50%);
+    width: 100%;
+    height: auto;
+    max-width: 100%;
 }
 
 /* Узлы */
@@ -290,17 +298,72 @@
 }
 
 /* Адаптив */
-@media (max-width: 640px) {
+@media (max-width: 900px) {
+    .graph-view {
+        height: 500px;
+    }
+
+    .graph-legend {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .graph-view {
+        height: 450px;
+    }
+
     .graph-legend {
         top: auto;
-        bottom: 2.5rem;
+        bottom: 2rem;
+        right: 0.75rem;
+        font-size: 0.75rem;
+    }
+    
+    .graph-hint {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .graph-view {
+        height: 400px;
+    }
+
+    .graph-legend {
+        top: auto;
+        bottom: 2rem;
         right: 0.5rem;
         flex-direction: column;
-        gap: 0.25rem;
+        gap: 0.2rem;
         font-size: 0.6875rem;
+        padding: 0.5rem;
     }
     
     .graph-hint {
         font-size: 0.625rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .graph-view {
+        height: 350px;
+    }
+
+    .graph-legend {
+        bottom: 1.75rem;
+        font-size: 0.65rem;
+        gap: 0.15rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .graph-view {
+        height: 300px;
+    }
+
+    .graph-legend {
+        font-size: 0.6rem;
+        bottom: 1.5rem;
     }
 }

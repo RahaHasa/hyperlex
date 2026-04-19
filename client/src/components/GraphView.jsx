@@ -24,8 +24,16 @@ export default function GraphView({
     useEffect(() => {
         const updateDimensions = () => {
             if (containerRef.current) {
-                const { width: w } = containerRef.current.getBoundingClientRect();
-                setDimensions({ width: w, height: Math.min(w * 0.625, 600) });
+                const { width: w, height: h } = containerRef.current.getBoundingClientRect();
+                // На мобильке высота должна быть достаточной
+                const newHeight = window.innerWidth < 640 ? 
+                    Math.max(window.innerHeight * 0.5, 300) : 
+                    Math.min(w * 0.625, 600);
+                setDimensions({ 
+                    width: Math.max(w, 300), 
+                    height: newHeight 
+                });
+                console.log('📐 Размеры графа обновлены:', { w, h: newHeight, viewport: window.innerWidth });
             }
         };
         
@@ -45,9 +53,29 @@ export default function GraphView({
         if (!nodes.length) return;
         
         const { width: w, height: h } = dimensions;
-        const margin = { top: 40, right: 40, bottom: 40, left: 40 };
+        const isMobile = window.innerWidth < 640;
+        
+        // Адаптивные margins для мобильки
+        const margin = isMobile ? 
+            { top: 20, right: 20, bottom: 20, left: 20 } :
+            { top: 40, right: 40, bottom: 40, left: 40 };
         const innerWidth = w - margin.left - margin.right;
         const innerHeight = h - margin.top - margin.bottom;
+        
+        console.log('🎨 Отрисовка графа:', { 
+            nodes: nodes.length, 
+            links: links.length, 
+            dimensions: { w, h },
+            innerDimensions: { innerWidth, innerHeight },
+            isMobile 
+        });
+        
+        // SVG настройки
+        svg.attr('width', w)
+           .attr('height', h)
+           .attr('viewBox', `0 0 ${w} ${h}`)
+           .style('width', '100%')
+           .style('height', 'auto');
         
         // Группа для трансформаций
         const g = svg.append('g')
@@ -55,21 +83,26 @@ export default function GraphView({
         
         // Zoom
         const zoom = d3.zoom()
-            .scaleExtent([0.5, 2])
+            .scaleExtent([0.5, isMobile ? 2 : 3])
             .on('zoom', (event) => {
                 g.attr('transform', event.transform);
             });
         
         svg.call(zoom);
         
+        // Адаптивные параметры симуляции
+        const linkDistance = isMobile ? 50 : 80;
+        const chargeStrength = isMobile ? -200 : -300;
+        const yForce = isMobile ? 80 : 100;
+        
         // Симуляция силы
         const simulation = d3.forceSimulation(nodes)
-            .force('link', d3.forceLink(links).id(d => d.id).distance(80))
-            .force('charge', d3.forceManyBody().strength(-300))
+            .force('link', d3.forceLink(links).id(d => d.id).distance(linkDistance))
+            .force('charge', d3.forceManyBody().strength(chargeStrength))
             .force('center', d3.forceCenter(innerWidth / 2, innerHeight / 2))
             .force('y', d3.forceY().y(d => {
                 const centerY = innerHeight / 2;
-                return centerY - d.level * 100;
+                return centerY - d.level * yForce;
             }).strength(0.5));
         
         // Линии связей
@@ -101,10 +134,11 @@ export default function GraphView({
         node.append('circle')
             .attr('r', d => {
                 const wordLength = d.word.length;
+                const multiplier = isMobile ? 0.9 : 1;
                 if (d.type === 'center') {
-                    return Math.max(35, 20 + wordLength * 1.2);
+                    return Math.max(28, (20 + wordLength * 1.2) * multiplier);
                 } else {
-                    return Math.max(20, 12 + wordLength * 0.8);
+                    return Math.max(16, (12 + wordLength * 0.8) * multiplier);
                 }
             })
             .attr('fill', d => getNodeColor(d))
@@ -116,9 +150,20 @@ export default function GraphView({
             .attr('dy', '0.35em')
             .attr('text-anchor', 'middle')
             .attr('fill', 'white')
-            .attr('font-size', d => d.type === 'center' ? '12px' : '9px')
+            .attr('font-size', d => {
+                if (d.type === 'center') {
+                    return isMobile ? '10px' : '12px';
+                } else {
+                    return isMobile ? '7px' : '9px';
+                }
+            })
             .attr('font-weight', d => d.type === 'center' ? '600' : '500')
-            .text(d => formatWord(d.word, d.type === 'center' ? 15 : 8));
+            .text(d => {
+                const maxLen = isMobile ? 
+                    (d.type === 'center' ? 10 : 6) :
+                    (d.type === 'center' ? 15 : 8);
+                return formatWord(d.word, maxLen);
+            });
         
         // События узлов
         const handleNodeClick = (event, d) => {

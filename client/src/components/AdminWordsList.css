@@ -251,8 +251,24 @@
     
     .words-table {
         font-size: 0.85rem;
+
+/* Mobile responsiveness */
+@media (max-width: 900px) {
+    .words-table {
+        font-size: 0.9rem;
     }
-    
+
+    .words-table th,
+    .words-table td {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .words-table {
+        font-size: 0.85rem;
+    }
+
     .words-table th,
     .words-table td {
         padding: 10px;
@@ -264,5 +280,40 @@
     
     .col-count {
         font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .words-table {
+        font-size: 0.8rem;
+    }
+
+    .words-table th,
+    .words-table td {
+        padding: 8px;
+    }
+    
+    .col-def {
+        display: none;
+    }
+    
+    .col-uz {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .words-table {
+        font-size: 0.75rem;
+    }
+
+    .words-table th,
+    .words-table td {
+        padding: 6px;
+    }
+
+    .words-table button {
+        padding: 0.35rem 0.5rem;
+        font-size: 0.7rem;
     }
 }
