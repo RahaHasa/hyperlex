@@ -251,6 +251,8 @@
     
     .words-table {
         font-size: 0.85rem;
+    }
+}
 
 /* Mobile responsiveness */
 @media (max-width: 900px) {
