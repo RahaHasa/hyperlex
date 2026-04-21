@@ -2,7 +2,7 @@
  * Сервис для работы с Admin API
  */
 
-const API_URL = 'http://localhost:3001/api/admin';
+const API_URL = '/api/admin';
 
 const getAuthToken = () => localStorage.getItem('token');
 
@@ -198,7 +198,7 @@ const adminAPI = {
             throw new Error('❌ Требуется авторизация. Пожалуйста, залогиньтесь.');
         }
         
-        const response = await fetch('http://localhost:3001/api/auth/users', {
+        const response = await fetch('/api/auth/users', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -220,7 +220,7 @@ const adminAPI = {
             throw new Error('❌ Требуется авторизация. Пожалуйста, залогиньтесь.');
         }
         
-        const response = await fetch(`http://localhost:3001/api/auth/users/${userId}`, {
+        const response = await fetch(`/api/auth/users/${userId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -245,7 +245,7 @@ const adminAPI = {
             throw new Error('❌ Требуется авторизация. Пожалуйста, залогиньтесь.');
         }
         
-        const response = await fetch(`http://localhost:3001/api/auth/users/${userId}`, {
+        const response = await fetch(`/api/auth/users/${userId}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`
