@@ -188,7 +188,11 @@ function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
 
+    console.log('🔐 authenticateToken - Path:', req.path);
+    console.log('   Authorization header:', authHeader ? 'Present' : 'Missing');
+
     if (!token) {
+        console.log('   ❌ No token');
         return res.status(401).json({
             error: 'Token not provided'
         });
@@ -196,10 +200,12 @@ function authenticateToken(req, res, next) {
 
     jwt.verify(token, JWT_SECRET, (err, user) => {
         if (err) {
+            console.log('   ❌ Token invalid:', err.message);
             return res.status(403).json({
                 error: 'Invalid or expired token'
             });
         }
+        console.log('   ✅ Token valid - User:', user.email, 'Role:', user.role);
         req.user = user;
         next();
     });
@@ -208,17 +214,25 @@ function authenticateToken(req, res, next) {
 // Middleware для проверки админ роли
 async function checkAdminRole(req, res, next) {
     try {
+        console.log('👮 checkAdminRole - User ID:', req.user?.id);
+        
         if (!req.user) {
+            console.log('   ❌ No user in request');
             return res.status(401).json({ error: 'Not authorized' });
         }
 
         const user = await User.findById(req.user.id);
+        console.log('   User found:', user?.email, 'Role:', user?.role);
+        
         if (!user || user.role !== 'admin') {
+            console.log('   ❌ Not admin - required admin role');
             return res.status(403).json({ error: 'Admin access required' });
         }
 
+        console.log('   ✅ Admin access granted');
         next();
     } catch (error) {
+        console.log('   ❌ Error:', error.message);
         res.status(500).json({ error: 'Server error' });
     }
 }
@@ -228,10 +242,12 @@ async function checkAdminRole(req, res, next) {
  */
 async function getAllUsers(req, res) {
     try {
+        console.log('📋 getAllUsers called');
         const users = await User.find({}, { password: 0 }).sort({ createdAt: -1 });
+        console.log('   ✅ Found', users.length, 'users');
         res.json({ users });
     } catch (error) {
-        console.error('Get all users error:', error);
+        console.error('❌ Get all users error:', error);
         res.status(500).json({ error: 'Server error' });
     }
 }
