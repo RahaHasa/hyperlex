@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, Users, Plus, Edit, AlertCircle } from 'lucide-react';
+import { BookOpen, Users, Plus, Edit, AlertCircle, Upload } from 'lucide-react';
 import './Admin.css';
 import AdminWordsList from '../components/AdminWordsList';
 import AdminAddWord from '../components/AdminAddWord';
 import AdminEditWord from '../components/AdminEditWord';
+import AdminImport from '../components/AdminImport';
 
 /**
  * Admin Words Dashboard - управление словами
  */
 export default function AdminWords() {
     const navigate = useNavigate();
-    const [activeTab, setActiveTab] = useState('list'); // list, add, edit
+    const [activeTab, setActiveTab] = useState('list'); // list, add, edit, import
     const [selectedWord, setSelectedWord] = useState(null);
     const [refreshTrigger, setRefreshTrigger] = useState(0);
     const [isAdmin, setIsAdmin] = useState(false);
@@ -117,6 +118,13 @@ export default function AdminWords() {
                     <Plus size={18} />
                     Добавить слово
                 </button>
+                <button
+                    className={`admin-tab ${activeTab === 'import' ? 'active' : ''}`}
+                    onClick={() => setActiveTab('import')}
+                >
+                    <Upload size={18} />
+                    Массовый импорт
+                </button>
                 {selectedWord && (
                     <button
                         className={`admin-tab ${activeTab === 'edit' ? 'active' : ''}`}
@@ -138,6 +146,13 @@ export default function AdminWords() {
                 
                 {activeTab === 'add' && (
                     <AdminAddWord onSuccess={handleWordChanged} />
+                )}
+
+                {activeTab === 'import' && (
+                    <AdminImport
+                        onSuccess={handleWordChanged}
+                        onCancel={() => setActiveTab('list')}
+                    />
                 )}
                 
                 {activeTab === 'edit' && selectedWord && (

@@ -75,7 +75,7 @@ wordSchema.index({ hyponyms: 1 });
 
 // Метод для получения синонимов
 wordSchema.methods.getRelated = async function() {
-    const relatedId = this.related[this.lang === 'lang_ru' ? 'lang_uz' : 'lang_ru'];
+    const relatedId = this.related[this.lang === 'lang_ru' ? 'uz' : 'ru'];
     if (!relatedId) return null;
     return await mongoose.model('Word').findById(relatedId);
 };

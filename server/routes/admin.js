@@ -6,8 +6,14 @@
 
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
 const wordAdminController = require('../controllers/wordAdminController');
 const { authenticateToken, checkAdminRole } = require('../controllers/authController');
+
+const upload = multer({
+	storage: multer.memoryStorage(),
+	limits: { fileSize: 50 * 1024 * 1024 }
+});
 
 // Middleware для всех маршрутов: требует аутентификации и админ роли
 router.use(authenticateToken);
@@ -42,5 +48,13 @@ router.put('/words/:id', wordAdminController.updateWord);
 // Удаление слова
 // DELETE /api/admin/words/:id
 router.delete('/words/:id', wordAdminController.deleteWord);
+
+// Массовый импорт слов
+// POST /api/admin/import
+router.post('/import', upload.single('file'), wordAdminController.importWords);
+
+// AI связывание гиперонимов/гипонимов
+// POST /api/admin/ai/link-hyponyms
+router.post('/ai/link-hyponyms', wordAdminController.aiLinkHyponyms);
 
 module.exports = router;

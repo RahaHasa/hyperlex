@@ -157,6 +157,51 @@ const adminAPI = {
         }
         return response.json();
     },
+
+    /**
+     * Массовый импорт слов
+     */
+    async importData(formData) {
+        const token = getAuthToken();
+        if (!token) throw new Error('❌ Требуется авторизация');
+
+        const response = await fetch(`${API_URL}/import`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+            body: formData
+        });
+
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) {
+            throw new Error(data.error || 'Ошибка при импорте');
+        }
+        return data;
+    },
+
+    /**
+     * AI-связывание гиперонимов/гипонимов
+     */
+    async linkHyponymsAI(payload) {
+        const token = getAuthToken();
+        if (!token) throw new Error('❌ Требуется авторизация');
+
+        const response = await fetch(`${API_URL}/ai/link-hyponyms`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(payload || {})
+        });
+
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) {
+            throw new Error(data.error || 'Ошибка AI-связывания');
+        }
+        return data;
+    },
     
     // === АВТОПОИСК ===
     
