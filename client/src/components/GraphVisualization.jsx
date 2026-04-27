@@ -23,6 +23,37 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
         const svg = d3.select(svgRef.current);
         svg.selectAll("*").remove();
         
+        // Размер шрифта АВТО-АДАПТАЦИЯ (уменьшаем, если слово длинное)
+        const getFontSize = (word, isRoot = false) => {
+            const radius = isRoot ? 48 : 40;
+            const maxTextWidth = radius * 2 * 0.85; // 85% от диаметра круга
+            
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            let size = isRoot ? 16 : 14; // Начальный максимальный размер
+            
+            ctx.font = `bold ${size}px Arial, sans-serif`;
+            while (ctx.measureText(word).width > maxTextWidth && size > 8) {
+                size -= 1;
+                ctx.font = `bold ${size}px Arial, sans-serif`;
+            }
+            
+            return `${size}px`;
+        };
+        
+        // Круги ФИКСИРОВАННОГО размера, как просил пользователь
+        const getNodeRadius = (word, isRoot = false) => {
+            return isRoot ? 48 : 40;
+        };
+        
+        const getNodeRadiusOnHover = (word, isRoot = false) => {
+            return getNodeRadius(word, isRoot) + 3;
+        };
+        
+        const getNodeRadiusOnSelect = (word, isRoot = false) => {
+            return getNodeRadius(word, isRoot) + 3;
+        };
+        
         // Конвертируем дерево в иерархию для D3
         const hierarchy = d3.hierarchy(tree);
         const treeLayout = d3.tree().size([width, height]);
@@ -91,38 +122,49 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
             .attr('transform', d => `translate(${d.x},${d.y})`)
             .on('mouseenter', function(event, d) {
                 const nodeId = d.data._id || d.data.id;
+                const rootId = tree._id || tree.id;
+                const isRoot = nodeId === rootId;
                 setHoveredNode(nodeId);
                 d3.select(this).select('circle')
                     .transition()
                     .duration(200)
-                    .attr('r', 12)
+                    .attr('r', getNodeRadiusOnHover(d.data.word, isRoot))
                     .attr('stroke-width', 3);
             })
             .on('mouseleave', function(event, d) {
                 const nodeId = d.data._id || d.data.id;
-                if (nodeId !== selectedNode) {
+                const rootId = tree._id || tree.id;
+                const isRoot = nodeId === rootId;
+                const isSelected = nodeId === selectedNode;
+                if (!isSelected) {
                     setHoveredNode(null);
                     d3.select(this).select('circle')
                         .transition()
                         .duration(200)
-                        .attr('r', nodeId === selectedNode ? 10 : 7)
-                        .attr('stroke-width', nodeId === selectedNode ? 3 : 2);
+                        .attr('r', getNodeRadius(d.data.word, isRoot))
+                        .attr('stroke-width', isRoot ? 3 : 2);
                 }
             })
             .on('click', function(event, d) {
                 event.stopPropagation();
                 const nodeId = d.data._id || d.data.id;
+                const rootId = tree._id || tree.id;
                 setSelectedNode(nodeId);
                 
                 // Обновляем все узлы
                 g.selectAll('.node').select('circle')
                     .attr('r', node => {
                         const id = node.data._id || node.data.id;
-                        return id === nodeId ? 10 : 7;
+                        const isRoot = id === rootId;
+                        if (id === nodeId) {
+                            return getNodeRadiusOnSelect(node.data.word, isRoot);
+                        }
+                        return getNodeRadius(node.data.word, isRoot);
                     })
                     .attr('stroke-width', node => {
                         const id = node.data._id || node.data.id;
-                        return id === nodeId ? 3 : 2;
+                        const isRoot = id === rootId;
+                        return (id === nodeId || isRoot) ? 3 : 2;
                     });
             });
         
@@ -131,7 +173,8 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
             .attr('r', d => {
                 const nodeId = d.data._id || d.data.id;
                 const rootId = tree._id || tree.id;
-                return nodeId === rootId ? 10 : 7;
+                const isRoot = nodeId === rootId;
+                return getNodeRadius(d.data.word, isRoot);
             })
             .attr('class', d => {
                 const nodeId = d.data._id || d.data.id;
@@ -150,7 +193,8 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
             .attr('stroke-width', d => {
                 const nodeId = d.data._id || d.data.id;
                 const rootId = tree._id || tree.id;
-                return nodeId === rootId ? 3 : 2;
+                const isRoot = nodeId === rootId;
+                return isRoot ? 3 : 2;
             });
         
         // Текст (слова)
@@ -160,7 +204,12 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
             .attr('class', 'node-label')
             .text(d => d.data.word)
             .attr('fill', '#2c3e50')
-            .attr('font-size', '12px')
+            .attr('font-size', d => {
+                const nodeId = d.data._id || d.data.id;
+                const rootId = tree._id || tree.id;
+                const isRoot = nodeId === rootId;
+                return getFontSize(d.data.word, isRoot);
+            })
             .attr('font-weight', d => {
                 const nodeId = d.data._id || d.data.id;
                 const rootId = tree._id || tree.id;

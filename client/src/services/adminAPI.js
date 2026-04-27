@@ -157,7 +157,28 @@ const adminAPI = {
         }
         return response.json();
     },
-
+    // === СИНХРОНИЗАЦИЯ ===
+    
+    /**
+     * Авто-связывание всех гиперо-гипонимов в базе
+     */
+    async syncRelations() {
+        const token = getAuthToken();
+        if (!token) throw new Error('❌ Требуется авторизация');
+        
+        const response = await fetch(`${API_URL}/words/sync-relations`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error || 'Ошибка при синхронизации связей');
+        }
+        return response.json();
+    },
     /**
      * Массовый импорт слов
      */

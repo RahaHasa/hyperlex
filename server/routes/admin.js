@@ -45,6 +45,10 @@ router.post('/words', wordAdminController.createWord);
 // PUT /api/admin/words/:id
 router.put('/words/:id', wordAdminController.updateWord);
 
+// Синхронизация связей (рекурсивное связывание всех гиперонимов и гипонимов)
+// POST /api/admin/words/sync-relations
+router.post('/words/sync-relations', wordAdminController.syncRelations);
+
 // Удаление слова
 // DELETE /api/admin/words/:id
 router.delete('/words/:id', wordAdminController.deleteWord);

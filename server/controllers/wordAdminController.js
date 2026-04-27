@@ -3,6 +3,7 @@
  */
 
 const Word = require('../models/Word');
+const Bz2 = require('bz2');
 
 function escapeRegex(value) {
     return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -609,6 +610,78 @@ function parsePlainWordList(content) {
     return words;
 }
 
+function parseTSV(content) {
+    const lines = String(content || '')
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(Boolean);
+
+    if (lines.length === 0) {
+        throw new Error('TSV файл пуст');
+    }
+
+    // Проверяем, есть ли заголовок (содержит ли первая строка ключевые слова)
+    const firstLine = lines[0].split('\t');
+    const headerKeywords = ['word', 'link', 'uz', 'ru', 'definition', 'column', 'name', 'lemma'];
+    const hasHeader = firstLine.some(col => 
+        headerKeywords.some(keyword => col.toLowerCase().includes(keyword))
+    );
+
+    const startIdx = hasHeader ? 1 : 0;
+    const headers = hasHeader 
+        ? lines[0].split('\t').map(h => h.toLowerCase().trim())
+        : ['word_1', 'word_2'];
+
+    const seen = new Set();
+    const words = [];
+
+    for (let i = startIdx; i < lines.length; i++) {
+        const values = lines[i].split('\t').map(v => v.trim());
+        if (!values.some(v => v !== '')) continue;
+
+        const row = {};
+        headers.forEach((header, index) => {
+            row[header] = values[index] || '';
+        });
+
+        // Ищем различные варианты названий столбцов
+        const word1 = row.word_ru || row.word_uz || row.word || row.word_1 || '';
+        const word2 = row.word_uz || row.word_ru || row.word_2 || '';
+        const def1 = row.definition_ru || row.definition || '';
+        const def2 = row.definition_uz || '';
+
+        if (!word1 && !word2) continue;
+
+        const key = `${word1.toLowerCase()}|${word2.toLowerCase()}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+
+        words.push({
+            word_ru: word1,
+            word_uz: word2,
+            definition_ru: def1,
+            definition_uz: def2
+        });
+    }
+
+    if (words.length === 0) {
+        throw new Error('TSV файл не содержит валидных слов для импорта');
+    }
+
+    return words;
+}
+
+function decompressBZ2(buffer) {
+    try {
+        // Используем встроенный декодер bz2
+        const decompressor = new Bz2();
+        const decompressed = decompressor.decompress(buffer);
+        return decompressed.toString('utf-8');
+    } catch (err) {
+        throw new Error(`Ошибка распаковки BZ2: ${err.message}`);
+    }
+}
+
 function detectFormatByContent(content) {
     const text = String(content || '').trim();
     if (!text) return 'csv';
@@ -616,8 +689,20 @@ function detectFormatByContent(content) {
     if (text.startsWith('<')) return 'xml';
     if (text.startsWith('{') || text.startsWith('[')) return 'json';
 
-    // Простой список слов: одна запись на строку без явного заголовка CSV
+    // Проверяем на TSV (много табуляций в строке vs запятых)
     const lines = text.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+    if (lines.length > 0) {
+        const firstLine = lines[0];
+        const tabCount = (firstLine.match(/\t/g) || []).length;
+        const commaCount = (firstLine.match(/,/g) || []).length;
+        
+        // Если табуляций больше, чем запятых, это вероятно TSV
+        if (tabCount > 0 && tabCount >= commaCount) {
+            return 'tsv';
+        }
+    }
+
+    // Простой список слов: одна запись на строку без явного заголовка CSV
     if (lines.length > 0 && !/^word_ru\s*,|^word_uz\s*,/i.test(lines[0])) {
         return 'txt';
     }
@@ -662,11 +747,33 @@ async function importWords(req, res) {
         const formatFromExt =
             originalName.endsWith('.xml') ? 'xml' :
             originalName.endsWith('.json') ? 'json' :
+            originalName.endsWith('.bz2') ? 'bz2' :
+            originalName.endsWith('.tsv') ? 'tsv' :
             originalName.endsWith('.txt') ? 'txt' :
             originalName.endsWith('.csv') ? 'csv' : '';
-        const rawContent = req.file.buffer.toString('utf-8');
-        const normalizedRequested = ['csv', 'json', 'xml', 'txt'].includes(requestedFormat) ? requestedFormat : '';
-        const format = normalizedRequested || formatFromExt || detectFormatByContent(rawContent);
+        
+        // Если это BZ2, распакуем его сначала
+        let rawContent;
+        let actualFormat = formatFromExt;
+        
+        if (formatFromExt === 'bz2' || requestedFormat === 'bz2') {
+            try {
+                rawContent = decompressBZ2(req.file.buffer);
+                // После распаковки определяем настоящий формат
+                actualFormat = detectFormatByContent(rawContent);
+            } catch (err) {
+                return res.status(400).json({
+                    success: false,
+                    error: `Ошибка распаковки BZ2: ${err.message}`
+                });
+            }
+        } else {
+            rawContent = req.file.buffer.toString('utf-8');
+            actualFormat = formatFromExt;
+        }
+        
+        const normalizedRequested = ['csv', 'json', 'xml', 'tsv', 'txt', 'bz2'].includes(requestedFormat) ? requestedFormat : '';
+        const format = (normalizedRequested && normalizedRequested !== 'bz2') ? normalizedRequested : actualFormat || detectFormatByContent(rawContent);
         let words = [];
 
         if (format === 'csv') {
@@ -676,12 +783,14 @@ async function importWords(req, res) {
             words = Array.isArray(jsonData) ? jsonData : [jsonData];
         } else if (format === 'xml') {
             words = parseXML(rawContent);
+        } else if (format === 'tsv') {
+            words = parseTSV(rawContent);
         } else if (format === 'txt') {
             words = parsePlainWordList(rawContent);
         } else {
             return res.status(400).json({
                 success: false,
-                error: `Неподдерживаемый формат файла: ${requestedFormat || 'unknown'}. Поддерживаются: csv, json, xml, txt`
+                error: `Неподдерживаемый формат файла: ${requestedFormat || format || 'unknown'}. Поддерживаются: csv, json, xml, tsv, txt, bz2`
             });
         }
 
@@ -1144,6 +1253,56 @@ async function aiLinkHyponyms(req, res) {
     }
 }
 
+/**
+ * Синхронизация и двунаправленное связывание всех гипонимов и гиперонимов
+ * POST /api/admin/words/sync-relations
+ */
+async function syncRelations(req, res) {
+    try {
+        const words = await Word.find({}).select('hypernyms hyponyms _id');
+        let modificationsCount = 0;
+        
+        for (const word of words) {
+            let modified = false;
+            
+            // Если у меня есть гипероним (предок), то я у него должен быть гипонимом (ребенком)
+            for (const hyper of word.hypernyms) {
+                const parentId = hyper.toString();
+                const parent = await Word.findById(parentId).select('hyponyms');
+                if (parent && !parent.hyponyms.includes(word._id)) {
+                    parent.hyponyms.push(word._id);
+                    await parent.save();
+                    modificationsCount++;
+                }
+            }
+            
+            // Если у меня есть гипоним (потомок), то я у него должен быть гиперонимом (предком)
+            for (const hypo of word.hyponyms) {
+                const childId = hypo.toString();
+                const child = await Word.findById(childId).select('hypernyms');
+                if (child && !child.hypernyms.includes(word._id)) {
+                    child.hypernyms.push(word._id);
+                    await child.save();
+                    modificationsCount++;
+                }
+            }
+        }
+        
+        res.json({
+            success: true,
+            message: `Связи успешно синхронизированы. Выполнено обновлений: ${modificationsCount}`,
+            updated: modificationsCount
+        });
+        
+    } catch (error) {
+        console.error('Ошибка при синхронизации связей:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Не удалось синхронизировать связи: ' + error.message
+        });
+    }
+}
+
 module.exports = {
     getAllWords,
     getWordById,
@@ -1153,5 +1312,6 @@ module.exports = {
     searchForHypernyms,
     getWordTree,
     importWords,
-    aiLinkHyponyms
+    aiLinkHyponyms,
+    syncRelations
 };

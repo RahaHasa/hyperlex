@@ -48,6 +48,42 @@ function parseCSV(content) {
     }).filter(row => row.word_ru || row.word_uz);
 }
 
+function parseTSV(content) {
+    const lines = content.split(/\r?\n/).filter(line => line.trim());
+    if (lines.length < 1) {
+        throw new Error('TSV файл должен содержать хотя бы одну строку');
+    }
+
+    // Проверяем, есть ли заголовок (содержит ли строка допустимые названия столбцов)
+    const firstLine = lines[0].split('\t');
+    const headerKeywords = ['word', 'link', 'uz', 'ru', 'definition', 'column', 'name', 'lemma'];
+    const hasHeader = firstLine.some(col => 
+        headerKeywords.some(keyword => col.toLowerCase().includes(keyword))
+    );
+
+    const startIdx = hasHeader ? 1 : 0;
+    const headers = hasHeader 
+        ? lines[0].split('\t').map(h => h.toLowerCase().trim())
+        : ['word_1', 'word_2'];
+
+    return lines.slice(startIdx).map(line => {
+        const values = line.split('\t').map(v => v.trim());
+        if (hasHeader && headers.length > 0) {
+            const row = {};
+            headers.forEach((header, index) => {
+                row[header] = values[index] || '';
+            });
+            return row;
+        } else {
+            // Без заголовка - простая пара слов
+            return {
+                word_1: values[0] || '',
+                word_2: values[1] || ''
+            };
+        }
+    }).filter(row => Object.values(row).some(v => v.trim() !== ''));
+}
+
 function parseTextPreview(content) {
     return String(content || '')
         .split(/\r?\n/)
@@ -144,6 +180,7 @@ export default function AdminImport({ onSuccess, onCancel }) {
         if (format === 'json') return 'JSON';
         if (format === 'xml') return 'XML';
         if (format === 'txt') return 'TXT';
+        if (format === 'tsv') return 'TSV';
         return 'CSV';
     }, [format]);
 
@@ -163,21 +200,30 @@ export default function AdminImport({ onSuccess, onCancel }) {
         const isCsv = selected.name.toLowerCase().endsWith('.csv');
         const isXml = selected.name.toLowerCase().endsWith('.xml');
         const isTxt = selected.name.toLowerCase().endsWith('.txt');
+        const isTsv = selected.name.toLowerCase().endsWith('.tsv');
+        const isBz2 = selected.name.toLowerCase().endsWith('.bz2');
 
-        if (!isJson && !isCsv && !isXml && !isTxt) {
-            setError('Поддерживаются CSV, JSON, XML и TXT файлы');
+        if (!isJson && !isCsv && !isXml && !isTxt && !isTsv && !isBz2) {
+            setError('Поддерживаются CSV, JSON, XML, TSV, TXT и BZ2 файлы');
             setFile(null);
             setPreview([]);
             setTotalRows(0);
             return;
         }
 
-        setFormat(isJson ? 'json' : isXml ? 'xml' : isTxt ? 'txt' : 'csv');
+        setFormat(isJson ? 'json' : isXml ? 'xml' : isTsv ? 'tsv' : isBz2 ? 'bz2' : isTxt ? 'txt' : 'csv');
         setFile(selected);
 
         const reader = new FileReader();
         reader.onload = (e) => {
             try {
+                // BZ2 файлы загружаем как бинарные данные для отправки на сервер
+                if (isBz2) {
+                    setTotalRows(-1); // Неизвестное количество, будет распако на сервере
+                    setPreview([{ note: '📦 BZ2 файл будет распакован во время импорта...' }]);
+                    return;
+                }
+
                 const text = String(e.target.result || '');
                 let data = [];
 
@@ -186,6 +232,8 @@ export default function AdminImport({ onSuccess, onCancel }) {
                     data = Array.isArray(parsed) ? parsed : [parsed];
                 } else if (isXml) {
                     data = parseXMLPreview(text);
+                } else if (isTsv) {
+                    data = parseTSV(text);
                 } else if (isTxt) {
                     data = parseTextPreview(text);
                 } else {
@@ -201,7 +249,12 @@ export default function AdminImport({ onSuccess, onCancel }) {
                 setTotalRows(0);
             }
         };
-        reader.readAsText(selected);
+
+        if (isBz2) {
+            reader.readAsArrayBuffer(selected);
+        } else {
+            reader.readAsText(selected);
+        }
     }
 
     async function handleImport() {
@@ -246,7 +299,7 @@ export default function AdminImport({ onSuccess, onCancel }) {
         <div className="admin-import">
             <div className="admin-import__header">
                 <h2>Массовый импорт</h2>
-                <p>Загрузите CSV, JSON или XML. Для парного импорта используйте поля word_ru, definition_ru, word_uz, definition_uz.</p>
+                <p>Загрузите CSV, JSON, XML, TSV, TXT или BZ2. Для парного импорта используйте поля word_ru, definition_ru, word_uz, definition_uz или word_1, word_2 для TSV.</p>
             </div>
 
             <div className="admin-import__box">
@@ -254,7 +307,7 @@ export default function AdminImport({ onSuccess, onCancel }) {
                     <input
                         ref={inputRef}
                         type="file"
-                        accept=".csv,.json,.xml,.txt"
+                        accept=".csv,.json,.xml,.txt,.tsv,.bz2"
                         onChange={handleFileChange}
                     />
                     <span>Выбрать {previewTitle} файл</span>

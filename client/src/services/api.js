@@ -226,6 +226,13 @@ export async function deleteWord(id) {
 }
 
 /**
+ * Автоматическая синхронизация всех гиперо-гипонимических связей
+ */
+export async function syncRelations() {
+    return api.post('/admin/words/sync-relations');
+}
+
+/**
  * Экспорт всей базы
  */
 export async function exportData() {
@@ -255,6 +262,7 @@ export default {
     addWord,
     updateWord,
     deleteWord,
+    syncRelations,
     exportData,
     importData
 };
