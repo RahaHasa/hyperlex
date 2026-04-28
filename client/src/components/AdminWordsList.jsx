@@ -69,26 +69,6 @@ export default function AdminWordsList({ onSelectWord, refreshTrigger }) {
         setPage(0);
     }
     
-    // Синхронизация связей
-    const [syncing, setSyncing] = useState(false);
-    
-    async function handleSyncRelations() {
-        if (!window.confirm('Вы уверены, что хотите запустить полную двунаправленную синхронизацию связей гиперонимов/гипонимов?\nЭто может занять время при большом количестве данных.')) {
-            return;
-        }
-        
-        try {
-            setSyncing(true);
-            const res = await adminAPI.syncRelations();
-            alert(`✅ ${res.message}`);
-            loadWords();
-        } catch (err) {
-            alert(err.message || 'Ошибка синхронизации');
-        } finally {
-            setSyncing(false);
-        }
-    }
-    
     const totalPages = Math.ceil(total / LIMIT);
     const getLanguageClass = (lang) => lang === 'lang_ru' ? 'lang-ru' : 'lang-uz';
     const getLanguageLabel = (lang) => lang === 'lang_ru' ? 'Русский' : 'Узбекский';
@@ -135,17 +115,6 @@ export default function AdminWordsList({ onSelectWord, refreshTrigger }) {
                     <button onClick={handleReset} className="btn-reset">
                         <RotateCcw size={18} />
                         Сброс
-                    </button>
-                    
-                    <button 
-                        onClick={handleSyncRelations} 
-                        className={`btn-primary ${syncing ? 'syncing' : ''}`}
-                        style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '8px' }}
-                        disabled={syncing}
-                        title="Автоматически связать гиперонимы и гипонимы для всех слов"
-                    >
-                        <RefreshCw size={18} className={syncing ? 'spin' : ''} />
-                        {syncing ? 'Синхронизация...' : 'Связать отношения'}
                     </button>
                 </div>
                 <p className="results-info">

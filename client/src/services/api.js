@@ -100,7 +100,25 @@ export async function getWord(id) {
     const normalizeWord = (w) => ({
         ...w,
         language: w.lang === 'lang_ru' ? 'ru' : 'uz',
-        id: w._id
+        id: w._id,
+        hypernyms: Array.isArray(w.hypernyms)
+            ? w.hypernyms.map(item => typeof item === 'string'
+                ? item
+                : {
+                    ...item,
+                    language: item.lang === 'lang_ru' ? 'ru' : 'uz',
+                    id: item._id
+                })
+            : w.hypernyms,
+        hyponyms: Array.isArray(w.hyponyms)
+            ? w.hyponyms.map(item => typeof item === 'string'
+                ? item
+                : {
+                    ...item,
+                    language: item.lang === 'lang_ru' ? 'ru' : 'uz',
+                    id: item._id
+                })
+            : w.hyponyms
     });
     
     if (response.word) {

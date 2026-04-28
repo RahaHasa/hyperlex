@@ -18,16 +18,19 @@ export default function WordCard({
     // Обработчик клика по связанному слову
     const handleRelatedClick = () => {
         if (relatedWord && onWordClick) {
-            onWordClick(relatedWord.id);
+            onWordClick(relatedWord);
         }
     };
     
     // Обработчик клика по гиперониму/гипониму
-    const handleLinkClick = (id) => {
+    const handleLinkClick = (item) => {
         if (onWordClick) {
-            onWordClick(id);
+            onWordClick(item);
         }
     };
+
+    const getLinkId = (item) => (typeof item === 'string' ? item : item?.id || item?._id);
+    const getLinkLabel = (item) => (typeof item === 'string' ? item : item?.word || item?.id || item?._id);
     
     return (
         <div className={`word-card ${compact ? 'compact' : ''} lang-${word.language}`}>
@@ -65,13 +68,13 @@ export default function WordCard({
                         <div className="links-section">
                             <span className="links-label">↑ Гиперонимы:</span>
                             <div className="links-list">
-                                {word.hypernyms.map(id => (
+                                {word.hypernyms.map(item => (
                                     <button 
-                                        key={id}
+                                        key={getLinkId(item)}
                                         className="link-btn hypernym"
-                                        onClick={() => handleLinkClick(id)}
+                                        onClick={() => handleLinkClick(item)}
                                     >
-                                        {id}
+                                        {getLinkLabel(item)}
                                     </button>
                                 ))}
                             </div>
@@ -83,13 +86,13 @@ export default function WordCard({
                         <div className="links-section">
                             <span className="links-label">↓ Гипонимы:</span>
                             <div className="links-list">
-                                {word.hyponyms.map(id => (
+                                {word.hyponyms.map(item => (
                                     <button 
-                                        key={id}
+                                        key={getLinkId(item)}
                                         className="link-btn hyponym"
-                                        onClick={() => handleLinkClick(id)}
+                                        onClick={() => handleLinkClick(item)}
                                     >
-                                        {id}
+                                        {getLinkLabel(item)}
                                     </button>
                                 ))}
                             </div>

@@ -54,7 +54,9 @@ async function getWord(req, res) {
     try {
         const { id } = req.params;
         
-        const word = await Word.findById(id);
+        const word = await Word.findById(id)
+            .populate('hypernyms', '_id word lang definition')
+            .populate('hyponyms', '_id word lang definition');
         
         if (!word) {
             return res.status(404).json({
@@ -68,7 +70,7 @@ async function getWord(req, res) {
         if (word.related) {
             const relatedId = word.lang === 'lang_ru' ? word.related.uz : word.related.ru;
             if (relatedId) {
-                relatedWord = await Word.findById(relatedId);
+                relatedWord = await Word.findById(relatedId).select('_id word lang definition');
             }
         }
         

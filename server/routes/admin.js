@@ -61,4 +61,8 @@ router.post('/import', upload.single('file'), wordAdminController.importWords);
 // POST /api/admin/ai/link-hyponyms
 router.post('/ai/link-hyponyms', wordAdminController.aiLinkHyponyms);
 
+// AI генерация недостающих описаний (definitions)
+// POST /api/admin/ai/generate-descriptions
+router.post('/ai/generate-descriptions', wordAdminController.aiGenerateDescriptions);
+
 module.exports = router;

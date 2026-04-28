@@ -431,11 +431,20 @@ function parseCSVLine(line) {
 function parseCSV(content) {
     const lines = content.split(/\r?\n/).filter(line => line.trim());
 
-    if (lines.length < 2) {
-        throw new Error('CSV должен содержать заголовок и минимум одну строку данных');
+    if (lines.length < 1) {
+        throw new Error('Файл пуст');
     }
 
     const headers = parseCSVLine(lines[0]).map(header => header.trim().toLowerCase());
+
+    // Если нет подходящих заголовков, обрабатываем как простой список слов (TXT)
+    if (!headers.some(h => ['word', 'word_ru', 'word_uz', 'lemma', 'name'].includes(h))) {
+        return parsePlainWordList(content);
+    }
+
+    if (lines.length < 2) {
+        throw new Error('CSV должен содержать заголовок и минимум одну строку данных');
+    }
 
     return lines.slice(1).map(line => {
         const values = parseCSVLine(line);
@@ -446,7 +455,7 @@ function parseCSV(content) {
         });
 
         return row;
-    }).filter(row => row.word_ru || row.word_uz);
+    }).filter(row => row.word_ru || row.word_uz || row.word || row.lemma || row.name);
 }
 
 function decodeXmlEntities(value) {
@@ -803,10 +812,8 @@ async function importWords(req, res) {
             return Number.isNaN(number) ? 0 : number;
         };
 
-        let nextNumber = Math.max(
-            getNumber(lastRuWord?._id, 'ru_'),
-            getNumber(lastUzWord?._id, 'uz_')
-        ) + 1;
+        let nextRuNumber = getNumber(lastRuWord?._id, 'ru_') + 1;
+        let nextUzNumber = getNumber(lastUzWord?._id, 'uz_') + 1;
 
         let created = 0;
         let updated = 0;
@@ -855,7 +862,7 @@ async function importWords(req, res) {
                         await existingOnlyRu.save();
                         updated += 1;
                     } else {
-                        const ruId = `ru_${String(nextNumber).padStart(6, '0')}`;
+                        const ruId = `ru_${String(nextRuNumber).padStart(6, '0')}`;
                         const ruWord = new Word({
                             _id: ruId,
                             word: wordRu,
@@ -866,7 +873,7 @@ async function importWords(req, res) {
                         });
                         await ruWord.save();
                         created += 1;
-                        nextNumber += 1;
+                        nextRuNumber += 1;
                     }
 
                     continue;
@@ -882,7 +889,7 @@ async function importWords(req, res) {
                         await existingOnlyUz.save();
                         updated += 1;
                     } else {
-                        const uzId = `uz_${String(nextNumber).padStart(6, '0')}`;
+                        const uzId = `uz_${String(nextUzNumber).padStart(6, '0')}`;
                         const uzWord = new Word({
                             _id: uzId,
                             word: wordUz,
@@ -893,7 +900,7 @@ async function importWords(req, res) {
                         });
                         await uzWord.save();
                         created += 1;
-                        nextNumber += 1;
+                        nextUzNumber += 1;
                     }
 
                     continue;
@@ -922,22 +929,8 @@ async function importWords(req, res) {
                     continue;
                 }
 
-                let pairSuffix = String(nextNumber).padStart(6, '0');
-
-                if (existingRu && !existingUz) {
-                    const suffix = existingRu._id.replace('ru_', '');
-                    if (/^\d+$/.test(suffix)) {
-                        pairSuffix = suffix;
-                    }
-                } else if (!existingRu && existingUz) {
-                    const suffix = existingUz._id.replace('uz_', '');
-                    if (/^\d+$/.test(suffix)) {
-                        pairSuffix = suffix;
-                    }
-                }
-
-                const ruId = `ru_${pairSuffix}`;
-                const uzId = `uz_${pairSuffix}`;
+                const ruId = `ru_${String(nextRuNumber).padStart(6, '0')}`;
+                const uzId = `uz_${String(nextUzNumber).padStart(6, '0')}`;
 
                 if (!existingRu && !existingUz) {
                     const ruWord = new Word({
@@ -961,7 +954,8 @@ async function importWords(req, res) {
                     await ruWord.save();
                     await uzWord.save();
                     created += 2;
-                    nextNumber += 1;
+                    nextRuNumber += 1;
+                    nextUzNumber += 1;
                     continue;
                 }
 
@@ -983,6 +977,7 @@ async function importWords(req, res) {
                     await existingRu.save();
                     await uzWord.save();
                     created += 1;
+                    nextUzNumber += 1;
                     continue;
                 }
 
@@ -1004,6 +999,7 @@ async function importWords(req, res) {
                     await ruWord.save();
                     await existingUz.save();
                     created += 1;
+                    nextRuNumber += 1;
                     continue;
                 }
             } catch (itemError) {
@@ -1017,8 +1013,8 @@ async function importWords(req, res) {
             created,
             updated,
             errors,
-            nextRuId: `ru_${String(nextNumber).padStart(6, '0')}`,
-            nextUzId: `uz_${String(nextNumber).padStart(6, '0')}`
+            nextRuId: `ru_${String(nextRuNumber).padStart(6, '0')}`,
+            nextUzId: `uz_${String(nextUzNumber).padStart(6, '0')}`
         });
     } catch (error) {
         console.error('Import error:', error);
@@ -1055,6 +1051,144 @@ function parseModelJson(content) {
     }
 
     throw new Error('Не удалось извлечь JSON из ответа модели');
+}
+
+/**
+ * Запрос к OpenAI для генерации описаний слов
+ */
+async function requestOpenAIDescriptions(words, model) {
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+        throw new Error('OPENAI_API_KEY не задан. Добавьте ключ в server/.env');
+    }
+
+    const systemPrompt = [
+        'You are a linguistics expert providing precise dictionary definitions for words.',
+        'Return STRICT JSON only.',
+        'The output schema is: {"definitions":[{"id":"...","definition":"..."}]}',
+        'Rules:',
+        '- Use only ids from the input list.',
+        '- Provide definitions in the language requested for each word.',
+        '- Definitions should be concise, 1-2 sentences maximum.'
+    ].join('\n');
+
+    const userPrompt = JSON.stringify({ words }, null, 2);
+
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+            model,
+            temperature: 0.2,
+            response_format: { type: 'json_object' },
+            messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+            ]
+        })
+    });
+
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) {
+        const message = payload?.error?.message || `OpenAI error ${response.status}`;
+        throw new Error(message);
+    }
+
+    const content = payload?.choices?.[0]?.message?.content;
+    const parsed = parseModelJson(content);
+
+    if (!parsed || !Array.isArray(parsed.definitions)) {
+        throw new Error('Модель вернула некорректный формат definitions');
+    }
+
+    return parsed.definitions;
+}
+
+/**
+ * AI-генерация описаний для слов, у которых их нет
+ * POST /api/admin/ai/generate-descriptions
+ */
+async function aiGenerateDescriptions(req, res) {
+    try {
+        const {
+            lang = 'lang_ru',
+            limit = 50,
+            model = process.env.OPENAI_MODEL || 'gpt-4o-mini'
+        } = req.body || {};
+
+        if (!['lang_ru', 'lang_uz'].includes(lang)) {
+            return res.status(400).json({
+                success: false,
+                error: 'lang должен быть lang_ru или lang_uz'
+            });
+        }
+
+        const maxLimit = Math.min(Number(limit) || 50, 100);
+        // Выбираем слова без definition
+        const words = await Word.find({ lang, definition: { $in: [null, ''] } })
+            .select('_id word lang')
+            .limit(maxLimit)
+            .lean();
+
+        if (words.length === 0) {
+            return res.status(400).json({
+                success: false,
+                error: 'Нет слов без описания для выбранного языка'
+            });
+        }
+
+        const modelDefinitions = await requestOpenAIDescriptions(
+            words.map(w => ({
+                id: w._id,
+                word: w.word,
+                language: w.lang === 'lang_ru' ? 'Russian' : 'Uzbek'
+            })),
+            model
+        );
+
+        let appliedParams = 0;
+        const results = [];
+
+        for (const def of modelDefinitions) {
+            const wordId = String(def?.id || '').trim();
+            const definition = String(def?.definition || '').trim();
+
+            if (!wordId || !definition) {
+                continue;
+            }
+
+            const updatedWord = await Word.findOneAndUpdate(
+                { _id: wordId, definition: { $in: [null, ''] } },
+                {
+                    $set: { definition: definition, updatedAt: new Date(), updatedBy: req.user?.id }
+                },
+                { new: true }
+            );
+
+            if (updatedWord) {
+                appliedParams++;
+                results.push({ id: wordId, word: updatedWord.word, definition });
+            }
+        }
+
+        return res.json({
+            success: true,
+            model,
+            lang,
+            targetCount: words.length,
+            appliedCount: appliedParams,
+            results
+        });
+    } catch (error) {
+        console.error('Ошибка в aiGenerateDescriptions:', error);
+        return res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
 }
 
 /**
@@ -1313,5 +1447,6 @@ module.exports = {
     getWordTree,
     importWords,
     aiLinkHyponyms,
+    aiGenerateDescriptions,
     syncRelations
 };

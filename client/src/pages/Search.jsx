@@ -64,18 +64,35 @@ export default function Search() {
     };
     
     // Выбор слова из результатов
-    const handleWordSelect = async (wordId) => {
+    const handleWordSelect = async (wordOrId) => {
+        const wordId = typeof wordOrId === 'string' ? wordOrId : wordOrId?.id;
+        if (!wordId) return;
+
         setLoading(true);
+        setError(null);
+
+        if (wordOrId && typeof wordOrId === 'object') {
+            setSelectedWord(wordOrId);
+        }
         
         try {
             // Загружаем слово
             const wordData = await getWord(wordId);
-            setSelectedWord(wordData.word);
             setRelatedWord(wordData.relatedWord);
             
             // Загружаем дерево
             const treeResult = await getWordTree(wordId, 3);
             setTreeData(treeResult.tree);
+
+            if (treeResult.tree) {
+                setSelectedWord({
+                    ...wordData.word,
+                    hypernyms: treeResult.tree.hypernyms || wordData.word.hypernyms || [],
+                    hyponyms: treeResult.tree.hyponyms || wordData.word.hyponyms || []
+                });
+            } else {
+                setSelectedWord(wordData.word);
+            }
             
             // Формируем breadcrumb
             if (treeResult.tree) {

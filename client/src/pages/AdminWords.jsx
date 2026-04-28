@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, Users, Plus, Edit, AlertCircle, Upload } from 'lucide-react';
+import { BookOpen, Users, Plus, Edit, AlertCircle, Upload, Wand2, FileText } from 'lucide-react';
 import './Admin.css';
+import adminAPI from '../services/adminAPI';
 import AdminWordsList from '../components/AdminWordsList';
 import AdminAddWord from '../components/AdminAddWord';
 import AdminEditWord from '../components/AdminEditWord';
@@ -55,6 +56,47 @@ export default function AdminWords() {
     const handleWordChanged = () => {
         setRefreshTrigger(prev => prev + 1);
         setActiveTab('list');
+    };
+    
+    const [generatingAI, setGeneratingAI] = useState(false);
+
+    const handleAIGenerateDescriptions = async () => {
+        if (!window.confirm('Попросить ИИ сгенерировать описания для русских и узбекских слов?\n(Убедитесь что в .env указан OPENAI_API_KEY)')) return;
+        try {
+            setGeneratingAI(true);
+            const [ruRes, uzRes] = await Promise.all([
+                adminAPI.aiGenerateDescriptions({ lang: 'lang_ru', limit: 50 }),
+                adminAPI.aiGenerateDescriptions({ lang: 'lang_uz', limit: 50 })
+            ]);
+
+            const totalApplied = (ruRes.appliedCount || 0) + (uzRes.appliedCount || 0);
+
+            alert(
+                `✅ ИИ-описания готовы\n` +
+                `RU: ${ruRes.appliedCount} из ${ruRes.targetCount}\n` +
+                `UZ: ${uzRes.appliedCount} из ${uzRes.targetCount}\n` +
+                `Всего: ${totalApplied}`
+            );
+            setRefreshTrigger(prev => prev + 1);
+        } catch (err) {
+            alert('Ошибка ИИ генерации: ' + err.message);
+        } finally {
+            setGeneratingAI(false);
+        }
+    };
+
+    const handleAILinkHyponyms = async () => {
+        if (!window.confirm('Попросить ИИ связать гипонимы-гиперонимы по смыслу?\nВнимание: Это запустит реальное связывание (не dryRun).')) return;
+        try {
+            setGeneratingAI(true);
+            const res = await adminAPI.aiLinkHyponyms({ lang: 'lang_ru', limit: 200, dryRun: false });
+            alert(`✅ Успешно создано новых связей: ${res.acceptedCount} (отклонено: ${res.rejectedCount})`);
+            setRefreshTrigger(prev => prev + 1);
+        } catch (err) {
+            alert('Ошибка ИИ связывания: ' + err.message);
+        } finally {
+            setGeneratingAI(false);
+        }
     };
     
     if (loading) {
@@ -125,6 +167,28 @@ export default function AdminWords() {
                     <Upload size={18} />
                     Массовый импорт
                 </button>
+                
+                {/* AI кнопки */}
+                <button
+                    className="admin-tab"
+                    onClick={handleAIGenerateDescriptions}
+                    disabled={generatingAI}
+                    title="Сгенерировать описания (definitions) для слов через OpenAI"
+                >
+                    <FileText size={18} className={generatingAI ? 'pulse' : ''} />
+                    ИИ: Описания
+                </button>
+
+                <button
+                    className="admin-tab"
+                    onClick={handleAILinkHyponyms}
+                    disabled={generatingAI}
+                    title="Установить гиперонимы и гипонимы нейросетью"
+                >
+                    <Wand2 size={18} className={generatingAI ? 'pulse' : ''} />
+                    ИИ: Связи
+                </button>
+
                 {selectedWord && (
                     <button
                         className={`admin-tab ${activeTab === 'edit' ? 'active' : ''}`}

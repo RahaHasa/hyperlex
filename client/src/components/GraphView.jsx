@@ -281,9 +281,9 @@ export default function GraphView({
                         </button>
                         <div className="tooltip-header">
                             <span className={`tooltip-type ${selectedNode.type}`}>
-                                {selectedNode.type === 'center' ? '🎯 Текущее слово' : 
-                                 selectedNode.type === 'hypernym' ? '📤 Гипероним' : 
-                                 '📥 Гипоним'}
+                                {selectedNode.type === 'center' ? 'Текущее слово' : 
+                                 selectedNode.type === 'hypernym' ? ' Гипероним' : 
+                                 'Гипоним'}
                             </span>
                         </div>
                         <h3 className="tooltip-word">{selectedNode.word}</h3>

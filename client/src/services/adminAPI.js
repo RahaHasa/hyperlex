@@ -179,6 +179,55 @@ const adminAPI = {
         }
         return response.json();
     },
+
+    // === ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ ===
+
+    /**
+     * AI-связывание гиперонимов и гипонимов
+     */
+    async aiLinkHyponyms(options) {
+        const token = getAuthToken();
+        if (!token) throw new Error('❌ Требуется авторизация');
+        
+        const response = await fetch(`${API_URL}/ai/link-hyponyms`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(options)
+        });
+        
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error || 'Ошибка при AI-связывании');
+        }
+        return response.json();
+    },
+
+    /**
+     * AI-генерация описаний слов
+     */
+    async aiGenerateDescriptions(options) {
+        const token = getAuthToken();
+        if (!token) throw new Error('❌ Требуется авторизация');
+        
+        const response = await fetch(`${API_URL}/ai/generate-descriptions`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(options)
+        });
+        
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error || 'Ошибка при генерации описаний');
+        }
+        return response.json();
+    },
+
     /**
      * Массовый импорт слов
      */
