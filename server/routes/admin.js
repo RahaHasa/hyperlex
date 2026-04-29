@@ -57,6 +57,10 @@ router.delete('/words/:id', wordAdminController.deleteWord);
 // POST /api/admin/import
 router.post('/import', upload.single('file'), wordAdminController.importWords);
 
+// AI дозаполнение строк для CSV перед импортом
+// POST /api/admin/ai/enrich-import-rows
+router.post('/ai/enrich-import-rows', wordAdminController.enrichImportRows);
+
 // AI связывание гиперонимов/гипонимов
 // POST /api/admin/ai/link-hyponyms
 router.post('/ai/link-hyponyms', wordAdminController.aiLinkHyponyms);

@@ -40,17 +40,17 @@ export default function AdminUsers() {
     }, [navigate]);
     
     if (loading) {
-        return <div style={{ textAlign: 'center', padding: '40px', fontSize: '1.2rem' }}>⏳ Загрузка...</div>;
+        return <div style={{ textAlign: 'center', padding: '40px', fontSize: '1.2rem' }}>Загрузка...</div>;
     }
     
     if (!isAdmin) {
-        return <div style={{ textAlign: 'center', padding: '40px', fontSize: '1.2rem' }}>❌ У вас нет доступа к админ панели</div>;
+        return <div style={{ textAlign: 'center', padding: '40px', fontSize: '1.2rem' }}>У вас нет доступа к админ панели</div>;
     }
     
     return (
         <div className="admin-container">
             <header className="admin-header">
-                <h1>⚙️ Администраторская панель</h1>
+                <h1>Администраторская панель</h1>
                 <p className="admin-subtitle">Управление пользователями и ролями</p>
             </header>
             
@@ -59,13 +59,13 @@ export default function AdminUsers() {
                     className="admin-nav-btn active"
                     onClick={() => navigate('/admin')}
                 >
-                    👥 Пользователи
+                    Пользователи
                 </button>
                 <button 
                     className="admin-nav-btn"
                     onClick={() => navigate('/admin/words')}
                 >
-                    📚 Управление словами
+                    Управление словами
                 </button>
             </div>
             

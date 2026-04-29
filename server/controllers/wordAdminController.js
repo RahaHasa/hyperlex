@@ -827,6 +827,404 @@ function isSingleWord(value) {
 }
 
 /**
+ * Генерирует недостающее слово через OpenAI
+ * Если есть русское слово - генерирует узбекский перевод
+ * Если есть узбекское слово - генерирует русский перевод
+ * Гарантирует: только существительные/прилагательные, одиночное слово без пробелов
+ */
+async function generateMissingWordViaOpenAI(sourceWord, sourceLanguage, modelOverride) {
+    try {
+        const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+        const OPENAI_MODEL = modelOverride || process.env.OPENAI_MODEL || 'gpt-4o-mini';
+        
+        if (!OPENAI_API_KEY) {
+            return null;
+        }
+
+        const targetLang = sourceLanguage === 'lang_ru' ? 'Uzbek' : 'Russian';
+        const sourceLang = sourceLanguage === 'lang_ru' ? 'Russian' : 'Uzbek';
+
+        const systemPrompt = `You are a professional translator specializing in Russian-Uzbek translation.
+Your task is to translate a single word to another language.
+STRICT RULES:
+- Translate ONLY nouns and adjectives (NO verbs, adverbs, prepositions, articles)
+- Return EXACTLY ONE single word (NO spaces, NO phrases)
+- Return ONLY the word itself, nothing else
+- If the word is not a noun or adjective, return: SKIP
+- If you cannot translate reliably, return: SKIP`;
+
+        const userPrompt = `Translate this ${sourceLang} word to ${targetLang}:
+${sourceWord}`;
+
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${OPENAI_API_KEY}`
+            },
+            body: JSON.stringify({
+                model: OPENAI_MODEL,
+                temperature: 0.1,
+                messages: [
+                    { role: 'system', content: systemPrompt },
+                    { role: 'user', content: userPrompt }
+                ]
+            })
+        });
+
+        if (!response.ok) {
+            return null;
+        }
+
+        const payload = await response.json();
+        const content = (payload?.choices?.[0]?.message?.content || '').trim();
+        
+        if (!content || content.toUpperCase() === 'SKIP') {
+            return null;
+        }
+
+        const generated = content.trim();
+        
+        // Проверяем что это одиночное слово без пробелов
+        if (!isSingleWord(generated)) {
+            return null;
+        }
+
+        return generated;
+    } catch (error) {
+        return null;
+    }
+}
+
+async function translateTextViaGoogle(text, sourceLangCode, targetLangCode) {
+    try {
+        const input = String(text || '').trim();
+        if (!input) return null;
+
+        const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sourceLangCode}&tl=${targetLangCode}&dt=t&q=${encodeURIComponent(input)}`;
+        const response = await fetch(url);
+        if (!response.ok) return null;
+
+        const payload = await response.json();
+        const segments = Array.isArray(payload?.[0]) ? payload[0] : [];
+        const translated = segments.map(part => part?.[0] || '').join('').trim();
+        return translated || null;
+    } catch (error) {
+        return null;
+    }
+}
+
+async function generateMissingWord(sourceWord, sourceLanguage, method, modelOverride) {
+    if (method === 'google') {
+        const sourceCode = sourceLanguage === 'lang_ru' ? 'ru' : 'uz';
+        const targetCode = sourceLanguage === 'lang_ru' ? 'uz' : 'ru';
+        const translated = await translateTextViaGoogle(sourceWord, sourceCode, targetCode);
+        if (!translated || !isSingleWord(translated)) return null;
+        return translated;
+    }
+
+    return generateMissingWordViaOpenAI(sourceWord, sourceLanguage, modelOverride);
+}
+
+async function translateDefinition(text, sourceLanguage, targetLanguage, method, modelOverride) {
+    if (method === 'google') {
+        const sourceCode = sourceLanguage === 'Russian' ? 'ru' : 'uz';
+        const targetCode = targetLanguage === 'Russian' ? 'ru' : 'uz';
+        return translateTextViaGoogle(text, sourceCode, targetCode);
+    }
+
+    return translateDefinitionViaOpenAI(text, sourceLanguage, targetLanguage, modelOverride);
+}
+
+async function translateDefinitionViaOpenAI(text, sourceLanguage, targetLanguage, modelOverride) {
+    try {
+        const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+        const OPENAI_MODEL = modelOverride || process.env.OPENAI_MODEL || 'gpt-4o-mini';
+
+        if (!OPENAI_API_KEY) {
+            return null;
+        }
+
+        const input = String(text || '').trim();
+        if (!input) return null;
+
+        const systemPrompt = `You are a professional translator.
+Translate text from ${sourceLanguage} to ${targetLanguage}.
+Rules:
+- Keep original meaning
+- Return plain text only
+- No explanations`;
+
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${OPENAI_API_KEY}`
+            },
+            body: JSON.stringify({
+                model: OPENAI_MODEL,
+                temperature: 0.1,
+                messages: [
+                    { role: 'system', content: systemPrompt },
+                    { role: 'user', content: input }
+                ]
+            })
+        });
+
+        if (!response.ok) return null;
+        const payload = await response.json();
+        const translated = String(payload?.choices?.[0]?.message?.content || '').trim();
+        return translated || null;
+    } catch (error) {
+        return null;
+    }
+}
+
+async function generateDefinitionViaOpenAI(word, language, modelOverride) {
+    try {
+        const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+        const OPENAI_MODEL = modelOverride || process.env.OPENAI_MODEL || 'gpt-4o-mini';
+
+        if (!OPENAI_API_KEY) {
+            return null;
+        }
+
+        const inputWord = String(word || '').trim();
+        if (!inputWord) return null;
+
+        const systemPrompt = `You create short dictionary definitions.
+Rules:
+- Language: ${language}
+- 1 sentence only
+- No examples
+- No markdown
+- Return plain text only`;
+
+        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${OPENAI_API_KEY}`
+            },
+            body: JSON.stringify({
+                model: OPENAI_MODEL,
+                temperature: 0.2,
+                messages: [
+                    { role: 'system', content: systemPrompt },
+                    { role: 'user', content: inputWord }
+                ]
+            })
+        });
+
+        if (!response.ok) return null;
+        const payload = await response.json();
+        const generated = String(payload?.choices?.[0]?.message?.content || '').trim();
+        return generated || null;
+    } catch (error) {
+        return null;
+    }
+}
+
+async function enrichImportRows(req, res) {
+    try {
+        const rows = Array.isArray(req.body?.rows) ? req.body.rows : [];
+        const method = String(req.body?.method || 'openai').toLowerCase() === 'google' ? 'google' : 'openai';
+        const model = String(req.body?.model || process.env.OPENAI_MODEL || 'gpt-5-mini');
+
+        if (rows.length === 0) {
+            return res.status(400).json({
+                success: false,
+                error: 'rows должен быть непустым массивом'
+            });
+        }
+
+        // batch size: 200-300
+        let batch = parseInt(req.body?.batch || 200, 10) || 200;
+        if (batch < 200) batch = 200;
+        if (batch > 300) batch = 300;
+
+        // concurrency: 10-20
+        let concurrency = parseInt(req.body?.concurrency || 15, 10) || 15;
+        if (concurrency < 10) concurrency = 10;
+        if (concurrency > 20) concurrency = 20;
+
+        // split into chunks
+        const chunks = [];
+        for (let i = 0; i < rows.length; i += batch) {
+            chunks.push(rows.slice(i, i + batch));
+        }
+
+        let enrichedCount = 0;
+        let skippedCount = 0;
+        const enrichedRows = [];
+
+        // process a single chunk sequentially
+        async function processChunk(chunk) {
+            const out = [];
+            let localEnriched = 0;
+            let localSkipped = 0;
+
+            for (const rawRow of chunk) {
+                const row = rawRow || {};
+                let wordRu = cleanWordValue(row.word_ru || row.word_1 || '');
+                let wordUz = cleanWordValue(row.word_uz || row.word_2 || '');
+                let definitionRu = String(row.definition_ru || '').trim();
+                let definitionUz = String(row.definition_uz || '').trim();
+
+                // Detect mislabeled
+                if (wordRu && !wordUz) {
+                    const detected = detectLanguage(wordRu);
+                    if (detected === 'lang_uz') {
+                        wordUz = wordRu;
+                        wordRu = '';
+                        if (!definitionUz && definitionRu) {
+                            definitionUz = definitionRu;
+                            definitionRu = '';
+                        }
+                    }
+                }
+
+                if (!wordRu && wordUz) {
+                    const detected = detectLanguage(wordUz);
+                    if (detected === 'lang_ru') {
+                        wordRu = wordUz;
+                        wordUz = '';
+                        if (!definitionRu && definitionUz) {
+                            definitionRu = definitionUz;
+                            definitionUz = '';
+                        }
+                    }
+                }
+
+                // PHASE 1: fill words
+                if (wordRu && !wordUz) {
+                    const generatedUz = await generateMissingWord(wordRu, 'lang_ru', method, model);
+                    if (generatedUz) {
+                        wordUz = generatedUz;
+                        localEnriched += 1;
+                    }
+                }
+
+                if (!wordRu && wordUz) {
+                    const generatedRu = await generateMissingWord(wordUz, 'lang_uz', method, model);
+                    if (generatedRu) {
+                        wordRu = generatedRu;
+                        localEnriched += 1;
+                    }
+                }
+
+                // if still missing words - skip
+                if (!wordRu || !wordUz) {
+                    localSkipped += 1;
+                    out.push({
+                        ...row,
+                        word_ru: wordRu,
+                        definition_ru: definitionRu,
+                        word_uz: wordUz,
+                        definition_uz: definitionUz
+                    });
+                    continue;
+                }
+
+                // PHASE 2: fill definitions
+                if (!definitionRu && definitionUz) {
+                    const translatedRu = await translateDefinition(definitionUz, 'Uzbek', 'Russian', method, model);
+                    if (translatedRu) {
+                        definitionRu = translatedRu;
+                        localEnriched += 1;
+                    }
+                }
+
+                if (!definitionUz && definitionRu) {
+                    const translatedUz = await translateDefinition(definitionRu, 'Russian', 'Uzbek', method, model);
+                    if (translatedUz) {
+                        definitionUz = translatedUz;
+                        localEnriched += 1;
+                    }
+                }
+
+                if (!definitionRu && wordRu) {
+                    const generatedRu = await generateDefinitionViaOpenAI(wordRu, 'Russian', model);
+                    if (generatedRu) {
+                        definitionRu = generatedRu;
+                        localEnriched += 1;
+                    }
+                }
+
+                if (!definitionUz && definitionRu) {
+                    const translatedUz = await translateDefinition(definitionRu, 'Russian', 'Uzbek', method, model);
+                    if (translatedUz) {
+                        definitionUz = translatedUz;
+                        localEnriched += 1;
+                    }
+                }
+
+                if (!definitionUz && wordUz) {
+                    const generatedUz = await generateDefinitionViaOpenAI(wordUz, 'Uzbek', model);
+                    if (generatedUz) {
+                        definitionUz = generatedUz;
+                        localEnriched += 1;
+                    }
+                }
+
+                if (!definitionRu && definitionUz) {
+                    const translatedRu = await translateDefinition(definitionUz, 'Uzbek', 'Russian', method, model);
+                    if (translatedRu) {
+                        definitionRu = translatedRu;
+                        localEnriched += 1;
+                    }
+                }
+
+                out.push({
+                    ...row,
+                    word_ru: wordRu,
+                    definition_ru: definitionRu,
+                    word_uz: wordUz,
+                    definition_uz: definitionUz
+                });
+            }
+
+            return { rows: out, enriched: localEnriched, skipped: localSkipped };
+        }
+
+        // worker pool consuming chunks
+        let nextIndex = 0;
+        async function worker() {
+            while (true) {
+                const myIndex = nextIndex++;
+                if (myIndex >= chunks.length) break;
+                const result = await processChunk(chunks[myIndex]);
+                enrichedRows.push(...result.rows);
+                enrichedCount += result.enriched;
+                skippedCount += result.skipped;
+            }
+        }
+
+        const realConcurrency = Math.min(concurrency, chunks.length || 1);
+        const workers = [];
+        for (let w = 0; w < realConcurrency; w++) workers.push(worker());
+        await Promise.all(workers);
+
+        return res.json({
+            success: true,
+            rows: enrichedRows,
+            enrichedCount,
+            skippedCount,
+            method,
+            model,
+            batch,
+            concurrency
+        });
+    } catch (error) {
+        console.error('enrichImportRows error:', error);
+        return res.status(500).json({
+            success: false,
+            error: 'Ошибка AI-дозаполнения: ' + error.message
+        });
+    }
+}
+
+/**
  * Массовый импорт пар слов из CSV/JSON
  * POST /api/admin/import
  */
@@ -1517,7 +1915,7 @@ async function aiGenerateDescriptionsStream(req, res) {
 /**
  * Запрос к OpenAI Chat Completions API
  */
-async function requestOpenAIHyponymLinks(words, model) {
+async function requestOpenAIHyponymLinks(words, model, depth = 3) {
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
         throw new Error('OPENAI_API_KEY не задан. Добавьте ключ в server/.env');
@@ -1531,7 +1929,12 @@ async function requestOpenAIHyponymLinks(words, model) {
         '- Use only ids from the input list.',
         '- hypernymId must be a more general concept than hyponymId.',
         '- Do not create duplicate or reversed duplicates.',
-        '- confidence must be a number from 0 to 1.'
+        '- confidence must be a number from 0 to 1.',
+        `- Build a hierarchy that can reasonably support up to ${depth} layer(s).`,
+        `- Prefer clearer and more general links when the requested depth is ${depth}.`,
+        '- Aim for a readable tree such as root -> broader term -> mid-level term -> specific term -> leaf term.',
+        '- If the input words are sparse, create only the strongest direct parent-child links you can justify from the definitions.',
+        '- If the batch already contains a valid chain, keep extending that chain rather than flattening it.'
     ].join('\n');
 
     const userPrompt = JSON.stringify({ words }, null, 2);
@@ -1580,7 +1983,8 @@ async function aiLinkHyponyms(req, res) {
             limit = 200,
             minConfidence = 0.75,
             dryRun = true,
-            model = process.env.OPENAI_MODEL || 'gpt-4o-mini'
+            model = process.env.OPENAI_MODEL || 'gpt-4o-mini',
+            depth = 3
         } = req.body || {};
 
         if (!['lang_ru', 'lang_uz'].includes(lang)) {
@@ -1604,13 +2008,18 @@ async function aiLinkHyponyms(req, res) {
             });
         }
 
+        const normalizedDepth = Math.max(2, Math.min(Number(depth) || 3, 5));
+
+        console.log(`[AI links] lang=${lang} limit=${maxLimit} depth=${normalizedDepth} dryRun=${dryRun}`);
+
         const modelLinks = await requestOpenAIHyponymLinks(
             words.map(w => ({
                 id: w._id,
                 word: w.word,
                 definition: w.definition || ''
             })),
-            model
+            model,
+            normalizedDepth
         );
 
         const wordIds = new Set(words.map(w => w._id));
@@ -1655,6 +2064,7 @@ async function aiLinkHyponyms(req, res) {
                 dryRun: true,
                 model,
                 lang,
+                depth: normalizedDepth,
                 processedWords: words.length,
                 acceptedCount: acceptedLinks.length,
                 rejectedCount: rejectedLinks.length,
@@ -1694,6 +2104,7 @@ async function aiLinkHyponyms(req, res) {
             dryRun: false,
             model,
             lang,
+            depth: normalizedDepth,
             processedWords: words.length,
             acceptedCount: acceptedLinks.length,
             rejectedCount: rejectedLinks.length,
@@ -1723,11 +2134,13 @@ async function aiLinkHyponymsStream(req, res) {
         const {
             batchSize = 100,
             minConfidence = 0.75,
-            model = process.env.OPENAI_MODEL || 'gpt-4o-mini'
+            model = process.env.OPENAI_MODEL || 'gpt-4o-mini',
+            depth = 3
         } = req.body || {};
 
         const maxBatchSize = Math.min(Math.max(Number(batchSize) || 100, 10), 200);
         const minConfidenceNum = Math.max(Math.min(Number(minConfidence) || 0.75, 1), 0);
+        const normalizedDepth = Math.max(2, Math.min(Number(depth) || 3, 5));
         const languages = ['lang_ru', 'lang_uz'];
         
         // Получаем статистику
@@ -1736,6 +2149,7 @@ async function aiLinkHyponymsStream(req, res) {
         );
 
         const totalCount = counts.reduce((sum, count) => sum + count, 0);
+        const totalRequests = counts.reduce((sum, count) => sum + Math.ceil(count / maxBatchSize), 0);
         const perLanguage = Object.fromEntries(languages.map((lang, index) => [lang, {
             total: counts[index],
             processed: 0,
@@ -1766,8 +2180,11 @@ async function aiLinkHyponymsStream(req, res) {
             message: 'Начало пакетной обработки связей'
         });
 
+        console.log(`[AI links stream] start totalWords=${totalCount} totalRequests=${totalRequests} batchSize=${maxBatchSize} depth=${normalizedDepth}`);
+
         let totalProcessedWords = 0;
         let totalAppliedLinks = 0;
+        let completedRequests = 0;
         const processedIds = new Set();
 
         for (const lang of languages) {
@@ -1787,6 +2204,9 @@ async function aiLinkHyponymsStream(req, res) {
                 }
 
                 try {
+                    completedRequests += 1;
+                    console.log(`[AI links stream] request ${completedRequests}/${totalRequests} lang=${lang} words=${batchWords.length} depth=${normalizedDepth}`);
+
                     // API запрос для определения связей
                     const modelLinks = await requestOpenAIHyponymLinks(
                         batchWords.map(w => ({
@@ -1794,7 +2214,8 @@ async function aiLinkHyponymsStream(req, res) {
                             word: w.word,
                             definition: w.definition || ''
                         })),
-                        model
+                        model,
+                        normalizedDepth
                     );
 
                     const wordIds = new Set(batchWords.map(w => w._id));
@@ -1853,6 +2274,8 @@ async function aiLinkHyponymsStream(req, res) {
                         appliedLinksInBatch: appliedCount,
                         totalProcessedWords,
                         totalAppliedLinks,
+                        completedRequests,
+                        totalRequests,
                         perLanguage,
                         message: `Обработано ${totalProcessedWords}/${totalCount}, создано связей: ${totalAppliedLinks}`
                     });
@@ -1879,6 +2302,9 @@ async function aiLinkHyponymsStream(req, res) {
             totalCount,
             totalProcessedWords,
             totalAppliedLinks,
+            completedRequests,
+            totalRequests,
+            depth: normalizedDepth,
             perLanguage,
             message: `Готово: обработано ${totalProcessedWords} слов, создано ${totalAppliedLinks} связей`
         });
@@ -1955,6 +2381,7 @@ module.exports = {
     searchForHypernyms,
     getWordTree,
     importWords,
+    enrichImportRows,
     aiLinkHyponyms,
     aiLinkHyponymsStream,
     aiGenerateDescriptions,

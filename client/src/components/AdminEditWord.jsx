@@ -19,6 +19,8 @@ export default function AdminEditWord({ word, onSuccess, onCancel }) {
     
     const [hypernymsInput, setHypernymsInput] = useState('');
     const [suggestions, setSuggestions] = useState([]);
+    const [relatedInput, setRelatedInput] = useState('');
+    const [relatedSuggestions, setRelatedSuggestions] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
@@ -33,6 +35,18 @@ export default function AdminEditWord({ word, onSuccess, onCancel }) {
                 hyponyms: word.hyponyms || [],
                 related: word.related || { ru: null, uz: null }
             });
+            const relatedId = word.lang === 'lang_ru' ? word.related?.uz : word.related?.ru;
+            if (relatedId) {
+                adminAPI.getWord(relatedId)
+                    .then(result => {
+                        setRelatedInput(result.word?.word || result.word || '');
+                    })
+                    .catch(() => {
+                        setRelatedInput(relatedId);
+                    });
+            } else {
+                setRelatedInput('');
+            }
         }
     }, [word]);
     
@@ -103,6 +117,37 @@ export default function AdminEditWord({ word, onSuccess, onCancel }) {
         setHypernymsInput('');
         setSuggestions([]);
     }
+
+    async function handleRelatedInputChange(e) {
+        const query = e.target.value;
+        setRelatedInput(query);
+
+        if (query.length < 2) {
+            setRelatedSuggestions([]);
+            return;
+        }
+
+        try {
+            const relatedLang = word.lang === 'lang_ru' ? 'lang_uz' : 'lang_ru';
+            const result = await adminAPI.searchHypernyms(query, relatedLang, 5);
+            setRelatedSuggestions(result.results || []);
+        } catch (err) {
+            console.error('Ошибка при поиске связанного слова:', err);
+        }
+    }
+
+    function addRelatedWord(selectedWord) {
+        const relatedId = selectedWord._id;
+        setForm(prev => ({
+            ...prev,
+            related: {
+                ...prev.related,
+                [word.lang === 'lang_ru' ? 'uz' : 'ru']: relatedId
+            }
+        }));
+        setRelatedInput(selectedWord.word || '');
+        setRelatedSuggestions([]);
+    }
     
     // Удалить гипероним
     function removeHypernym(id) {
@@ -141,19 +186,19 @@ export default function AdminEditWord({ word, onSuccess, onCancel }) {
     return (
         <div className="edit-word-form">
             <div className="edit-header">
-                <h2>✏️ Редактировать слово</h2>
+                <h2>Редактировать слово</h2>
                 <code className="word-id">{word._id}</code>
             </div>
             
             {success && (
                 <div className="success-message">
-                    ✅ Слово успешно обновлено!
+                    Слово успешно обновлено.
                 </div>
             )}
             
             {error && (
                 <div className="error-message">
-                    ❌ {error}
+                    {error}
                 </div>
             )}
             
@@ -174,7 +219,7 @@ export default function AdminEditWord({ word, onSuccess, onCancel }) {
                 <div className="form-group">
                     <label>Язык</label>
                     <div className="form-static">
-                        {word.lang === 'lang_ru' ? '🇷🇺' : '🇺🇿'} {word.lang === 'lang_ru' ? 'RU' : 'UZ'}
+                        {word.lang === 'lang_ru' ? 'RU' : 'UZ'}
                     </div>
                 </div>
                 
@@ -289,30 +334,52 @@ export default function AdminEditWord({ word, onSuccess, onCancel }) {
                             })}
                         </div>
                     )}
-                    <small>💡 Виды/подтипы данного слова</small>
+                    <small>Виды и подтипы данного слова</small>
                 </div>
                 
                 {/* Связанное слово (related) */}
                 <div className="form-group">
                     <label>
-                        {word.lang === 'lang_ru' ? '🇺🇿 Связанное узбекское слово' : '🇷🇺 Связанное русское слово'}
+                        {word.lang === 'lang_ru' ? 'Связанное узбекское слово' : 'Связанное русское слово'}
                     </label>
                     
                     <input
                         type="text"
-                        name={word.lang === 'lang_ru' ? 'related.uz' : 'related.ru'}
-                        value={word.lang === 'lang_ru' ? (form.related.uz || '') : (form.related.ru || '')}
-                        onChange={handleChange}
-                        placeholder={word.lang === 'lang_ru' ? 'uz_001' : 'ru_001'}
+                        value={relatedInput}
+                        onChange={handleRelatedInputChange}
+                        placeholder={word.lang === 'lang_ru' ? 'Начните вводить узбекское слово...' : 'Начните вводить русское слово...'}
                         className="form-input"
                     />
-                    <small>💡 ID соответствующего слова на другом языке для сравнения</small>
+
+                    {relatedSuggestions.length > 0 && (
+                        <ul className="suggestions-list">
+                            {relatedSuggestions.map(sugg => (
+                                <li
+                                    key={sugg._id}
+                                    onClick={() => addRelatedWord(sugg)}
+                                    className="suggestion-item"
+                                >
+                                    <strong>{sugg.word}</strong>
+                                    <span className="lang-badge">
+                                        {sugg.lang?.replace('lang_', '').toUpperCase()}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+
+                    <input
+                        type="hidden"
+                        name={word.lang === 'lang_ru' ? 'related.uz' : 'related.ru'}
+                        value={word.lang === 'lang_ru' ? (form.related.uz || '') : (form.related.ru || '')}
+                    />
+                    <small>Выберите слово из списка, ID сохранится автоматически</small>
                 </div>
                 
                 {/* Гипонимы (только просмотр) */}
                 {word.hyponyms && word.hyponyms.length > 0 && (
                     <div className="form-group">
-                        <label>📊 Это слово входит веществ-определяется другими:</label>
+                        <label>Это слово входит в определения других слов:</label>
                         <div className="info-list">
                             {word.hyponyms.map(hyponym => {
                                 const id = hyponym._id || hyponym;
@@ -337,14 +404,14 @@ export default function AdminEditWord({ word, onSuccess, onCancel }) {
                         disabled={loading}
                         className="btn btn-primary"
                     >
-                        {loading ? '⏳ Сохранение...' : '💾 Обновить'}
+                        {loading ? 'Сохранение...' : 'Обновить'}
                     </button>
                     <button
                         type="button"
                         onClick={onCancel}
                         className="btn btn-secondary"
                     >
-                        ❌ Отмена
+                        Отмена
                     </button>
                 </div>
             </form>

@@ -186,7 +186,7 @@ async function main() {
         }
 
         // Параметры батча
-        const BATCH_SIZE = 2000;
+        const BATCH_SIZE = 500;
         const DELAY_BETWEEN_BATCHES = 0;
 
         let created = 0;

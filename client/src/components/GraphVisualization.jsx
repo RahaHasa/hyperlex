@@ -222,7 +222,7 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
             .attr('text-anchor', 'middle')
             .attr('dy', '1.8em')
             .attr('class', 'node-lang')
-            .text(d => d.data.language === 'ru' ? '🇷🇺' : '🇺🇿')
+            .text(d => d.data.language === 'ru' ? 'RU' : 'UZ')
             .attr('font-size', '10px')
             .attr('pointer-events', 'none');
         
@@ -281,7 +281,7 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
             .attr('text-anchor', 'middle')
             .attr('font-size', '20px')
             .style('pointer-events', 'none')
-            .text('🔍+');
+            .text('Zoom +');
         
         // Кнопка Zoom Out
         toolbar.append('rect')
@@ -305,7 +305,7 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
             .attr('text-anchor', 'middle')
             .attr('font-size', '20px')
             .style('pointer-events', 'none')
-            .text('🔍−');
+            .text('Zoom -');
         
         // Кнопка Reset
         toolbar.append('rect')
@@ -351,7 +351,7 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
             )}
             
             <div className="graph-hint">
-                <span>💡 Используй мышь для панорамирования и зуммирования</span>
+                <span>Используй мышь для панорамирования и зуммирования</span>
             </div>
         </div>
     );

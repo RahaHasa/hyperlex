@@ -181,9 +181,10 @@ export default function AdminWords() {
 
     const [linkingHyponyms, setLinkingHyponyms] = useState(false);
     const [linkProgress, setLinkProgress] = useState(null);
+    const [linkDepth, setLinkDepth] = useState(3);
 
     const handleAILinkHyponyms = async () => {
-        if (!window.confirm('Запустить AI связывание гиперонимов/гипонимов для ВСЕ данных?\nСервер будет обрабатывать пакетами и показывать прогресс.')) return;
+        if (!window.confirm(`Запустить AI связывание гиперонимов/гипонимов для ВСЕ данных?\nГлубина связей: ${linkDepth} слоя(ов).\nСервер будет обрабатывать пакетами и показывать прогресс.`)) return;
         try {
             setLinkingHyponyms(true);
             setLinkProgress({
@@ -191,7 +192,10 @@ export default function AdminWords() {
                 totalCount: 0,
                 totalProcessedWords: 0,
                 totalAppliedLinks: 0,
+                totalRequests: 0,
+                completedRequests: 0,
                 batchSize: 100,
+                depth: linkDepth,
                 lastMessage: 'Инициализация...',
                 perLanguage: {
                     lang_ru: { total: 0, processed: 0, appliedLinks: 0 },
@@ -200,12 +204,13 @@ export default function AdminWords() {
             });
 
             await adminAPI.linkHyponymsAIStream(
-                { batchSize: 100, minConfidence: 0.75 },
+                { batchSize: 100, minConfidence: 0.75, depth: linkDepth },
                 {
                     onStart: (event) => {
                         setLinkProgress(prev => ({
                             ...prev,
                             totalCount: event.totalCount,
+                            totalRequests: event.totalRequests || 0,
                             status: 'running',
                             lastMessage: 'Начало обработки...',
                             perLanguage: event.perLanguage || prev.perLanguage
@@ -216,6 +221,8 @@ export default function AdminWords() {
                             ...prev,
                             totalProcessedWords: event.totalProcessedWords,
                             totalAppliedLinks: event.totalAppliedLinks,
+                            completedRequests: event.completedRequests || prev.completedRequests,
+                            totalRequests: event.totalRequests || prev.totalRequests,
                             lastMessage: event.message || 'Обработка...',
                             perLanguage: event.perLanguage || prev.perLanguage
                         }));
@@ -242,7 +249,8 @@ export default function AdminWords() {
             alert(
                 `✅ AI Связывание завершено\n` +
                 `Обработано слов: ${linkProgress.totalProcessedWords || 0}\n` +
-                `Создано связей: ${linkProgress.totalAppliedLinks || 0}`
+                `Создано связей: ${linkProgress.totalAppliedLinks || 0}\n` +
+                `AI запросов: ${linkProgress.completedRequests || 0}/${linkProgress.totalRequests || 0}`
             );
             setRefreshTrigger(prev => prev + 1);
         } catch (err) {
@@ -327,6 +335,7 @@ export default function AdminWords() {
                 </button>
                 
                 {/* AI кнопки */}
+                {/*
                 <button
                     className="admin-tab"
                     onClick={handleAIGenerateDescriptions}
@@ -336,11 +345,12 @@ export default function AdminWords() {
                     <FileText size={18} className={generatingAI ? 'pulse' : ''} />
                     ИИ: Описания
                 </button>
+                */}
 
                 <button
                     className="admin-tab"
                     onClick={handleAILinkHyponyms}
-                    disabled={generatingAI}
+                    disabled={generatingAI || linkingHyponyms}
                     title="Установить гиперонимы и гипонимы нейросетью"
                 >
                     <Wand2 size={18} className={generatingAI ? 'pulse' : ''} />
@@ -358,6 +368,7 @@ export default function AdminWords() {
                 )}
             </div>
 
+            {/*
             {descriptionProgress && (
                 <div className="ai-progress-panel">
                     <div className="ai-progress-header">
@@ -388,6 +399,7 @@ export default function AdminWords() {
                     </div>
                 </div>
             )}
+            */}
 
             {linkProgress && (
                 <div className="ai-progress-panel">
@@ -406,11 +418,17 @@ export default function AdminWords() {
                         Создано связей: {linkProgress.totalAppliedLinks || 0}
                     </div>
                     <div className="ai-progress-sub">
+                        AI запросы: {linkProgress.completedRequests || 0}/{linkProgress.totalRequests || 0}
+                    </div>
+                    <div className="ai-progress-sub">
+                        Глубина иерархии: {linkProgress.depth || linkDepth} слоя(ов)
+                    </div>
+                    <div className="ai-progress-sub">
                         Статус: {linkProgress.lastMessage}
                     </div>
                     {linkProgress.status === 'running' && (
                         <div className="ai-progress-sub">
-                            Идет пакетная обработка связей по {linkProgress.batchSize} слов...
+                            Идет пакетная обработка связей по {linkProgress.batchSize} слов на запрос...
                         </div>
                     )}
                     <div className="ai-progress-langs">
@@ -419,6 +437,23 @@ export default function AdminWords() {
                     </div>
                 </div>
             )}
+
+            <div className="admin-content" style={{ marginTop: '1rem' }}>
+                <div className="form-group" style={{ maxWidth: '320px' }}>
+                    <label>Глубина AI-связей</label>
+                    <select
+                        className="form-select"
+                        value={linkDepth}
+                        onChange={(e) => setLinkDepth(Number(e.target.value))}
+                        disabled={linkingHyponyms}
+                    >
+                        <option value={2}>2 слоя</option>
+                        <option value={3}>3 слоя</option>
+                        <option value={4}>4 слоя</option>
+                        <option value={5}>5 слоёв</option>
+                    </select>
+                </div>
+            </div>
             
             <div className="admin-content">
                 {activeTab === 'list' && (

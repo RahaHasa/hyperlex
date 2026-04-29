@@ -15,6 +15,56 @@
     color: var(--color-text-light);
 }
 
+.admin-import__tabs {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 2px solid rgba(201, 169, 89, 0.15);
+}
+
+.admin-import__tab-btn {
+    padding: 0.75rem 1.25rem;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.admin-import__tab-btn:hover {
+    color: var(--color-primary);
+}
+
+.admin-import__tab-btn.active {
+    color: var(--color-primary-dark);
+    border-bottom-color: var(--color-primary);
+}
+
+.admin-import__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-import__tab {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-import__tab h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.1rem;
+    color: var(--color-primary-dark);
+}
+
+.admin-import__subtitle {
+    margin: 0;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
 .admin-import__box,
 .admin-import__preview,
 .admin-import__error,
@@ -96,6 +146,41 @@
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
+}
+
+.admin-import__actions button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: 0.95rem;
+}
+
+.admin-import__actions button:first-child {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.admin-import__actions button:first-child:hover:not(:disabled) {
+    background: var(--color-primary-light);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.admin-import__actions button:last-child {
+    background: var(--color-border);
+    color: var(--color-text);
+}
+
+.admin-import__actions button:last-child:hover:not(:disabled) {
+    background: rgba(201, 169, 89, 0.2);
+}
+
+.admin-import__actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .admin-import__actions button {

@@ -333,6 +333,27 @@ const adminAPI = {
         return data;
     },
 
+    async enrichImportRows(rows, method = 'openai') {
+        const token = getAuthToken();
+        if (!token) throw new Error('❌ Требуется авторизация');
+
+        const response = await fetch(`${API_URL}/ai/enrich-import-rows`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ rows, method })
+        });
+
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok) {
+            throw new Error(data.error || 'Ошибка AI-дозаполнения строк');
+        }
+
+        return data;
+    },
+
     /**
      * AI-связывание гиперонимов/гипонимов
      */

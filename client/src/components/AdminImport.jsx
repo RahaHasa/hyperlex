@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import adminAPI from '../services/adminAPI';
 import './AdminImport.css';
 
@@ -45,7 +45,7 @@ function parseCSV(content) {
             row[header] = values[index] || '';
         });
         return row;
-    }).filter(row => row.word_ru || row.word_uz);
+    }).filter(row => row.word_ru || row.word_uz || row.word_1 || row.word_2);
 }
 
 function parseTSV(content) {
@@ -163,166 +163,189 @@ function parseXMLPreview(content) {
         return result;
     }
 
-    throw new Error('XML не содержит поддерживаемых данных для превью');
+    throw new Error('XML не содержит поддерживаемых данных');
 }
 
-export default function AdminImport({ onSuccess, onCancel }) {
-    const [file, setFile] = useState(null);
-    const [format, setFormat] = useState('csv');
-    const [preview, setPreview] = useState([]);
-    const [totalRows, setTotalRows] = useState(0);
-    const [error, setError] = useState('');
-    const [success, setSuccess] = useState('');
-    const [loading, setLoading] = useState(false);
+// ===== КОНВЕРТЕР ОТ JSON/XML/TSV/TXT В CSV =====
+function Converter() {
+    const [sourceFile, setSourceFile] = useState(null);
+    const [sourceFormat, setSourceFormat] = useState('');
+    const [convertedData, setConvertedData] = useState([]);
+    const [convertError, setConvertError] = useState('');
+    const [convertSuccess, setConvertSuccess] = useState('');
+    const [aiFilling, setAiFilling] = useState(false);
+    const [enrichMethod, setEnrichMethod] = useState('openai');
     const inputRef = useRef(null);
 
-    const previewTitle = useMemo(() => {
-        if (format === 'json') return 'JSON';
-        if (format === 'xml') return 'XML';
-        if (format === 'txt') return 'TXT';
-        if (format === 'tsv') return 'TSV';
-        return 'CSV';
-    }, [format]);
-
-    function handleFileChange(event) {
+    function handleSourceFileChange(event) {
         const selected = event.target.files?.[0];
-        setError('');
-        setSuccess('');
+        setConvertError('');
+        setConvertSuccess('');
+        setConvertedData([]);
 
         if (!selected) {
-            setFile(null);
-            setPreview([]);
-            setTotalRows(0);
+            setSourceFile(null);
             return;
         }
 
         const isJson = selected.name.toLowerCase().endsWith('.json');
-        const isCsv = selected.name.toLowerCase().endsWith('.csv');
         const isXml = selected.name.toLowerCase().endsWith('.xml');
         const isTxt = selected.name.toLowerCase().endsWith('.txt');
         const isTsv = selected.name.toLowerCase().endsWith('.tsv');
         const isBz2 = selected.name.toLowerCase().endsWith('.bz2');
         const isBz = selected.name.toLowerCase().endsWith('.bz');
-        const isBzArchive = isBz2 || isBz;
 
-        if (!isJson && !isCsv && !isXml && !isTxt && !isTsv && !isBzArchive) {
-            setError('Поддерживаются CSV, JSON, XML, TSV, TXT, BZ и BZ2 файлы');
-            setFile(null);
-            setPreview([]);
-            setTotalRows(0);
+        const formats = {
+            json: isJson,
+            xml: isXml,
+            txt: isTxt,
+            tsv: isTsv,
+            bz2: isBz2,
+            bz: isBz
+        };
+
+        const detectedFormat = Object.keys(formats).find(f => formats[f]);
+        if (!detectedFormat) {
+            setConvertError('Поддерживаются JSON, XML, TSV, TXT, BZ и BZ2 файлы');
             return;
         }
 
-        setFormat(isJson ? 'json' : isXml ? 'xml' : isTsv ? 'tsv' : isBz2 ? 'bz2' : isBz ? 'bz' : isTxt ? 'txt' : 'csv');
-        setFile(selected);
+        if (detectedFormat === 'bz' || detectedFormat === 'bz2') {
+            setConvertError('BZ/BZ2 конвертацию нужно делать на сервере. Используйте прямую загрузку в импортер.');
+            return;
+        }
+
+        setSourceFormat(detectedFormat);
+        setSourceFile(selected);
 
         const reader = new FileReader();
         reader.onload = (e) => {
             try {
-                // BZ2 файлы загружаем как бинарные данные для отправки на сервер
-                if (isBzArchive) {
-                    setTotalRows(-1); // Неизвестное количество, будет распако на сервере
-                    setPreview([{ note: '📦 BZ/BZ2 файл будет распакован во время импорта...' }]);
-                    return;
-                }
-
                 const text = String(e.target.result || '');
                 let data = [];
 
-                if (isJson) {
+                if (detectedFormat === 'json') {
                     const parsed = JSON.parse(text);
                     data = Array.isArray(parsed) ? parsed : [parsed];
-                } else if (isXml) {
+                } else if (detectedFormat === 'xml') {
                     data = parseXMLPreview(text);
-                } else if (isTsv) {
+                } else if (detectedFormat === 'tsv') {
                     data = parseTSV(text);
-                } else if (isTxt) {
+                } else if (detectedFormat === 'txt') {
                     data = parseTextPreview(text);
-                } else {
-                    data = parseCSV(text);
                 }
 
-                setTotalRows(data.length);
-                setPreview(data.slice(0, PREVIEW_LIMIT));
+                setConvertedData(data);
+                setConvertSuccess(`Разобрано ${data.length} записей`);
             } catch (err) {
-                setError(`Ошибка разбора файла: ${err.message}`);
-                setFile(null);
-                setPreview([]);
-                setTotalRows(0);
+                setConvertError(`Ошибка разбора: ${err.message}`);
             }
         };
 
-        if (isBzArchive) {
-            reader.readAsArrayBuffer(selected);
-        } else {
-            reader.readAsText(selected);
-        }
+        reader.readAsText(selected);
     }
 
-    async function handleImport() {
-        if (!file) {
-            setError('Выберите файл для импорта');
+    function downloadAsCSV() {
+        if (convertedData.length === 0) {
+            setConvertError('Данные для скачивания не загружены');
             return;
         }
 
-        setLoading(true);
-        setError('');
-        setSuccess('');
+        const headers = ['word_ru', 'definition_ru', 'word_uz', 'definition_uz'];
+        const csvLines = [headers.join(',')];
+
+        convertedData.forEach(row => {
+            const values = headers.map(header => {
+                const val = row[header] || '';
+                return `"${val.replace(/"/g, '""')}"`;
+            });
+            csvLines.push(values.join(','));
+        });
+
+        const csv = csvLines.join('\n');
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.setAttribute('href', URL.createObjectURL(blob));
+        link.setAttribute('download', `converted_${Date.now()}.csv`);
+        link.click();
+
+        setConvertSuccess('CSV скачан успешно');
+    }
+
+    async function fillMissingWithAI() {
+        if (convertedData.length === 0) {
+            setConvertError('Нет данных для AI-дозаполнения');
+            return;
+        }
+
+        setAiFilling(true);
+        setConvertError('');
+        setConvertSuccess('');
 
         try {
-            const formData = new FormData();
-            formData.append('file', file);
-            formData.append('format', format);
+            const CHUNK_SIZE = 100;
+            const nextRows = [...convertedData];
+            let totalEnriched = 0;
 
-            const result = await adminAPI.importData(formData);
+            for (let i = 0; i < nextRows.length; i += CHUNK_SIZE) {
+                const chunk = nextRows.slice(i, i + CHUNK_SIZE);
+                const result = await adminAPI.enrichImportRows(chunk, enrichMethod);
+                const enrichedRows = Array.isArray(result.rows) ? result.rows : chunk;
 
-            setSuccess(
-                `Импорт завершен. Добавлено: ${result.created || 0}, обновлено: ${result.updated || 0}. ` +
-                `Следующие ID: ${result.nextRuId || '-'} / ${result.nextUzId || '-'}`
-            );
-            setFile(null);
-            setPreview([]);
-            setTotalRows(0);
-            if (inputRef.current) {
-                inputRef.current.value = '';
+                for (let j = 0; j < enrichedRows.length; j++) {
+                    nextRows[i + j] = enrichedRows[j];
+                }
+
+                totalEnriched += Number(result.enrichedCount || 0);
+                setConvertSuccess(`AI обработка (${enrichMethod}): ${Math.min(i + CHUNK_SIZE, nextRows.length)}/${nextRows.length}`);
             }
 
-            if (onSuccess) {
-                onSuccess();
-            }
+            setConvertedData(nextRows);
+            setConvertSuccess(`Дозаполнение (${enrichMethod}) завершено. Изменено полей: ${totalEnriched}`);
         } catch (err) {
-            setError(err.message || 'Не удалось импортировать файл');
+            setConvertError(err.message || 'Ошибка AI-дозаполнения');
         } finally {
-            setLoading(false);
+            setAiFilling(false);
         }
     }
 
     return (
-        <div className="admin-import">
-            <div className="admin-import__header">
-                <h2>Массовый импорт</h2>
-                <p>Загрузите CSV, JSON, XML, TSV, TXT, BZ или BZ2. Для парного импорта используйте поля word_ru, definition_ru, word_uz, definition_uz или word_1, word_2 для TSV.</p>
-            </div>
+        <div className="admin-import__tab">
+            <h3>Конвертер форматов в CSV</h3>
+            <p className="admin-import__subtitle">
+                Загрузите JSON, XML, TSV или TXT и сконвертируйте в CSV для последующей загрузки
+            </p>
 
             <div className="admin-import__box">
                 <label className="admin-import__file">
                     <input
                         ref={inputRef}
                         type="file"
-                        accept=".csv,.json,.xml,.txt,.tsv,.bz,.bz2"
-                        onChange={handleFileChange}
+                        accept=".json,.xml,.txt,.tsv"
+                        onChange={handleSourceFileChange}
                     />
-                    <span>Выбрать {previewTitle} файл</span>
+                    <span>Выбрать файл для конвертации</span>
                 </label>
-                {file && <div className="admin-import__selected">Файл: {file.name}</div>}
+                {sourceFile && <div className="admin-import__selected">Файл: {sourceFile.name}</div>}
             </div>
 
-            {preview.length > 0 && (
+            <div className="admin-import__box">
+                <label className="admin-import__selected" style={{ marginTop: 0 }}>
+                    Метод дозаполнения:
+                </label>
+                <select
+                    value={enrichMethod}
+                    onChange={(e) => setEnrichMethod(e.target.value)}
+                    disabled={aiFilling}
+                >
+                    <option value="openai">OpenAI (батчи, ~5-10 мин)</option>
+                    <option value="google">Google Translate (~2-5 мин)</option>
+                </select>
+            </div>
+
+            {convertedData.length > 0 && (
                 <div className="admin-import__preview">
-                    <h3>
-                        Превью первых {preview.length} строк
-                        {totalRows > preview.length ? ` (из ${totalRows})` : ''}
-                    </h3>
+                    <h4>Превью ({convertedData.slice(0, PREVIEW_LIMIT).length} из {convertedData.length})</h4>
                     <table>
                         <thead>
                             <tr>
@@ -333,7 +356,7 @@ export default function AdminImport({ onSuccess, onCancel }) {
                             </tr>
                         </thead>
                         <tbody>
-                            {preview.map((row, index) => (
+                            {convertedData.slice(0, PREVIEW_LIMIT).map((row, index) => (
                                 <tr key={index}>
                                     <td>{row.word_ru}</td>
                                     <td>{row.definition_ru}</td>
@@ -343,20 +366,201 @@ export default function AdminImport({ onSuccess, onCancel }) {
                             ))}
                         </tbody>
                     </table>
-                    <p className="admin-import__count">Всего слов в файле: <strong>{totalRows}</strong></p>
                 </div>
             )}
 
-            {error && <div className="admin-import__error">{error}</div>}
-            {success && <div className="admin-import__success">{success}</div>}
+            {convertError && <div className="admin-import__error">{convertError}</div>}
+            {convertSuccess && <div className="admin-import__success">{convertSuccess}</div>}
 
             <div className="admin-import__actions">
-                <button type="button" onClick={handleImport} disabled={loading || !file}>
-                    {loading ? 'Импортируем...' : 'Импортировать'}
+                <button
+                    type="button"
+                    onClick={fillMissingWithAI}
+                    disabled={convertedData.length === 0 || aiFilling}
+                >
+                    {aiFilling ? 'Заполняем...' : 'Заполнить UZ и описания RU/UZ'}
+                </button>
+                <button 
+                    type="button" 
+                    onClick={downloadAsCSV} 
+                    disabled={convertedData.length === 0 || aiFilling}
+                >
+                    Скачать CSV
+                </button>
+            </div>
+        </div>
+    );
+}
+
+// ===== ЗАГРУЗЧИК CSV =====
+function CSVUploader({ onSuccess, onCancel }) {
+    const [csvFile, setCsvFile] = useState(null);
+    const [csvPreview, setCsvPreview] = useState([]);
+    const [csvTotalRows, setCsvTotalRows] = useState(0);
+    const [csvError, setCsvError] = useState('');
+    const [csvSuccess, setCsvSuccess] = useState('');
+    const [loading, setLoading] = useState(false);
+    const csvInputRef = useRef(null);
+
+    function handleCSVFileChange(event) {
+        const selected = event.target.files?.[0];
+        setCsvError('');
+        setCsvSuccess('');
+
+        if (!selected) {
+            setCsvFile(null);
+            setCsvPreview([]);
+            setCsvTotalRows(0);
+            return;
+        }
+
+        if (!selected.name.toLowerCase().endsWith('.csv')) {
+            setCsvError('Требуется CSV файл');
+            return;
+        }
+
+        setCsvFile(selected);
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                const text = String(e.target.result || '');
+                const data = parseCSV(text);
+
+                setCsvTotalRows(data.length);
+                setCsvPreview(data.slice(0, PREVIEW_LIMIT));
+            } catch (err) {
+                setCsvError(`Ошибка разбора CSV: ${err.message}`);
+                setCsvFile(null);
+                setCsvPreview([]);
+                setCsvTotalRows(0);
+            }
+        };
+
+        reader.readAsText(selected);
+    }
+
+    async function handleCSVImport() {
+        if (!csvFile) {
+            setCsvError('Выберите CSV файл');
+            return;
+        }
+
+        setLoading(true);
+        setCsvError('');
+        setCsvSuccess('');
+
+        try {
+            const formData = new FormData();
+            formData.append('file', csvFile);
+            formData.append('format', 'csv');
+
+            const result = await adminAPI.importData(formData);
+
+            setCsvSuccess(
+                `Импорт завершен. Добавлено: ${result.created || 0}, обновлено: ${result.updated || 0}`
+            );
+            setCsvFile(null);
+            setCsvPreview([]);
+            setCsvTotalRows(0);
+            if (csvInputRef.current) {
+                csvInputRef.current.value = '';
+            }
+
+            if (onSuccess) {
+                onSuccess();
+            }
+        } catch (err) {
+            setCsvError(err.message || 'Не удалось импортировать CSV');
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    return (
+        <div className="admin-import__tab">
+            <h3>Загрузить CSV в БД</h3>
+            <p className="admin-import__subtitle">
+                Используйте колонки: word_ru, definition_ru, word_uz, definition_uz или word_1, word_2
+            </p>
+
+            <div className="admin-import__box">
+                <label className="admin-import__file">
+                    <input
+                        ref={csvInputRef}
+                        type="file"
+                        accept=".csv"
+                        onChange={handleCSVFileChange}
+                    />
+                    <span>Выбрать CSV файл</span>
+                </label>
+                {csvFile && <div className="admin-import__selected">Файл: {csvFile.name}</div>}
+            </div>
+
+            {csvPreview.length > 0 && (
+                <div className="admin-import__preview">
+                    <h4>
+                        Превью первых {csvPreview.length} строк
+                        {csvTotalRows > csvPreview.length ? ` (из ${csvTotalRows})` : ''}
+                    </h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Русский</th>
+                                <th>Описание RU</th>
+                                <th>Узбекский</th>
+                                <th>Описание UZ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {csvPreview.map((row, index) => (
+                                <tr key={index}>
+                                    <td>{row.word_ru || row.word_1}</td>
+                                    <td>{row.definition_ru}</td>
+                                    <td>{row.word_uz || row.word_2}</td>
+                                    <td>{row.definition_uz}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <p className="admin-import__count">Всего слов в файле: <strong>{csvTotalRows}</strong></p>
+                </div>
+            )}
+
+            {csvError && <div className="admin-import__error">{csvError}</div>}
+            {csvSuccess && <div className="admin-import__success">{csvSuccess}</div>}
+
+            <div className="admin-import__actions">
+                <button 
+                    type="button" 
+                    onClick={handleCSVImport} 
+                    disabled={loading || !csvFile}
+                >
+                    {loading ? 'Загружаем...' : 'Импортировать'}
                 </button>
                 <button type="button" onClick={onCancel} disabled={loading}>
                     Отмена
                 </button>
+            </div>
+        </div>
+    );
+}
+
+// ===== ГЛАВНЫЙ КОМПОНЕНТ =====
+export default function AdminImport({ onSuccess, onCancel }) {
+    const [activeTab] = useState('uploader');
+
+    return (
+        <div className="admin-import">
+            <div className="admin-import__header">
+                <h2>Импорт данных</h2>
+                <p>Загрузка данных только из CSV-файла в БД.</p>
+            </div>
+
+            <div className="admin-import__content">
+                {/* Конвертер временно скрыт: оставляем только CSV-загрузчик */}
+                {/* {activeTab === 'converter' && <Converter />} */}
+                <CSVUploader onSuccess={onSuccess} onCancel={onCancel} />
             </div>
         </div>
     );

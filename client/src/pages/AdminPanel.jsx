@@ -27,7 +27,7 @@ export default function Admin() {
     return (
         <div className="admin-container">
             <header className="admin-header">
-                <h1>⚙️ Администраторская панель</h1>
+                <h1>Администраторская панель</h1>
                 <p className="admin-subtitle">Управление словами и связями</p>
             </header>
             
@@ -36,20 +36,20 @@ export default function Admin() {
                     className={`admin-tab ${activeTab === 'list' ? 'active' : ''}`}
                     onClick={() => setActiveTab('list')}
                 >
-                    📋 Список слов
+                    Список слов
                 </button>
                 <button
                     className={`admin-tab ${activeTab === 'add' ? 'active' : ''}`}
                     onClick={() => setActiveTab('add')}
                 >
-                    ➕ Добавить слово
+                    Добавить слово
                 </button>
                 {selectedWord && (
                     <button
                         className={`admin-tab ${activeTab === 'edit' ? 'active' : ''}`}
                         onClick={() => setActiveTab('edit')}
                     >
-                        ✏️ Редактировать
+                        Редактировать
                     </button>
                 )}
             </div>
