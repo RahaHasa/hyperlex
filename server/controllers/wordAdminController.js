@@ -26,6 +26,28 @@ async function findDuplicateWord({ word, lang, excludeId = null }) {
 }
 
 /**
+ * Очищает значение слова от номеров, точек и других артефактов
+ * Примеры:
+ *   "1. abdulla" -> "abdulla"
+ *   "123.  word" -> "word"
+ *   "- слово" -> "слово"
+ */
+function cleanWordValue(value) {
+    let cleaned = String(value || '').trim();
+    
+    // Удаляем номеры в начале (1., 2., 123., и т.д.)
+    cleaned = cleaned.replace(/^\d+[\.\)\s]+/, '').trim();
+    
+    // Удаляем дефисы в начале (- слово)
+    cleaned = cleaned.replace(/^[-•*]\s+/, '').trim();
+    
+    // Удаляем лишние пробелы
+    cleaned = cleaned.replace(/\s+/g, ' ').trim();
+    
+    return cleaned;
+}
+
+/**
  * Получить все слова (с фильтрацией)
  * GET /api/admin/words?lang=ru&limit=50&skip=0
  */
@@ -428,6 +450,57 @@ function parseCSVLine(line) {
     return values;
 }
 
+/**
+ * Нормализует название заголовка CSV в стандартное имя поля
+ * Примеры:
+ *   "Русский" -> "word_ru"
+ *   "Russian" -> "word_ru"
+ *   "Узбекский" -> "word_uz"
+ *   "Uzbek" -> "word_uz"
+ *   "Описание RU" -> "definition_ru"
+ *   "Description RU" -> "definition_ru"
+ */
+function normalizeHeaderName(header) {
+    const h = String(header || '').trim().toLowerCase();
+    
+    // РУССКИЙ
+    if (['русский', 'russian', 'ru word', 'word ru', 'word_ru'].some(kw => h.includes(kw))) {
+        return 'word_ru';
+    }
+    
+    // УЗБЕКСКИЙ
+    if (['узбекский', 'uzbek', 'uz word', 'word uz', 'word_uz', 'o\'zbek'].some(kw => h.includes(kw))) {
+        return 'word_uz';
+    }
+    
+    // ОПИСАНИЕ РУССКОЕ
+    if (h.includes('описание') && (h.includes('ru') || h.includes('russian'))) {
+        return 'definition_ru';
+    }
+    if (h.includes('description') && (h.includes('ru') || h.includes('russian'))) {
+        return 'definition_ru';
+    }
+    
+    // ОПИСАНИЕ УЗБЕКСКОЕ
+    if (h.includes('описание') && (h.includes('uz') || h.includes('uzbek'))) {
+        return 'definition_uz';
+    }
+    if (h.includes('description') && (h.includes('uz') || h.includes('uzbek'))) {
+        return 'definition_uz';
+    }
+    
+    // GENERIC ПОЛЯ
+    if (['word', 'lemma', 'name'].some(kw => h === kw)) {
+        return h;
+    }
+    if (['definition', 'описание', 'description'].some(kw => h === kw)) {
+        return 'definition';
+    }
+    
+    // По умолчанию возвращаем исходное (может быть уже слово или word_ru и т.д.)
+    return h;
+}
+
 function parseCSV(content) {
     const lines = content.split(/\r?\n/).filter(line => line.trim());
 
@@ -435,7 +508,8 @@ function parseCSV(content) {
         throw new Error('Файл пуст');
     }
 
-    const headers = parseCSVLine(lines[0]).map(header => header.trim().toLowerCase());
+    const rawHeaders = parseCSVLine(lines[0]).map(h => h.trim());
+    const headers = rawHeaders.map(normalizeHeaderName);
 
     // Если нет подходящих заголовков, обрабатываем как простой список слов (TXT)
     if (!headers.some(h => ['word', 'word_ru', 'word_uz', 'lemma', 'name'].includes(h))) {
@@ -451,7 +525,8 @@ function parseCSV(content) {
         const row = {};
 
         headers.forEach((header, index) => {
-            row[header] = values[index] || '';
+            const value = values[index] || '';
+            row[header] = cleanWordValue(value);
         });
 
         return row;
@@ -723,11 +798,24 @@ function detectLanguage(word) {
     const text = String(word || '').trim();
     if (!text) return null;
 
-    // Кириллица -> русский
-    if (/[А-Яа-яЁё]/.test(text)) return 'lang_ru';
+    // Кириллица (русский) -> русский
+    // Проверяем буквы Cyrillic или "ё"
+    if (/[А-Яа-яЁё]/.test(text)) {
+        // Двойная проверка - если есть латина, то это может быть смешанный текст
+        const latinCount = (text.match(/[A-Za-z]/g) || []).length;
+        const cyrillicCount = (text.match(/[А-Яа-яЁё]/g) || []).length;
+        
+        // Если кириллицы явно больше - это русский
+        if (cyrillicCount > latinCount) {
+            return 'lang_ru';
+        }
+    }
 
-    // Латиница (включая узбекские апострофы/символы) -> узбекский
-    if (/[A-Za-z]/.test(text)) return 'lang_uz';
+    // Латиница (узбекский) -> узбекский
+    // Включает латинские буквы и узбекские специальные символы (ў, ғ, ҳ, ё, қ, х')
+    if (/[A-Za-z'ўғҳқх]/.test(text) || /[a-z'а-яё]/.test(text.toLowerCase())) {
+        return 'lang_uz';
+    }
 
     return null;
 }
@@ -756,6 +844,7 @@ async function importWords(req, res) {
         const formatFromExt =
             originalName.endsWith('.xml') ? 'xml' :
             originalName.endsWith('.json') ? 'json' :
+            originalName.endsWith('.bz') ? 'bz' :
             originalName.endsWith('.bz2') ? 'bz2' :
             originalName.endsWith('.tsv') ? 'tsv' :
             originalName.endsWith('.txt') ? 'txt' :
@@ -765,7 +854,7 @@ async function importWords(req, res) {
         let rawContent;
         let actualFormat = formatFromExt;
         
-        if (formatFromExt === 'bz2' || requestedFormat === 'bz2') {
+        if (formatFromExt === 'bz2' || formatFromExt === 'bz' || requestedFormat === 'bz2' || requestedFormat === 'bz') {
             try {
                 rawContent = decompressBZ2(req.file.buffer);
                 // После распаковки определяем настоящий формат
@@ -781,8 +870,8 @@ async function importWords(req, res) {
             actualFormat = formatFromExt;
         }
         
-        const normalizedRequested = ['csv', 'json', 'xml', 'tsv', 'txt', 'bz2'].includes(requestedFormat) ? requestedFormat : '';
-        const format = (normalizedRequested && normalizedRequested !== 'bz2') ? normalizedRequested : actualFormat || detectFormatByContent(rawContent);
+        const normalizedRequested = ['csv', 'json', 'xml', 'tsv', 'txt', 'bz', 'bz2'].includes(requestedFormat) ? requestedFormat : '';
+        const format = (normalizedRequested && normalizedRequested !== 'bz2' && normalizedRequested !== 'bz') ? normalizedRequested : actualFormat || detectFormatByContent(rawContent);
         let words = [];
 
         if (format === 'csv') {
@@ -799,7 +888,7 @@ async function importWords(req, res) {
         } else {
             return res.status(400).json({
                 success: false,
-                error: `Неподдерживаемый формат файла: ${requestedFormat || format || 'unknown'}. Поддерживаются: csv, json, xml, tsv, txt, bz2`
+                error: `Неподдерживаемый формат файла: ${requestedFormat || format || 'unknown'}. Поддерживаются: csv, json, xml, tsv, txt, bz, bz2`
             });
         }
 
@@ -821,13 +910,77 @@ async function importWords(req, res) {
 
         for (const wordData of words) {
             try {
-                let wordRu = (wordData.word_ru || '').trim();
-                let wordUz = (wordData.word_uz || '').trim();
-                const genericWord = (wordData.word || wordData.lemma || wordData.name || '').trim();
+                let wordRu = cleanWordValue(wordData.word_ru || '');
+                let wordUz = cleanWordValue(wordData.word_uz || '');
+                const genericWord = cleanWordValue(wordData.word || wordData.lemma || wordData.name || '');
                 const genericDefinition = (wordData.definition || '').trim();
                 let definitionRu = (wordData.definition_ru || genericDefinition || '').trim();
                 let definitionUz = (wordData.definition_uz || genericDefinition || '').trim();
 
+                // Нормализация по алфавиту: латиница -> uz, кириллица -> ru
+                // ВАЖНО: проверяем ДО того, как проверяем пустоту
+                if (wordRu && !wordUz) {
+                    const detected = detectLanguage(wordRu);
+                    if (detected === 'lang_uz') {
+                        // это узбекское слово, ошибочно поставлено в word_ru
+                        wordUz = wordRu;
+                        wordRu = '';
+                        if (!definitionUz && definitionRu) {
+                            definitionUz = definitionRu;
+                            definitionRu = '';
+                        }
+                    }
+                } else if (wordUz && !wordRu) {
+                    const detected = detectLanguage(wordUz);
+                    if (detected === 'lang_ru') {
+                        // это русское слово, ошибочно поставлено в word_uz
+                        wordRu = wordUz;
+                        wordUz = '';
+                        if (!definitionRu && definitionUz) {
+                            definitionRu = definitionUz;
+                            definitionUz = '';
+                        }
+                    }
+                } else if (wordRu && wordUz) {
+                    // Оба заполнены, проверяем правильность
+                    const detectedRu = detectLanguage(wordRu);
+                    const detectedUz = detectLanguage(wordUz);
+                    
+                    // Если обнаружили неправильность - исправляем
+                    if (detectedRu === 'lang_uz' && detectedUz === 'lang_ru') {
+                        // Поменялись местами
+                        [wordRu, wordUz] = [wordUz, wordRu];
+                        [definitionRu, definitionUz] = [definitionUz, definitionRu];
+                    } else if (detectedRu === 'lang_uz') {
+                        // wordRu неправильно, перемещаем
+                        if (!wordUz) {
+                            wordUz = wordRu;
+                            wordRu = '';
+                            if (!definitionUz && definitionRu) {
+                                definitionUz = definitionRu;
+                                definitionRu = '';
+                            }
+                        } else {
+                            errors.push(`Предупреждение: "${wordRu}" похоже узбекское, но и узбекское уже есть. Пропускаем.`);
+                            continue;
+                        }
+                    } else if (detectedUz === 'lang_ru') {
+                        // wordUz неправильно, перемещаем
+                        if (!wordRu) {
+                            wordRu = wordUz;
+                            wordUz = '';
+                            if (!definitionRu && definitionUz) {
+                                definitionRu = definitionUz;
+                                definitionUz = '';
+                            }
+                        } else {
+                            errors.push(`Предупреждение: "${wordUz}" похоже русское, но и русское уже есть. Пропускаем.`);
+                            continue;
+                        }
+                    }
+                }
+
+                // Если все еще ничего нет, пытаемся из generic слова
                 if (!wordRu && !wordUz && genericWord) {
                     const detected = detectLanguage(genericWord);
                     if (detected === 'lang_ru') {
@@ -837,8 +990,9 @@ async function importWords(req, res) {
                     }
                 }
 
+                // ФИНАЛЬНАЯ проверка: если ничего нет - пропускаем
                 if (!wordRu && !wordUz) {
-                    errors.push('Пропущено слово: отсутствуют word_ru и word_uz');
+                    errors.push(`Пропущено слово: не удалось определить язык. Данные: ${JSON.stringify(wordData).substring(0, 100)}`);
                     continue;
                 }
 
@@ -1107,6 +1261,70 @@ async function requestOpenAIDescriptions(words, model) {
     return parsed.definitions;
 }
 
+async function generateDescriptionBatch({
+    lang,
+    limit,
+    model,
+    userId
+}) {
+    const words = await Word.find({ lang, definition: { $in: [null, ''] } })
+        .select('_id word lang')
+        .limit(limit)
+        .lean();
+
+    if (words.length === 0) {
+        return {
+            lang,
+            batchSize: 0,
+            appliedCount: 0,
+            results: [],
+            done: true
+        };
+    }
+
+    const modelDefinitions = await requestOpenAIDescriptions(
+        words.map(w => ({
+            id: w._id,
+            word: w.word,
+            language: w.lang === 'lang_ru' ? 'Russian' : 'Uzbek'
+        })),
+        model
+    );
+
+    let appliedCount = 0;
+    const results = [];
+
+    for (const def of modelDefinitions) {
+        const wordId = String(def?.id || '').trim();
+        const definition = String(def?.definition || '').trim();
+
+        if (!wordId || !definition) {
+            continue;
+        }
+
+        const updatedWord = await Word.findOneAndUpdate(
+            { _id: wordId, definition: { $in: [null, ''] } },
+            {
+                $set: { definition, updatedAt: new Date(), updatedBy: userId }
+            },
+            { new: true }
+        );
+
+        if (updatedWord) {
+            appliedCount += 1;
+            results.push({ id: wordId, word: updatedWord.word, definition });
+        }
+    }
+
+    return {
+        lang,
+        batchSize: words.length,
+        appliedCount,
+        results,
+        done: false
+    };
+}
+
 /**
  * AI-генерация описаний для слов, у которых их нет
  * POST /api/admin/ai/generate-descriptions
@@ -1126,61 +1344,31 @@ async function aiGenerateDescriptions(req, res) {
             });
         }
 
-        const maxLimit = Math.min(Number(limit) || 50, 100);
-        // Выбираем слова без definition
-        const words = await Word.find({ lang, definition: { $in: [null, ''] } })
-            .select('_id word lang')
-            .limit(maxLimit)
-            .lean();
+        const maxLimit = Math.min(Number(limit) || 200, 300);
+        const pendingCount = await Word.countDocuments({ lang, definition: { $in: [null, ''] } });
 
-        if (words.length === 0) {
+        if (pendingCount === 0) {
             return res.status(400).json({
                 success: false,
                 error: 'Нет слов без описания для выбранного языка'
             });
         }
 
-        const modelDefinitions = await requestOpenAIDescriptions(
-            words.map(w => ({
-                id: w._id,
-                word: w.word,
-                language: w.lang === 'lang_ru' ? 'Russian' : 'Uzbek'
-            })),
-            model
-        );
-
-        let appliedParams = 0;
-        const results = [];
-
-        for (const def of modelDefinitions) {
-            const wordId = String(def?.id || '').trim();
-            const definition = String(def?.definition || '').trim();
-
-            if (!wordId || !definition) {
-                continue;
-            }
-
-            const updatedWord = await Word.findOneAndUpdate(
-                { _id: wordId, definition: { $in: [null, ''] } },
-                {
-                    $set: { definition: definition, updatedAt: new Date(), updatedBy: req.user?.id }
-                },
-                { new: true }
-            );
-
-            if (updatedWord) {
-                appliedParams++;
-                results.push({ id: wordId, word: updatedWord.word, definition });
-            }
-        }
+        const batchResult = await generateDescriptionBatch({
+            lang,
+            limit: maxLimit,
+            model,
+            userId: req.user?.id
+        });
 
         return res.json({
             success: true,
             model,
             lang,
-            targetCount: words.length,
-            appliedCount: appliedParams,
-            results
+            targetCount: batchResult.batchSize,
+            pendingCount,
+            appliedCount: batchResult.appliedCount,
+            results: batchResult.results
         });
     } catch (error) {
         console.error('Ошибка в aiGenerateDescriptions:', error);
@@ -1188,6 +1376,141 @@ async function aiGenerateDescriptions(req, res) {
             success: false,
             error: error.message
         });
+    }
+}
+
+async function getDescriptionGenerationStatus(req, res) {
+    try {
+        const pendingQuery = { definition: { $in: [null, ''] } };
+        const [ruCount, uzCount] = await Promise.all([
+            Word.countDocuments({ ...pendingQuery, lang: 'lang_ru' }),
+            Word.countDocuments({ ...pendingQuery, lang: 'lang_uz' })
+        ]);
+
+        return res.json({
+            success: true,
+            totalCount: ruCount + uzCount,
+            perLanguage: {
+                lang_ru: { total: ruCount, processed: 0, applied: 0 },
+                lang_uz: { total: uzCount, processed: 0, applied: 0 }
+            }
+        });
+    } catch (error) {
+        console.error('Ошибка в getDescriptionGenerationStatus:', error);
+        return res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+}
+
+async function aiGenerateDescriptionsStream(req, res) {
+    const writeEvent = (payload) => {
+        res.write(`${JSON.stringify(payload)}\n`);
+    };
+
+    try {
+        const {
+            batchSize = 200,
+            model = process.env.OPENAI_MODEL || 'gpt-4o-mini'
+        } = req.body || {};
+
+        const maxBatchSize = Math.min(Math.max(Number(batchSize) || 200, 1), 300);
+        const languages = ['lang_ru', 'lang_uz'];
+        const pendingQuery = { definition: { $in: [null, ''] } };
+
+        const counts = await Promise.all(
+            languages.map(lang => Word.countDocuments({ ...pendingQuery, lang }))
+        );
+
+        const totalCount = counts.reduce((sum, count) => sum + count, 0);
+        const perLanguage = Object.fromEntries(languages.map((lang, index) => [lang, {
+            total: counts[index],
+            processed: 0,
+            applied: 0
+        }]));
+
+        res.setHeader('Content-Type', 'application/x-ndjson; charset=utf-8');
+        res.setHeader('Cache-Control', 'no-cache, no-transform');
+        res.setHeader('Connection', 'keep-alive');
+
+        if (totalCount === 0) {
+            writeEvent({
+                type: 'complete',
+                success: true,
+                totalCount: 0,
+                processedCount: 0,
+                appliedCount: 0,
+                message: 'Нет слов без описания'
+            });
+            return res.end();
+        }
+
+        writeEvent({
+            type: 'start',
+            success: true,
+            totalCount,
+            processedCount: 0,
+            appliedCount: 0,
+            batchSize: maxBatchSize,
+            perLanguage
+        });
+
+        let processedCount = 0;
+        let appliedCount = 0;
+
+        for (const lang of languages) {
+            while (true) {
+                const batchResult = await generateDescriptionBatch({
+                    lang,
+                    limit: maxBatchSize,
+                    model,
+                    userId: req.user?.id
+                });
+
+                if (batchResult.done || batchResult.batchSize === 0) {
+                    break;
+                }
+
+                processedCount += batchResult.batchSize;
+                appliedCount += batchResult.appliedCount;
+                perLanguage[lang].processed += batchResult.batchSize;
+                perLanguage[lang].applied += batchResult.appliedCount;
+
+                writeEvent({
+                    type: 'progress',
+                    success: true,
+                    lang,
+                    batchSize: batchResult.batchSize,
+                    batchAppliedCount: batchResult.appliedCount,
+                    processedCount,
+                    appliedCount,
+                    totalCount,
+                    perLanguage,
+                    message: `${processedCount}/${totalCount}`
+                });
+            }
+        }
+
+        writeEvent({
+            type: 'complete',
+            success: true,
+            totalCount,
+            processedCount,
+            appliedCount,
+            perLanguage,
+            message: `Готово: ${processedCount}/${totalCount}`
+        });
+
+        return res.end();
+    } catch (error) {
+        console.error('Ошибка в aiGenerateDescriptionsStream:', error);
+        writeEvent({
+            type: 'error',
+            success: false,
+            error: error.message
+        });
+        return res.end();
     }
 }
 
@@ -1388,6 +1711,192 @@ async function aiLinkHyponyms(req, res) {
 }
 
 /**
+ * AI-связывание гипероним/гипоним ВСЕ ДАННЫЕ потоком batch обработки
+ * POST /api/admin/ai/link-hyponyms/stream
+ */
+async function aiLinkHyponymsStream(req, res) {
+    const writeEvent = (payload) => {
+        res.write(`${JSON.stringify(payload)}\n`);
+    };
+
+    try {
+        const {
+            batchSize = 100,
+            minConfidence = 0.75,
+            model = process.env.OPENAI_MODEL || 'gpt-4o-mini'
+        } = req.body || {};
+
+        const maxBatchSize = Math.min(Math.max(Number(batchSize) || 100, 10), 200);
+        const minConfidenceNum = Math.max(Math.min(Number(minConfidence) || 0.75, 1), 0);
+        const languages = ['lang_ru', 'lang_uz'];
+        
+        // Получаем статистику
+        const counts = await Promise.all(
+            languages.map(lang => Word.countDocuments({ lang }))
+        );
+
+        const totalCount = counts.reduce((sum, count) => sum + count, 0);
+        const perLanguage = Object.fromEntries(languages.map((lang, index) => [lang, {
+            total: counts[index],
+            processed: 0,
+            appliedLinks: 0
+        }]));
+
+        res.setHeader('Content-Type', 'application/x-ndjson; charset=utf-8');
+        res.setHeader('Cache-Control', 'no-cache, no-transform');
+        res.setHeader('Connection', 'keep-alive');
+
+        if (totalCount < 2) {
+            writeEvent({
+                type: 'error',
+                success: false,
+                totalCount: 0,
+                message: 'Необходимо минимум 2 слова для связывания'
+            });
+            return res.end();
+        }
+
+        writeEvent({
+            type: 'start',
+            success: true,
+            totalCount,
+            batchSize: maxBatchSize,
+            minConfidence: minConfidenceNum,
+            perLanguage,
+            message: 'Начало пакетной обработки связей'
+        });
+
+        let totalProcessedWords = 0;
+        let totalAppliedLinks = 0;
+        const processedIds = new Set();
+
+        for (const lang of languages) {
+            let skip = 0;
+            const langQuery = { lang };
+
+            while (true) {
+                const batchWords = await Word.find(langQuery)
+                    .select('_id word definition lang hypernyms hyponyms')
+                    .skip(skip)
+                    .limit(maxBatchSize)
+                    .sort({ word: 1 })
+                    .lean();
+
+                if (!batchWords || batchWords.length === 0) {
+                    break;
+                }
+
+                try {
+                    // API запрос для определения связей
+                    const modelLinks = await requestOpenAIHyponymLinks(
+                        batchWords.map(w => ({
+                            id: w._id,
+                            word: w.word,
+                            definition: w.definition || ''
+                        })),
+                        model
+                    );
+
+                    const wordIds = new Set(batchWords.map(w => w._id));
+                    const linkKeySet = new Set();
+                    let appliedCount = 0;
+
+                    for (const link of modelLinks) {
+                        const hypernymId = String(link?.hypernymId || '').trim();
+                        const hyponymId = String(link?.hyponymId || '').trim();
+                        const confidence = Number(link?.confidence || 0);
+
+                        if (!hypernymId || !hyponymId || hypernymId === hyponymId) continue;
+                        if (!wordIds.has(hypernymId) || !wordIds.has(hyponymId)) continue;
+                        if (Number.isNaN(confidence) || confidence < minConfidenceNum) continue;
+
+                        const key = `${hypernymId}=>${hyponymId}`;
+                        if (linkKeySet.has(key) || processedIds.has(key)) continue;
+
+                        linkKeySet.add(key);
+                        processedIds.add(key);
+
+                        // Применяем связь
+                        try {
+                            await Promise.all([
+                                Word.updateOne(
+                                    { _id: hypernymId },
+                                    {
+                                        $addToSet: { hyponyms: hyponymId },
+                                        $set: { updatedAt: new Date(), updatedBy: req.user?.id }
+                                    }
+                                ),
+                                Word.updateOne(
+                                    { _id: hyponymId },
+                                    {
+                                        $addToSet: { hypernyms: hypernymId },
+                                        $set: { updatedAt: new Date(), updatedBy: req.user?.id }
+                                    }
+                                )
+                            ]);
+                            appliedCount += 1;
+                        } catch (e) {
+                            console.error('Error applying link:', e);
+                        }
+                    }
+
+                    totalProcessedWords += batchWords.length;
+                    totalAppliedLinks += appliedCount;
+                    perLanguage[lang].processed += batchWords.length;
+                    perLanguage[lang].appliedLinks += appliedCount;
+
+                    writeEvent({
+                        type: 'progress',
+                        success: true,
+                        lang,
+                        batchSize: batchWords.length,
+                        appliedLinksInBatch: appliedCount,
+                        totalProcessedWords,
+                        totalAppliedLinks,
+                        perLanguage,
+                        message: `Обработано ${totalProcessedWords}/${totalCount}, создано связей: ${totalAppliedLinks}`
+                    });
+
+                    skip += maxBatchSize;
+                } catch (batchError) {
+                    console.error(`Error processing batch for ${lang}:`, batchError);
+                    writeEvent({
+                        type: 'batch-error',
+                        success: false,
+                        lang,
+                        status: 'skipped',
+                        error: batchError.message,
+                        message: `Ошибка обработки пакета для ${lang}, пропускаем`
+                    });
+                    skip += maxBatchSize;
+                }
+            }
+        }
+
+        writeEvent({
+            type: 'complete',
+            success: true,
+            totalCount,
+            totalProcessedWords,
+            totalAppliedLinks,
+            perLanguage,
+            message: `Готово: обработано ${totalProcessedWords} слов, создано ${totalAppliedLinks} связей`
+        });
+
+        return res.end();
+    } catch (error) {
+        console.error('Ошибка в aiLinkHyponymsStream:', error);
+        writeEvent({
+            type: 'error',
+            success: false,
+            error: error.message,
+            message: 'Критическая ошибка при обработке связей'
+        });
+        return res.end();
+    }
+}
+
+/**
  * Синхронизация и двунаправленное связывание всех гипонимов и гиперонимов
  * POST /api/admin/words/sync-relations
  */
@@ -1447,6 +1956,9 @@ module.exports = {
     getWordTree,
     importWords,
     aiLinkHyponyms,
+    aiLinkHyponymsStream,
     aiGenerateDescriptions,
+    getDescriptionGenerationStatus,
+    aiGenerateDescriptionsStream,
     syncRelations
 };

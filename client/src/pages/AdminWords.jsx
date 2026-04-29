@@ -59,43 +59,201 @@ export default function AdminWords() {
     };
     
     const [generatingAI, setGeneratingAI] = useState(false);
+    const [descriptionProgress, setDescriptionProgress] = useState(null);
 
     const handleAIGenerateDescriptions = async () => {
-        if (!window.confirm('Попросить ИИ сгенерировать описания для русских и узбекских слов?\n(Убедитесь что в .env указан OPENAI_API_KEY)')) return;
+        if (!window.confirm('Запустить автоматическую генерацию описаний пакетами по 200 слов?\nСервер будет идти батчами до конца и показывать прогресс.')) return;
         try {
             setGeneratingAI(true);
-            const [ruRes, uzRes] = await Promise.all([
-                adminAPI.aiGenerateDescriptions({ lang: 'lang_ru', limit: 50 }),
-                adminAPI.aiGenerateDescriptions({ lang: 'lang_uz', limit: 50 })
-            ]);
+            const status = await adminAPI.getDescriptionGenerationStatus();
+            const initialProgress = {
+                status: 'running',
+                totalCount: status.totalCount || 0,
+                processedCount: 0,
+                appliedCount: 0,
+                batchSize: 200,
+                lastMessage: status.totalCount ? `0/${status.totalCount}` : 'Нет слов без описания',
+                perLanguage: status.perLanguage || {
+                    lang_ru: { total: 0, processed: 0, applied: 0 },
+                    lang_uz: { total: 0, processed: 0, applied: 0 }
+                }
+            };
+            setDescriptionProgress(initialProgress);
 
-            const totalApplied = (ruRes.appliedCount || 0) + (uzRes.appliedCount || 0);
+            if (!status.totalCount) {
+                setDescriptionProgress(prev => ({
+                    ...prev,
+                    status: 'done',
+                    lastMessage: 'Нет слов без описания'
+                }));
+                alert('✅ Нет слов без описания');
+                return;
+            }
+
+            const progressState = {
+                ...initialProgress,
+                perLanguage: {
+                    lang_ru: { ...(initialProgress.perLanguage.lang_ru || { total: 0, processed: 0, applied: 0 }) },
+                    lang_uz: { ...(initialProgress.perLanguage.lang_uz || { total: 0, processed: 0, applied: 0 }) }
+                }
+            };
+
+            const pushProgress = (message) => {
+                setDescriptionProgress({
+                    status: 'running',
+                    totalCount: progressState.totalCount,
+                    processedCount: progressState.processedCount,
+                    appliedCount: progressState.appliedCount,
+                    batchSize: progressState.batchSize,
+                    lastMessage: message,
+                    perLanguage: {
+                        lang_ru: { ...progressState.perLanguage.lang_ru },
+                        lang_uz: { ...progressState.perLanguage.lang_uz }
+                    }
+                });
+            };
+
+            const runLanguageBatches = async (lang) => {
+                while (true) {
+                    try {
+                        const res = await adminAPI.aiGenerateDescriptions({ lang, limit: 200 });
+                        const batchProcessed = res.targetCount || 0;
+                        const batchApplied = res.appliedCount || 0;
+
+                        progressState.processedCount += batchProcessed;
+                        progressState.appliedCount += batchApplied;
+                        progressState.perLanguage[lang].processed += batchProcessed;
+                        progressState.perLanguage[lang].applied += batchApplied;
+
+                        pushProgress(`${progressState.processedCount}/${progressState.totalCount}`);
+
+                        if ((res.pendingCount || 0) <= batchProcessed) {
+                            break;
+                        }
+                    } catch (err) {
+                        if (err.message.includes('Нет слов без описания')) {
+                            break;
+                        }
+                        throw err;
+                    }
+                }
+            };
+
+            await runLanguageBatches('lang_ru');
+            await runLanguageBatches('lang_uz');
+
+            const result = {
+                processedCount: progressState.processedCount,
+                totalCount: progressState.totalCount,
+                appliedCount: progressState.appliedCount
+            };
+
+            setDescriptionProgress({
+                status: 'done',
+                totalCount: progressState.totalCount,
+                processedCount: progressState.processedCount,
+                appliedCount: progressState.appliedCount,
+                batchSize: progressState.batchSize,
+                lastMessage: `Готово: ${progressState.processedCount}/${progressState.totalCount}`,
+                perLanguage: {
+                    lang_ru: { ...progressState.perLanguage.lang_ru },
+                    lang_uz: { ...progressState.perLanguage.lang_uz }
+                }
+            });
 
             alert(
                 `✅ ИИ-описания готовы\n` +
-                `RU: ${ruRes.appliedCount} из ${ruRes.targetCount}\n` +
-                `UZ: ${uzRes.appliedCount} из ${uzRes.targetCount}\n` +
-                `Всего: ${totalApplied}`
+                `Обработано: ${result.processedCount || 0}/${result.totalCount || 0}\n` +
+                `Добавлено описаний: ${result.appliedCount || 0}`
             );
             setRefreshTrigger(prev => prev + 1);
         } catch (err) {
+            setDescriptionProgress(prev => ({
+                ...(prev || {}),
+                status: 'error',
+                lastMessage: err.message
+            }));
             alert('Ошибка ИИ генерации: ' + err.message);
         } finally {
             setGeneratingAI(false);
         }
     };
 
+    const [linkingHyponyms, setLinkingHyponyms] = useState(false);
+    const [linkProgress, setLinkProgress] = useState(null);
+
     const handleAILinkHyponyms = async () => {
-        if (!window.confirm('Попросить ИИ связать гипонимы-гиперонимы по смыслу?\nВнимание: Это запустит реальное связывание (не dryRun).')) return;
+        if (!window.confirm('Запустить AI связывание гиперонимов/гипонимов для ВСЕ данных?\nСервер будет обрабатывать пакетами и показывать прогресс.')) return;
         try {
-            setGeneratingAI(true);
-            const res = await adminAPI.aiLinkHyponyms({ lang: 'lang_ru', limit: 200, dryRun: false });
-            alert(`✅ Успешно создано новых связей: ${res.acceptedCount} (отклонено: ${res.rejectedCount})`);
+            setLinkingHyponyms(true);
+            setLinkProgress({
+                status: 'running',
+                totalCount: 0,
+                totalProcessedWords: 0,
+                totalAppliedLinks: 0,
+                batchSize: 100,
+                lastMessage: 'Инициализация...',
+                perLanguage: {
+                    lang_ru: { total: 0, processed: 0, appliedLinks: 0 },
+                    lang_uz: { total: 0, processed: 0, appliedLinks: 0 }
+                }
+            });
+
+            await adminAPI.linkHyponymsAIStream(
+                { batchSize: 100, minConfidence: 0.75 },
+                {
+                    onStart: (event) => {
+                        setLinkProgress(prev => ({
+                            ...prev,
+                            totalCount: event.totalCount,
+                            status: 'running',
+                            lastMessage: 'Начало обработки...',
+                            perLanguage: event.perLanguage || prev.perLanguage
+                        }));
+                    },
+                    onProgress: (event) => {
+                        setLinkProgress(prev => ({
+                            ...prev,
+                            totalProcessedWords: event.totalProcessedWords,
+                            totalAppliedLinks: event.totalAppliedLinks,
+                            lastMessage: event.message || 'Обработка...',
+                            perLanguage: event.perLanguage || prev.perLanguage
+                        }));
+                    },
+                    onComplete: (event) => {
+                        setLinkProgress(prev => ({
+                            ...prev,
+                            status: 'done',
+                            totalProcessedWords: event.totalProcessedWords,
+                            totalAppliedLinks: event.totalAppliedLinks,
+                            lastMessage: event.message || 'Готово'
+                        }));
+                    },
+                    onError: (event) => {
+                        setLinkProgress(prev => ({
+                            ...prev,
+                            status: 'error',
+                            lastMessage: event.message || 'Ошибка обработки'
+                        }));
+                    }
+                }
+            );
+
+            alert(
+                `✅ AI Связывание завершено\n` +
+                `Обработано слов: ${linkProgress.totalProcessedWords || 0}\n` +
+                `Создано связей: ${linkProgress.totalAppliedLinks || 0}`
+            );
             setRefreshTrigger(prev => prev + 1);
         } catch (err) {
-            alert('Ошибка ИИ связывания: ' + err.message);
+            setLinkProgress(prev => ({
+                ...(prev || {}),
+                status: 'error',
+                lastMessage: err.message
+            }));
+            alert('Ошибка AI связывания: ' + err.message);
         } finally {
-            setGeneratingAI(false);
+            setLinkingHyponyms(false);
         }
     };
     
@@ -199,6 +357,68 @@ export default function AdminWords() {
                     </button>
                 )}
             </div>
+
+            {descriptionProgress && (
+                <div className="ai-progress-panel">
+                    <div className="ai-progress-header">
+                        <strong>ИИ: Описания</strong>
+                        <span className={`ai-progress-status ${descriptionProgress.status}`}>
+                            {descriptionProgress.status === 'running' ? 'В процессе' :
+                             descriptionProgress.status === 'done' ? 'Готово' :
+                             descriptionProgress.status === 'error' ? 'Ошибка' : 'Запуск'}
+                        </span>
+                    </div>
+                    <div className="ai-progress-main">
+                        {descriptionProgress.processedCount}/{descriptionProgress.totalCount} обработано
+                    </div>
+                    <div className="ai-progress-sub">
+                        Добавлено описаний: {descriptionProgress.appliedCount || 0}
+                    </div>
+                    <div className="ai-progress-sub">
+                        Последний статус: {descriptionProgress.lastMessage}
+                    </div>
+                    {descriptionProgress.status === 'running' && (
+                        <div className="ai-progress-sub">
+                            Идет обработка пакетами по {descriptionProgress.batchSize} слов...
+                        </div>
+                    )}
+                    <div className="ai-progress-langs">
+                        <div>RU: {(descriptionProgress.perLanguage?.lang_ru?.processed || 0)}/{(descriptionProgress.perLanguage?.lang_ru?.total || 0)}</div>
+                        <div>UZ: {(descriptionProgress.perLanguage?.lang_uz?.processed || 0)}/{(descriptionProgress.perLanguage?.lang_uz?.total || 0)}</div>
+                    </div>
+                </div>
+            )}
+
+            {linkProgress && (
+                <div className="ai-progress-panel">
+                    <div className="ai-progress-header">
+                        <strong>ИИ: Связи гиперонимов</strong>
+                        <span className={`ai-progress-status ${linkProgress.status}`}>
+                            {linkProgress.status === 'running' ? 'В процессе' :
+                             linkProgress.status === 'done' ? 'Готово' :
+                             linkProgress.status === 'error' ? 'Ошибка' : 'Запуск'}
+                        </span>
+                    </div>
+                    <div className="ai-progress-main">
+                        {linkProgress.totalProcessedWords}/{linkProgress.totalCount} слов обработано
+                    </div>
+                    <div className="ai-progress-sub">
+                        Создано связей: {linkProgress.totalAppliedLinks || 0}
+                    </div>
+                    <div className="ai-progress-sub">
+                        Статус: {linkProgress.lastMessage}
+                    </div>
+                    {linkProgress.status === 'running' && (
+                        <div className="ai-progress-sub">
+                            Идет пакетная обработка связей по {linkProgress.batchSize} слов...
+                        </div>
+                    )}
+                    <div className="ai-progress-langs">
+                        <div>RU: {(linkProgress.perLanguage?.lang_ru?.processed || 0)}/{(linkProgress.perLanguage?.lang_ru?.total || 0)} ({(linkProgress.perLanguage?.lang_ru?.appliedLinks || 0)} связей)</div>
+                        <div>UZ: {(linkProgress.perLanguage?.lang_uz?.processed || 0)}/{(linkProgress.perLanguage?.lang_uz?.total || 0)} ({(linkProgress.perLanguage?.lang_uz?.appliedLinks || 0)} связей)</div>
+                    </div>
+                </div>
+            )}
             
             <div className="admin-content">
                 {activeTab === 'list' && (

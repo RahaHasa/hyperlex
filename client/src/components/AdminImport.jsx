@@ -202,25 +202,27 @@ export default function AdminImport({ onSuccess, onCancel }) {
         const isTxt = selected.name.toLowerCase().endsWith('.txt');
         const isTsv = selected.name.toLowerCase().endsWith('.tsv');
         const isBz2 = selected.name.toLowerCase().endsWith('.bz2');
+        const isBz = selected.name.toLowerCase().endsWith('.bz');
+        const isBzArchive = isBz2 || isBz;
 
-        if (!isJson && !isCsv && !isXml && !isTxt && !isTsv && !isBz2) {
-            setError('Поддерживаются CSV, JSON, XML, TSV, TXT и BZ2 файлы');
+        if (!isJson && !isCsv && !isXml && !isTxt && !isTsv && !isBzArchive) {
+            setError('Поддерживаются CSV, JSON, XML, TSV, TXT, BZ и BZ2 файлы');
             setFile(null);
             setPreview([]);
             setTotalRows(0);
             return;
         }
 
-        setFormat(isJson ? 'json' : isXml ? 'xml' : isTsv ? 'tsv' : isBz2 ? 'bz2' : isTxt ? 'txt' : 'csv');
+        setFormat(isJson ? 'json' : isXml ? 'xml' : isTsv ? 'tsv' : isBz2 ? 'bz2' : isBz ? 'bz' : isTxt ? 'txt' : 'csv');
         setFile(selected);
 
         const reader = new FileReader();
         reader.onload = (e) => {
             try {
                 // BZ2 файлы загружаем как бинарные данные для отправки на сервер
-                if (isBz2) {
+                if (isBzArchive) {
                     setTotalRows(-1); // Неизвестное количество, будет распако на сервере
-                    setPreview([{ note: '📦 BZ2 файл будет распакован во время импорта...' }]);
+                    setPreview([{ note: '📦 BZ/BZ2 файл будет распакован во время импорта...' }]);
                     return;
                 }
 
@@ -250,7 +252,7 @@ export default function AdminImport({ onSuccess, onCancel }) {
             }
         };
 
-        if (isBz2) {
+        if (isBzArchive) {
             reader.readAsArrayBuffer(selected);
         } else {
             reader.readAsText(selected);
@@ -299,7 +301,7 @@ export default function AdminImport({ onSuccess, onCancel }) {
         <div className="admin-import">
             <div className="admin-import__header">
                 <h2>Массовый импорт</h2>
-                <p>Загрузите CSV, JSON, XML, TSV, TXT или BZ2. Для парного импорта используйте поля word_ru, definition_ru, word_uz, definition_uz или word_1, word_2 для TSV.</p>
+                <p>Загрузите CSV, JSON, XML, TSV, TXT, BZ или BZ2. Для парного импорта используйте поля word_ru, definition_ru, word_uz, definition_uz или word_1, word_2 для TSV.</p>
             </div>
 
             <div className="admin-import__box">
@@ -307,7 +309,7 @@ export default function AdminImport({ onSuccess, onCancel }) {
                     <input
                         ref={inputRef}
                         type="file"
-                        accept=".csv,.json,.xml,.txt,.tsv,.bz2"
+                        accept=".csv,.json,.xml,.txt,.tsv,.bz,.bz2"
                         onChange={handleFileChange}
                     />
                     <span>Выбрать {previewTitle} файл</span>

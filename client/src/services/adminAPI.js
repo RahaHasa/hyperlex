@@ -228,6 +228,89 @@ const adminAPI = {
         return response.json();
     },
 
+    async getDescriptionGenerationStatus() {
+        const token = getAuthToken();
+        if (!token) throw new Error('❌ Требуется авторизация');
+
+        const response = await fetch(`${API_URL}/ai/generate-descriptions/status`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(error.error || 'Ошибка при получении статуса генерации');
+        }
+
+        return response.json();
+    },
+
+    async aiGenerateDescriptionsStream(options, handlers = {}) {
+        const token = getAuthToken();
+        if (!token) throw new Error('❌ Требуется авторизация');
+
+        const response = await fetch(`${API_URL}/ai/generate-descriptions/stream`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(options)
+        });
+
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(error.error || 'Ошибка при пакетной генерации описаний');
+        }
+
+        if (!response.body) {
+            throw new Error('Потоковый ответ не поддерживается браузером');
+        }
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+        let finalEvent = null;
+
+        while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+            buffer = lines.pop() || '';
+
+            for (const line of lines) {
+                const trimmed = line.trim();
+                if (!trimmed) continue;
+
+                const event = JSON.parse(trimmed);
+                finalEvent = event;
+
+                if (event.type === 'progress' && handlers.onProgress) {
+                    handlers.onProgress(event);
+                } else if (event.type === 'start' && handlers.onStart) {
+                    handlers.onStart(event);
+                } else if (event.type === 'complete' && handlers.onComplete) {
+                    handlers.onComplete(event);
+                } else if (event.type === 'error' && handlers.onError) {
+                    handlers.onError(event);
+                }
+            }
+        }
+
+        if (buffer.trim()) {
+            finalEvent = JSON.parse(buffer.trim());
+        }
+
+        if (finalEvent?.type === 'error') {
+            throw new Error(finalEvent.error || 'Ошибка при пакетной генерации описаний');
+        }
+
+        return finalEvent;
+    },
+
     /**
      * Массовый импорт слов
      */
@@ -271,6 +354,82 @@ const adminAPI = {
             throw new Error(data.error || 'Ошибка AI-связывания');
         }
         return data;
+    },
+
+    /**
+     * AI-связывание гиперонимов/гипонимов всех данных потоком
+     */
+    async linkHyponymsAIStream(options, handlers = {}) {
+        const token = getAuthToken();
+        if (!token) throw new Error('❌ Требуется авторизация');
+
+        const response = await fetch(`${API_URL}/ai/link-hyponyms/stream`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(options || {})
+        });
+
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(error.error || 'Ошибка при пакетной связи гиперонимов');
+        }
+
+        if (!response.body) {
+            throw new Error('Потоковый ответ не поддерживается браузером');
+        }
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+        let finalEvent = null;
+
+        while (true) {
+            const { value, done } = await reader.read();
+            if (done) break;
+
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+            buffer = lines.pop() || '';
+
+            for (const line of lines) {
+                const trimmed = line.trim();
+                if (!trimmed) continue;
+
+                try {
+                    const event = JSON.parse(trimmed);
+                    finalEvent = event;
+
+                    if (event.type === 'progress' && handlers.onProgress) {
+                        handlers.onProgress(event);
+                    } else if (event.type === 'start' && handlers.onStart) {
+                        handlers.onStart(event);
+                    } else if (event.type === 'complete' && handlers.onComplete) {
+                        handlers.onComplete(event);
+                    } else if ((event.type === 'error' || event.type === 'batch-error') && handlers.onError) {
+                        handlers.onError(event);
+                    }
+                } catch (e) {
+                    console.error('Error parsing event:', e);
+                }
+            }
+        }
+
+        if (buffer.trim()) {
+            try {
+                finalEvent = JSON.parse(buffer.trim());
+            } catch (e) {
+                console.error('Error parsing final event:', e);
+            }
+        }
+
+        if (finalEvent?.type === 'error') {
+            throw new Error(finalEvent.error || 'Ошибка при пакетной связи гиперонимов');
+        }
+
+        return finalEvent;
     },
     
     // === АВТОПОИСК ===

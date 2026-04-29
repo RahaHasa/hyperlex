@@ -151,6 +151,51 @@
     stroke-width: 2;
 }
 
+.ai-progress-panel {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--color-paper);
+    border: 1px solid rgba(201, 169, 89, 0.18);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.ai-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.ai-progress-status {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+}
+
+.ai-progress-main {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.35rem;
+}
+
+.ai-progress-sub {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+}
+
+.ai-progress-langs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
