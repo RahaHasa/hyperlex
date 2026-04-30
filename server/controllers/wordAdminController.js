@@ -4,6 +4,7 @@
 
 const Word = require('../models/Word');
 const Bz2 = require('bz2');
+const mongoose = require('mongoose');
 
 function escapeRegex(value) {
     return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -1634,7 +1635,7 @@ async function requestOpenAIDescriptions(words, model) {
         },
         body: JSON.stringify({
             model,
-            temperature: 0.2,
+            temperature: 1,
             response_format: { type: 'json_object' },
             messages: [
                 { role: 'system', content: systemPrompt },
@@ -1947,7 +1948,7 @@ async function requestOpenAIHyponymLinks(words, model, depth = 3) {
         },
         body: JSON.stringify({
             model,
-            temperature: 0.2,
+            temperature: 1,
             response_format: { type: 'json_object' },
             messages: [
                 { role: 'system', content: systemPrompt },
@@ -2130,6 +2131,8 @@ async function aiLinkHyponymsStream(req, res) {
         res.write(`${JSON.stringify(payload)}\n`);
     };
 
+    const auditUserId = mongoose.Types.ObjectId.isValid(req.user?.id) ? req.user.id : undefined;
+
     try {
         const {
             batchSize = 100,
@@ -2239,19 +2242,24 @@ async function aiLinkHyponymsStream(req, res) {
 
                         // Применяем связь
                         try {
+                            const auditSet = { updatedAt: new Date() };
+                            if (auditUserId) {
+                                auditSet.updatedBy = auditUserId;
+                            }
+
                             await Promise.all([
                                 Word.updateOne(
                                     { _id: hypernymId },
                                     {
                                         $addToSet: { hyponyms: hyponymId },
-                                        $set: { updatedAt: new Date(), updatedBy: req.user?.id }
+                                        $set: auditSet
                                     }
                                 ),
                                 Word.updateOne(
                                     { _id: hyponymId },
                                     {
                                         $addToSet: { hypernyms: hypernymId },
-                                        $set: { updatedAt: new Date(), updatedBy: req.user?.id }
+                                        $set: auditSet
                                     }
                                 )
                             ]);
@@ -2283,6 +2291,21 @@ async function aiLinkHyponymsStream(req, res) {
                     skip += maxBatchSize;
                 } catch (batchError) {
                     console.error(`Error processing batch for ${lang}:`, batchError);
+
+                    const errorMessage = String(batchError?.message || '');
+                    const isQuotaError = /quota|billing|insufficient_quota/i.test(errorMessage);
+
+                    if (isQuotaError) {
+                        writeEvent({
+                            type: 'error',
+                            success: false,
+                            lang,
+                            error: errorMessage,
+                            message: 'OpenAI quota is exhausted. Stopping the stream.'
+                        });
+                        return res.end();
+                    }
+
                     writeEvent({
                         type: 'batch-error',
                         success: false,
