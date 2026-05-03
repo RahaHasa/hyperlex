@@ -23,50 +23,89 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
         const svg = d3.select(svgRef.current);
         svg.selectAll("*").remove();
         
-        // Размер шрифта АВТО-АДАПТАЦИЯ (уменьшаем, если слово длинное)
-        const getFontSize = (word, isRoot = false) => {
-            const radius = isRoot ? 48 : 40;
-            const maxTextWidth = radius * 2 * 0.85; // 85% от диаметра круга
-            
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            let size = isRoot ? 16 : 14; // Начальный максимальный размер
-            
-            ctx.font = `bold ${size}px Arial, sans-serif`;
-            while (ctx.measureText(word).width > maxTextWidth && size > 8) {
-                size -= 1;
-                ctx.font = `bold ${size}px Arial, sans-serif`;
+        // Вычисляем размер прямоугольника на основе длины слова
+        const getRectDimensions = (word, isRoot = false) => {
+            // Ширина динамическая, но высота ФИКСИРОВАННАЯ
+            let width;
+            if (isRoot) {
+                width = Math.max(130, word.length * 10.5 + 25);
+            } else {
+                width = Math.max(115, word.length * 9.5 + 20);
             }
             
-            return `${size}px`;
+            // Высота ФИКСИРОВАННАЯ для всех карточек (одинакового размера)
+            const height = isRoot ? 62 : 55;
+            
+            return { width, height };
         };
         
-        // Круги ФИКСИРОВАННОГО размера, как просил пользователь
-        const getNodeRadius = (word, isRoot = false) => {
-            return isRoot ? 48 : 40;
-        };
-        
-        const getNodeRadiusOnHover = (word, isRoot = false) => {
-            return getNodeRadius(word, isRoot) + 3;
-        };
-        
-        const getNodeRadiusOnSelect = (word, isRoot = false) => {
-            return getNodeRadius(word, isRoot) + 3;
+        // Фиксированный размер шрифта для читаемости (одна строка)
+        const getFontSize = (isRoot = false) => {
+            return isRoot ? '13px' : '11px';
         };
         
         // Конвертируем дерево в иерархию для D3
         const hierarchy = d3.hierarchy(tree);
-        const treeLayout = d3.tree().size([width, height]);
-        const nodes = treeLayout(hierarchy).descendants();
-        const links = treeLayout(hierarchy).links();
+        
+        // Кастомный layout: корень в центре, прямые дети — по окружности,
+        // более глубокие уровни — на концентрических кольцах.
+        const customLayout = (node, depth = 0, parentAngle = 0) => {
+            const cx = width / 2;
+            const cy = height / 2;
+
+            if (depth === 0) {
+                // Корень в центре
+                node.x = cx;
+                node.y = cy;
+            }
+
+            if (node.children && node.children.length > 0) {
+                const baseRadius = 220;
+                const radius = baseRadius * (depth === 0 ? 1 : (depth + 0.9));
+
+                if (depth === 0) {
+                    // Распределяем прямых детей равномерно по всей окружности
+                    const angleStep = (2 * Math.PI) / node.children.length;
+                    node.children.forEach((child, i) => {
+                        const angle = i * angleStep;
+                        child.x = cx + radius * Math.cos(angle);
+                        child.y = cy + radius * Math.sin(angle);
+                        // передаём угол родителя дальше
+                        customLayout(child, depth + 1, angle);
+                    });
+                } else {
+                    // Для глубинных детей ставим их в небольшой сектор вокруг parentAngle
+                    const sector = Math.min(Math.PI / 2, (Math.PI * 0.8) / node.children.length);
+                    const start = parentAngle - sector * (node.children.length - 1) / 2;
+                    node.children.forEach((child, i) => {
+                        const angle = start + i * sector;
+                        child.x = cx + radius * Math.cos(angle);
+                        child.y = cy + radius * Math.sin(angle);
+                        customLayout(child, depth + 1, angle);
+                    });
+                }
+            }
+
+            return node;
+        };
+        
+        customLayout(hierarchy);
+        const nodes = hierarchy.descendants();
+        const links = hierarchy.links();
         
         // SVG группа для трансформации
         const g = svg.append('g');
+        let currentZoomScale = 1; // track zoom scale to disable clicks when zoomed
         
         // === ZOOM & PAN ===
         const zoom = d3.zoom()
             .on('zoom', (event) => {
                 g.attr('transform', event.transform);
+                currentZoomScale = event.transform.k;
+                // when user zooms in, hide selected details to avoid accidental clicks
+                if (currentZoomScale > 1.2) {
+                    setSelectedNode(null);
+                }
             });
         
         svg.call(zoom);
@@ -125,11 +164,10 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
                 const rootId = tree._id || tree.id;
                 const isRoot = nodeId === rootId;
                 setHoveredNode(nodeId);
-                d3.select(this).select('circle')
+                d3.select(this).select('rect')
                     .transition()
                     .duration(200)
-                    .attr('r', getNodeRadiusOnHover(d.data.word, isRoot))
-                    .attr('stroke-width', 3);
+                    .attr('stroke-width', 4);
             })
             .on('mouseleave', function(event, d) {
                 const nodeId = d.data._id || d.data.id;
@@ -138,49 +176,62 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
                 const isSelected = nodeId === selectedNode;
                 if (!isSelected) {
                     setHoveredNode(null);
-                    d3.select(this).select('circle')
+                    d3.select(this).select('rect')
                         .transition()
                         .duration(200)
-                        .attr('r', getNodeRadius(d.data.word, isRoot))
                         .attr('stroke-width', isRoot ? 3 : 2);
                 }
             })
             .on('click', function(event, d) {
+                // ignore clicks when zoomed in past threshold
+                if (currentZoomScale > 1.2) return;
                 event.stopPropagation();
                 const nodeId = d.data._id || d.data.id;
                 const rootId = tree._id || tree.id;
                 setSelectedNode(nodeId);
                 
                 // Обновляем все узлы
-                g.selectAll('.node').select('circle')
-                    .attr('r', node => {
-                        const id = node.data._id || node.data.id;
-                        const isRoot = id === rootId;
-                        if (id === nodeId) {
-                            return getNodeRadiusOnSelect(node.data.word, isRoot);
-                        }
-                        return getNodeRadius(node.data.word, isRoot);
-                    })
+                g.selectAll('.node').select('rect')
                     .attr('stroke-width', node => {
                         const id = node.data._id || node.data.id;
                         const isRoot = id === rootId;
-                        return (id === nodeId || isRoot) ? 3 : 2;
+                        return (id === nodeId || isRoot) ? 4 : 2;
                     });
             });
         
-        // Окружности узлов
-        nodeEnter.append('circle')
-            .attr('r', d => {
+        // Прямоугольники узлов
+        nodeEnter.append('rect')
+            .attr('width', d => {
                 const nodeId = d.data._id || d.data.id;
                 const rootId = tree._id || tree.id;
                 const isRoot = nodeId === rootId;
-                return getNodeRadius(d.data.word, isRoot);
+                return getRectDimensions(d.data.word, isRoot).width;
+            })
+            .attr('height', d => {
+                const nodeId = d.data._id || d.data.id;
+                const rootId = tree._id || tree.id;
+                const isRoot = nodeId === rootId;
+                return getRectDimensions(d.data.word, isRoot).height;
+            })
+            .attr('x', d => {
+                const nodeId = d.data._id || d.data.id;
+                const rootId = tree._id || tree.id;
+                const isRoot = nodeId === rootId;
+                const w = getRectDimensions(d.data.word, isRoot).width;
+                return -(w / 2);
+            })
+            .attr('y', d => {
+                const nodeId = d.data._id || d.data.id;
+                const rootId = tree._id || tree.id;
+                const isRoot = nodeId === rootId;
+                const h = getRectDimensions(d.data.word, isRoot).height;
+                return -(h / 2);
             })
             .attr('class', d => {
                 const nodeId = d.data._id || d.data.id;
                 const rootId = tree._id || tree.id;
-                if (nodeId === rootId) return 'node-circle root';
-                return 'node-circle';
+                if (nodeId === rootId) return 'node-rect root';
+                return 'node-rect';
             })
             .attr('fill', d => {
                 const nodeId = d.data._id || d.data.id;
@@ -195,27 +246,29 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
                 const rootId = tree._id || tree.id;
                 const isRoot = nodeId === rootId;
                 return isRoot ? 3 : 2;
-            });
+            })
+            .attr('rx', 8)
+            .attr('ry', 8);
         
-        // Текст (слова)
+        // Текст (слова) — одна строка, ширина карточки увеличивается под длину
         nodeEnter.append('text')
             .attr('text-anchor', 'middle')
-            .attr('dy', '.35em')
             .attr('class', 'node-label')
-            .text(d => d.data.word)
-            .attr('fill', '#2c3e50')
+            .attr('fill', '#fff')
             .attr('font-size', d => {
                 const nodeId = d.data._id || d.data.id;
                 const rootId = tree._id || tree.id;
                 const isRoot = nodeId === rootId;
-                return getFontSize(d.data.word, isRoot);
+                return getFontSize(isRoot);
             })
             .attr('font-weight', d => {
                 const nodeId = d.data._id || d.data.id;
                 const rootId = tree._id || tree.id;
                 return nodeId === rootId ? 'bold' : 'normal';
             })
-            .attr('pointer-events', 'none');
+            .attr('pointer-events', 'none')
+            .attr('dominant-baseline', 'middle')
+            .text(d => d.data.word);
         
         // Язык (значок)
         nodeEnter.append('text')
@@ -241,15 +294,17 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
             const row = legend.append('g')
                 .attr('transform', `translate(0, ${i * 25})`);
             
-            row.append('circle')
-                .attr('r', 5)
+            row.append('rect')
+                .attr('width', 10)
+                .attr('height', 10)
                 .attr('fill', item.color)
                 .attr('stroke', '#2c3e50')
-                .attr('stroke-width', 1);
+                .attr('stroke-width', 1)
+                .attr('rx', 2);
             
             row.append('text')
                 .attr('x', 15)
-                .attr('y', 4)
+                .attr('y', 9)
                 .attr('font-size', '12px')
                 .attr('fill', '#2c3e50')
                 .text(item.label);

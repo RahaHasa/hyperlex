@@ -420,9 +420,7 @@ export default function AdminWords() {
                     <div className="ai-progress-sub">
                         AI запросы: {linkProgress.completedRequests || 0}/{linkProgress.totalRequests || 0}
                     </div>
-                    <div className="ai-progress-sub">
-                        Глубина иерархии: {linkProgress.depth || linkDepth} слоя(ов)
-                    </div>
+                
                     <div className="ai-progress-sub">
                         Статус: {linkProgress.lastMessage}
                     </div>
@@ -438,22 +436,7 @@ export default function AdminWords() {
                 </div>
             )}
 
-            <div className="admin-content" style={{ marginTop: '1rem' }}>
-                <div className="form-group" style={{ maxWidth: '320px' }}>
-                    <label>Глубина AI-связей</label>
-                    <select
-                        className="form-select"
-                        value={linkDepth}
-                        onChange={(e) => setLinkDepth(Number(e.target.value))}
-                        disabled={linkingHyponyms}
-                    >
-                        <option value={2}>2 слоя</option>
-                        <option value={3}>3 слоя</option>
-                        <option value={4}>4 слоя</option>
-                        <option value={5}>5 слоёв</option>
-                    </select>
-                </div>
-            </div>
+           
             
             <div className="admin-content">
                 {activeTab === 'list' && (

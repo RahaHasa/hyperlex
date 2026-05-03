@@ -5,7 +5,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
-import { treeToGraph, getNodeColor, formatWord } from '../utils/graphHelpers';
+import { treeToGraph, getNodeColor, formatWord, generateLinkPath } from '../utils/graphHelpers';
 import './GraphView.css';
 
 export default function GraphView({ 
@@ -82,34 +82,67 @@ export default function GraphView({
             .attr('transform', `translate(${margin.left}, ${margin.top})`);
         
         // Zoom
+        let currentZoomScale = 1;
         const zoom = d3.zoom()
             .scaleExtent([0.5, isMobile ? 2 : 3])
             .on('zoom', (event) => {
                 g.attr('transform', event.transform);
+                currentZoomScale = event.transform.k;
+                if (currentZoomScale > 1.2) {
+                    setSelectedNode(null);
+                    setTooltip({ show: false, x: 0, y: 0, content: null });
+                }
             });
         
         svg.call(zoom);
         
-        // Адаптивные параметры симуляции
-        const linkDistance = isMobile ? 50 : 80;
-        const chargeStrength = isMobile ? -200 : -300;
-        const yForce = isMobile ? 80 : 100;
-        
-        // Симуляция силы
-        const simulation = d3.forceSimulation(nodes)
-            .force('link', d3.forceLink(links).id(d => d.id).distance(linkDistance))
-            .force('charge', d3.forceManyBody().strength(chargeStrength))
-            .force('center', d3.forceCenter(innerWidth / 2, innerHeight / 2))
-            .force('y', d3.forceY().y(d => {
-                const centerY = innerHeight / 2;
-                return centerY - d.level * yForce;
-            }).strength(0.5));
+        // Радиальная раскладка: корень в центре, остальные узлы на кольцах
+        const centerX = innerWidth / 2;
+        const centerY = innerHeight / 2;
+        const levels = new Map();
+
+        nodes.forEach((node) => {
+            const level = node.level || 0;
+            if (!levels.has(level)) levels.set(level, []);
+            levels.get(level).push(node);
+        });
+
+        const ringSpacing = isMobile ? 130 : 175;
+        const maxRadius = Math.min(centerX, centerY) - 40;
+
+        const positionedNodes = [];
+        levels.forEach((levelNodes, level) => {
+            if (level === 0) {
+                positionedNodes.push({ ...levelNodes[0], x: centerX, y: centerY });
+                return;
+            }
+
+            const radius = Math.min(maxRadius, Math.abs(level) * ringSpacing);
+            const angleStep = (2 * Math.PI) / levelNodes.length;
+            const offset = level < 0 ? -Math.PI / 2 : Math.PI / 2;
+
+            levelNodes.forEach((node, index) => {
+                const angle = offset + index * angleStep;
+                positionedNodes.push({
+                    ...node,
+                    x: centerX + radius * Math.cos(angle),
+                    y: centerY + radius * Math.sin(angle)
+                });
+            });
+        });
+
+        const nodePositionById = new Map(positionedNodes.map(node => [node.id, node]));
+        const linkNodes = links.map((link) => ({
+            ...link,
+            source: nodePositionById.get(link.source),
+            target: nodePositionById.get(link.target)
+        }));
         
         // Линии связей
         const link = g.append('g')
             .attr('class', 'links')
             .selectAll('path')
-            .data(links)
+            .data(linkNodes)
             .join('path')
             .attr('class', d => `link link-${d.type}`)
             .attr('fill', 'none')
@@ -121,52 +154,61 @@ export default function GraphView({
         const node = g.append('g')
             .attr('class', 'nodes')
             .selectAll('g')
-            .data(nodes)
+            .data(positionedNodes)
             .join('g')
             .attr('class', d => `node node-${d.type}`)
-            .style('cursor', 'pointer')
-            .call(d3.drag()
-                .on('start', dragstarted)
-                .on('drag', dragged)
-                .on('end', dragended));
+            .style('cursor', 'pointer');
         
-        // Круги узлов
-        node.append('circle')
-            .attr('r', d => {
-                const wordLength = d.word.length;
-                const multiplier = isMobile ? 0.9 : 1;
-                if (d.type === 'center') {
-                    return Math.max(28, (20 + wordLength * 1.2) * multiplier);
-                } else {
-                    return Math.max(16, (12 + wordLength * 0.8) * multiplier);
-                }
-            })
+        // Вычисляем размер прямоугольника на основе длины слова
+        const getRectSize = (word, isCenter = false) => {
+            const multiplier = isMobile ? 0.9 : 1;
+            
+            // Ширина динамическая
+            let width;
+            if (isCenter) {
+                width = Math.max(85, (word.length * 10.5 + 30) * multiplier);
+            } else {
+                width = Math.max(70, (word.length * 9 + 25) * multiplier);
+            }
+            
+            // Высота ФИКСИРОВАННАЯ для всех карточек (одинакового размера)
+            const height = (isCenter ? 56 : 48) * multiplier;
+            
+            return { width, height };
+        };
+        
+        // Прямоугольники узлов
+        node.append('rect')
+            .attr('width', d => getRectSize(d.word, d.type === 'center').width)
+            .attr('height', d => getRectSize(d.word, d.type === 'center').height)
+            .attr('x', d => -(getRectSize(d.word, d.type === 'center').width / 2))
+            .attr('y', d => -(getRectSize(d.word, d.type === 'center').height / 2))
             .attr('fill', d => getNodeColor(d))
             .attr('stroke', 'white')
-            .attr('stroke-width', 2);
+            .attr('stroke-width', 2)
+            .attr('rx', 6)
+            .attr('ry', 6);
         
-        // Текст узлов
+        // Текст узлов (одна строка)
         node.append('text')
             .attr('dy', '0.35em')
             .attr('text-anchor', 'middle')
             .attr('fill', 'white')
             .attr('font-size', d => {
                 if (d.type === 'center') {
-                    return isMobile ? '10px' : '12px';
+                    return isMobile ? '11px' : '13px';
                 } else {
-                    return isMobile ? '7px' : '9px';
+                    return isMobile ? '8px' : '10px';
                 }
             })
             .attr('font-weight', d => d.type === 'center' ? '600' : '500')
-            .text(d => {
-                const maxLen = isMobile ? 
-                    (d.type === 'center' ? 10 : 6) :
-                    (d.type === 'center' ? 15 : 8);
-                return formatWord(d.word, maxLen);
-            });
+            .attr('pointer-events', 'none')
+            .text(d => d.word);
         
         // События узлов
         const handleNodeClick = (event, d) => {
+            // Ignore clicks when zoomed in to avoid accidental detail popups
+            if (currentZoomScale > 1.2) return;
             event.stopPropagation();
             event.preventDefault();
             setSelectedNode(d);
@@ -176,7 +218,7 @@ export default function GraphView({
         .on('mouseover', (event, d) => {
             // Подсвечиваем узел
             d3.select(event.currentTarget)
-                .select('circle')
+                .select('rect')
                 .transition()
                 .duration(200)
                 .attr('stroke-width', 3);
@@ -193,7 +235,7 @@ export default function GraphView({
         .on('mouseout', (event, d) => {
             // Гасим подсветку
             d3.select(event.currentTarget)
-                .select('circle')
+                .select('rect')
                 .transition()
                 .duration(200)
                 .attr('stroke-width', 2);
@@ -203,36 +245,14 @@ export default function GraphView({
         });
         
         // Обновление позиций
-        simulation.on('tick', () => {
-            link.attr('d', d => {
-                const dx = d.target.x - d.source.x;
-                const dy = d.target.y - d.source.y;
-                const dr = Math.sqrt(dx * dx + dy * dy) * 2;
-                return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,1 ${d.target.x},${d.target.y}`;
-            });
-            
-            node.attr('transform', d => `translate(${d.x}, ${d.y})`);
+        link.attr('d', d => {
+            return generateLinkPath(d.source, d.target);
         });
+
+        node.attr('transform', d => `translate(${d.x}, ${d.y})`);
         
         // Функции перетаскивания
-        function dragstarted(event, d) {
-            if (!event.active) simulation.alphaTarget(0.3).restart();
-            d.fx = d.x;
-            d.fy = d.y;
-        }
-        
-        function dragged(event, d) {
-            d.fx = event.x;
-            d.fy = event.y;
-        }
-        
-        function dragended(event, d) {
-            if (!event.active) simulation.alphaTarget(0);
-            d.fx = null;
-            d.fy = null;
-        }
-        
-        return () => simulation.stop();
+        return () => {};
         
     }, [treeData, dimensions]);
     
@@ -309,7 +329,6 @@ export default function GraphView({
                     {tooltip.content.definition && (
                         <div className="tooltip-def">{tooltip.content.definition}</div>
                     )}
-                    <div className="tooltip-hint">Кликни для подробнее</div>
                 </div>
             )}
             
