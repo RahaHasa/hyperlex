@@ -1,0 +1,375 @@
+{
+"education": {
+  "ru": "Образование",
+  "uz": "Ta'lim",
+  "description_ru": "Процесс получения знаний.",
+  "description_uz": "Bilim olish jarayoni.",
+  "category": "education",
+  "related": []
+},
+
+"school_levels": {
+  "ru": "Уровни образования",
+  "uz": "Ta'lim bosqichlari",
+  "parent": "education",
+  "description_ru": "Ступени образовательной системы.",
+  "description_uz": "Ta'lim tizimi bosqichlari.",
+  "category": "education",
+  "related": []
+},
+
+"kindergarten": {
+  "ru": "Детский сад",
+  "uz": "Bog‘cha",
+  "parent": "school_levels",
+  "description_ru": "Дошкольное учреждение.",
+  "description_uz": "Maktabgacha ta'lim muassasasi.",
+  "category": "education",
+  "related": []
+},
+
+"primary_school": {
+  "ru": "Начальная школа",
+  "uz": "Boshlang‘ich maktab",
+  "parent": "school_levels",
+  "description_ru": "Первые классы школы.",
+  "description_uz": "Maktabning boshlang‘ich bosqichi.",
+  "category": "education",
+  "related": []
+},
+
+"middle_school": {
+  "ru": "Средняя школа",
+  "uz": "O‘rta maktab",
+  "parent": "school_levels",
+  "description_ru": "Основной этап школы.",
+  "description_uz": "Maktabning asosiy bosqichi.",
+  "category": "education",
+  "related": []
+},
+
+"high_school": {
+  "ru": "Старшая школа",
+  "uz": "Yuqori sinf",
+  "parent": "school_levels",
+  "description_ru": "Последние классы школы.",
+  "description_uz": "Maktabning yuqori bosqichi.",
+  "category": "education",
+  "related": []
+},
+
+"college": {
+  "ru": "Колледж",
+  "uz": "Kollej",
+  "parent": "school_levels",
+  "description_ru": "Среднее специальное образование.",
+  "description_uz": "O‘rta maxsus ta'lim.",
+  "category": "education",
+  "related": []
+},
+
+"university": {
+  "ru": "Университет",
+  "uz": "Universitet",
+  "parent": "school_levels",
+  "description_ru": "Высшее учебное заведение.",
+  "description_uz": "Oliy ta'lim muassasasi.",
+  "category": "education",
+  "related": []
+},
+
+"institutions": {
+  "ru": "Учебные учреждения",
+  "uz": "Ta'lim muassasalari",
+  "parent": "education",
+  "description_ru": "Организации для обучения.",
+  "description_uz": "O‘qitish tashkilotlari.",
+  "category": "education",
+  "related": []
+},
+
+"academy": {
+  "ru": "Академия",
+  "uz": "Akademiya",
+  "parent": "institutions",
+  "description_ru": "Специализированное высшее учреждение.",
+  "description_uz": "Ixtisoslashgan oliy muassasa.",
+  "category": "education",
+  "related": []
+},
+
+"lyceum": {
+  "ru": "Лицей",
+  "uz": "Litsey",
+  "parent": "institutions",
+  "description_ru": "Продвинутая школа.",
+  "description_uz": "Chuqurlashtirilgan maktab.",
+  "category": "education",
+  "related": []
+},
+
+"training_center": {
+  "ru": "Учебный центр",
+  "uz": "O‘quv markazi",
+  "parent": "institutions",
+  "description_ru": "Место дополнительного обучения.",
+  "description_uz": "Qo‘shimcha ta'lim joyi.",
+  "category": "education",
+  "related": []
+},
+
+"subjects": {
+  "ru": "Учебные предметы",
+  "uz": "Fanlar",
+  "parent": "education",
+  "description_ru": "Дисциплины для изучения.",
+  "description_uz": "O‘rganiladigan fanlar.",
+  "category": "education",
+  "related": []
+},
+
+"math": { "ru": "Математика", "uz": "Matematika", "parent": "subjects", "description_ru": "Наука о числах.", "description_uz": "Sonlar haqidagi fan.", "category": "education", "related": [] },
+"physics": { "ru": "Физика", "uz": "Fizika", "parent": "subjects", "description_ru": "Наука о природе.", "description_uz": "Tabiat haqidagi fan.", "category": "education", "related": [] },
+"chemistry": { "ru": "Химия", "uz": "Kimyo", "parent": "subjects", "description_ru": "Наука о веществах.", "description_uz": "Moddalar haqidagi fan.", "category": "education", "related": [] },
+"biology": { "ru": "Биология", "uz": "Biologiya", "parent": "subjects", "description_ru": "Наука о жизни.", "description_uz": "Hayot haqidagi fan.", "category": "education", "related": [] },
+"history": { "ru": "История", "uz": "Tarix", "parent": "subjects", "description_ru": "Изучение прошлого.", "description_uz": "O‘tmishni o‘rganish.", "category": "education", "related": [] },
+"geography": { "ru": "География", "uz": "Geografiya", "parent": "subjects", "description_ru": "Наука о Земле.", "description_uz": "Yer haqidagi fan.", "category": "education", "related": [] },
+
+"roles": {
+  "ru": "Участники обучения",
+  "uz": "Ta'lim ishtirokchilari",
+  "parent": "education",
+  "description_ru": "Люди в образовательной системе.",
+  "description_uz": "Ta'lim tizimidagi shaxslar.",
+  "category": "education",
+  "related": []
+},
+
+"teacher": { "ru": "Учитель", "uz": "O‘qituvchi", "parent": "roles", "description_ru": "Преподаватель.", "description_uz": "Dars beruvchi shaxs.", "category": "education", "related": [] },
+"student": { "ru": "Студент", "uz": "Talaba", "parent": "roles", "description_ru": "Учащийся университета.", "description_uz": "Universitet o‘quvchisi.", "category": "education", "related": [] },
+"pupil": { "ru": "Ученик", "uz": "O‘quvchi", "parent": "roles", "description_ru": "Учащийся школы.", "description_uz": "Maktab o‘quvchisi.", "category": "education", "related": [] },
+"professor": { "ru": "Профессор", "uz": "Professor", "parent": "roles", "description_ru": "Высший преподаватель.", "description_uz": "Oliy darajadagi o‘qituvchi.", "category": "education", "related": [] },
+
+"materials": {
+  "ru": "Учебные материалы",
+  "uz": "O‘quv materiallari",
+  "parent": "education",
+  "description_ru": "Материалы для обучения.",
+  "description_uz": "Ta'lim uchun materiallar.",
+  "category": "education",
+  "related": []
+},
+
+"textbook": { "ru": "Учебник", "uz": "Darslik", "parent": "materials", "description_ru": "Основная книга для обучения.", "description_uz": "Asosiy o‘quv kitobi.", "category": "education", "related": [] },
+"notebook": { "ru": "Тетрадь", "uz": "Daftar", "parent": "materials", "description_ru": "Для записи.", "description_uz": "Yozish uchun daftar.", "category": "education", "related": [] },
+"pen": { "ru": "Ручка", "uz": "Ruchka", "parent": "materials", "description_ru": "Письменный инструмент.", "description_uz": "Yozish asbobi.", "category": "education", "related": [] },
+"pencil": { "ru": "Карандаш", "uz": "Qalam", "parent": "materials", "description_ru": "Инструмент для письма.", "description_uz": "Yozuv asbobi.", "category": "education", "related": [] },
+"backpack": { "ru": "Рюкзак", "uz": "Sumka", "parent": "materials", "description_ru": "Сумка для книг.", "description_uz": "Kitob sumkasi.", "category": "education", "related": [] },
+
+
+"exams": {
+  "ru": "Экзамены",
+  "uz": "Imtihonlar",
+  "parent": "education",
+  "description_ru": "Форма проверки знаний.",
+  "description_uz": "Bilimni tekshirish shakli.",
+  "category": "education",
+  "related": []
+},
+
+"exam": { "ru": "Экзамен", "uz": "Imtihon", "parent": "exams", "description_ru": "Итоговая проверка.", "description_uz": "Yakuniy tekshiruv.", "category": "education", "related": [] },
+"test": { "ru": "Тест", "uz": "Test", "parent": "exams", "description_ru": "Форма вопросов.", "description_uz": "Savollar shakli.", "category": "education", "related": [] },
+"quiz": { "ru": "Викторина", "uz": "Savol-javob", "parent": "exams", "description_ru": "Короткая проверка.", "description_uz": "Qisqa tekshiruv.", "category": "education", "related": [] },
+"final_exam": { "ru": "Финальный экзамен", "uz": "Yakuniy imtihon", "parent": "exams", "description_ru": "Итог года.", "description_uz": "Yil yakuni.", "category": "education", "related": [] },
+
+"degrees": {
+  "ru": "Учёные степени",
+  "uz": "Ilmiy darajalar",
+  "parent": "education",
+  "description_ru": "Академические уровни.",
+  "description_uz": "Akademik bosqichlar.",
+  "category": "education",
+  "related": []
+},
+
+"bachelor": { "ru": "Бакалавр", "uz": "Bakalavr", "parent": "degrees", "description_ru": "Первая степень.", "description_uz": "Birinchi daraja.", "category": "education", "related": [] },
+"master": { "ru": "Магистр", "uz": "Magistr", "parent": "degrees", "description_ru": "Вторая степень.", "description_uz": "Ikkinchi daraja.", "category": "education", "related": [] },
+"phd": { "ru": "Доктор наук", "uz": "Fan doktori", "parent": "degrees", "description_ru": "Высшая степень.", "description_uz": "Eng yuqori daraja.", "category": "education", "related": [] },
+
+
+"classrooms": {
+  "ru": "Учебные помещения",
+  "uz": "O‘quv xonalari",
+  "parent": "education",
+  "description_ru": "Места проведения занятий.",
+  "description_uz": "Dars o‘tiladigan joylar.",
+  "category": "education",
+  "related": []
+},
+
+"classroom": { "ru": "Класс", "uz": "Sinf", "parent": "classrooms", "description_ru": "Комната для уроков.", "description_uz": "Dars xonasi.", "category": "education", "related": [] },
+"lecture_hall": { "ru": "Лекционная аудитория", "uz": "Ma'ruza zali", "parent": "classrooms", "description_ru": "Большая аудитория.", "description_uz": "Katta auditoriya.", "category": "education", "related": [] },
+"laboratory": { "ru": "Лаборатория", "uz": "Laboratoriya", "parent": "classrooms", "description_ru": "Помещение для практики.", "description_uz": "Amaliyot xonasi.", "category": "education", "related": [] },
+
+"academic_terms": {
+  "ru": "Академические термины",
+  "uz": "Akademik atamalar",
+  "parent": "education",
+  "description_ru": "Термины учебного процесса.",
+  "description_uz": "Ta'lim atamalari.",
+  "category": "education",
+  "related": []
+},
+
+"semester": { "ru": "Семестр", "uz": "Semestr", "parent": "academic_terms", "description_ru": "Половина учебного года.", "description_uz": "Yarim o‘quv yili.", "category": "education", "related": [] },
+"credit": { "ru": "Кредит", "uz": "Kredit", "parent": "academic_terms", "description_ru": "Учебная единица.", "description_uz": "O‘quv birligi.", "category": "education", "related": [] },
+"curriculum": { "ru": "Учебный план", "uz": "O‘quv reja", "parent": "academic_terms", "description_ru": "План обучения.", "description_uz": "Ta'lim rejasi.", "category": "education", "related": [] },
+
+"academic_terms": {
+  "ru": "Академические термины",
+  "uz": "Akademik atamalar",
+  "parent": "education",
+  "description_ru": "Термины учебного процесса.",
+  "description_uz": "Ta'lim atamalari.",
+  "category": "education",
+  "related": []
+},
+
+"semester": { "ru": "Семестр", "uz": "Semestr", "parent": "academic_terms", "description_ru": "Половина учебного года.", "description_uz": "Yarim o‘quv yili.", "category": "education", "related": [] },
+"credit": { "ru": "Кредит", "uz": "Kredit", "parent": "academic_terms", "description_ru": "Учебная единица.", "description_uz": "O‘quv birligi.", "category": "education", "related": [] },
+"curriculum": { "ru": "Учебный план", "uz": "O‘quv reja", "parent": "academic_terms", "description_ru": "План обучения.", "description_uz": "Ta'lim rejasi.", "category": "education", "related": [] },
+
+"learning_formats": {
+  "ru": "Форматы обучения",
+  "uz": "Ta'lim shakllari",
+  "parent": "education",
+  "description_ru": "Способы получения знаний.",
+  "description_uz": "Bilim olish usullari.",
+  "category": "education",
+  "related": []
+},
+
+"offline": { "ru": "Очно", "uz": "An'anaviy", "parent": "learning_formats", "description_ru": "Обучение в аудитории.", "description_uz": "Sinfda o‘qish.", "category": "education", "related": [] },
+"online": { "ru": "Онлайн", "uz": "Onlayn", "parent": "learning_formats", "description_ru": "Обучение через интернет.", "description_uz": "Internet orqali o‘qish.", "category": "education", "related": [] },
+"hybrid": { "ru": "Смешанное обучение", "uz": "Aralash ta'lim", "parent": "learning_formats", "description_ru": "Онлайн + офлайн.", "description_uz": "Onlayn va an'anaviy.", "category": "education", "related": [] },
+"distance_learning": { "ru": "Дистанционное обучение", "uz": "Masofaviy ta'lim", "parent": "learning_formats", "description_ru": "Удалённое обучение.", "description_uz": "Masofadan o‘qish.", "category": "education", "related": [] },
+
+"academic_activities": {
+  "ru": "Учебные активности",
+  "uz": "O‘quv faoliyatlari",
+  "parent": "education",
+  "description_ru": "Деятельность в обучении.",
+  "description_uz": "Ta'lim jarayonidagi faoliyat.",
+  "category": "education",
+  "related": []
+},
+
+"lecture": { "ru": "Лекция", "uz": "Ma'ruza", "parent": "academic_activities", "description_ru": "Теоретическое занятие.", "description_uz": "Nazariy mashg‘ulot.", "category": "education", "related": [] },
+"seminar": { "ru": "Семинар", "uz": "Seminar", "parent": "academic_activities", "description_ru": "Обсуждение темы.", "description_uz": "Mavzu muhokamasi.", "category": "education", "related": [] },
+"homework": { "ru": "Домашнее задание", "uz": "Uy vazifasi", "parent": "academic_activities", "description_ru": "Задание для дома.", "description_uz": "Uyda bajariladigan topshiriq.", "category": "education", "related": [] },
+"project": { "ru": "Проект", "uz": "Loyiha", "parent": "academic_activities", "description_ru": "Практическая работа.", "description_uz": "Amaliy ish.", "category": "education", "related": [] },
+
+"grading_system": {
+  "ru": "Система оценок",
+  "uz": "Baholash tizimi",
+  "parent": "education",
+  "description_ru": "Методы оценки знаний.",
+  "description_uz": "Bilimni baholash usullari.",
+  "category": "education",
+  "related": []
+},
+
+"grade_a": { "ru": "Оценка 5", "uz": "5 baho", "parent": "grading_system", "description_ru": "Отлично.", "description_uz": "A'lo.", "category": "education", "related": [] },
+"grade_b": { "ru": "Оценка 4", "uz": "4 baho", "parent": "grading_system", "description_ru": "Хорошо.", "description_uz": "Yaxshi.", "category": "education", "related": [] },
+"grade_c": { "ru": "Оценка 3", "uz": "3 baho", "parent": "grading_system", "description_ru": "Удовлетворительно.", "description_uz": "Qoniqarli.", "category": "education", "related": [] },
+"pass": { "ru": "Зачёт", "uz": "O‘tdi", "parent": "grading_system", "description_ru": "Предмет сдан.", "description_uz": "Fan topshirildi.", "category": "education", "related": [] },
+
+"academic_titles": {
+  "ru": "Учёные звания",
+  "uz": "Ilmiy unvonlar",
+  "parent": "education",
+  "description_ru": "Профессиональные звания.",
+  "description_uz": "Kasbiy unvonlar.",
+  "category": "education",
+  "related": []
+},
+
+"assistant_professor": { "ru": "Доцент", "uz": "Dotsent", "parent": "academic_titles", "description_ru": "Учёное звание.", "description_uz": "Ilmiy unvon.", "category": "education", "related": [] },
+"associate_professor": { "ru": "Ассоциированный профессор", "uz": "Dotsent", "parent": "academic_titles", "description_ru": "Промежуточное звание.", "description_uz": "Oraliq unvon.", "category": "education", "related": [] },
+"professor_title": { "ru": "Профессор", "uz": "Professor", "parent": "academic_titles", "description_ru": "Высшее звание.", "description_uz": "Yuqori ilmiy unvon.", "category": "education", "related": [] },
+"dean": { "ru": "Декан", "uz": "Dekan", "parent": "academic_titles", "description_ru": "Руководитель факультета.", "description_uz": "Fakultet rahbari.", "category": "education", "related": [] },
+
+"academic_calendar": {
+  "ru": "Учебный календарь",
+  "uz": "O‘quv taqvimi",
+  "parent": "education",
+  "description_ru": "Периоды учебного года.",
+  "description_uz": "O‘quv yilining davrlari.",
+  "category": "education",
+  "related": []
+},
+
+"academic_year": { "ru": "Учебный год", "uz": "O‘quv yili", "parent": "academic_calendar", "description_ru": "Год обучения.", "description_uz": "Ta'lim yili.", "category": "education", "related": [] },
+"semester_term": { "ru": "Семестр", "uz": "Semestr", "parent": "academic_calendar", "description_ru": "Часть учебного года.", "description_uz": "O‘quv yilining qismi.", "category": "education", "related": [] },
+"quarter": { "ru": "Четверть", "uz": "Chorak", "parent": "academic_calendar", "description_ru": "Часть года в школе.", "description_uz": "Maktab davri.", "category": "education", "related": [] },
+"vacation": { "ru": "Каникулы", "uz": "Ta'til", "parent": "academic_calendar", "description_ru": "Период отдыха.", "description_uz": "Dam olish davri.", "category": "education", "related": [] },
+
+"academic_skills": {
+  "ru": "Учебные навыки",
+  "uz": "O‘quv ko‘nikmalari",
+  "parent": "education",
+  "description_ru": "Навыки для успешного обучения.",
+  "description_uz": "Muvaffaqiyatli o‘qish ko‘nikmalari.",
+  "category": "education",
+  "related": []
+},
+
+"reading": { "ru": "Чтение", "uz": "O‘qish", "parent": "academic_skills", "description_ru": "Навык понимания текста.", "description_uz": "Matnni tushunish.", "category": "education", "related": [] },
+"writing": { "ru": "Письмо", "uz": "Yozish", "parent": "academic_skills", "description_ru": "Навык написания текста.", "description_uz": "Matn yozish.", "category": "education", "related": [] },
+"critical_thinking": { "ru": "Критическое мышление", "uz": "Tanqidiy fikrlash", "parent": "academic_skills", "description_ru": "Анализ информации.", "description_uz": "Ma'lumotni tahlil qilish.", "category": "education", "related": [] },
+"presentation": { "ru": "Презентация", "uz": "Taqdimot", "parent": "academic_skills", "description_ru": "Выступление перед аудиторией.", "description_uz": "Auditoriya oldida chiqish.", "category": "education", "related": [] },
+
+"academic_departments": {
+  "ru": "Факультеты",
+  "uz": "Fakultetlar",
+  "parent": "education",
+  "description_ru": "Подразделения университета.",
+  "description_uz": "Universitet bo‘limlari.",
+  "category": "education",
+  "related": []
+},
+
+"engineering": { "ru": "Инженерный факультет", "uz": "Muhandislik fakulteti", "parent": "academic_departments", "description_ru": "Техническое направление.", "description_uz": "Texnik yo‘nalish.", "category": "education", "related": [] },
+"medicine_department": { "ru": "Медицинский факультет", "uz": "Tibbiyot fakulteti", "parent": "academic_departments", "description_ru": "Медицинское направление.", "description_uz": "Tibbiyot yo‘nalishi.", "category": "education", "related": [] },
+"law": { "ru": "Юридический факультет", "uz": "Huquq fakulteti", "parent": "academic_departments", "description_ru": "Правовое образование.", "description_uz": "Huquqiy ta'lim.", "category": "education", "related": [] },
+"economics": { "ru": "Экономический факультет", "uz": "Iqtisodiyot fakulteti", "parent": "academic_departments", "description_ru": "Экономические науки.", "description_uz": "Iqtisodiy fanlar.", "category": "education", "related": [] },
+
+"student_life": {
+  "ru": "Студенческая жизнь",
+  "uz": "Talabalik hayoti",
+  "parent": "education",
+  "description_ru": "Активности студентов.",
+  "description_uz": "Talabalar faoliyati.",
+  "category": "education",
+  "related": []
+},
+
+"dormitory": { "ru": "Общежитие", "uz": "Yotoqxona", "parent": "student_life", "description_ru": "Жильё студентов.", "description_uz": "Talabalar turar joyi.", "category": "education", "related": [] },
+"student_union": { "ru": "Студсовет", "uz": "Talabalar kengashi", "parent": "student_life", "description_ru": "Орган студентов.", "description_uz": "Talabalar organi.", "category": "education", "related": [] },
+"internship": { "ru": "Стажировка", "uz": "Amaliyot", "parent": "student_life", "description_ru": "Практический опыт.", "description_uz": "Amaliy tajriba.", "category": "education", "related": [] },
+"scholarship": { "ru": "Стипендия", "uz": "Stipendiya", "parent": "student_life", "description_ru": "Финансовая поддержка.", "description_uz": "Moliyaviy yordam.", "category": "education", "related": [] },
+
+"education_system": {
+  "ru": "Образовательная система",
+  "uz": "Ta'lim tizimi",
+  "parent": "education",
+  "description_ru": "Структура образования страны.",
+  "description_uz": "Davlat ta'lim tizimi.",
+  "category": "education",
+  "related": []
+},
+
+"curriculum_standard": { "ru": "Государственный стандарт", "uz": "Davlat standarti", "parent": "education_system", "description_ru": "Официальная программа.", "description_uz": "Rasmiy o‘quv dasturi.", "category": "education", "related": [] },
+"ministry_of_education": { "ru": "Министерство образования", "uz": "Ta'lim vazirligi", "parent": "education_system", "description_ru": "Государственный орган.", "description_uz": "Davlat organi.", "category": "education", "related": [] },
+"accreditation": { "ru": "Аккредитация", "uz": "Akkreditatsiya", "parent": "education_system", "description_ru": "Признание учреждения.", "description_uz": "Muassasa tasdiqlanishi.", "category": "education", "related": [] },
+"ranking": { "ru": "Рейтинг", "uz": "Reyting", "parent": "education_system", "description_ru": "Оценка университета.", "description_uz": "Universitet bahosi.", "category": "education", "related": [] },}

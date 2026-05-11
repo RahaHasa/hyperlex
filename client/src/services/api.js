@@ -77,12 +77,13 @@ export async function logoutUser() {
 export async function searchWords(query, lang = 'both') {
     const response = await api.get('/search', { params: { q: query, lang } });
     
-    // Нормализуем результаты: преобразуем lang в language
+    // Нормализуем результаты под новый формат схемы
     if (response.results) {
         response.results = response.results.map(word => ({
             ...word,
-            language: word.lang === 'lang_ru' ? 'ru' : 'uz',
-            id: word._id // Добавляем id как alias для _id
+            language: word.language || (word.lang === 'lang_ru' ? 'ru' : 'uz'),
+            id: word.semantic_key || word._id,
+            word: word.word || word.ru || word.uz || ''
         }));
     }
     
@@ -99,15 +100,17 @@ export async function getWord(id) {
     // Нормализуем слово и связанное слово
     const normalizeWord = (w) => ({
         ...w,
-        language: w.lang === 'lang_ru' ? 'ru' : 'uz',
-        id: w._id,
+        language: w.language || (w.lang === 'lang_ru' ? 'ru' : 'uz'),
+        id: w.id || w.semantic_key || w._id,
+        word: w.word || w.ru || w.uz || '',
         hypernyms: Array.isArray(w.hypernyms)
             ? w.hypernyms.map(item => typeof item === 'string'
                 ? item
                 : {
                     ...item,
-                    language: item.lang === 'lang_ru' ? 'ru' : 'uz',
-                    id: item._id
+                    language: item.language || (item.lang === 'lang_ru' ? 'ru' : 'uz'),
+                    id: item.id || item.semantic_key || item._id,
+                    word: item.word || item.ru || item.uz || ''
                 })
             : w.hypernyms,
         hyponyms: Array.isArray(w.hyponyms)
@@ -115,8 +118,9 @@ export async function getWord(id) {
                 ? item
                 : {
                     ...item,
-                    language: item.lang === 'lang_ru' ? 'ru' : 'uz',
-                    id: item._id
+                    language: item.language || (item.lang === 'lang_ru' ? 'ru' : 'uz'),
+                    id: item.id || item.semantic_key || item._id,
+                    word: item.word || item.ru || item.uz || ''
                 })
             : w.hyponyms
     });
@@ -142,8 +146,11 @@ export async function getWordTree(id, depth = 3) {
     // Нормализуем узлы в дереве
     const normalizeWord = (w) => ({
         ...w,
-        language: w.lang === 'lang_ru' ? 'ru' : 'uz',
-        id: w._id
+        language: w.language || (w.lang === 'lang_ru' ? 'ru' : 'uz'),
+        id: w.id || w.semantic_key || w._id,
+        word: w.word || w.ru || w.uz || '',
+        ru: w.ru || w.word || '',
+        uz: w.uz || ''
     });
     
     const normalizeNode = (node) => {
@@ -172,8 +179,11 @@ export async function compareWords(ruId, uzId) {
     // Нормализуем узлы в деревьях
     const normalizeWord = (w) => ({
         ...w,
-        language: w.lang === 'lang_ru' ? 'ru' : 'uz',
-        id: w._id
+        language: w.language || (w.lang === 'lang_ru' ? 'ru' : 'uz'),
+        id: w.id || w.semantic_key || w._id,
+        word: w.word || w.ru || w.uz || '',
+        ru: w.ru || w.word || '',
+        uz: w.uz || ''
     });
     
     const normalizeNode = (node) => {
@@ -184,11 +194,11 @@ export async function compareWords(ruId, uzId) {
         return normalized;
     };
     
-    if (response.ruTree) {
-        response.ruTree = normalizeNode(response.ruTree);
+    if (response.comparison?.russian) {
+        response.ruTree = normalizeNode(response.comparison.russian);
     }
-    if (response.uzTree) {
-        response.uzTree = normalizeNode(response.uzTree);
+    if (response.comparison?.uzbek) {
+        response.uzTree = normalizeNode(response.comparison.uzbek);
     }
     
     return response;

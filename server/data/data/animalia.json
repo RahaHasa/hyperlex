@@ -1,0 +1,3578 @@
+{
+  "animal": {
+    "ru": "Животное",
+    "uz": "Hayvon",
+    "description_ru": "Живой организм, способный двигаться и питаться.",
+    "description_uz": "Harakatlana oladigan tirik mavjudot.",
+    "category": "biology",
+    "related": [
+      "mammal",
+      "bird",
+      "fish",
+      "reptile",
+      "insect"
+    ]
+  },
+  "mammal": {
+    "ru": "Млекопитающее",
+    "uz": "Sutemizuvchi",
+    "parent": "animal",
+    "description_ru": "Животное, вскармливающее детёнышей молоком.",
+    "description_uz": "Bolalarini sut bilan boqadigan hayvon.",
+    "category": "biology",
+    "related": [
+      "dog",
+      "cat",
+      "lion",
+      "tiger",
+      "wolf",
+      "horse",
+      "cow",
+      "sheep",
+      "goat"
+    ]
+  },
+  "bird": {
+    "ru": "Птица",
+    "uz": "Qush",
+    "parent": "animal",
+    "description_ru": "Животное с перьями и крыльями.",
+    "description_uz": "Patli va qanotli hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "fish": {
+    "ru": "Рыба",
+    "uz": "Baliq",
+    "parent": "animal",
+    "description_ru": "Водное позвоночное животное.",
+    "description_uz": "Suvda yashovchi umurtqali hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "reptile": {
+    "ru": "Пресмыкающееся",
+    "uz": "Sudraluvchi",
+    "parent": "animal",
+    "description_ru": "Холоднокровное позвоночное животное.",
+    "description_uz": "Sovuqqonli umurtqali hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "insect": {
+    "ru": "Насекомое",
+    "uz": "Hasharot",
+    "parent": "animal",
+    "description_ru": "Мелкое беспозвоночное животное.",
+    "description_uz": "Mayda umurtqasiz hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "dog": {
+    "ru": "Собака",
+    "uz": "It",
+    "parent": "mammal",
+    "description_ru": "Домашнее животное семейства псовых.",
+    "description_uz": "Uy hayvoni bo‘lgan sutemizuvchi.",
+    "category": "biology",
+    "related": [
+      "wolf"
+    ]
+  },
+  "cat": {
+    "ru": "Кошка",
+    "uz": "Mushuk",
+    "parent": "mammal",
+    "description_ru": "Домашнее животное семейства кошачьих.",
+    "description_uz": "Uy mushugi hisoblanadigan hayvon.",
+    "category": "biology",
+    "related": [
+      "lion",
+      "tiger"
+    ]
+  },
+  "lion": {
+    "ru": "Лев",
+    "uz": "Arslon",
+    "parent": "mammal",
+    "description_ru": "Крупный хищник саванны.",
+    "description_uz": "Savannada yashovchi yirik yirtqich.",
+    "category": "biology",
+    "related": []
+  },
+  "tiger": {
+    "ru": "Тигр",
+    "uz": "Yo‘lbars",
+    "parent": "mammal",
+    "description_ru": "Полосатый хищник семейства кошачьих.",
+    "description_uz": "Chiziqli yirtqich mushuk.",
+    "category": "biology",
+    "related": []
+  },
+  "wolf": {
+    "ru": "Волк",
+    "uz": "Bo‘ri",
+    "parent": "mammal",
+    "description_ru": "Хищное животное семейства псовых.",
+    "description_uz": "Itlar oilasiga mansub yirtqich.",
+    "category": "biology",
+    "related": []
+  },
+  "horse": {
+    "ru": "Лошадь",
+    "uz": "Ot",
+    "parent": "mammal",
+    "description_ru": "Домашнее копытное животное.",
+    "description_uz": "Uyda boqiladigan tuyoqli hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "cow": {
+    "ru": "Корова",
+    "uz": "Sigir",
+    "parent": "mammal",
+    "description_ru": "Домашнее сельскохозяйственное животное.",
+    "description_uz": "Qishloq xo‘jaligi uy hayvoni.",
+    "category": "biology",
+    "related": []
+  },
+  "sheep": {
+    "ru": "Овца",
+    "uz": "Qo‘y",
+    "parent": "mammal",
+    "description_ru": "Домашнее животное, разводимое ради шерсти и мяса.",
+    "description_uz": "Jun va go‘sht uchun boqiladigan uy hayvoni.",
+    "category": "biology",
+    "related": []
+  },
+  "goat": {
+    "ru": "Коза",
+    "uz": "Echki",
+    "parent": "mammal",
+    "description_ru": "Домашнее парнокопытное животное.",
+    "description_uz": "Uy hayvoni bo‘lgan juft tuyoqli.",
+    "category": "biology",
+    "related": []
+  },
+  "fox": {
+    "ru": "Лиса",
+    "uz": "Tulki",
+    "parent": "mammal",
+    "description_ru": "Хитрое дикое животное семейства псовых.",
+    "description_uz": "Ayyor yovvoyi itlar oilasiga mansub hayvon.",
+    "category": "biology",
+    "related": [
+      "wolf",
+      "dog"
+    ]
+  },
+  "bear": {
+    "ru": "Медведь",
+    "uz": "Ayiq",
+    "parent": "mammal",
+    "description_ru": "Крупное хищное млекопитающее.",
+    "description_uz": "Yirik yirtqich sutemizuvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "deer": {
+    "ru": "Олень",
+    "uz": "Kiyik",
+    "parent": "mammal",
+    "description_ru": "Парнокопытное животное с рогами.",
+    "description_uz": "Shoxli juft tuyoqli hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "elephant": {
+    "ru": "Слон",
+    "uz": "Fil",
+    "parent": "mammal",
+    "description_ru": "Крупное млекопитающее с хоботом.",
+    "description_uz": "Xartumli yirik hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "camel": {
+    "ru": "Верблюд",
+    "uz": "Tuya",
+    "parent": "mammal",
+    "description_ru": "Пустынное животное с горбом.",
+    "description_uz": "Cho‘lda yashovchi o‘rkachli hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "pig": {
+    "ru": "Свинья",
+    "uz": "Cho‘chqa",
+    "parent": "mammal",
+    "description_ru": "Домашнее животное, разводимое ради мяса.",
+    "description_uz": "Go‘sht uchun boqiladigan uy hayvoni.",
+    "category": "biology",
+    "related": []
+  },
+  "rabbit": {
+    "ru": "Кролик",
+    "uz": "Quyon",
+    "parent": "mammal",
+    "description_ru": "Маленькое травоядное животное с длинными ушами.",
+    "description_uz": "Uzun quloqli mayda o‘txo‘r hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "monkey": {
+    "ru": "Обезьяна",
+    "uz": "Maymun",
+    "parent": "mammal",
+    "description_ru": "Разумное древесное животное.",
+    "description_uz": "Aqlga ega daraxtlarda yashovchi hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "gorilla": {
+    "ru": "Горилла",
+    "uz": "Gorilla",
+    "parent": "mammal",
+    "description_ru": "Крупнейшая человекообразная обезьяна.",
+    "description_uz": "Eng yirik odamga o‘xshash maymun.",
+    "category": "biology",
+    "related": [
+      "monkey"
+    ]
+  },
+  "kangaroo": {
+    "ru": "Кенгуру",
+    "uz": "Kenguru",
+    "parent": "mammal",
+    "description_ru": "Сумчатое животное с мощными задними лапами.",
+    "description_uz": "Kuchli orqa oyoqli sumkali hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "zebra": {
+    "ru": "Зебра",
+    "uz": "Zebra",
+    "parent": "mammal",
+    "description_ru": "Африканское травоядное с полосатой окраской.",
+    "description_uz": "Chiziqli terili afrika o‘txo‘r hayvoni.",
+    "category": "biology",
+    "related": []
+  },
+  "giraffe": {
+    "ru": "Жираф",
+    "uz": "Jirafa",
+    "parent": "mammal",
+    "description_ru": "Самое высокое наземное животное.",
+    "description_uz": "Yer yuzidagi eng baland hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "leopard": {
+    "ru": "Леопард",
+    "uz": "Leopard",
+    "parent": "mammal",
+    "description_ru": "Пятнистый хищник семейства кошачьих.",
+    "description_uz": "Dog‘li yirtqich mushuk.",
+    "category": "biology",
+    "related": []
+  },
+  "hyena": {
+    "ru": "Гиена",
+    "uz": "Giena",
+    "parent": "mammal",
+    "description_ru": "Хищник и падальщик саванн.",
+    "description_uz": "Savannada yashovchi yirtqich va o‘likxo‘r.",
+    "category": "biology",
+    "related": []
+  },
+  "buffalo": {
+    "ru": "Буйвол",
+    "uz": "Buyvol",
+    "parent": "mammal",
+    "description_ru": "Крупное травоядное животное.",
+    "description_uz": "Yirik o‘txo‘r hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "eagle": {
+    "ru": "Орёл",
+    "uz": "Burgut",
+    "parent": "bird",
+    "description_ru": "Крупная хищная птица.",
+    "description_uz": "Yirik yirtqich qush.",
+    "category": "biology",
+    "related": []
+  },
+  "sparrow": {
+    "ru": "Воробей",
+    "uz": "Chumchuq",
+    "parent": "bird",
+    "description_ru": "Маленькая городская птица.",
+    "description_uz": "Shaharlarda yashovchi mayda qush.",
+    "category": "biology",
+    "related": []
+  },
+  "pigeon": {
+    "ru": "Голубь",
+    "uz": "Kabutar",
+    "parent": "bird",
+    "description_ru": "Городская птица средней величины.",
+    "description_uz": "Shaharlarda yashovchi o‘rta qush.",
+    "category": "biology",
+    "related": []
+  },
+  "owl": {
+    "ru": "Сова",
+    "uz": "Boyo‘g‘li",
+    "parent": "bird",
+    "description_ru": "Ночная хищная птица.",
+    "description_uz": "Tungi yirtqich qush.",
+    "category": "biology",
+    "related": []
+  },
+  "parrot": {
+    "ru": "Попугай",
+    "uz": "To‘ti",
+    "parent": "bird",
+    "description_ru": "Яркая птица, способная имитировать звуки.",
+    "description_uz": "Ovozlarni taqlid qiladigan rangli qush.",
+    "category": "biology",
+    "related": []
+  },
+  "falcon": {
+    "ru": "Сокол",
+    "uz": "Lochin",
+    "parent": "bird",
+    "description_ru": "Быстрая хищная птица.",
+    "description_uz": "Tez uchuvchi yirtqich qush.",
+    "category": "biology",
+    "related": []
+  },
+  "hawk": {
+    "ru": "Ястреб",
+    "uz": "Qirg‘iy",
+    "parent": "bird",
+    "description_ru": "Хищная птица среднего размера.",
+    "description_uz": "O‘rta kattalikdagi yirtqich qush.",
+    "category": "biology",
+    "related": []
+  },
+  "duck": {
+    "ru": "Утка",
+    "uz": "O‘rdak",
+    "parent": "bird",
+    "description_ru": "Водоплавающая птица.",
+    "description_uz": "Suvda yashovchi qush.",
+    "category": "biology",
+    "related": []
+  },
+  "goose": {
+    "ru": "Гусь",
+    "uz": "G‘oz",
+    "parent": "bird",
+    "description_ru": "Крупная водоплавающая птица.",
+    "description_uz": "Yirik suv qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "chicken": {
+    "ru": "Курица",
+    "uz": "Tovuq",
+    "parent": "bird",
+    "description_ru": "Домашняя птица, разводимая ради яиц и мяса.",
+    "description_uz": "Tuxum va go‘sht uchun boqiladigan uy qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "rooster": {
+    "ru": "Петух",
+    "uz": "Xo‘roz",
+    "parent": "bird",
+    "description_ru": "Самец домашней курицы.",
+    "description_uz": "Uy tovuqining erkagi.",
+    "category": "biology",
+    "related": []
+  },
+  "turkey": {
+    "ru": "Индейка",
+    "uz": "Kurka",
+    "parent": "bird",
+    "description_ru": "Крупная домашняя птица.",
+    "description_uz": "Yirik uy qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "swan": {
+    "ru": "Лебедь",
+    "uz": "Oqqush",
+    "parent": "bird",
+    "description_ru": "Крупная грациозная водоплавающая птица.",
+    "description_uz": "Yirik va nafis suv qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "crow": {
+    "ru": "Ворона",
+    "uz": "Qora qarg‘a",
+    "parent": "bird",
+    "description_ru": "Умная чёрная птица.",
+    "description_uz": "Aqlli qora qush.",
+    "category": "biology",
+    "related": []
+  },
+  "woodpecker": {
+    "ru": "Дятел",
+    "uz": "Daraxt qoqqush",
+    "parent": "bird",
+    "description_ru": "Птица, долбящая деревья.",
+    "description_uz": "Daraxtni qoqadigan qush.",
+    "category": "biology",
+    "related": []
+  },
+  "shark": {
+    "ru": "Акула",
+    "uz": "Akula",
+    "parent": "fish",
+    "description_ru": "Крупная морская хищная рыба.",
+    "description_uz": "Yirik dengiz yirtqichi.",
+    "category": "biology",
+    "related": []
+  },
+  "salmon": {
+    "ru": "Лосось",
+    "uz": "Losos",
+    "parent": "fish",
+    "description_ru": "Рыба, мигрирующая из моря в реки.",
+    "description_uz": "Dengizdan daryoga ko‘chuvchi baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "carp": {
+    "ru": "Карп",
+    "uz": "Karp",
+    "parent": "fish",
+    "description_ru": "Популярная пресноводная рыба.",
+    "description_uz": "Mashhur chuchuk suv baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "catfish": {
+    "ru": "Сом",
+    "uz": "Laqqa baliq",
+    "parent": "fish",
+    "description_ru": "Пресноводная донная рыба.",
+    "description_uz": "Chuchuk suv tub baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "tuna": {
+    "ru": "Тунец",
+    "uz": "Tuna",
+    "parent": "fish",
+    "description_ru": "Крупная морская промысловая рыба.",
+    "description_uz": "Yirik dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "trout": {
+    "ru": "Форель",
+    "uz": "Forel",
+    "parent": "fish",
+    "description_ru": "Холодноводная пресноводная рыба.",
+    "description_uz": "Sovuq suvda yashovchi baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "pike": {
+    "ru": "Щука",
+    "uz": "Shuka",
+    "parent": "fish",
+    "description_ru": "Пресноводная хищная рыба.",
+    "description_uz": "Chuchuk suv yirtqich baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "goldfish": {
+    "ru": "Золотая рыбка",
+    "uz": "Oltin baliq",
+    "parent": "fish",
+    "description_ru": "Популярная декоративная рыба.",
+    "description_uz": "Mashhur bezak baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "eel": {
+    "ru": "Угорь",
+    "uz": "Ilonbaliq",
+    "parent": "fish",
+    "description_ru": "Длинная змеевидная рыба.",
+    "description_uz": "Uzun ilonsimon baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "stingray": {
+    "ru": "Скат",
+    "uz": "Skat",
+    "parent": "fish",
+    "description_ru": "Плоская морская рыба с жалом.",
+    "description_uz": "Yassi dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "herring": {
+    "ru": "Сельдь",
+    "uz": "Seld",
+    "parent": "fish",
+    "description_ru": "Стайная морская рыба.",
+    "description_uz": "To‘da bo‘lib yashovchi dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "anchovy": {
+    "ru": "Анчоус",
+    "uz": "Anchois",
+    "parent": "fish",
+    "description_ru": "Мелкая морская рыба.",
+    "description_uz": "Mayda dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "mackerel": {
+    "ru": "Скумбрия",
+    "uz": "Skumbriya",
+    "parent": "fish",
+    "description_ru": "Быстро плавающая морская рыба.",
+    "description_uz": "Tez suzuvchi dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "cod": {
+    "ru": "Треска",
+    "uz": "Treska",
+    "parent": "fish",
+    "description_ru": "Промысловая морская рыба.",
+    "description_uz": "Ovlanadigan dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "perch": {
+    "ru": "Окунь",
+    "uz": "Okun",
+    "parent": "fish",
+    "description_ru": "Пресноводная хищная рыба.",
+    "description_uz": "Chuchuk suv yirtqich baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "snake": {
+    "ru": "Змея",
+    "uz": "Ilon",
+    "parent": "reptile",
+    "description_ru": "Безногая рептилия.",
+    "description_uz": "Oyoqsiz sudraluvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "cobra": {
+    "ru": "Кобра",
+    "uz": "Kobra",
+    "parent": "reptile",
+    "description_ru": "Ядовитая змея с расширяющейся шеей.",
+    "description_uz": "Bo‘yinini kengaytiradigan zaharli ilon.",
+    "category": "biology",
+    "related": [
+      "snake"
+    ]
+  },
+  "python": {
+    "ru": "Питон",
+    "uz": "Pitон",
+    "parent": "reptile",
+    "description_ru": "Крупная неядовитая змея.",
+    "description_uz": "Yirik zaharsiz ilon.",
+    "category": "biology",
+    "related": [
+      "snake"
+    ]
+  },
+  "lizard": {
+    "ru": "Ящерица",
+    "uz": "Kaltakesak",
+    "parent": "reptile",
+    "description_ru": "Небольшое пресмыкающееся.",
+    "description_uz": "Mayda sudraluvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "iguana": {
+    "ru": "Игуана",
+    "uz": "Iguana",
+    "parent": "reptile",
+    "description_ru": "Крупная тропическая ящерица.",
+    "description_uz": "Yirik tropik kaltakesak.",
+    "category": "biology",
+    "related": [
+      "lizard"
+    ]
+  },
+  "gecko": {
+    "ru": "Геккон",
+    "uz": "Gekkon",
+    "parent": "reptile",
+    "description_ru": "Небольшая ящерица, способная лазать по стенам.",
+    "description_uz": "Devorga chiqadigan mayda kaltakesak.",
+    "category": "biology",
+    "related": []
+  },
+  "crocodile": {
+    "ru": "Крокодил",
+    "uz": "Krokodil",
+    "parent": "reptile",
+    "description_ru": "Крупное пресмыкающееся с мощными челюстями.",
+    "description_uz": "Kuchli jag‘li yirik sudraluvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "alligator": {
+    "ru": "Аллигатор",
+    "uz": "Alligator",
+    "parent": "reptile",
+    "description_ru": "Крупный пресмыкающийся с мощными челюстями.",
+    "description_uz": "Kuchli jag‘li sudraluvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "turtle": {
+    "ru": "Черепаха",
+    "uz": "Toshbaqa",
+    "parent": "reptile",
+    "description_ru": "Пресмыкающееся с твёрдым панцирем.",
+    "description_uz": "Qattiq qobiqga ega sudraluvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "chameleon": {
+    "ru": "Хамелеон",
+    "uz": "Xameleon",
+    "parent": "reptile",
+    "description_ru": "Ящерица, способная менять цвет.",
+    "description_uz": "Rangini o‘zgartira oladigan kaltakesak.",
+    "category": "biology",
+    "related": []
+  },
+  "monitor_lizard": {
+    "ru": "Варан",
+    "uz": "Varan",
+    "parent": "reptile",
+    "description_ru": "Крупная хищная ящерица.",
+    "description_uz": "Yirik yirtqich kaltakesak.",
+    "category": "biology",
+    "related": []
+  },
+  "anaconda": {
+    "ru": "Анаконда",
+    "uz": "Anakonda",
+    "parent": "reptile",
+    "description_ru": "Одна из самых крупных змей в мире.",
+    "description_uz": "Dunyodagi eng katta ilonlardan biri.",
+    "category": "biology",
+    "related": [
+      "snake"
+    ]
+  },
+  "viper": {
+    "ru": "Гадюка",
+    "uz": "Gaduka",
+    "parent": "reptile",
+    "description_ru": "Ядовитая змея.",
+    "description_uz": "Zaharli ilon.",
+    "category": "biology",
+    "related": []
+  },
+  "boa": {
+    "ru": "Удав",
+    "uz": "Udab",
+    "parent": "reptile",
+    "description_ru": "Крупная змея, душащая добычу.",
+    "description_uz": "O‘ljasini bo‘g‘ib o‘ldiradigan ilon.",
+    "category": "biology",
+    "related": []
+  },
+  "skink": {
+    "ru": "Сцинк",
+    "uz": "Skink",
+    "parent": "reptile",
+    "description_ru": "Небольшая гладкая ящерица.",
+    "description_uz": "Silliq terili mayda kaltakesak.",
+    "category": "biology",
+    "related": []
+  },
+  "ant": {
+    "ru": "Муравей",
+    "uz": "Chumoli",
+    "parent": "insect",
+    "description_ru": "Социальное насекомое.",
+    "description_uz": "Ijtimoiy hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "bee": {
+    "ru": "Пчела",
+    "uz": "Asalari",
+    "parent": "insect",
+    "description_ru": "Насекомое, производящее мёд.",
+    "description_uz": "Asal ishlab chiqaruvchi hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "butterfly": {
+    "ru": "Бабочка",
+    "uz": "Kapalak",
+    "parent": "insect",
+    "description_ru": "Насекомое с яркими крыльями.",
+    "description_uz": "Rangli qanotli hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "mosquito": {
+    "ru": "Комар",
+    "uz": "Chivin",
+    "parent": "insect",
+    "description_ru": "Кровососущее насекомое.",
+    "description_uz": "Qon so‘ruvchi hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "fly": {
+    "ru": "Муха",
+    "uz": "Pashsha",
+    "parent": "insect",
+    "description_ru": "Летающее насекомое.",
+    "description_uz": "Uchuvchi hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "wasp": {
+    "ru": "Оса",
+    "uz": "Osa",
+    "parent": "insect",
+    "description_ru": "Жалящая летающая насекомое.",
+    "description_uz": "Chaqadigan uchuvchi hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "beetle": {
+    "ru": "Жук",
+    "uz": "Qo‘ng‘iz",
+    "parent": "insect",
+    "description_ru": "Насекомое с твёрдыми крыльями.",
+    "description_uz": "Qattiq qanotli hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "grasshopper": {
+    "ru": "Кузнечик",
+    "uz": "Chigirtka",
+    "parent": "insect",
+    "description_ru": "Прыгающее насекомое с длинными задними ногами.",
+    "description_uz": "Uzun orqa oyoqli sakrovchi hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "dragonfly": {
+    "ru": "Стрекоза",
+    "uz": "Ninachi",
+    "parent": "insect",
+    "description_ru": "Летающее насекомое с прозрачными крыльями.",
+    "description_uz": "Shaffof qanotli uchuvchi hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "cockroach": {
+    "ru": "Таракан",
+    "uz": "Tarakan",
+    "parent": "insect",
+    "description_ru": "Насекомое, обитающее рядом с человеком.",
+    "description_uz": "Odamlar yonida yashovchi hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "ladybug": {
+    "ru": "Божья коровка",
+    "uz": "Xonqizi",
+    "parent": "insect",
+    "description_ru": "Маленькое красное насекомое с пятнами.",
+    "description_uz": "Qizil dog‘li mayda hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "termite": {
+    "ru": "Термит",
+    "uz": "Termit",
+    "parent": "insect",
+    "description_ru": "Насекомое, питающееся древесиной.",
+    "description_uz": "Yog‘och bilan oziqlanadigan hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "mantis": {
+    "ru": "Богомол",
+    "uz": "Mantis",
+    "parent": "insect",
+    "description_ru": "Хищное насекомое с хватательными лапами.",
+    "description_uz": "Old oyoqlari bilan o‘lja tutadigan hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "caterpillar": {
+    "ru": "Гусеница",
+    "uz": "Gusenitsa",
+    "parent": "insect",
+    "description_ru": "Личинка бабочки.",
+    "description_uz": "Kapalak lichinkasi.",
+    "category": "biology",
+    "related": [
+      "butterfly"
+    ]
+  },
+  "locust": {
+    "ru": "Саранча",
+    "uz": "Chigirtka",
+    "parent": "insect",
+    "description_ru": "Насекомое, образующее большие рои.",
+    "description_uz": "Katta to‘da hosil qiladigan hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "bat": {
+    "ru": "Летучая мышь",
+    "uz": "Ko‘rshapalak",
+    "parent": "mammal",
+    "description_ru": "Ночное летающее млекопитающее.",
+    "description_uz": "Tunda uchadigan sutemizuvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "hedgehog": {
+    "ru": "Ёж",
+    "uz": "Tipratikan",
+    "parent": "mammal",
+    "description_ru": "Млекопитающее с колючками.",
+    "description_uz": "Tikanli sutemizuvchi hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "raccoon": {
+    "ru": "Енот",
+    "uz": "Yenot",
+    "parent": "mammal",
+    "description_ru": "Ночное млекопитающее с полосатым хвостом.",
+    "description_uz": "Chiziqli dumli tungi hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "otter": {
+    "ru": "Выдра",
+    "uz": "Vidra",
+    "parent": "mammal",
+    "description_ru": "Полуводное хищное млекопитающее.",
+    "description_uz": "Yarim suvda yashovchi yirtqich hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "dolphin": {
+    "ru": "Дельфин",
+    "uz": "Delfin",
+    "parent": "mammal",
+    "description_ru": "Морское млекопитающее с высоким интеллектом.",
+    "description_uz": "Aqlli dengiz sutemizuvchisi.",
+    "category": "biology",
+    "related": []
+  },
+  "whale": {
+    "ru": "Кит",
+    "uz": "Kit",
+    "parent": "mammal",
+    "description_ru": "Крупнейшее морское млекопитающее.",
+    "description_uz": "Eng yirik dengiz sutemizuvchisi.",
+    "category": "biology",
+    "related": []
+  },
+  "penguin": {
+    "ru": "Пингвин",
+    "uz": "Pingvin",
+    "parent": "bird",
+    "description_ru": "Нелетающая морская птица.",
+    "description_uz": "Uchmaydigan dengiz qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "flamingo": {
+    "ru": "Фламинго",
+    "uz": "Flamingo",
+    "parent": "bird",
+    "description_ru": "Розовая водоплавающая птица.",
+    "description_uz": "Pushti rangli suv qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "pelican": {
+    "ru": "Пеликан",
+    "uz": "Pelikan",
+    "parent": "bird",
+    "description_ru": "Крупная птица с мешком под клювом.",
+    "description_uz": "Tumshug‘i ostida qopchali yirik qush.",
+    "category": "biology",
+    "related": []
+  },
+  "seagull": {
+    "ru": "Чайка",
+    "uz": "Chayka",
+    "parent": "bird",
+    "description_ru": "Морская птица с громким криком.",
+    "description_uz": "Baland ovozli dengiz qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "octopus": {
+    "ru": "Осьминог",
+    "uz": "Sakkizoyoqli",
+    "parent": "animal",
+    "description_ru": "Морское беспозвоночное с восемью щупальцами.",
+    "description_uz": "Sakkiz qo‘lli dengiz jonivori.",
+    "category": "biology",
+    "related": []
+  },
+  "crab": {
+    "ru": "Краб",
+    "uz": "Qisqichbaqa",
+    "parent": "animal",
+    "description_ru": "Морское ракообразное с клешнями.",
+    "description_uz": "Qisqichli dengiz jonivori.",
+    "category": "biology",
+    "related": []
+  },
+  "frog": {
+    "ru": "Лягушка",
+    "uz": "Qurbaqa",
+    "parent": "animal",
+    "description_ru": "Земноводное с длинными задними лапами.",
+    "description_uz": "Uzun orqa oyoqli amfibiya.",
+    "category": "biology",
+    "related": []
+  },
+  "toad": {
+    "ru": "Жаба",
+    "uz": "Qurbaqa",
+    "parent": "animal",
+    "description_ru": "Земноводное с бугристой кожей.",
+    "description_uz": "Dag‘al terili amfibiya.",
+    "category": "biology",
+    "related": []
+  },
+  "scorpion": {
+    "ru": "Скорпион",
+    "uz": "Chayon",
+    "parent": "animal",
+    "description_ru": "Ядовитое членистоногое с жалом.",
+    "description_uz": "Zaharli dumli hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "cheetah": {
+    "ru": "Гепард",
+    "uz": "Gepard",
+    "parent": "mammal",
+    "description_ru": "Самое быстрое наземное животное.",
+    "description_uz": "Yer yuzidagi eng tez yuguruvchi hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "lynx": {
+    "ru": "Рысь",
+    "uz": "Silovsin",
+    "parent": "mammal",
+    "description_ru": "Хищная кошка с кисточками на ушах.",
+    "description_uz": "Quloqlarida tukli uchlari bor yirtqich mushuk.",
+    "category": "biology",
+    "related": []
+  },
+  "moose": {
+    "ru": "Лось",
+    "uz": "Los",
+    "parent": "mammal",
+    "description_ru": "Крупный олень с широкими рогами.",
+    "description_uz": "Katta keng shoxli kiyik.",
+    "category": "biology",
+    "related": []
+  },
+  "yak": {
+    "ru": "Як",
+    "uz": "Yak",
+    "parent": "mammal",
+    "description_ru": "Горное животное с густой шерстью.",
+    "description_uz": "Qalin junli tog‘ hayvoni.",
+    "category": "biology",
+    "related": []
+  },
+  "seal": {
+    "ru": "Тюлень",
+    "uz": "Tyulen",
+    "parent": "mammal",
+    "description_ru": "Морское млекопитающее с ластами.",
+    "description_uz": "Suvda yashovchi suzgichli hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "walrus": {
+    "ru": "Морж",
+    "uz": "Morj",
+    "parent": "mammal",
+    "description_ru": "Крупное морское животное с бивнями.",
+    "description_uz": "Katta tishli dengiz hayvoni.",
+    "category": "biology",
+    "related": []
+  },
+  "ostrich": {
+    "ru": "Страус",
+    "uz": "Tuyaqush",
+    "parent": "bird",
+    "description_ru": "Крупная нелетающая птица.",
+    "description_uz": "Yirik uchmaydigan qush.",
+    "category": "biology",
+    "related": []
+  },
+  "peacock": {
+    "ru": "Павлин",
+    "uz": "Tovus",
+    "parent": "bird",
+    "description_ru": "Птица с ярким веерообразным хвостом.",
+    "description_uz": "Yelpig‘ichsimon dumli rangli qush.",
+    "category": "biology",
+    "related": []
+  },
+  "heron": {
+    "ru": "Цапля",
+    "uz": "Tsaplya",
+    "parent": "bird",
+    "description_ru": "Длинноногая болотная птица.",
+    "description_uz": "Uzun oyoqli botqoqli qush.",
+    "category": "biology",
+    "related": []
+  },
+  "canary": {
+    "ru": "Канарейка",
+    "uz": "Kanareyka",
+    "parent": "bird",
+    "description_ru": "Певчая домашняя птица.",
+    "description_uz": "Sayroqi uy qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "salmon_shark": {
+    "ru": "Лососевая акула",
+    "uz": "Losos akulasi",
+    "parent": "fish",
+    "description_ru": "Вид акулы, питающийся рыбой.",
+    "description_uz": "Baliq bilan oziqlanadigan akula turi.",
+    "category": "biology",
+    "related": [
+      "shark"
+    ]
+  },
+  "clownfish": {
+    "ru": "Рыба-клоун",
+    "uz": "Masxaraboz baliq",
+    "parent": "fish",
+    "description_ru": "Яркая рыба, живущая среди анемон.",
+    "description_uz": "Anemonlar orasida yashovchi rangli baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "seahorse": {
+    "ru": "Морской конёк",
+    "uz": "Dengiz oti",
+    "parent": "fish",
+    "description_ru": "Маленькая рыба необычной формы.",
+    "description_uz": "G‘alati shaklli mayda baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "komodo_dragon": {
+    "ru": "Комодский варан",
+    "uz": "Komodo varani",
+    "parent": "reptile",
+    "description_ru": "Самая крупная ящерица в мире.",
+    "description_uz": "Dunyodagi eng katta kaltakesak.",
+    "category": "biology",
+    "related": []
+  },
+  "tarantula": {
+    "ru": "Тарантул",
+    "uz": "Tarantul",
+    "parent": "animal",
+    "description_ru": "Крупный волосатый паук.",
+    "description_uz": "Yirik tukli o‘rgimchak.",
+    "category": "biology",
+    "related": []
+  },
+  "armadillo": {
+    "ru": "Броненосец",
+    "uz": "Bronenosets",
+    "parent": "mammal",
+    "description_ru": "Животное с твёрдым панцирем.",
+    "description_uz": "Qattiq qobiq bilan qoplangan hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "sloth": {
+    "ru": "Ленивец",
+    "uz": "Dangasa ayiqcha",
+    "parent": "mammal",
+    "description_ru": "Медлительное древесное млекопитающее.",
+    "description_uz": "Sekin harakatlanuvchi daraxt hayvoni.",
+    "category": "biology",
+    "related": []
+  },
+  "meerkat": {
+    "ru": "Сурикат",
+    "uz": "Surikat",
+    "parent": "mammal",
+    "description_ru": "Небольшое пустынное млекопитающее.",
+    "description_uz": "Cho‘l hududida yashovchi mayda hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "wolverine": {
+    "ru": "Росомаха",
+    "uz": "Rosomaxa",
+    "parent": "mammal",
+    "description_ru": "Сильное хищное млекопитающее северных регионов.",
+    "description_uz": "Shimol hududlarida yashovchi kuchli yirtqich.",
+    "category": "biology",
+    "related": []
+  },
+  "panther": {
+    "ru": "Пантера",
+    "uz": "Pantera",
+    "parent": "mammal",
+    "description_ru": "Крупная хищная кошка тёмной окраски.",
+    "description_uz": "Qora rangli yirik yirtqich mushuk.",
+    "category": "biology",
+    "related": []
+  },
+  "albatross": {
+    "ru": "Альбатрос",
+    "uz": "Albatros",
+    "parent": "bird",
+    "description_ru": "Крупная морская птица с длинными крыльями.",
+    "description_uz": "Uzun qanotli yirik dengiz qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "vulture": {
+    "ru": "Гриф",
+    "uz": "Kalxat",
+    "parent": "bird",
+    "description_ru": "Птица, питающаяся падалью.",
+    "description_uz": "O‘lik hayvonlar bilan oziqlanadigan qush.",
+    "category": "biology",
+    "related": []
+  },
+  "nightingale": {
+    "ru": "Соловей",
+    "uz": "Bulbul",
+    "parent": "bird",
+    "description_ru": "Певчая птица с красивым голосом.",
+    "description_uz": "Chiroyli ovozli sayroqi qush.",
+    "category": "biology",
+    "related": []
+  },
+  "stingray_manta": {
+    "ru": "Манта",
+    "uz": "Manta",
+    "parent": "fish",
+    "description_ru": "Крупный морской скат.",
+    "description_uz": "Yirik dengiz skat turi.",
+    "category": "biology",
+    "related": [
+      "stingray"
+    ]
+  },
+  "piranha": {
+    "ru": "Пиранья",
+    "uz": "Piranha",
+    "parent": "fish",
+    "description_ru": "Хищная рыба с острыми зубами.",
+    "description_uz": "O‘tkir tishli yirtqich baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "axolotl": {
+    "ru": "Аксолотль",
+    "uz": "Aksolotl",
+    "parent": "animal",
+    "description_ru": "Земноводное, сохраняющее личиночные признаки.",
+    "description_uz": "Lichinka belgilarini saqlab qoladigan amfibiya.",
+    "category": "biology",
+    "related": []
+  },
+  "newt": {
+    "ru": "Тритон",
+    "uz": "Triton",
+    "parent": "animal",
+    "description_ru": "Маленькое земноводное.",
+    "description_uz": "Mayda amfibiya.",
+    "category": "biology",
+    "related": []
+  },
+  "centipede": {
+    "ru": "Сколопендра",
+    "uz": "Sokolopendra",
+    "parent": "insect",
+    "description_ru": "Многоногое ядовитое беспозвоночное.",
+    "description_uz": "Ko‘p oyoqli zaharli jonivor.",
+    "category": "biology",
+    "related": []
+  },
+  "jellyfish": {
+    "ru": "Медуза",
+    "uz": "Meduza",
+    "parent": "animal",
+    "description_ru": "Морское беспозвоночное с щупальцами.",
+    "description_uz": "Mo‘ylovli dengiz jonivori.",
+    "category": "biology",
+    "related": []
+  },
+  "lobster": {
+    "ru": "Омар",
+    "uz": "Omar",
+    "parent": "animal",
+    "description_ru": "Крупное морское ракообразное.",
+    "description_uz": "Yirik dengiz qisqichbaqasi.",
+    "category": "biology",
+    "related": []
+  },
+  "gazelle": {
+    "ru": "Газель",
+    "uz": "Gazella",
+    "parent": "mammal",
+    "description_ru": "Стройная быстроногая антилопа.",
+    "description_uz": "Tez yuguruvchi nozik antilopa.",
+    "category": "biology",
+    "related": []
+  },
+  "bison": {
+    "ru": "Бизон",
+    "uz": "Bizon",
+    "parent": "mammal",
+    "description_ru": "Крупное травоядное животное.",
+    "description_uz": "Yirik o‘txo‘r hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "porcupine": {
+    "ru": "Дикобраз",
+    "uz": "Tikanli kirpi",
+    "parent": "mammal",
+    "description_ru": "Грызун с длинными иглами.",
+    "description_uz": "Uzun tikanli kemiruvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "mole": {
+    "ru": "Крот",
+    "uz": "Ko‘rshapalak sichqon",
+    "parent": "mammal",
+    "description_ru": "Подземное млекопитающее.",
+    "description_uz": "Yer ostida yashovchi sutemizuvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "hamster": {
+    "ru": "Хомяк",
+    "uz": "Xomyak",
+    "parent": "mammal",
+    "description_ru": "Маленький домашний грызун.",
+    "description_uz": "Mayda uy kemiruvchisi.",
+    "category": "biology",
+    "related": []
+  },
+  "falcon_eagle": {
+    "ru": "Орёл-сапсан",
+    "uz": "Sapsan burgut",
+    "parent": "bird",
+    "description_ru": "Быстрая хищная птица.",
+    "description_uz": "Tez uchadigan yirtqich qush.",
+    "category": "biology",
+    "related": [
+      "eagle"
+    ]
+  },
+  "magpie": {
+    "ru": "Сорока",
+    "uz": "So‘fiy",
+    "parent": "bird",
+    "description_ru": "Чёрно-белая птица с длинным хвостом.",
+    "description_uz": "Qora-oq rangli uzun dumli qush.",
+    "category": "biology",
+    "related": []
+  },
+  "partridge": {
+    "ru": "Куропатка",
+    "uz": "Keklik",
+    "parent": "bird",
+    "description_ru": "Наземная птица средней величины.",
+    "description_uz": "O‘rta kattalikdagi yer qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "salmon_trout": {
+    "ru": "Радужная форель",
+    "uz": "Kamalak foreli",
+    "parent": "fish",
+    "description_ru": "Пресноводная рыба с яркой полосой.",
+    "description_uz": "Yorqin chiziqli chuchuk suv baliği.",
+    "category": "biology",
+    "related": [
+      "trout"
+    ]
+  },
+  "barracuda": {
+    "ru": "Барракуда",
+    "uz": "Barrakuda",
+    "parent": "fish",
+    "description_ru": "Быстрая морская хищная рыба.",
+    "description_uz": "Tez suzuvchi yirtqich dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "moray_eel": {
+    "ru": "Мурена",
+    "uz": "Murena",
+    "parent": "fish",
+    "description_ru": "Хищная морская рыба со змеевидным телом.",
+    "description_uz": "Ilonsimon dengiz yirtqichi.",
+    "category": "biology",
+    "related": [
+      "eel"
+    ]
+  },
+  "horned_lizard": {
+    "ru": "Рогатая ящерица",
+    "uz": "Shoxli kaltakesak",
+    "parent": "reptile",
+    "description_ru": "Ящерица с роговидными выростами.",
+    "description_uz": "Shoxsimon o‘simtalarga ega kaltakesak.",
+    "category": "biology",
+    "related": [
+      "lizard"
+    ]
+  },
+  "sea_turtle": {
+    "ru": "Морская черепаха",
+    "uz": "Dengiz toshbaqasi",
+    "parent": "reptile",
+    "description_ru": "Морская разновидность черепах.",
+    "description_uz": "Dengizda yashovchi toshbaqa.",
+    "category": "biology",
+    "related": [
+      "turtle"
+    ]
+  },
+  "fire_ant": {
+    "ru": "Огненный муравей",
+    "uz": "Olovli chumoli",
+    "parent": "insect",
+    "description_ru": "Агрессивный вид муравья с болезненным укусом.",
+    "description_uz": "Og‘riqli chaqadigan agressiv chumoli.",
+    "category": "biology",
+    "related": [
+      "ant"
+    ]
+  },
+  "stag_beetle": {
+    "ru": "Жук-олень",
+    "uz": "Shoxli qo‘ng‘iz",
+    "parent": "insect",
+    "description_ru": "Жук с крупными челюстями.",
+    "description_uz": "Katta jag‘li qo‘ng‘iz.",
+    "category": "biology",
+    "related": [
+      "beetle"
+    ]
+  },
+  "firefly": {
+    "ru": "Светлячок",
+    "uz": "Yorug‘ hasharot",
+    "parent": "insect",
+    "description_ru": "Насекомое, излучающее свет.",
+    "description_uz": "Yorug‘lik chiqaradigan hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "weasel": {
+    "ru": "Ласка",
+    "uz": "Lasqa",
+    "parent": "mammal",
+    "description_ru": "Маленький хищный зверёк.",
+    "description_uz": "Mayda yirtqich hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "badger": {
+    "ru": "Барсук",
+    "uz": "Barsuk",
+    "parent": "mammal",
+    "description_ru": "Ночное лесное млекопитающее.",
+    "description_uz": "Tunda faol bo‘ladigan o‘rmon hayvoni.",
+    "category": "biology",
+    "related": []
+  },
+  "tapir": {
+    "ru": "Тапир",
+    "uz": "Tapir",
+    "parent": "mammal",
+    "description_ru": "Крупное травоядное с коротким хоботом.",
+    "description_uz": "Qisqa tumshuqli yirik o‘txo‘r hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "anteater": {
+    "ru": "Муравьед",
+    "uz": "Chumolixo‘r",
+    "parent": "mammal",
+    "description_ru": "Млекопитающее, питающееся муравьями.",
+    "description_uz": "Chumoli bilan oziqlanadigan hayvon.",
+    "category": "biology",
+    "related": [
+      "ant"
+    ]
+  },
+  "lemur": {
+    "ru": "Лемур",
+    "uz": "Lemur",
+    "parent": "mammal",
+    "description_ru": "Примат, обитающий на Мадагаскаре.",
+    "description_uz": "Madagaskarda yashovchi primat.",
+    "category": "biology",
+    "related": []
+  },
+  "platypus": {
+    "ru": "Утконос",
+    "uz": "O‘rdaktumshuq",
+    "parent": "mammal",
+    "description_ru": "Яйцекладущее млекопитающее Австралии.",
+    "description_uz": "Avstraliyada yashovchi tuxum qo‘yuvchi hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "woodcock": {
+    "ru": "Вальдшнеп",
+    "uz": "Valdshnep",
+    "parent": "bird",
+    "description_ru": "Лесная птица с длинным клювом.",
+    "description_uz": "Uzun tumshuqli o‘rmon qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "kingfisher": {
+    "ru": "Зимородок",
+    "uz": "Zimorodok",
+    "parent": "bird",
+    "description_ru": "Яркая птица, ловящая рыбу.",
+    "description_uz": "Baliq tutadigan rangli qush.",
+    "category": "biology",
+    "related": []
+  },
+  "orca": {
+    "ru": "Косатка",
+    "uz": "Orka",
+    "parent": "mammal",
+    "description_ru": "Крупный хищный дельфин.",
+    "description_uz": "Yirik yirtqich delfin.",
+    "category": "biology",
+    "related": []
+  },
+  "anglerfish": {
+    "ru": "Удильщик",
+    "uz": "Chiroqli baliq",
+    "parent": "fish",
+    "description_ru": "Глубоководная рыба с светящимся органом.",
+    "description_uz": "Yorug‘lik chiqaruvchi chuqur suv baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "swordfish": {
+    "ru": "Рыба-меч",
+    "uz": "Qilich baliq",
+    "parent": "fish",
+    "description_ru": "Быстрая морская рыба с длинным носом.",
+    "description_uz": "Uzun tumshuqli tez dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "box_turtle": {
+    "ru": "Коробчатая черепаха",
+    "uz": "Quti toshbaqa",
+    "parent": "reptile",
+    "description_ru": "Черепаха с закрывающимся панцирем.",
+    "description_uz": "Yopiladigan qobiqga ega toshbaqa.",
+    "category": "biology",
+    "related": [
+      "turtle"
+    ]
+  },
+  "gila_monster": {
+    "ru": "Ящерица Гила",
+    "uz": "Gila kaltakesagi",
+    "parent": "reptile",
+    "description_ru": "Ядовитая ящерица Северной Америки.",
+    "description_uz": "Shimoliy Amerikadagi zaharli kaltakesak.",
+    "category": "biology",
+    "related": [
+      "lizard"
+    ]
+  },
+  "stick_insect": {
+    "ru": "Палочник",
+    "uz": "Tayoqcha hasharot",
+    "parent": "insect",
+    "description_ru": "Насекомое, маскирующееся под ветку.",
+    "description_uz": "Shoxga o‘xshab yashirinadigan hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "dung_beetle": {
+    "ru": "Навозный жук",
+    "uz": "Go‘ng qo‘ng‘izi",
+    "parent": "insect",
+    "description_ru": "Жук, питающийся навозом.",
+    "description_uz": "Go‘ng bilan oziqlanadigan qo‘ng‘iz.",
+    "category": "biology",
+    "related": [
+      "beetle"
+    ]
+  },
+  "ibex": {
+    "ru": "Козерог",
+    "uz": "Ibeks",
+    "parent": "mammal",
+    "description_ru": "Горный козёл с большими изогнутыми рогами.",
+    "description_uz": "Katta egri shoxli tog‘ echkisi.",
+    "category": "biology",
+    "related": []
+  },
+  "caracal": {
+    "ru": "Каракал",
+    "uz": "Karakal",
+    "parent": "mammal",
+    "description_ru": "Пустынная дикая кошка с кисточками на ушах.",
+    "description_uz": "Quloqlarida tukli uchlari bor yovvoyi mushuk.",
+    "category": "biology",
+    "related": [
+      "cat"
+    ]
+  },
+  "mongoose": {
+    "ru": "Мангуста",
+    "uz": "Mangust",
+    "parent": "mammal",
+    "description_ru": "Хищник, известный борьбой со змеями.",
+    "description_uz": "Ilonlarga qarshi kurashuvchi yirtqich.",
+    "category": "biology",
+    "related": []
+  },
+  "coyote": {
+    "ru": "Койот",
+    "uz": "Koyot",
+    "parent": "mammal",
+    "description_ru": "Дикий хищник, похожий на волка.",
+    "description_uz": "Bo‘riga o‘xshash yovvoyi yirtqich.",
+    "category": "biology",
+    "related": [
+      "wolf"
+    ]
+  },
+  "wombat": {
+    "ru": "Вомбат",
+    "uz": "Vombat",
+    "parent": "mammal",
+    "description_ru": "Австралийское сумчатое животное.",
+    "description_uz": "Avstraliyada yashovchi sumkali hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "emu": {
+    "ru": "Эму",
+    "uz": "Emu",
+    "parent": "bird",
+    "description_ru": "Крупная нелетающая птица Австралии.",
+    "description_uz": "Avstraliyada yashovchi yirik uchmaydigan qush.",
+    "category": "biology",
+    "related": [
+      "ostrich"
+    ]
+  },
+  "toucan": {
+    "ru": "Тукан",
+    "uz": "Tukan",
+    "parent": "bird",
+    "description_ru": "Тропическая птица с большим ярким клювом.",
+    "description_uz": "Katta rangli tumshuqli tropik qush.",
+    "category": "biology",
+    "related": []
+  },
+  "condor": {
+    "ru": "Кондор",
+    "uz": "Kondor",
+    "parent": "bird",
+    "description_ru": "Крупная хищная птица Южной Америки.",
+    "description_uz": "Janubiy Amerikadagi yirik yirtqich qush.",
+    "category": "biology",
+    "related": [
+      "vulture"
+    ]
+  },
+  "sardine": {
+    "ru": "Сардина",
+    "uz": "Sardina",
+    "parent": "fish",
+    "description_ru": "Мелкая морская рыба.",
+    "description_uz": "Mayda dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "tilapia": {
+    "ru": "Тилапия",
+    "uz": "Tilapiya",
+    "parent": "fish",
+    "description_ru": "Пресноводная рыба, разводимая на фермах.",
+    "description_uz": "Fermer xo‘jaliklarida yetishtiriladigan baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "clown_triggerfish": {
+    "ru": "Триггерфиш",
+    "uz": "Trigger baliq",
+    "parent": "fish",
+    "description_ru": "Яркая тропическая морская рыба.",
+    "description_uz": "Rangli tropik dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "green_iguana": {
+    "ru": "Зелёная игуана",
+    "uz": "Yashil iguana",
+    "parent": "reptile",
+    "description_ru": "Крупная тропическая ящерица.",
+    "description_uz": "Yirik tropik kaltakesak.",
+    "category": "biology",
+    "related": [
+      "iguana"
+    ]
+  },
+  "rattlesnake": {
+    "ru": "Гремучая змея",
+    "uz": "Shovqinli ilon",
+    "parent": "reptile",
+    "description_ru": "Ядовитая змея с погремушкой на хвосте.",
+    "description_uz": "Dumida shovqin chiqaruvchi zaharli ilon.",
+    "category": "biology",
+    "related": [
+      "snake"
+    ]
+  },
+  "leaf_insect": {
+    "ru": "Листовидка",
+    "uz": "Barg hasharoti",
+    "parent": "insect",
+    "description_ru": "Насекомое, маскирующееся под лист.",
+    "description_uz": "Bargga o‘xshab yashirinadigan hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "hornet": {
+    "ru": "Шершень",
+    "uz": "Shershen",
+    "parent": "insect",
+    "description_ru": "Крупная жалящая оса.",
+    "description_uz": "Katta chaqadigan hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "okapi": {
+    "ru": "Окапи",
+    "uz": "Okapi",
+    "parent": "mammal",
+    "description_ru": "Лесное животное, родственник жирафа.",
+    "description_uz": "O‘rmon hayvoni, jirafaning qarindoshi.",
+    "category": "biology",
+    "related": []
+  },
+  "saiga": {
+    "ru": "Сайгак",
+    "uz": "Sayg‘oq",
+    "parent": "mammal",
+    "description_ru": "Степная антилопа с необычным носом.",
+    "description_uz": "G‘alati burunli dasht antilopasi.",
+    "category": "biology",
+    "related": []
+  },
+  "chinchilla": {
+    "ru": "Шиншилла",
+    "uz": "Shinshilla",
+    "parent": "mammal",
+    "description_ru": "Мелкий грызун с густым мехом.",
+    "description_uz": "Qalin junli mayda kemiruvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "narwhal": {
+    "ru": "Нарвал",
+    "uz": "Narval",
+    "parent": "mammal",
+    "description_ru": "Арктический кит с длинным бивнем.",
+    "description_uz": "Uzun tishli arktika kiti.",
+    "category": "biology",
+    "related": []
+  },
+  "aardvark": {
+    "ru": "Трубкозуб",
+    "uz": "Trubkozub",
+    "parent": "mammal",
+    "description_ru": "Ночное насекомоядное Африки.",
+    "description_uz": "Afrikada yashovchi tungi hasharotxo‘r.",
+    "category": "biology",
+    "related": []
+  },
+  "hoopoe": {
+    "ru": "Удод",
+    "uz": "Hudhud",
+    "parent": "bird",
+    "description_ru": "Птица с хохолком на голове.",
+    "description_uz": "Boshida tojli qush.",
+    "category": "biology",
+    "related": []
+  },
+  "crane": {
+    "ru": "Журавль",
+    "uz": "Turna",
+    "parent": "bird",
+    "description_ru": "Крупная перелётная птица.",
+    "description_uz": "Katta ko‘chmanchi qush.",
+    "category": "biology",
+    "related": []
+  },
+  "swift": {
+    "ru": "Стриж",
+    "uz": "Strij",
+    "parent": "bird",
+    "description_ru": "Очень быстрая летающая птица.",
+    "description_uz": "Juda tez uchadigan qush.",
+    "category": "biology",
+    "related": []
+  },
+  "halibut": {
+    "ru": "Палтус",
+    "uz": "Paltus",
+    "parent": "fish",
+    "description_ru": "Крупная плоская морская рыба.",
+    "description_uz": "Yirik yassi dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "catfish_electric": {
+    "ru": "Электрический сом",
+    "uz": "Elektr laqqa baliq",
+    "parent": "fish",
+    "description_ru": "Рыба, способная генерировать электрические разряды.",
+    "description_uz": "Elektr toki chiqaradigan baliq.",
+    "category": "biology",
+    "related": [
+      "catfish"
+    ]
+  },
+  "sea_bass": {
+    "ru": "Морской окунь",
+    "uz": "Dengiz okuni",
+    "parent": "fish",
+    "description_ru": "Морская рыба среднего размера.",
+    "description_uz": "O‘rta kattalikdagi dengiz baliği.",
+    "category": "biology",
+    "related": [
+      "perch"
+    ]
+  },
+  "desert_tortoise": {
+    "ru": "Пустынная черепаха",
+    "uz": "Cho‘l toshbaqasi",
+    "parent": "reptile",
+    "description_ru": "Черепаха, приспособленная к жизни в пустыне.",
+    "description_uz": "Cho‘lda yashashga moslashgan toshbaqa.",
+    "category": "biology",
+    "related": [
+      "turtle"
+    ]
+  },
+  "boa_constrictor": {
+    "ru": "Удав обыкновенный",
+    "uz": "Oddiy udav",
+    "parent": "reptile",
+    "description_ru": "Крупная змея, душащая добычу.",
+    "description_uz": "O‘ljasini bo‘g‘ib ovlaydigan yirik ilon.",
+    "category": "biology",
+    "related": [
+      "boa"
+    ]
+  },
+  "atlas_moth": {
+    "ru": "Атласная моль",
+    "uz": "Atlas kapalak",
+    "parent": "insect",
+    "description_ru": "Одна из крупнейших бабочек в мире.",
+    "description_uz": "Dunyodagi eng katta kapalaklardan biri.",
+    "category": "biology",
+    "related": [
+      "butterfly"
+    ]
+  },
+  "scarab": {
+    "ru": "Скарабей",
+    "uz": "Skarabey",
+    "parent": "insect",
+    "description_ru": "Жук, известный в древних культурах.",
+    "description_uz": "Qadimgi madaniyatlarda mashhur qo‘ng‘iz.",
+    "category": "biology",
+    "related": []
+  },
+  "manatee": {
+    "ru": "Ламантин",
+    "uz": "Lamantin",
+    "parent": "mammal",
+    "description_ru": "Морское травоядное млекопитающее.",
+    "description_uz": "Dengizda yashovchi o‘txo‘r sutemizuvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "snow_leopard": {
+    "ru": "Снежный барс",
+    "uz": "Qor barsi",
+    "parent": "mammal",
+    "description_ru": "Редкий горный хищник.",
+    "description_uz": "Kam uchraydigan tog‘ yirtqichi.",
+    "category": "biology",
+    "related": [
+      "leopard"
+    ]
+  },
+  "red_panda": {
+    "ru": "Малая панда",
+    "uz": "Qizil panda",
+    "parent": "mammal",
+    "description_ru": "Небольшое древесное млекопитающее.",
+    "description_uz": "Daraxtda yashovchi mayda hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "black_bear": {
+    "ru": "Чёрный медведь",
+    "uz": "Qora ayiq",
+    "parent": "mammal",
+    "description_ru": "Лесной хищный медведь.",
+    "description_uz": "O‘rmon yirtqich ayig‘i.",
+    "category": "biology",
+    "related": [
+      "bear"
+    ]
+  },
+  "macaw": {
+    "ru": "Ара",
+    "uz": "Ara",
+    "parent": "bird",
+    "description_ru": "Крупный яркий попугай.",
+    "description_uz": "Yirik rangli to‘ti.",
+    "category": "biology",
+    "related": [
+      "parrot"
+    ]
+  },
+  "hummingbird": {
+    "ru": "Колибри",
+    "uz": "Kolibri",
+    "parent": "bird",
+    "description_ru": "Маленькая птица, зависающая в воздухе.",
+    "description_uz": "Havoda muallaq turadigan mayda qush.",
+    "category": "biology",
+    "related": []
+  },
+  "blue_whale": {
+    "ru": "Синий кит",
+    "uz": "Ko‘k kit",
+    "parent": "mammal",
+    "description_ru": "Самое большое животное на Земле.",
+    "description_uz": "Yer yuzidagi eng katta hayvon.",
+    "category": "biology",
+    "related": [
+      "whale"
+    ]
+  },
+  "hammerhead_shark": {
+    "ru": "Молотоголовая акула",
+    "uz": "Bolg‘abosh akula",
+    "parent": "fish",
+    "description_ru": "Акула с головой необычной формы.",
+    "description_uz": "Boshlari g‘alati shakldagi akula.",
+    "category": "biology",
+    "related": [
+      "shark"
+    ]
+  },
+  "sea_urchin": {
+    "ru": "Морской ёж",
+    "uz": "Dengiz kirpisi",
+    "parent": "animal",
+    "description_ru": "Колючее морское беспозвоночное.",
+    "description_uz": "Tikanli dengiz jonivori.",
+    "category": "biology",
+    "related": []
+  },
+  "coral": {
+    "ru": "Коралл",
+    "uz": "Marjon",
+    "parent": "animal",
+    "description_ru": "Колониальное морское животное.",
+    "description_uz": "Koloniyalarda yashovchi dengiz jonivori.",
+    "category": "biology",
+    "related": []
+  },
+  "hyrax": {
+    "ru": "Даман",
+    "uz": "Daman",
+    "parent": "mammal",
+    "description_ru": "Небольшое горное млекопитающее.",
+    "description_uz": "Tog‘larda yashovchi mayda sutemizuvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "quokka": {
+    "ru": "Квокка",
+    "uz": "Kvokka",
+    "parent": "mammal",
+    "description_ru": "Маленькое сумчатое животное Австралии.",
+    "description_uz": "Avstraliyada yashovchi mayda sumkali hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "springbok": {
+    "ru": "Спрингбок",
+    "uz": "Springbok",
+    "parent": "mammal",
+    "description_ru": "Быстрая антилопа Южной Африки.",
+    "description_uz": "Janubiy Afrikadagi tez yuguruvchi antilopa.",
+    "category": "biology",
+    "related": []
+  },
+  "wildebeest": {
+    "ru": "Гну",
+    "uz": "Gnu",
+    "parent": "mammal",
+    "description_ru": "Крупная африканская антилопа.",
+    "description_uz": "Afrikada yashovchi yirik antilopa.",
+    "category": "biology",
+    "related": []
+  },
+  "cassowary": {
+    "ru": "Казуар",
+    "uz": "Kazuar",
+    "parent": "bird",
+    "description_ru": "Крупная нелетающая птица тропиков.",
+    "description_uz": "Tropik hududda yashovchi yirik uchmaydigan qush.",
+    "category": "biology",
+    "related": []
+  },
+  "sandpiper": {
+    "ru": "Кулик",
+    "uz": "Qum qushi",
+    "parent": "bird",
+    "description_ru": "Небольшая прибрежная птица.",
+    "description_uz": "Sohil bo‘yida yashovchi mayda qush.",
+    "category": "biology",
+    "related": []
+  },
+  "anchovy_european": {
+    "ru": "Европейский анчоус",
+    "uz": "Yevropa anchoisi",
+    "parent": "fish",
+    "description_ru": "Небольшая морская промысловая рыба.",
+    "description_uz": "Mayda ovlanadigan dengiz baliği.",
+    "category": "biology",
+    "related": [
+      "anchovy"
+    ]
+  },
+  "grouper": {
+    "ru": "Групер",
+    "uz": "Gruper",
+    "parent": "fish",
+    "description_ru": "Крупная тропическая рыба.",
+    "description_uz": "Tropik hududlarda yashovchi yirik baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "sea_snake": {
+    "ru": "Морская змея",
+    "uz": "Dengiz iloni",
+    "parent": "reptile",
+    "description_ru": "Ядовитая змея, живущая в океане.",
+    "description_uz": "Okeanda yashovchi zaharli ilon.",
+    "category": "biology",
+    "related": [
+      "snake"
+    ]
+  },
+  "praying_mantis": {
+    "ru": "Богомол обыкновенный",
+    "uz": "Oddiy mantis",
+    "parent": "insect",
+    "description_ru": "Хищное насекомое с хватательными лапами.",
+    "description_uz": "Old oyoqlari bilan o‘lja tutadigan hasharot.",
+    "category": "biology",
+    "related": [
+      "mantis"
+    ]
+  },
+  "jerboa": {
+    "ru": "Тушканчик",
+    "uz": "Tushkan",
+    "parent": "mammal",
+    "description_ru": "Пустынный грызун с длинными задними лапами.",
+    "description_uz": "Uzun orqa oyoqli cho‘l kemiruvchisi.",
+    "category": "biology",
+    "related": []
+  },
+  "coati": {
+    "ru": "Носуха",
+    "uz": "Nosuxa",
+    "parent": "mammal",
+    "description_ru": "Южноамериканское млекопитающее с длинным носом.",
+    "description_uz": "Janubiy Amerikada yashovchi uzun burunli hayvon.",
+    "category": "biology",
+    "related": [
+      "raccoon"
+    ]
+  },
+  "puffin": {
+    "ru": "Тупик",
+    "uz": "Tupik qush",
+    "parent": "bird",
+    "description_ru": "Морская птица с ярким клювом.",
+    "description_uz": "Rangli tumshuqli dengiz qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "sturgeon": {
+    "ru": "Осётр",
+    "uz": "Osyotr",
+    "parent": "fish",
+    "description_ru": "Древняя крупная рыба, дающая икру.",
+    "description_uz": "Qadimiy yirik baliq, ikra beruvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "caiman": {
+    "ru": "Кайман",
+    "uz": "Kayman",
+    "parent": "reptile",
+    "description_ru": "Хищное пресмыкающееся, похожее на аллигатора.",
+    "description_uz": "Alligatoga o‘xshash yirtqich sudraluvchi.",
+    "category": "biology",
+    "related": [
+      "alligator"
+    ]
+  },
+  "atlas_beetle": {
+    "ru": "Жук-атлас",
+    "uz": "Atlas qo‘ng‘izi",
+    "parent": "insect",
+    "description_ru": "Крупный тропический жук.",
+    "description_uz": "Yirik tropik qo‘ng‘iz.",
+    "category": "biology",
+    "related": [
+      "beetle"
+    ]
+  },
+  "serval": {
+    "ru": "Сервал",
+    "uz": "Serval",
+    "parent": "mammal",
+    "description_ru": "Африканская дикая кошка с длинными ногами.",
+    "description_uz": "Uzun oyoqli afrikalik yovvoyi mushuk.",
+    "category": "biology",
+    "related": [
+      "cat"
+    ]
+  },
+  "musk_ox": {
+    "ru": "Овцебык",
+    "uz": "Mushkli buqa",
+    "parent": "mammal",
+    "description_ru": "Арктическое млекопитающее с густой шерстью.",
+    "description_uz": "Qalin junli arktik hayvon.",
+    "category": "biology",
+    "related": [
+      "buffalo"
+    ]
+  },
+  "proboscis_monkey": {
+    "ru": "Носач",
+    "uz": "Nosach maymun",
+    "parent": "mammal",
+    "description_ru": "Обезьяна с длинным носом.",
+    "description_uz": "Uzun burunli maymun.",
+    "category": "biology",
+    "related": [
+      "monkey"
+    ]
+  },
+  "shoebill": {
+    "ru": "Китоглав",
+    "uz": "Kitoglav",
+    "parent": "bird",
+    "description_ru": "Крупная болотная птица с массивным клювом.",
+    "description_uz": "Katta tumshuqli botqoqli qush.",
+    "category": "biology",
+    "related": []
+  },
+  "oriole": {
+    "ru": "Иволга",
+    "uz": "Ivolga",
+    "parent": "bird",
+    "description_ru": "Яркая певчая птица.",
+    "description_uz": "Rangli sayroqi qush.",
+    "category": "biology",
+    "related": []
+  },
+  "bluefin_tuna": {
+    "ru": "Синий тунец",
+    "uz": "Ko‘k tuna",
+    "parent": "fish",
+    "description_ru": "Крупная быстро плавающая морская рыба.",
+    "description_uz": "Tez suzuvchi yirik dengiz baliği.",
+    "category": "biology",
+    "related": [
+      "tuna"
+    ]
+  },
+  "lionfish": {
+    "ru": "Крылатка",
+    "uz": "Qanotli baliq",
+    "parent": "fish",
+    "description_ru": "Ядовитая тропическая рыба с длинными плавниками.",
+    "description_uz": "Zaharli uzun suzgichli tropik baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "green_mamba": {
+    "ru": "Зелёная мамба",
+    "uz": "Yashil mamba",
+    "parent": "reptile",
+    "description_ru": "Очень ядовитая африканская змея.",
+    "description_uz": "Juda zaharli afrika iloni.",
+    "category": "biology",
+    "related": [
+      "snake"
+    ]
+  },
+  "thorny_devil": {
+    "ru": "Шипастый дьявол",
+    "uz": "Tikanli kaltakesak",
+    "parent": "reptile",
+    "description_ru": "Австралийская ящерица с шипами.",
+    "description_uz": "Tikanli avstraliya kaltakesagi.",
+    "category": "biology",
+    "related": [
+      "lizard"
+    ]
+  },
+  "cicada": {
+    "ru": "Цикада",
+    "uz": "Tsikada",
+    "parent": "insect",
+    "description_ru": "Насекомое, издающее громкие звуки летом.",
+    "description_uz": "Yozda baland tovush chiqaradigan hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "fossa": {
+    "ru": "Фосса",
+    "uz": "Fossa",
+    "parent": "mammal",
+    "description_ru": "Хищное млекопитающее Мадагаскара.",
+    "description_uz": "Madagaskarda yashovchi yirtqich hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "dugong": {
+    "ru": "Дюгонь",
+    "uz": "Dyugon",
+    "parent": "mammal",
+    "description_ru": "Морское травоядное животное.",
+    "description_uz": "Dengizda yashovchi o‘txo‘r hayvon.",
+    "category": "biology",
+    "related": [
+      "manatee"
+    ]
+  },
+  "markhor": {
+    "ru": "Маркоур",
+    "uz": "Markhor",
+    "parent": "mammal",
+    "description_ru": "Горный козёл с закрученными рогами.",
+    "description_uz": "Buralgan shoxli tog‘ echkisi.",
+    "category": "biology",
+    "related": [
+      "ibex"
+    ]
+  },
+  "frigatebird": {
+    "ru": "Фрегат",
+    "uz": "Fregat qush",
+    "parent": "bird",
+    "description_ru": "Морская птица с раздутым горлом.",
+    "description_uz": "Bo‘yni shishadigan dengiz qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "kookaburra": {
+    "ru": "Кукабара",
+    "uz": "Kukabara",
+    "parent": "bird",
+    "description_ru": "Австралийская птица с громким смехоподобным криком.",
+    "description_uz": "Kulishga o‘xshash ovoz chiqaradigan qush.",
+    "category": "biology",
+    "related": []
+  },
+  "arowana": {
+    "ru": "Аравана",
+    "uz": "Arovana",
+    "parent": "fish",
+    "description_ru": "Тропическая пресноводная рыба.",
+    "description_uz": "Tropik chuchuk suv baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "electric_eel": {
+    "ru": "Электрический угорь",
+    "uz": "Elektr ilonbaliq",
+    "parent": "fish",
+    "description_ru": "Рыба, способная генерировать электрический разряд.",
+    "description_uz": "Elektr toki chiqaradigan baliq.",
+    "category": "biology",
+    "related": [
+      "eel"
+    ]
+  },
+  "frilled_lizard": {
+    "ru": "Плащеносная ящерица",
+    "uz": "Yelkanli kaltakesak",
+    "parent": "reptile",
+    "description_ru": "Ящерица с расширяющейся кожной складкой.",
+    "description_uz": "Bo‘ynida kengayadigan teri qatlamli kaltakesak.",
+    "category": "biology",
+    "related": [
+      "lizard"
+    ]
+  },
+  "stag_ant": {
+    "ru": "Муравей-олень",
+    "uz": "Shoxli chumoli",
+    "parent": "insect",
+    "description_ru": "Редкий вид крупного муравья.",
+    "description_uz": "Katta chumoli turi.",
+    "category": "biology",
+    "related": [
+      "ant"
+    ]
+  },
+  "tarsier": {
+    "ru": "Долгопят",
+    "uz": "Tarsiyer",
+    "parent": "mammal",
+    "description_ru": "Маленькое приматовое животное с большими глазами.",
+    "description_uz": "Katta ko‘zli mayda primat hayvon.",
+    "category": "biology",
+    "related": [
+      "monkey"
+    ]
+  },
+  "bactrian_camel": {
+    "ru": "Двугорбый верблюд",
+    "uz": "Ikki o‘rkachli tuya",
+    "parent": "mammal",
+    "description_ru": "Верблюд с двумя горбами.",
+    "description_uz": "Ikki o‘rkachli tuya turi.",
+    "category": "biology",
+    "related": [
+      "camel"
+    ]
+  },
+  "llama": {
+    "ru": "Лама",
+    "uz": "Lama",
+    "parent": "mammal",
+    "description_ru": "Южноамериканское домашнее животное.",
+    "description_uz": "Janubiy Amerikada yashovchi uy hayvoni.",
+    "category": "biology",
+    "related": []
+  },
+  "alpaca": {
+    "ru": "Альпака",
+    "uz": "Alpaka",
+    "parent": "mammal",
+    "description_ru": "Животное, разводимое ради шерсти.",
+    "description_uz": "Jun uchun boqiladigan hayvon.",
+    "category": "biology",
+    "related": [
+      "llama"
+    ]
+  },
+  "harpy_eagle": {
+    "ru": "Гарпия",
+    "uz": "Garpiya",
+    "parent": "bird",
+    "description_ru": "Крупная хищная тропическая птица.",
+    "description_uz": "Yirik tropik yirtqich qush.",
+    "category": "biology",
+    "related": [
+      "eagle"
+    ]
+  },
+  "kiwi": {
+    "ru": "Киви",
+    "uz": "Kivi",
+    "parent": "bird",
+    "description_ru": "Нелетающая птица Новой Зеландии.",
+    "description_uz": "Yangi Zelandiyada yashovchi uchmaydigan qush.",
+    "category": "biology",
+    "related": []
+  },
+  "marlin": {
+    "ru": "Марлин",
+    "uz": "Marlin",
+    "parent": "fish",
+    "description_ru": "Крупная океаническая рыба с длинным носом.",
+    "description_uz": "Uzun tumshuqli okean baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "flounder": {
+    "ru": "Камбала",
+    "uz": "Kambala",
+    "parent": "fish",
+    "description_ru": "Плоская донная рыба.",
+    "description_uz": "Yassi tubda yashovchi baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "anole": {
+    "ru": "Ано́лис",
+    "uz": "Anolis",
+    "parent": "reptile",
+    "description_ru": "Небольшая тропическая ящерица.",
+    "description_uz": "Mayda tropik kaltakesak.",
+    "category": "biology",
+    "related": [
+      "lizard"
+    ]
+  },
+  "black_widow": {
+    "ru": "Чёрная вдова",
+    "uz": "Qora beva o‘rgimchak",
+    "parent": "animal",
+    "description_ru": "Ядовитый паук.",
+    "description_uz": "Zaharli o‘rgimchak.",
+    "category": "biology",
+    "related": []
+  },
+  "saola": {
+    "ru": "Саола",
+    "uz": "Saola",
+    "parent": "mammal",
+    "description_ru": "Редкое лесное копытное животное.",
+    "description_uz": "Kam uchraydigan o‘rmon tuyoqli hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "pika": {
+    "ru": "Пищуха",
+    "uz": "Pika",
+    "parent": "mammal",
+    "description_ru": "Маленькое горное млекопитающее.",
+    "description_uz": "Tog‘da yashovchi mayda hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "sun_bear": {
+    "ru": "Малайский медведь",
+    "uz": "Malay ayig‘i",
+    "parent": "mammal",
+    "description_ru": "Самый маленький вид медведя.",
+    "description_uz": "Eng kichik ayiq turi.",
+    "category": "biology",
+    "related": [
+      "bear"
+    ]
+  },
+  "shoal_fish": {
+    "ru": "Стайная рыба",
+    "uz": "To‘da baliq",
+    "parent": "fish",
+    "description_ru": "Рыба, живущая группами.",
+    "description_uz": "To‘da bo‘lib yashaydigan baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "gar": {
+    "ru": "Гар",
+    "uz": "Gar baliq",
+    "parent": "fish",
+    "description_ru": "Древняя хищная рыба.",
+    "description_uz": "Qadimiy yirtqich baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "king_cobra": {
+    "ru": "Королевская кобра",
+    "uz": "Qirol kobra",
+    "parent": "reptile",
+    "description_ru": "Одна из самых ядовитых змей.",
+    "description_uz": "Eng zaharli ilonlardan biri.",
+    "category": "biology",
+    "related": [
+      "cobra"
+    ]
+  },
+  "goliath_beetle": {
+    "ru": "Жук-голиаф",
+    "uz": "Goliat qo‘ng‘izi",
+    "parent": "insect",
+    "description_ru": "Один из самых крупных жуков.",
+    "description_uz": "Eng yirik qo‘ng‘izlardan biri.",
+    "category": "biology",
+    "related": [
+      "beetle"
+    ]
+  },
+  "blue_morpho": {
+    "ru": "Голубая морфо",
+    "uz": "Ko‘k morfo kapalagi",
+    "parent": "insect",
+    "description_ru": "Яркая тропическая бабочка.",
+    "description_uz": "Rangli tropik kapalak.",
+    "category": "biology",
+    "related": [
+      "butterfly"
+    ]
+  },
+  "bandicoot": {
+    "ru": "Бандикут",
+    "uz": "Bandikut",
+    "parent": "mammal",
+    "description_ru": "Австралийское сумчатое животное.",
+    "description_uz": "Avstraliyada yashovchi sumkali hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "dhole": {
+    "ru": "Красный волк",
+    "uz": "Qizil bo‘ri",
+    "parent": "mammal",
+    "description_ru": "Азиатский дикий псовый хищник.",
+    "description_uz": "Osiyoda yashovchi yovvoyi yirtqich.",
+    "category": "biology",
+    "related": [
+      "wolf"
+    ]
+  },
+  "capybara": {
+    "ru": "Капибара",
+    "uz": "Kapibara",
+    "parent": "mammal",
+    "description_ru": "Самый крупный грызун в мире.",
+    "description_uz": "Dunyodagi eng katta kemiruvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "guanaco": {
+    "ru": "Гуанако",
+    "uz": "Guanako",
+    "parent": "mammal",
+    "description_ru": "Южноамериканское травоядное животное.",
+    "description_uz": "Janubiy Amerikada yashovchi o‘txo‘r hayvon.",
+    "category": "biology",
+    "related": [
+      "llama"
+    ]
+  },
+  "ibis": {
+    "ru": "Ибис",
+    "uz": "Ibis",
+    "parent": "bird",
+    "description_ru": "Длинноклювая болотная птица.",
+    "description_uz": "Uzun tumshuqli botqoqli qush.",
+    "category": "biology",
+    "related": []
+  },
+  "tern": {
+    "ru": "Крачка",
+    "uz": "Krachka",
+    "parent": "bird",
+    "description_ru": "Морская птица среднего размера.",
+    "description_uz": "O‘rta kattalikdagi dengiz qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "barramundi": {
+    "ru": "Баррамунди",
+    "uz": "Barramundi",
+    "parent": "fish",
+    "description_ru": "Тропическая рыба Австралии.",
+    "description_uz": "Avstraliyada yashovchi tropik baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "mudskipper": {
+    "ru": "Илистый прыгун",
+    "uz": "Balchiq sakrovchi baliq",
+    "parent": "fish",
+    "description_ru": "Рыба, способная передвигаться по суше.",
+    "description_uz": "Quruqlikda harakatlana oladigan baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "gaboon_viper": {
+    "ru": "Габонская гадюка",
+    "uz": "Gabun gadukasi",
+    "parent": "reptile",
+    "description_ru": "Крупная ядовитая африканская змея.",
+    "description_uz": "Yirik zaharli afrika iloni.",
+    "category": "biology",
+    "related": [
+      "viper"
+    ]
+  },
+  "atlas_wasp": {
+    "ru": "Гигантская оса",
+    "uz": "Gigant osa",
+    "parent": "insect",
+    "description_ru": "Крупная жалящая оса.",
+    "description_uz": "Katta chaqadigan hasharot.",
+    "category": "biology",
+    "related": [
+      "wasp"
+    ]
+  },
+  "markhor_goat": {
+    "ru": "Маркоур козёл",
+    "uz": "Markhor echkisi",
+    "parent": "mammal",
+    "description_ru": "Горный козёл с закрученными рогами.",
+    "description_uz": "Buralgan shoxli tog‘ echkisi.",
+    "category": "biology",
+    "related": [
+      "ibex"
+    ]
+  },
+  "eland": {
+    "ru": "Эланд",
+    "uz": "Eland",
+    "parent": "mammal",
+    "description_ru": "Крупная африканская антилопа.",
+    "description_uz": "Afrikada yashovchi yirik antilopa.",
+    "category": "biology",
+    "related": []
+  },
+  "quail": {
+    "ru": "Перепёлка",
+    "uz": "Bedana",
+    "parent": "bird",
+    "description_ru": "Небольшая наземная птица.",
+    "description_uz": "Mayda yerda yashovchi qush.",
+    "category": "biology",
+    "related": []
+  },
+  "loon": {
+    "ru": "Гагара",
+    "uz": "Gagara",
+    "parent": "bird",
+    "description_ru": "Северная водоплавающая птица.",
+    "description_uz": "Shimoliy suv qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "sailfish": {
+    "ru": "Парусник",
+    "uz": "Yelkanli baliq",
+    "parent": "fish",
+    "description_ru": "Очень быстрая морская рыба.",
+    "description_uz": "Juda tez dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "stonefish": {
+    "ru": "Каменная рыба",
+    "uz": "Tosh baliq",
+    "parent": "fish",
+    "description_ru": "Одна из самых ядовитых рыб.",
+    "description_uz": "Eng zaharli baliqlardan biri.",
+    "category": "biology",
+    "related": []
+  },
+  "basilisk": {
+    "ru": "Василиск",
+    "uz": "Vasilisk",
+    "parent": "reptile",
+    "description_ru": "Ящерица, способная бегать по воде.",
+    "description_uz": "Suv ustida yugura oladigan kaltakesak.",
+    "category": "biology",
+    "related": [
+      "lizard"
+    ]
+  },
+  "mole_cricket": {
+    "ru": "Медведка",
+    "uz": "Medvedka hasharot",
+    "parent": "insect",
+    "description_ru": "Подземное насекомое с мощными лапами.",
+    "description_uz": "Yer ostida yashovchi hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "zorilla": {
+    "ru": "Зорилла",
+    "uz": "Zorilla",
+    "parent": "mammal",
+    "description_ru": "Африканское хищное млекопитающее с резким запахом.",
+    "description_uz": "Afrikada yashovchi kuchli hidli yirtqich hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "colugo": {
+    "ru": "Шерстокрыл",
+    "uz": "Kolugo",
+    "parent": "mammal",
+    "description_ru": "Летающее млекопитающее Юго-Восточной Азии.",
+    "description_uz": "Janubi-Sharqiy Osiyoda yashovchi uchuvchi hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "oryx": {
+    "ru": "Орикс",
+    "uz": "Oriks",
+    "parent": "mammal",
+    "description_ru": "Пустынная антилопа с длинными рогами.",
+    "description_uz": "Uzun shoxli cho‘l antilopasi.",
+    "category": "biology",
+    "related": []
+  },
+  "ptarmigan": {
+    "ru": "Белая куропатка",
+    "uz": "Oq keklik",
+    "parent": "bird",
+    "description_ru": "Северная птица, меняющая цвет оперения.",
+    "description_uz": "Pat rangini o‘zgartiradigan shimoliy qush.",
+    "category": "biology",
+    "related": []
+  },
+  "roller_bird": {
+    "ru": "Сизоворонка",
+    "uz": "Rangli qaldirg‘och",
+    "parent": "bird",
+    "description_ru": "Яркая птица с голубым оперением.",
+    "description_uz": "Ko‘k rangli patli qush.",
+    "category": "biology",
+    "related": []
+  },
+  "tilapia_blue": {
+    "ru": "Голубая тилапия",
+    "uz": "Ko‘k tilapiya",
+    "parent": "fish",
+    "description_ru": "Пресноводная рыба с голубоватым оттенком.",
+    "description_uz": "Ko‘kimtir rangli chuchuk suv baliği.",
+    "category": "biology",
+    "related": [
+      "tilapia"
+    ]
+  },
+  "goby": {
+    "ru": "Бычок",
+    "uz": "Bichok baliq",
+    "parent": "fish",
+    "description_ru": "Мелкая донная рыба.",
+    "description_uz": "Mayda tubda yashovchi baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "boomslang": {
+    "ru": "Бумсланг",
+    "uz": "Bumslang",
+    "parent": "reptile",
+    "description_ru": "Ядовитая древесная змея Африки.",
+    "description_uz": "Afrikada yashovchi zaharli daraxt iloni.",
+    "category": "biology",
+    "related": [
+      "snake"
+    ]
+  },
+  "thorn_bug": {
+    "ru": "Шиповидный клоп",
+    "uz": "Tikanli qandal",
+    "parent": "insect",
+    "description_ru": "Насекомое с необычной формой тела.",
+    "description_uz": "G‘alati shaklli hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "dik_dik": {
+    "ru": "Дикдик",
+    "uz": "Dikdik",
+    "parent": "mammal",
+    "description_ru": "Маленькая африканская антилопа.",
+    "description_uz": "Afrikadagi mayda antilopa.",
+    "category": "biology",
+    "related": []
+  },
+  "quoll": {
+    "ru": "Кволл",
+    "uz": "Kvolla",
+    "parent": "mammal",
+    "description_ru": "Австралийское сумчатое хищное животное.",
+    "description_uz": "Avstraliyada yashovchi yirtqich sumkali hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "urial": {
+    "ru": "Уриал",
+    "uz": "Uriyal",
+    "parent": "mammal",
+    "description_ru": "Горный дикий баран.",
+    "description_uz": "Tog‘da yashovchi yovvoyi qo‘y.",
+    "category": "biology",
+    "related": [
+      "sheep"
+    ]
+  },
+  "bee_eater": {
+    "ru": "Щурка",
+    "uz": "Asalariyeyar qush",
+    "parent": "bird",
+    "description_ru": "Птица, питающаяся пчёлами.",
+    "description_uz": "Asalari bilan oziqlanadigan qush.",
+    "category": "biology",
+    "related": [
+      "bee"
+    ]
+  },
+  "gannet": {
+    "ru": "Олуша",
+    "uz": "Olusha",
+    "parent": "bird",
+    "description_ru": "Морская птица, ныряющая за рыбой.",
+    "description_uz": "Baliq uchun sho‘ng‘iydigan dengiz qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "ray_manta": {
+    "ru": "Гигантская манта",
+    "uz": "Gigant manta",
+    "parent": "fish",
+    "description_ru": "Крупный вид ската.",
+    "description_uz": "Yirik skat turi.",
+    "category": "biology",
+    "related": [
+      "stingray"
+    ]
+  },
+  "pufferfish": {
+    "ru": "Рыба-фугу",
+    "uz": "Fugu baliq",
+    "parent": "fish",
+    "description_ru": "Ядовитая рыба, способная раздуваться.",
+    "description_uz": "Shishib kattalasha oladigan zaharli baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "monitor_dragon": {
+    "ru": "Гигантский варан",
+    "uz": "Gigant varan",
+    "parent": "reptile",
+    "description_ru": "Крупная хищная ящерица.",
+    "description_uz": "Yirik yirtqich kaltakesak.",
+    "category": "biology",
+    "related": [
+      "monitor_lizard"
+    ]
+  },
+  "scarlet_macaw": {
+    "ru": "Алый ара",
+    "uz": "Qizil ara",
+    "parent": "bird",
+    "description_ru": "Ярко-красный тропический попугай.",
+    "description_uz": "Yorqin qizil tropik to‘ti.",
+    "category": "biology",
+    "related": [
+      "macaw"
+    ]
+  },
+  "warthog": {
+    "ru": "Бородавочник",
+    "uz": "Yovvoyi cho‘chqa",
+    "parent": "mammal",
+    "description_ru": "Африканская дикая свинья с клыками.",
+    "description_uz": "Afrikada yashovchi tishli yovvoyi cho‘chqa.",
+    "category": "biology",
+    "related": [
+      "boar"
+    ]
+  },
+  "lynx_eurasian": {
+    "ru": "Евразийская рысь",
+    "uz": "Yevrosiyo silovsini",
+    "parent": "mammal",
+    "description_ru": "Лесная хищная кошка.",
+    "description_uz": "O‘rmon yirtqich mushugi.",
+    "category": "biology",
+    "related": [
+      "lynx"
+    ]
+  },
+  "snowy_owl": {
+    "ru": "Полярная сова",
+    "uz": "Qor boyo‘g‘li",
+    "parent": "bird",
+    "description_ru": "Белая сова северных регионов.",
+    "description_uz": "Shimolda yashovchi oq boyo‘g‘li.",
+    "category": "biology",
+    "related": [
+      "owl"
+    ]
+  },
+  "iguana_green": {
+    "ru": "Зелёная игуана",
+    "uz": "Yashil iguana",
+    "parent": "reptile",
+    "description_ru": "Тропическая древесная ящерица.",
+    "description_uz": "Daraxtda yashovchi tropik kaltakesak.",
+    "category": "biology",
+    "related": [
+      "iguana"
+    ]
+  },
+  "cod_atlantic": {
+    "ru": "Атлантическая треска",
+    "uz": "Atlantika treskasi",
+    "parent": "fish",
+    "description_ru": "Промысловая морская рыба.",
+    "description_uz": "Ovlanadigan dengiz baliği.",
+    "category": "biology",
+    "related": [
+      "cod"
+    ]
+  },
+  "cobra_indian": {
+    "ru": "Индийская кобра",
+    "uz": "Hind kobrasi",
+    "parent": "reptile",
+    "description_ru": "Ядовитая змея Южной Азии.",
+    "description_uz": "Janubiy Osiyoda yashovchi zaharli ilon.",
+    "category": "biology",
+    "related": [
+      "cobra"
+    ]
+  },
+  "marten": {
+    "ru": "Куница",
+    "uz": "Kunitsya",
+    "parent": "mammal",
+    "description_ru": "Лесное хищное млекопитающее.",
+    "description_uz": "O‘rmon yirtqich sutemizuvchisi.",
+    "category": "biology",
+    "related": []
+  },
+  "python_snake": {
+    "ru": "Питон",
+    "uz": "Piton",
+    "parent": "reptile",
+    "description_ru": "Крупная неядовитая змея.",
+    "description_uz": "Yirik zaharsiz ilon.",
+    "category": "biology",
+    "related": []
+  },
+  "pangolin": {
+    "ru": "Панголин",
+    "uz": "Pangolin",
+    "parent": "mammal",
+    "description_ru": "Млекопитающее с чешуйчатым панцирем.",
+    "description_uz": "Tangachali qobiq bilan qoplangan sutemizuvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "rook": {
+    "ru": "Грач",
+    "uz": "Grach",
+    "parent": "bird",
+    "description_ru": "Чёрная птица семейства вороновых.",
+    "description_uz": "Qarg‘alar oilasiga mansub qora qush.",
+    "category": "biology",
+    "related": []
+  },
+  "antelope": {
+    "ru": "Антилопа",
+    "uz": "Antilopa",
+    "parent": "mammal",
+    "description_ru": "Быстрое травоядное животное.",
+    "description_uz": "Tez yuguruvchi o‘txo‘r hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "lamprey": {
+    "ru": "Минога",
+    "uz": "Minoga",
+    "parent": "fish",
+    "description_ru": "Древняя бесчелюстная рыба.",
+    "description_uz": "Qadimiy jag‘siz baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "raven": {
+    "ru": "Ворон",
+    "uz": "Qarg‘a",
+    "parent": "bird",
+    "description_ru": "Крупная чёрная птица.",
+    "description_uz": "Yirik qora qush.",
+    "category": "biology",
+    "related": []
+  },
+  "beaver": {
+    "ru": "Бобр",
+    "uz": "Bobr",
+    "parent": "mammal",
+    "description_ru": "Грызун, строящий плотины.",
+    "description_uz": "To‘g‘on quruvchi kemiruvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "chamois": {
+    "ru": "Серна",
+    "uz": "Serna",
+    "parent": "mammal",
+    "description_ru": "Горное парнокопытное животное.",
+    "description_uz": "Tog‘da yashovchi juft tuyoqli hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "tortoise": {
+    "ru": "Черепаха",
+    "uz": "Toshbaqa",
+    "parent": "reptile",
+    "description_ru": "Пресмыкающееся с твёрдым панцирем.",
+    "description_uz": "Qattiq qobiq bilan qoplangan sudraluvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "swallow": {
+    "ru": "Ласточка",
+    "uz": "Qaldirg‘och",
+    "parent": "bird",
+    "description_ru": "Перелётная птица с раздвоенным хвостом.",
+    "description_uz": "Ikki bo‘lak dumli ko‘chmanchi qush.",
+    "category": "biology",
+    "related": []
+  },
+  "rhino": {
+    "ru": "Носорог",
+    "uz": "Karkidon",
+    "parent": "mammal",
+    "description_ru": "Крупное животное с рогом на носу.",
+    "description_uz": "Burnida shoxi bor yirik hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "koala": {
+    "ru": "Коала",
+    "uz": "Koala",
+    "parent": "mammal",
+    "description_ru": "Сумчатое животное, питающееся эвкалиптом.",
+    "description_uz": "Evkalipt barglari bilan oziqlanadigan sumkali hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "boar": {
+    "ru": "Кабан",
+    "uz": "Yovvoyi cho‘chqa",
+    "parent": "mammal",
+    "description_ru": "Дикий предок домашней свиньи.",
+    "description_uz": "Uy cho‘chqasining yovvoyi ajdodi.",
+    "category": "biology",
+    "related": []
+  },
+  "ferret": {
+    "ru": "Хорёк",
+    "uz": "Xoryok",
+    "parent": "mammal",
+    "description_ru": "Небольшое хищное млекопитающее.",
+    "description_uz": "Mayda yirtqich hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "spider": {
+    "ru": "Паук",
+    "uz": "O‘rgimchak",
+    "parent": "animal",
+    "description_ru": "Паукообразное с восемью ногами.",
+    "description_uz": "Sakkiz oyoqli jonivor.",
+    "category": "biology",
+    "related": []
+  },
+  "bass": {
+    "ru": "Бас",
+    "uz": "Bas baliq",
+    "parent": "fish",
+    "description_ru": "Популярная пресноводная рыба.",
+    "description_uz": "Mashhur chuchuk suv baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "flounder_common": {
+    "ru": "Обыкновенная камбала",
+    "uz": "Oddiy kambala",
+    "parent": "fish",
+    "description_ru": "Донная морская рыба.",
+    "description_uz": "Dengiz tubida yashovchi baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "catfish_giant": {
+    "ru": "Гигантский сом",
+    "uz": "Gigant laqqa",
+    "parent": "fish",
+    "description_ru": "Крупный пресноводный хищник.",
+    "description_uz": "Yirik chuchuk suv yirtqichi.",
+    "category": "biology",
+    "related": []
+  },
+  "hippopotamus": {
+    "ru": "Бегемот",
+    "uz": "Begemot",
+    "parent": "mammal",
+    "description_ru": "Крупное полуводное травоядное животное.",
+    "description_uz": "Yirik yarim suvda yashovchi o‘txo‘r hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "anchovy_common": {
+    "ru": "Обыкновенный анчоус",
+    "uz": "Oddiy anchois",
+    "parent": "fish",
+    "description_ru": "Мелкая стайная морская рыба.",
+    "description_uz": "To‘da bo‘lib yashovchi mayda dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "turtle_sea": {
+    "ru": "Морская черепаха",
+    "uz": "Dengiz toshbaqasi",
+    "parent": "reptile",
+    "description_ru": "Рептилия, живущая в океане.",
+    "description_uz": "Okeanda yashovchi sudraluvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "polar_bear": {
+    "ru": "Белый медведь",
+    "uz": "Oq ayiq",
+    "parent": "mammal",
+    "description_ru": "Хищник, обитающий в Арктике.",
+    "description_uz": "Arktikada yashovchi yirtqich.",
+    "category": "biology",
+    "related": []
+  },
+  "hen": {
+    "ru": "Курица",
+    "uz": "Tovuq",
+    "parent": "bird",
+    "description_ru": "Домашняя птица, несущая яйца.",
+    "description_uz": "Tuxum beruvchi uy qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "donkey": {
+    "ru": "Осёл",
+    "uz": "Eshak",
+    "parent": "mammal",
+    "description_ru": "Домашнее вьючное животное.",
+    "description_uz": "Yuk tashuvchi uy hayvoni.",
+    "category": "biology",
+    "related": []
+  },
+  "woodpecker_green": {
+    "ru": "Зелёный дятел",
+    "uz": "Yashil daraxtqoqqush",
+    "parent": "bird",
+    "description_ru": "Птица, питающаяся насекомыми в коре деревьев.",
+    "description_uz": "Daraxt po‘stlog‘idagi hasharotlar bilan oziqlanadigan qush.",
+    "category": "biology",
+    "related": []
+  },
+  "sparrowhawk": {
+    "ru": "Ястреб-перепелятник",
+    "uz": "Mayda qirg‘iy",
+    "parent": "bird",
+    "description_ru": "Небольшая хищная птица.",
+    "description_uz": "Mayda yirtqich qush.",
+    "category": "biology",
+    "related": []
+  },
+  "squid": {
+    "ru": "Кальмар",
+    "uz": "Kalmar",
+    "parent": "animal",
+    "description_ru": "Морское беспозвоночное с щупальцами.",
+    "description_uz": "Mo‘ylovli dengiz jonivori.",
+    "category": "biology",
+    "related": []
+  },
+  "moth": {
+    "ru": "Моль",
+    "uz": "Kapalak (tun)",
+    "parent": "insect",
+    "description_ru": "Ночное крылатое насекомое.",
+    "description_uz": "Tunda uchadigan hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "ram": {
+    "ru": "Баран",
+    "uz": "Qo‘chqor",
+    "parent": "mammal",
+    "description_ru": "Самец овцы.",
+    "description_uz": "Qo‘yning erkagi.",
+    "category": "biology",
+    "related": []
+  },
+  "goat_mountain": {
+    "ru": "Горный козёл",
+    "uz": "Tog‘ echkisi",
+    "parent": "mammal",
+    "description_ru": "Парнокопытное животное горных районов.",
+    "description_uz": "Tog‘ hududida yashovchi hayvon.",
+    "category": "biology",
+    "related": []
+  },
+  "heron_grey": {
+    "ru": "Серая цапля",
+    "uz": "Kulrang tsaplya",
+    "parent": "bird",
+    "description_ru": "Крупная болотная птица.",
+    "description_uz": "Yirik botqoqli qush.",
+    "category": "biology",
+    "related": []
+  },
+  "cuckoo": {
+    "ru": "Кукушка",
+    "uz": "Kakku",
+    "parent": "bird",
+    "description_ru": "Птица, подбрасывающая яйца в чужие гнёзда.",
+    "description_uz": "Tuxumini boshqa qush uyasiga qo‘yadigan qush.",
+    "category": "biology",
+    "related": []
+  },
+  "snapper": {
+    "ru": "Луциан",
+    "uz": "Lutsian",
+    "parent": "fish",
+    "description_ru": "Тропическая морская рыба.",
+    "description_uz": "Tropik dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "shrimp": {
+    "ru": "Креветка",
+    "uz": "Krevetka",
+    "parent": "animal",
+    "description_ru": "Мелкое морское ракообразное.",
+    "description_uz": "Mayda dengiz qisqichbaqasi.",
+    "category": "biology",
+    "related": []
+  },
+  "salamander": {
+    "ru": "Саламандра",
+    "uz": "Salamandra",
+    "parent": "animal",
+    "description_ru": "Земноводное с вытянутым телом.",
+    "description_uz": "Uzun tanali amfibiya.",
+    "category": "biology",
+    "related": []
+  },
+  "chevrotain": {
+    "ru": "Оленёк",
+    "uz": "Mayda kiyik",
+    "parent": "mammal",
+    "description_ru": "Маленькое парнокопытное тропических лесов.",
+    "description_uz": "Tropik o‘rmonlarda yashovchi mayda tuyoqli.",
+    "category": "biology",
+    "related": []
+  },
+  "muskrat": {
+    "ru": "Ондатра",
+    "uz": "Ondatra",
+    "parent": "mammal",
+    "description_ru": "Полуводный грызун.",
+    "description_uz": "Yarim suvda yashovchi kemiruvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "wren": {
+    "ru": "Крапивник",
+    "uz": "Krapivnik",
+    "parent": "bird",
+    "description_ru": "Маленькая певчая птица.",
+    "description_uz": "Mayda sayroqi qush.",
+    "category": "biology",
+    "related": []
+  },
+  "lark": {
+    "ru": "Жаворонок",
+    "uz": "Javoronok",
+    "parent": "bird",
+    "description_ru": "Птица степей и лугов.",
+    "description_uz": "Dasht va yaylov qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "bream": {
+    "ru": "Лещ",
+    "uz": "Lesht",
+    "parent": "fish",
+    "description_ru": "Пресноводная рыба с плоским телом.",
+    "description_uz": "Yassi tanali chuchuk suv baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "sea_star": {
+    "ru": "Морская звезда",
+    "uz": "Dengiz yulduzi",
+    "parent": "animal",
+    "description_ru": "Беспозвоночное морское животное.",
+    "description_uz": "Umurtqasiz dengiz jonivori.",
+    "category": "biology",
+    "related": []
+  },
+  "beetle_rhinoceros": {
+    "ru": "Жук-носорог",
+    "uz": "Karkidon qo‘ng‘izi",
+    "parent": "insect",
+    "description_ru": "Крупный жук с рогом на голове.",
+    "description_uz": "Boshida shoxi bor yirik qo‘ng‘iz.",
+    "category": "biology",
+    "related": []
+  },
+  "reindeer": {
+    "ru": "Северный олень",
+    "uz": "Shimol kiyigi",
+    "parent": "mammal",
+    "description_ru": "Олень северных регионов.",
+    "description_uz": "Shimol hududida yashovchi kiyik.",
+    "category": "biology",
+    "related": []
+  },
+  "stork": {
+    "ru": "Аист",
+    "uz": "Laylak",
+    "parent": "bird",
+    "description_ru": "Длинноногая перелётная птица.",
+    "description_uz": "Uzun oyoqli ko‘chmanchi qush.",
+    "category": "biology",
+    "related": []
+  },
+  "anchovy_small": {
+    "ru": "Мелкий анчоус",
+    "uz": "Mayda anchois",
+    "parent": "fish",
+    "description_ru": "Небольшая морская рыба.",
+    "description_uz": "Mayda dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "coral_fish": {
+    "ru": "Коралловая рыба",
+    "uz": "Marjon baliq",
+    "parent": "fish",
+    "description_ru": "Рыба, обитающая среди кораллов.",
+    "description_uz": "Marjonlar orasida yashovchi baliq.",
+    "category": "biology",
+    "related": []
+  },
+  "tick": {
+    "ru": "Клещ",
+    "uz": "Kana",
+    "parent": "insect",
+    "description_ru": "Кровососущее членистоногое.",
+    "description_uz": "Qon so‘ruvchi bo‘g‘imoyoqli.",
+    "category": "biology",
+    "related": []
+  },
+  "gopher": {
+    "ru": "Суслик",
+    "uz": "Suslik",
+    "parent": "mammal",
+    "description_ru": "Степной норный грызун.",
+    "description_uz": "Dashtda yashovchi kovlovchi kemiruvchi.",
+    "category": "biology",
+    "related": []
+  },
+  "camel_dromedary": {
+    "ru": "Одногорбый верблюд",
+    "uz": "Bir o‘rkachli tuya",
+    "parent": "mammal",
+    "description_ru": "Верблюд с одним горбом.",
+    "description_uz": "Bitta o‘rkachli tuya.",
+    "category": "biology",
+    "related": []
+  },
+  "oriole_bird": {
+    "ru": "Жёлтая иволга",
+    "uz": "Sariq ivolga",
+    "parent": "bird",
+    "description_ru": "Яркая певчая птица.",
+    "description_uz": "Yorqin rangli sayroqi qush.",
+    "category": "biology",
+    "related": []
+  },
+  "haddock": {
+    "ru": "Пикша",
+    "uz": "Piksha",
+    "parent": "fish",
+    "description_ru": "Северная морская рыба.",
+    "description_uz": "Shimoliy dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "urchin": {
+    "ru": "Морской ёж",
+    "uz": "Dengiz kirpisi",
+    "parent": "animal",
+    "description_ru": "Колючее морское беспозвоночное.",
+    "description_uz": "Tikanli dengiz jonivori.",
+    "category": "biology",
+    "related": []
+  },
+  "gecko_tokey": {
+    "ru": "Токей геккон",
+    "uz": "Tokey gekkoni",
+    "parent": "reptile",
+    "description_ru": "Ярко окрашенная древесная ящерица.",
+    "description_uz": "Rangli daraxt kaltakesagi.",
+    "category": "biology",
+    "related": []
+  },
+  "aphid": {
+    "ru": "Тля",
+    "uz": "Shira",
+    "parent": "insect",
+    "description_ru": "Мелкое насекомое-вредитель растений.",
+    "description_uz": "O‘simliklarga zarar yetkazuvchi hasharot.",
+    "category": "biology",
+    "related": []
+  },
+  "gazelle_thomson": {
+    "ru": "Газель Томсона",
+    "uz": "Tomson gazellasi",
+    "parent": "mammal",
+    "description_ru": "Быстрая африканская антилопа.",
+    "description_uz": "Tez yuguruvchi afrika antilopasi.",
+    "category": "biology",
+    "related": []
+  },
+  "mink": {
+    "ru": "Норка",
+    "uz": "Norka",
+    "parent": "mammal",
+    "description_ru": "Полуводное хищное млекопитающее.",
+    "description_uz": "Yarim suvda yashovchi yirtqich.",
+    "category": "biology",
+    "related": []
+  },
+  "yak_wild": {
+    "ru": "Дикий як",
+    "uz": "Yovvoyi yak",
+    "parent": "mammal",
+    "description_ru": "Горное животное с густой шерстью.",
+    "description_uz": "Qalin junli tog‘ hayvoni.",
+    "category": "biology",
+    "related": []
+  },
+  "hermit_crab": {
+    "ru": "Рак-отшельник",
+    "uz": "Qisqichbaqa-otshyeln",
+    "parent": "animal",
+    "description_ru": "Морское ракообразное, живущее в раковине.",
+    "description_uz": "Chig‘anoq ichida yashovchi dengiz jonivori.",
+    "category": "biology",
+    "related": []
+  },
+  "anchovy_deep": {
+    "ru": "Глубоководный анчоус",
+    "uz": "Chuqur suv anchoisi",
+    "parent": "fish",
+    "description_ru": "Морская рыба глубоких вод.",
+    "description_uz": "Chuqur suv dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "gecko_leopard": {
+    "ru": "Леопардовый геккон",
+    "uz": "Leopard gekkoni",
+    "parent": "reptile",
+    "description_ru": "Ящерица с пятнистой окраской.",
+    "description_uz": "Dog‘li kaltakesak.",
+    "category": "biology",
+    "related": []
+  },
+  "jerboa_long_eared": {
+    "ru": "Длинноухий тушканчик",
+    "uz": "Uzun quloqli tushkan",
+    "parent": "mammal",
+    "description_ru": "Пустынный грызун с большими ушами.",
+    "description_uz": "Katta quloqli cho‘l kemiruvchisi.",
+    "category": "biology",
+    "related": []
+  },
+  "oryx_arabian": {
+    "ru": "Аравийский орикс",
+    "uz": "Arab oriksi",
+    "parent": "mammal",
+    "description_ru": "Пустынная антилопа белого цвета.",
+    "description_uz": "Oq rangli cho‘l antilopasi.",
+    "category": "biology",
+    "related": []
+  },
+  "tern_arctic": {
+    "ru": "Полярная крачка",
+    "uz": "Arktika krachkasi",
+    "parent": "bird",
+    "description_ru": "Птица с самой длинной миграцией.",
+    "description_uz": "Eng uzoq migratsiya qiluvchi qush.",
+    "category": "biology",
+    "related": []
+  },
+  "anglerfish_deep": {
+    "ru": "Глубоководный удильщик",
+    "uz": "Chuqur suv chiroqli baliq",
+    "parent": "fish",
+    "description_ru": "Глубоководная рыба со светящимся органом.",
+    "description_uz": "Yorug‘lik chiqaruvchi chuqur suv baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "sea_slug": {
+    "ru": "Морской слизень",
+    "uz": "Dengiz shilliq",
+    "parent": "animal",
+    "description_ru": "Мягкотелое морское беспозвоночное.",
+    "description_uz": "Yumshoq tanali dengiz jonivori.",
+    "category": "biology",
+    "related": []
+  },
+  "iguana_marine": {
+    "ru": "Морская игуана",
+    "uz": "Dengiz iguanasi",
+    "parent": "reptile",
+    "description_ru": "Ящерица, питающаяся морскими водорослями.",
+    "description_uz": "Dengiz o‘tlari bilan oziqlanadigan kaltakesak.",
+    "category": "biology",
+    "related": []
+  },
+  "elk": {
+    "ru": "Вапити",
+    "uz": "Vapiti",
+    "parent": "mammal",
+    "description_ru": "Крупный североамериканский олень.",
+    "description_uz": "Shimoliy Amerikadagi yirik kiyik.",
+    "category": "biology",
+    "related": []
+  },
+  "puma": {
+    "ru": "Пума",
+    "uz": "Puma",
+    "parent": "mammal",
+    "description_ru": "Хищная кошка Америки.",
+    "description_uz": "Amerikada yashovchi yirtqich mushuk.",
+    "category": "biology",
+    "related": []
+  },
+  "yak_domestic": {
+    "ru": "Домашний як",
+    "uz": "Uy yaki",
+    "parent": "mammal",
+    "description_ru": "Одомашненный горный як.",
+    "description_uz": "Uy sharoitida boqiladigan tog‘ yaki.",
+    "category": "biology",
+    "related": []
+  },
+  "dove": {
+    "ru": "Горлица",
+    "uz": "Goritsa",
+    "parent": "bird",
+    "description_ru": "Маленькая голубиная птица.",
+    "description_uz": "Mayda kabutar turkumi qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "gull_black": {
+    "ru": "Чёрная чайка",
+    "uz": "Qora chayka",
+    "parent": "bird",
+    "description_ru": "Морская птица тёмной окраски.",
+    "description_uz": "Qoramtir dengiz qushi.",
+    "category": "biology",
+    "related": []
+  },
+  "mullet": {
+    "ru": "Кефаль",
+    "uz": "Kefal",
+    "parent": "fish",
+    "description_ru": "Морская рыба средних размеров.",
+    "description_uz": "O‘rta kattalikdagi dengiz baliği.",
+    "category": "biology",
+    "related": []
+  },
+  "sea_cucumber": {
+    "ru": "Морской огурец",
+    "uz": "Dengiz bodringi",
+    "parent": "animal",
+    "description_ru": "Морское беспозвоночное вытянутой формы.",
+    "description_uz": "Cho‘zilgan shaklli dengiz jonivori.",
+    "category": "biology",
+    "related": []
+  },
+  "kiwi_bird": {
+    "ru": "Киви",
+    "uz": "Kivi qushi",
+    "parent": "bird",
+    "description_ru": "Нелетающая птица Новой Зеландии.",
+    "description_uz": "Yangi Zelandiyada yashovchi uchmaydigan qush.",
+    "category": "biology",
+    "related": []
+  },
+  "sea_lion": {
+    "ru": "Морской лев",
+    "uz": "Dengiz sheri",
+    "parent": "mammal",
+    "description_ru": "Морское млекопитающее с ластами.",
+    "description_uz": "Suvda yashovchi suzgichli hayvon.",
+    "category": "biology",
+    "related": []
+  }
+}

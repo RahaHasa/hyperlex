@@ -244,26 +244,24 @@
 }
 
 .btn {
-    padding: 14px 28px;
+    padding: 0.7rem 1.25rem;
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    background: linear-gradient(135deg, #2d5a27 0%, #4a7c42 100%);
     color: white;
     flex: 1;
 }
 
 .btn-primary:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    box-shadow: 0 6px 20px rgba(45, 90, 39, 0.4);
 }
 
 .btn-primary:disabled {

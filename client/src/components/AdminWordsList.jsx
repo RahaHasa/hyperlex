@@ -45,15 +45,15 @@ export default function AdminWordsList({ onSelectWord, refreshTrigger }) {
     }
     
     // Удаление слова
-    async function handleDelete(id) {
+    async function handleDelete(word) {
         if (!window.confirm('Вы уверены? Это удалит слово и все его связи.')) {
             return;
         }
         
         try {
-            setDeleting(id);
-            await adminAPI.deleteWord(id);
-            setWords(words.filter(w => w._id !== id));
+            setDeleting(word.semantic_key);
+            await adminAPI.deleteWordFromHierarchy(word.semantic_key);
+            setWords(words.filter(w => w._id !== word._id));
             setTotal(total - 1);
         } catch (err) {
             alert(`Ошибка: ${err.message}`);
@@ -70,8 +70,6 @@ export default function AdminWordsList({ onSelectWord, refreshTrigger }) {
     }
     
     const totalPages = Math.ceil(total / LIMIT);
-    const getLanguageClass = (lang) => lang === 'lang_ru' ? 'lang-ru' : 'lang-uz';
-    const getLanguageLabel = (lang) => lang === 'lang_ru' ? 'Русский' : 'Узбекский';
     
     return (
         <div className="words-list">
@@ -107,8 +105,8 @@ export default function AdminWordsList({ onSelectWord, refreshTrigger }) {
                             className="filter-select"
                         >
                             <option value="">Все языки</option>
-                            <option value="lang_ru">🇷🇺 Русский</option>
-                            <option value="lang_uz">🇺🇿 Узбекский</option>
+                            <option value="ru">🇷🇺 Русский</option>
+                            <option value="uz">🇺🇿 Узбекский</option>
                         </select>
                     </div>
                     
@@ -140,34 +138,63 @@ export default function AdminWordsList({ onSelectWord, refreshTrigger }) {
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Слово</th>
+                                    <th>Слово (РУ/УЗ)</th>
                                     <th>Язык</th>
-                                    <th>Определение</th>
+                                    <th>Категория</th>
+                                    <th>Описание</th>
                                     <th>Гиперонимы</th>
                                     <th>Гипонимы</th>
                                     <th>Действия</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {words.map(word => (
-                                    <tr key={word._id} className={`word-row ${getLanguageClass(word.lang)}`}>
+                                {words.map(word => {
+                                    // Определяем язык по наличию русского слова
+                                    const lang = word.ru && word.ru.match(/[а-яё]/i) ? 'Русский' : 'Узбекский';
+                                    return (
+                                    <tr key={word._id}>
                                         <td className="col-id">
-                                            <code>{word._id}</code>
+                                            <code>{word.semantic_key || word._id}</code>
                                         </td>
                                         <td className="col-word">
-                                            <strong>{word.word}</strong>
+                                            <strong>{word.ru || '—'}</strong>
+                                            <br />
+                                            <span style={{color: '#7f8c8d', fontSize: '0.85rem'}}>
+                                                {word.uz || '—'}
+                                            </span>
                                         </td>
-                                        <td className={`col-lang ${getLanguageClass(word.lang)}`}>
-                                            <span className="lang-badge">{getLanguageLabel(word.lang)}</span>
+                                        <td className="col-lang">
+                                            <span style={{
+                                                background: lang === 'Русский' ? 'rgba(45, 90, 39, 0.1)' : 'rgba(179, 90, 58, 0.1)',
+                                                color: lang === 'Русский' ? '#2d5a27' : '#b35a3a',
+                                                padding: '0.25rem 0.5rem',
+                                                borderRadius: '4px',
+                                                fontWeight: 500,
+                                                fontSize: '0.85rem'
+                                            }}>
+                                                {lang === 'Русский' ? '🇷🇺' : '🇺🇿'} {lang}
+                                            </span>
+                                        </td>
+                                        <td className="col-category">
+                                            <span style={{
+                                                background: '#f0f7ed',
+                                                color: '#2d5a27',
+                                                padding: '0.25rem 0.5rem',
+                                                borderRadius: '4px',
+                                                fontWeight: 500,
+                                                fontSize: '0.85rem'
+                                            }}>
+                                                {word.category || 'general'}
+                                            </span>
                                         </td>
                                         <td className="col-def">
-                                            {word.definition ? word.definition.slice(0, 50) + '...' : '—'}
+                                            {word.description_ru ? word.description_ru.slice(0, 60) + '...' : '—'}
                                         </td>
                                         <td className="col-count">
-                                            {word.hypernyms?.length || 0}
+                                            {word.children_semantic_keys?.length || 0}
                                         </td>
                                         <td className="col-count">
-                                            {word.hyponyms?.length || 0}
+                                            {word.parent_semantic_key ? 1 : 0}
                                         </td>
                                         <td className="col-actions">
                                             <button
@@ -178,8 +205,8 @@ export default function AdminWordsList({ onSelectWord, refreshTrigger }) {
                                                 <Edit size={18} />
                                             </button>
                                             <button
-                                                onClick={() => handleDelete(word._id)}
-                                                disabled={deleting === word._id}
+                                                onClick={() => handleDelete(word)}
+                                                disabled={deleting === word.semantic_key}
                                                 className="btn-delete"
                                                 title="Удалить"
                                             >
@@ -187,7 +214,8 @@ export default function AdminWordsList({ onSelectWord, refreshTrigger }) {
                                             </button>
                                         </td>
                                     </tr>
-                                ))}
+                                    );
+                                })}
                             </tbody>
                         </table>
                     </div>

@@ -1,388 +1,306 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import adminAPI from '../services/adminAPI';
 import './AdminAddWord.css';
 
 /**
- * Форма добавления нового слова
+ * Генерирует semantic_key из русского и узбекского слов
+ */
+function generateSemanticKey(ru, uz) {
+    if (!ru || !uz) return '';
+    
+    // Берём первые 3 символа русского слова (или меньше если короче)
+    const ruPrefix = ru.toLowerCase().substring(0, 3).padEnd(3, '_');
+    
+    // Уникальный идентификатор (timestamp + случайное число)
+    const timestamp = Date.now().toString(36).substring(2, 8);
+    const random = Math.random().toString(36).substring(2, 5);
+    
+    return `${ruPrefix}_${timestamp}_${random}`;
+}
+
+/**
+ * Форма добавления нового слова в иерархию
  */
 export default function AdminAddWord({ onSuccess }) {
     const [form, setForm] = useState({
-        _id: '',
-        word: '',
-        lang: 'lang_ru',
-        definition: '',
-        hypernyms: [],
-        hyponyms: [],
-        related: {
-            ru: null,
-            uz: null
-        }
+        ru: '',
+        uz: '',
+        description_ru: '',
+        description_uz: '',
+        category: 'general',
+        parent_ru: '',
+        related: []
     });
     
-    const [hypernymsInput, setHypernymsInput] = useState('');
-    const [suggestions, setSuggestions] = useState([]);
-    const [relatedInput, setRelatedInput] = useState('');
-    const [relatedSuggestions, setRelatedSuggestions] = useState([]);
+    const [availableWords, setAvailableWords] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const [semanticKey, setSemanticKey] = useState('');
     
-    // Обновление основных полей
+    // Загрузить список существующих слов для выбора родителя
+    useEffect(() => {
+        loadWords();
+    }, []);
+    
+    // Обновить semantic_key при изменении ru/uz
+    useEffect(() => {
+        if (form.ru && form.uz) {
+            const key = generateSemanticKey(form.ru, form.uz);
+            setSemanticKey(key);
+        } else {
+            setSemanticKey('');
+        }
+    }, [form.ru, form.uz]);
+    
+    async function loadWords() {
+        try {
+            const result = await adminAPI.getHierarchyStructure();
+            const words = flattenWords(result.data || []);
+            setAvailableWords(words);
+        } catch (err) {
+            console.error('Ошибка загрузки слов:', err);
+        }
+    }
+    
+    // Преобразует иерархию в плоский список
+    function flattenWords(words, prefix = '') {
+        let result = [];
+        for (const word of words) {
+            result.push({
+                ru: word.ru,
+                label: prefix ? `${prefix} → ${word.ru}` : word.ru
+            });
+            if (word.children && word.children.length > 0) {
+                result = result.concat(
+                    flattenWords(
+                        word.children,
+                        prefix ? `${prefix} → ${word.ru}` : word.ru
+                    )
+                );
+            }
+        }
+        return result;
+    }
+    
     function handleChange(e) {
         const { name, value } = e.target;
-        if (name.includes('.')) {
-            // Для вложенных объектов (related.ru, translations.uz)
-            const [parent, child] = name.split('.');
-            setForm(prev => ({
-                ...prev,
-                [parent]: {
-                    ...prev[parent],
-                    [child]: value || null
-                }
-            }));
-        } else {
-            setForm(prev => ({ ...prev, [name]: value }));
-        }
-    }
-    
-    // Добавить гипоним
-    function addHyponym(hyponymId) {
-        if (!form.hyponyms.includes(hyponymId)) {
-            setForm(prev => ({
-                ...prev,
-                hyponyms: [...prev.hyponyms, hyponymId]
-            }));
-        }
-    }
-    
-    // Удалить гипоним
-    function removeHyponym(id) {
         setForm(prev => ({
             ...prev,
-            hyponyms: prev.hyponyms.filter(h => h !== id && h._id !== id)
+            [name]: value
         }));
     }
     
-    // Поиск гиперонимов для автозаполнения
-    async function handleHypernymsInputChange(e) {
-        const query = e.target.value;
-        setHypernymsInput(query);
-        
-        if (query.length < 2) {
-            setSuggestions([]);
-            return;
-        }
-        
-        try {
-            const result = await adminAPI.searchHypernyms(query, form.lang, 5);
-            setSuggestions(result.results || []);
-        } catch (err) {
-            console.error('Ошибка при поиске:', err);
-        }
-    }
-    
-    // Добавить гипероним
-    function addHypernym(hypernym) {
-        if (!form.hypernyms.includes(hypernym._id)) {
-            setForm(prev => ({
-                ...prev,
-                hypernyms: [...prev.hypernyms, hypernym._id]
-            }));
-        }
-        setHypernymsInput('');
-        setSuggestions([]);
-    }
-
-    async function handleRelatedInputChange(e) {
-        const query = e.target.value;
-        setRelatedInput(query);
-
-        if (query.length < 2) {
-            setRelatedSuggestions([]);
-            return;
-        }
-
-        try {
-            const relatedLang = form.lang === 'lang_ru' ? 'lang_uz' : 'lang_ru';
-            const result = await adminAPI.searchHypernyms(query, relatedLang, 5);
-            setRelatedSuggestions(result.results || []);
-        } catch (err) {
-            console.error('Ошибка при поиске связанного слова:', err);
-        }
-    }
-
-    function addRelatedWord(selectedWord) {
-        const relatedId = selectedWord._id;
-        setForm(prev => ({
-            ...prev,
-            related: {
-                ...prev.related,
-                [form.lang === 'lang_ru' ? 'uz' : 'ru']: relatedId
-            }
-        }));
-        setRelatedInput(selectedWord.word || '');
-        setRelatedSuggestions([]);
-    }
-    
-    // Удалить гипероним
-    function removeHypernym(id) {
-        setForm(prev => ({
-            ...prev,
-            hypernyms: prev.hypernyms.filter(h => h !== id)
-        }));
-    }
-    
-    // Отправка формы
     async function handleSubmit(e) {
         e.preventDefault();
+        setError('');
+        setSuccess('');
         
         // Валидация
-        if (!form._id.trim() || !form.word.trim()) {
-            setError('ID и слово обязательны');
+        if (!form.ru.trim()) {
+            setError('❌ Введите русское слово');
+            return;
+        }
+        if (!form.uz.trim()) {
+            setError('❌ Введите узбекское слово');
             return;
         }
         
+        setLoading(true);
+        
         try {
-            setLoading(true);
-            setError(null);
+            const payload = {
+                ru: form.ru.trim(),
+                uz: form.uz.trim(),
+                description_ru: form.description_ru.trim() || undefined,
+                description_uz: form.description_uz.trim() || undefined,
+                category: form.category.trim() || 'general',
+                parent_ru: form.parent_ru.trim() || undefined,
+                related: form.related.filter(r => r.trim())
+            };
             
-            await adminAPI.createWord(form);
+            await adminAPI.addWordToHierarchy(payload);
             
-            setSuccess(true);
-            setTimeout(() => {
-                setForm({
-                    _id: '',
-                    word: '',
-                    lang: 'lang_ru',
-                    definition: '',
-                    hypernyms: [],
-                    hyponyms: [],
-                    related: { ru: null, uz: null }
-                });
-                setSuccess(false);
-                onSuccess();
-            }, 1500);
+            setSuccess(`✅ Слово "${form.ru}" успешно добавлено!`);
+            
+            // Очистить форму
+            setForm({
+                ru: '',
+                uz: '',
+                description_ru: '',
+                description_uz: '',
+                category: 'general',
+                parent_ru: '',
+                related: []
+            });
+            setSemanticKey('');
+            
+            // Перезагрузить список слов
+            await loadWords();
+            
+            // Callback
+            if (onSuccess) onSuccess();
+            
+            // Очистить успех через 3 сек
+            setTimeout(() => setSuccess(''), 3000);
         } catch (err) {
-            setError(err.message);
+            setError(`❌ Ошибка: ${err.response?.data?.message || err.message}`);
         } finally {
             setLoading(false);
         }
     }
     
     return (
-        <div className="add-word-form">
-            <h2>Добавить новое слово</h2>
-            
-            {success && (
-                <div className="success-message">
-                    Слово успешно добавлено.
-                </div>
-            )}
-            
-            {error && (
-                <div className="error-message">
-                    {error}
-                </div>
-            )}
-            
-            <form onSubmit={handleSubmit} className="form">
-                {/* ID */}
-                <div className="form-group">
-                    <label>ID слова *</label>
-                    <input
-                        type="text"
-                        name="_id"
-                        value={form._id}
-                        onChange={handleChange}
-                        placeholder="ru_001"
-                        className="form-input"
-                        required
-                    />
-                    <small>Формат: ru_001, uz_002 и т.д.</small>
-                </div>
-                
-                {/* Само слово */}
-                <div className="form-group">
-                    <label>Слово *</label>
-                    <input
-                        type="text"
-                        name="word"
-                        value={form.word}
-                        onChange={handleChange}
-                        placeholder="собака"
-                        className="form-input"
-                        required
-                    />
-                </div>
-                
-                {/* Язык */}
-                <div className="form-group">
-                    <label>Язык *</label>
-                    <select
-                        name="lang"
-                        value={form.lang}
-                        onChange={handleChange}
-                        className="form-select"
-                    >
-                        <option value="lang_ru">RU Русский</option>
-                        <option value="lang_uz">UZ Узбекский</option>
-                    </select>
-                </div>
-                
-                {/* Определение */}
-                <div className="form-group">
-                    <label>Определение</label>
-                    <textarea
-                        name="definition"
-                        value={form.definition}
-                        onChange={handleChange}
-                        placeholder="Описание слова..."
-                        className="form-textarea"
-                        rows="4"
-                    />
-                </div>
-                
-                {/* Гиперонимы */}
-                <div className="form-group">
-                    <label>Гиперонимы (родительские слова)</label>
-                    
-                    <div className="hypernyms-input-wrapper">
-                        <input
-                            type="text"
-                            value={hypernymsInput}
-                            onChange={handleHypernymsInputChange}
-                            placeholder="Начните вводить слово..."
-                            className="form-input"
-                        />
-                        
-                        {suggestions.length > 0 && (
-                            <ul className="suggestions-list">
-                                {suggestions.map(sugg => (
-                                    <li
-                                        key={sugg._id}
-                                        onClick={() => addHypernym(sugg)}
-                                        className="suggestion-item"
-                                    >
-                                        <strong>{sugg.word}</strong>
-                                        <span className="lang-badge">
-                                            {sugg.lang?.replace('lang_', '').toUpperCase()}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
+        <div className="admin-add-word-container">
+            <div className="admin-add-word-form-wrapper">
+                {/* Левая часть - информация */}
+                <div className="admin-add-word-info">
+                    <h3>📋 Ключ слова</h3>
+                    <div className="semantic-key-display">
+                        {semanticKey ? (
+                            <>
+                                <code>{semanticKey}</code>
+                                <p className="info-text">
+                                    Генерируется автоматически из русского и узбекского слов.
+                                    Уникально идентифицирует это слово в иерархии.
+                                </p>
+                            </>
+                        ) : (
+                            <p className="info-placeholder">Введите русское и узбекское слово для генерации ключа</p>
                         )}
                     </div>
-                    
-                    {/* Выбранные гиперонимы */}
-                    {form.hypernyms.length > 0 && (
-                        <div className="hypernyms-list">
-                            {form.hypernyms.map(id => (
-                                <span key={id} className="hypernym-tag">
-                                    {id}
-                                    <button
-                                        type="button"
-                                        onClick={() => removeHypernym(id)}
-                                        className="remove-btn"
-                                    >
-                                        ✕
-                                    </button>
-                                </span>
-                            ))}
+                </div>
+
+                {/* Правая часть - форма */}
+                <form onSubmit={handleSubmit} className="admin-add-word-form">
+                    <h2>➕ Добавить новое слово</h2>
+
+                    {/* Сообщения */}
+                    {error && (
+                        <div className="admin-add-word-message error">
+                            {error}
                         </div>
                     )}
-                </div>
-                
-                {/* Гипонимы */}
-                <div className="form-group">
-                    <label>Гипонимы (виды, дочерние слова)</label>
-                    
-                    <div className="hyponyms-input-wrapper">
+                    {success && (
+                        <div className="admin-add-word-message success">
+                            {success}
+                        </div>
+                    )}
+
+                    {/* Основные поля */}
+                    <div className="form-group">
+                        <label htmlFor="ru">
+                            🇷🇺 Русское слово <span className="required">*</span>
+                        </label>
                         <input
                             type="text"
-                            placeholder="Введи ID гипонима (например: ru_101)"
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter') {
-                                    e.preventDefault();
-                                    addHyponym(e.target.value);
-                                    e.target.value = '';
-                                }
-                            }}
-                            className="form-input"
+                            id="ru"
+                            name="ru"
+                            value={form.ru}
+                            onChange={handleChange}
+                            placeholder="например: Животное"
+                            disabled={loading}
                         />
                     </div>
-                    
-                    {form.hyponyms.length > 0 && (
-                        <div className="hyponyms-list">
-                            {form.hyponyms.map(hyponym => {
-                                const id = hyponym._id || hyponym;
-                                return (
-                                    <span key={id} className="hyponym-tag">
-                                        {id}
-                                        <button
-                                            type="button"
-                                            onClick={() => removeHyponym(id)}
-                                            className="remove-btn"
-                                        >
-                                            ✕
-                                        </button>
-                                    </span>
-                                );
-                            })}
+
+                    <div className="form-group">
+                        <label htmlFor="uz">
+                            🇺🇿 Узбекское слово <span className="required">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="uz"
+                            name="uz"
+                            value={form.uz}
+                            onChange={handleChange}
+                            placeholder="например: Hayvon"
+                            disabled={loading}
+                        />
+                    </div>
+
+                    {/* Описания */}
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label htmlFor="description_ru">
+                                📝 Описание на русском
+                            </label>
+                            <textarea
+                                id="description_ru"
+                                name="description_ru"
+                                value={form.description_ru}
+                                onChange={handleChange}
+                                placeholder="Дополнительное описание или определение"
+                                rows="3"
+                                disabled={loading}
+                            />
                         </div>
-                    )}
-                    <small>Виды и подтипы данного слова</small>
-                </div>
-                
-                {/* Связанное слово (related) */}
-                <div className="form-group">
-                    <label>
-                        {form.lang === 'lang_ru' ? 'Связанное узбекское слово' : 'Связанное русское слово'}
-                    </label>
-                    
-                    <input
-                        type="text"
-                        value={relatedInput}
-                        onChange={handleRelatedInputChange}
-                        placeholder={form.lang === 'lang_ru' ? 'Начните вводить узбекское слово...' : 'Начните вводить русское слово...'}
-                        className="form-input"
-                    />
 
-                    {relatedSuggestions.length > 0 && (
-                        <ul className="suggestions-list">
-                            {relatedSuggestions.map(sugg => (
-                                <li
-                                    key={sugg._id}
-                                    onClick={() => addRelatedWord(sugg)}
-                                    className="suggestion-item"
-                                >
-                                    <strong>{sugg.word}</strong>
-                                    <span className="lang-badge">
-                                        {sugg.lang?.replace('lang_', '').toUpperCase()}
-                                    </span>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
+                        <div className="form-group">
+                            <label htmlFor="description_uz">
+                                📝 Описание на узбекском
+                            </label>
+                            <textarea
+                                id="description_uz"
+                                name="description_uz"
+                                value={form.description_uz}
+                                onChange={handleChange}
+                                placeholder="Qoʻshimcha tavsif yoki taʼrif"
+                                rows="3"
+                                disabled={loading}
+                            />
+                        </div>
+                    </div>
 
-                    <input
-                        type="hidden"
-                        name={form.lang === 'lang_ru' ? 'related.uz' : 'related.ru'}
-                        value={form.lang === 'lang_ru' ? (form.related.uz || '') : (form.related.ru || '')}
-                    />
-                    <small>Выберите слово из списка, ID сохранится автоматически</small>
-                </div>
-                
-                {/* Кнопки */}
-                <div className="form-actions">
-                    <button
-                        type="submit"
-                        disabled={loading}
-                        className="btn btn-primary"
-                    >
-                        {loading ? '⏳ Сохранение...' : '💾 Добавить слово'}
-                    </button>
-                </div>
-            </form>
+                    {/* Категория и родитель */}
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label htmlFor="category">
+                                🏷️ Категория
+                            </label>
+                            <input
+                                type="text"
+                                id="category"
+                                name="category"
+                                value={form.category}
+                                onChange={handleChange}
+                                placeholder="например: biology"
+                                disabled={loading}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="parent_ru">
+                                👨‍👧 Родитель (слово)
+                            </label>
+                            <select
+                                id="parent_ru"
+                                name="parent_ru"
+                                value={form.parent_ru}
+                                onChange={handleChange}
+                                disabled={loading}
+                            >
+                                <option value="">— Не выбран —</option>
+                                {availableWords.map((word, idx) => (
+                                    <option key={idx} value={word.ru}>
+                                        {word.label}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+
+                    {/* Кнопки */}
+                    <div className="form-actions">
+                        <button
+                            type="submit"
+                            className="btn-primary"
+                            disabled={loading || !form.ru || !form.uz}
+                        >
+                            {loading ? '⏳ Добавляю...' : '✅ Добавить слово'}
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }

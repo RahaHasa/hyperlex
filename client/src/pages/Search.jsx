@@ -48,7 +48,7 @@ export default function Search() {
             
             // Если найдено одно слово — сразу показываем его
             if (data.results && data.results.length === 1) {
-                handleWordSelect(data.results[0].id);
+                handleWordSelect(data.results[0]);
             }
         } catch (err) {
             setError('Ошибка при поиске. Проверьте соединение с сервером.');
@@ -65,40 +65,49 @@ export default function Search() {
     
     // Выбор слова из результатов
     const handleWordSelect = async (wordOrId) => {
-        const wordId = typeof wordOrId === 'string' ? wordOrId : wordOrId?.id;
+        const wordData = typeof wordOrId === 'string' ? { semantic_key: wordOrId } : wordOrId;
+        const wordId = wordData?.semantic_key || wordData?.id || wordOrId;
         if (!wordId) return;
 
         setLoading(true);
         setError(null);
 
-        if (wordOrId && typeof wordOrId === 'object') {
-            setSelectedWord(wordOrId);
+        if (wordData && typeof wordData === 'object' && wordData.ru) {
+            setSelectedWord(wordData);
         }
         
         try {
-            // Загружаем слово
-            const wordData = await getWord(wordId);
-            setRelatedWord(wordData.relatedWord);
+            let currentWord = wordData;
+
+            // Загружаем слово если нужно полные данные
+            if (!wordData?.ru) {
+                const fullWordData = await getWord(wordId);
+                currentWord = fullWordData?.word || fullWordData;
+                setSelectedWord(currentWord);
+            }
+            
+            // Загружаем иерархию
+            const treeData = await getWordTree(wordId, 3);
+            setRelatedWord(currentWord?.relatedWord || null);
             
             // Загружаем дерево
-            const treeResult = await getWordTree(wordId, 3);
-            setTreeData(treeResult.tree);
+            setTreeData(treeData.tree || null);
 
-            if (treeResult.tree) {
+            if (treeData.tree) {
                 setSelectedWord({
-                    ...wordData.word,
-                    hypernyms: treeResult.tree.hypernyms || wordData.word.hypernyms || [],
-                    hyponyms: treeResult.tree.hyponyms || wordData.word.hyponyms || []
+                    ...(currentWord || {}),
+                    hypernyms: treeData.tree.hypernyms || currentWord?.hypernyms || [],
+                    hyponyms: treeData.tree.hyponyms || currentWord?.hyponyms || []
                 });
             } else {
-                setSelectedWord(wordData.word);
+                setSelectedWord(currentWord || null);
             }
             
             // Формируем breadcrumb
-            if (treeResult.tree) {
+            if (treeData.tree) {
                 const bc = createBreadcrumb(
-                    treeResult.tree.hypernyms, 
-                    treeResult.tree
+                    treeData.tree.hypernyms,
+                    treeData.tree
                 );
                 setBreadcrumb(bc);
             }
@@ -146,14 +155,23 @@ export default function Search() {
                             <div className="results-list">
                                 {searchResults.map(word => (
                                     <button
-                                        key={word.id}
-                                        className={`result-item ${selectedWord?.id === word.id ? 'active' : ''}`}
-                                        onClick={() => handleWordSelect(word.id)}
+                                        key={word.semantic_key || word._id}
+                                        className={`result-item ${selectedWord?.semantic_key === word.semantic_key ? 'active' : ''}`}
+                                        onClick={() => handleWordSelect(word)}
                                     >
-                                        <span className={`lang-badge ${word.language}`}>
-                                            {word.language.toUpperCase()}
+                                        <span style={{
+                                            fontSize: '0.9rem',
+                                            fontWeight: 600,
+                                            color: word.ru && word.ru.match(/[а-яё]/i) ? '#2d5a27' : '#b35a3a'
+                                        }}>
+                                            {word.ru || word.uz || '—'}
                                         </span>
-                                        <span className="result-word">{word.word}</span>
+                                        <span style={{
+                                            fontSize: '0.75rem',
+                                            color: '#7f8c8d'
+                                        }}>
+                                            {word.uz ? ` (${word.uz})` : ''}
+                                        </span>
                                     </button>
                                 ))}
                             </div>

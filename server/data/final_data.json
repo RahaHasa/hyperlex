@@ -1,0 +1,119 @@
+{
+  "animal": {
+    "ru": "Животное",
+    "uz": "Hayvon",
+    "description_ru": "Живой организм, способный двигаться и питаться.",
+    "description_uz": "Harakatlana oladigan tirik mavjudot.",
+    "category": "biology",
+    "related": ["dog", "cat"]
+  },
+
+  "dog": {
+    "ru": "Собака",
+    "uz": "It",
+    "parent": "animal",
+    "description_ru": "Домашнее животное семейства псовых.",
+    "description_uz": "Uy hayvoni bo'lgan sutemizuvchi.",
+    "category": "biology",
+    "related": ["cat", "bulldog", "husky"]
+  },
+
+  "bulldog": {
+    "ru": "Бульдог",
+    "uz": "Buldog",
+    "parent": "dog",
+    "description_ru": "Порода собак с мощным телосложением.",
+    "description_uz": "Kuchli gavdali it zoti.",
+    "category": "biology",
+    "related": ["husky", "shepherd"]
+  },
+
+  "cat": {
+    "ru": "Кошка",
+    "uz": "Mushuk",
+    "parent": "animal",
+    "description_ru": "Домашнее хищное животное семейства кошачьих.",
+    "description_uz": "Uy xoniqa hayvoni.",
+    "category": "biology",
+    "related": ["dog"]
+  },
+
+  "husky": {
+    "ru": "Хаски",
+    "uz": "Haskiy",
+    "parent": "dog",
+    "description_ru": "Скоростная порода собак с толстой шерстью.",
+    "description_uz": "Tez suratli it zoti.",
+    "category": "biology",
+    "related": ["bulldog", "shepherd"]
+  },
+
+  "shepherd": {
+    "ru": "Овчарка",
+    "uz": "Cho'ban iti",
+    "parent": "dog",
+    "description_ru": "Рабочая порода собак для пастьбы.",
+    "description_uz": "Qo'y qo'riqchi it zoti.",
+    "category": "biology",
+    "related": ["bulldog", "husky"]
+  },
+
+  "transport": {
+    "ru": "Транспорт",
+    "uz": "Transport",
+    "description_ru": "Средство для перемещения людей и грузов.",
+    "description_uz": "Odamlar va yuklarni tashish vositasi.",
+    "category": "transport",
+    "related": ["car", "bike"]
+  },
+
+  "car": {
+    "ru": "Машина",
+    "uz": "Mashina",
+    "parent": "transport",
+    "description_ru": "Наземное транспортное средство.",
+    "description_uz": "Yer usti transport vositasi.",
+    "category": "transport",
+    "related": ["sedan", "truck"]
+  },
+
+  "sedan": {
+    "ru": "Седан",
+    "uz": "Sedan",
+    "parent": "car",
+    "description_ru": "Тип легкового автомобиля.",
+    "description_uz": "Yengil avtomobil turi.",
+    "category": "transport",
+    "related": ["truck"]
+  },
+
+  "truck": {
+    "ru": "Грузовик",
+    "uz": "Yuk mashinasi",
+    "parent": "car",
+    "description_ru": "Автомобиль для перевозки грузов.",
+    "description_uz": "Yuklarni tashish avtomobili.",
+    "category": "transport",
+    "related": ["sedan"]
+  },
+
+  "bike": {
+    "ru": "Велосипед",
+    "uz": "Velosiped",
+    "parent": "transport",
+    "description_ru": "Двухколёсное транспортное средство.",
+    "description_uz": "Ikki g'ildirali transport vositasi.",
+    "category": "transport",
+    "related": ["motorcycle"]
+  },
+
+  "motorcycle": {
+    "ru": "Мотоцикл",
+    "uz": "Mototsikl",
+    "parent": "transport",
+    "description_ru": "Двухколёсное средство с мотором.",
+    "description_uz": "Mototrli ikki g'illali vosita.",
+    "category": "transport",
+    "related": ["bike"]
+  }
+}

@@ -4,10 +4,9 @@
  */
 
 import { useState } from 'react';
-import SearchBar from '../components/SearchBar';
 import GraphView from '../components/GraphView';
 import WordCard from '../components/WordCard';
-import { searchWords, compareWords, getWordTree } from '../services/api';
+import { searchWords, getWordTree } from '../services/api';
 import './Compare.css';
 
 export default function Compare() {
@@ -59,15 +58,6 @@ export default function Compare() {
         try {
             const treeData = await getWordTree(word.id, 3);
             setRuTree(treeData.tree);
-            
-            // Если есть связанное узбекское слово — загружаем его
-            if (word.related?.uz && !uzWord) {
-                const uzTreeData = await getWordTree(word.related.uz, 3);
-                if (uzTreeData.tree) {
-                    setUzWord(uzTreeData.tree);
-                    setUzTree(uzTreeData.tree);
-                }
-            }
         } catch (err) {
             console.error(err);
         }
@@ -81,15 +71,6 @@ export default function Compare() {
         try {
             const treeData = await getWordTree(word.id, 3);
             setUzTree(treeData.tree);
-            
-            // Если есть связанное русское слово — загружаем его
-            if (word.related?.ru && !ruWord) {
-                const ruTreeData = await getWordTree(word.related.ru, 3);
-                if (ruTreeData.tree) {
-                    setRuWord(ruTreeData.tree);
-                    setRuTree(ruTreeData.tree);
-                }
-            }
         } catch (err) {
             console.error(err);
         }
@@ -170,7 +151,7 @@ export default function Compare() {
                                     className="result-btn"
                                     onClick={() => selectRuWord(w)}
                                 >
-                                    {w.word}
+                                    {w.ru || w.word || w.uz}
                                 </button>
                             ))}
                         </div>
@@ -225,7 +206,7 @@ export default function Compare() {
                                     className="result-btn"
                                     onClick={() => selectUzWord(w)}
                                 >
-                                    {w.word}
+                                    {w.uz || w.word || w.ru}
                                 </button>
                             ))}
                         </div>

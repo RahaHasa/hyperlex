@@ -1,0 +1,983 @@
+{
+    "transport": {
+    "ru": "Транспорт",
+    "uz": "Transport",
+    "description_ru": "Средство для перемещения людей и грузов.",
+    "description_uz": "Odamlar va yuklarni tashish vositasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "land_transport": {
+    "ru": "Наземный транспорт",
+    "uz": "Yer usti transporti",
+    "parent": "transport",
+    "description_ru": "Транспорт, передвигающийся по суше.",
+    "description_uz": "Quruqlikda harakatlanadigan transport.",
+    "category": "transport",
+    "related": []
+  },
+
+  "air_transport": {
+    "ru": "Воздушный транспорт",
+    "uz": "Havo transporti",
+    "parent": "transport",
+    "description_ru": "Транспорт, передвигающийся по воздуху.",
+    "description_uz": "Havoda harakatlanadigan transport.",
+    "category": "transport",
+    "related": []
+  },
+
+  "water_transport": {
+    "ru": "Водный транспорт",
+    "uz": "Suv transporti",
+    "parent": "transport",
+    "description_ru": "Транспорт, передвигающийся по воде.",
+    "description_uz": "Suvda harakatlanadigan transport.",
+    "category": "transport",
+    "related": []
+  },
+
+  "rail_transport": {
+    "ru": "Железнодорожный транспорт",
+    "uz": "Temir yo‘l transporti",
+    "parent": "land_transport",
+    "description_ru": "Транспорт, движущийся по рельсам.",
+    "description_uz": "Rel’s bo‘ylab harakatlanadigan transport.",
+    "category": "transport",
+    "related": []
+  },
+  
+  "car": {
+    "ru": "Автомобиль",
+    "uz": "Avtomobil",
+    "parent": "land_transport",
+    "description_ru": "Легковое моторное транспортное средство.",
+    "description_uz": "Yengil motorli transport vositasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "truck": {
+    "ru": "Грузовик",
+    "uz": "Yuk mashinasi",
+    "parent": "land_transport",
+    "description_ru": "Транспорт для перевозки грузов.",
+    "description_uz": "Yuk tashish uchun transport.",
+    "category": "transport",
+    "related": []
+  },
+
+  "bus": {
+    "ru": "Автобус",
+    "uz": "Avtobus",
+    "parent": "land_transport",
+    "description_ru": "Общественный пассажирский транспорт.",
+    "description_uz": "Jamoat yo‘lovchi transporti.",
+    "category": "transport",
+    "related": []
+  },
+
+  "motorcycle": {
+    "ru": "Мотоцикл",
+    "uz": "Mototsikl",
+    "parent": "land_transport",
+    "description_ru": "Двухколёсное моторное транспортное средство.",
+    "description_uz": "Ikki g‘ildirakli motorli transport.",
+    "category": "transport",
+    "related": []
+  },
+
+  "bicycle": {
+    "ru": "Велосипед",
+    "uz": "Velosiped",
+    "parent": "land_transport",
+    "description_ru": "Двухколёсный транспорт без двигателя.",
+    "description_uz": "Dvigatelsiz ikki g‘ildirakli transport.",
+    "category": "transport",
+    "related": []
+  },
+  
+  "tram": {
+    "ru": "Трамвай",
+    "uz": "Tramvay",
+    "parent": "rail_transport",
+    "description_ru": "Городской рельсовый транспорт.",
+    "description_uz": "Shahar ichidagi relsli transport.",
+    "category": "transport",
+    "related": []
+  },
+
+  "train": {
+    "ru": "Поезд",
+    "uz": "Poyezd",
+    "parent": "rail_transport",
+    "description_ru": "Железнодорожный состав для перевозки пассажиров и грузов.",
+    "description_uz": "Yo‘lovchi va yuk tashuvchi temir yo‘l transporti.",
+    "category": "transport",
+    "related": []
+  },
+
+  "metro": {
+    "ru": "Метро",
+    "uz": "Metro",
+    "parent": "rail_transport",
+    "description_ru": "Подземный городской транспорт.",
+    "description_uz": "Yer osti shahar transporti.",
+    "category": "transport",
+    "related": []
+  },
+
+  "taxi": {
+    "ru": "Такси",
+    "uz": "Taksi",
+    "parent": "land_transport",
+    "description_ru": "Индивидуальный пассажирский транспорт.",
+    "description_uz": "Shaxsiy yo‘lovchi transporti.",
+    "category": "transport",
+    "related": []
+  },
+
+  "van": {
+    "ru": "Фургон",
+    "uz": "Furgon",
+    "parent": "land_transport",
+    "description_ru": "Лёгкий грузовой автомобиль.",
+    "description_uz": "Yengil yuk tashuvchi avtomobil.",
+    "category": "transport",
+    "related": []
+  },
+    "airplane": {
+    "ru": "Самолёт",
+    "uz": "Samolyot",
+    "parent": "air_transport",
+    "description_ru": "Воздушное судно с крыльями.",
+    "description_uz": "Qanotli havo kemasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "helicopter": {
+    "ru": "Вертолёт",
+    "uz": "Vertolyot",
+    "parent": "air_transport",
+    "description_ru": "Воздушное судно с вращающимися лопастями.",
+    "description_uz": "Aylanma parrakli havo kemasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "glider": {
+    "ru": "Планер",
+    "uz": "Planer",
+    "parent": "air_transport",
+    "description_ru": "Летательный аппарат без двигателя.",
+    "description_uz": "Dvigatelsiz uchuvchi apparat.",
+    "category": "transport",
+    "related": []
+  },
+
+  "hot_air_balloon": {
+    "ru": "Воздушный шар",
+    "uz": "Havo shari",
+    "parent": "air_transport",
+    "description_ru": "Летательный аппарат на горячем воздухе.",
+    "description_uz": "Issiq havo yordamida uchuvchi apparat.",
+    "category": "transport",
+    "related": []
+  },
+
+  "fighter_jet": {
+    "ru": "Истребитель",
+    "uz": "Qiruvchi samolyot",
+    "parent": "air_transport",
+    "description_ru": "Военный реактивный самолёт.",
+    "description_uz": "Harbiy reaktiv samolyot.",
+    "category": "transport",
+    "related": []
+  },
+    "ship": {
+    "ru": "Корабль",
+    "uz": "Kema",
+    "parent": "water_transport",
+    "description_ru": "Крупное морское судно.",
+    "description_uz": "Yirik dengiz kemasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "boat": {
+    "ru": "Лодка",
+    "uz": "Qayiq",
+    "parent": "water_transport",
+    "description_ru": "Небольшое водное судно.",
+    "description_uz": "Kichik suv kemasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "submarine": {
+    "ru": "Подводная лодка",
+    "uz": "Suv osti kemasi",
+    "parent": "water_transport",
+    "description_ru": "Судно, способное двигаться под водой.",
+    "description_uz": "Suv ostida harakatlana oladigan kema.",
+    "category": "transport",
+    "related": []
+  },
+
+  "yacht": {
+    "ru": "Яхта",
+    "uz": "Yaxta",
+    "parent": "water_transport",
+    "description_ru": "Небольшое судно для отдыха.",
+    "description_uz": "Dam olish uchun mo‘ljallangan kema.",
+    "category": "transport",
+    "related": []
+  },
+
+  "ferry": {
+    "ru": "Паром",
+    "uz": "Parom",
+    "parent": "water_transport",
+    "description_ru": "Судно для перевозки людей и автомобилей.",
+    "description_uz": "Odam va avtomobil tashuvchi kema.",
+    "category": "transport",
+    "related": []
+  },
+    "rocket": {
+    "ru": "Ракета",
+    "uz": "Raketa",
+    "parent": "transport",
+    "description_ru": "Космический транспорт.",
+    "description_uz": "Kosmik transport vositasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "space_shuttle": {
+    "ru": "Космический шаттл",
+    "uz": "Kosmik shattl",
+    "parent": "rocket",
+    "description_ru": "Многоразовый космический корабль.",
+    "description_uz": "Qayta foydalaniladigan kosmik kema.",
+    "category": "transport",
+    "related": []
+  },
+
+  "spaceship": {
+    "ru": "Космический корабль",
+    "uz": "Kosmik kema",
+    "parent": "rocket",
+    "description_ru": "Аппарат для полётов в космос.",
+    "description_uz": "Kosmosga parvoz qiluvchi apparat.",
+    "category": "transport",
+    "related": []
+  },
+
+  "satellite_transport": {
+    "ru": "Спутниковый аппарат",
+    "uz": "Sun’iy yo‘ldosh apparati",
+    "parent": "rocket",
+    "description_ru": "Аппарат, выводимый на орбиту.",
+    "description_uz": "Orbitalga chiqariladigan apparat.",
+    "category": "transport",
+    "related": []
+  },
+
+  "drone": {
+    "ru": "Дрон",
+    "uz": "Dron",
+    "parent": "air_transport",
+    "description_ru": "Беспилотный летательный аппарат.",
+    "description_uz": "Uchuvchisiz havo apparati.",
+    "category": "transport",
+    "related": []
+  },
+    "electric_car": {
+    "ru": "Электромобиль",
+    "uz": "Elektromobil",
+    "parent": "car",
+    "description_ru": "Автомобиль на электрическом двигателе.",
+    "description_uz": "Elektr dvigatelli avtomobil.",
+    "category": "transport",
+    "related": []
+  },
+
+  "hybrid_car": {
+    "ru": "Гибридный автомобиль",
+    "uz": "Gibrid avtomobil",
+    "parent": "car",
+    "description_ru": "Автомобиль с электрическим и бензиновым двигателем.",
+    "description_uz": "Elektr va benzin dvigatelli avtomobil.",
+    "category": "transport",
+    "related": []
+  },
+
+  "minibus": {
+    "ru": "Маршрутка",
+    "uz": "Mikroavtobus",
+    "parent": "bus",
+    "description_ru": "Малый автобус для городских маршрутов.",
+    "description_uz": "Shahar ichidagi kichik avtobus.",
+    "category": "transport",
+    "related": []
+  },
+
+  "trolleybus": {
+    "ru": "Троллейбус",
+    "uz": "Trolleybus",
+    "parent": "land_transport",
+    "description_ru": "Электрический автобус на проводах.",
+    "description_uz": "Sim orqali harakatlanadigan elektr avtobus.",
+    "category": "transport",
+    "related": []
+  },
+
+  "scooter": {
+    "ru": "Скутер",
+    "uz": "Skuter",
+    "parent": "motorcycle",
+    "description_ru": "Лёгкий двухколёсный моторный транспорт.",
+    "description_uz": "Yengil ikki g‘ildirakli transport.",
+    "category": "transport",
+    "related": []
+  },
+    "cargo_plane": {
+    "ru": "Грузовой самолёт",
+    "uz": "Yuk samolyoti",
+    "parent": "airplane",
+    "description_ru": "Самолёт для перевозки грузов.",
+    "description_uz": "Yuk tashuvchi samolyot.",
+    "category": "transport",
+    "related": []
+  },
+
+  "private_jet": {
+    "ru": "Частный самолёт",
+    "uz": "Xususiy samolyot",
+    "parent": "airplane",
+    "description_ru": "Самолёт для частных полётов.",
+    "description_uz": "Shaxsiy parvozlar uchun samolyot.",
+    "category": "transport",
+    "related": []
+  },
+
+  "seaplane": {
+    "ru": "Гидросамолёт",
+    "uz": "Gidrosamolyot",
+    "parent": "airplane",
+    "description_ru": "Самолёт, взлетающий с воды.",
+    "description_uz": "Suvdan uchuvchi samolyot.",
+    "category": "transport",
+    "related": []
+  },
+
+  "cargo_ship": {
+    "ru": "Грузовое судно",
+    "uz": "Yuk kemasi",
+    "parent": "ship",
+    "description_ru": "Корабль для перевозки контейнеров.",
+    "description_uz": "Konteyner tashuvchi kema.",
+    "category": "transport",
+    "related": []
+  },
+
+  "speedboat": {
+    "ru": "Катер",
+    "uz": "Tez qayiq",
+    "parent": "boat",
+    "description_ru": "Быстроходная моторная лодка.",
+    "description_uz": "Tez yuruvchi motorli qayiq.",
+    "category": "transport",
+    "related": []
+  },
+    "pickup_truck": {
+    "ru": "Пикап",
+    "uz": "Pikap",
+    "parent": "truck",
+    "description_ru": "Лёгкий грузовой автомобиль с открытым кузовом.",
+    "description_uz": "Ochiq yuk qismiga ega yengil yuk mashinasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "tractor": {
+    "ru": "Трактор",
+    "uz": "Traktor",
+    "parent": "land_transport",
+    "description_ru": "Сельскохозяйственная техника для обработки земли.",
+    "description_uz": "Qishloq xo‘jaligi texnikasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "bulldozer": {
+    "ru": "Бульдозер",
+    "uz": "Buldozer",
+    "parent": "land_transport",
+    "description_ru": "Тяжёлая строительная техника.",
+    "description_uz": "Og‘ir qurilish texnikasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "ambulance": {
+    "ru": "Скорая помощь",
+    "uz": "Tez yordam mashinasi",
+    "parent": "car",
+    "description_ru": "Медицинский автомобиль для экстренных случаев.",
+    "description_uz": "Favqulodda yordam uchun avtomobil.",
+    "category": "transport",
+    "related": []
+  },
+
+  "fire_truck": {
+    "ru": "Пожарная машина",
+    "uz": "Yong‘in mashinasi",
+    "parent": "truck",
+    "description_ru": "Специальный транспорт для тушения пожаров.",
+    "description_uz": "Yong‘in o‘chirish uchun maxsus transport.",
+    "category": "transport",
+    "related": []
+  },
+    "high_speed_train": {
+    "ru": "Скоростной поезд",
+    "uz": "Tezyurar poyezd",
+    "parent": "train",
+    "description_ru": "Поезд, движущийся на высокой скорости.",
+    "description_uz": "Yuqori tezlikda harakatlanuvchi poyezd.",
+    "category": "transport",
+    "related": []
+  },
+
+  "cargo_train": {
+    "ru": "Грузовой поезд",
+    "uz": "Yuk poyezdi",
+    "parent": "train",
+    "description_ru": "Поезд для перевозки грузов.",
+    "description_uz": "Yuk tashuvchi poyezd.",
+    "category": "transport",
+    "related": []
+  },
+
+  "monorail": {
+    "ru": "Монорельс",
+    "uz": "Monorels",
+    "parent": "rail_transport",
+    "description_ru": "Транспорт на одной рельсе.",
+    "description_uz": "Bitta relsda harakatlanadigan transport.",
+    "category": "transport",
+    "related": []
+  },
+
+  "cargo_helicopter": {
+    "ru": "Грузовой вертолёт",
+    "uz": "Yuk vertolyoti",
+    "parent": "helicopter",
+    "description_ru": "Вертолёт для перевозки грузов.",
+    "description_uz": "Yuk tashuvchi vertolyot.",
+    "category": "transport",
+    "related": []
+  },
+
+  "military_ship": {
+    "ru": "Военный корабль",
+    "uz": "Harbiy kema",
+    "parent": "ship",
+    "description_ru": "Корабль для военных операций.",
+    "description_uz": "Harbiy operatsiyalar uchun kema.",
+    "category": "transport",
+    "related": []
+  },
+    "limousine": {
+    "ru": "Лимузин",
+    "uz": "Limuzin",
+    "parent": "car",
+    "description_ru": "Удлинённый автомобиль представительского класса.",
+    "description_uz": "Uzaytirilgan hashamatli avtomobil.",
+    "category": "transport",
+    "related": []
+  },
+
+  "convertible": {
+    "ru": "Кабриолет",
+    "uz": "Kabriolet",
+    "parent": "car",
+    "description_ru": "Автомобиль с открывающейся крышей.",
+    "description_uz": "Ochiladigan tomli avtomobil.",
+    "category": "transport",
+    "related": []
+  },
+
+  "armored_vehicle": {
+    "ru": "Бронированная машина",
+    "uz": "Zirhli mashina",
+    "parent": "truck",
+    "description_ru": "Защищённый транспорт для перевозки ценностей.",
+    "description_uz": "Qimmatbaho yuklar uchun himoyalangan transport.",
+    "category": "transport",
+    "related": []
+  },
+
+  "snowmobile": {
+    "ru": "Снегоход",
+    "uz": "Qor mototsikli",
+    "parent": "motorcycle",
+    "description_ru": "Транспорт для передвижения по снегу.",
+    "description_uz": "Qor ustida harakatlanadigan transport.",
+    "category": "transport",
+    "related": []
+  },
+
+  "electric_scooter": {
+    "ru": "Электросамокат",
+    "uz": "Elektr samokat",
+    "parent": "land_transport",
+    "description_ru": "Лёгкий электрический транспорт.",
+    "description_uz": "Yengil elektr transport.",
+    "category": "transport",
+    "related": []
+  },
+    "cargo_submarine": {
+    "ru": "Грузовая подлодка",
+    "uz": "Yuk suv osti kemasi",
+    "parent": "submarine",
+    "description_ru": "Подводное судно для перевозки грузов.",
+    "description_uz": "Yuk tashuvchi suv osti kemasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "icebreaker": {
+    "ru": "Ледокол",
+    "uz": "Muzyorar kema",
+    "parent": "ship",
+    "description_ru": "Судно для прохода через лёд.",
+    "description_uz": "Muzni yorib harakatlanadigan kema.",
+    "category": "transport",
+    "related": []
+  },
+
+  "cargo_drone": {
+    "ru": "Грузовой дрон",
+    "uz": "Yuk droni",
+    "parent": "drone",
+    "description_ru": "Беспилотник для доставки грузов.",
+    "description_uz": "Yuk yetkazib beruvchi dron.",
+    "category": "transport",
+    "related": []
+  },
+
+  "supersonic_jet": {
+    "ru": "Сверхзвуковой самолёт",
+    "uz": "Ovozdan tez samolyot",
+    "parent": "airplane",
+    "description_ru": "Самолёт, летящий быстрее скорости звука.",
+    "description_uz": "Ovoz tezligidan tez uchuvchi samolyot.",
+    "category": "transport",
+    "related": []
+  },
+
+  "tourist_bus": {
+    "ru": "Туристический автобус",
+    "uz": "Sayyohlik avtobusi",
+    "parent": "bus",
+    "description_ru": "Автобус для дальних туристических поездок.",
+    "description_uz": "Uzoq masofali sayohat avtobusi.",
+    "category": "transport",
+    "related": []
+  },
+    "tow_truck": {
+    "ru": "Эвакуатор",
+    "uz": "Evakuator",
+    "parent": "truck",
+    "description_ru": "Грузовик для перевозки повреждённых автомобилей.",
+    "description_uz": "Shikastlangan avtomobillarni tashuvchi yuk mashinasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "cement_mixer_truck": {
+    "ru": "Бетономешалка",
+    "uz": "Beton aralashtirgich mashina",
+    "parent": "truck",
+    "description_ru": "Строительный грузовик для перевозки бетона.",
+    "description_uz": "Beton tashuvchi qurilish mashinasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "police_car": {
+    "ru": "Полицейская машина",
+    "uz": "Politsiya mashinasi",
+    "parent": "car",
+    "description_ru": "Служебный автомобиль полиции.",
+    "description_uz": "Politsiya xizmat avtomobili.",
+    "category": "transport",
+    "related": []
+  },
+
+  "race_car": {
+    "ru": "Гоночный автомобиль",
+    "uz": "Poyga avtomobili",
+    "parent": "car",
+    "description_ru": "Автомобиль для спортивных соревнований.",
+    "description_uz": "Sport musobaqalari uchun avtomobil.",
+    "category": "transport",
+    "related": []
+  },
+
+  "atv": {
+    "ru": "Квадроцикл",
+    "uz": "Kvadratsikl",
+    "parent": "motorcycle",
+    "description_ru": "Четырёхколёсный внедорожный транспорт.",
+    "description_uz": "To‘rt g‘ildirakli yo‘ldan tashqari transport.",
+    "category": "transport",
+    "related": []
+  },
+    "cargo_bike": {
+    "ru": "Грузовой велосипед",
+    "uz": "Yuk velosipedi",
+    "parent": "bicycle",
+    "description_ru": "Велосипед для перевозки небольших грузов.",
+    "description_uz": "Kichik yuk tashuvchi velosiped.",
+    "category": "transport",
+    "related": []
+  },
+
+  "electric_bus": {
+    "ru": "Электробус",
+    "uz": "Elektr avtobus",
+    "parent": "bus",
+    "description_ru": "Автобус на электрической тяге.",
+    "description_uz": "Elektr quvvatida harakatlanadigan avtobus.",
+    "category": "transport",
+    "related": []
+  },
+
+  "hovercraft": {
+    "ru": "Судно на воздушной подушке",
+    "uz": "Havo yostiqli kema",
+    "parent": "water_transport",
+    "description_ru": "Судно, движущееся над поверхностью воды.",
+    "description_uz": "Suv ustida havo yostig‘i bilan harakatlanadigan kema.",
+    "category": "transport",
+    "related": []
+  },
+
+  "cargo_rocket": {
+    "ru": "Грузовая ракета",
+    "uz": "Yuk raketasi",
+    "parent": "rocket",
+    "description_ru": "Ракета для доставки грузов в космос.",
+    "description_uz": "Kosmosga yuk olib chiqadigan raketa.",
+    "category": "transport",
+    "related": []
+  },
+
+  "rescue_helicopter": {
+    "ru": "Спасательный вертолёт",
+    "uz": "Qutqaruv vertolyoti",
+    "parent": "helicopter",
+    "description_ru": "Вертолёт для спасательных операций.",
+    "description_uz": "Qutqaruv operatsiyalari uchun vertolyot.",
+    "category": "transport",
+    "related": []
+  },
+    "tank": {
+    "ru": "Танк",
+    "uz": "Tank",
+    "parent": "land_transport",
+    "description_ru": "Бронированная военная машина на гусеницах.",
+    "description_uz": "G‘ildirakli emas, gusenitsali zirhli harbiy mashina.",
+    "category": "transport",
+    "related": []
+  },
+
+  "electric_train": {
+    "ru": "Электропоезд",
+    "uz": "Elektr poyezd",
+    "parent": "train",
+    "description_ru": "Поезд на электрической тяге.",
+    "description_uz": "Elektr quvvatida harakatlanadigan poyezd.",
+    "category": "transport",
+    "related": []
+  },
+
+  "cargo_van": {
+    "ru": "Грузовой фургон",
+    "uz": "Yuk furgoni",
+    "parent": "van",
+    "description_ru": "Фургон для перевозки товаров.",
+    "description_uz": "Tovar tashuvchi furgon.",
+    "category": "transport",
+    "related": []
+  },
+
+  "electric_tram": {
+    "ru": "Электрический трамвай",
+    "uz": "Elektr tramvay",
+    "parent": "tram",
+    "description_ru": "Трамвай на электрической тяге.",
+    "description_uz": "Elektr quvvatida harakatlanadigan tramvay.",
+    "category": "transport",
+    "related": []
+  },
+
+  "cargo_plane_large": {
+    "ru": "Крупный грузовой самолёт",
+    "uz": "Yirik yuk samolyoti",
+    "parent": "cargo_plane",
+    "description_ru": "Самолёт для перевозки тяжёлых грузов.",
+    "description_uz": "Og‘ir yuk tashuvchi samolyot.",
+    "category": "transport",
+    "related": []
+  },
+    "river_boat": {
+    "ru": "Речной катер",
+    "uz": "Daryo kateri",
+    "parent": "boat",
+    "description_ru": "Судно для передвижения по рекам.",
+    "description_uz": "Daryo bo‘ylab harakatlanadigan kema.",
+    "category": "transport",
+    "related": []
+  },
+
+  "cruise_ship": {
+    "ru": "Круизный лайнер",
+    "uz": "Kruiz kemasi",
+    "parent": "ship",
+    "description_ru": "Пассажирский корабль для путешествий.",
+    "description_uz": "Sayohat uchun yo‘lovchi kemasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "cargo_barge": {
+    "ru": "Баржа",
+    "uz": "Barga",
+    "parent": "water_transport",
+    "description_ru": "Плоскодонное судно для перевозки грузов.",
+    "description_uz": "Yassi tubli yuk kemasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "delivery_drone": {
+    "ru": "Доставочный дрон",
+    "uz": "Yetkazib beruvchi dron",
+    "parent": "drone",
+    "description_ru": "Беспилотник для доставки посылок.",
+    "description_uz": "Posilkalarni yetkazuvchi dron.",
+    "category": "transport",
+    "related": []
+  },
+
+  "space_capsule": {
+    "ru": "Космическая капсула",
+    "uz": "Kosmik kapsula",
+    "parent": "spaceship",
+    "description_ru": "Аппарат для возвращения космонавтов на Землю.",
+    "description_uz": "Kosmonavtlarni Yerga qaytaruvchi apparat.",
+    "category": "transport",
+    "related": []
+  },
+    "forklift": {
+    "ru": "Погрузчик",
+    "uz": "Yuk ko‘targich",
+    "parent": "land_transport",
+    "description_ru": "Складская техника для подъёма грузов.",
+    "description_uz": "Omborda yuk ko‘tarish uchun texnika.",
+    "category": "transport",
+    "related": []
+  },
+
+  "road_roller": {
+    "ru": "Дорожный каток",
+    "uz": "Yo‘l tekislagich",
+    "parent": "land_transport",
+    "description_ru": "Строительная техника для уплотнения дороги.",
+    "description_uz": "Yo‘lni tekislash uchun qurilish texnikasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "dump_truck": {
+    "ru": "Самосвал",
+    "uz": "Samosval",
+    "parent": "truck",
+    "description_ru": "Грузовик с опрокидывающимся кузовом.",
+    "description_uz": "Orqa qismi ochilib yuk tushiruvchi yuk mashinasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "sports_bike": {
+    "ru": "Спортивный мотоцикл",
+    "uz": "Sport mototsikl",
+    "parent": "motorcycle",
+    "description_ru": "Мотоцикл для скоростной езды.",
+    "description_uz": "Yuqori tezlik uchun mototsikl.",
+    "category": "transport",
+    "related": []
+  },
+
+  "electric_bike": {
+    "ru": "Электровелосипед",
+    "uz": "Elektr velosiped",
+    "parent": "bicycle",
+    "description_ru": "Велосипед с электрическим мотором.",
+    "description_uz": "Elektr motorli velosiped.",
+    "category": "transport",
+    "related": []
+  },
+    "cargo_tram": {
+    "ru": "Грузовой трамвай",
+    "uz": "Yuk tramvayi",
+    "parent": "tram",
+    "description_ru": "Трамвай для перевозки грузов.",
+    "description_uz": "Yuk tashuvchi tramvay.",
+    "category": "transport",
+    "related": []
+  },
+
+  "maglev_train": {
+    "ru": "Поезд на магнитной подушке",
+    "uz": "Magnit yostiqli poyezd",
+    "parent": "train",
+    "description_ru": "Поезд, движущийся на магнитной левитации.",
+    "description_uz": "Magnit levitatsiyasi yordamida harakatlanadigan poyezd.",
+    "category": "transport",
+    "related": []
+  },
+
+  "rescue_boat": {
+    "ru": "Спасательная лодка",
+    "uz": "Qutqaruv qayig‘i",
+    "parent": "boat",
+    "description_ru": "Судно для спасательных операций на воде.",
+    "description_uz": "Suvda qutqaruv uchun qayiq.",
+    "category": "transport",
+    "related": []
+  },
+
+  "patrol_ship": {
+    "ru": "Патрульный корабль",
+    "uz": "Patrul kemasi",
+    "parent": "ship",
+    "description_ru": "Корабль для охраны морских границ.",
+    "description_uz": "Dengiz chegaralarini qo‘riqlovchi kema.",
+    "category": "transport",
+    "related": []
+  },
+
+  "orbital_ship": {
+    "ru": "Орбитальный корабль",
+    "uz": "Orbital kema",
+    "parent": "spaceship",
+    "description_ru": "Космический аппарат для орбитальных полётов.",
+    "description_uz": "Orbital parvozlar uchun kosmik kema.",
+    "category": "transport",
+    "related": []
+  },
+    "school_bus": {
+    "ru": "Школьный автобус",
+    "uz": "Maktab avtobusi",
+    "parent": "bus",
+    "description_ru": "Автобус для перевозки школьников.",
+    "description_uz": "Maktab o‘quvchilari uchun avtobus.",
+    "category": "transport",
+    "related": []
+  },
+
+  "garbage_truck": {
+    "ru": "Мусоровоз",
+    "uz": "Chiqindi mashinasi",
+    "parent": "truck",
+    "description_ru": "Грузовик для вывоза мусора.",
+    "description_uz": "Chiqindilarni olib ketuvchi yuk mashinasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "street_sweeper": {
+    "ru": "Уборочная машина",
+    "uz": "Ko‘cha tozalovchi mashina",
+    "parent": "land_transport",
+    "description_ru": "Техника для очистки дорог.",
+    "description_uz": "Yo‘llarni tozalash texnikasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "passenger_plane": {
+    "ru": "Пассажирский самолёт",
+    "uz": "Yo‘lovchi samolyot",
+    "parent": "airplane",
+    "description_ru": "Самолёт для перевозки пассажиров.",
+    "description_uz": "Yo‘lovchilarni tashuvchi samolyot.",
+    "category": "transport",
+    "related": []
+  },
+
+  "tourist_ship": {
+    "ru": "Туристический корабль",
+    "uz": "Sayyohlik kemasi",
+    "parent": "ship",
+    "description_ru": "Корабль для морских путешествий.",
+    "description_uz": "Dengiz sayohati uchun kema.",
+    "category": "transport",
+    "related": []
+  },
+    "metro_train": {
+    "ru": "Поезд метро",
+    "uz": "Metro poyezdi",
+    "parent": "metro",
+    "description_ru": "Состав, движущийся по линиям метро.",
+    "description_uz": "Metro relslari bo‘ylab harakatlanadigan tarkib.",
+    "category": "transport",
+    "related": []
+  },
+
+  "bullet_train": {
+    "ru": "Пулевой поезд",
+    "uz": "O‘q tezlikdagi poyezd",
+    "parent": "high_speed_train",
+    "description_ru": "Очень скоростной поезд.",
+    "description_uz": "Juda tez yuruvchi poyezd.",
+    "category": "transport",
+    "related": []
+  },
+
+  "cargo_helicopter_heavy": {
+    "ru": "Тяжёлый грузовой вертолёт",
+    "uz": "Og‘ir yuk vertolyoti",
+    "parent": "cargo_helicopter",
+    "description_ru": "Вертолёт для перевозки крупногабаритных грузов.",
+    "description_uz": "Yirik yuk tashuvchi vertolyot.",
+    "category": "transport",
+    "related": []
+  },
+
+  "deep_sea_submarine": {
+    "ru": "Глубоководная подлодка",
+    "uz": "Chuqur suv osti kemasi",
+    "parent": "submarine",
+    "description_ru": "Подлодка для исследований океана.",
+    "description_uz": "Okean tadqiqoti uchun suv osti kemasi.",
+    "category": "transport",
+    "related": []
+  },
+
+  "interplanetary_ship": {
+    "ru": "Межпланетный корабль",
+    "uz": "Sayyoralararo kema",
+    "parent": "spaceship",
+    "description_ru": "Космический корабль для межпланетных миссий.",
+    "description_uz": "Sayyoralararo parvoz uchun kosmik kema.",
+    "category": "transport",
+    "related": []
+  }
+   }

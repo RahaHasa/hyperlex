@@ -75,4 +75,32 @@ router.get('/ai/generate-descriptions/status', wordAdminController.getDescriptio
 router.post('/ai/generate-descriptions', wordAdminController.aiGenerateDescriptions);
 router.post('/ai/generate-descriptions/stream', wordAdminController.aiGenerateDescriptionsStream);
 
+// ===== НОВЫЕ МАРШРУТЫ ДЛЯ ИЕРАРХИИ =====
+
+const hierarchyController = require('../controllers/hierarchyController');
+
+// Импорт иерархических данных из JSON
+// POST /api/admin/import/hierarchy
+router.post('/import/hierarchy', hierarchyController.importHierarchy);
+
+// Получить полную структуру иерархии
+// GET /api/admin/hierarchy/structure
+router.get('/hierarchy/structure', hierarchyController.getHierarchyStructure);
+
+// Получить дерево для конкретного концепта
+// GET /api/admin/hierarchy/tree/:semantic_key
+router.get('/hierarchy/tree/:semantic_key', hierarchyController.getWordTree);
+
+// Получить статистику иерархии
+// GET /api/admin/hierarchy/stats
+router.get('/hierarchy/stats', hierarchyController.getHierarchyStats);
+
+// Добавить новое слово в иерархию
+// POST /api/admin/hierarchy/add-word
+router.post('/hierarchy/add-word', hierarchyController.addWordToHierarchy);
+
+// Удалить слово из иерархии
+// DELETE /api/admin/hierarchy/:semantic_key
+router.delete('/hierarchy/:semantic_key', hierarchyController.deleteWordFromHierarchy);
+
 module.exports = router;

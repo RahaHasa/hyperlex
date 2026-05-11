@@ -13,7 +13,7 @@ export default function WordCard({
 }) {
     if (!word) return null;
     
-    const isRussian = word.language === 'ru';
+    const isRussian = word.ru && word.ru.match(/[а-яё]/i);
     
     // Обработчик клика по связанному слову
     const handleRelatedClick = () => {
@@ -23,78 +23,88 @@ export default function WordCard({
     };
     
     // Обработчик клика по гиперониму/гипониму
-    const handleLinkClick = (item) => {
+    const handleLinkClick = (semanticKey) => {
         if (onWordClick) {
-            onWordClick(item);
+            onWordClick(semanticKey);
         }
     };
 
-    const getLinkId = (item) => (typeof item === 'string' ? item : item?.id || item?._id);
-    const getLinkLabel = (item) => (typeof item === 'string' ? item : item?.word || item?.id || item?._id);
-    
     return (
-        <div className={`word-card ${compact ? 'compact' : ''} lang-${word.language}`}>
+        <div className={`word-card ${compact ? 'compact' : ''}`}>
             {/* Заголовок */}
             <div className="word-card-header">
-                <span className={`lang-badge ${word.language}`}>
-                    {isRussian ? 'RU' : 'UZ'}
+                <span style={{
+                    background: isRussian ? 'rgba(45, 90, 39, 0.1)' : 'rgba(179, 90, 58, 0.1)',
+                    color: isRussian ? '#2d5a27' : '#b35a3a',
+                    padding: '0.25rem 0.5rem',
+                    borderRadius: '4px',
+                    fontWeight: 500,
+                    fontSize: '0.85rem'
+                }}>
+                    {isRussian ? '🇷🇺 RU' : '🇺🇿 UZ'}
                 </span>
-                <h3 className="word-card-title">{word.word}</h3>
+                <h3 className="word-card-title">
+                    <strong>{word.ru || '—'}</strong>
+                    {word.uz && <span style={{color: '#7f8c8d', fontSize: '0.9rem', marginLeft: '0.5rem'}}>({word.uz})</span>}
+                </h3>
+            </div>
+            
+            {/* Категория */}
+            <div style={{marginBottom: '1rem'}}>
+                <span style={{
+                    background: '#f0f7ed',
+                    color: '#2d5a27',
+                    padding: '0.25rem 0.5rem',
+                    borderRadius: '4px',
+                    fontWeight: 500,
+                    fontSize: '0.85rem'
+                }}>
+                    {word.category || 'general'}
+                </span>
             </div>
             
             {/* Определение */}
-            {word.definition && (
-                <p className="word-card-definition">{word.definition}</p>
-            )}
-            
-            {/* Перевод / связанное слово */}
-            {relatedWord && (
-                <div className="word-card-related" onClick={handleRelatedClick}>
-                    <span className="related-label">
-                        {isRussian ? "O'zbekcha:" : 'Русский:'}
-                    </span>
-                    <span className="related-word">{relatedWord.word}</span>
-                    <span className={`lang-badge small ${relatedWord.language}`}>
-                        {relatedWord.language.toUpperCase()}
-                    </span>
-                </div>
+            {word.description_ru && (
+                <p className="word-card-definition">{word.description_ru}</p>
             )}
             
             {/* Связи */}
             {!compact && (
                 <div className="word-card-links">
-                    {/* Гиперонимы */}
-                    {word.hypernyms && word.hypernyms.length > 0 && (
+                    {/* Гипонимы (дочерние слова) */}
+                    {word.children_semantic_keys && word.children_semantic_keys.length > 0 && (
                         <div className="links-section">
-                            <span className="links-label">↑ Гиперонимы:</span>
+                            <span className="links-label">↓ Частные виды ({word.children_semantic_keys.length}):</span>
                             <div className="links-list">
-                                {word.hypernyms.map(item => (
+                                {word.children_semantic_keys.slice(0, 5).map(key => (
                                     <button 
-                                        key={getLinkId(item)}
-                                        className="link-btn hypernym"
-                                        onClick={() => handleLinkClick(item)}
+                                        key={key}
+                                        className="link-btn hyponym"
+                                        onClick={() => handleLinkClick(key)}
                                     >
-                                        {getLinkLabel(item)}
+                                        {key}
                                     </button>
                                 ))}
+                                {word.children_semantic_keys.length > 5 && (
+                                    <span style={{fontSize: '0.85rem', color: '#7f8c8d'}}>
+                                        +{word.children_semantic_keys.length - 5} ещё
+                                    </span>
+                                )}
                             </div>
                         </div>
                     )}
                     
-                    {/* Гипонимы */}
-                    {word.hyponyms && word.hyponyms.length > 0 && (
+                    {/* Гиперонимы (родительское слово) */}
+                    {word.parent_semantic_key && (
                         <div className="links-section">
-                            <span className="links-label">↓ Гипонимы:</span>
+                            <span className="links-label">↑ Общее понятие:</span>
                             <div className="links-list">
-                                {word.hyponyms.map(item => (
-                                    <button 
-                                        key={getLinkId(item)}
-                                        className="link-btn hyponym"
-                                        onClick={() => handleLinkClick(item)}
-                                    >
-                                        {getLinkLabel(item)}
-                                    </button>
-                                ))}
+                                <button 
+                                    className="link-btn hypernym"
+                                    onClick={() => handleLinkClick(word.parent_semantic_key)}
+                                >
+                                    {word.parent_semantic_key}
+                                </button>
                             </div>
                         </div>
                     )}
@@ -103,7 +113,7 @@ export default function WordCard({
             
             {/* ID слова */}
             <div className="word-card-id">
-                <code>{word.id}</code>
+                <code>{word.semantic_key || word._id}</code>
             </div>
         </div>
     );

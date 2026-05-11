@@ -1,0 +1,1567 @@
+{
+  "nature": {
+    "ru": "Природа",
+    "uz": "Tabiat",
+    "description_ru": "Всё, что создано природой.",
+    "description_uz": "Tabiat tomonidan yaratilgan barcha narsa.",
+    "category": "nature",
+    "related": []
+  },
+  "earth_elements": {
+    "ru": "Стихии природы",
+    "uz": "Tabiat unsurlari",
+    "parent": "nature",
+    "description_ru": "Основные природные элементы.",
+    "description_uz": "Asosiy tabiiy unsurlar.",
+    "category": "nature",
+    "related": []
+  },
+  "water": {
+    "ru": "Вода",
+    "uz": "Suv",
+    "parent": "earth_elements",
+    "description_ru": "Жидкость, основа жизни.",
+    "description_uz": "Hayot manbai bo‘lgan suyuqlik.",
+    "category": "nature",
+    "related": []
+  },
+  "fire": {
+    "ru": "Огонь",
+    "uz": "Olov",
+    "parent": "earth_elements",
+    "description_ru": "Горение с выделением тепла.",
+    "description_uz": "Issiqlik chiqaruvchi yonish.",
+    "category": "nature",
+    "related": []
+  },
+  "air": {
+    "ru": "Воздух",
+    "uz": "Havo",
+    "parent": "earth_elements",
+    "description_ru": "Смесь газов атмосферы.",
+    "description_uz": "Atmosfera gazlari aralashmasi.",
+    "category": "nature",
+    "related": []
+  },
+  "earth_soil": {
+    "ru": "Земля",
+    "uz": "Yer",
+    "parent": "earth_elements",
+    "description_ru": "Почва и суша.",
+    "description_uz": "Tuproq va quruqlik.",
+    "category": "nature",
+    "related": []
+  },
+  "lightning": {
+    "ru": "Молния",
+    "uz": "Chaqmoq",
+    "parent": "earth_elements",
+    "description_ru": "Электрический разряд в небе.",
+    "description_uz": "Osmon elektr zaryadi.",
+    "category": "nature",
+    "related": []
+  },
+  "rain": {
+    "ru": "Дождь",
+    "uz": "Yomg‘ir",
+    "parent": "earth_elements",
+    "description_ru": "Осадки в виде воды.",
+    "description_uz": "Suv tomchilari yog‘ishi.",
+    "category": "nature",
+    "related": []
+  },
+  "snow": {
+    "ru": "Снег",
+    "uz": "Qor",
+    "parent": "earth_elements",
+    "description_ru": "Замёрзшая вода.",
+    "description_uz": "Muzlagan suv.",
+    "category": "nature",
+    "related": []
+  },
+  "wind": {
+    "ru": "Ветер",
+    "uz": "Shamol",
+    "parent": "earth_elements",
+    "description_ru": "Движение воздуха.",
+    "description_uz": "Havo harakati.",
+    "category": "nature",
+    "related": []
+  },
+  "storm": {
+    "ru": "Шторм",
+    "uz": "Bo‘ron",
+    "parent": "earth_elements",
+    "description_ru": "Сильная буря.",
+    "description_uz": "Kuchli shamol.",
+    "category": "nature",
+    "related": []
+  },
+  "fog": {
+    "ru": "Туман",
+    "uz": "Tuman",
+    "parent": "earth_elements",
+    "description_ru": "Облако у поверхности земли.",
+    "description_uz": "Yer yuzasidagi bulut.",
+    "category": "nature",
+    "related": []
+  },
+  "mountains": {
+    "ru": "Горы",
+    "uz": "Tog‘lar",
+    "parent": "nature",
+    "description_ru": "Высокие природные возвышенности.",
+    "description_uz": "Baland tabiiy hududlar.",
+    "category": "nature",
+    "related": []
+  },
+  "mountain_peak": {
+    "ru": "Горная вершина",
+    "uz": "Cho‘qqi",
+    "parent": "mountains",
+    "description_ru": "Самая высокая точка.",
+    "description_uz": "Eng baland nuqta.",
+    "category": "nature",
+    "related": []
+  },
+  "volcano": {
+    "ru": "Вулкан",
+    "uz": "Vulqon",
+    "parent": "mountains",
+    "description_ru": "Извергающаяся гора.",
+    "description_uz": "Otiluvchi tog‘.",
+    "category": "nature",
+    "related": []
+  },
+  "glacier": {
+    "ru": "Ледник",
+    "uz": "Muzlik",
+    "parent": "mountains",
+    "description_ru": "Массив льда.",
+    "description_uz": "Katta muz massasi.",
+    "category": "nature",
+    "related": []
+  },
+  "ridge": {
+    "ru": "Гребень",
+    "uz": "Tizma",
+    "parent": "mountains",
+    "description_ru": "Линия гор.",
+    "description_uz": "Tog‘ tizmasi.",
+    "category": "nature",
+    "related": []
+  },
+  "pass": {
+    "ru": "Перевал",
+    "uz": "Dovon",
+    "parent": "mountains",
+    "description_ru": "Проход через горы.",
+    "description_uz": "Tog‘ osha yo‘l.",
+    "category": "nature",
+    "related": []
+  },
+  "foothill": {
+    "ru": "Предгорье",
+    "uz": "Tog‘ etagi",
+    "parent": "mountains",
+    "description_ru": "Низкая часть гор.",
+    "description_uz": "Tog‘ pastki qismi.",
+    "category": "nature",
+    "related": []
+  },
+  "lava": {
+    "ru": "Лава",
+    "uz": "Lava",
+    "parent": "mountains",
+    "description_ru": "Расплавленная порода.",
+    "description_uz": "Eriган tog‘ jinslari.",
+    "category": "nature",
+    "related": []
+  },
+  "crater": {
+    "ru": "Кратер",
+    "uz": "Krater",
+    "parent": "mountains",
+    "description_ru": "Отверстие вулкана.",
+    "description_uz": "Vulqon og‘zi.",
+    "category": "nature",
+    "related": []
+  },
+  "avalanche": {
+    "ru": "Лавина",
+    "uz": "Ko‘chki",
+    "parent": "mountains",
+    "description_ru": "Сход снега.",
+    "description_uz": "Qor ko‘chkisi.",
+    "category": "nature",
+    "related": []
+  },
+  "water_bodies": {
+    "ru": "Водоёмы",
+    "uz": "Suv havzalari",
+    "parent": "nature",
+    "description_ru": "Природные источники воды.",
+    "description_uz": "Tabiiy suv manbalari.",
+    "category": "nature",
+    "related": []
+  },
+  "river": {
+    "ru": "Река",
+    "uz": "Daryo",
+    "parent": "water_bodies",
+    "description_ru": "Поток пресной воды.",
+    "description_uz": "Oqib turuvchi suv.",
+    "category": "nature",
+    "related": []
+  },
+  "lake": {
+    "ru": "Озеро",
+    "uz": "Ko‘l",
+    "parent": "water_bodies",
+    "description_ru": "Замкнутый водоём.",
+    "description_uz": "Yopiq suv havzasi.",
+    "category": "nature",
+    "related": []
+  },
+  "sea": {
+    "ru": "Море",
+    "uz": "Dengiz",
+    "parent": "water_bodies",
+    "description_ru": "Солёный водоём.",
+    "description_uz": "Sho‘r suv havzasi.",
+    "category": "nature",
+    "related": []
+  },
+  "ocean": {
+    "ru": "Океан",
+    "uz": "Okean",
+    "parent": "water_bodies",
+    "description_ru": "Крупнейший водоём.",
+    "description_uz": "Eng katta suv havzasi.",
+    "category": "nature",
+    "related": []
+  },
+  "waterfall": {
+    "ru": "Водопад",
+    "uz": "Sharshara",
+    "parent": "water_bodies",
+    "description_ru": "Падение воды с высоты.",
+    "description_uz": "Suvning balandlikdan tushishi.",
+    "category": "nature",
+    "related": []
+  },
+  "pond": {
+    "ru": "Пруд",
+    "uz": "Hovuz",
+    "parent": "water_bodies",
+    "description_ru": "Небольшой водоём.",
+    "description_uz": "Kichik suv havzasi.",
+    "category": "nature",
+    "related": []
+  },
+  "stream": {
+    "ru": "Ручей",
+    "uz": "Soy",
+    "parent": "water_bodies",
+    "description_ru": "Маленькая река.",
+    "description_uz": "Kichik oqim.",
+    "category": "nature",
+    "related": []
+  },
+  "swamp": {
+    "ru": "Болото",
+    "uz": "Botqoq",
+    "parent": "water_bodies",
+    "description_ru": "Заболоченная местность.",
+    "description_uz": "Suvli botqoq hudud.",
+    "category": "nature",
+    "related": []
+  },
+  "lagoon": {
+    "ru": "Лагуна",
+    "uz": "Laguna",
+    "parent": "water_bodies",
+    "description_ru": "Мелководный залив.",
+    "description_uz": "Sayoz suv hududi.",
+    "category": "nature",
+    "related": []
+  },
+  "forests": {
+    "ru": "Леса",
+    "uz": "O‘rmonlar",
+    "parent": "nature",
+    "description_ru": "Природные зоны с деревьями.",
+    "description_uz": "Daraxtli tabiiy hudud.",
+    "category": "nature",
+    "related": []
+  },
+  "oak": {
+    "ru": "Дуб",
+    "uz": "Eman",
+    "parent": "forests",
+    "description_ru": "Крепкое лиственное дерево.",
+    "description_uz": "Mustahkam bargli daraxt.",
+    "category": "nature",
+    "related": []
+  },
+  "pine": {
+    "ru": "Сосна",
+    "uz": "Qarag‘ay",
+    "parent": "forests",
+    "description_ru": "Хвойное дерево.",
+    "description_uz": "Ignabargli daraxt.",
+    "category": "nature",
+    "related": []
+  },
+  "birch": {
+    "ru": "Берёза",
+    "uz": "Qayin",
+    "parent": "forests",
+    "description_ru": "Дерево со светлой корой.",
+    "description_uz": "Oq po‘stloqli daraxt.",
+    "category": "nature",
+    "related": []
+  },
+  "spruce": {
+    "ru": "Ель",
+    "uz": "Archa",
+    "parent": "forests",
+    "description_ru": "Вечнозелёное дерево.",
+    "description_uz": "Doim yashil daraxt.",
+    "category": "nature",
+    "related": []
+  },
+  "cedar": {
+    "ru": "Кедр",
+    "uz": "Kedr",
+    "parent": "forests",
+    "description_ru": "Хвойное дерево.",
+    "description_uz": "Ignabargli daraxt turi.",
+    "category": "nature",
+    "related": []
+  },
+  "bamboo": {
+    "ru": "Бамбук",
+    "uz": "Bambuk",
+    "parent": "forests",
+    "description_ru": "Быстрорастущее растение.",
+    "description_uz": "Tez o‘suvchi o‘simlik.",
+    "category": "nature",
+    "related": []
+  },
+  "palm": {
+    "ru": "Пальма",
+    "uz": "Palma",
+    "parent": "forests",
+    "description_ru": "Тропическое дерево.",
+    "description_uz": "Tropik daraxt.",
+    "category": "nature",
+    "related": []
+  },
+  "willow": {
+    "ru": "Ива",
+    "uz": "Tol",
+    "parent": "forests",
+    "description_ru": "Дерево у воды.",
+    "description_uz": "Suv bo‘yidagi daraxt.",
+    "category": "nature",
+    "related": []
+  },
+  "maple": {
+    "ru": "Клён",
+    "uz": "Zarang",
+    "parent": "forests",
+    "description_ru": "Лиственное дерево.",
+    "description_uz": "Bargli daraxt.",
+    "category": "nature",
+    "related": []
+  },
+  "weather": {
+    "ru": "Погода",
+    "uz": "Ob-havo",
+    "parent": "nature",
+    "description_ru": "Состояние атмосферы.",
+    "description_uz": "Atmosfera holati.",
+    "category": "nature",
+    "related": []
+  },
+  "sunny": {
+    "ru": "Солнечно",
+    "uz": "Quyoshli",
+    "parent": "weather",
+    "description_ru": "Ясная погода.",
+    "description_uz": "Quyoshli kun.",
+    "category": "nature",
+    "related": []
+  },
+  "cloudy": {
+    "ru": "Облачно",
+    "uz": "Bulutli",
+    "parent": "weather",
+    "description_ru": "Много облаков.",
+    "description_uz": "Bulut ko‘p.",
+    "category": "nature",
+    "related": []
+  },
+  "thunderstorm": {
+    "ru": "Гроза",
+    "uz": "Momaqaldiroq",
+    "parent": "weather",
+    "description_ru": "Дождь с молнией.",
+    "description_uz": "Yomg‘ir va chaqmoq.",
+    "category": "nature",
+    "related": []
+  },
+  "heat": {
+    "ru": "Жара",
+    "uz": "Issiq",
+    "parent": "weather",
+    "description_ru": "Высокая температура.",
+    "description_uz": "Yuqori harorat.",
+    "category": "nature",
+    "related": []
+  },
+  "cold": {
+    "ru": "Холод",
+    "uz": "Sovuq",
+    "parent": "weather",
+    "description_ru": "Низкая температура.",
+    "description_uz": "Past harorat.",
+    "category": "nature",
+    "related": []
+  },
+  "hail": {
+    "ru": "Град",
+    "uz": "Do‘l",
+    "parent": "weather",
+    "description_ru": "Ледяные осадки.",
+    "description_uz": "Muzli yog‘in.",
+    "category": "nature",
+    "related": []
+  },
+  "frost": {
+    "ru": "Иней",
+    "uz": "Qirov",
+    "parent": "weather",
+    "description_ru": "Замёрзшая влага.",
+    "description_uz": "Muzlagan namlik.",
+    "category": "nature",
+    "related": []
+  },
+  "blizzard": {
+    "ru": "Метель",
+    "uz": "Qor bo‘roni",
+    "parent": "weather",
+    "description_ru": "Сильный снегопад.",
+    "description_uz": "Kuchli qor yog‘ishi.",
+    "category": "nature",
+    "related": []
+  },
+  "hurricane": {
+    "ru": "Ураган",
+    "uz": "Dovul",
+    "parent": "weather",
+    "description_ru": "Очень сильный ветер.",
+    "description_uz": "Kuchli shamol.",
+    "category": "nature",
+    "related": []
+  },
+  "natural_disasters": {
+    "ru": "Природные катастрофы",
+    "uz": "Tabiiy ofatlar",
+    "parent": "nature",
+    "description_ru": "Опасные природные явления.",
+    "description_uz": "Xavfli tabiiy hodisalar.",
+    "category": "nature",
+    "related": []
+  },
+  "earthquake": {
+    "ru": "Землетрясение",
+    "uz": "Zilzila",
+    "parent": "natural_disasters",
+    "description_ru": "Колебание земной коры.",
+    "description_uz": "Yer qobig‘ining silkinishi.",
+    "category": "nature",
+    "related": []
+  },
+  "tsunami": {
+    "ru": "Цунами",
+    "uz": "Tsunami",
+    "parent": "natural_disasters",
+    "description_ru": "Огромная морская волна.",
+    "description_uz": "Katta dengiz to‘lqini.",
+    "category": "nature",
+    "related": []
+  },
+  "tornado": {
+    "ru": "Торнадо",
+    "uz": "Tornado",
+    "parent": "natural_disasters",
+    "description_ru": "Вращающийся воздушный столб.",
+    "description_uz": "Aylanuvchi havo ustuni.",
+    "category": "nature",
+    "related": []
+  },
+  "flood": {
+    "ru": "Наводнение",
+    "uz": "Suv toshqini",
+    "parent": "natural_disasters",
+    "description_ru": "Затопление территории.",
+    "description_uz": "Hududni suv bosishi.",
+    "category": "nature",
+    "related": []
+  },
+  "drought": {
+    "ru": "Засуха",
+    "uz": "Qurg‘oqchilik",
+    "parent": "natural_disasters",
+    "description_ru": "Долгое отсутствие дождя.",
+    "description_uz": "Uzoq yomg‘irsizlik.",
+    "category": "nature",
+    "related": []
+  },
+  "landslide": {
+    "ru": "Оползень",
+    "uz": "Ko‘chki",
+    "parent": "natural_disasters",
+    "description_ru": "Смещение грунта.",
+    "description_uz": "Yer massasi siljishi.",
+    "category": "nature",
+    "related": []
+  },
+  "wildfire": {
+    "ru": "Лесной пожар",
+    "uz": "O‘rmon yong‘ini",
+    "parent": "natural_disasters",
+    "description_ru": "Горение леса.",
+    "description_uz": "O‘rmonning yonishi.",
+    "category": "nature",
+    "related": []
+  },
+  "volcanic_eruption": {
+    "ru": "Извержение вулкана",
+    "uz": "Vulqon otilishi",
+    "parent": "natural_disasters",
+    "description_ru": "Выброс лавы.",
+    "description_uz": "Lava chiqishi.",
+    "category": "nature",
+    "related": []
+  },
+  "sandstorm": {
+    "ru": "Песчаная буря",
+    "uz": "Qum bo‘roni",
+    "parent": "natural_disasters",
+    "description_ru": "Сильный ветер с песком.",
+    "description_uz": "Qumli kuchli shamol.",
+    "category": "nature",
+    "related": []
+  },
+  "continents": {
+    "ru": "Континенты",
+    "uz": "Qit'alar",
+    "parent": "nature",
+    "description_ru": "Крупные части суши.",
+    "description_uz": "Yirik quruqlik hududlari.",
+    "category": "nature",
+    "related": []
+  },
+  "asia": {
+    "ru": "Азия",
+    "uz": "Osiyo",
+    "parent": "continents",
+    "description_ru": "Самый большой континент.",
+    "description_uz": "Eng katta qit'a.",
+    "category": "nature",
+    "related": []
+  },
+  "europe": {
+    "ru": "Европа",
+    "uz": "Yevropa",
+    "parent": "continents",
+    "description_ru": "Континент на западе Евразии.",
+    "description_uz": "Yevrosiyo g‘arbiy qismi.",
+    "category": "nature",
+    "related": []
+  },
+  "africa": {
+    "ru": "Африка",
+    "uz": "Afrika",
+    "parent": "continents",
+    "description_ru": "Континент южнее Европы.",
+    "description_uz": "Yevropadan janubdagi qit'a.",
+    "category": "nature",
+    "related": []
+  },
+  "north_america": {
+    "ru": "Северная Америка",
+    "uz": "Shimoliy Amerika",
+    "parent": "continents",
+    "description_ru": "Континент западного полушария.",
+    "description_uz": "G‘arbiy yarimshar qit'asi.",
+    "category": "nature",
+    "related": []
+  },
+  "south_america": {
+    "ru": "Южная Америка",
+    "uz": "Janubiy Amerika",
+    "parent": "continents",
+    "description_ru": "Южная часть Америки.",
+    "description_uz": "Amerikaning janubiy qismi.",
+    "category": "nature",
+    "related": []
+  },
+  "australia": {
+    "ru": "Австралия",
+    "uz": "Avstraliya",
+    "parent": "continents",
+    "description_ru": "Континент и страна.",
+    "description_uz": "Qit'a va davlat.",
+    "category": "nature",
+    "related": []
+  },
+  "antarctica": {
+    "ru": "Антарктида",
+    "uz": "Antarktida",
+    "parent": "continents",
+    "description_ru": "Ледяной континент.",
+    "description_uz": "Muzli qit'a.",
+    "category": "nature",
+    "related": []
+  },
+  "eurasia": {
+    "ru": "Евразия",
+    "uz": "Yevrosiyo",
+    "parent": "continents",
+    "description_ru": "Европа и Азия вместе.",
+    "description_uz": "Yevropa va Osiyo birgalikda.",
+    "category": "nature",
+    "related": []
+  },
+  "subcontinent": {
+    "ru": "Субконтинент",
+    "uz": "Subqit'a",
+    "parent": "continents",
+    "description_ru": "Часть континента.",
+    "description_uz": "Qit'aning bir qismi.",
+    "category": "nature",
+    "related": []
+  },
+  "celestial_objects": {
+    "ru": "Небесные тела",
+    "uz": "Samoviy jismlar",
+    "parent": "nature",
+    "description_ru": "Объекты в космосе.",
+    "description_uz": "Kosmosdagi jismlar.",
+    "category": "nature",
+    "related": []
+  },
+  "sun": {
+    "ru": "Солнце",
+    "uz": "Quyosh",
+    "parent": "celestial_objects",
+    "description_ru": "Звезда нашей системы.",
+    "description_uz": "Bizning yulduzimiz.",
+    "category": "nature",
+    "related": []
+  },
+  "moon": {
+    "ru": "Луна",
+    "uz": "Oy",
+    "parent": "celestial_objects",
+    "description_ru": "Спутник Земли.",
+    "description_uz": "Yer yo‘ldoshi.",
+    "category": "nature",
+    "related": []
+  },
+  "star": {
+    "ru": "Звезда",
+    "uz": "Yulduz",
+    "parent": "celestial_objects",
+    "description_ru": "Светящееся небесное тело.",
+    "description_uz": "Yorqin samoviy jism.",
+    "category": "nature",
+    "related": []
+  },
+  "planet": {
+    "ru": "Планета",
+    "uz": "Sayyora",
+    "parent": "celestial_objects",
+    "description_ru": "Тело, вращающееся вокруг звезды.",
+    "description_uz": "Yulduz atrofida aylanuvchi jism.",
+    "category": "nature",
+    "related": []
+  },
+  "comet": {
+    "ru": "Комета",
+    "uz": "Kometа",
+    "parent": "celestial_objects",
+    "description_ru": "Ледяное небесное тело.",
+    "description_uz": "Muzli samoviy jism.",
+    "category": "nature",
+    "related": []
+  },
+  "asteroid": {
+    "ru": "Астероид",
+    "uz": "Asteroid",
+    "parent": "celestial_objects",
+    "description_ru": "Малое космическое тело.",
+    "description_uz": "Kichik kosmik jism.",
+    "category": "nature",
+    "related": []
+  },
+  "galaxy": {
+    "ru": "Галактика",
+    "uz": "Galaktika",
+    "parent": "celestial_objects",
+    "description_ru": "Система звёзд.",
+    "description_uz": "Yulduzlar tizimi.",
+    "category": "nature",
+    "related": []
+  },
+  "nebula": {
+    "ru": "Туманность",
+    "uz": "Tumanlik",
+    "parent": "celestial_objects",
+    "description_ru": "Космическое облако.",
+    "description_uz": "Kosmik bulut.",
+    "category": "nature",
+    "related": []
+  },
+  "black_hole": {
+    "ru": "Чёрная дыра",
+    "uz": "Qora tuynuk",
+    "parent": "celestial_objects",
+    "description_ru": "Объект с сильной гравитацией.",
+    "description_uz": "Kuchli tortish kuchiga ega jism.",
+    "category": "nature",
+    "related": []
+  },
+  "ecosystems": {
+    "ru": "Экосистемы",
+    "uz": "Ekotizimlar",
+    "parent": "nature",
+    "description_ru": "Сообщества живых организмов.",
+    "description_uz": "Tirik organizmlar tizimi.",
+    "category": "nature",
+    "related": []
+  },
+  "rainforest": {
+    "ru": "Тропический лес",
+    "uz": "Yomg‘ir o‘rmoni",
+    "parent": "ecosystems",
+    "description_ru": "Влажный густой лес.",
+    "description_uz": "Nam zich o‘rmon.",
+    "category": "nature",
+    "related": []
+  },
+  "savanna": {
+    "ru": "Саванна",
+    "uz": "Savanna",
+    "parent": "ecosystems",
+    "description_ru": "Травянистая зона.",
+    "description_uz": "O‘tli hudud.",
+    "category": "nature",
+    "related": []
+  },
+  "tundra": {
+    "ru": "Тундра",
+    "uz": "Tundra",
+    "parent": "ecosystems",
+    "description_ru": "Холодная безлесная зона.",
+    "description_uz": "Sovuq o‘rmonsiz hudud.",
+    "category": "nature",
+    "related": []
+  },
+  "taiga": {
+    "ru": "Тайга",
+    "uz": "Tayga",
+    "parent": "ecosystems",
+    "description_ru": "Хвойный лес.",
+    "description_uz": "Ignabargli o‘rmon.",
+    "category": "nature",
+    "related": []
+  },
+  "coral_reef": {
+    "ru": "Коралловый риф",
+    "uz": "Marjon rif",
+    "parent": "ecosystems",
+    "description_ru": "Подводная экосистема.",
+    "description_uz": "Suv osti ekotizimi.",
+    "category": "nature",
+    "related": []
+  },
+  "wetland": {
+    "ru": "Водно-болотные угодья",
+    "uz": "Nam hudud",
+    "parent": "ecosystems",
+    "description_ru": "Переходная зона суши и воды.",
+    "description_uz": "Suv va quruqlik oralig‘i.",
+    "category": "nature",
+    "related": []
+  },
+  "grassland": {
+    "ru": "Степь",
+    "uz": "Dasht",
+    "parent": "ecosystems",
+    "description_ru": "Травянистая равнина.",
+    "description_uz": "O‘tli tekislik.",
+    "category": "nature",
+    "related": []
+  },
+  "mangrove": {
+    "ru": "Мангровый лес",
+    "uz": "Mangrov o‘rmoni",
+    "parent": "ecosystems",
+    "description_ru": "Прибрежный лес.",
+    "description_uz": "Sohil o‘rmoni.",
+    "category": "nature",
+    "related": []
+  },
+  "desert_ecosystem": {
+    "ru": "Пустынная экосистема",
+    "uz": "Cho‘l ekotizimi",
+    "parent": "ecosystems",
+    "description_ru": "Экосистема засушливых зон.",
+    "description_uz": "Quruq hudud tizimi.",
+    "category": "nature",
+    "related": []
+  },
+  "minerals": {
+    "ru": "Минералы",
+    "uz": "Minerallar",
+    "parent": "nature",
+    "description_ru": "Природные твёрдые вещества.",
+    "description_uz": "Tabiiy qattiq moddalar.",
+    "category": "nature",
+    "related": []
+  },
+  "gold": {
+    "ru": "Золото",
+    "uz": "Oltin",
+    "parent": "minerals",
+    "description_ru": "Драгоценный металл.",
+    "description_uz": "Qimmatbaho metall.",
+    "category": "nature",
+    "related": []
+  },
+  "silver": {
+    "ru": "Серебро",
+    "uz": "Kumush",
+    "parent": "minerals",
+    "description_ru": "Белый металл.",
+    "description_uz": "Oq metall.",
+    "category": "nature",
+    "related": []
+  },
+  "iron": {
+    "ru": "Железо",
+    "uz": "Temir",
+    "parent": "minerals",
+    "description_ru": "Металл для строительства.",
+    "description_uz": "Qurilish metalli.",
+    "category": "nature",
+    "related": []
+  },
+  "copper": {
+    "ru": "Медь",
+    "uz": "Mis",
+    "parent": "minerals",
+    "description_ru": "Проводящий металл.",
+    "description_uz": "Tok o‘tkazuvchi metall.",
+    "category": "nature",
+    "related": []
+  },
+  "quartz": {
+    "ru": "Кварц",
+    "uz": "Kvarts",
+    "parent": "minerals",
+    "description_ru": "Прозрачный минерал.",
+    "description_uz": "Shaffof mineral.",
+    "category": "nature",
+    "related": []
+  },
+  "diamond": {
+    "ru": "Алмаз",
+    "uz": "Olmos",
+    "parent": "minerals",
+    "description_ru": "Самый твёрдый минерал.",
+    "description_uz": "Eng qattiq mineral.",
+    "category": "nature",
+    "related": []
+  },
+  "coal": {
+    "ru": "Уголь",
+    "uz": "Ko‘mir",
+    "parent": "minerals",
+    "description_ru": "Топливный ресурс.",
+    "description_uz": "Yoqilg‘i manbai.",
+    "category": "nature",
+    "related": []
+  },
+  "salt": {
+    "ru": "Соль",
+    "uz": "Tuz",
+    "parent": "minerals",
+    "description_ru": "Кристаллическое вещество.",
+    "description_uz": "Kristalli modda.",
+    "category": "nature",
+    "related": []
+  },
+  "granite": {
+    "ru": "Гранит",
+    "uz": "Granit",
+    "parent": "minerals",
+    "description_ru": "Твёрдая горная порода.",
+    "description_uz": "Qattiq tog‘ jinsi.",
+    "category": "nature",
+    "related": []
+  },
+  "rocks": {
+    "ru": "Горные породы",
+    "uz": "Tog‘ jinslari",
+    "parent": "nature",
+    "description_ru": "Твёрдые природные образования.",
+    "description_uz": "Tabiiy qattiq jinslar.",
+    "category": "nature",
+    "related": []
+  },
+  "basalt": {
+    "ru": "Базальт",
+    "uz": "Bazalt",
+    "parent": "rocks",
+    "description_ru": "Вулканическая порода.",
+    "description_uz": "Vulqon jinslari.",
+    "category": "nature",
+    "related": []
+  },
+  "marble": {
+    "ru": "Мрамор",
+    "uz": "Marmar",
+    "parent": "rocks",
+    "description_ru": "Метаморфическая порода.",
+    "description_uz": "Metamorfik jins.",
+    "category": "nature",
+    "related": []
+  },
+  "limestone": {
+    "ru": "Известняк",
+    "uz": "Ohaktosh",
+    "parent": "rocks",
+    "description_ru": "Осадочная порода.",
+    "description_uz": "Cho‘kindi jins.",
+    "category": "nature",
+    "related": []
+  },
+  "sandstone": {
+    "ru": "Песчаник",
+    "uz": "Qumtosh",
+    "parent": "rocks",
+    "description_ru": "Порода из песка.",
+    "description_uz": "Qumdan hosil bo‘lgan jins.",
+    "category": "nature",
+    "related": []
+  },
+  "shale": {
+    "ru": "Сланец",
+    "uz": "Slanets",
+    "parent": "rocks",
+    "description_ru": "Тонкослоистая порода.",
+    "description_uz": "Yupqa qatlamli jins.",
+    "category": "nature",
+    "related": []
+  },
+  "obsidian": {
+    "ru": "Обсидиан",
+    "uz": "Obsidian",
+    "parent": "rocks",
+    "description_ru": "Вулканическое стекло.",
+    "description_uz": "Vulqon shishasi.",
+    "category": "nature",
+    "related": []
+  },
+  "chalk": {
+    "ru": "Мел",
+    "uz": "Bo‘r",
+    "parent": "rocks",
+    "description_ru": "Мягкая известковая порода.",
+    "description_uz": "Yumshoq ohak jins.",
+    "category": "nature",
+    "related": []
+  },
+  "pumice": {
+    "ru": "Пемза",
+    "uz": "Pumza",
+    "parent": "rocks",
+    "description_ru": "Лёгкая пористая порода.",
+    "description_uz": "Yengil g‘ovak jins.",
+    "category": "nature",
+    "related": []
+  },
+  "slate": {
+    "ru": "Шифер",
+    "uz": "Shifer",
+    "parent": "rocks",
+    "description_ru": "Плотная слоистая порода.",
+    "description_uz": "Qatlamli zich jins.",
+    "category": "nature",
+    "related": []
+  },
+  "soil_types": {
+    "ru": "Типы почв",
+    "uz": "Tuproq turlari",
+    "parent": "nature",
+    "description_ru": "Разновидности почвы.",
+    "description_uz": "Tuproqning turlari.",
+    "category": "nature",
+    "related": []
+  },
+  "clay": {
+    "ru": "Глина",
+    "uz": "Loy",
+    "parent": "soil_types",
+    "description_ru": "Плотная влажная почва.",
+    "description_uz": "Nam zich tuproq.",
+    "category": "nature",
+    "related": []
+  },
+  "sand": {
+    "ru": "Песок",
+    "uz": "Qum",
+    "parent": "soil_types",
+    "description_ru": "Сыпучая почва.",
+    "description_uz": "Bo‘sh tuproq.",
+    "category": "nature",
+    "related": []
+  },
+  "loam": {
+    "ru": "Суглинок",
+    "uz": "Sug‘or tuproq",
+    "parent": "soil_types",
+    "description_ru": "Плодородная смесь почв.",
+    "description_uz": "Unumdor tuproq aralashmasi.",
+    "category": "nature",
+    "related": []
+  },
+  "peat": {
+    "ru": "Торф",
+    "uz": "Torф",
+    "parent": "soil_types",
+    "description_ru": "Органическая почва.",
+    "description_uz": "Organik tuproq.",
+    "category": "nature",
+    "related": []
+  },
+  "chernozem": {
+    "ru": "Чернозём",
+    "uz": "Qora tuproq",
+    "parent": "soil_types",
+    "description_ru": "Очень плодородная почва.",
+    "description_uz": "Juda unumdor tuproq.",
+    "category": "nature",
+    "related": []
+  },
+  "silt": {
+    "ru": "Ил",
+    "uz": "Loyqa",
+    "parent": "soil_types",
+    "description_ru": "Мелкие частицы почвы.",
+    "description_uz": "Mayda tuproq zarrachalari.",
+    "category": "nature",
+    "related": []
+  },
+  "gravel": {
+    "ru": "Гравий",
+    "uz": "Shag‘al",
+    "parent": "soil_types",
+    "description_ru": "Мелкие камни.",
+    "description_uz": "Mayda toshlar.",
+    "category": "nature",
+    "related": []
+  },
+  "chalk_soil": {
+    "ru": "Меловая почва",
+    "uz": "Bo‘rli tuproq",
+    "parent": "soil_types",
+    "description_ru": "Почва с известью.",
+    "description_uz": "Ohakli tuproq.",
+    "category": "nature",
+    "related": []
+  },
+  "saline_soil": {
+    "ru": "Солончак",
+    "uz": "Sho‘rxok",
+    "parent": "soil_types",
+    "description_ru": "Засоленная почва.",
+    "description_uz": "Sho‘r tuproq.",
+    "category": "nature",
+    "related": []
+  },
+  "climates": {
+    "ru": "Климат",
+    "uz": "Iqlim",
+    "parent": "nature",
+    "description_ru": "Долгосрочные погодные условия.",
+    "description_uz": "Uzoq muddatli ob-havo sharoiti.",
+    "category": "nature",
+    "related": []
+  },
+  "tropical": {
+    "ru": "Тропический",
+    "uz": "Tropik",
+    "parent": "climates",
+    "description_ru": "Жаркий климат.",
+    "description_uz": "Issiq iqlim.",
+    "category": "nature",
+    "related": []
+  },
+  "arid": {
+    "ru": "Засушливый",
+    "uz": "Quruq",
+    "parent": "climates",
+    "description_ru": "Мало осадков.",
+    "description_uz": "Kam yog‘ingarchilik.",
+    "category": "nature",
+    "related": []
+  },
+  "temperate": {
+    "ru": "Умеренный",
+    "uz": "Mo‘tadil",
+    "parent": "climates",
+    "description_ru": "Средний климат.",
+    "description_uz": "O‘rtacha iqlim.",
+    "category": "nature",
+    "related": []
+  },
+  "continental": {
+    "ru": "Континентальный",
+    "uz": "Kontinental",
+    "parent": "climates",
+    "description_ru": "Большие перепады температур.",
+    "description_uz": "Harorat farqi katta.",
+    "category": "nature",
+    "related": []
+  },
+  "polar": {
+    "ru": "Полярный",
+    "uz": "Qutbiy",
+    "parent": "climates",
+    "description_ru": "Очень холодный климат.",
+    "description_uz": "Juda sovuq iqlim.",
+    "category": "nature",
+    "related": []
+  },
+  "monsoon": {
+    "ru": "Муссонный",
+    "uz": "Mussonli",
+    "parent": "climates",
+    "description_ru": "Сезонные дожди.",
+    "description_uz": "Mavsumiy yomg‘irlar.",
+    "category": "nature",
+    "related": []
+  },
+  "mediterranean": {
+    "ru": "Средиземноморский",
+    "uz": "O‘rta dengiz iqlimi",
+    "parent": "climates",
+    "description_ru": "Мягкая зима и жаркое лето.",
+    "description_uz": "Yumshoq qish va issiq yoz.",
+    "category": "nature",
+    "related": []
+  },
+  "subtropical": {
+    "ru": "Субтропический",
+    "uz": "Subtropik",
+    "parent": "climates",
+    "description_ru": "Тёплый климат.",
+    "description_uz": "Iliq iqlim.",
+    "category": "nature",
+    "related": []
+  },
+  "highland": {
+    "ru": "Горный климат",
+    "uz": "Tog‘ iqlimi",
+    "parent": "climates",
+    "description_ru": "Климат горных районов.",
+    "description_uz": "Tog‘ hududi iqlimi.",
+    "category": "nature",
+    "related": []
+  },
+  "lakes": {
+    "ru": "Озёра",
+    "uz": "Ko‘llar",
+    "parent": "nature",
+    "description_ru": "Замкнутые водоёмы.",
+    "description_uz": "Yopiq suv havzalari.",
+    "category": "nature",
+    "related": []
+  },
+  "baikal": {
+    "ru": "Байкал",
+    "uz": "Baykal",
+    "parent": "lakes",
+    "description_ru": "Самое глубокое озеро.",
+    "description_uz": "Eng chuqur ko‘l.",
+    "category": "nature",
+    "related": []
+  },
+  "caspian": {
+    "ru": "Каспийское море",
+    "uz": "Kaspiy dengizi",
+    "parent": "lakes",
+    "description_ru": "Крупнейшее озеро.",
+    "description_uz": "Eng katta ko‘l.",
+    "category": "nature",
+    "related": []
+  },
+  "victoria": {
+    "ru": "Виктория",
+    "uz": "Viktoriya",
+    "parent": "lakes",
+    "description_ru": "Озеро в Африке.",
+    "description_uz": "Afrikadagi ko‘l.",
+    "category": "nature",
+    "related": []
+  },
+  "superior": {
+    "ru": "Верхнее",
+    "uz": "Superior",
+    "parent": "lakes",
+    "description_ru": "Крупное озеро Северной Америки.",
+    "description_uz": "Shimoliy Amerikadagi yirik ko‘l.",
+    "category": "nature",
+    "related": []
+  },
+  "titicaca": {
+    "ru": "Титикака",
+    "uz": "Titikaka",
+    "parent": "lakes",
+    "description_ru": "Высокогорное озеро.",
+    "description_uz": "Baland tog‘ ko‘li.",
+    "category": "nature",
+    "related": []
+  },
+  "aral": {
+    "ru": "Арал",
+    "uz": "Orol",
+    "parent": "lakes",
+    "description_ru": "Озеро в Центральной Азии.",
+    "description_uz": "Markaziy Osiyo ko‘li.",
+    "category": "nature",
+    "related": []
+  },
+  "ontario": {
+    "ru": "Онтарио",
+    "uz": "Ontario",
+    "parent": "lakes",
+    "description_ru": "Озеро Канады.",
+    "description_uz": "Kanadadagi ko‘l.",
+    "category": "nature",
+    "related": []
+  },
+  "erie": {
+    "ru": "Эри",
+    "uz": "Eri",
+    "parent": "lakes",
+    "description_ru": "Озеро США.",
+    "description_uz": "AQSh ko‘li.",
+    "category": "nature",
+    "related": []
+  },
+  "ladoga": {
+    "ru": "Ладожское",
+    "uz": "Ladoga",
+    "parent": "lakes",
+    "description_ru": "Крупное озеро России.",
+    "description_uz": "Rossiyadagi yirik ko‘l.",
+    "category": "nature",
+    "related": []
+  },
+  "rivers": {
+    "ru": "Реки",
+    "uz": "Daryolar",
+    "parent": "nature",
+    "description_ru": "Природные водные потоки.",
+    "description_uz": "Tabiiy suv oqimlari.",
+    "category": "nature",
+    "related": []
+  },
+  "nile": {
+    "ru": "Нил",
+    "uz": "Nil",
+    "parent": "rivers",
+    "description_ru": "Крупная река Африки.",
+    "description_uz": "Afrikadagi yirik daryo.",
+    "category": "nature",
+    "related": []
+  },
+  "amazon": {
+    "ru": "Амазонка",
+    "uz": "Amazonka",
+    "parent": "rivers",
+    "description_ru": "Самая полноводная река.",
+    "description_uz": "Eng sersuv daryo.",
+    "category": "nature",
+    "related": []
+  },
+  "yangtze": {
+    "ru": "Янцзы",
+    "uz": "Yanszi",
+    "parent": "rivers",
+    "description_ru": "Крупнейшая река Азии.",
+    "description_uz": "Osiyodagi yirik daryo.",
+    "category": "nature",
+    "related": []
+  },
+  "mississippi": {
+    "ru": "Миссисипи",
+    "uz": "Missisipi",
+    "parent": "rivers",
+    "description_ru": "Река Северной Америки.",
+    "description_uz": "Shimoliy Amerika daryosi.",
+    "category": "nature",
+    "related": []
+  },
+  "volga": {
+    "ru": "Волга",
+    "uz": "Volga",
+    "parent": "rivers",
+    "description_ru": "Крупнейшая река Европы.",
+    "description_uz": "Yevropadagi eng katta daryo.",
+    "category": "nature",
+    "related": []
+  },
+  "danube": {
+    "ru": "Дунай",
+    "uz": "Dunay",
+    "parent": "rivers",
+    "description_ru": "Река Центральной Европы.",
+    "description_uz": "Markaziy Yevropa daryosi.",
+    "category": "nature",
+    "related": []
+  },
+  "mekong": {
+    "ru": "Меконг",
+    "uz": "Mekong",
+    "parent": "rivers",
+    "description_ru": "Река Юго-Восточной Азии.",
+    "description_uz": "Janubi-sharqiy Osiyo daryosi.",
+    "category": "nature",
+    "related": []
+  },
+  "ganges": {
+    "ru": "Ганг",
+    "uz": "Gang",
+    "parent": "rivers",
+    "description_ru": "Священная река Индии.",
+    "description_uz": "Hindistondagi muqaddas daryo.",
+    "category": "nature",
+    "related": []
+  },
+  "indus": {
+    "ru": "Инд",
+    "uz": "Ind",
+    "parent": "rivers",
+    "description_ru": "Река Южной Азии.",
+    "description_uz": "Janubiy Osiyo daryosi.",
+    "category": "nature",
+    "related": []
+  },
+  "oceans": {
+    "ru": "Океаны",
+    "uz": "Okeanlar",
+    "parent": "nature",
+    "description_ru": "Крупнейшие водные пространства.",
+    "description_uz": "Eng katta suv hududlari.",
+    "category": "nature",
+    "related": []
+  },
+  "pacific": {
+    "ru": "Тихий океан",
+    "uz": "Tinch okeani",
+    "parent": "oceans",
+    "description_ru": "Самый большой океан.",
+    "description_uz": "Eng katta okean.",
+    "category": "nature",
+    "related": []
+  },
+  "atlantic": {
+    "ru": "Атлантический океан",
+    "uz": "Atlantika okeani",
+    "parent": "oceans",
+    "description_ru": "Второй по величине океан.",
+    "description_uz": "Ikkinchi katta okean.",
+    "category": "nature",
+    "related": []
+  },
+  "indian": {
+    "ru": "Индийский океан",
+    "uz": "Hind okeani",
+    "parent": "oceans",
+    "description_ru": "Океан между Африкой и Австралией.",
+    "description_uz": "Afrika va Avstraliya oralig‘ida.",
+    "category": "nature",
+    "related": []
+  },
+  "arctic": {
+    "ru": "Северный Ледовитый океан",
+    "uz": "Shimoliy Muz okeani",
+    "parent": "oceans",
+    "description_ru": "Самый холодный океан.",
+    "description_uz": "Eng sovuq okean.",
+    "category": "nature",
+    "related": []
+  },
+  "southern": {
+    "ru": "Южный океан",
+    "uz": "Janubiy okean",
+    "parent": "oceans",
+    "description_ru": "Океан вокруг Антарктиды.",
+    "description_uz": "Antarktida atrofidagi okean.",
+    "category": "nature",
+    "related": []
+  },
+  "islands": {
+    "ru": "Острова",
+    "uz": "Orollar",
+    "parent": "nature",
+    "description_ru": "Участки суши, окружённые водой.",
+    "description_uz": "Suv bilan o‘ralgan quruqlik.",
+    "category": "nature",
+    "related": []
+  },
+  "greenland": {
+    "ru": "Гренландия",
+    "uz": "Grenlandiya",
+    "parent": "islands",
+    "description_ru": "Крупнейший остров.",
+    "description_uz": "Eng katta orol.",
+    "category": "nature",
+    "related": []
+  },
+  "madagascar": {
+    "ru": "Мадагаскар",
+    "uz": "Madagaskar",
+    "parent": "islands",
+    "description_ru": "Остров у Африки.",
+    "description_uz": "Afrika yaqinidagi orol.",
+    "category": "nature",
+    "related": []
+  },
+  "borneo": {
+    "ru": "Борнео",
+    "uz": "Borneo",
+    "parent": "islands",
+    "description_ru": "Остров в Азии.",
+    "description_uz": "Osiyodagi orol.",
+    "category": "nature",
+    "related": []
+  },
+  "sumatra": {
+    "ru": "Суматра",
+    "uz": "Sumatra",
+    "parent": "islands",
+    "description_ru": "Индонезийский остров.",
+    "description_uz": "Indoneziya oroli.",
+    "category": "nature",
+    "related": []
+  },
+  "iceland": {
+    "ru": "Исландия",
+    "uz": "Islandiya",
+    "parent": "islands",
+    "description_ru": "Остров в Северной Атлантике.",
+    "description_uz": "Shimoliy Atlantikadagi orol.",
+    "category": "nature",
+    "related": []
+  },
+  "natural_resources": {
+    "ru": "Природные ресурсы",
+    "uz": "Tabiiy resurslar",
+    "parent": "nature",
+    "description_ru": "Блага природы для человека.",
+    "description_uz": "Inson uchun tabiiy boyliklar.",
+    "category": "nature",
+    "related": []
+  },
+  "oil": {
+    "ru": "Нефть",
+    "uz": "Neft",
+    "parent": "natural_resources",
+    "description_ru": "Ископаемое топливо.",
+    "description_uz": "Foydali qazilma yoqilg‘i.",
+    "category": "nature",
+    "related": []
+  },
+  "natural_gas": {
+    "ru": "Природный газ",
+    "uz": "Tabiiy gaz",
+    "parent": "natural_resources",
+    "description_ru": "Горючий газ.",
+    "description_uz": "Yonuvchi gaz.",
+    "category": "nature",
+    "related": []
+  },
+  "coal_resource": {
+    "ru": "Уголь",
+    "uz": "Ko‘mir",
+    "parent": "natural_resources",
+    "description_ru": "Топливо из недр земли.",
+    "description_uz": "Yer osti yoqilg‘i.",
+    "category": "nature",
+    "related": []
+  },
+  "timber": {
+    "ru": "Древесина",
+    "uz": "Yog‘och",
+    "parent": "natural_resources",
+    "description_ru": "Материал из деревьев.",
+    "description_uz": "Daraxt materiali.",
+    "category": "nature",
+    "related": []
+  },
+  "fresh_water": {
+    "ru": "Пресная вода",
+    "uz": "Chuchuk suv",
+    "parent": "natural_resources",
+    "description_ru": "Вода для питья.",
+    "description_uz": "Ichimlik suvi.",
+    "category": "nature",
+    "related": []
+  },
+  "wind_energy": {
+    "ru": "Ветровая энергия",
+    "uz": "Shamol energiyasi",
+    "parent": "natural_resources",
+    "description_ru": "Энергия ветра.",
+    "description_uz": "Shamol quvvati.",
+    "category": "nature",
+    "related": []
+  },
+  "solar_energy": {
+    "ru": "Солнечная энергия",
+    "uz": "Quyosh energiyasi",
+    "parent": "natural_resources",
+    "description_ru": "Энергия солнца.",
+    "description_uz": "Quyosh quvvati.",
+    "category": "nature",
+    "related": []
+  },
+  "uranium": {
+    "ru": "Уран",
+    "uz": "Uran",
+    "parent": "natural_resources",
+    "description_ru": "Радиоактивный элемент.",
+    "description_uz": "Radioaktiv element.",
+    "category": "nature",
+    "related": []
+  },
+  "phosphate": {
+    "ru": "Фосфат",
+    "uz": "Fosfat",
+    "parent": "natural_resources",
+    "description_ru": "Минеральное сырьё.",
+    "description_uz": "Mineral xomashyo.",
+    "category": "nature",
+    "related": []
+  }
+}

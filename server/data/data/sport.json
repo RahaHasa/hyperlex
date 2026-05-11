@@ -1,0 +1,2143 @@
+{
+  "sport": {
+    "ru": "Спорт",
+    "uz": "Sport",
+    "description_ru": "Физическая активность и соревнования.",
+    "description_uz": "Jismoniy faoliyat va musobaqalar.",
+    "category": "sport",
+    "related": []
+  },
+  "team_sports": {
+    "ru": "Командные виды спорта",
+    "uz": "Jamoaviy sport turlari",
+    "parent": "sport",
+    "description_ru": "Игры, где участвует команда.",
+    "description_uz": "Jamoa bilan o‘ynaladigan sport.",
+    "category": "sport",
+    "related": []
+  },
+  "football": {
+    "ru": "Футбол",
+    "uz": "Futbol",
+    "parent": "team_sports",
+    "description_ru": "Игра с мячом ногами.",
+    "description_uz": "To‘pni oyoq bilan o‘ynash.",
+    "category": "sport",
+    "related": []
+  },
+  "basketball": {
+    "ru": "Баскетбол",
+    "uz": "Basketbol",
+    "parent": "team_sports",
+    "description_ru": "Мяч в корзину.",
+    "description_uz": "To‘pni savatga tashlash.",
+    "category": "sport",
+    "related": []
+  },
+  "volleyball": {
+    "ru": "Волейбол",
+    "uz": "Voleybol",
+    "parent": "team_sports",
+    "description_ru": "Мяч через сетку.",
+    "description_uz": "To‘pni to‘r orqali o‘ynash.",
+    "category": "sport",
+    "related": []
+  },
+  "handball": {
+    "ru": "Гандбол",
+    "uz": "Gandbol",
+    "parent": "team_sports",
+    "description_ru": "Игра руками.",
+    "description_uz": "To‘pni qo‘l bilan o‘ynash.",
+    "category": "sport",
+    "related": []
+  },
+  "hockey": {
+    "ru": "Хоккей",
+    "uz": "Xokkey",
+    "parent": "team_sports",
+    "description_ru": "Игра с клюшкой.",
+    "description_uz": "Tayoq bilan o‘ynaladi.",
+    "category": "sport",
+    "related": []
+  },
+  "baseball": {
+    "ru": "Бейсбол",
+    "uz": "Beysbol",
+    "parent": "team_sports",
+    "description_ru": "Мяч и бита.",
+    "description_uz": "To‘p va tayoq o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "rugby": {
+    "ru": "Регби",
+    "uz": "Regbi",
+    "parent": "team_sports",
+    "description_ru": "Контактная игра.",
+    "description_uz": "Kontaktli o‘yin.",
+    "category": "sport",
+    "related": []
+  },
+  "cricket": {
+    "ru": "Крикет",
+    "uz": "Kriket",
+    "parent": "team_sports",
+    "description_ru": "Популярный в Англии.",
+    "description_uz": "Angliyada mashhur o‘yin.",
+    "category": "sport",
+    "related": []
+  },
+  "water_polo": {
+    "ru": "Водное поло",
+    "uz": "Suv polosi",
+    "parent": "team_sports",
+    "description_ru": "Командная игра в воде.",
+    "description_uz": "Suvda jamoaviy o‘yin.",
+    "category": "sport",
+    "related": []
+  },
+  "combat_sports": {
+    "ru": "Боевые виды спорта",
+    "uz": "Jangovar sport turlari",
+    "parent": "sport",
+    "description_ru": "Соревнования один на один.",
+    "description_uz": "Yakka kurash sportlari.",
+    "category": "sport",
+    "related": []
+  },
+  "boxing": {
+    "ru": "Бокс",
+    "uz": "Boks",
+    "parent": "combat_sports",
+    "description_ru": "Удары руками.",
+    "description_uz": "Qo‘l bilan zarba.",
+    "category": "sport",
+    "related": []
+  },
+  "wrestling": {
+    "ru": "Борьба",
+    "uz": "Kurash",
+    "parent": "combat_sports",
+    "description_ru": "Захваты и броски.",
+    "description_uz": "Ushlash va yiqitish.",
+    "category": "sport",
+    "related": []
+  },
+  "judo": {
+    "ru": "Дзюдо",
+    "uz": "Dzyudo",
+    "parent": "combat_sports",
+    "description_ru": "Японская борьба.",
+    "description_uz": "Yapon kurashi.",
+    "category": "sport",
+    "related": []
+  },
+  "karate": {
+    "ru": "Карате",
+    "uz": "Karate",
+    "parent": "combat_sports",
+    "description_ru": "Удары ногами и руками.",
+    "description_uz": "Qo‘l va oyoq zarbalari.",
+    "category": "sport",
+    "related": []
+  },
+  "taekwondo": {
+    "ru": "Тхэквондо",
+    "uz": "Taekvondo",
+    "parent": "combat_sports",
+    "description_ru": "Корейское боевое искусство.",
+    "description_uz": "Koreys jang san’ati.",
+    "category": "sport",
+    "related": []
+  },
+  "mma": {
+    "ru": "ММА",
+    "uz": "MMA",
+    "parent": "combat_sports",
+    "description_ru": "Смешанные единоборства.",
+    "description_uz": "Aralash jang san’ati.",
+    "category": "sport",
+    "related": []
+  },
+  "kickboxing": {
+    "ru": "Кикбоксинг",
+    "uz": "Kikboksing",
+    "parent": "combat_sports",
+    "description_ru": "Бокс с ударами ногами.",
+    "description_uz": "Oyoq va qo‘l zarbalari.",
+    "category": "sport",
+    "related": []
+  },
+  "sambo": {
+    "ru": "Самбо",
+    "uz": "Sambo",
+    "parent": "combat_sports",
+    "description_ru": "Борьба с бросками.",
+    "description_uz": "Ushlash va yiqitish sporti.",
+    "category": "sport",
+    "related": []
+  },
+  "fencing": {
+    "ru": "Фехтование",
+    "uz": "Fextovaniye",
+    "parent": "mind_body_sports",
+    "description_ru": "Бой на шпагах.",
+    "description_uz": "Qilich bilan jang.",
+    "category": "sport",
+    "related": []
+  },
+  "athletics": {
+    "ru": "Лёгкая атлетика",
+    "uz": "Yengil atletika",
+    "parent": "sport",
+    "description_ru": "Бег, прыжки и метания.",
+    "description_uz": "Yugurish va sakrash sporti.",
+    "category": "sport",
+    "related": []
+  },
+  "sprint": {
+    "ru": "Спринт",
+    "uz": "Sprint",
+    "parent": "athletics",
+    "description_ru": "Короткая дистанция.",
+    "description_uz": "Qisqa masofa yugurish.",
+    "category": "sport",
+    "related": []
+  },
+  "marathon": {
+    "ru": "Марафон",
+    "uz": "Marafon",
+    "parent": "endurance_sports",
+    "description_ru": "Бег на 42 км.",
+    "description_uz": "42 km yugurish.",
+    "category": "sport",
+    "related": []
+  },
+  "relay_race": {
+    "ru": "Эстафета",
+    "uz": "Estafeta",
+    "parent": "athletics",
+    "description_ru": "Командный бег.",
+    "description_uz": "Jamoaviy yugurish.",
+    "category": "sport",
+    "related": []
+  },
+  "long_jump": {
+    "ru": "Прыжок в длину",
+    "uz": "Uzunlikka sakrash",
+    "parent": "athletics",
+    "description_ru": "Прыжок с разбега.",
+    "description_uz": "Yugurib sakrash.",
+    "category": "sport",
+    "related": []
+  },
+  "high_jump": {
+    "ru": "Прыжок в высоту",
+    "uz": "Balandlikka sakrash",
+    "parent": "athletics",
+    "description_ru": "Преодоление планки.",
+    "description_uz": "To‘siqdan sakrash.",
+    "category": "sport",
+    "related": []
+  },
+  "triple_jump": {
+    "ru": "Тройной прыжок",
+    "uz": "Uch hatlab sakrash",
+    "parent": "athletics",
+    "description_ru": "Три прыжка подряд.",
+    "description_uz": "Uch marotaba sakrash.",
+    "category": "sport",
+    "related": []
+  },
+  "shot_put": {
+    "ru": "Толкание ядра",
+    "uz": "Yadro uloqtirish",
+    "parent": "athletics",
+    "description_ru": "Метание тяжёлого ядра.",
+    "description_uz": "Og‘ir shar uloqtirish.",
+    "category": "sport",
+    "related": []
+  },
+  "javelin_throw": {
+    "ru": "Метание копья",
+    "uz": "Nayza uloqtirish",
+    "parent": "athletics",
+    "description_ru": "Бросок копья.",
+    "description_uz": "Nayza uloqtirish.",
+    "category": "sport",
+    "related": []
+  },
+  "pole_vault": {
+    "ru": "Прыжок с шестом",
+    "uz": "O‘q bilan sakrash",
+    "parent": "athletics",
+    "description_ru": "Прыжок с использованием шеста.",
+    "description_uz": "O‘q yordamida sakrash.",
+    "category": "sport",
+    "related": []
+  },
+  "water_sports": {
+    "ru": "Водные виды спорта",
+    "uz": "Suv sport turlari",
+    "parent": "sport",
+    "description_ru": "Соревнования в воде.",
+    "description_uz": "Suvda o‘ynaladigan sport.",
+    "category": "sport",
+    "related": []
+  },
+  "swimming": {
+    "ru": "Плавание",
+    "uz": "Suzish",
+    "parent": "water_sports",
+    "description_ru": "Передвижение в воде.",
+    "description_uz": "Suvda harakatlanish.",
+    "category": "sport",
+    "related": []
+  },
+  "diving": {
+    "ru": "Прыжки в воду",
+    "uz": "Suvga sakrash",
+    "parent": "water_sports",
+    "description_ru": "Прыжки с высоты.",
+    "description_uz": "Balandlikdan suvga sakrash.",
+    "category": "sport",
+    "related": []
+  },
+  "synchronized_swimming": {
+    "ru": "Синхронное плавание",
+    "uz": "Sinxron suzish",
+    "parent": "water_sports",
+    "description_ru": "Командное плавание.",
+    "description_uz": "Jamoaviy suzish.",
+    "category": "sport",
+    "related": []
+  },
+  "surfing": {
+    "ru": "Сёрфинг",
+    "uz": "Serfing",
+    "parent": "water_sports",
+    "description_ru": "Катание на волнах.",
+    "description_uz": "To‘lqinda yurish.",
+    "category": "sport",
+    "related": []
+  },
+  "water_skiing": {
+    "ru": "Водные лыжи",
+    "uz": "Suv chang‘isi",
+    "parent": "water_sports",
+    "description_ru": "Катание по воде.",
+    "description_uz": "Suv ustida sirpanish.",
+    "category": "sport",
+    "related": []
+  },
+  "kayaking": {
+    "ru": "Каякинг",
+    "uz": "Kayak",
+    "parent": "water_sports",
+    "description_ru": "Гребля на лодке.",
+    "description_uz": "Qayiqda eshkak eshish.",
+    "category": "sport",
+    "related": []
+  },
+  "rowing": {
+    "ru": "Гребля",
+    "uz": "Eshkak eshish",
+    "parent": "water_sports",
+    "description_ru": "Передвижение на лодке.",
+    "description_uz": "Qayiqda harakat.",
+    "category": "sport",
+    "related": []
+  },
+  "sailing": {
+    "ru": "Парусный спорт",
+    "uz": "Yelkan sporti",
+    "parent": "water_sports",
+    "description_ru": "Лодка с парусом.",
+    "description_uz": "Yelkanli qayiq.",
+    "category": "sport",
+    "related": []
+  },
+  "water_polo_sport": {
+    "ru": "Водное поло",
+    "uz": "Suv polosi",
+    "parent": "water_sports",
+    "description_ru": "Командная игра в воде.",
+    "description_uz": "Suvda jamoaviy o‘yin.",
+    "category": "sport",
+    "related": []
+  },
+  "winter_sports": {
+    "ru": "Зимние виды спорта",
+    "uz": "Qishki sport turlari",
+    "parent": "sport",
+    "description_ru": "Соревнования на снегу и льду.",
+    "description_uz": "Qor va muz ustidagi sport.",
+    "category": "sport",
+    "related": []
+  },
+  "skiing": {
+    "ru": "Лыжи",
+    "uz": "Chang‘i",
+    "parent": "winter_sports",
+    "description_ru": "Катание на лыжах.",
+    "description_uz": "Chang‘ida sirpanish.",
+    "category": "sport",
+    "related": []
+  },
+  "snowboarding": {
+    "ru": "Сноубординг",
+    "uz": "Snoubord",
+    "parent": "extreme_sports",
+    "description_ru": "Спуск на доске по снегу.",
+    "description_uz": "Qorda doska bilan tushish.",
+    "category": "sport",
+    "related": []
+  },
+  "figure_skating": {
+    "ru": "Фигурное катание",
+    "uz": "Figurali uchish",
+    "parent": "winter_sports",
+    "description_ru": "Катание на коньках.",
+    "description_uz": "Muz ustida uchish.",
+    "category": "sport",
+    "related": []
+  },
+  "ice_hockey": {
+    "ru": "Хоккей на льду",
+    "uz": "Muz xokkeyi",
+    "parent": "winter_sports",
+    "description_ru": "Игра на льду.",
+    "description_uz": "Muz ustida o‘yin.",
+    "category": "sport",
+    "related": []
+  },
+  "biathlon": {
+    "ru": "Биатлон",
+    "uz": "Biatlon",
+    "parent": "mind_body_sports",
+    "description_ru": "Лыжи и стрельба.",
+    "description_uz": "Chang‘i va o‘q otish.",
+    "category": "sport",
+    "related": []
+  },
+  "curling": {
+    "ru": "Кёрлинг",
+    "uz": "Kerling",
+    "parent": "winter_sports",
+    "description_ru": "Камни на льду.",
+    "description_uz": "Muz ustida tosh o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "luge": {
+    "ru": "Сани",
+    "uz": "Chana",
+    "parent": "winter_sports",
+    "description_ru": "Спуск на санях.",
+    "description_uz": "Chana bilan tushish.",
+    "category": "sport",
+    "related": []
+  },
+  "skeleton": {
+    "ru": "Скелетон",
+    "uz": "Skeleton",
+    "parent": "winter_sports",
+    "description_ru": "Спуск на маленьких санях.",
+    "description_uz": "Kichik chanada tushish.",
+    "category": "sport",
+    "related": []
+  },
+  "speed_skating": {
+    "ru": "Конькобежный спорт",
+    "uz": "Tez uchish",
+    "parent": "winter_sports",
+    "description_ru": "Скоростное катание.",
+    "description_uz": "Tezlik bilan uchish.",
+    "category": "sport",
+    "related": []
+  },
+  "fitness_sports": {
+    "ru": "Фитнес и тренировки",
+    "uz": "Fitnes va mashg‘ulotlar",
+    "parent": "sport",
+    "description_ru": "Спортивные занятия для поддержания формы.",
+    "description_uz": "Sog‘lom turmush uchun mashg‘ulotlar.",
+    "category": "sport",
+    "related": []
+  },
+  "yoga": {
+    "ru": "Йога",
+    "uz": "Yoga",
+    "parent": "fitness_sports",
+    "description_ru": "Гибкость и дыхание.",
+    "description_uz": "Moslashuvchanlik va nafas.",
+    "category": "sport",
+    "related": []
+  },
+  "pilates": {
+    "ru": "Пилатес",
+    "uz": "Pilates",
+    "parent": "fitness_sports",
+    "description_ru": "Укрепление мышц.",
+    "description_uz": "Mushaklarni mustahkamlash.",
+    "category": "sport",
+    "related": []
+  },
+  "aerobics": {
+    "ru": "Аэробика",
+    "uz": "Aerobika",
+    "parent": "fitness_sports",
+    "description_ru": "Кардио тренировка.",
+    "description_uz": "Yurak mashqi.",
+    "category": "sport",
+    "related": []
+  },
+  "stretching": {
+    "ru": "Стретчинг",
+    "uz": "Stretching",
+    "parent": "fitness_sports",
+    "description_ru": "Растяжка.",
+    "description_uz": "Cho‘zilish mashqlari.",
+    "category": "sport",
+    "related": []
+  },
+  "zumba": {
+    "ru": "Зумба",
+    "uz": "Zumba",
+    "parent": "fitness_sports",
+    "description_ru": "Танцевальный фитнес.",
+    "description_uz": "Raqs asosidagi fitnes.",
+    "category": "sport",
+    "related": []
+  },
+  "calisthenics": {
+    "ru": "Калистеника",
+    "uz": "Kalistenika",
+    "parent": "fitness_sports",
+    "description_ru": "Тренировки с весом тела.",
+    "description_uz": "Tana vazni bilan mashq.",
+    "category": "sport",
+    "related": []
+  },
+  "spinning": {
+    "ru": "Спиннинг",
+    "uz": "Spinning",
+    "parent": "fitness_sports",
+    "description_ru": "Велотренажёр.",
+    "description_uz": "Velotrenajyor mashqi.",
+    "category": "sport",
+    "related": []
+  },
+  "trx_training": {
+    "ru": "TRX тренировка",
+    "uz": "TRX mashqi",
+    "parent": "fitness_sports",
+    "description_ru": "Подвесные тренировки.",
+    "description_uz": "Osma mashqlar.",
+    "category": "sport",
+    "related": []
+  },
+  "functional_training": {
+    "ru": "Функциональный тренинг",
+    "uz": "Funktsional mashq",
+    "parent": "fitness_sports",
+    "description_ru": "Комплексные упражнения.",
+    "description_uz": "Murakkab mashqlar.",
+    "category": "sport",
+    "related": []
+  },
+  "precision_sports": {
+    "ru": "Точные виды спорта",
+    "uz": "Aniqlik sport turlari",
+    "parent": "sport",
+    "description_ru": "Спорт, требующий высокой точности.",
+    "description_uz": "Yuqori aniqlik talab qiladigan sport.",
+    "category": "sport",
+    "related": []
+  },
+  "archery": {
+    "ru": "Стрельба из лука",
+    "uz": "Kamon otish",
+    "parent": "precision_sports",
+    "description_ru": "Попадание стрелой в цель.",
+    "description_uz": "Nishonga o‘q otish.",
+    "category": "sport",
+    "related": []
+  },
+  "shooting": {
+    "ru": "Стрельба",
+    "uz": "O‘q otish",
+    "parent": "precision_sports",
+    "description_ru": "Стрельба по мишеням.",
+    "description_uz": "Nishonga o‘q uzish.",
+    "category": "sport",
+    "related": []
+  },
+  "biathlon_shooting": {
+    "ru": "Биатлон стрельба",
+    "uz": "Biatlon otish",
+    "parent": "precision_sports",
+    "description_ru": "Стрельба в биатлоне.",
+    "description_uz": "Biatlondagi otish.",
+    "category": "sport",
+    "related": []
+  },
+  "darts": {
+    "ru": "Дартс",
+    "uz": "Darts",
+    "parent": "precision_sports",
+    "description_ru": "Метание дротиков.",
+    "description_uz": "Nishonga nayza uloqtirish.",
+    "category": "sport",
+    "related": []
+  },
+  "bowling": {
+    "ru": "Боулинг",
+    "uz": "Bouling",
+    "parent": "precision_sports",
+    "description_ru": "Сбивание кеглей шаром.",
+    "description_uz": "Kegli urish o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "billiards": {
+    "ru": "Бильярд",
+    "uz": "Bilyard",
+    "parent": "precision_sports",
+    "description_ru": "Игра шарами на столе.",
+    "description_uz": "Stolda shar o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "snooker": {
+    "ru": "Снукер",
+    "uz": "Snuker",
+    "parent": "precision_sports",
+    "description_ru": "Разновидность бильярда.",
+    "description_uz": "Bilyard turi.",
+    "category": "sport",
+    "related": []
+  },
+  "golf": {
+    "ru": "Гольф",
+    "uz": "Golf",
+    "parent": "precision_sports",
+    "description_ru": "Попадание в лунку.",
+    "description_uz": "To‘pni teshikka tushirish.",
+    "category": "sport",
+    "related": []
+  },
+  "petanque": {
+    "ru": "Петанк",
+    "uz": "Petank",
+    "parent": "precision_sports",
+    "description_ru": "Метание металлических шаров.",
+    "description_uz": "Temir shar uloqtirish.",
+    "category": "sport",
+    "related": []
+  },
+  "animal_sports": {
+    "ru": "Спорт с животными",
+    "uz": "Hayvonlar bilan sport",
+    "parent": "sport",
+    "description_ru": "Соревнования с участием животных.",
+    "description_uz": "Hayvon ishtirokidagi sport.",
+    "category": "sport",
+    "related": []
+  },
+  "equestrian": {
+    "ru": "Конный спорт",
+    "uz": "Ot sporti",
+    "parent": "mind_body_sports",
+    "description_ru": "Соревнования верхом.",
+    "description_uz": "Ot ustida musobaqa.",
+    "category": "sport",
+    "related": []
+  },
+  "horse_racing": {
+    "ru": "Скачки",
+    "uz": "Ot poygasi",
+    "parent": "animal_sports",
+    "description_ru": "Гонки на лошадях.",
+    "description_uz": "Otlar poygasi.",
+    "category": "sport",
+    "related": []
+  },
+  "polo": {
+    "ru": "Поло",
+    "uz": "Polo",
+    "parent": "equestrian_sports",
+    "description_ru": "Командная игра на лошадях.",
+    "description_uz": "Ot ustida jamoaviy o‘yin.",
+    "category": "sport",
+    "related": []
+  },
+  "dog_agility": {
+    "ru": "Аджилити",
+    "uz": "Agility",
+    "parent": "animal_sports",
+    "description_ru": "Спорт с собаками.",
+    "description_uz": "It bilan sport.",
+    "category": "sport",
+    "related": []
+  },
+  "camel_racing": {
+    "ru": "Верблюжьи бега",
+    "uz": "Tuya poygasi",
+    "parent": "animal_sports",
+    "description_ru": "Гонки на верблюдах.",
+    "description_uz": "Tuya bilan poyga.",
+    "category": "sport",
+    "related": []
+  },
+  "greyhound_racing": {
+    "ru": "Собачьи бега",
+    "uz": "It poygasi",
+    "parent": "animal_sports",
+    "description_ru": "Бега борзых.",
+    "description_uz": "Tezkor itlar poygasi.",
+    "category": "sport",
+    "related": []
+  },
+  "falconry": {
+    "ru": "Соколиная охота",
+    "uz": "Lochin ovchiligi",
+    "parent": "animal_sports",
+    "description_ru": "Охота с птицами.",
+    "description_uz": "Qush bilan ov.",
+    "category": "sport",
+    "related": []
+  },
+  "bull_riding": {
+    "ru": "Родео",
+    "uz": "Rodeo",
+    "parent": "animal_sports",
+    "description_ru": "Езда на быке.",
+    "description_uz": "Buqa ustida yurish.",
+    "category": "sport",
+    "related": []
+  },
+  "reindeer_racing": {
+    "ru": "Гонки на оленях",
+    "uz": "Bug‘u poygasi",
+    "parent": "animal_sports",
+    "description_ru": "Северные гонки.",
+    "description_uz": "Shimoliy poyga.",
+    "category": "sport",
+    "related": []
+  },
+  "mind_sports": {
+    "ru": "Интеллектуальные виды спорта",
+    "uz": "Aqliy sport turlari",
+    "parent": "sport",
+    "description_ru": "Спорт, основанный на мышлении.",
+    "description_uz": "Aqlga asoslangan sport.",
+    "category": "sport",
+    "related": []
+  },
+  "chess": {
+    "ru": "Шахматы",
+    "uz": "Shaxmat",
+    "parent": "mind_sports",
+    "description_ru": "Стратегическая настольная игра.",
+    "description_uz": "Strategik o‘yin.",
+    "category": "sport",
+    "related": []
+  },
+  "checkers": {
+    "ru": "Шашки",
+    "uz": "Shashka",
+    "parent": "mind_sports",
+    "description_ru": "Настольная игра.",
+    "description_uz": "Stol o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "go_game": {
+    "ru": "Го",
+    "uz": "Go o‘yini",
+    "parent": "mind_sports",
+    "description_ru": "Японская стратегия.",
+    "description_uz": "Yapon strategiyasi.",
+    "category": "sport",
+    "related": []
+  },
+  "poker": {
+    "ru": "Покер",
+    "uz": "Poker",
+    "parent": "mind_sports",
+    "description_ru": "Карточная стратегия.",
+    "description_uz": "Strategik karta o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "bridge": {
+    "ru": "Бридж",
+    "uz": "Bridj",
+    "parent": "mind_sports",
+    "description_ru": "Карточная игра.",
+    "description_uz": "Karta o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "esports": {
+    "ru": "Киберспорт",
+    "uz": "Kibersport",
+    "parent": "sport",
+    "description_ru": "Соревнования в видеоиграх.",
+    "description_uz": "Video o‘yinlar musobaqasi.",
+    "category": "sport",
+    "related": []
+  },
+  "scrabble": {
+    "ru": "Скраббл",
+    "uz": "Scrabble",
+    "parent": "mind_sports",
+    "description_ru": "Словесная игра.",
+    "description_uz": "So‘z o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "backgammon": {
+    "ru": "Нарды",
+    "uz": "Nard",
+    "parent": "mind_sports",
+    "description_ru": "Игра на доске.",
+    "description_uz": "Taxta o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "mahjong": {
+    "ru": "Маджонг",
+    "uz": "Mahjong",
+    "parent": "mind_sports",
+    "description_ru": "Китайская настольная игра.",
+    "description_uz": "Xitoy stol o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "gymnastic_sports": {
+    "ru": "Гимнастика",
+    "uz": "Gimnastika",
+    "parent": "sport",
+    "description_ru": "Акробатические упражнения.",
+    "description_uz": "Akrobatik mashqlar.",
+    "category": "sport",
+    "related": []
+  },
+  "artistic_gymnastics": {
+    "ru": "Спортивная гимнастика",
+    "uz": "Sport gimnastikasi",
+    "parent": "gymnastic_sports",
+    "description_ru": "Упражнения на снарядах.",
+    "description_uz": "Jihozlarda mashq.",
+    "category": "sport",
+    "related": []
+  },
+  "rhythmic_gymnastics": {
+    "ru": "Художественная гимнастика",
+    "uz": "Badiiy gimnastika",
+    "parent": "gymnastic_sports",
+    "description_ru": "Гимнастика с предметами.",
+    "description_uz": "Asbob bilan gimnastika.",
+    "category": "sport",
+    "related": []
+  },
+  "trampoline": {
+    "ru": "Батут",
+    "uz": "Batut",
+    "parent": "gymnastic_sports",
+    "description_ru": "Прыжки на батуте.",
+    "description_uz": "Batutda sakrash.",
+    "category": "sport",
+    "related": []
+  },
+  "acrobatics": {
+    "ru": "Акробатика",
+    "uz": "Akrobatika",
+    "parent": "gymnastic_sports",
+    "description_ru": "Акробатические элементы.",
+    "description_uz": "Akrobatik elementlar.",
+    "category": "sport",
+    "related": []
+  },
+  "cheerleading": {
+    "ru": "Черлидинг",
+    "uz": "Cherliding",
+    "parent": "gymnastic_sports",
+    "description_ru": "Командная акробатика.",
+    "description_uz": "Jamoaviy akrobatika.",
+    "category": "sport",
+    "related": []
+  },
+  "parkour_gym": {
+    "ru": "Паркур-гимнастика",
+    "uz": "Parkur gimnastika",
+    "parent": "gymnastic_sports",
+    "description_ru": "Акробатические движения.",
+    "description_uz": "Akrobatik harakatlar.",
+    "category": "sport",
+    "related": []
+  },
+  "tumbling": {
+    "ru": "Тамблинг",
+    "uz": "Tambling",
+    "parent": "gymnastic_sports",
+    "description_ru": "Акробатика на дорожке.",
+    "description_uz": "Yo‘lakda akrobatika.",
+    "category": "sport",
+    "related": []
+  },
+  "vault": {
+    "ru": "Опорный прыжок",
+    "uz": "Tayanib sakrash",
+    "parent": "gymnastic_sports",
+    "description_ru": "Гимнастический прыжок.",
+    "description_uz": "Gimnastik sakrash.",
+    "category": "sport",
+    "related": []
+  },
+  "balance_beam": {
+    "ru": "Бревно",
+    "uz": "Balans nuri",
+    "parent": "gymnastic_sports",
+    "description_ru": "Упражнения на бревне.",
+    "description_uz": "Tor narda mashq.",
+    "category": "sport",
+    "related": []
+  },
+  "martial_arts": {
+    "ru": "Боевые искусства",
+    "uz": "Jang san'atlari",
+    "parent": "sport",
+    "description_ru": "Традиционные системы самообороны.",
+    "description_uz": "An'anaviy jang san'atlari.",
+    "category": "sport",
+    "related": []
+  },
+  "aikido": {
+    "ru": "Айкидо",
+    "uz": "Aykido",
+    "parent": "martial_arts",
+    "description_ru": "Японское боевое искусство.",
+    "description_uz": "Yapon jang san'ati.",
+    "category": "sport",
+    "related": []
+  },
+  "kung_fu": {
+    "ru": "Кунг-фу",
+    "uz": "Kung-fu",
+    "parent": "martial_arts",
+    "description_ru": "Китайское искусство боя.",
+    "description_uz": "Xitoy jang san'ati.",
+    "category": "sport",
+    "related": []
+  },
+  "muay_thai": {
+    "ru": "Муай-тай",
+    "uz": "Muay-tay",
+    "parent": "martial_arts",
+    "description_ru": "Тайский бокс.",
+    "description_uz": "Tailand boksi.",
+    "category": "sport",
+    "related": []
+  },
+  "capoeira": {
+    "ru": "Капоэйра",
+    "uz": "Kapoeira",
+    "parent": "martial_arts",
+    "description_ru": "Бразильское боевое искусство.",
+    "description_uz": "Braziliya jang san'ati.",
+    "category": "sport",
+    "related": []
+  },
+  "hapkido": {
+    "ru": "Хапкидо",
+    "uz": "Hapkido",
+    "parent": "martial_arts",
+    "description_ru": "Корейская техника боя.",
+    "description_uz": "Koreys jang san'ati.",
+    "category": "sport",
+    "related": []
+  },
+  "krav_maga": {
+    "ru": "Крав-мага",
+    "uz": "Krav maga",
+    "parent": "martial_arts",
+    "description_ru": "Система самообороны.",
+    "description_uz": "O'zini himoya qilish tizimi.",
+    "category": "sport",
+    "related": []
+  },
+  "tai_chi": {
+    "ru": "Тай-чи",
+    "uz": "Tai chi",
+    "parent": "martial_arts",
+    "description_ru": "Медитативное боевое искусство.",
+    "description_uz": "Meditativ jang san'ati.",
+    "category": "sport",
+    "related": []
+  },
+  "jujitsu": {
+    "ru": "Джиу-джитсу",
+    "uz": "Jiu-jitsu",
+    "parent": "martial_arts",
+    "description_ru": "Борьба с захватами.",
+    "description_uz": "Ushlash va bo'g'ish uslubi.",
+    "category": "sport",
+    "related": []
+  },
+  "wing_chun": {
+    "ru": "Вин-чун",
+    "uz": "Wing chun",
+    "parent": "martial_arts",
+    "description_ru": "Китайская система боя.",
+    "description_uz": "Xitoy jang tizimi.",
+    "category": "sport",
+    "related": []
+  },
+  "motorsports": {
+    "ru": "Мотоспорт",
+    "uz": "Motor sporti",
+    "parent": "sport",
+    "description_ru": "Соревнования на технике.",
+    "description_uz": "Texnika bilan musobaqalar.",
+    "category": "sport",
+    "related": []
+  },
+  "formula_1": {
+    "ru": "Формула-1",
+    "uz": "Formula-1",
+    "parent": "motorsports",
+    "description_ru": "Гонки на болидах.",
+    "description_uz": "Tezkor poyga mashinalari.",
+    "category": "sport",
+    "related": []
+  },
+  "nascar": {
+    "ru": "NASCAR",
+    "uz": "NASCAR",
+    "parent": "motorsports",
+    "description_ru": "Американские автогонки.",
+    "description_uz": "Amerika poygalari.",
+    "category": "sport",
+    "related": []
+  },
+  "rally": {
+    "ru": "Ралли",
+    "uz": "Ralli",
+    "parent": "motorsports",
+    "description_ru": "Гонки по пересечённой местности.",
+    "description_uz": "Yo'lsiz joy poygasi.",
+    "category": "sport",
+    "related": []
+  },
+  "motogp": {
+    "ru": "MotoGP",
+    "uz": "MotoGP",
+    "parent": "motorsports",
+    "description_ru": "Гонки на мотоциклах.",
+    "description_uz": "Mototsikl poygasi.",
+    "category": "sport",
+    "related": []
+  },
+  "drag_racing": {
+    "ru": "Дрэг-рейсинг",
+    "uz": "Drag poyga",
+    "parent": "motorsports",
+    "description_ru": "Гонки на ускорение.",
+    "description_uz": "Tezlanish poygasi.",
+    "category": "sport",
+    "related": []
+  },
+  "karting": {
+    "ru": "Картинг",
+    "uz": "Karting",
+    "parent": "motorsports",
+    "description_ru": "Гонки на картах.",
+    "description_uz": "Kichik mashinalar poygasi.",
+    "category": "sport",
+    "related": []
+  },
+  "superbike": {
+    "ru": "Супербайк",
+    "uz": "Superbike",
+    "parent": "motorsports",
+    "description_ru": "Мотоциклетные соревнования.",
+    "description_uz": "Katta mototsikl poygasi.",
+    "category": "sport",
+    "related": []
+  },
+  "enduro": {
+    "ru": "Эндуро",
+    "uz": "Enduro",
+    "parent": "motorsports",
+    "description_ru": "Гонки на выносливость.",
+    "description_uz": "Chidamlilik poygasi.",
+    "category": "sport",
+    "related": []
+  },
+  "dakar_rally": {
+    "ru": "Ралли Дакар",
+    "uz": "Dakar rallisi",
+    "parent": "motorsports",
+    "description_ru": "Международное ралли.",
+    "description_uz": "Xalqaro ralli musobaqasi.",
+    "category": "sport",
+    "related": []
+  },
+  "ice_sports": {
+    "ru": "Ледовые виды спорта",
+    "uz": "Muz sport turlari",
+    "parent": "sport",
+    "description_ru": "Спорт на льду.",
+    "description_uz": "Muz ustidagi sport.",
+    "category": "sport",
+    "related": []
+  },
+  "bandy": {
+    "ru": "Бенди",
+    "uz": "Bendi",
+    "parent": "ice_sports",
+    "description_ru": "Хоккей с мячом.",
+    "description_uz": "To'p bilan muz o'yini.",
+    "category": "sport",
+    "related": []
+  },
+  "ice_dancing": {
+    "ru": "Танцы на льду",
+    "uz": "Muz raqsi",
+    "parent": "ice_sports",
+    "description_ru": "Парные выступления.",
+    "description_uz": "Juftlik chiqishi.",
+    "category": "sport",
+    "related": []
+  },
+  "short_track": {
+    "ru": "Шорт-трек",
+    "uz": "Short-trek",
+    "parent": "ice_sports",
+    "description_ru": "Короткая дистанция.",
+    "description_uz": "Qisqa muz masofasi.",
+    "category": "sport",
+    "related": []
+  },
+  "ice_climbing": {
+    "ru": "Ледолазание",
+    "uz": "Muzga chiqish",
+    "parent": "ice_sports",
+    "description_ru": "Подъём по льду.",
+    "description_uz": "Muz ustida ko'tarilish.",
+    "category": "sport",
+    "related": []
+  },
+  "ice_yachting": {
+    "ru": "Ледовый парусный спорт",
+    "uz": "Muz yelkan sporti",
+    "parent": "ice_sports",
+    "description_ru": "Парус на льду.",
+    "description_uz": "Muz ustida yelkan.",
+    "category": "sport",
+    "related": []
+  },
+  "ringette": {
+    "ru": "Рингетт",
+    "uz": "Ringett",
+    "parent": "ice_sports",
+    "description_ru": "Командная игра на льду.",
+    "description_uz": "Muz ustidagi jamoaviy o'yin.",
+    "category": "sport",
+    "related": []
+  },
+  "ice_stock_sport": {
+    "ru": "Айсток",
+    "uz": "Ice stock",
+    "parent": "ice_sports",
+    "description_ru": "Метание дисков.",
+    "description_uz": "Disk uloqtirish.",
+    "category": "sport",
+    "related": []
+  },
+  "broomball": {
+    "ru": "Брумбол",
+    "uz": "Brumbol",
+    "parent": "ice_sports",
+    "description_ru": "Игра с мячом на льду.",
+    "description_uz": "Muzda to'p o'yini.",
+    "category": "sport",
+    "related": []
+  },
+  "ice_marathon": {
+    "ru": "Ледовый марафон",
+    "uz": "Muz marafoni",
+    "parent": "ice_sports",
+    "description_ru": "Бег на льду.",
+    "description_uz": "Muz ustida yugurish.",
+    "category": "sport",
+    "related": []
+  },
+  "aquatic_team_sports": {
+    "ru": "Командные водные виды спорта",
+    "uz": "Jamoaviy suv sportlari",
+    "parent": "sport",
+    "description_ru": "Игры в воде командами.",
+    "description_uz": "Suvda jamoaviy o‘yinlar.",
+    "category": "sport",
+    "related": []
+  },
+  "dragon_boat": {
+    "ru": "Драгонбот",
+    "uz": "Ajdar qayiq poygasi",
+    "parent": "aquatic_team_sports",
+    "description_ru": "Гонки на длинных лодках.",
+    "description_uz": "Uzun qayiq poygasi.",
+    "category": "sport",
+    "related": []
+  },
+  "canoe_polo": {
+    "ru": "Каноэ-поло",
+    "uz": "Kanoe polo",
+    "parent": "aquatic_team_sports",
+    "description_ru": "Игра на воде в лодках.",
+    "description_uz": "Qayiqda suv o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "underwater_hockey": {
+    "ru": "Подводный хоккей",
+    "uz": "Suv osti xokkeyi",
+    "parent": "aquatic_team_sports",
+    "description_ru": "Хоккей под водой.",
+    "description_uz": "Suv ostida xokkey.",
+    "category": "sport",
+    "related": []
+  },
+  "underwater_rugby": {
+    "ru": "Подводное регби",
+    "uz": "Suv osti regbisi",
+    "parent": "aquatic_team_sports",
+    "description_ru": "Регби под водой.",
+    "description_uz": "Suv ostida regbi.",
+    "category": "sport",
+    "related": []
+  },
+  "beach_water_polo": {
+    "ru": "Пляжное водное поло",
+    "uz": "Plyaj suv polosi",
+    "parent": "aquatic_team_sports",
+    "description_ru": "Игра в воде на пляже.",
+    "description_uz": "Plyajda suv o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "raft_racing": {
+    "ru": "Рафтинг-гонки",
+    "uz": "Rafting poygasi",
+    "parent": "aquatic_team_sports",
+    "description_ru": "Командный сплав.",
+    "description_uz": "Jamoaviy oqim poygasi.",
+    "category": "sport",
+    "related": []
+  },
+  "sailing_team": {
+    "ru": "Командный парусный спорт",
+    "uz": "Jamoaviy yelkan sporti",
+    "parent": "aquatic_team_sports",
+    "description_ru": "Соревнования на яхтах.",
+    "description_uz": "Yelkanli jamoa musobaqasi.",
+    "category": "sport",
+    "related": []
+  },
+  "surf_relay": {
+    "ru": "Сёрф-эстафета",
+    "uz": "Serf estafeta",
+    "parent": "aquatic_team_sports",
+    "description_ru": "Командный серфинг.",
+    "description_uz": "Jamoaviy serfing.",
+    "category": "sport",
+    "related": []
+  },
+  "team_kayak": {
+    "ru": "Командный каяк",
+    "uz": "Jamoaviy kayak",
+    "parent": "aquatic_team_sports",
+    "description_ru": "Гребля командой.",
+    "description_uz": "Jamoa bilan eshkak eshish.",
+    "category": "sport",
+    "related": []
+  },
+  "net_sports": {
+    "ru": "Игры через сетку",
+    "uz": "To‘r orqali o‘yinlar",
+    "parent": "sport",
+    "description_ru": "Спорт с сеткой между игроками.",
+    "description_uz": "O‘yinchilar orasida to‘r mavjud sport.",
+    "category": "sport",
+    "related": []
+  },
+  "beach_volleyball": {
+    "ru": "Пляжный волейбол",
+    "uz": "Plyaj voleyboli",
+    "parent": "net_sports",
+    "description_ru": "Волейбол на песке.",
+    "description_uz": "Qum ustida voleybol.",
+    "category": "sport",
+    "related": []
+  },
+  "sepaktakraw": {
+    "ru": "Сепактакрау",
+    "uz": "Sepaktakrau",
+    "parent": "net_sports",
+    "description_ru": "Игра ногами через сетку.",
+    "description_uz": "To‘pni oyoq bilan o‘ynash.",
+    "category": "sport",
+    "related": []
+  },
+  "footvolley": {
+    "ru": "Футволей",
+    "uz": "Futvoley",
+    "parent": "net_sports",
+    "description_ru": "Футбол через сетку.",
+    "description_uz": "To‘r orqali futbol.",
+    "category": "sport",
+    "related": []
+  },
+  "bossaball": {
+    "ru": "Боссабол",
+    "uz": "Bossabol",
+    "parent": "net_sports",
+    "description_ru": "Акробатический волейбол.",
+    "description_uz": "Akrobatik voleybol.",
+    "category": "sport",
+    "related": []
+  },
+  "sitting_volleyball": {
+    "ru": "Сидячий волейбол",
+    "uz": "O‘tirib voleybol",
+    "parent": "net_sports",
+    "description_ru": "Паралимпийский спорт.",
+    "description_uz": "Paralimpiya voleyboli.",
+    "category": "sport",
+    "related": []
+  },
+  "mini_tennis": {
+    "ru": "Мини-теннис",
+    "uz": "Mini tennis",
+    "parent": "net_sports",
+    "description_ru": "Упрощённый теннис.",
+    "description_uz": "Yengil tennis.",
+    "category": "sport",
+    "related": []
+  },
+  "speedminton": {
+    "ru": "Спидминтон",
+    "uz": "Spidminton",
+    "parent": "net_sports",
+    "description_ru": "Быстрый бадминтон.",
+    "description_uz": "Tez badminton.",
+    "category": "sport",
+    "related": []
+  },
+  "beach_tennis_net": {
+    "ru": "Пляжный теннис",
+    "uz": "Plyaj tennisi",
+    "parent": "net_sports",
+    "description_ru": "Теннис на песке.",
+    "description_uz": "Qum ustida tennis.",
+    "category": "sport",
+    "related": []
+  },
+  "airminton": {
+    "ru": "Аирминтон",
+    "uz": "Airminton",
+    "parent": "net_sports",
+    "description_ru": "Игра через сетку на открытом воздухе.",
+    "description_uz": "Ochiq havoda to‘r o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "ball_sports": {
+    "ru": "Игры с мячом",
+    "uz": "To‘p o‘yinlari",
+    "parent": "sport",
+    "description_ru": "Спорт, где используется мяч.",
+    "description_uz": "To‘p bilan o‘ynaladigan sport.",
+    "category": "sport",
+    "related": []
+  },
+  "futsal": {
+    "ru": "Футзал",
+    "uz": "Futzal",
+    "parent": "ball_sports",
+    "description_ru": "Мини-футбол в зале.",
+    "description_uz": "Zalda o‘ynaladigan futbol.",
+    "category": "sport",
+    "related": []
+  },
+  "streetball": {
+    "ru": "Стритбол",
+    "uz": "Stritbol",
+    "parent": "ball_sports",
+    "description_ru": "Уличный баскетбол.",
+    "description_uz": "Ko‘cha basketboli.",
+    "category": "sport",
+    "related": []
+  },
+  "dodgeball": {
+    "ru": "Вышибалы",
+    "uz": "Vishibola",
+    "parent": "ball_sports",
+    "description_ru": "Игра на уклонение.",
+    "description_uz": "To‘pdan qochish o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "hand_tennis": {
+    "ru": "Ганд-теннис",
+    "uz": "Qo‘l tennisi",
+    "parent": "ball_sports",
+    "description_ru": "Теннис руками.",
+    "description_uz": "Qo‘l bilan tennis.",
+    "category": "sport",
+    "related": []
+  },
+  "gaelic_football": {
+    "ru": "Гэльский футбол",
+    "uz": "Gellik futbol",
+    "parent": "ball_sports",
+    "description_ru": "Ирландская игра.",
+    "description_uz": "Irland o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "paddleball": {
+    "ru": "Паддлбол",
+    "uz": "Paddlbol",
+    "parent": "ball_sports",
+    "description_ru": "Игра с мячом и ракеткой.",
+    "description_uz": "Raketka va to‘p o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "kickball": {
+    "ru": "Кикбол",
+    "uz": "Kikbol",
+    "parent": "ball_sports",
+    "description_ru": "Мяч ногами.",
+    "description_uz": "To‘pni oyoq bilan o‘ynash.",
+    "category": "sport",
+    "related": []
+  },
+  "lacrosse": {
+    "ru": "Лакросс",
+    "uz": "Lakross",
+    "parent": "ball_sports",
+    "description_ru": "Мяч с клюшкой.",
+    "description_uz": "Tayoq bilan to‘p o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "netball": {
+    "ru": "Нетбол",
+    "uz": "Netbol",
+    "parent": "ball_sports",
+    "description_ru": "Женский командный спорт.",
+    "description_uz": "Ayollar jamoaviy sporti.",
+    "category": "sport",
+    "related": []
+  },
+  "paralympic_sports": {
+    "ru": "Паралимпийские виды спорта",
+    "uz": "Paralimpiya sport turlari",
+    "parent": "sport",
+    "description_ru": "Спорт для людей с инвалидностью.",
+    "description_uz": "Nogironligi borlar uchun sport.",
+    "category": "sport",
+    "related": []
+  },
+  "wheelchair_basketball": {
+    "ru": "Баскетбол на колясках",
+    "uz": "Aravacha basketboli",
+    "parent": "paralympic_sports",
+    "description_ru": "Баскетбол для колясочников.",
+    "description_uz": "Aravachada basketbol.",
+    "category": "sport",
+    "related": []
+  },
+  "wheelchair_tennis": {
+    "ru": "Теннис на колясках",
+    "uz": "Aravacha tennisi",
+    "parent": "paralympic_sports",
+    "description_ru": "Теннис для инвалидов.",
+    "description_uz": "Nogironlar uchun tennis.",
+    "category": "sport",
+    "related": []
+  },
+  "goalball": {
+    "ru": "Голбол",
+    "uz": "Golbol",
+    "parent": "paralympic_sports",
+    "description_ru": "Игра для незрячих.",
+    "description_uz": "Ko‘zi ojizlar o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "sitting_volleyball_para": {
+    "ru": "Сидячий волейбол",
+    "uz": "O‘tirib voleybol",
+    "parent": "paralympic_sports",
+    "description_ru": "Паралимпийский волейбол.",
+    "description_uz": "Paralimpiya voleyboli.",
+    "category": "sport",
+    "related": []
+  },
+  "para_swimming": {
+    "ru": "Пара-плавание",
+    "uz": "Para suzish",
+    "parent": "paralympic_sports",
+    "description_ru": "Плавание для инвалидов.",
+    "description_uz": "Nogironlar uchun suzish.",
+    "category": "sport",
+    "related": []
+  },
+  "para_athletics": {
+    "ru": "Пара-атлетика",
+    "uz": "Para atletika",
+    "parent": "paralympic_sports",
+    "description_ru": "Лёгкая атлетика для инвалидов.",
+    "description_uz": "Nogironlar yengil atletikasi.",
+    "category": "sport",
+    "related": []
+  },
+  "para_cycling": {
+    "ru": "Пара-велоспорт",
+    "uz": "Para velosport",
+    "parent": "paralympic_sports",
+    "description_ru": "Велоспорт для инвалидов.",
+    "description_uz": "Nogironlar velosporti.",
+    "category": "sport",
+    "related": []
+  },
+  "para_judo": {
+    "ru": "Пара-дзюдо",
+    "uz": "Para dzyudo",
+    "parent": "paralympic_sports",
+    "description_ru": "Дзюдо для незрячих.",
+    "description_uz": "Ko‘zi ojizlar dzyudosi.",
+    "category": "sport",
+    "related": []
+  },
+  "para_rowing": {
+    "ru": "Пара-гребля",
+    "uz": "Para eshkak eshish",
+    "parent": "paralympic_sports",
+    "description_ru": "Гребля для инвалидов.",
+    "description_uz": "Nogironlar eshkak eshishi.",
+    "category": "sport",
+    "related": []
+  },
+  "traditional_sports": {
+    "ru": "Традиционные виды спорта",
+    "uz": "An’anaviy sport turlari",
+    "parent": "sport",
+    "description_ru": "Национальные и исторические виды спорта.",
+    "description_uz": "Milliy va tarixiy sport turlari.",
+    "category": "sport",
+    "related": []
+  },
+  "kurash": {
+    "ru": "Кураш",
+    "uz": "Kurash",
+    "parent": "traditional_sports",
+    "description_ru": "Узбекская борьба.",
+    "description_uz": "O‘zbek milliy kurashi.",
+    "category": "sport",
+    "related": []
+  },
+  "sumo": {
+    "ru": "Сумо",
+    "uz": "Sumo",
+    "parent": "traditional_sports",
+    "description_ru": "Японская борьба.",
+    "description_uz": "Yapon milliy kurashi.",
+    "category": "sport",
+    "related": []
+  },
+  "kabaddi": {
+    "ru": "Кабадди",
+    "uz": "Kabaddi",
+    "parent": "traditional_sports",
+    "description_ru": "Индийская игра.",
+    "description_uz": "Hind milliy o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "buzkashi": {
+    "ru": "Бузкаши",
+    "uz": "Buzkashi",
+    "parent": "traditional_sports",
+    "description_ru": "Конная игра в Центральной Азии.",
+    "description_uz": "Markaziy Osiyo o‘yin turi.",
+    "category": "sport",
+    "related": []
+  },
+  "pesapallo": {
+    "ru": "Песапалло",
+    "uz": "Pesapallo",
+    "parent": "traditional_sports",
+    "description_ru": "Финский бейсбол.",
+    "description_uz": "Fin milliy beysboli.",
+    "category": "sport",
+    "related": []
+  },
+  "shinty": {
+    "ru": "Шинти",
+    "uz": "Shinti",
+    "parent": "traditional_sports",
+    "description_ru": "Шотландская игра.",
+    "description_uz": "Shotland o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "calcio_storico": {
+    "ru": "Кальчо сторико",
+    "uz": "Calcio storico",
+    "parent": "traditional_sports",
+    "description_ru": "Итальянская историческая игра.",
+    "description_uz": "Italiya tarixiy o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "ulama": {
+    "ru": "Улама",
+    "uz": "Ulama",
+    "parent": "traditional_sports",
+    "description_ru": "Древняя игра Мезоамерики.",
+    "description_uz": "Qadimgi o‘yin turi.",
+    "category": "sport",
+    "related": []
+  },
+  "pato": {
+    "ru": "Пато",
+    "uz": "Pato",
+    "parent": "traditional_sports",
+    "description_ru": "Аргентинская конная игра.",
+    "description_uz": "Argentina o‘yin turi.",
+    "category": "sport",
+    "related": []
+  },
+  "curling_target": {
+    "ru": "Кёрлинг",
+    "uz": "Kyorling",
+    "parent": "precision_sports",
+    "description_ru": "Толкание камней по льду.",
+    "description_uz": "Muz ustida tosh surish.",
+    "category": "sport",
+    "related": []
+  },
+  "golf_putting": {
+    "ru": "Паттинг-гольф",
+    "uz": "Golf patting",
+    "parent": "precision_sports",
+    "description_ru": "Точный удар в гольфе.",
+    "description_uz": "Golfda aniq zarba.",
+    "category": "sport",
+    "related": []
+  },
+  "strength_sports": {
+    "ru": "Силовые виды спорта",
+    "uz": "Kuch sport turlari",
+    "parent": "sport",
+    "description_ru": "Спорт на развитие силы.",
+    "description_uz": "Kuchni rivojlantiruvchi sport.",
+    "category": "sport",
+    "related": []
+  },
+  "powerlifting": {
+    "ru": "Пауэрлифтинг",
+    "uz": "Pauerlifting",
+    "parent": "strength_sports",
+    "description_ru": "Троеборье со штангой.",
+    "description_uz": "Shtanga bilan uch kurash.",
+    "category": "sport",
+    "related": []
+  },
+  "weightlifting": {
+    "ru": "Тяжёлая атлетика",
+    "uz": "Og‘ir atletika",
+    "parent": "strength_sports",
+    "description_ru": "Подъём штанги.",
+    "description_uz": "Shtanga ko‘tarish.",
+    "category": "sport",
+    "related": []
+  },
+  "strongman": {
+    "ru": "Стронгмен",
+    "uz": "Strongmen",
+    "parent": "strength_sports",
+    "description_ru": "Силовые соревнования.",
+    "description_uz": "Kuch musobaqalari.",
+    "category": "sport",
+    "related": []
+  },
+  "arm_wrestling": {
+    "ru": "Армрестлинг",
+    "uz": "Qo‘l kurashi",
+    "parent": "strength_sports",
+    "description_ru": "Борьба на руках.",
+    "description_uz": "Qo‘l bilan kurash.",
+    "category": "sport",
+    "related": []
+  },
+  "crossfit": {
+    "ru": "Кроссфит",
+    "uz": "Krossfit",
+    "parent": "strength_sports",
+    "description_ru": "Силовые функциональные тренировки.",
+    "description_uz": "Funktsional kuch mashqlari.",
+    "category": "sport",
+    "related": []
+  },
+  "kettlebell_sport": {
+    "ru": "Гиревой спорт",
+    "uz": "Gantel sporti",
+    "parent": "strength_sports",
+    "description_ru": "Подъём гирь.",
+    "description_uz": "Gantel ko‘tarish.",
+    "category": "sport",
+    "related": []
+  },
+  "bodybuilding": {
+    "ru": "Бодибилдинг",
+    "uz": "Bodibilding",
+    "parent": "strength_sports",
+    "description_ru": "Развитие мышечной массы.",
+    "description_uz": "Mushak rivojlantirish.",
+    "category": "sport",
+    "related": []
+  },
+  "highland_games": {
+    "ru": "Хайлендские игры",
+    "uz": "Highland o‘yinlari",
+    "parent": "strength_sports",
+    "description_ru": "Шотландские силовые игры.",
+    "description_uz": "Shotland kuch o‘yinlari.",
+    "category": "sport",
+    "related": []
+  },
+  "stone_lifting": {
+    "ru": "Подъём камней",
+    "uz": "Tosh ko‘tarish",
+    "parent": "strength_sports",
+    "description_ru": "Силовое поднятие камней.",
+    "description_uz": "Tosh ko‘tarish sporti.",
+    "category": "sport",
+    "related": []
+  },
+  "mind_body_sports": {
+    "ru": "Интеллектуально-физические виды спорта",
+    "uz": "Aqliy-jismoniy sport",
+    "parent": "sport",
+    "description_ru": "Спорт, сочетающий ум и тело.",
+    "description_uz": "Aql va tana uyg‘unligi sporti.",
+    "category": "sport",
+    "related": []
+  },
+  "yoga_sport": {
+    "ru": "Спортивная йога",
+    "uz": "Sport yoga",
+    "parent": "mind_body_sports",
+    "description_ru": "Соревновательная йога.",
+    "description_uz": "Musobaqaviy yoga.",
+    "category": "sport",
+    "related": []
+  },
+  "tai_chi_sport": {
+    "ru": "Тай-чи спорт",
+    "uz": "Tai chi sport",
+    "parent": "mind_body_sports",
+    "description_ru": "Медитативное движение.",
+    "description_uz": "Meditativ harakat.",
+    "category": "sport",
+    "related": []
+  },
+  "wushu": {
+    "ru": "Ушу",
+    "uz": "Ushu",
+    "parent": "mind_body_sports",
+    "description_ru": "Китайское боевое искусство.",
+    "description_uz": "Xitoy jang san’ati.",
+    "category": "sport",
+    "related": []
+  },
+  "chess_boxing": {
+    "ru": "Шахбокс",
+    "uz": "Shaxboks",
+    "parent": "mind_body_sports",
+    "description_ru": "Шахматы и бокс вместе.",
+    "description_uz": "Shaxmat va boks kombinatsiyasi.",
+    "category": "sport",
+    "related": []
+  },
+  "modern_pentathlon": {
+    "ru": "Современное пятиборье",
+    "uz": "Zamonaviy beshkurash",
+    "parent": "mind_body_sports",
+    "description_ru": "Пять дисциплин.",
+    "description_uz": "Besh sport turi.",
+    "category": "sport",
+    "related": []
+  },
+  "shooting_ski": {
+    "ru": "Лыжная стрельба",
+    "uz": "Chang‘i otish",
+    "parent": "mind_body_sports",
+    "description_ru": "Сочетание лыж и стрельбы.",
+    "description_uz": "Chang‘i va o‘q otish.",
+    "category": "sport",
+    "related": []
+  },
+  "extreme_sports": {
+    "ru": "Экстремальные виды спорта",
+    "uz": "Ekstremal sport turlari",
+    "parent": "sport",
+    "description_ru": "Спорт с повышенным риском.",
+    "description_uz": "Yuqori xavfli sport turlari.",
+    "category": "sport",
+    "related": []
+  },
+  "skydiving": {
+    "ru": "Прыжки с парашютом",
+    "uz": "Parashyut sakrash",
+    "parent": "extreme_sports",
+    "description_ru": "Прыжок с самолёта.",
+    "description_uz": "Samolyotdan sakrash.",
+    "category": "sport",
+    "related": []
+  },
+  "base_jumping": {
+    "ru": "Бейсджампинг",
+    "uz": "Base jumping",
+    "parent": "extreme_sports",
+    "description_ru": "Прыжок с высоты.",
+    "description_uz": "Balandlikdan sakrash.",
+    "category": "sport",
+    "related": []
+  },
+  "bungee_jumping": {
+    "ru": "Банджи-джампинг",
+    "uz": "Bungee sakrash",
+    "parent": "extreme_sports",
+    "description_ru": "Прыжок с канатом.",
+    "description_uz": "Arqon bilan sakrash.",
+    "category": "sport",
+    "related": []
+  },
+  "parkour": {
+    "ru": "Паркур",
+    "uz": "Parkur",
+    "parent": "extreme_sports",
+    "description_ru": "Преодоление препятствий.",
+    "description_uz": "To‘siqlarni yengib o‘tish.",
+    "category": "sport",
+    "related": []
+  },
+  "freerunning": {
+    "ru": "Фриран",
+    "uz": "Freerunning",
+    "parent": "extreme_sports",
+    "description_ru": "Акробатический паркур.",
+    "description_uz": "Akrobatik parkur.",
+    "category": "sport",
+    "related": []
+  },
+  "motocross": {
+    "ru": "Мотокросс",
+    "uz": "Motokross",
+    "parent": "extreme_sports",
+    "description_ru": "Гонки по бездорожью.",
+    "description_uz": "Yo‘lsiz joy poygasi.",
+    "category": "sport",
+    "related": []
+  },
+  "skateboarding": {
+    "ru": "Скейтбординг",
+    "uz": "Skeytbord",
+    "parent": "extreme_sports",
+    "description_ru": "Катание на доске.",
+    "description_uz": "Doska ustida uchish.",
+    "category": "sport",
+    "related": []
+  },
+  "wingsuit": {
+    "ru": "Вингсьют",
+    "uz": "Wingsuit",
+    "parent": "extreme_sports",
+    "description_ru": "Полёт в костюме-крыле.",
+    "description_uz": "Maxsus kostyumda uchish.",
+    "category": "sport",
+    "related": []
+  },
+  "dota2": {
+    "ru": "Dota 2",
+    "uz": "Dota 2",
+    "parent": "esports",
+    "description_ru": "Командная стратегия.",
+    "description_uz": "Jamoaviy strategiya o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "cs2": {
+    "ru": "Counter-Strike 2",
+    "uz": "CS2",
+    "parent": "esports",
+    "description_ru": "Шутер от первого лица.",
+    "description_uz": "Otishma o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "league_of_legends": {
+    "ru": "League of Legends",
+    "uz": "League of Legends",
+    "parent": "esports",
+    "description_ru": "MOBA-игра.",
+    "description_uz": "MOBA janri o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "valorant": {
+    "ru": "Valorant",
+    "uz": "Valorant",
+    "parent": "esports",
+    "description_ru": "Тактический шутер.",
+    "description_uz": "Taktik otishma.",
+    "category": "sport",
+    "related": []
+  },
+  "fortnite": {
+    "ru": "Fortnite",
+    "uz": "Fortnite",
+    "parent": "esports",
+    "description_ru": "Battle royale.",
+    "description_uz": "Battle royale janri.",
+    "category": "sport",
+    "related": []
+  },
+  "pubg": {
+    "ru": "PUBG",
+    "uz": "PUBG",
+    "parent": "esports",
+    "description_ru": "Королевская битва.",
+    "description_uz": "Omon qolish o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "fifa_esport": {
+    "ru": "FIFA eSport",
+    "uz": "FIFA eSport",
+    "parent": "esports",
+    "description_ru": "Футбольный симулятор.",
+    "description_uz": "Futbol simulyatori.",
+    "category": "sport",
+    "related": []
+  },
+  "starcraft": {
+    "ru": "StarCraft",
+    "uz": "StarCraft",
+    "parent": "esports",
+    "description_ru": "Стратегия в реальном времени.",
+    "description_uz": "Real vaqt strategiyasi.",
+    "category": "sport",
+    "related": []
+  },
+  "overwatch": {
+    "ru": "Overwatch",
+    "uz": "Overwatch",
+    "parent": "esports",
+    "description_ru": "Командный шутер.",
+    "description_uz": "Jamoaviy otishma.",
+    "category": "sport",
+    "related": []
+  },
+  "endurance_sports": {
+    "ru": "Виды спорта на выносливость",
+    "uz": "Chidamlilik sport turlari",
+    "parent": "sport",
+    "description_ru": "Спорт на длительную нагрузку.",
+    "description_uz": "Uzoq davom etadigan sport.",
+    "category": "sport",
+    "related": []
+  },
+  "triathlon": {
+    "ru": "Триатлон",
+    "uz": "Triatlon",
+    "parent": "endurance_sports",
+    "description_ru": "Плавание, вело, бег.",
+    "description_uz": "Suzish, velosiped, yugurish.",
+    "category": "sport",
+    "related": []
+  },
+  "ultramarathon": {
+    "ru": "Ультрамарафон",
+    "uz": "Ultramarafon",
+    "parent": "endurance_sports",
+    "description_ru": "Дистанция более 42 км.",
+    "description_uz": "42 km dan uzun masofa.",
+    "category": "sport",
+    "related": []
+  },
+  "ironman": {
+    "ru": "Ironman",
+    "uz": "Ironman",
+    "parent": "endurance_sports",
+    "description_ru": "Сложный триатлон.",
+    "description_uz": "Murakkab triatlon.",
+    "category": "sport",
+    "related": []
+  },
+  "cycling_race": {
+    "ru": "Велогонка",
+    "uz": "Velopoyga",
+    "parent": "endurance_sports",
+    "description_ru": "Гонка на велосипедах.",
+    "description_uz": "Velosiped poygasi.",
+    "category": "sport",
+    "related": []
+  },
+  "long_distance_swimming": {
+    "ru": "Дальнее плавание",
+    "uz": "Uzoq masofaga suzish",
+    "parent": "endurance_sports",
+    "description_ru": "Плавание на длинную дистанцию.",
+    "description_uz": "Uzoq suzish.",
+    "category": "sport",
+    "related": []
+  },
+  "cross_country_ski": {
+    "ru": "Лыжная гонка",
+    "uz": "Chang‘i poygasi",
+    "parent": "endurance_sports",
+    "description_ru": "Дистанционные лыжи.",
+    "description_uz": "Masofali chang‘i.",
+    "category": "sport",
+    "related": []
+  },
+  "rowing_marathon": {
+    "ru": "Гребной марафон",
+    "uz": "Eshkak marafoni",
+    "parent": "endurance_sports",
+    "description_ru": "Долгая гребля.",
+    "description_uz": "Uzoq eshkak eshish.",
+    "category": "sport",
+    "related": []
+  },
+  "adventure_run": {
+    "ru": "Приключенческий забег",
+    "uz": "Sarguzasht yugurish",
+    "parent": "endurance_sports",
+    "description_ru": "Бег по пересечённой местности.",
+    "description_uz": "Tabiatda yugurish.",
+    "category": "sport",
+    "related": []
+  },
+  "equestrian_sports": {
+    "ru": "Конные виды спорта",
+    "uz": "Ot sport turlari",
+    "parent": "sport",
+    "description_ru": "Спорт с участием лошадей.",
+    "description_uz": "Ot bilan sport.",
+    "category": "sport",
+    "related": []
+  },
+  "dressage": {
+    "ru": "Выездка",
+    "uz": "Drezaj",
+    "parent": "equestrian_sports",
+    "description_ru": "Фигурная езда на лошади.",
+    "description_uz": "Ot bilan figurali yurish.",
+    "category": "sport",
+    "related": []
+  },
+  "show_jumping": {
+    "ru": "Конкур",
+    "uz": "To‘siqdan sakrash",
+    "parent": "equestrian_sports",
+    "description_ru": "Прыжки через барьеры.",
+    "description_uz": "Ot bilan to‘siqdan sakrash.",
+    "category": "sport",
+    "related": []
+  },
+  "eventing": {
+    "ru": "Троеборье",
+    "uz": "Ot uchkurashi",
+    "parent": "equestrian_sports",
+    "description_ru": "Комбинация дисциплин.",
+    "description_uz": "Bir nechta tur kombinatsiyasi.",
+    "category": "sport",
+    "related": []
+  },
+  "endurance_riding": {
+    "ru": "Конный марафон",
+    "uz": "Ot marafoni",
+    "parent": "equestrian_sports",
+    "description_ru": "Дальние дистанции на лошади.",
+    "description_uz": "Uzoq masofaga ot minish.",
+    "category": "sport",
+    "related": []
+  },
+  "vaulting": {
+    "ru": "Вольтижировка",
+    "uz": "Voltijirovka",
+    "parent": "equestrian_sports",
+    "description_ru": "Акробатика на лошади.",
+    "description_uz": "Ot ustida akrobatika.",
+    "category": "sport",
+    "related": []
+  },
+  "tent_pegging": {
+    "ru": "Тент-пеггинг",
+    "uz": "Tent pegging",
+    "parent": "equestrian_sports",
+    "description_ru": "Попадание в цель с лошади.",
+    "description_uz": "Ot ustida nishonga urish.",
+    "category": "sport",
+    "related": []
+  },
+  "horseball": {
+    "ru": "Хорсбол",
+    "uz": "Horseball",
+    "parent": "equestrian_sports",
+    "description_ru": "Мяч на лошадях.",
+    "description_uz": "Ot ustida to‘p o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "mounted_archery": {
+    "ru": "Конная стрельба из лука",
+    "uz": "Ot ustida kamon",
+    "parent": "equestrian_sports",
+    "description_ru": "Стрельба верхом.",
+    "description_uz": "Ot ustida kamon otish.",
+    "category": "sport",
+    "related": []
+  },
+  "go": {
+    "ru": "Го",
+    "uz": "Go",
+    "parent": "mind_sports",
+    "description_ru": "Древняя китайская игра.",
+    "description_uz": "Qadimiy Xitoy o‘yini.",
+    "category": "sport",
+    "related": []
+  },
+  "esport_strategy": {
+    "ru": "Стратегический киберспорт",
+    "uz": "Strategik kibersport",
+    "parent": "mind_sports",
+    "description_ru": "Тактические игры.",
+    "description_uz": "Taktik o‘yinlar.",
+    "category": "sport",
+    "related": []
+  }
+}

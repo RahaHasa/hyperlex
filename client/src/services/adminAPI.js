@@ -552,6 +552,147 @@ const adminAPI = {
             throw new Error(error.error || 'Ошибка при удалении пользователя');
         }
         return response.json();
+    },
+
+    // === ИЕРАРХИЯ СЛОВ ===
+
+    /**
+     * Импортировать иерархию из JSON
+     */
+    async importHierarchy(data) {
+        const token = getAuthToken();
+        if (!token) {
+            throw new Error('❌ Требуется авторизация. Пожалуйста, залогиньтесь.');
+        }
+        
+        const response = await fetch(`${API_URL}/import/hierarchy`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(error.message || 'Ошибка при импорте иерархии');
+        }
+        return response.json();
+    },
+
+    /**
+     * Получить полную структуру иерархии
+     */
+    async getHierarchyStructure() {
+        const token = getAuthToken();
+        if (!token) {
+            throw new Error('❌ Требуется авторизация. Пожалуйста, залогиньтесь.');
+        }
+        
+        const response = await fetch(`${API_URL}/hierarchy/structure`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(error.message || 'Ошибка при получении структуры');
+        }
+        return response.json();
+    },
+
+    /**
+     * Добавить слово в иерархию
+     */
+    async addWordToHierarchy(wordData) {
+        const token = getAuthToken();
+        if (!token) {
+            throw new Error('❌ Требуется авторизация. Пожалуйста, залогиньтесь.');
+        }
+        
+        const response = await fetch(`${API_URL}/hierarchy/add-word`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(wordData)
+        });
+        
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(error.message || 'Ошибка при добавлении слова');
+        }
+        return response.json();
+    },
+
+    /**
+     * Получить дерево иерархии для одного слова
+     */
+    async getWordHierarchyTree(semanticKey) {
+        const token = getAuthToken();
+        if (!token) {
+            throw new Error('❌ Требуется авторизация. Пожалуйста, залогиньтесь.');
+        }
+        
+        const response = await fetch(`${API_URL}/hierarchy/tree/${semanticKey}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(error.message || 'Ошибка при получении дерева');
+        }
+        return response.json();
+    },
+
+    /**
+     * Получить статистику иерархии
+     */
+    async getHierarchyStats() {
+        const token = getAuthToken();
+        if (!token) {
+            throw new Error('❌ Требуется авторизация. Пожалуйста, залогиньтесь.');
+        }
+        
+        const response = await fetch(`${API_URL}/hierarchy/stats`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(error.message || 'Ошибка при получении статистики');
+        }
+        return response.json();
+    },
+
+    /**
+     * Удалить слово из иерархии
+     */
+    async deleteWordFromHierarchy(semanticKey) {
+        const token = getAuthToken();
+        if (!token) {
+            throw new Error('❌ Требуется авторизация. Пожалуйста, залогиньтесь.');
+        }
+        
+        const response = await fetch(`${API_URL}/hierarchy/${semanticKey}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(error.message || 'Ошибка при удалении слова');
+        }
+        return response.json();
     }
 };
 

@@ -8,7 +8,7 @@ services:
     ports:
       - "27017:27017"
     environment:
-      MONGO_INITDB_DATABASE: hyperlex
+      MONGO_INITDB_DATABASE: hyperlexdemo
     volumes:
       - mongo_data:/data/db
       - ./server/data/hyperlex.archive:/data/hyperlex.archive:ro
@@ -25,7 +25,7 @@ services:
     ports:
       - "3001:3001"
     environment:
-      MONGODB_URI: mongodb://mongo:27017/hyperlex
+      MONGODB_URI: mongodb://mongo:27017/hyperlexdemo
       JWT_SECRET: your_super_secret_key
       NODE_ENV: production
       PORT: 3001

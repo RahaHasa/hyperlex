@@ -5,6 +5,64 @@
 
 const Word = require('../models/Word');
 
+function isObjectId(value) {
+    return typeof value === 'string' && /^[a-fA-F0-9]{24}$/.test(value);
+}
+
+async function findWordByAnyId(id) {
+    if (!id) return null;
+
+    let word = await Word.findOne({ semantic_key: id });
+    if (word) return word;
+
+    if (isObjectId(id)) {
+        word = await Word.findById(id);
+    }
+
+    return word;
+}
+
+async function buildTreeByWord(word, depth) {
+    if (!word || depth <= 0) return null;
+
+    let parentNode = null;
+    if (word.parent_semantic_key) {
+        const parent = await Word.findOne({ semantic_key: word.parent_semantic_key });
+        if (parent) {
+            parentNode = await buildTreeByWord(parent, depth - 1);
+        }
+    }
+
+    const children = word.children_semantic_keys?.length
+        ? await Word.find({ semantic_key: { $in: word.children_semantic_keys } })
+        : [];
+
+    const hyponyms = [];
+    for (const child of children) {
+        const node = await buildTreeByWord(child, depth - 1);
+        if (node) hyponyms.push(node);
+    }
+
+    const language = /[а-яё]/i.test(word.ru || '') ? 'ru' : 'uz';
+
+    return {
+        id: word.semantic_key,
+        semantic_key: word.semantic_key,
+        word: word.ru || word.uz || '',
+        ru: word.ru,
+        uz: word.uz,
+        language,
+        definition: word.description_ru || word.description_uz || '',
+        description_ru: word.description_ru || '',
+        description_uz: word.description_uz || '',
+        category: word.category,
+        parent_semantic_key: word.parent_semantic_key || null,
+        children_semantic_keys: word.children_semantic_keys || [],
+        hypernyms: parentNode ? [parentNode] : [],
+        hyponyms
+    };
+}
+
 /**
  * Поиск слова по запросу
  * GET /api/search?q=собака&lang=ru
@@ -20,15 +78,34 @@ async function searchWords(req, res) {
             });
         }
         
-        // Создаём regex для поиска
-        const searchRegex = new RegExp(q, 'i');
-        let query = { word: searchRegex };
-        
-        // Фильтруем по языку, если указан
-        if (lang !== 'both') {
-            query.lang = lang === 'ru' ? 'lang_ru' : 'lang_uz';
+        const searchRegex = new RegExp(q.trim(), 'i');
+        let query;
+
+        if (lang === 'ru') {
+            query = {
+                $or: [
+                    { ru: searchRegex },
+                    { normalized_ru: searchRegex }
+                ]
+            };
+        } else if (lang === 'uz') {
+            query = {
+                $or: [
+                    { uz: searchRegex },
+                    { normalized_uz: searchRegex }
+                ]
+            };
+        } else {
+            query = {
+                $or: [
+                    { ru: searchRegex },
+                    { uz: searchRegex },
+                    { normalized_ru: searchRegex },
+                    { normalized_uz: searchRegex }
+                ]
+            };
         }
-        
+
         const results = await Word.find(query).limit(50);
         
         res.json({
@@ -53,10 +130,8 @@ async function searchWords(req, res) {
 async function getWord(req, res) {
     try {
         const { id } = req.params;
-        
-        const word = await Word.findById(id)
-            .populate('hypernyms', '_id word lang definition')
-            .populate('hyponyms', '_id word lang definition');
+
+        const word = await findWordByAnyId(id);
         
         if (!word) {
             return res.status(404).json({
@@ -65,13 +140,10 @@ async function getWord(req, res) {
             });
         }
         
-        // Получаем связанное слово на другом языке, если оно есть
+        // Получаем первое связанное слово, если оно есть
         let relatedWord = null;
-        if (word.related) {
-            const relatedId = word.lang === 'lang_ru' ? word.related.uz : word.related.ru;
-            if (relatedId) {
-                relatedWord = await Word.findById(relatedId).select('_id word lang definition');
-            }
+        if (Array.isArray(word.related) && word.related.length > 0) {
+            relatedWord = await Word.findOne({ semantic_key: word.related[0] });
         }
         
         res.json({
@@ -95,32 +167,9 @@ async function getWordTree(req, res) {
     try {
         const { id } = req.params;
         const depth = parseInt(req.query.depth) || 3;
-        
-        async function buildTree(wordId, currentDepth) {
-            if (currentDepth === 0) return null;
-            
-            const word = await Word.findById(wordId);
-            if (!word) return null;
-            
-            const hypernyms = word.hypernyms ? await Promise.all(
-                word.hypernyms.map(hypId => buildTree(hypId, currentDepth - 1))
-            ) : [];
-            
-            const hyponyms = word.hyponyms ? await Promise.all(
-                word.hyponyms.map(hypId => buildTree(hypId, currentDepth - 1))
-            ) : [];
-            
-            return {
-                _id: word._id,
-                word: word.word,
-                definition: word.definition,
-                lang: word.lang,
-                hypernyms: hypernyms.filter(h => h !== null),
-                hyponyms: hyponyms.filter(h => h !== null)
-            };
-        }
-        
-        const tree = await buildTree(id, depth);
+
+        const centerWord = await findWordByAnyId(id);
+        const tree = await buildTreeByWord(centerWord, depth);
         
         if (!tree) {
             return res.status(404).json({
@@ -157,54 +206,17 @@ async function compareWords(req, res) {
             });
         }
         
-        async function buildTree(wordId, depth = 2) {
-            if (!wordId || depth === 0) return null;
-            
-            const word = await Word.findById(wordId);
-            if (!word) return null;
-            
-            const hypernyms = word.hypernyms ? await Promise.all(
-                word.hypernyms.map(hypId => buildTree(hypId, depth - 1))
-            ) : [];
-            
-            const hyponyms = word.hyponyms ? await Promise.all(
-                word.hyponyms.map(hypId => buildTree(hypId, depth - 1))
-            ) : [];
-            
-            return {
-                _id: word._id,
-                word: word.word,
-                definition: word.definition,
-                lang: word.lang,
-                hypernyms: hypernyms.filter(h => h !== null),
-                hyponyms: hyponyms.filter(h => h !== null)
-            };
-        }
-        
         let ruTree = null;
         let uzTree = null;
         
         if (ru) {
-            ruTree = await buildTree(ru);
+            const ruWord = await findWordByAnyId(ru);
+            ruTree = await buildTreeByWord(ruWord, 2);
         }
         
         if (uz) {
-            uzTree = await buildTree(uz);
-        }
-        
-        // Если указано только одно слово, пытаемся найти связанное
-        if (ru && !uz && ruTree) {
-            const ruWord = await Word.findById(ru);
-            if (ruWord && ruWord.related && ruWord.related.uz) {
-                uzTree = await buildTree(ruWord.related.uz);
-            }
-        }
-        
-        if (uz && !ru && uzTree) {
-            const uzWord = await Word.findById(uz);
-            if (uzWord && uzWord.related && uzWord.related.ru) {
-                ruTree = await buildTree(uzWord.related.ru);
-            }
+            const uzWord = await findWordByAnyId(uz);
+            uzTree = await buildTreeByWord(uzWord, 2);
         }
         
         res.json({
@@ -242,9 +254,9 @@ function getLanguages(req, res) {
  */
 async function getStats(req, res) {
     try {
-        // Подсчитываем слова из БД по языкам
-        const rusCount = await Word.countDocuments({ lang: 'lang_ru' });
-        const uzCount = await Word.countDocuments({ lang: 'lang_uz' });
+        // Подсчитываем слова из БД по полям новой схемы
+        const rusCount = await Word.countDocuments({ ru: { $exists: true, $ne: '' } });
+        const uzCount = await Word.countDocuments({ uz: { $exists: true, $ne: '' } });
         const totalCount = await Word.countDocuments();
         
         res.json({

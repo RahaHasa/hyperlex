@@ -7,14 +7,13 @@ import './AdminEditWord.css';
  */
 export default function AdminEditWord({ word, onSuccess, onCancel }) {
     const [form, setForm] = useState({
-        word: '',
-        definition: '',
-        hypernyms: [],
-        hyponyms: [],
-        related: {
-            ru: null,
-            uz: null
-        }
+        ru: '',
+        uz: '',
+        description_ru: '',
+        description_uz: '',
+        category: 'general',
+        parent_semantic_key: null,
+        related: []
     });
     
     const [hypernymsInput, setHypernymsInput] = useState('');
@@ -29,24 +28,15 @@ export default function AdminEditWord({ word, onSuccess, onCancel }) {
     useEffect(() => {
         if (word) {
             setForm({
-                word: word.word || '',
-                definition: word.definition || '',
-                hypernyms: word.hypernyms || [],
-                hyponyms: word.hyponyms || [],
-                related: word.related || { ru: null, uz: null }
+                ru: word.ru || '',
+                uz: word.uz || '',
+                description_ru: word.description_ru || '',
+                description_uz: word.description_uz || '',
+                category: word.category || 'general',
+                parent_semantic_key: word.parent_semantic_key || null,
+                related: word.related || []
             });
-            const relatedId = word.lang === 'lang_ru' ? word.related?.uz : word.related?.ru;
-            if (relatedId) {
-                adminAPI.getWord(relatedId)
-                    .then(result => {
-                        setRelatedInput(result.word?.word || result.word || '');
-                    })
-                    .catch(() => {
-                        setRelatedInput(relatedId);
-                    });
-            } else {
-                setRelatedInput('');
-            }
+            setRelatedInput('');
         }
     }, [word]);
     
