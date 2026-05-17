@@ -5,817 +5,13 @@
     "description_ru": "Наука о здоровье и лечении болезней.",
     "description_uz": "Kasalliklarni davolash va sog‘liqni saqlash ilmi.",
     "category": "medicine",
-    "related": []
-  },
-  "medical_fields": {
-    "ru": "Медицинские направления",
-    "uz": "Tibbiyot yo‘nalishlari",
-    "parent": "medicine",
-    "description_ru": "Разделы медицины.",
-    "description_uz": "Tibbiyot bo‘limlari.",
-    "category": "medicine",
-    "related": []
-  },
-  "cardiology": {
-    "ru": "Кардиология",
-    "uz": "Kardiologiya",
-    "parent": "medical_fields",
-    "description_ru": "Лечение сердца.",
-    "description_uz": "Yurak kasalliklarini davolash.",
-    "category": "medicine",
-    "related": []
-  },
-  "neurology": {
-    "ru": "Неврология",
-    "uz": "Nevrologiya",
-    "parent": "medical_fields",
-    "description_ru": "Лечение нервной системы.",
-    "description_uz": "Asab tizimi kasalliklari.",
-    "category": "medicine",
-    "related": []
-  },
-  "dermatology": {
-    "ru": "Дерматология",
-    "uz": "Dermatologiya",
-    "parent": "medical_fields",
-    "description_ru": "Лечение кожи.",
-    "description_uz": "Teri kasalliklari.",
-    "category": "medicine",
-    "related": []
-  },
-  "pediatrics": {
-    "ru": "Педиатрия",
-    "uz": "Pediatriya",
-    "parent": "medical_fields",
-    "description_ru": "Лечение детей.",
-    "description_uz": "Bolalar kasalliklari.",
-    "category": "medicine",
-    "related": []
-  },
-  "surgery": {
-    "ru": "Хирургия",
-    "uz": "Jarrohlik",
-    "parent": "medical_fields",
-    "description_ru": "Оперативное лечение.",
-    "description_uz": "Operatsion davolash.",
-    "category": "medicine",
-    "related": []
-  },
-  "oncology": {
-    "ru": "Онкология",
-    "uz": "Onkologiya",
-    "parent": "medical_fields",
-    "description_ru": "Лечение рака.",
-    "description_uz": "Saratonni davolash.",
-    "category": "medicine",
-    "related": []
-  },
-  "psychiatry": {
-    "ru": "Психиатрия",
-    "uz": "Psixiatriya",
-    "parent": "medical_fields",
-    "description_ru": "Лечение психических расстройств.",
-    "description_uz": "Ruhiy kasalliklar.",
-    "category": "medicine",
-    "related": []
-  },
-  "gynecology": {
-    "ru": "Гинекология",
-    "uz": "Ginekologiya",
-    "parent": "medical_fields",
-    "description_ru": "Женское здоровье.",
-    "description_uz": "Ayollar salomatligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "urology": {
-    "ru": "Урология",
-    "uz": "Urologiya",
-    "parent": "medical_fields",
-    "description_ru": "Лечение мочевой системы.",
-    "description_uz": "Siydik tizimi kasalliklari.",
-    "category": "medicine",
-    "related": []
-  },
-  "medications": {
-    "ru": "Лекарства",
-    "uz": "Dori vositalari",
-    "parent": "medicine",
-    "description_ru": "Средства для лечения болезней.",
-    "description_uz": "Kasalliklarni davolash uchun vositalar.",
-    "category": "medicine",
-    "related": []
-  },
-  "antibiotic": {
-    "ru": "Антибиотик",
-    "uz": "Antibiotik",
-    "parent": "medications",
-    "description_ru": "Против бактерий.",
-    "description_uz": "Bakteriyalarga qarshi dori.",
-    "category": "medicine",
-    "related": []
-  },
-  "analgesic": {
-    "ru": "Обезболивающее",
-    "uz": "Og‘riq qoldiruvchi",
-    "parent": "medications",
-    "description_ru": "Снимает боль.",
-    "description_uz": "Og‘riqni kamaytiradi.",
-    "category": "medicine",
-    "related": []
-  },
-  "antipyretic": {
-    "ru": "Жаропонижающее",
-    "uz": "Isitma tushiruvchi",
-    "parent": "medications",
-    "description_ru": "Снижает температуру.",
-    "description_uz": "Haroratni tushiradi.",
-    "category": "medicine",
-    "related": []
-  },
-  "antiseptic": {
-    "ru": "Антисептик",
-    "uz": "Antiseptik",
-    "parent": "medications",
-    "description_ru": "Обеззараживает.",
-    "description_uz": "Mikroblarni yo‘q qiladi.",
-    "category": "medicine",
-    "related": []
-  },
-  "vaccine": {
-    "ru": "Вакцина",
-    "uz": "Vaksina",
-    "parent": "medications",
-    "description_ru": "Средство профилактики.",
-    "description_uz": "Kasallikning oldini oladi.",
-    "category": "medicine",
-    "related": []
-  },
-  "insulin": {
-    "ru": "Инсулин",
-    "uz": "Insulin",
-    "parent": "medications",
-    "description_ru": "Регулирует сахар.",
-    "description_uz": "Qand miqdorini nazorat qiladi.",
-    "category": "medicine",
-    "related": []
-  },
-  "vitamin": {
-    "ru": "Витамин",
-    "uz": "Vitamin",
-    "parent": "medications",
-    "description_ru": "Полезное вещество.",
-    "description_uz": "Organizm uchun foydali modda.",
-    "category": "medicine",
-    "related": []
-  },
-  "syrup": {
-    "ru": "Сироп",
-    "uz": "Sirop",
-    "parent": "medications",
-    "description_ru": "Жидкое лекарство.",
-    "description_uz": "Suyuq dori.",
-    "category": "medicine",
-    "related": []
-  },
-  "ointment": {
-    "ru": "Мазь",
-    "uz": "Malham",
-    "parent": "medications",
-    "description_ru": "Наружное средство.",
-    "description_uz": "Tashqi surtma dori.",
-    "category": "medicine",
-    "related": []
-  },
-  "medical_equipment": {
-    "ru": "Медицинское оборудование",
-    "uz": "Tibbiy uskunalar",
-    "parent": "medicine",
-    "description_ru": "Оборудование, используемое в медицине.",
-    "description_uz": "Tibbiyotda ishlatiladigan uskunalar.",
-    "category": "medicine",
-    "related": []
-  },
-  "stethoscope": {
-    "ru": "Стетоскоп",
-    "uz": "Stetoskop",
-    "parent": "medical_equipment",
-    "description_ru": "Прибор для прослушивания сердца.",
-    "description_uz": "Yurakni eshitish uchun asbob.",
-    "category": "medicine",
-    "related": []
-  },
-  "thermometer": {
-    "ru": "Термометр",
-    "uz": "Termometr",
-    "parent": "medical_equipment",
-    "description_ru": "Измеряет температуру тела.",
-    "description_uz": "Tana haroratini o‘lchaydi.",
-    "category": "medicine",
-    "related": []
-  },
-  "syringe": {
-    "ru": "Шприц",
-    "uz": "Shprits",
-    "parent": "medical_equipment",
-    "description_ru": "Ввод лекарств.",
-    "description_uz": "Dori yuborish vositasi.",
-    "category": "medicine",
-    "related": []
-  },
-  "scalpel": {
-    "ru": "Скальпель",
-    "uz": "Skalpel",
-    "parent": "medical_equipment",
-    "description_ru": "Хирургический нож.",
-    "description_uz": "Jarrohlik pichog‘i.",
-    "category": "medicine",
-    "related": []
-  },
-  "bandage": {
-    "ru": "Бинт",
-    "uz": "Bint",
-    "parent": "medical_equipment",
-    "description_ru": "Перевязочный материал.",
-    "description_uz": "Bog‘lov materiali.",
-    "category": "medicine",
-    "related": []
-  },
-  "wheelchair": {
-    "ru": "Инвалидная коляска",
-    "uz": "Nogironlar aravachasi",
-    "parent": "medical_equipment",
-    "description_ru": "Передвижение пациента.",
-    "description_uz": "Bemorni tashish vositasi.",
-    "category": "medicine",
-    "related": []
-  },
-  "defibrillator": {
-    "ru": "Дефибриллятор",
-    "uz": "Defibrillyator",
-    "parent": "medical_equipment",
-    "description_ru": "Восстанавливает сердечный ритм.",
-    "description_uz": "Yurak ritmini tiklaydi.",
-    "category": "medicine",
-    "related": []
-  },
-  "blood_pressure_monitor": {
-    "ru": "Тонометр",
-    "uz": "Tonometr",
-    "parent": "medical_equipment",
-    "description_ru": "Измеряет артериальное давление.",
-    "description_uz": "Qon bosimini o‘lchaydi.",
-    "category": "medicine",
-    "related": []
-  },
-  "hospital_bed": {
-    "ru": "Больничная койка",
-    "uz": "Kasalxona yotoq joyi",
-    "parent": "medical_equipment",
-    "description_ru": "Кровать для пациента.",
-    "description_uz": "Bemor yotoq joyi.",
-    "category": "medicine",
-    "related": []
-  },
-  "diseases": {
-    "ru": "Болезни",
-    "uz": "Kasalliklar",
-    "parent": "medicine",
-    "description_ru": "Нарушения здоровья.",
-    "description_uz": "Salomatlik buzilishlari.",
-    "category": "medicine",
-    "related": []
-  },
-  "flu": {
-    "ru": "Грипп",
-    "uz": "Gripp",
-    "parent": "infectious_diseases",
-    "description_ru": "Вирусная инфекция дыхательных путей.",
-    "description_uz": "Nafas yo‘li virusli kasalligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "diabetes": {
-    "ru": "Диабет",
-    "uz": "Diabet",
-    "parent": "chronic_diseases",
-    "description_ru": "Повышенный сахар.",
-    "description_uz": "Qand kasalligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "asthma": {
-    "ru": "Астма",
-    "uz": "Astma",
-    "parent": "chronic_diseases",
-    "description_ru": "Затруднённое дыхание.",
-    "description_uz": "Nafas qisilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "cancer": {
-    "ru": "Рак",
-    "uz": "Saraton",
-    "parent": "diseases",
-    "description_ru": "Онкологическое заболевание.",
-    "description_uz": "Onkologik kasallik.",
-    "category": "medicine",
-    "related": []
-  },
-  "covid19": {
-    "ru": "COVID-19",
-    "uz": "COVID-19",
-    "parent": "infectious_diseases",
-    "description_ru": "Коронавирусная инфекция.",
-    "description_uz": "Koronavirus kasalligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "pneumonia": {
-    "ru": "Пневмония",
-    "uz": "Pnevmoniya",
-    "parent": "lung_diseases",
-    "description_ru": "Воспаление лёгких.",
-    "description_uz": "O‘pka yallig‘lanishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "hypertension": {
-    "ru": "Гипертония",
-    "uz": "Gipertoniya",
-    "parent": "chronic_diseases",
-    "description_ru": "Высокое давление.",
-    "description_uz": "Yuqori qon bosimi.",
-    "category": "medicine",
-    "related": []
-  },
-  "migraine": {
-    "ru": "Мигрень",
-    "uz": "Migren",
-    "parent": "pain_conditions",
-    "description_ru": "Сильная головная боль.",
-    "description_uz": "Kuchli bosh og‘rig‘i.",
-    "category": "medicine",
-    "related": []
-  },
-  "allergy": {
-    "ru": "Аллергия",
-    "uz": "Allergiya",
-    "parent": "diseases",
-    "description_ru": "Реакция организма.",
-    "description_uz": "Organizm reaksiyasi.",
-    "category": "medicine",
-    "related": []
-  },
-  "medical_tests": {
-    "ru": "Медицинские анализы",
-    "uz": "Tibbiy tahlillar",
-    "parent": "medicine",
-    "description_ru": "Исследования для диагностики.",
-    "description_uz": "Tashxis qo‘yish uchun tekshiruvlar.",
-    "category": "medicine",
-    "related": []
-  },
-  "blood_test": {
-    "ru": "Анализ крови",
-    "uz": "Qon tahlili",
-    "parent": "diagnostic_tests",
-    "description_ru": "Исследование крови.",
-    "description_uz": "Qonni tekshirish.",
-    "category": "medicine",
-    "related": []
-  },
-  "urine_test": {
-    "ru": "Анализ мочи",
-    "uz": "Siydik tahlili",
-    "parent": "diagnostic_tests",
-    "description_ru": "Исследование мочи.",
-    "description_uz": "Siydikni tekshirish.",
-    "category": "medicine",
-    "related": []
-  },
-  "xray": {
-    "ru": "Рентген",
-    "uz": "Rentgen",
-    "parent": "diagnostic_tests",
-    "description_ru": "Снимок внутренних органов.",
-    "description_uz": "Ichki a’zolar tasviri.",
-    "category": "medicine",
-    "related": []
-  },
-  "mri": {
-    "ru": "МРТ",
-    "uz": "MRT",
-    "parent": "diagnostic_tests",
-    "description_ru": "Томография организма.",
-    "description_uz": "Tanani skanerlash.",
-    "category": "medicine",
-    "related": []
-  },
-  "ct_scan": {
-    "ru": "КТ",
-    "uz": "KT",
-    "parent": "diagnostic_tests",
-    "description_ru": "Компьютерная томография.",
-    "description_uz": "Kompyuter tomografiyasi.",
-    "category": "medicine",
-    "related": []
-  },
-  "ecg": {
-    "ru": "ЭКГ",
-    "uz": "EKG",
-    "parent": "diagnostic_tests",
-    "description_ru": "Проверка сердца.",
-    "description_uz": "Yurak tekshiruvi.",
-    "category": "medicine",
-    "related": []
-  },
-  "ultrasound": {
-    "ru": "УЗИ",
-    "uz": "UZI",
-    "parent": "diagnostic_tests",
-    "description_ru": "Ультразвуковое исследование.",
-    "description_uz": "Ultratovush tekshiruvi.",
-    "category": "medicine",
-    "related": []
-  },
-  "biopsy": {
-    "ru": "Биопсия",
-    "uz": "Biopsiya",
-    "parent": "diagnostic_tests",
-    "description_ru": "Исследование ткани.",
-    "description_uz": "To‘qimani tekshirish.",
-    "category": "medicine",
-    "related": []
-  },
-  "pregnancy_test": {
-    "ru": "Тест на беременность",
-    "uz": "Homiladorlik testi",
-    "parent": "medical_tests",
-    "description_ru": "Определение беременности.",
-    "description_uz": "Homiladorlikni aniqlash.",
-    "category": "medicine",
-    "related": []
-  },
-  "medical_staff": {
-    "ru": "Медицинский персонал",
-    "uz": "Tibbiy xodimlar",
-    "parent": "medicine",
-    "description_ru": "Специалисты в сфере здравоохранения.",
-    "description_uz": "Sog‘liqni saqlash mutaxassislari.",
-    "category": "medicine",
-    "related": []
-  },
-  "doctor": {
-    "ru": "Врач",
-    "uz": "Shifokor",
-    "parent": "medical_staff",
-    "description_ru": "Лечит пациентов.",
-    "description_uz": "Bemorlarni davolaydi.",
-    "category": "medicine",
-    "related": []
-  },
-  "nurse": {
-    "ru": "Медсестра",
-    "uz": "Hamshira",
-    "parent": "medical_staff",
-    "description_ru": "Помогает врачу.",
-    "description_uz": "Shifokorga yordam beradi.",
-    "category": "medicine",
-    "related": []
-  },
-  "surgeon": {
-    "ru": "Хирург",
-    "uz": "Jarroh",
-    "parent": "medical_staff",
-    "description_ru": "Проводит операции.",
-    "description_uz": "Operatsiya qiladi.",
-    "category": "medicine",
-    "related": []
-  },
-  "dentist": {
-    "ru": "Стоматолог",
-    "uz": "Stomatolog",
-    "parent": "medical_staff",
-    "description_ru": "Лечит зубы.",
-    "description_uz": "Tishlarni davolaydi.",
-    "category": "medicine",
-    "related": []
-  },
-  "pharmacist": {
-    "ru": "Фармацевт",
-    "uz": "Farmatsevt",
-    "parent": "medical_staff",
-    "description_ru": "Работает в аптеке.",
-    "description_uz": "Dorixonada ishlaydi.",
-    "category": "medicine",
-    "related": []
-  },
-  "therapist": {
-    "ru": "Терапевт",
-    "uz": "Terapevt",
-    "parent": "medical_staff",
-    "description_ru": "Общий врач.",
-    "description_uz": "Umumiy shifokor.",
-    "category": "medicine",
-    "related": []
-  },
-  "pediatrician": {
-    "ru": "Педиатр",
-    "uz": "Pediatr",
-    "parent": "medical_staff",
-    "description_ru": "Лечит детей.",
-    "description_uz": "Bolalarni davolaydi.",
-    "category": "medicine",
-    "related": []
-  },
-  "anesthesiologist": {
-    "ru": "Анестезиолог",
-    "uz": "Anesteziolog",
-    "parent": "medical_staff",
-    "description_ru": "Обеспечивает наркоз.",
-    "description_uz": "Narkoz beradi.",
-    "category": "medicine",
-    "related": []
-  },
-  "radiologist": {
-    "ru": "Радиолог",
-    "uz": "Radiolog",
-    "parent": "medical_staff",
-    "description_ru": "Проводит диагностику.",
-    "description_uz": "Tashxis qo‘yadi.",
-    "category": "medicine",
-    "related": []
-  },
-  "hospital_departments": {
-    "ru": "Отделения больницы",
-    "uz": "Kasalxona bo‘limlari",
-    "parent": "medicine",
-    "description_ru": "Разделы медицинского учреждения.",
-    "description_uz": "Tibbiy muassasa bo‘limlari.",
-    "category": "medicine",
-    "related": []
-  },
-  "emergency_room": {
-    "ru": "Приёмное отделение",
-    "uz": "Qabul bo‘limi",
-    "parent": "hospital_departments",
-    "description_ru": "Экстренная помощь.",
-    "description_uz": "Shoshilinch yordam.",
-    "category": "medicine",
-    "related": []
-  },
-  "intensive_care": {
-    "ru": "Реанимация",
-    "uz": "Reanimatsiya",
-    "parent": "hospital_departments",
-    "description_ru": "Критические пациенты.",
-    "description_uz": "Og‘ir bemorlar.",
-    "category": "medicine",
-    "related": []
-  },
-  "maternity": {
-    "ru": "Родильное отделение",
-    "uz": "Tug‘ruq bo‘limi",
-    "parent": "hospital_departments",
-    "description_ru": "Роды.",
-    "description_uz": "Tug‘ruq jarayoni.",
-    "category": "medicine",
-    "related": []
-  },
-  "laboratory": {
-    "ru": "Лаборатория",
-    "uz": "Laboratoriya",
-    "parent": "hospital_departments",
-    "description_ru": "Проведение анализов.",
-    "description_uz": "Tahlillar o‘tkaziladi.",
-    "category": "medicine",
-    "related": []
-  },
-  "pharmacy_department": {
-    "ru": "Аптека",
-    "uz": "Dorixona bo‘limi",
-    "parent": "hospital_departments",
-    "description_ru": "Выдача лекарств.",
-    "description_uz": "Dori berish.",
-    "category": "medicine",
-    "related": []
-  },
-  "surgery_department": {
-    "ru": "Хирургическое отделение",
-    "uz": "Jarrohlik bo‘limi",
-    "parent": "hospital_departments",
-    "description_ru": "Операции.",
-    "description_uz": "Operatsiyalar.",
-    "category": "medicine",
-    "related": []
-  },
-  "cardiology_department": {
-    "ru": "Кардиологическое отделение",
-    "uz": "Kardiologiya bo‘limi",
-    "parent": "hospital_departments",
-    "description_ru": "Лечение сердца.",
-    "description_uz": "Yurak davolash.",
-    "category": "medicine",
-    "related": []
-  },
-  "neurology_department": {
-    "ru": "Неврологическое отделение",
-    "uz": "Nevrologiya bo‘limi",
-    "parent": "hospital_departments",
-    "description_ru": "Лечение нервной системы.",
-    "description_uz": "Asab tizimi davolash.",
-    "category": "medicine",
-    "related": []
-  },
-  "pediatrics_department": {
-    "ru": "Детское отделение",
-    "uz": "Bolalar bo‘limi",
-    "parent": "hospital_departments",
-    "description_ru": "Лечение детей.",
-    "description_uz": "Bolalar davolash.",
-    "category": "medicine",
-    "related": []
-  },
-  "symptoms": {
-    "ru": "Симптомы",
-    "uz": "Alomatlar",
-    "parent": "medicine",
-    "description_ru": "Признаки болезни.",
-    "description_uz": "Kasallik belgilari.",
-    "category": "medicine",
-    "related": []
-  },
-  "fever": {
-    "ru": "Жар",
-    "uz": "Isitma",
-    "parent": "symptoms",
-    "description_ru": "Повышенная температура.",
-    "description_uz": "Harorat ko‘tarilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "cough": {
-    "ru": "Кашель",
-    "uz": "Yo‘tal",
-    "parent": "symptoms",
-    "description_ru": "Раздражение дыхательных путей.",
-    "description_uz": "Nafas yo‘li bezovtaligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "headache": {
-    "ru": "Головная боль",
-    "uz": "Bosh og‘rig‘i",
-    "parent": "symptoms",
-    "description_ru": "Боль в голове.",
-    "description_uz": "Bosh og‘rig‘i.",
-    "category": "medicine",
-    "related": []
-  },
-  "nausea": {
-    "ru": "Тошнота",
-    "uz": "Ko‘ngil aynishi",
-    "parent": "symptoms",
-    "description_ru": "Чувство рвоты.",
-    "description_uz": "Qusish hissi.",
-    "category": "medicine",
-    "related": []
-  },
-  "fatigue": {
-    "ru": "Усталость",
-    "uz": "Charchoq",
-    "parent": "symptoms",
-    "description_ru": "Слабость организма.",
-    "description_uz": "Organizm holsizligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "dizziness": {
-    "ru": "Головокружение",
-    "uz": "Bosh aylanishi",
-    "parent": "symptoms",
-    "description_ru": "Потеря равновесия.",
-    "description_uz": "Muvozanat yo‘qolishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "sore_throat": {
-    "ru": "Боль в горле",
-    "uz": "Tomog‘ og‘rig‘i",
-    "parent": "symptoms",
-    "description_ru": "Воспаление горла.",
-    "description_uz": "Tomog‘ yallig‘lanishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "rash": {
-    "ru": "Сыпь",
-    "uz": "Toshma",
-    "parent": "symptoms",
-    "description_ru": "Высыпания на коже.",
-    "description_uz": "Terida toshma.",
-    "category": "medicine",
-    "related": []
-  },
-  "shortness_of_breath": {
-    "ru": "Одышка",
-    "uz": "Nafas qisishi",
-    "parent": "symptoms",
-    "description_ru": "Трудности дыхания.",
-    "description_uz": "Nafas olish qiyinligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "mental_health": {
-    "ru": "Психическое здоровье",
-    "uz": "Ruhiy salomatlik",
-    "parent": "medicine",
-    "description_ru": "Состояние психики человека.",
-    "description_uz": "Inson ruhiy holati.",
-    "category": "medicine",
-    "related": []
-  },
-  "depression": {
-    "ru": "Депрессия",
-    "uz": "Depressiya",
-    "parent": "mental_health",
-    "description_ru": "Подавленное состояние.",
-    "description_uz": "Tushkunlik holati.",
-    "category": "medicine",
-    "related": []
-  },
-  "anxiety": {
-    "ru": "Тревожность",
-    "uz": "Tashvish",
-    "parent": "mental_health",
-    "description_ru": "Постоянное беспокойство.",
-    "description_uz": "Doimiy xavotir.",
-    "category": "medicine",
-    "related": []
-  },
-  "stress": {
-    "ru": "Стресс",
-    "uz": "Stress",
-    "parent": "mental_health",
-    "description_ru": "Нервное напряжение.",
-    "description_uz": "Asabiy zo‘riqish.",
-    "category": "medicine",
-    "related": []
-  },
-  "insomnia": {
-    "ru": "Бессонница",
-    "uz": "Uyqusizlik",
-    "parent": "mental_health",
-    "description_ru": "Нарушение сна.",
-    "description_uz": "Uyqu buzilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "panic_attack": {
-    "ru": "Паническая атака",
-    "uz": "Panik hujum",
-    "parent": "mental_health",
-    "description_ru": "Резкий приступ страха.",
-    "description_uz": "Kuchli qo‘rquv hujumi.",
-    "category": "medicine",
-    "related": []
-  },
-  "phobia": {
-    "ru": "Фобия",
-    "uz": "Fobiya",
-    "parent": "mental_health",
-    "description_ru": "Иррациональный страх.",
-    "description_uz": "Asossiz qo‘rquv.",
-    "category": "medicine",
-    "related": []
-  },
-  "bipolar_disorder": {
-    "ru": "Биполярное расстройство",
-    "uz": "Bipolyar buzilish",
-    "parent": "mental_health",
-    "description_ru": "Перепады настроения.",
-    "description_uz": "Kayfiyat o‘zgarishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "ptsd": {
-    "ru": "ПТСР",
-    "uz": "PTSR",
-    "parent": "mental_health",
-    "description_ru": "Посттравматическое расстройство.",
-    "description_uz": "Travmadan keyingi buzilish.",
-    "category": "medicine",
-    "related": []
-  },
-  "addiction": {
-    "ru": "Зависимость",
-    "uz": "Qaramlik",
-    "parent": "mental_health",
-    "description_ru": "Привыкание к веществам.",
-    "description_uz": "Moddalarga qaramlik.",
-    "category": "medicine",
-    "related": []
+    "related": [
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care"
+    ],
+    "level": 1
   },
   "body_systems": {
     "ru": "Системы организма",
@@ -824,952 +20,17 @@
     "description_ru": "Основные системы человеческого тела.",
     "description_uz": "Inson tanasining asosiy tizimlari.",
     "category": "medicine",
-    "related": []
-  },
-  "circulatory_system": {
-    "ru": "Кровеносная система",
-    "uz": "Qon aylanish tizimi",
-    "parent": "body_systems",
-    "description_ru": "Переносит кровь.",
-    "description_uz": "Qonni tashiydi.",
-    "category": "medicine",
-    "related": []
-  },
-  "respiratory_system": {
-    "ru": "Дыхательная система",
-    "uz": "Nafas olish tizimi",
-    "parent": "body_systems",
-    "description_ru": "Обеспечивает дыхание.",
-    "description_uz": "Nafas olishni ta’minlaydi.",
-    "category": "medicine",
-    "related": []
-  },
-  "digestive_system": {
-    "ru": "Пищеварительная система",
-    "uz": "Ovqat hazm qilish tizimi",
-    "parent": "body_systems",
-    "description_ru": "Переработка пищи.",
-    "description_uz": "Ovqatni hazm qiladi.",
-    "category": "medicine",
-    "related": []
-  },
-  "nervous_system": {
-    "ru": "Нервная система",
-    "uz": "Asab tizimi",
-    "parent": "body_systems",
-    "description_ru": "Передаёт сигналы.",
-    "description_uz": "Signal uzatadi.",
-    "category": "medicine",
-    "related": []
-  },
-  "skeletal_system": {
-    "ru": "Скелетная система",
-    "uz": "Suyak tizimi",
-    "parent": "body_systems",
-    "description_ru": "Поддерживает тело.",
-    "description_uz": "Tanani ushlab turadi.",
-    "category": "medicine",
-    "related": []
-  },
-  "muscular_system": {
-    "ru": "Мышечная система",
-    "uz": "Mushak tizimi",
-    "parent": "body_systems",
-    "description_ru": "Движение тела.",
-    "description_uz": "Harakatni ta’minlaydi.",
-    "category": "medicine",
-    "related": []
-  },
-  "immune_system": {
-    "ru": "Иммунная система",
-    "uz": "Immun tizimi",
-    "parent": "body_systems",
-    "description_ru": "Защита от болезней.",
-    "description_uz": "Kasallikdan himoya.",
-    "category": "medicine",
-    "related": []
-  },
-  "urinary_system": {
-    "ru": "Мочевая система",
-    "uz": "Siydik tizimi",
-    "parent": "body_systems",
-    "description_ru": "Выведение отходов.",
-    "description_uz": "Chiqindilarni chiqaradi.",
-    "category": "medicine",
-    "related": []
-  },
-  "endocrine_system": {
-    "ru": "Эндокринная система",
-    "uz": "Endokrin tizim",
-    "parent": "body_systems",
-    "description_ru": "Регулирует гормоны.",
-    "description_uz": "Gormonlarni boshqaradi.",
-    "category": "medicine",
-    "related": []
-  },
-  "dental_care": {
-    "ru": "Стоматология",
-    "uz": "Stomatologiya",
-    "parent": "medicine",
-    "description_ru": "Уход за зубами.",
-    "description_uz": "Tishlarni parvarish qilish.",
-    "category": "medicine",
-    "related": []
-  },
-  "tooth": {
-    "ru": "Зуб",
-    "uz": "Tish",
-    "parent": "dental_care",
-    "description_ru": "Костная структура во рту.",
-    "description_uz": "Og‘izdagi suyak tuzilma.",
-    "category": "medicine",
-    "related": []
-  },
-  "tooth_decay": {
-    "ru": "Кариес",
-    "uz": "Karies",
-    "parent": "dental_care",
-    "description_ru": "Разрушение зуба.",
-    "description_uz": "Tish yemirilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "braces": {
-    "ru": "Брекеты",
-    "uz": "Breket",
-    "parent": "dental_care",
-    "description_ru": "Выравнивание зубов.",
-    "description_uz": "Tishlarni tekislash.",
-    "category": "medicine",
-    "related": []
-  },
-  "dental_implant": {
-    "ru": "Имплант",
-    "uz": "Implant",
-    "parent": "dental_care",
-    "description_ru": "Замена зуба.",
-    "description_uz": "Tish o‘rnini bosadi.",
-    "category": "medicine",
-    "related": []
-  },
-  "tooth_extraction": {
-    "ru": "Удаление зуба",
-    "uz": "Tishni olish",
-    "parent": "dental_care",
-    "description_ru": "Удаление больного зуба.",
-    "description_uz": "Og‘riqli tishni olish.",
-    "category": "medicine",
-    "related": []
-  },
-  "root_canal": {
-    "ru": "Лечение канала",
-    "uz": "Kanal davolash",
-    "parent": "dental_care",
-    "description_ru": "Чистка зубного канала.",
-    "description_uz": "Tish kanalini tozalash.",
-    "category": "medicine",
-    "related": []
-  },
-  "toothbrush": {
-    "ru": "Зубная щётка",
-    "uz": "Tish cho‘tkasi",
-    "parent": "dental_care",
-    "description_ru": "Чистка зубов.",
-    "description_uz": "Tish tozalash.",
-    "category": "medicine",
-    "related": []
-  },
-  "toothpaste": {
-    "ru": "Зубная паста",
-    "uz": "Tish pastasi",
-    "parent": "dental_care",
-    "description_ru": "Средство для чистки.",
-    "description_uz": "Tish tozalash vositasi.",
-    "category": "medicine",
-    "related": []
-  },
-  "gum_disease": {
-    "ru": "Болезнь дёсен",
-    "uz": "Milk kasalligi",
-    "parent": "dental_care",
-    "description_ru": "Воспаление дёсен.",
-    "description_uz": "Milk yallig‘lanishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "pediatrics_care": {
-    "ru": "Детская медицина",
-    "uz": "Bolalar tibbiyoti",
-    "parent": "medicine",
-    "description_ru": "Лечение детей.",
-    "description_uz": "Bolalarni davolash.",
-    "category": "medicine",
-    "related": []
-  },
-  "newborn": {
-    "ru": "Новорождённый",
-    "uz": "Yangi tug‘ilgan",
-    "parent": "pediatrics_care",
-    "description_ru": "Ребёнок до 1 месяца.",
-    "description_uz": "1 oylik chaqaloq.",
-    "category": "medicine",
-    "related": []
-  },
-  "vaccination_schedule": {
-    "ru": "График вакцинации",
-    "uz": "Vaksina jadvali",
-    "parent": "pediatrics_care",
-    "description_ru": "План прививок.",
-    "description_uz": "Emlash rejasi.",
-    "category": "medicine",
-    "related": []
-  },
-  "child_fever": {
-    "ru": "Детская температура",
-    "uz": "Bolada isitma",
-    "parent": "pediatrics_care",
-    "description_ru": "Повышение температуры.",
-    "description_uz": "Harorat ko‘tarilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "colic": {
-    "ru": "Колики",
-    "uz": "Ich og‘rig‘i",
-    "parent": "pediatrics_care",
-    "description_ru": "Боль в животе.",
-    "description_uz": "Qorin og‘rig‘i.",
-    "category": "medicine",
-    "related": []
-  },
-  "measles": {
-    "ru": "Корь",
-    "uz": "Qizamiq",
-    "parent": "pediatrics_care",
-    "description_ru": "Инфекционная болезнь.",
-    "description_uz": "Yuqumli kasallik.",
-    "category": "medicine",
-    "related": []
-  },
-  "chickenpox": {
-    "ru": "Ветрянка",
-    "uz": "Suvchechak",
-    "parent": "pediatrics_care",
-    "description_ru": "Вирусная инфекция.",
-    "description_uz": "Virusli kasallik.",
-    "category": "medicine",
-    "related": []
-  },
-  "growth_monitoring": {
-    "ru": "Контроль роста",
-    "uz": "O‘sishni nazorat",
-    "parent": "pediatrics_care",
-    "description_ru": "Отслеживание развития.",
-    "description_uz": "Rivojlanishni kuzatish.",
-    "category": "medicine",
-    "related": []
-  },
-  "child_nutrition": {
-    "ru": "Детское питание",
-    "uz": "Bolalar oziqlanishi",
-    "parent": "pediatrics_care",
-    "description_ru": "Рацион ребёнка.",
-    "description_uz": "Bola ratsioni.",
-    "category": "medicine",
-    "related": []
-  },
-  "pediatric_checkup": {
-    "ru": "Осмотр ребёнка",
-    "uz": "Bolani ko‘rikdan o‘tkazish",
-    "parent": "pediatrics_care",
-    "description_ru": "Регулярный осмотр.",
-    "description_uz": "Muntazam tekshiruv.",
-    "category": "medicine",
-    "related": []
-  },
-  "reproductive_health": {
-    "ru": "Репродуктивное здоровье",
-    "uz": "Reproduktiv salomatlik",
-    "parent": "medicine",
-    "description_ru": "Здоровье репродуктивной системы.",
-    "description_uz": "Reproduktiv tizim salomatligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "pregnancy": {
-    "ru": "Беременность",
-    "uz": "Homiladorlik",
-    "parent": "reproductive_health",
-    "description_ru": "Период вынашивания.",
-    "description_uz": "Homila rivojlanish davri.",
-    "category": "medicine",
-    "related": []
-  },
-  "ultrasound_pregnancy": {
-    "ru": "УЗИ беременности",
-    "uz": "Homiladorlik UZI",
-    "parent": "reproductive_health",
-    "description_ru": "Осмотр плода.",
-    "description_uz": "Homilani tekshirish.",
-    "category": "medicine",
-    "related": []
-  },
-  "contraception": {
-    "ru": "Контрацепция",
-    "uz": "Kontratseptsiya",
-    "parent": "reproductive_health",
-    "description_ru": "Предотвращение беременности.",
-    "description_uz": "Homiladorlikni oldini olish.",
-    "category": "medicine",
-    "related": []
-  },
-  "fertility": {
-    "ru": "Фертильность",
-    "uz": "Homiladorlik qobiliyati",
-    "parent": "reproductive_health",
-    "description_ru": "Способность к зачатию.",
-    "description_uz": "Homilador bo‘lish qobiliyati.",
-    "category": "medicine",
-    "related": []
-  },
-  "menstruation": {
-    "ru": "Менструация",
-    "uz": "Hayz",
-    "parent": "reproductive_health",
-    "description_ru": "Женский цикл.",
-    "description_uz": "Ayol sikli.",
-    "category": "medicine",
-    "related": []
-  },
-  "ivf": {
-    "ru": "ЭКО",
-    "uz": "EKO",
-    "parent": "reproductive_health",
-    "description_ru": "Искусственное оплодотворение.",
-    "description_uz": "Sun’iy urug‘lantirish.",
-    "category": "medicine",
-    "related": []
-  },
-  "prenatal_care": {
-    "ru": "Дородовой уход",
-    "uz": "Homiladorlik nazorati",
-    "parent": "reproductive_health",
-    "description_ru": "Контроль беременности.",
-    "description_uz": "Homiladorlikni kuzatish.",
-    "category": "medicine",
-    "related": []
-  },
-  "postnatal_care": {
-    "ru": "Послеродовой уход",
-    "uz": "Tug‘ruqdan keyingi parvarish",
-    "parent": "reproductive_health",
-    "description_ru": "Уход после родов.",
-    "description_uz": "Tug‘ruqdan keyingi parvarish.",
-    "category": "medicine",
-    "related": []
-  },
-  "infertility": {
-    "ru": "Бесплодие",
-    "uz": "Bevosita homilador bo‘lmaslik",
-    "parent": "reproductive_health",
-    "description_ru": "Неспособность зачать.",
-    "description_uz": "Homilador bo‘la olmaslik.",
-    "category": "medicine",
-    "related": []
-  },
-  "heart_conditions": {
-    "ru": "Заболевания сердца",
-    "uz": "Yurak kasalliklari",
-    "parent": "medicine",
-    "description_ru": "Проблемы сердечно-сосудистой системы.",
-    "description_uz": "Yurak va qon tomir kasalliklari.",
-    "category": "medicine",
-    "related": []
-  },
-  "heart_attack": {
-    "ru": "Инфаркт",
-    "uz": "Yurak xuruji",
-    "parent": "heart_conditions",
-    "description_ru": "Закупорка сосудов.",
-    "description_uz": "Tomir tiqilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "arrhythmia": {
-    "ru": "Аритмия",
-    "uz": "Aritmiya",
-    "parent": "heart_conditions",
-    "description_ru": "Нарушение ритма.",
-    "description_uz": "Yurak ritmi buzilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "angina": {
-    "ru": "Стенокардия",
-    "uz": "Stenokardiya",
-    "parent": "heart_conditions",
-    "description_ru": "Боль в груди.",
-    "description_uz": "Ko‘krak og‘rig‘i.",
-    "category": "medicine",
-    "related": []
-  },
-  "heart_failure": {
-    "ru": "Сердечная недостаточность",
-    "uz": "Yurak yetishmovchiligi",
-    "parent": "heart_conditions",
-    "description_ru": "Слабая работа сердца.",
-    "description_uz": "Yurak zaifligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "tachycardia": {
-    "ru": "Тахикардия",
-    "uz": "Taxikardiya",
-    "parent": "heart_conditions",
-    "description_ru": "Быстрое сердцебиение.",
-    "description_uz": "Tez yurak urishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "bradycardia": {
-    "ru": "Брадикардия",
-    "uz": "Bradikardiya",
-    "parent": "heart_conditions",
-    "description_ru": "Медленное сердцебиение.",
-    "description_uz": "Sekin yurak urishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "hypertrophy": {
-    "ru": "Гипертрофия",
-    "uz": "Gipertrofiya",
-    "parent": "heart_conditions",
-    "description_ru": "Увеличение сердца.",
-    "description_uz": "Yurak kattalashishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "cardiomyopathy": {
-    "ru": "Кардиомиопатия",
-    "uz": "Kardiomiopatiya",
-    "parent": "heart_conditions",
-    "description_ru": "Болезнь сердечной мышцы.",
-    "description_uz": "Yurak mushagi kasalligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "stroke": {
-    "ru": "Инсульт",
-    "uz": "Insult",
-    "parent": "heart_conditions",
-    "description_ru": "Нарушение кровообращения мозга.",
-    "description_uz": "Miya qon aylanishi buzilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "infectious_diseases": {
-    "ru": "Инфекционные заболевания",
-    "uz": "Yuqumli kasalliklar",
-    "parent": "medicine",
-    "description_ru": "Болезни, вызываемые вирусами и бактериями.",
-    "description_uz": "Virus va bakteriyalar sababli kasalliklar.",
-    "category": "medicine",
-    "related": []
-  },
-  "tuberculosis": {
-    "ru": "Туберкулёз",
-    "uz": "Sil",
-    "parent": "infectious_diseases",
-    "description_ru": "Инфекция лёгких.",
-    "description_uz": "O‘pka kasalligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "hepatitis": {
-    "ru": "Гепатит",
-    "uz": "Gepatit",
-    "parent": "infectious_diseases",
-    "description_ru": "Воспаление печени.",
-    "description_uz": "Jigar yallig‘lanishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "malaria": {
-    "ru": "Малярия",
-    "uz": "Bezgak",
-    "parent": "infectious_diseases",
-    "description_ru": "Паразитарная инфекция.",
-    "description_uz": "Parazitar kasallik.",
-    "category": "medicine",
-    "related": []
-  },
-  "hiv": {
-    "ru": "ВИЧ",
-    "uz": "OIV",
-    "parent": "infectious_diseases",
-    "description_ru": "Вирус иммунодефицита.",
-    "description_uz": "Immunitet virusli kasalligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "measles_disease": {
-    "ru": "Корь",
-    "uz": "Qizamiq",
-    "parent": "infectious_diseases",
-    "description_ru": "Вирусная сыпь.",
-    "description_uz": "Virusli toshma.",
-    "category": "medicine",
-    "related": []
-  },
-  "rabies": {
-    "ru": "Бешенство",
-    "uz": "Quturish",
-    "parent": "infectious_diseases",
-    "description_ru": "Вирус после укуса.",
-    "description_uz": "Hayvon tishlashidan yuqadi.",
-    "category": "medicine",
-    "related": []
-  },
-  "cholera": {
-    "ru": "Холера",
-    "uz": "Xolera",
-    "parent": "infectious_diseases",
-    "description_ru": "Кишечная инфекция.",
-    "description_uz": "Ichak kasalligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "diagnostic_tests": {
-    "ru": "Диагностические тесты",
-    "uz": "Tashxis testlari",
-    "parent": "medicine",
-    "description_ru": "Методы выявления болезней.",
-    "description_uz": "Kasallikni aniqlash usullari.",
-    "category": "medicine",
-    "related": []
-  },
-  "allergy_test": {
-    "ru": "Тест на аллергию",
-    "uz": "Allergiya testi",
-    "parent": "diagnostic_tests",
-    "description_ru": "Выявление аллергии.",
-    "description_uz": "Allergiyani aniqlash.",
-    "category": "medicine",
-    "related": []
-  },
-  "pain_conditions": {
-    "ru": "Болевые состояния",
-    "uz": "Og‘riqli holatlar",
-    "parent": "medicine",
-    "description_ru": "Состояния, сопровождающиеся болью.",
-    "description_uz": "Og‘riq bilan kechuvchi holatlar.",
-    "category": "medicine",
-    "related": []
-  },
-  "back_pain": {
-    "ru": "Боль в спине",
-    "uz": "Bel og‘rig‘i",
-    "parent": "pain_conditions",
-    "description_ru": "Боль в позвоночнике.",
-    "description_uz": "Umurtqa og‘rig‘i.",
-    "category": "medicine",
-    "related": []
-  },
-  "joint_pain": {
-    "ru": "Боль в суставах",
-    "uz": "Bo‘g‘im og‘rig‘i",
-    "parent": "pain_conditions",
-    "description_ru": "Воспаление суставов.",
-    "description_uz": "Bo‘g‘im yallig‘lanishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "tooth_pain": {
-    "ru": "Зубная боль",
-    "uz": "Tish og‘rig‘i",
-    "parent": "pain_conditions",
-    "description_ru": "Боль в зубе.",
-    "description_uz": "Tish og‘rig‘i.",
-    "category": "medicine",
-    "related": []
-  },
-  "ear_pain": {
-    "ru": "Боль в ухе",
-    "uz": "Quloq og‘rig‘i",
-    "parent": "pain_conditions",
-    "description_ru": "Воспаление уха.",
-    "description_uz": "Quloq yallig‘lanishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "abdominal_pain": {
-    "ru": "Боль в животе",
-    "uz": "Qorin og‘rig‘i",
-    "parent": "pain_conditions",
-    "description_ru": "Боль в области живота.",
-    "description_uz": "Qorin sohasida og‘riq.",
-    "category": "medicine",
-    "related": []
-  },
-  "muscle_pain": {
-    "ru": "Мышечная боль",
-    "uz": "Mushak og‘rig‘i",
-    "parent": "pain_conditions",
-    "description_ru": "Боль в мышцах.",
-    "description_uz": "Mushak og‘rig‘i.",
-    "category": "medicine",
-    "related": []
-  },
-  "chest_pain": {
-    "ru": "Боль в груди",
-    "uz": "Ko‘krak og‘rig‘i",
-    "parent": "pain_conditions",
-    "description_ru": "Боль в грудной клетке.",
-    "description_uz": "Ko‘krak qafasi og‘rig‘i.",
-    "category": "medicine",
-    "related": []
-  },
-  "neck_pain": {
-    "ru": "Боль в шее",
-    "uz": "Bo‘yin og‘rig‘i",
-    "parent": "pain_conditions",
-    "description_ru": "Боль в области шеи.",
-    "description_uz": "Bo‘yin og‘rig‘i.",
-    "category": "medicine",
-    "related": []
-  },
-  "genetic_disorders": {
-    "ru": "Генетические заболевания",
-    "uz": "Genetik kasalliklar",
-    "parent": "medicine",
-    "description_ru": "Наследственные болезни.",
-    "description_uz": "Irsiy kasalliklar.",
-    "category": "medicine",
-    "related": []
-  },
-  "down_syndrome": {
-    "ru": "Синдром Дауна",
-    "uz": "Daun sindromi",
-    "parent": "genetic_disorders",
-    "description_ru": "Хромосомное нарушение.",
-    "description_uz": "Xromosoma buzilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "cystic_fibrosis": {
-    "ru": "Муковисцидоз",
-    "uz": "Mukovistsidoz",
-    "parent": "genetic_disorders",
-    "description_ru": "Нарушение лёгких.",
-    "description_uz": "O‘pka irsiy kasalligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "hemophilia": {
-    "ru": "Гемофилия",
-    "uz": "Gemofiliya",
-    "parent": "genetic_disorders",
-    "description_ru": "Нарушение свертываемости.",
-    "description_uz": "Qon ivish buzilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "sickle_cell_anemia": {
-    "ru": "Серповидная анемия",
-    "uz": "Sickle anemiya",
-    "parent": "genetic_disorders",
-    "description_ru": "Аномалия эритроцитов.",
-    "description_uz": "Qizil qon hujayralari buzilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "thalassemia": {
-    "ru": "Талассемия",
-    "uz": "Talassemiya",
-    "parent": "genetic_disorders",
-    "description_ru": "Генетическая анемия.",
-    "description_uz": "Irsiy kamqonlik.",
-    "category": "medicine",
-    "related": []
-  },
-  "albinism": {
-    "ru": "Альбинизм",
-    "uz": "Albinizm",
-    "parent": "genetic_disorders",
-    "description_ru": "Отсутствие пигмента.",
-    "description_uz": "Pigment yetishmasligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "turner_syndrome": {
-    "ru": "Синдром Тёрнера",
-    "uz": "Terner sindromi",
-    "parent": "genetic_disorders",
-    "description_ru": "Хромосомное отклонение.",
-    "description_uz": "Xromosoma o‘zgarishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "fragile_x": {
-    "ru": "Синдром ломкой Х-хромосомы",
-    "uz": "Fragile X sindromi",
-    "parent": "genetic_disorders",
-    "description_ru": "Генетическое нарушение развития.",
-    "description_uz": "Irsiy rivojlanish buzilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "muscular_dystrophy": {
-    "ru": "Мышечная дистрофия",
-    "uz": "Mushak distrofiyasi",
-    "parent": "genetic_disorders",
-    "description_ru": "Ослабление мышц.",
-    "description_uz": "Mushak zaifligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "chronic_diseases": {
-    "ru": "Хронические заболевания",
-    "uz": "Surunkali kasalliklar",
-    "parent": "medicine",
-    "description_ru": "Длительные заболевания.",
-    "description_uz": "Uzoq davom etuvchi kasalliklar.",
-    "category": "medicine",
-    "related": []
-  },
-  "arthritis": {
-    "ru": "Артрит",
-    "uz": "Artrit",
-    "parent": "chronic_diseases",
-    "description_ru": "Воспаление суставов.",
-    "description_uz": "Bo‘g‘im yallig‘lanishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "epilepsy": {
-    "ru": "Эпилепсия",
-    "uz": "Epilepsiya",
-    "parent": "chronic_diseases",
-    "description_ru": "Судорожные приступы.",
-    "description_uz": "Tutqanoq kasalligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "parkinson": {
-    "ru": "Болезнь Паркинсона",
-    "uz": "Parkinson kasalligi",
-    "parent": "chronic_diseases",
-    "description_ru": "Нарушение движения.",
-    "description_uz": "Harakat buzilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "alzheimer": {
-    "ru": "Болезнь Альцгеймера",
-    "uz": "Altsgeymer kasalligi",
-    "parent": "chronic_diseases",
-    "description_ru": "Потеря памяти.",
-    "description_uz": "Xotira yo‘qolishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "chronic_kidney_disease": {
-    "ru": "Хроническая болезнь почек",
-    "uz": "Buyrak surunkali kasalligi",
-    "parent": "chronic_diseases",
-    "description_ru": "Поражение почек.",
-    "description_uz": "Buyrak shikastlanishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "copd": {
-    "ru": "ХОБЛ",
-    "uz": "XO‘BL",
-    "parent": "chronic_diseases",
-    "description_ru": "Хроническое заболевание лёгких.",
-    "description_uz": "Surunkali o‘pka kasalligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "laboratory_values": {
-    "ru": "Лабораторные показатели",
-    "uz": "Laborator ko‘rsatkichlar",
-    "parent": "medicine",
-    "description_ru": "Основные показатели анализов.",
-    "description_uz": "Tahlil natijalari ko‘rsatkichlari.",
-    "category": "medicine",
-    "related": []
-  },
-  "hemoglobin": {
-    "ru": "Гемоглобин",
-    "uz": "Gemoglobin",
-    "parent": "laboratory_values",
-    "description_ru": "Белок крови.",
-    "description_uz": "Qondagi oqsil.",
-    "category": "medicine",
-    "related": []
-  },
-  "white_blood_cells": {
-    "ru": "Лейкоциты",
-    "uz": "Leykotsitlar",
-    "parent": "laboratory_values",
-    "description_ru": "Иммунные клетки.",
-    "description_uz": "Immun hujayralari.",
-    "category": "medicine",
-    "related": []
-  },
-  "platelets": {
-    "ru": "Тромбоциты",
-    "uz": "Trombotsitlar",
-    "parent": "laboratory_values",
-    "description_ru": "Свертывание крови.",
-    "description_uz": "Qon ivishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "glucose_level": {
-    "ru": "Уровень глюкозы",
-    "uz": "Glyukoza darajasi",
-    "parent": "laboratory_values",
-    "description_ru": "Сахар крови.",
-    "description_uz": "Qondagi shakar.",
-    "category": "medicine",
-    "related": []
-  },
-  "cholesterol": {
-    "ru": "Холестерин",
-    "uz": "Xolesterin",
-    "parent": "laboratory_values",
-    "description_ru": "Жировой показатель.",
-    "description_uz": "Yog‘ ko‘rsatkichi.",
-    "category": "medicine",
-    "related": []
-  },
-  "creatinine": {
-    "ru": "Креатинин",
-    "uz": "Kreatinin",
-    "parent": "laboratory_values",
-    "description_ru": "Показатель почек.",
-    "description_uz": "Buyrak ko‘rsatkichi.",
-    "category": "medicine",
-    "related": []
-  },
-  "bilirubin": {
-    "ru": "Билирубин",
-    "uz": "Bilirubin",
-    "parent": "laboratory_values",
-    "description_ru": "Показатель печени.",
-    "description_uz": "Jigar ko‘rsatkichi.",
-    "category": "medicine",
-    "related": []
-  },
-  "esr": {
-    "ru": "СОЭ",
-    "uz": "ESR",
-    "parent": "laboratory_values",
-    "description_ru": "Скорость оседания.",
-    "description_uz": "Cho‘kish tezligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "thyroid_hormone": {
-    "ru": "Гормон щитовидной железы",
-    "uz": "Qalqonsimon bez gormoni",
-    "parent": "laboratory_values",
-    "description_ru": "Регуляция обмена веществ.",
-    "description_uz": "Modda almashinuvi nazorati.",
-    "category": "medicine",
-    "related": []
-  },
-  "hygiene": {
-    "ru": "Гигиена",
-    "uz": "Gigiyena",
-    "parent": "medicine",
-    "description_ru": "Поддержание чистоты и здоровья.",
-    "description_uz": "Tozalik va sog‘liqni saqlash.",
-    "category": "medicine",
-    "related": []
-  },
-  "hand_washing": {
-    "ru": "Мытьё рук",
-    "uz": "Qo‘l yuvish",
-    "parent": "hygiene",
-    "description_ru": "Удаление микробов.",
-    "description_uz": "Mikroblarni yo‘qotish.",
-    "category": "medicine",
-    "related": []
-  },
-  "oral_hygiene": {
-    "ru": "Гигиена полости рта",
-    "uz": "Og‘iz gigiyenasi",
-    "parent": "hygiene",
-    "description_ru": "Уход за зубами.",
-    "description_uz": "Tish parvarishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "body_hygiene": {
-    "ru": "Гигиена тела",
-    "uz": "Tana gigiyenasi",
-    "parent": "hygiene",
-    "description_ru": "Поддержание чистоты.",
-    "description_uz": "Tana tozaligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "sanitizer": {
-    "ru": "Антисептик",
-    "uz": "Antiseptik",
-    "parent": "hygiene",
-    "description_ru": "Средство для дезинфекции.",
-    "description_uz": "Dezinfeksiya vositasi.",
-    "category": "medicine",
-    "related": []
-  },
-  "mask": {
-    "ru": "Маска",
-    "uz": "Niqob",
-    "parent": "hygiene",
-    "description_ru": "Защита дыхания.",
-    "description_uz": "Nafas himoyasi.",
-    "category": "medicine",
-    "related": []
-  },
-  "gloves": {
-    "ru": "Перчатки",
-    "uz": "Qo‘lqop",
-    "parent": "hygiene",
-    "description_ru": "Защита рук.",
-    "description_uz": "Qo‘l himoyasi.",
-    "category": "medicine",
-    "related": []
-  },
-  "disinfection": {
-    "ru": "Дезинфекция",
-    "uz": "Dezinfeksiya",
-    "parent": "hygiene",
-    "description_ru": "Уничтожение микробов.",
-    "description_uz": "Mikroblarni yo‘qotish.",
-    "category": "medicine",
-    "related": []
-  },
-  "sterilization": {
-    "ru": "Стерилизация",
-    "uz": "Sterilizatsiya",
-    "parent": "hygiene",
-    "description_ru": "Полное уничтожение микробов.",
-    "description_uz": "Mikroblarni to‘liq yo‘qotish.",
-    "category": "medicine",
-    "related": []
-  },
-  "clean_water": {
-    "ru": "Чистая вода",
-    "uz": "Toza suv",
-    "parent": "hygiene",
-    "description_ru": "Безопасная для питья вода.",
-    "description_uz": "Ichish uchun xavfsiz suv.",
-    "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "diagnostic_tests",
+      "circulatory_system",
+      "digestive_system",
+      "endocrine_system"
+    ],
+    "level": 2
   },
   "brain_disorders": {
     "ru": "Заболевания мозга",
@@ -1778,169 +39,92 @@
     "description_ru": "Нарушения работы мозга.",
     "description_uz": "Miya faoliyati buzilishi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "body_systems",
+      "chronic_diseases",
+      "dental_care",
+      "diagnostic_tests",
+      "brain_hemorrhage",
+      "brain_infection",
+      "brain_tumor"
+    ],
+    "level": 2
   },
-  "brain_tumor": {
-    "ru": "Опухоль мозга",
-    "uz": "Miya o‘smalari",
-    "parent": "brain_disorders",
-    "description_ru": "Новообразование в мозге.",
-    "description_uz": "Miyada o‘sma.",
-    "category": "medicine",
-    "related": []
-  },
-  "meningitis": {
-    "ru": "Менингит",
-    "uz": "Meningit",
-    "parent": "brain_disorders",
-    "description_ru": "Воспаление оболочек мозга.",
-    "description_uz": "Miya pardasi yallig‘lanishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "encephalitis": {
-    "ru": "Энцефалит",
-    "uz": "Ensefalit",
-    "parent": "brain_disorders",
-    "description_ru": "Воспаление мозга.",
-    "description_uz": "Miya yallig‘lanishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "concussion": {
-    "ru": "Сотрясение мозга",
-    "uz": "Miya chayqalishi",
-    "parent": "brain_disorders",
-    "description_ru": "Травма головы.",
-    "description_uz": "Bosh jarohati.",
-    "category": "medicine",
-    "related": []
-  },
-  "brain_hemorrhage": {
-    "ru": "Кровоизлияние в мозг",
-    "uz": "Miyada qon ketish",
-    "parent": "brain_disorders",
-    "description_ru": "Разрыв сосудов.",
-    "description_uz": "Tomir yorilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "epileptic_seizure": {
-    "ru": "Эпилептический приступ",
-    "uz": "Epileptik tutqanoq",
-    "parent": "brain_disorders",
-    "description_ru": "Судорожный приступ.",
-    "description_uz": "Tutqanoq hujumi.",
-    "category": "medicine",
-    "related": []
-  },
-  "memory_loss": {
-    "ru": "Потеря памяти",
-    "uz": "Xotira yo‘qolishi",
-    "parent": "brain_disorders",
-    "description_ru": "Нарушение памяти.",
-    "description_uz": "Xotira buzilishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "brain_infection": {
-    "ru": "Инфекция мозга",
-    "uz": "Miya infeksiyasi",
-    "parent": "brain_disorders",
-    "description_ru": "Инфекционное поражение.",
-    "description_uz": "Infeksion zararlanish.",
-    "category": "medicine",
-    "related": []
-  },
-  "hydrocephalus": {
-    "ru": "Гидроцефалия",
-    "uz": "Gidrotsefaliya",
-    "parent": "brain_disorders",
-    "description_ru": "Скопление жидкости.",
-    "description_uz": "Suyuqlik to‘planishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "lung_diseases": {
-    "ru": "Заболевания лёгких",
-    "uz": "O‘pka kasalliklari",
+  "chronic_diseases": {
+    "ru": "Хронические заболевания",
+    "uz": "Surunkali kasalliklar",
     "parent": "medicine",
-    "description_ru": "Проблемы дыхательной системы.",
-    "description_uz": "Nafas tizimi kasalliklari.",
+    "description_ru": "Длительные заболевания.",
+    "description_uz": "Uzoq davom etuvchi kasalliklar.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "dental_care",
+      "diagnostic_tests",
+      "alzheimer",
+      "arthritis",
+      "asthma"
+    ],
+    "level": 2
   },
-  "bronchitis": {
-    "ru": "Бронхит",
-    "uz": "Bronxit",
-    "parent": "lung_diseases",
-    "description_ru": "Воспаление бронхов.",
-    "description_uz": "Bronx yallig‘lanishi.",
+  "dental_care": {
+    "ru": "Стоматология",
+    "uz": "Stomatologiya",
+    "parent": "medicine",
+    "description_ru": "Уход за зубами.",
+    "description_uz": "Tishlarni parvarish qilish.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "diagnostic_tests",
+      "braces",
+      "dental_implant",
+      "gum_disease"
+    ],
+    "level": 2
   },
-  "asthma_lung": {
-    "ru": "Астма",
-    "uz": "Astma",
-    "parent": "lung_diseases",
-    "description_ru": "Затруднённое дыхание.",
-    "description_uz": "Nafas qisilishi.",
+  "diagnostic_tests": {
+    "ru": "Диагностические тесты",
+    "uz": "Tashxis testlari",
+    "parent": "medicine",
+    "description_ru": "Методы выявления болезней.",
+    "description_uz": "Kasallikni aniqlash usullari.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "allergy_test",
+      "biopsy",
+      "blood_test"
+    ],
+    "level": 2
   },
-  "lung_cancer": {
-    "ru": "Рак лёгких",
-    "uz": "O‘pka saratoni",
-    "parent": "lung_diseases",
-    "description_ru": "Опухоль лёгких.",
-    "description_uz": "O‘pka o‘smasi.",
+  "diseases": {
+    "ru": "Болезни",
+    "uz": "Kasalliklar",
+    "parent": "medicine",
+    "description_ru": "Нарушения здоровья.",
+    "description_uz": "Salomatlik buzilishlari.",
     "category": "medicine",
-    "related": []
-  },
-  "copd_lung": {
-    "ru": "ХОБЛ",
-    "uz": "XO‘BL",
-    "parent": "lung_diseases",
-    "description_ru": "Хроническое поражение лёгких.",
-    "description_uz": "Surunkali o‘pka kasalligi.",
-    "category": "medicine",
-    "related": []
-  },
-  "pleurisy": {
-    "ru": "Плеврит",
-    "uz": "Plevrit",
-    "parent": "lung_diseases",
-    "description_ru": "Воспаление плевры.",
-    "description_uz": "Plevra yallig‘lanishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "emphysema": {
-    "ru": "Эмфизема",
-    "uz": "Emfizema",
-    "parent": "lung_diseases",
-    "description_ru": "Повреждение лёгочной ткани.",
-    "description_uz": "O‘pka to‘qimasi shikasti.",
-    "category": "medicine",
-    "related": []
-  },
-  "lung_fibrosis": {
-    "ru": "Фиброз лёгких",
-    "uz": "O‘pka fibroz",
-    "parent": "lung_diseases",
-    "description_ru": "Уплотнение ткани.",
-    "description_uz": "To‘qima qalinlashishi.",
-    "category": "medicine",
-    "related": []
-  },
-  "respiratory_failure": {
-    "ru": "Дыхательная недостаточность",
-    "uz": "Nafas yetishmovchiligi",
-    "parent": "lung_diseases",
-    "description_ru": "Недостаток кислорода.",
-    "description_uz": "Kislorod yetishmasligi.",
-    "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "allergy",
+      "cancer"
+    ],
+    "level": 2
   },
   "emergency_conditions": {
     "ru": "Неотложные состояния",
@@ -1949,61 +133,454 @@
     "description_ru": "Состояния, требующие срочной помощи.",
     "description_uz": "Zudlik bilan yordam talab qiluvchi holatlar.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "anaphylaxis",
+      "burn",
+      "cardiac_arrest"
+    ],
+    "level": 2
   },
-  "cardiac_arrest": {
-    "ru": "Остановка сердца",
-    "uz": "Yurak to‘xtashi",
-    "parent": "emergency_conditions",
-    "description_ru": "Прекращение работы сердца.",
-    "description_uz": "Yurak urishi to‘xtashi.",
+  "genetic_disorders": {
+    "ru": "Генетические заболевания",
+    "uz": "Genetik kasalliklar",
+    "parent": "medicine",
+    "description_ru": "Наследственные болезни.",
+    "description_uz": "Irsiy kasalliklar.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "albinism",
+      "cystic_fibrosis",
+      "down_syndrome"
+    ],
+    "level": 2
   },
-  "stroke_emergency": {
-    "ru": "Инсульт",
-    "uz": "Insult",
-    "parent": "emergency_conditions",
-    "description_ru": "Нарушение кровообращения мозга.",
-    "description_uz": "Miya qon aylanishi buzilishi.",
+  "heart_conditions": {
+    "ru": "Заболевания сердца",
+    "uz": "Yurak kasalliklari",
+    "parent": "medicine",
+    "description_ru": "Проблемы сердечно-сосудистой системы.",
+    "description_uz": "Yurak va qon tomir kasalliklari.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "angina",
+      "arrhythmia",
+      "bradycardia"
+    ],
+    "level": 2
   },
-  "severe_bleeding": {
-    "ru": "Сильное кровотечение",
-    "uz": "Kuchli qon ketish",
-    "parent": "emergency_conditions",
-    "description_ru": "Потеря крови.",
-    "description_uz": "Qon yo‘qotish.",
+  "hospital_departments": {
+    "ru": "Отделения больницы",
+    "uz": "Kasalxona bo‘limlari",
+    "parent": "medicine",
+    "description_ru": "Разделы медицинского учреждения.",
+    "description_uz": "Tibbiy muassasa bo‘limlari.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "cardiology_department",
+      "emergency_room",
+      "intensive_care"
+    ],
+    "level": 2
   },
-  "fracture": {
-    "ru": "Перелом",
-    "uz": "Siniq",
-    "parent": "emergency_conditions",
-    "description_ru": "Повреждение кости.",
-    "description_uz": "Suyak sinishi.",
+  "hygiene": {
+    "ru": "Гигиена",
+    "uz": "Gigiyena",
+    "parent": "medicine",
+    "description_ru": "Поддержание чистоты и здоровья.",
+    "description_uz": "Tozalik va sog‘liqni saqlash.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "body_hygiene",
+      "clean_water",
+      "disinfection"
+    ],
+    "level": 2
   },
-  "burn": {
-    "ru": "Ожог",
-    "uz": "Kuyish",
-    "parent": "emergency_conditions",
-    "description_ru": "Повреждение кожи.",
-    "description_uz": "Teri kuyishi.",
+  "infectious_diseases": {
+    "ru": "Инфекционные заболевания",
+    "uz": "Yuqumli kasalliklar",
+    "parent": "medicine",
+    "description_ru": "Болезни, вызываемые вирусами и бактериями.",
+    "description_uz": "Virus va bakteriyalar sababli kasalliklar.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "cholera",
+      "covid19",
+      "flu"
+    ],
+    "level": 2
   },
-  "poisoning": {
-    "ru": "Отравление",
-    "uz": "Zaharlanish",
-    "parent": "emergency_conditions",
-    "description_ru": "Попадание токсинов.",
-    "description_uz": "Zahar ta’siri.",
+  "laboratory_values": {
+    "ru": "Лабораторные показатели",
+    "uz": "Laborator ko‘rsatkichlar",
+    "parent": "medicine",
+    "description_ru": "Основные показатели анализов.",
+    "description_uz": "Tahlil natijalari ko‘rsatkichlari.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "bilirubin",
+      "cholesterol",
+      "creatinine"
+    ],
+    "level": 2
+  },
+  "lung_diseases": {
+    "ru": "Заболевания лёгких",
+    "uz": "O‘pka kasalliklari",
+    "parent": "medicine",
+    "description_ru": "Проблемы дыхательной системы.",
+    "description_uz": "Nafas tizimi kasalliklari.",
+    "category": "medicine",
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "asthma_lung",
+      "bronchitis",
+      "copd_lung"
+    ],
+    "level": 2
+  },
+  "medical_equipment": {
+    "ru": "Медицинское оборудование",
+    "uz": "Tibbiy uskunalar",
+    "parent": "medicine",
+    "description_ru": "Оборудование, используемое в медицине.",
+    "description_uz": "Tibbiyotda ishlatiladigan uskunalar.",
+    "category": "medicine",
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor"
+    ],
+    "level": 2
+  },
+  "medical_fields": {
+    "ru": "Медицинские направления",
+    "uz": "Tibbiyot yo‘nalishlari",
+    "parent": "medicine",
+    "description_ru": "Разделы медицины.",
+    "description_uz": "Tibbiyot bo‘limlari.",
+    "category": "medicine",
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "cardiology",
+      "dermatology",
+      "gynecology"
+    ],
+    "level": 2
+  },
+  "medical_staff": {
+    "ru": "Медицинский персонал",
+    "uz": "Tibbiy xodimlar",
+    "parent": "medicine",
+    "description_ru": "Специалисты в сфере здравоохранения.",
+    "description_uz": "Sog‘liqni saqlash mutaxassislari.",
+    "category": "medicine",
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "anesthesiologist",
+      "dentist",
+      "doctor"
+    ],
+    "level": 2
+  },
+  "medical_tests": {
+    "ru": "Медицинские анализы",
+    "uz": "Tibbiy tahlillar",
+    "parent": "medicine",
+    "description_ru": "Исследования для диагностики.",
+    "description_uz": "Tashxis qo‘yish uchun tekshiruvlar.",
+    "category": "medicine",
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "pregnancy_test"
+    ],
+    "level": 2
+  },
+  "medications": {
+    "ru": "Лекарства",
+    "uz": "Dori vositalari",
+    "parent": "medicine",
+    "description_ru": "Средства для лечения болезней.",
+    "description_uz": "Kasalliklarni davolash uchun vositalar.",
+    "category": "medicine",
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "analgesic",
+      "antibiotic",
+      "antipyretic"
+    ],
+    "level": 2
+  },
+  "mental_health": {
+    "ru": "Психическое здоровье",
+    "uz": "Ruhiy salomatlik",
+    "parent": "medicine",
+    "description_ru": "Состояние психики человека.",
+    "description_uz": "Inson ruhiy holati.",
+    "category": "medicine",
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "addiction",
+      "anxiety",
+      "bipolar_disorder"
+    ],
+    "level": 2
+  },
+  "pain_conditions": {
+    "ru": "Болевые состояния",
+    "uz": "Og‘riqli holatlar",
+    "parent": "medicine",
+    "description_ru": "Состояния, сопровождающиеся болью.",
+    "description_uz": "Og‘riq bilan kechuvchi holatlar.",
+    "category": "medicine",
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "abdominal_pain",
+      "back_pain",
+      "chest_pain"
+    ],
+    "level": 2
+  },
+  "pediatrics_care": {
+    "ru": "Детская медицина",
+    "uz": "Bolalar tibbiyoti",
+    "parent": "medicine",
+    "description_ru": "Лечение детей.",
+    "description_uz": "Bolalarni davolash.",
+    "category": "medicine",
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "chickenpox",
+      "child_fever",
+      "child_nutrition"
+    ],
+    "level": 2
+  },
+  "reproductive_health": {
+    "ru": "Репродуктивное здоровье",
+    "uz": "Reproduktiv salomatlik",
+    "parent": "medicine",
+    "description_ru": "Здоровье репродуктивной системы.",
+    "description_uz": "Reproduktiv tizim salomatligi.",
+    "category": "medicine",
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "contraception",
+      "fertility",
+      "infertility"
+    ],
+    "level": 2
+  },
+  "symptoms": {
+    "ru": "Симптомы",
+    "uz": "Alomatlar",
+    "parent": "medicine",
+    "description_ru": "Признаки болезни.",
+    "description_uz": "Kasallik belgilari.",
+    "category": "medicine",
+    "related": [
+      "medicine",
+      "body_systems",
+      "brain_disorders",
+      "chronic_diseases",
+      "dental_care",
+      "cough",
+      "dizziness",
+      "fatigue"
+    ],
+    "level": 2
+  },
+  "abdominal_pain": {
+    "ru": "Боль в животе",
+    "uz": "Qorin og‘rig‘i",
+    "parent": "pain_conditions",
+    "description_ru": "Боль в области живота.",
+    "description_uz": "Qorin sohasida og‘riq.",
+    "category": "medicine",
+    "related": [
+      "pain_conditions",
+      "back_pain",
+      "chest_pain",
+      "ear_pain",
+      "joint_pain",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "addiction": {
+    "ru": "Зависимость",
+    "uz": "Qaramlik",
+    "parent": "mental_health",
+    "description_ru": "Привыкание к веществам.",
+    "description_uz": "Moddalarga qaramlik.",
+    "category": "medicine",
+    "related": [
+      "mental_health",
+      "anxiety",
+      "bipolar_disorder",
+      "depression",
+      "insomnia",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "albinism": {
+    "ru": "Альбинизм",
+    "uz": "Albinizm",
+    "parent": "genetic_disorders",
+    "description_ru": "Отсутствие пигмента.",
+    "description_uz": "Pigment yetishmasligi.",
+    "category": "medicine",
+    "related": [
+      "genetic_disorders",
+      "cystic_fibrosis",
+      "down_syndrome",
+      "fragile_x",
+      "hemophilia",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "allergy": {
+    "ru": "Аллергия",
+    "uz": "Allergiya",
+    "parent": "diseases",
+    "description_ru": "Реакция организма.",
+    "description_uz": "Organizm reaksiyasi.",
+    "category": "medicine",
+    "related": [
+      "diseases",
+      "cancer",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "allergy_test": {
+    "ru": "Тест на аллергию",
+    "uz": "Allergiya testi",
+    "parent": "diagnostic_tests",
+    "description_ru": "Выявление аллергии.",
+    "description_uz": "Allergiyani aniqlash.",
+    "category": "medicine",
+    "related": [
+      "diagnostic_tests",
+      "biopsy",
+      "blood_test",
+      "ct_scan",
+      "ecg",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "alzheimer": {
+    "ru": "Болезнь Альцгеймера",
+    "uz": "Altsgeymer kasalligi",
+    "parent": "chronic_diseases",
+    "description_ru": "Потеря памяти.",
+    "description_uz": "Xotira yo‘qolishi.",
+    "category": "medicine",
+    "related": [
+      "chronic_diseases",
+      "arthritis",
+      "asthma",
+      "chronic_kidney_disease",
+      "copd",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "analgesic": {
+    "ru": "Обезболивающее",
+    "uz": "Og‘riq qoldiruvchi",
+    "parent": "medications",
+    "description_ru": "Снимает боль.",
+    "description_uz": "Og‘riqni kamaytiradi.",
+    "category": "medicine",
+    "related": [
+      "medications",
+      "antibiotic",
+      "antipyretic",
+      "antiseptic",
+      "insulin",
+      "medicine"
+    ],
+    "level": 3
   },
   "anaphylaxis": {
     "ru": "Анафилаксия",
@@ -2012,106 +589,185 @@
     "description_ru": "Тяжёлая аллергия.",
     "description_uz": "Og‘ir allergik reaksiya.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "emergency_conditions",
+      "burn",
+      "cardiac_arrest",
+      "fracture",
+      "heatstroke",
+      "medicine"
+    ],
+    "level": 3
   },
-  "heatstroke": {
-    "ru": "Тепловой удар",
-    "uz": "Issiq urishi",
-    "parent": "emergency_conditions",
-    "description_ru": "Перегрев организма.",
-    "description_uz": "Tana qizib ketishi.",
+  "anesthesiologist": {
+    "ru": "Анестезиолог",
+    "uz": "Anesteziolog",
+    "parent": "medical_staff",
+    "description_ru": "Обеспечивает наркоз.",
+    "description_uz": "Narkoz beradi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medical_staff",
+      "dentist",
+      "doctor",
+      "nurse",
+      "pediatrician",
+      "medicine"
+    ],
+    "level": 3
   },
-  "hypothermia": {
-    "ru": "Переохлаждение",
-    "uz": "Sovuq urishi",
-    "parent": "emergency_conditions",
-    "description_ru": "Сильное охлаждение.",
-    "description_uz": "Tana sovishi.",
+  "angina": {
+    "ru": "Стенокардия",
+    "uz": "Stenokardiya",
+    "parent": "heart_conditions",
+    "description_ru": "Боль в груди.",
+    "description_uz": "Ko‘krak og‘rig‘i.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "heart_conditions",
+      "arrhythmia",
+      "bradycardia",
+      "cardiomyopathy",
+      "heart_attack",
+      "medicine"
+    ],
+    "level": 3
   },
-  "ecg_machine": {
-    "ru": "Аппарат ЭКГ",
-    "uz": "EKG apparati",
-    "parent": "medical_equipment",
-    "description_ru": "Записывает работу сердца.",
-    "description_uz": "Yurak faoliyatini yozadi.",
+  "antibiotic": {
+    "ru": "Антибиотик",
+    "uz": "Antibiotik",
+    "parent": "medications",
+    "description_ru": "Против бактерий.",
+    "description_uz": "Bakteriyalarga qarshi dori.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medications",
+      "analgesic",
+      "antipyretic",
+      "antiseptic",
+      "insulin",
+      "medicine"
+    ],
+    "level": 3
   },
-  "ventilator": {
-    "ru": "Аппарат ИВЛ",
-    "uz": "Sun’iy nafas apparati",
-    "parent": "medical_equipment",
-    "description_ru": "Помогает пациенту дышать.",
-    "description_uz": "Bemorga nafas olishga yordam beradi.",
+  "antipyretic": {
+    "ru": "Жаропонижающее",
+    "uz": "Isitma tushiruvchi",
+    "parent": "medications",
+    "description_ru": "Снижает температуру.",
+    "description_uz": "Haroratni tushiradi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medications",
+      "analgesic",
+      "antibiotic",
+      "antiseptic",
+      "insulin",
+      "medicine"
+    ],
+    "level": 3
   },
-  "infusion_pump": {
-    "ru": "Инфузионный насос",
-    "uz": "Infuzion nasos",
-    "parent": "medical_equipment",
-    "description_ru": "Подаёт лекарства внутривенно.",
-    "description_uz": "Dorilarni tomir orqali yuboradi.",
+  "antiseptic": {
+    "ru": "Антисептик",
+    "uz": "Antiseptik",
+    "parent": "medications",
+    "description_ru": "Обеззараживает.",
+    "description_uz": "Mikroblarni yo‘q qiladi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medications",
+      "analgesic",
+      "antibiotic",
+      "antipyretic",
+      "insulin",
+      "medicine"
+    ],
+    "level": 3
   },
-  "surgical_table": {
-    "ru": "Операционный стол",
-    "uz": "Operatsion stol",
-    "parent": "medical_equipment",
-    "description_ru": "Стол для операций.",
-    "description_uz": "Operatsiya uchun stol.",
+  "anxiety": {
+    "ru": "Тревожность",
+    "uz": "Tashvish",
+    "parent": "mental_health",
+    "description_ru": "Постоянное беспокойство.",
+    "description_uz": "Doimiy xavotir.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "mental_health",
+      "addiction",
+      "bipolar_disorder",
+      "depression",
+      "insomnia",
+      "medicine"
+    ],
+    "level": 3
   },
-  "oxygen_cylinder": {
-    "ru": "Кислородный баллон",
-    "uz": "Kislorod baloni",
-    "parent": "medical_equipment",
-    "description_ru": "Подаёт кислород.",
-    "description_uz": "Kislorod beradi.",
+  "arrhythmia": {
+    "ru": "Аритмия",
+    "uz": "Aritmiya",
+    "parent": "heart_conditions",
+    "description_ru": "Нарушение ритма.",
+    "description_uz": "Yurak ritmi buzilishi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "heart_conditions",
+      "angina",
+      "bradycardia",
+      "cardiomyopathy",
+      "heart_attack",
+      "medicine"
+    ],
+    "level": 3
   },
-  "ultrasound_machine": {
-    "ru": "УЗИ аппарат",
-    "uz": "UZI apparati",
-    "parent": "medical_equipment",
-    "description_ru": "Ультразвуковая диагностика.",
-    "description_uz": "Ultratovush tekshiruvi.",
+  "arthritis": {
+    "ru": "Артрит",
+    "uz": "Artrit",
+    "parent": "chronic_diseases",
+    "description_ru": "Воспаление суставов.",
+    "description_uz": "Bo‘g‘im yallig‘lanishi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "chronic_diseases",
+      "alzheimer",
+      "asthma",
+      "chronic_kidney_disease",
+      "copd",
+      "medicine"
+    ],
+    "level": 3
   },
-  "xray_machine": {
-    "ru": "Рентген аппарат",
-    "uz": "Rentgen apparati",
-    "parent": "medical_equipment",
-    "description_ru": "Рентген диагностика.",
-    "description_uz": "Rentgen tekshiruvi.",
+  "asthma": {
+    "ru": "Астма",
+    "uz": "Astma",
+    "parent": "chronic_diseases",
+    "description_ru": "Затруднённое дыхание.",
+    "description_uz": "Nafas qisilishi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "chronic_diseases",
+      "alzheimer",
+      "arthritis",
+      "chronic_kidney_disease",
+      "copd",
+      "medicine"
+    ],
+    "level": 3
   },
-  "mri_machine": {
-    "ru": "МРТ аппарат",
-    "uz": "MRT apparati",
-    "parent": "medical_equipment",
-    "description_ru": "Томография.",
-    "description_uz": "Miya va tana tomografiyasi.",
+  "asthma_lung": {
+    "ru": "Астма",
+    "uz": "Astma",
+    "parent": "lung_diseases",
+    "description_ru": "Затруднённое дыхание.",
+    "description_uz": "Nafas qisilishi.",
     "category": "medicine",
-    "related": []
-  },
-  "ct_machine": {
-    "ru": "КТ аппарат",
-    "uz": "KT apparati",
-    "parent": "medical_equipment",
-    "description_ru": "Компьютерная томография.",
-    "description_uz": "Kompyuter tomografiyasi.",
-    "category": "medicine",
-    "related": []
+    "related": [
+      "lung_diseases",
+      "bronchitis",
+      "copd_lung",
+      "emphysema",
+      "lung_cancer",
+      "medicine"
+    ],
+    "level": 3
   },
   "autoclave": {
     "ru": "Автоклав",
@@ -2120,7 +776,1185 @@
     "description_ru": "Стерилизация инструментов.",
     "description_uz": "Asboblarni sterilizatsiya qiladi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medical_equipment",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "defibrillator",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "back_pain": {
+    "ru": "Боль в спине",
+    "uz": "Bel og‘rig‘i",
+    "parent": "pain_conditions",
+    "description_ru": "Боль в позвоночнике.",
+    "description_uz": "Umurtqa og‘rig‘i.",
+    "category": "medicine",
+    "related": [
+      "pain_conditions",
+      "abdominal_pain",
+      "chest_pain",
+      "ear_pain",
+      "joint_pain",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "bandage": {
+    "ru": "Бинт",
+    "uz": "Bint",
+    "parent": "medical_equipment",
+    "description_ru": "Перевязочный материал.",
+    "description_uz": "Bog‘lov materiali.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "defibrillator",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "bilirubin": {
+    "ru": "Билирубин",
+    "uz": "Bilirubin",
+    "parent": "laboratory_values",
+    "description_ru": "Показатель печени.",
+    "description_uz": "Jigar ko‘rsatkichi.",
+    "category": "medicine",
+    "related": [
+      "laboratory_values",
+      "cholesterol",
+      "creatinine",
+      "esr",
+      "glucose_level",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "biopsy": {
+    "ru": "Биопсия",
+    "uz": "Biopsiya",
+    "parent": "diagnostic_tests",
+    "description_ru": "Исследование ткани.",
+    "description_uz": "To‘qimani tekshirish.",
+    "category": "medicine",
+    "related": [
+      "diagnostic_tests",
+      "allergy_test",
+      "blood_test",
+      "ct_scan",
+      "ecg",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "bipolar_disorder": {
+    "ru": "Биполярное расстройство",
+    "uz": "Bipolyar buzilish",
+    "parent": "mental_health",
+    "description_ru": "Перепады настроения.",
+    "description_uz": "Kayfiyat o‘zgarishi.",
+    "category": "medicine",
+    "related": [
+      "mental_health",
+      "addiction",
+      "anxiety",
+      "depression",
+      "insomnia",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "blood_pressure_monitor": {
+    "ru": "Тонометр",
+    "uz": "Tonometr",
+    "parent": "medical_equipment",
+    "description_ru": "Измеряет артериальное давление.",
+    "description_uz": "Qon bosimini o‘lchaydi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "ct_machine",
+      "defibrillator",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "blood_test": {
+    "ru": "Анализ крови",
+    "uz": "Qon tahlili",
+    "parent": "diagnostic_tests",
+    "description_ru": "Исследование крови.",
+    "description_uz": "Qonni tekshirish.",
+    "category": "medicine",
+    "related": [
+      "diagnostic_tests",
+      "allergy_test",
+      "biopsy",
+      "ct_scan",
+      "ecg",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "body_hygiene": {
+    "ru": "Гигиена тела",
+    "uz": "Tana gigiyenasi",
+    "parent": "hygiene",
+    "description_ru": "Поддержание чистоты.",
+    "description_uz": "Tana tozaligi.",
+    "category": "medicine",
+    "related": [
+      "hygiene",
+      "clean_water",
+      "disinfection",
+      "gloves",
+      "hand_washing",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "braces": {
+    "ru": "Брекеты",
+    "uz": "Breket",
+    "parent": "dental_care",
+    "description_ru": "Выравнивание зубов.",
+    "description_uz": "Tishlarni tekislash.",
+    "category": "medicine",
+    "related": [
+      "dental_care",
+      "dental_implant",
+      "gum_disease",
+      "root_canal",
+      "tooth",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "bradycardia": {
+    "ru": "Брадикардия",
+    "uz": "Bradikardiya",
+    "parent": "heart_conditions",
+    "description_ru": "Медленное сердцебиение.",
+    "description_uz": "Sekin yurak urishi.",
+    "category": "medicine",
+    "related": [
+      "heart_conditions",
+      "angina",
+      "arrhythmia",
+      "cardiomyopathy",
+      "heart_attack",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "brain_hemorrhage": {
+    "ru": "Кровоизлияние в мозг",
+    "uz": "Miyada qon ketish",
+    "parent": "brain_disorders",
+    "description_ru": "Разрыв сосудов.",
+    "description_uz": "Tomir yorilishi.",
+    "category": "medicine",
+    "related": [
+      "brain_disorders",
+      "brain_infection",
+      "brain_tumor",
+      "concussion",
+      "encephalitis",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "brain_infection": {
+    "ru": "Инфекция мозга",
+    "uz": "Miya infeksiyasi",
+    "parent": "brain_disorders",
+    "description_ru": "Инфекционное поражение.",
+    "description_uz": "Infeksion zararlanish.",
+    "category": "medicine",
+    "related": [
+      "brain_disorders",
+      "brain_hemorrhage",
+      "brain_tumor",
+      "concussion",
+      "encephalitis",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "brain_tumor": {
+    "ru": "Опухоль мозга",
+    "uz": "Miya o‘smalari",
+    "parent": "brain_disorders",
+    "description_ru": "Новообразование в мозге.",
+    "description_uz": "Miyada o‘sma.",
+    "category": "medicine",
+    "related": [
+      "brain_disorders",
+      "brain_hemorrhage",
+      "brain_infection",
+      "concussion",
+      "encephalitis",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "bronchitis": {
+    "ru": "Бронхит",
+    "uz": "Bronxit",
+    "parent": "lung_diseases",
+    "description_ru": "Воспаление бронхов.",
+    "description_uz": "Bronx yallig‘lanishi.",
+    "category": "medicine",
+    "related": [
+      "lung_diseases",
+      "asthma_lung",
+      "copd_lung",
+      "emphysema",
+      "lung_cancer",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "burn": {
+    "ru": "Ожог",
+    "uz": "Kuyish",
+    "parent": "emergency_conditions",
+    "description_ru": "Повреждение кожи.",
+    "description_uz": "Teri kuyishi.",
+    "category": "medicine",
+    "related": [
+      "emergency_conditions",
+      "anaphylaxis",
+      "cardiac_arrest",
+      "fracture",
+      "heatstroke",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "cancer": {
+    "ru": "Рак",
+    "uz": "Saraton",
+    "parent": "diseases",
+    "description_ru": "Онкологическое заболевание.",
+    "description_uz": "Onkologik kasallik.",
+    "category": "medicine",
+    "related": [
+      "diseases",
+      "allergy",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "cardiac_arrest": {
+    "ru": "Остановка сердца",
+    "uz": "Yurak to‘xtashi",
+    "parent": "emergency_conditions",
+    "description_ru": "Прекращение работы сердца.",
+    "description_uz": "Yurak urishi to‘xtashi.",
+    "category": "medicine",
+    "related": [
+      "emergency_conditions",
+      "anaphylaxis",
+      "burn",
+      "fracture",
+      "heatstroke",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "cardiology": {
+    "ru": "Кардиология",
+    "uz": "Kardiologiya",
+    "parent": "medical_fields",
+    "description_ru": "Лечение сердца.",
+    "description_uz": "Yurak kasalliklarini davolash.",
+    "category": "medicine",
+    "related": [
+      "medical_fields",
+      "dermatology",
+      "gynecology",
+      "neurology",
+      "oncology",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "cardiology_department": {
+    "ru": "Кардиологическое отделение",
+    "uz": "Kardiologiya bo‘limi",
+    "parent": "hospital_departments",
+    "description_ru": "Лечение сердца.",
+    "description_uz": "Yurak davolash.",
+    "category": "medicine",
+    "related": [
+      "hospital_departments",
+      "emergency_room",
+      "intensive_care",
+      "laboratory",
+      "maternity",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "cardiomyopathy": {
+    "ru": "Кардиомиопатия",
+    "uz": "Kardiomiopatiya",
+    "parent": "heart_conditions",
+    "description_ru": "Болезнь сердечной мышцы.",
+    "description_uz": "Yurak mushagi kasalligi.",
+    "category": "medicine",
+    "related": [
+      "heart_conditions",
+      "angina",
+      "arrhythmia",
+      "bradycardia",
+      "heart_attack",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "chest_pain": {
+    "ru": "Боль в груди",
+    "uz": "Ko‘krak og‘rig‘i",
+    "parent": "pain_conditions",
+    "description_ru": "Боль в грудной клетке.",
+    "description_uz": "Ko‘krak qafasi og‘rig‘i.",
+    "category": "medicine",
+    "related": [
+      "pain_conditions",
+      "abdominal_pain",
+      "back_pain",
+      "ear_pain",
+      "joint_pain",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "chickenpox": {
+    "ru": "Ветрянка",
+    "uz": "Suvchechak",
+    "parent": "pediatrics_care",
+    "description_ru": "Вирусная инфекция.",
+    "description_uz": "Virusli kasallik.",
+    "category": "medicine",
+    "related": [
+      "pediatrics_care",
+      "child_fever",
+      "child_nutrition",
+      "colic",
+      "growth_monitoring",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "child_fever": {
+    "ru": "Детская температура",
+    "uz": "Bolada isitma",
+    "parent": "pediatrics_care",
+    "description_ru": "Повышение температуры.",
+    "description_uz": "Harorat ko‘tarilishi.",
+    "category": "medicine",
+    "related": [
+      "pediatrics_care",
+      "chickenpox",
+      "child_nutrition",
+      "colic",
+      "growth_monitoring",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "child_nutrition": {
+    "ru": "Детское питание",
+    "uz": "Bolalar oziqlanishi",
+    "parent": "pediatrics_care",
+    "description_ru": "Рацион ребёнка.",
+    "description_uz": "Bola ratsioni.",
+    "category": "medicine",
+    "related": [
+      "pediatrics_care",
+      "chickenpox",
+      "child_fever",
+      "colic",
+      "growth_monitoring",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "cholera": {
+    "ru": "Холера",
+    "uz": "Xolera",
+    "parent": "infectious_diseases",
+    "description_ru": "Кишечная инфекция.",
+    "description_uz": "Ichak kasalligi.",
+    "category": "medicine",
+    "related": [
+      "infectious_diseases",
+      "covid19",
+      "flu",
+      "hepatitis",
+      "hiv",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "cholesterol": {
+    "ru": "Холестерин",
+    "uz": "Xolesterin",
+    "parent": "laboratory_values",
+    "description_ru": "Жировой показатель.",
+    "description_uz": "Yog‘ ko‘rsatkichi.",
+    "category": "medicine",
+    "related": [
+      "laboratory_values",
+      "bilirubin",
+      "creatinine",
+      "esr",
+      "glucose_level",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "chronic_kidney_disease": {
+    "ru": "Хроническая болезнь почек",
+    "uz": "Buyrak surunkali kasalligi",
+    "parent": "chronic_diseases",
+    "description_ru": "Поражение почек.",
+    "description_uz": "Buyrak shikastlanishi.",
+    "category": "medicine",
+    "related": [
+      "chronic_diseases",
+      "alzheimer",
+      "arthritis",
+      "asthma",
+      "copd",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "circulatory_system": {
+    "ru": "Кровеносная система",
+    "uz": "Qon aylanish tizimi",
+    "parent": "body_systems",
+    "description_ru": "Переносит кровь.",
+    "description_uz": "Qonni tashiydi.",
+    "category": "medicine",
+    "related": [
+      "body_systems",
+      "digestive_system",
+      "endocrine_system",
+      "immune_system",
+      "muscular_system",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "clean_water": {
+    "ru": "Чистая вода",
+    "uz": "Toza suv",
+    "parent": "hygiene",
+    "description_ru": "Безопасная для питья вода.",
+    "description_uz": "Ichish uchun xavfsiz suv.",
+    "category": "medicine",
+    "related": [
+      "hygiene",
+      "body_hygiene",
+      "disinfection",
+      "gloves",
+      "hand_washing",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "colic": {
+    "ru": "Колики",
+    "uz": "Ich og‘rig‘i",
+    "parent": "pediatrics_care",
+    "description_ru": "Боль в животе.",
+    "description_uz": "Qorin og‘rig‘i.",
+    "category": "medicine",
+    "related": [
+      "pediatrics_care",
+      "chickenpox",
+      "child_fever",
+      "child_nutrition",
+      "growth_monitoring",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "concussion": {
+    "ru": "Сотрясение мозга",
+    "uz": "Miya chayqalishi",
+    "parent": "brain_disorders",
+    "description_ru": "Травма головы.",
+    "description_uz": "Bosh jarohati.",
+    "category": "medicine",
+    "related": [
+      "brain_disorders",
+      "brain_hemorrhage",
+      "brain_infection",
+      "brain_tumor",
+      "encephalitis",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "contraception": {
+    "ru": "Контрацепция",
+    "uz": "Kontratseptsiya",
+    "parent": "reproductive_health",
+    "description_ru": "Предотвращение беременности.",
+    "description_uz": "Homiladorlikni oldini olish.",
+    "category": "medicine",
+    "related": [
+      "reproductive_health",
+      "fertility",
+      "infertility",
+      "ivf",
+      "menstruation",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "copd": {
+    "ru": "ХОБЛ",
+    "uz": "XO‘BL",
+    "parent": "chronic_diseases",
+    "description_ru": "Хроническое заболевание лёгких.",
+    "description_uz": "Surunkali o‘pka kasalligi.",
+    "category": "medicine",
+    "related": [
+      "chronic_diseases",
+      "alzheimer",
+      "arthritis",
+      "asthma",
+      "chronic_kidney_disease",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "copd_lung": {
+    "ru": "ХОБЛ",
+    "uz": "XO‘BL",
+    "parent": "lung_diseases",
+    "description_ru": "Хроническое поражение лёгких.",
+    "description_uz": "Surunkali o‘pka kasalligi.",
+    "category": "medicine",
+    "related": [
+      "lung_diseases",
+      "asthma_lung",
+      "bronchitis",
+      "emphysema",
+      "lung_cancer",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "cough": {
+    "ru": "Кашель",
+    "uz": "Yo‘tal",
+    "parent": "symptoms",
+    "description_ru": "Раздражение дыхательных путей.",
+    "description_uz": "Nafas yo‘li bezovtaligi.",
+    "category": "medicine",
+    "related": [
+      "symptoms",
+      "dizziness",
+      "fatigue",
+      "fever",
+      "headache",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "covid19": {
+    "ru": "COVID-19",
+    "uz": "COVID-19",
+    "parent": "infectious_diseases",
+    "description_ru": "Коронавирусная инфекция.",
+    "description_uz": "Koronavirus kasalligi.",
+    "category": "medicine",
+    "related": [
+      "infectious_diseases",
+      "cholera",
+      "flu",
+      "hepatitis",
+      "hiv",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "creatinine": {
+    "ru": "Креатинин",
+    "uz": "Kreatinin",
+    "parent": "laboratory_values",
+    "description_ru": "Показатель почек.",
+    "description_uz": "Buyrak ko‘rsatkichi.",
+    "category": "medicine",
+    "related": [
+      "laboratory_values",
+      "bilirubin",
+      "cholesterol",
+      "esr",
+      "glucose_level",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "ct_machine": {
+    "ru": "КТ аппарат",
+    "uz": "KT apparati",
+    "parent": "medical_equipment",
+    "description_ru": "Компьютерная томография.",
+    "description_uz": "Kompyuter tomografiyasi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "defibrillator",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "ct_scan": {
+    "ru": "КТ",
+    "uz": "KT",
+    "parent": "diagnostic_tests",
+    "description_ru": "Компьютерная томография.",
+    "description_uz": "Kompyuter tomografiyasi.",
+    "category": "medicine",
+    "related": [
+      "diagnostic_tests",
+      "allergy_test",
+      "biopsy",
+      "blood_test",
+      "ecg",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "cystic_fibrosis": {
+    "ru": "Муковисцидоз",
+    "uz": "Mukovistsidoz",
+    "parent": "genetic_disorders",
+    "description_ru": "Нарушение лёгких.",
+    "description_uz": "O‘pka irsiy kasalligi.",
+    "category": "medicine",
+    "related": [
+      "genetic_disorders",
+      "albinism",
+      "down_syndrome",
+      "fragile_x",
+      "hemophilia",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "defibrillator": {
+    "ru": "Дефибриллятор",
+    "uz": "Defibrillyator",
+    "parent": "medical_equipment",
+    "description_ru": "Восстанавливает сердечный ритм.",
+    "description_uz": "Yurak ritmini tiklaydi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "dental_implant": {
+    "ru": "Имплант",
+    "uz": "Implant",
+    "parent": "dental_care",
+    "description_ru": "Замена зуба.",
+    "description_uz": "Tish o‘rnini bosadi.",
+    "category": "medicine",
+    "related": [
+      "dental_care",
+      "braces",
+      "gum_disease",
+      "root_canal",
+      "tooth",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "dentist": {
+    "ru": "Стоматолог",
+    "uz": "Stomatolog",
+    "parent": "medical_staff",
+    "description_ru": "Лечит зубы.",
+    "description_uz": "Tishlarni davolaydi.",
+    "category": "medicine",
+    "related": [
+      "medical_staff",
+      "anesthesiologist",
+      "doctor",
+      "nurse",
+      "pediatrician",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "depression": {
+    "ru": "Депрессия",
+    "uz": "Depressiya",
+    "parent": "mental_health",
+    "description_ru": "Подавленное состояние.",
+    "description_uz": "Tushkunlik holati.",
+    "category": "medicine",
+    "related": [
+      "mental_health",
+      "addiction",
+      "anxiety",
+      "bipolar_disorder",
+      "insomnia",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "dermatology": {
+    "ru": "Дерматология",
+    "uz": "Dermatologiya",
+    "parent": "medical_fields",
+    "description_ru": "Лечение кожи.",
+    "description_uz": "Teri kasalliklari.",
+    "category": "medicine",
+    "related": [
+      "medical_fields",
+      "cardiology",
+      "gynecology",
+      "neurology",
+      "oncology",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "diabetes": {
+    "ru": "Диабет",
+    "uz": "Diabet",
+    "parent": "chronic_diseases",
+    "description_ru": "Повышенный сахар.",
+    "description_uz": "Qand kasalligi.",
+    "category": "medicine",
+    "related": [
+      "chronic_diseases",
+      "alzheimer",
+      "arthritis",
+      "asthma",
+      "chronic_kidney_disease",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "digestive_system": {
+    "ru": "Пищеварительная система",
+    "uz": "Ovqat hazm qilish tizimi",
+    "parent": "body_systems",
+    "description_ru": "Переработка пищи.",
+    "description_uz": "Ovqatni hazm qiladi.",
+    "category": "medicine",
+    "related": [
+      "body_systems",
+      "circulatory_system",
+      "endocrine_system",
+      "immune_system",
+      "muscular_system",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "disinfection": {
+    "ru": "Дезинфекция",
+    "uz": "Dezinfeksiya",
+    "parent": "hygiene",
+    "description_ru": "Уничтожение микробов.",
+    "description_uz": "Mikroblarni yo‘qotish.",
+    "category": "medicine",
+    "related": [
+      "hygiene",
+      "body_hygiene",
+      "clean_water",
+      "gloves",
+      "hand_washing",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "dizziness": {
+    "ru": "Головокружение",
+    "uz": "Bosh aylanishi",
+    "parent": "symptoms",
+    "description_ru": "Потеря равновесия.",
+    "description_uz": "Muvozanat yo‘qolishi.",
+    "category": "medicine",
+    "related": [
+      "symptoms",
+      "cough",
+      "fatigue",
+      "fever",
+      "headache",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "doctor": {
+    "ru": "Врач",
+    "uz": "Shifokor",
+    "parent": "medical_staff",
+    "description_ru": "Лечит пациентов.",
+    "description_uz": "Bemorlarni davolaydi.",
+    "category": "medicine",
+    "related": [
+      "medical_staff",
+      "anesthesiologist",
+      "dentist",
+      "nurse",
+      "pediatrician",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "down_syndrome": {
+    "ru": "Синдром Дауна",
+    "uz": "Daun sindromi",
+    "parent": "genetic_disorders",
+    "description_ru": "Хромосомное нарушение.",
+    "description_uz": "Xromosoma buzilishi.",
+    "category": "medicine",
+    "related": [
+      "genetic_disorders",
+      "albinism",
+      "cystic_fibrosis",
+      "fragile_x",
+      "hemophilia",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "ear_pain": {
+    "ru": "Боль в ухе",
+    "uz": "Quloq og‘rig‘i",
+    "parent": "pain_conditions",
+    "description_ru": "Воспаление уха.",
+    "description_uz": "Quloq yallig‘lanishi.",
+    "category": "medicine",
+    "related": [
+      "pain_conditions",
+      "abdominal_pain",
+      "back_pain",
+      "chest_pain",
+      "joint_pain",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "ecg": {
+    "ru": "ЭКГ",
+    "uz": "EKG",
+    "parent": "diagnostic_tests",
+    "description_ru": "Проверка сердца.",
+    "description_uz": "Yurak tekshiruvi.",
+    "category": "medicine",
+    "related": [
+      "diagnostic_tests",
+      "allergy_test",
+      "biopsy",
+      "blood_test",
+      "ct_scan",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "ecg_machine": {
+    "ru": "Аппарат ЭКГ",
+    "uz": "EKG apparati",
+    "parent": "medical_equipment",
+    "description_ru": "Записывает работу сердца.",
+    "description_uz": "Yurak faoliyatini yozadi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "emergency_room": {
+    "ru": "Приёмное отделение",
+    "uz": "Qabul bo‘limi",
+    "parent": "hospital_departments",
+    "description_ru": "Экстренная помощь.",
+    "description_uz": "Shoshilinch yordam.",
+    "category": "medicine",
+    "related": [
+      "hospital_departments",
+      "cardiology_department",
+      "intensive_care",
+      "laboratory",
+      "maternity",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "emphysema": {
+    "ru": "Эмфизема",
+    "uz": "Emfizema",
+    "parent": "lung_diseases",
+    "description_ru": "Повреждение лёгочной ткани.",
+    "description_uz": "O‘pka to‘qimasi shikasti.",
+    "category": "medicine",
+    "related": [
+      "lung_diseases",
+      "asthma_lung",
+      "bronchitis",
+      "copd_lung",
+      "lung_cancer",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "encephalitis": {
+    "ru": "Энцефалит",
+    "uz": "Ensefalit",
+    "parent": "brain_disorders",
+    "description_ru": "Воспаление мозга.",
+    "description_uz": "Miya yallig‘lanishi.",
+    "category": "medicine",
+    "related": [
+      "brain_disorders",
+      "brain_hemorrhage",
+      "brain_infection",
+      "brain_tumor",
+      "concussion",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "endocrine_system": {
+    "ru": "Эндокринная система",
+    "uz": "Endokrin tizim",
+    "parent": "body_systems",
+    "description_ru": "Регулирует гормоны.",
+    "description_uz": "Gormonlarni boshqaradi.",
+    "category": "medicine",
+    "related": [
+      "body_systems",
+      "circulatory_system",
+      "digestive_system",
+      "immune_system",
+      "muscular_system",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "epilepsy": {
+    "ru": "Эпилепсия",
+    "uz": "Epilepsiya",
+    "parent": "chronic_diseases",
+    "description_ru": "Судорожные приступы.",
+    "description_uz": "Tutqanoq kasalligi.",
+    "category": "medicine",
+    "related": [
+      "chronic_diseases",
+      "alzheimer",
+      "arthritis",
+      "asthma",
+      "chronic_kidney_disease",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "epileptic_seizure": {
+    "ru": "Эпилептический приступ",
+    "uz": "Epileptik tutqanoq",
+    "parent": "brain_disorders",
+    "description_ru": "Судорожный приступ.",
+    "description_uz": "Tutqanoq hujumi.",
+    "category": "medicine",
+    "related": [
+      "brain_disorders",
+      "brain_hemorrhage",
+      "brain_infection",
+      "brain_tumor",
+      "concussion",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "esr": {
+    "ru": "СОЭ",
+    "uz": "ESR",
+    "parent": "laboratory_values",
+    "description_ru": "Скорость оседания.",
+    "description_uz": "Cho‘kish tezligi.",
+    "category": "medicine",
+    "related": [
+      "laboratory_values",
+      "bilirubin",
+      "cholesterol",
+      "creatinine",
+      "glucose_level",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "fatigue": {
+    "ru": "Усталость",
+    "uz": "Charchoq",
+    "parent": "symptoms",
+    "description_ru": "Слабость организма.",
+    "description_uz": "Organizm holsizligi.",
+    "category": "medicine",
+    "related": [
+      "symptoms",
+      "cough",
+      "dizziness",
+      "fever",
+      "headache",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "fertility": {
+    "ru": "Фертильность",
+    "uz": "Homiladorlik qobiliyati",
+    "parent": "reproductive_health",
+    "description_ru": "Способность к зачатию.",
+    "description_uz": "Homilador bo‘lish qobiliyati.",
+    "category": "medicine",
+    "related": [
+      "reproductive_health",
+      "contraception",
+      "infertility",
+      "ivf",
+      "menstruation",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "fever": {
+    "ru": "Жар",
+    "uz": "Isitma",
+    "parent": "symptoms",
+    "description_ru": "Повышенная температура.",
+    "description_uz": "Harorat ko‘tarilishi.",
+    "category": "medicine",
+    "related": [
+      "symptoms",
+      "cough",
+      "dizziness",
+      "fatigue",
+      "headache",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "flu": {
+    "ru": "Грипп",
+    "uz": "Gripp",
+    "parent": "infectious_diseases",
+    "description_ru": "Вирусная инфекция дыхательных путей.",
+    "description_uz": "Nafas yo‘li virusli kasalligi.",
+    "category": "medicine",
+    "related": [
+      "infectious_diseases",
+      "cholera",
+      "covid19",
+      "hepatitis",
+      "hiv",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "fracture": {
+    "ru": "Перелом",
+    "uz": "Siniq",
+    "parent": "emergency_conditions",
+    "description_ru": "Повреждение кости.",
+    "description_uz": "Suyak sinishi.",
+    "category": "medicine",
+    "related": [
+      "emergency_conditions",
+      "anaphylaxis",
+      "burn",
+      "cardiac_arrest",
+      "heatstroke",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "fragile_x": {
+    "ru": "Синдром ломкой Х-хромосомы",
+    "uz": "Fragile X sindromi",
+    "parent": "genetic_disorders",
+    "description_ru": "Генетическое нарушение развития.",
+    "description_uz": "Irsiy rivojlanish buzilishi.",
+    "category": "medicine",
+    "related": [
+      "genetic_disorders",
+      "albinism",
+      "cystic_fibrosis",
+      "down_syndrome",
+      "hemophilia",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "gloves": {
+    "ru": "Перчатки",
+    "uz": "Qo‘lqop",
+    "parent": "hygiene",
+    "description_ru": "Защита рук.",
+    "description_uz": "Qo‘l himoyasi.",
+    "category": "medicine",
+    "related": [
+      "hygiene",
+      "body_hygiene",
+      "clean_water",
+      "disinfection",
+      "hand_washing",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "glucose_level": {
+    "ru": "Уровень глюкозы",
+    "uz": "Glyukoza darajasi",
+    "parent": "laboratory_values",
+    "description_ru": "Сахар крови.",
+    "description_uz": "Qondagi shakar.",
+    "category": "medicine",
+    "related": [
+      "laboratory_values",
+      "bilirubin",
+      "cholesterol",
+      "creatinine",
+      "esr",
+      "medicine"
+    ],
+    "level": 3
   },
   "glucose_meter": {
     "ru": "Глюкометр",
@@ -2129,7 +1963,746 @@
     "description_ru": "Измеряет сахар крови.",
     "description_uz": "Qand darajasini o‘lchaydi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "growth_monitoring": {
+    "ru": "Контроль роста",
+    "uz": "O‘sishni nazorat",
+    "parent": "pediatrics_care",
+    "description_ru": "Отслеживание развития.",
+    "description_uz": "Rivojlanishni kuzatish.",
+    "category": "medicine",
+    "related": [
+      "pediatrics_care",
+      "chickenpox",
+      "child_fever",
+      "child_nutrition",
+      "colic",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "gum_disease": {
+    "ru": "Болезнь дёсен",
+    "uz": "Milk kasalligi",
+    "parent": "dental_care",
+    "description_ru": "Воспаление дёсен.",
+    "description_uz": "Milk yallig‘lanishi.",
+    "category": "medicine",
+    "related": [
+      "dental_care",
+      "braces",
+      "dental_implant",
+      "root_canal",
+      "tooth",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "gynecology": {
+    "ru": "Гинекология",
+    "uz": "Ginekologiya",
+    "parent": "medical_fields",
+    "description_ru": "Женское здоровье.",
+    "description_uz": "Ayollar salomatligi.",
+    "category": "medicine",
+    "related": [
+      "medical_fields",
+      "cardiology",
+      "dermatology",
+      "neurology",
+      "oncology",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "hand_washing": {
+    "ru": "Мытьё рук",
+    "uz": "Qo‘l yuvish",
+    "parent": "hygiene",
+    "description_ru": "Удаление микробов.",
+    "description_uz": "Mikroblarni yo‘qotish.",
+    "category": "medicine",
+    "related": [
+      "hygiene",
+      "body_hygiene",
+      "clean_water",
+      "disinfection",
+      "gloves",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "headache": {
+    "ru": "Головная боль",
+    "uz": "Bosh og‘rig‘i",
+    "parent": "symptoms",
+    "description_ru": "Боль в голове.",
+    "description_uz": "Bosh og‘rig‘i.",
+    "category": "medicine",
+    "related": [
+      "symptoms",
+      "cough",
+      "dizziness",
+      "fatigue",
+      "fever",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "heart_attack": {
+    "ru": "Инфаркт",
+    "uz": "Yurak xuruji",
+    "parent": "heart_conditions",
+    "description_ru": "Закупорка сосудов.",
+    "description_uz": "Tomir tiqilishi.",
+    "category": "medicine",
+    "related": [
+      "heart_conditions",
+      "angina",
+      "arrhythmia",
+      "bradycardia",
+      "cardiomyopathy",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "heart_failure": {
+    "ru": "Сердечная недостаточность",
+    "uz": "Yurak yetishmovchiligi",
+    "parent": "heart_conditions",
+    "description_ru": "Слабая работа сердца.",
+    "description_uz": "Yurak zaifligi.",
+    "category": "medicine",
+    "related": [
+      "heart_conditions",
+      "angina",
+      "arrhythmia",
+      "bradycardia",
+      "cardiomyopathy",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "heatstroke": {
+    "ru": "Тепловой удар",
+    "uz": "Issiq urishi",
+    "parent": "emergency_conditions",
+    "description_ru": "Перегрев организма.",
+    "description_uz": "Tana qizib ketishi.",
+    "category": "medicine",
+    "related": [
+      "emergency_conditions",
+      "anaphylaxis",
+      "burn",
+      "cardiac_arrest",
+      "fracture",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "hemoglobin": {
+    "ru": "Гемоглобин",
+    "uz": "Gemoglobin",
+    "parent": "laboratory_values",
+    "description_ru": "Белок крови.",
+    "description_uz": "Qondagi oqsil.",
+    "category": "medicine",
+    "related": [
+      "laboratory_values",
+      "bilirubin",
+      "cholesterol",
+      "creatinine",
+      "esr",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "hemophilia": {
+    "ru": "Гемофилия",
+    "uz": "Gemofiliya",
+    "parent": "genetic_disorders",
+    "description_ru": "Нарушение свертываемости.",
+    "description_uz": "Qon ivish buzilishi.",
+    "category": "medicine",
+    "related": [
+      "genetic_disorders",
+      "albinism",
+      "cystic_fibrosis",
+      "down_syndrome",
+      "fragile_x",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "hepatitis": {
+    "ru": "Гепатит",
+    "uz": "Gepatit",
+    "parent": "infectious_diseases",
+    "description_ru": "Воспаление печени.",
+    "description_uz": "Jigar yallig‘lanishi.",
+    "category": "medicine",
+    "related": [
+      "infectious_diseases",
+      "cholera",
+      "covid19",
+      "flu",
+      "hiv",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "hiv": {
+    "ru": "ВИЧ",
+    "uz": "OIV",
+    "parent": "infectious_diseases",
+    "description_ru": "Вирус иммунодефицита.",
+    "description_uz": "Immunitet virusli kasalligi.",
+    "category": "medicine",
+    "related": [
+      "infectious_diseases",
+      "cholera",
+      "covid19",
+      "flu",
+      "hepatitis",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "hospital_bed": {
+    "ru": "Больничная койка",
+    "uz": "Kasalxona yotoq joyi",
+    "parent": "medical_equipment",
+    "description_ru": "Кровать для пациента.",
+    "description_uz": "Bemor yotoq joyi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "hydrocephalus": {
+    "ru": "Гидроцефалия",
+    "uz": "Gidrotsefaliya",
+    "parent": "brain_disorders",
+    "description_ru": "Скопление жидкости.",
+    "description_uz": "Suyuqlik to‘planishi.",
+    "category": "medicine",
+    "related": [
+      "brain_disorders",
+      "brain_hemorrhage",
+      "brain_infection",
+      "brain_tumor",
+      "concussion",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "hypertension": {
+    "ru": "Гипертония",
+    "uz": "Gipertoniya",
+    "parent": "chronic_diseases",
+    "description_ru": "Высокое давление.",
+    "description_uz": "Yuqori qon bosimi.",
+    "category": "medicine",
+    "related": [
+      "chronic_diseases",
+      "alzheimer",
+      "arthritis",
+      "asthma",
+      "chronic_kidney_disease",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "hypertrophy": {
+    "ru": "Гипертрофия",
+    "uz": "Gipertrofiya",
+    "parent": "heart_conditions",
+    "description_ru": "Увеличение сердца.",
+    "description_uz": "Yurak kattalashishi.",
+    "category": "medicine",
+    "related": [
+      "heart_conditions",
+      "angina",
+      "arrhythmia",
+      "bradycardia",
+      "cardiomyopathy",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "hypothermia": {
+    "ru": "Переохлаждение",
+    "uz": "Sovuq urishi",
+    "parent": "emergency_conditions",
+    "description_ru": "Сильное охлаждение.",
+    "description_uz": "Tana sovishi.",
+    "category": "medicine",
+    "related": [
+      "emergency_conditions",
+      "anaphylaxis",
+      "burn",
+      "cardiac_arrest",
+      "fracture",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "immune_system": {
+    "ru": "Иммунная система",
+    "uz": "Immun tizimi",
+    "parent": "body_systems",
+    "description_ru": "Защита от болезней.",
+    "description_uz": "Kasallikdan himoya.",
+    "category": "medicine",
+    "related": [
+      "body_systems",
+      "circulatory_system",
+      "digestive_system",
+      "endocrine_system",
+      "muscular_system",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "infertility": {
+    "ru": "Бесплодие",
+    "uz": "Bevosita homilador bo‘lmaslik",
+    "parent": "reproductive_health",
+    "description_ru": "Неспособность зачать.",
+    "description_uz": "Homilador bo‘la olmaslik.",
+    "category": "medicine",
+    "related": [
+      "reproductive_health",
+      "contraception",
+      "fertility",
+      "ivf",
+      "menstruation",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "infusion_pump": {
+    "ru": "Инфузионный насос",
+    "uz": "Infuzion nasos",
+    "parent": "medical_equipment",
+    "description_ru": "Подаёт лекарства внутривенно.",
+    "description_uz": "Dorilarni tomir orqali yuboradi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "insomnia": {
+    "ru": "Бессонница",
+    "uz": "Uyqusizlik",
+    "parent": "mental_health",
+    "description_ru": "Нарушение сна.",
+    "description_uz": "Uyqu buzilishi.",
+    "category": "medicine",
+    "related": [
+      "mental_health",
+      "addiction",
+      "anxiety",
+      "bipolar_disorder",
+      "depression",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "insulin": {
+    "ru": "Инсулин",
+    "uz": "Insulin",
+    "parent": "medications",
+    "description_ru": "Регулирует сахар.",
+    "description_uz": "Qand miqdorini nazorat qiladi.",
+    "category": "medicine",
+    "related": [
+      "medications",
+      "analgesic",
+      "antibiotic",
+      "antipyretic",
+      "antiseptic",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "intensive_care": {
+    "ru": "Реанимация",
+    "uz": "Reanimatsiya",
+    "parent": "hospital_departments",
+    "description_ru": "Критические пациенты.",
+    "description_uz": "Og‘ir bemorlar.",
+    "category": "medicine",
+    "related": [
+      "hospital_departments",
+      "cardiology_department",
+      "emergency_room",
+      "laboratory",
+      "maternity",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "ivf": {
+    "ru": "ЭКО",
+    "uz": "EKO",
+    "parent": "reproductive_health",
+    "description_ru": "Искусственное оплодотворение.",
+    "description_uz": "Sun’iy urug‘lantirish.",
+    "category": "medicine",
+    "related": [
+      "reproductive_health",
+      "contraception",
+      "fertility",
+      "infertility",
+      "menstruation",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "joint_pain": {
+    "ru": "Боль в суставах",
+    "uz": "Bo‘g‘im og‘rig‘i",
+    "parent": "pain_conditions",
+    "description_ru": "Воспаление суставов.",
+    "description_uz": "Bo‘g‘im yallig‘lanishi.",
+    "category": "medicine",
+    "related": [
+      "pain_conditions",
+      "abdominal_pain",
+      "back_pain",
+      "chest_pain",
+      "ear_pain",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "laboratory": {
+    "ru": "Лаборатория",
+    "uz": "Laboratoriya",
+    "parent": "hospital_departments",
+    "description_ru": "Проведение анализов.",
+    "description_uz": "Tahlillar o‘tkaziladi.",
+    "category": "medicine",
+    "related": [
+      "hospital_departments",
+      "cardiology_department",
+      "emergency_room",
+      "intensive_care",
+      "maternity",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "lung_cancer": {
+    "ru": "Рак лёгких",
+    "uz": "O‘pka saratoni",
+    "parent": "lung_diseases",
+    "description_ru": "Опухоль лёгких.",
+    "description_uz": "O‘pka o‘smasi.",
+    "category": "medicine",
+    "related": [
+      "lung_diseases",
+      "asthma_lung",
+      "bronchitis",
+      "copd_lung",
+      "emphysema",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "lung_fibrosis": {
+    "ru": "Фиброз лёгких",
+    "uz": "O‘pka fibroz",
+    "parent": "lung_diseases",
+    "description_ru": "Уплотнение ткани.",
+    "description_uz": "To‘qima qalinlashishi.",
+    "category": "medicine",
+    "related": [
+      "lung_diseases",
+      "asthma_lung",
+      "bronchitis",
+      "copd_lung",
+      "emphysema",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "malaria": {
+    "ru": "Малярия",
+    "uz": "Bezgak",
+    "parent": "infectious_diseases",
+    "description_ru": "Паразитарная инфекция.",
+    "description_uz": "Parazitar kasallik.",
+    "category": "medicine",
+    "related": [
+      "infectious_diseases",
+      "cholera",
+      "covid19",
+      "flu",
+      "hepatitis",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "mask": {
+    "ru": "Маска",
+    "uz": "Niqob",
+    "parent": "hygiene",
+    "description_ru": "Защита дыхания.",
+    "description_uz": "Nafas himoyasi.",
+    "category": "medicine",
+    "related": [
+      "hygiene",
+      "body_hygiene",
+      "clean_water",
+      "disinfection",
+      "gloves",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "maternity": {
+    "ru": "Родильное отделение",
+    "uz": "Tug‘ruq bo‘limi",
+    "parent": "hospital_departments",
+    "description_ru": "Роды.",
+    "description_uz": "Tug‘ruq jarayoni.",
+    "category": "medicine",
+    "related": [
+      "hospital_departments",
+      "cardiology_department",
+      "emergency_room",
+      "intensive_care",
+      "laboratory",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "measles": {
+    "ru": "Корь",
+    "uz": "Qizamiq",
+    "parent": "pediatrics_care",
+    "description_ru": "Инфекционная болезнь.",
+    "description_uz": "Yuqumli kasallik.",
+    "category": "medicine",
+    "related": [
+      "pediatrics_care",
+      "chickenpox",
+      "child_fever",
+      "child_nutrition",
+      "colic",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "measles_disease": {
+    "ru": "Корь",
+    "uz": "Qizamiq",
+    "parent": "infectious_diseases",
+    "description_ru": "Вирусная сыпь.",
+    "description_uz": "Virusli toshma.",
+    "category": "medicine",
+    "related": [
+      "infectious_diseases",
+      "cholera",
+      "covid19",
+      "flu",
+      "hepatitis",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "memory_loss": {
+    "ru": "Потеря памяти",
+    "uz": "Xotira yo‘qolishi",
+    "parent": "brain_disorders",
+    "description_ru": "Нарушение памяти.",
+    "description_uz": "Xotira buzilishi.",
+    "category": "medicine",
+    "related": [
+      "brain_disorders",
+      "brain_hemorrhage",
+      "brain_infection",
+      "brain_tumor",
+      "concussion",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "meningitis": {
+    "ru": "Менингит",
+    "uz": "Meningit",
+    "parent": "brain_disorders",
+    "description_ru": "Воспаление оболочек мозга.",
+    "description_uz": "Miya pardasi yallig‘lanishi.",
+    "category": "medicine",
+    "related": [
+      "brain_disorders",
+      "brain_hemorrhage",
+      "brain_infection",
+      "brain_tumor",
+      "concussion",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "menstruation": {
+    "ru": "Менструация",
+    "uz": "Hayz",
+    "parent": "reproductive_health",
+    "description_ru": "Женский цикл.",
+    "description_uz": "Ayol sikli.",
+    "category": "medicine",
+    "related": [
+      "reproductive_health",
+      "contraception",
+      "fertility",
+      "infertility",
+      "ivf",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "migraine": {
+    "ru": "Мигрень",
+    "uz": "Migren",
+    "parent": "pain_conditions",
+    "description_ru": "Сильная головная боль.",
+    "description_uz": "Kuchli bosh og‘rig‘i.",
+    "category": "medicine",
+    "related": [
+      "pain_conditions",
+      "abdominal_pain",
+      "back_pain",
+      "chest_pain",
+      "ear_pain",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "mri": {
+    "ru": "МРТ",
+    "uz": "MRT",
+    "parent": "diagnostic_tests",
+    "description_ru": "Томография организма.",
+    "description_uz": "Tanani skanerlash.",
+    "category": "medicine",
+    "related": [
+      "diagnostic_tests",
+      "allergy_test",
+      "biopsy",
+      "blood_test",
+      "ct_scan",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "mri_machine": {
+    "ru": "МРТ аппарат",
+    "uz": "MRT apparati",
+    "parent": "medical_equipment",
+    "description_ru": "Томография.",
+    "description_uz": "Miya va tana tomografiyasi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "muscle_pain": {
+    "ru": "Мышечная боль",
+    "uz": "Mushak og‘rig‘i",
+    "parent": "pain_conditions",
+    "description_ru": "Боль в мышцах.",
+    "description_uz": "Mushak og‘rig‘i.",
+    "category": "medicine",
+    "related": [
+      "pain_conditions",
+      "abdominal_pain",
+      "back_pain",
+      "chest_pain",
+      "ear_pain",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "muscular_dystrophy": {
+    "ru": "Мышечная дистрофия",
+    "uz": "Mushak distrofiyasi",
+    "parent": "genetic_disorders",
+    "description_ru": "Ослабление мышц.",
+    "description_uz": "Mushak zaifligi.",
+    "category": "medicine",
+    "related": [
+      "genetic_disorders",
+      "albinism",
+      "cystic_fibrosis",
+      "down_syndrome",
+      "fragile_x",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "muscular_system": {
+    "ru": "Мышечная система",
+    "uz": "Mushak tizimi",
+    "parent": "body_systems",
+    "description_ru": "Движение тела.",
+    "description_uz": "Harakatni ta’minlaydi.",
+    "category": "medicine",
+    "related": [
+      "body_systems",
+      "circulatory_system",
+      "digestive_system",
+      "endocrine_system",
+      "immune_system",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "nausea": {
+    "ru": "Тошнота",
+    "uz": "Ko‘ngil aynishi",
+    "parent": "symptoms",
+    "description_ru": "Чувство рвоты.",
+    "description_uz": "Qusish hissi.",
+    "category": "medicine",
+    "related": [
+      "symptoms",
+      "cough",
+      "dizziness",
+      "fatigue",
+      "fever",
+      "medicine"
+    ],
+    "level": 3
   },
   "nebulizer": {
     "ru": "Небулайзер",
@@ -2138,16 +2711,151 @@
     "description_ru": "Ингаляционный прибор.",
     "description_uz": "Inhalyatsiya qurilmasi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
   },
-  "otoscope": {
-    "ru": "Отоскоп",
-    "uz": "Otoskop",
-    "parent": "medical_equipment",
-    "description_ru": "Осмотр уха.",
-    "description_uz": "Quloqni tekshirish asbobi.",
+  "neck_pain": {
+    "ru": "Боль в шее",
+    "uz": "Bo‘yin og‘rig‘i",
+    "parent": "pain_conditions",
+    "description_ru": "Боль в области шеи.",
+    "description_uz": "Bo‘yin og‘rig‘i.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "pain_conditions",
+      "abdominal_pain",
+      "back_pain",
+      "chest_pain",
+      "ear_pain",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "nervous_system": {
+    "ru": "Нервная система",
+    "uz": "Asab tizimi",
+    "parent": "body_systems",
+    "description_ru": "Передаёт сигналы.",
+    "description_uz": "Signal uzatadi.",
+    "category": "medicine",
+    "related": [
+      "body_systems",
+      "circulatory_system",
+      "digestive_system",
+      "endocrine_system",
+      "immune_system",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "neurology": {
+    "ru": "Неврология",
+    "uz": "Nevrologiya",
+    "parent": "medical_fields",
+    "description_ru": "Лечение нервной системы.",
+    "description_uz": "Asab tizimi kasalliklari.",
+    "category": "medicine",
+    "related": [
+      "medical_fields",
+      "cardiology",
+      "dermatology",
+      "gynecology",
+      "oncology",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "neurology_department": {
+    "ru": "Неврологическое отделение",
+    "uz": "Nevrologiya bo‘limi",
+    "parent": "hospital_departments",
+    "description_ru": "Лечение нервной системы.",
+    "description_uz": "Asab tizimi davolash.",
+    "category": "medicine",
+    "related": [
+      "hospital_departments",
+      "cardiology_department",
+      "emergency_room",
+      "intensive_care",
+      "laboratory",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "newborn": {
+    "ru": "Новорождённый",
+    "uz": "Yangi tug‘ilgan",
+    "parent": "pediatrics_care",
+    "description_ru": "Ребёнок до 1 месяца.",
+    "description_uz": "1 oylik chaqaloq.",
+    "category": "medicine",
+    "related": [
+      "pediatrics_care",
+      "chickenpox",
+      "child_fever",
+      "child_nutrition",
+      "colic",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "nurse": {
+    "ru": "Медсестра",
+    "uz": "Hamshira",
+    "parent": "medical_staff",
+    "description_ru": "Помогает врачу.",
+    "description_uz": "Shifokorga yordam beradi.",
+    "category": "medicine",
+    "related": [
+      "medical_staff",
+      "anesthesiologist",
+      "dentist",
+      "doctor",
+      "pediatrician",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "ointment": {
+    "ru": "Мазь",
+    "uz": "Malham",
+    "parent": "medications",
+    "description_ru": "Наружное средство.",
+    "description_uz": "Tashqi surtma dori.",
+    "category": "medicine",
+    "related": [
+      "medications",
+      "analgesic",
+      "antibiotic",
+      "antipyretic",
+      "antiseptic",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "oncology": {
+    "ru": "Онкология",
+    "uz": "Onkologiya",
+    "parent": "medical_fields",
+    "description_ru": "Лечение рака.",
+    "description_uz": "Saratonni davolash.",
+    "category": "medicine",
+    "related": [
+      "medical_fields",
+      "cardiology",
+      "dermatology",
+      "gynecology",
+      "neurology",
+      "medicine"
+    ],
+    "level": 3
   },
   "ophthalmoscope": {
     "ru": "Офтальмоскоп",
@@ -2156,16 +2864,100 @@
     "description_ru": "Осмотр глаз.",
     "description_uz": "Ko‘zni tekshirish asbobi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
   },
-  "surgical_lamp": {
-    "ru": "Операционная лампа",
-    "uz": "Operatsion chiroq",
-    "parent": "medical_equipment",
-    "description_ru": "Освещение при операции.",
-    "description_uz": "Operatsiya paytida yorug‘lik.",
+  "oral_hygiene": {
+    "ru": "Гигиена полости рта",
+    "uz": "Og‘iz gigiyenasi",
+    "parent": "hygiene",
+    "description_ru": "Уход за зубами.",
+    "description_uz": "Tish parvarishi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "hygiene",
+      "body_hygiene",
+      "clean_water",
+      "disinfection",
+      "gloves",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "otoscope": {
+    "ru": "Отоскоп",
+    "uz": "Otoskop",
+    "parent": "medical_equipment",
+    "description_ru": "Осмотр уха.",
+    "description_uz": "Quloqni tekshirish asbobi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "oxygen_cylinder": {
+    "ru": "Кислородный баллон",
+    "uz": "Kislorod baloni",
+    "parent": "medical_equipment",
+    "description_ru": "Подаёт кислород.",
+    "description_uz": "Kislorod beradi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "panic_attack": {
+    "ru": "Паническая атака",
+    "uz": "Panik hujum",
+    "parent": "mental_health",
+    "description_ru": "Резкий приступ страха.",
+    "description_uz": "Kuchli qo‘rquv hujumi.",
+    "category": "medicine",
+    "related": [
+      "mental_health",
+      "addiction",
+      "anxiety",
+      "bipolar_disorder",
+      "depression",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "parkinson": {
+    "ru": "Болезнь Паркинсона",
+    "uz": "Parkinson kasalligi",
+    "parent": "chronic_diseases",
+    "description_ru": "Нарушение движения.",
+    "description_uz": "Harakat buzilishi.",
+    "category": "medicine",
+    "related": [
+      "chronic_diseases",
+      "alzheimer",
+      "arthritis",
+      "asthma",
+      "chronic_kidney_disease",
+      "medicine"
+    ],
+    "level": 3
   },
   "patient_monitor": {
     "ru": "Монитор пациента",
@@ -2174,6 +2966,1183 @@
     "description_ru": "Контроль жизненных показателей.",
     "description_uz": "Hayotiy ko‘rsatkichlarni nazorat qiladi.",
     "category": "medicine",
-    "related": []
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "pediatric_checkup": {
+    "ru": "Осмотр ребёнка",
+    "uz": "Bolani ko‘rikdan o‘tkazish",
+    "parent": "pediatrics_care",
+    "description_ru": "Регулярный осмотр.",
+    "description_uz": "Muntazam tekshiruv.",
+    "category": "medicine",
+    "related": [
+      "pediatrics_care",
+      "chickenpox",
+      "child_fever",
+      "child_nutrition",
+      "colic",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "pediatrician": {
+    "ru": "Педиатр",
+    "uz": "Pediatr",
+    "parent": "medical_staff",
+    "description_ru": "Лечит детей.",
+    "description_uz": "Bolalarni davolaydi.",
+    "category": "medicine",
+    "related": [
+      "medical_staff",
+      "anesthesiologist",
+      "dentist",
+      "doctor",
+      "nurse",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "pediatrics": {
+    "ru": "Педиатрия",
+    "uz": "Pediatriya",
+    "parent": "medical_fields",
+    "description_ru": "Лечение детей.",
+    "description_uz": "Bolalar kasalliklari.",
+    "category": "medicine",
+    "related": [
+      "medical_fields",
+      "cardiology",
+      "dermatology",
+      "gynecology",
+      "neurology",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "pediatrics_department": {
+    "ru": "Детское отделение",
+    "uz": "Bolalar bo‘limi",
+    "parent": "hospital_departments",
+    "description_ru": "Лечение детей.",
+    "description_uz": "Bolalar davolash.",
+    "category": "medicine",
+    "related": [
+      "hospital_departments",
+      "cardiology_department",
+      "emergency_room",
+      "intensive_care",
+      "laboratory",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "pharmacist": {
+    "ru": "Фармацевт",
+    "uz": "Farmatsevt",
+    "parent": "medical_staff",
+    "description_ru": "Работает в аптеке.",
+    "description_uz": "Dorixonada ishlaydi.",
+    "category": "medicine",
+    "related": [
+      "medical_staff",
+      "anesthesiologist",
+      "dentist",
+      "doctor",
+      "nurse",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "pharmacy_department": {
+    "ru": "Аптека",
+    "uz": "Dorixona bo‘limi",
+    "parent": "hospital_departments",
+    "description_ru": "Выдача лекарств.",
+    "description_uz": "Dori berish.",
+    "category": "medicine",
+    "related": [
+      "hospital_departments",
+      "cardiology_department",
+      "emergency_room",
+      "intensive_care",
+      "laboratory",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "phobia": {
+    "ru": "Фобия",
+    "uz": "Fobiya",
+    "parent": "mental_health",
+    "description_ru": "Иррациональный страх.",
+    "description_uz": "Asossiz qo‘rquv.",
+    "category": "medicine",
+    "related": [
+      "mental_health",
+      "addiction",
+      "anxiety",
+      "bipolar_disorder",
+      "depression",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "platelets": {
+    "ru": "Тромбоциты",
+    "uz": "Trombotsitlar",
+    "parent": "laboratory_values",
+    "description_ru": "Свертывание крови.",
+    "description_uz": "Qon ivishi.",
+    "category": "medicine",
+    "related": [
+      "laboratory_values",
+      "bilirubin",
+      "cholesterol",
+      "creatinine",
+      "esr",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "pleurisy": {
+    "ru": "Плеврит",
+    "uz": "Plevrit",
+    "parent": "lung_diseases",
+    "description_ru": "Воспаление плевры.",
+    "description_uz": "Plevra yallig‘lanishi.",
+    "category": "medicine",
+    "related": [
+      "lung_diseases",
+      "asthma_lung",
+      "bronchitis",
+      "copd_lung",
+      "emphysema",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "pneumonia": {
+    "ru": "Пневмония",
+    "uz": "Pnevmoniya",
+    "parent": "lung_diseases",
+    "description_ru": "Воспаление лёгких.",
+    "description_uz": "O‘pka yallig‘lanishi.",
+    "category": "medicine",
+    "related": [
+      "lung_diseases",
+      "asthma_lung",
+      "bronchitis",
+      "copd_lung",
+      "emphysema",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "poisoning": {
+    "ru": "Отравление",
+    "uz": "Zaharlanish",
+    "parent": "emergency_conditions",
+    "description_ru": "Попадание токсинов.",
+    "description_uz": "Zahar ta’siri.",
+    "category": "medicine",
+    "related": [
+      "emergency_conditions",
+      "anaphylaxis",
+      "burn",
+      "cardiac_arrest",
+      "fracture",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "postnatal_care": {
+    "ru": "Послеродовой уход",
+    "uz": "Tug‘ruqdan keyingi parvarish",
+    "parent": "reproductive_health",
+    "description_ru": "Уход после родов.",
+    "description_uz": "Tug‘ruqdan keyingi parvarish.",
+    "category": "medicine",
+    "related": [
+      "reproductive_health",
+      "contraception",
+      "fertility",
+      "infertility",
+      "ivf",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "pregnancy": {
+    "ru": "Беременность",
+    "uz": "Homiladorlik",
+    "parent": "reproductive_health",
+    "description_ru": "Период вынашивания.",
+    "description_uz": "Homila rivojlanish davri.",
+    "category": "medicine",
+    "related": [
+      "reproductive_health",
+      "contraception",
+      "fertility",
+      "infertility",
+      "ivf",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "pregnancy_test": {
+    "ru": "Тест на беременность",
+    "uz": "Homiladorlik testi",
+    "parent": "medical_tests",
+    "description_ru": "Определение беременности.",
+    "description_uz": "Homiladorlikni aniqlash.",
+    "category": "medicine",
+    "related": [
+      "medical_tests",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "prenatal_care": {
+    "ru": "Дородовой уход",
+    "uz": "Homiladorlik nazorati",
+    "parent": "reproductive_health",
+    "description_ru": "Контроль беременности.",
+    "description_uz": "Homiladorlikni kuzatish.",
+    "category": "medicine",
+    "related": [
+      "reproductive_health",
+      "contraception",
+      "fertility",
+      "infertility",
+      "ivf",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "psychiatry": {
+    "ru": "Психиатрия",
+    "uz": "Psixiatriya",
+    "parent": "medical_fields",
+    "description_ru": "Лечение психических расстройств.",
+    "description_uz": "Ruhiy kasalliklar.",
+    "category": "medicine",
+    "related": [
+      "medical_fields",
+      "cardiology",
+      "dermatology",
+      "gynecology",
+      "neurology",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "ptsd": {
+    "ru": "ПТСР",
+    "uz": "PTSR",
+    "parent": "mental_health",
+    "description_ru": "Посттравматическое расстройство.",
+    "description_uz": "Travmadan keyingi buzilish.",
+    "category": "medicine",
+    "related": [
+      "mental_health",
+      "addiction",
+      "anxiety",
+      "bipolar_disorder",
+      "depression",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "rabies": {
+    "ru": "Бешенство",
+    "uz": "Quturish",
+    "parent": "infectious_diseases",
+    "description_ru": "Вирус после укуса.",
+    "description_uz": "Hayvon tishlashidan yuqadi.",
+    "category": "medicine",
+    "related": [
+      "infectious_diseases",
+      "cholera",
+      "covid19",
+      "flu",
+      "hepatitis",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "radiologist": {
+    "ru": "Радиолог",
+    "uz": "Radiolog",
+    "parent": "medical_staff",
+    "description_ru": "Проводит диагностику.",
+    "description_uz": "Tashxis qo‘yadi.",
+    "category": "medicine",
+    "related": [
+      "medical_staff",
+      "anesthesiologist",
+      "dentist",
+      "doctor",
+      "nurse",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "rash": {
+    "ru": "Сыпь",
+    "uz": "Toshma",
+    "parent": "symptoms",
+    "description_ru": "Высыпания на коже.",
+    "description_uz": "Terida toshma.",
+    "category": "medicine",
+    "related": [
+      "symptoms",
+      "cough",
+      "dizziness",
+      "fatigue",
+      "fever",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "respiratory_failure": {
+    "ru": "Дыхательная недостаточность",
+    "uz": "Nafas yetishmovchiligi",
+    "parent": "lung_diseases",
+    "description_ru": "Недостаток кислорода.",
+    "description_uz": "Kislorod yetishmasligi.",
+    "category": "medicine",
+    "related": [
+      "lung_diseases",
+      "asthma_lung",
+      "bronchitis",
+      "copd_lung",
+      "emphysema",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "respiratory_system": {
+    "ru": "Дыхательная система",
+    "uz": "Nafas olish tizimi",
+    "parent": "body_systems",
+    "description_ru": "Обеспечивает дыхание.",
+    "description_uz": "Nafas olishni ta’minlaydi.",
+    "category": "medicine",
+    "related": [
+      "body_systems",
+      "circulatory_system",
+      "digestive_system",
+      "endocrine_system",
+      "immune_system",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "root_canal": {
+    "ru": "Лечение канала",
+    "uz": "Kanal davolash",
+    "parent": "dental_care",
+    "description_ru": "Чистка зубного канала.",
+    "description_uz": "Tish kanalini tozalash.",
+    "category": "medicine",
+    "related": [
+      "dental_care",
+      "braces",
+      "dental_implant",
+      "gum_disease",
+      "tooth",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "sanitizer": {
+    "ru": "Антисептик",
+    "uz": "Antiseptik",
+    "parent": "hygiene",
+    "description_ru": "Средство для дезинфекции.",
+    "description_uz": "Dezinfeksiya vositasi.",
+    "category": "medicine",
+    "related": [
+      "hygiene",
+      "body_hygiene",
+      "clean_water",
+      "disinfection",
+      "gloves",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "scalpel": {
+    "ru": "Скальпель",
+    "uz": "Skalpel",
+    "parent": "medical_equipment",
+    "description_ru": "Хирургический нож.",
+    "description_uz": "Jarrohlik pichog‘i.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "severe_bleeding": {
+    "ru": "Сильное кровотечение",
+    "uz": "Kuchli qon ketish",
+    "parent": "emergency_conditions",
+    "description_ru": "Потеря крови.",
+    "description_uz": "Qon yo‘qotish.",
+    "category": "medicine",
+    "related": [
+      "emergency_conditions",
+      "anaphylaxis",
+      "burn",
+      "cardiac_arrest",
+      "fracture",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "shortness_of_breath": {
+    "ru": "Одышка",
+    "uz": "Nafas qisishi",
+    "parent": "symptoms",
+    "description_ru": "Трудности дыхания.",
+    "description_uz": "Nafas olish qiyinligi.",
+    "category": "medicine",
+    "related": [
+      "symptoms",
+      "cough",
+      "dizziness",
+      "fatigue",
+      "fever",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "sickle_cell_anemia": {
+    "ru": "Серповидная анемия",
+    "uz": "Sickle anemiya",
+    "parent": "genetic_disorders",
+    "description_ru": "Аномалия эритроцитов.",
+    "description_uz": "Qizil qon hujayralari buzilishi.",
+    "category": "medicine",
+    "related": [
+      "genetic_disorders",
+      "albinism",
+      "cystic_fibrosis",
+      "down_syndrome",
+      "fragile_x",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "skeletal_system": {
+    "ru": "Скелетная система",
+    "uz": "Suyak tizimi",
+    "parent": "body_systems",
+    "description_ru": "Поддерживает тело.",
+    "description_uz": "Tanani ushlab turadi.",
+    "category": "medicine",
+    "related": [
+      "body_systems",
+      "circulatory_system",
+      "digestive_system",
+      "endocrine_system",
+      "immune_system",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "sore_throat": {
+    "ru": "Боль в горле",
+    "uz": "Tomog‘ og‘rig‘i",
+    "parent": "symptoms",
+    "description_ru": "Воспаление горла.",
+    "description_uz": "Tomog‘ yallig‘lanishi.",
+    "category": "medicine",
+    "related": [
+      "symptoms",
+      "cough",
+      "dizziness",
+      "fatigue",
+      "fever",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "sterilization": {
+    "ru": "Стерилизация",
+    "uz": "Sterilizatsiya",
+    "parent": "hygiene",
+    "description_ru": "Полное уничтожение микробов.",
+    "description_uz": "Mikroblarni to‘liq yo‘qotish.",
+    "category": "medicine",
+    "related": [
+      "hygiene",
+      "body_hygiene",
+      "clean_water",
+      "disinfection",
+      "gloves",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "stethoscope": {
+    "ru": "Стетоскоп",
+    "uz": "Stetoskop",
+    "parent": "medical_equipment",
+    "description_ru": "Прибор для прослушивания сердца.",
+    "description_uz": "Yurakni eshitish uchun asbob.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "stress": {
+    "ru": "Стресс",
+    "uz": "Stress",
+    "parent": "mental_health",
+    "description_ru": "Нервное напряжение.",
+    "description_uz": "Asabiy zo‘riqish.",
+    "category": "medicine",
+    "related": [
+      "mental_health",
+      "addiction",
+      "anxiety",
+      "bipolar_disorder",
+      "depression",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "stroke": {
+    "ru": "Инсульт",
+    "uz": "Insult",
+    "parent": "heart_conditions",
+    "description_ru": "Нарушение кровообращения мозга.",
+    "description_uz": "Miya qon aylanishi buzilishi.",
+    "category": "medicine",
+    "related": [
+      "heart_conditions",
+      "angina",
+      "arrhythmia",
+      "bradycardia",
+      "cardiomyopathy",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "stroke_emergency": {
+    "ru": "Инсульт",
+    "uz": "Insult",
+    "parent": "emergency_conditions",
+    "description_ru": "Нарушение кровообращения мозга.",
+    "description_uz": "Miya qon aylanishi buzilishi.",
+    "category": "medicine",
+    "related": [
+      "emergency_conditions",
+      "anaphylaxis",
+      "burn",
+      "cardiac_arrest",
+      "fracture",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "surgeon": {
+    "ru": "Хирург",
+    "uz": "Jarroh",
+    "parent": "medical_staff",
+    "description_ru": "Проводит операции.",
+    "description_uz": "Operatsiya qiladi.",
+    "category": "medicine",
+    "related": [
+      "medical_staff",
+      "anesthesiologist",
+      "dentist",
+      "doctor",
+      "nurse",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "surgery": {
+    "ru": "Хирургия",
+    "uz": "Jarrohlik",
+    "parent": "medical_fields",
+    "description_ru": "Оперативное лечение.",
+    "description_uz": "Operatsion davolash.",
+    "category": "medicine",
+    "related": [
+      "medical_fields",
+      "cardiology",
+      "dermatology",
+      "gynecology",
+      "neurology",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "surgery_department": {
+    "ru": "Хирургическое отделение",
+    "uz": "Jarrohlik bo‘limi",
+    "parent": "hospital_departments",
+    "description_ru": "Операции.",
+    "description_uz": "Operatsiyalar.",
+    "category": "medicine",
+    "related": [
+      "hospital_departments",
+      "cardiology_department",
+      "emergency_room",
+      "intensive_care",
+      "laboratory",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "surgical_lamp": {
+    "ru": "Операционная лампа",
+    "uz": "Operatsion chiroq",
+    "parent": "medical_equipment",
+    "description_ru": "Освещение при операции.",
+    "description_uz": "Operatsiya paytida yorug‘lik.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "surgical_table": {
+    "ru": "Операционный стол",
+    "uz": "Operatsion stol",
+    "parent": "medical_equipment",
+    "description_ru": "Стол для операций.",
+    "description_uz": "Operatsiya uchun stol.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "syringe": {
+    "ru": "Шприц",
+    "uz": "Shprits",
+    "parent": "medical_equipment",
+    "description_ru": "Ввод лекарств.",
+    "description_uz": "Dori yuborish vositasi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "syrup": {
+    "ru": "Сироп",
+    "uz": "Sirop",
+    "parent": "medications",
+    "description_ru": "Жидкое лекарство.",
+    "description_uz": "Suyuq dori.",
+    "category": "medicine",
+    "related": [
+      "medications",
+      "analgesic",
+      "antibiotic",
+      "antipyretic",
+      "antiseptic",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "tachycardia": {
+    "ru": "Тахикардия",
+    "uz": "Taxikardiya",
+    "parent": "heart_conditions",
+    "description_ru": "Быстрое сердцебиение.",
+    "description_uz": "Tez yurak urishi.",
+    "category": "medicine",
+    "related": [
+      "heart_conditions",
+      "angina",
+      "arrhythmia",
+      "bradycardia",
+      "cardiomyopathy",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "thalassemia": {
+    "ru": "Талассемия",
+    "uz": "Talassemiya",
+    "parent": "genetic_disorders",
+    "description_ru": "Генетическая анемия.",
+    "description_uz": "Irsiy kamqonlik.",
+    "category": "medicine",
+    "related": [
+      "genetic_disorders",
+      "albinism",
+      "cystic_fibrosis",
+      "down_syndrome",
+      "fragile_x",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "therapist": {
+    "ru": "Терапевт",
+    "uz": "Terapevt",
+    "parent": "medical_staff",
+    "description_ru": "Общий врач.",
+    "description_uz": "Umumiy shifokor.",
+    "category": "medicine",
+    "related": [
+      "medical_staff",
+      "anesthesiologist",
+      "dentist",
+      "doctor",
+      "nurse",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "thermometer": {
+    "ru": "Термометр",
+    "uz": "Termometr",
+    "parent": "medical_equipment",
+    "description_ru": "Измеряет температуру тела.",
+    "description_uz": "Tana haroratini o‘lchaydi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "thyroid_hormone": {
+    "ru": "Гормон щитовидной железы",
+    "uz": "Qalqonsimon bez gormoni",
+    "parent": "laboratory_values",
+    "description_ru": "Регуляция обмена веществ.",
+    "description_uz": "Modda almashinuvi nazorati.",
+    "category": "medicine",
+    "related": [
+      "laboratory_values",
+      "bilirubin",
+      "cholesterol",
+      "creatinine",
+      "esr",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "tooth": {
+    "ru": "Зуб",
+    "uz": "Tish",
+    "parent": "dental_care",
+    "description_ru": "Костная структура во рту.",
+    "description_uz": "Og‘izdagi suyak tuzilma.",
+    "category": "medicine",
+    "related": [
+      "dental_care",
+      "braces",
+      "dental_implant",
+      "gum_disease",
+      "root_canal",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "tooth_decay": {
+    "ru": "Кариес",
+    "uz": "Karies",
+    "parent": "dental_care",
+    "description_ru": "Разрушение зуба.",
+    "description_uz": "Tish yemirilishi.",
+    "category": "medicine",
+    "related": [
+      "dental_care",
+      "braces",
+      "dental_implant",
+      "gum_disease",
+      "root_canal",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "tooth_extraction": {
+    "ru": "Удаление зуба",
+    "uz": "Tishni olish",
+    "parent": "dental_care",
+    "description_ru": "Удаление больного зуба.",
+    "description_uz": "Og‘riqli tishni olish.",
+    "category": "medicine",
+    "related": [
+      "dental_care",
+      "braces",
+      "dental_implant",
+      "gum_disease",
+      "root_canal",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "tooth_pain": {
+    "ru": "Зубная боль",
+    "uz": "Tish og‘rig‘i",
+    "parent": "pain_conditions",
+    "description_ru": "Боль в зубе.",
+    "description_uz": "Tish og‘rig‘i.",
+    "category": "medicine",
+    "related": [
+      "pain_conditions",
+      "abdominal_pain",
+      "back_pain",
+      "chest_pain",
+      "ear_pain",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "toothbrush": {
+    "ru": "Зубная щётка",
+    "uz": "Tish cho‘tkasi",
+    "parent": "dental_care",
+    "description_ru": "Чистка зубов.",
+    "description_uz": "Tish tozalash.",
+    "category": "medicine",
+    "related": [
+      "dental_care",
+      "braces",
+      "dental_implant",
+      "gum_disease",
+      "root_canal",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "toothpaste": {
+    "ru": "Зубная паста",
+    "uz": "Tish pastasi",
+    "parent": "dental_care",
+    "description_ru": "Средство для чистки.",
+    "description_uz": "Tish tozalash vositasi.",
+    "category": "medicine",
+    "related": [
+      "dental_care",
+      "braces",
+      "dental_implant",
+      "gum_disease",
+      "root_canal",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "tuberculosis": {
+    "ru": "Туберкулёз",
+    "uz": "Sil",
+    "parent": "infectious_diseases",
+    "description_ru": "Инфекция лёгких.",
+    "description_uz": "O‘pka kasalligi.",
+    "category": "medicine",
+    "related": [
+      "infectious_diseases",
+      "cholera",
+      "covid19",
+      "flu",
+      "hepatitis",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "turner_syndrome": {
+    "ru": "Синдром Тёрнера",
+    "uz": "Terner sindromi",
+    "parent": "genetic_disorders",
+    "description_ru": "Хромосомное отклонение.",
+    "description_uz": "Xromosoma o‘zgarishi.",
+    "category": "medicine",
+    "related": [
+      "genetic_disorders",
+      "albinism",
+      "cystic_fibrosis",
+      "down_syndrome",
+      "fragile_x",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "ultrasound": {
+    "ru": "УЗИ",
+    "uz": "UZI",
+    "parent": "diagnostic_tests",
+    "description_ru": "Ультразвуковое исследование.",
+    "description_uz": "Ultratovush tekshiruvi.",
+    "category": "medicine",
+    "related": [
+      "diagnostic_tests",
+      "allergy_test",
+      "biopsy",
+      "blood_test",
+      "ct_scan",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "ultrasound_machine": {
+    "ru": "УЗИ аппарат",
+    "uz": "UZI apparati",
+    "parent": "medical_equipment",
+    "description_ru": "Ультразвуковая диагностика.",
+    "description_uz": "Ultratovush tekshiruvi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "ultrasound_pregnancy": {
+    "ru": "УЗИ беременности",
+    "uz": "Homiladorlik UZI",
+    "parent": "reproductive_health",
+    "description_ru": "Осмотр плода.",
+    "description_uz": "Homilani tekshirish.",
+    "category": "medicine",
+    "related": [
+      "reproductive_health",
+      "contraception",
+      "fertility",
+      "infertility",
+      "ivf",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "urinary_system": {
+    "ru": "Мочевая система",
+    "uz": "Siydik tizimi",
+    "parent": "body_systems",
+    "description_ru": "Выведение отходов.",
+    "description_uz": "Chiqindilarni chiqaradi.",
+    "category": "medicine",
+    "related": [
+      "body_systems",
+      "circulatory_system",
+      "digestive_system",
+      "endocrine_system",
+      "immune_system",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "urine_test": {
+    "ru": "Анализ мочи",
+    "uz": "Siydik tahlili",
+    "parent": "diagnostic_tests",
+    "description_ru": "Исследование мочи.",
+    "description_uz": "Siydikni tekshirish.",
+    "category": "medicine",
+    "related": [
+      "diagnostic_tests",
+      "allergy_test",
+      "biopsy",
+      "blood_test",
+      "ct_scan",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "urology": {
+    "ru": "Урология",
+    "uz": "Urologiya",
+    "parent": "medical_fields",
+    "description_ru": "Лечение мочевой системы.",
+    "description_uz": "Siydik tizimi kasalliklari.",
+    "category": "medicine",
+    "related": [
+      "medical_fields",
+      "cardiology",
+      "dermatology",
+      "gynecology",
+      "neurology",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "vaccination_schedule": {
+    "ru": "График вакцинации",
+    "uz": "Vaksina jadvali",
+    "parent": "pediatrics_care",
+    "description_ru": "План прививок.",
+    "description_uz": "Emlash rejasi.",
+    "category": "medicine",
+    "related": [
+      "pediatrics_care",
+      "chickenpox",
+      "child_fever",
+      "child_nutrition",
+      "colic",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "vaccine": {
+    "ru": "Вакцина",
+    "uz": "Vaksina",
+    "parent": "medications",
+    "description_ru": "Средство профилактики.",
+    "description_uz": "Kasallikning oldini oladi.",
+    "category": "medicine",
+    "related": [
+      "medications",
+      "analgesic",
+      "antibiotic",
+      "antipyretic",
+      "antiseptic",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "ventilator": {
+    "ru": "Аппарат ИВЛ",
+    "uz": "Sun’iy nafas apparati",
+    "parent": "medical_equipment",
+    "description_ru": "Помогает пациенту дышать.",
+    "description_uz": "Bemorga nafas olishga yordam beradi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "vitamin": {
+    "ru": "Витамин",
+    "uz": "Vitamin",
+    "parent": "medications",
+    "description_ru": "Полезное вещество.",
+    "description_uz": "Organizm uchun foydali modda.",
+    "category": "medicine",
+    "related": [
+      "medications",
+      "analgesic",
+      "antibiotic",
+      "antipyretic",
+      "antiseptic",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "wheelchair": {
+    "ru": "Инвалидная коляска",
+    "uz": "Nogironlar aravachasi",
+    "parent": "medical_equipment",
+    "description_ru": "Передвижение пациента.",
+    "description_uz": "Bemorni tashish vositasi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "white_blood_cells": {
+    "ru": "Лейкоциты",
+    "uz": "Leykotsitlar",
+    "parent": "laboratory_values",
+    "description_ru": "Иммунные клетки.",
+    "description_uz": "Immun hujayralari.",
+    "category": "medicine",
+    "related": [
+      "laboratory_values",
+      "bilirubin",
+      "cholesterol",
+      "creatinine",
+      "esr",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "xray": {
+    "ru": "Рентген",
+    "uz": "Rentgen",
+    "parent": "diagnostic_tests",
+    "description_ru": "Снимок внутренних органов.",
+    "description_uz": "Ichki a’zolar tasviri.",
+    "category": "medicine",
+    "related": [
+      "diagnostic_tests",
+      "allergy_test",
+      "biopsy",
+      "blood_test",
+      "ct_scan",
+      "medicine"
+    ],
+    "level": 3
+  },
+  "xray_machine": {
+    "ru": "Рентген аппарат",
+    "uz": "Rentgen apparati",
+    "parent": "medical_equipment",
+    "description_ru": "Рентген диагностика.",
+    "description_uz": "Rentgen tekshiruvi.",
+    "category": "medicine",
+    "related": [
+      "medical_equipment",
+      "autoclave",
+      "bandage",
+      "blood_pressure_monitor",
+      "ct_machine",
+      "medicine"
+    ],
+    "level": 3
   }
 }

@@ -22,27 +22,7 @@ async function findWordByAnyId(id) {
     return word;
 }
 
-async function buildTreeByWord(word, depth) {
-    if (!word || depth <= 0) return null;
-
-    let parentNode = null;
-    if (word.parent_semantic_key) {
-        const parent = await Word.findOne({ semantic_key: word.parent_semantic_key });
-        if (parent) {
-            parentNode = await buildTreeByWord(parent, depth - 1);
-        }
-    }
-
-    const children = word.children_semantic_keys?.length
-        ? await Word.find({ semantic_key: { $in: word.children_semantic_keys } })
-        : [];
-
-    const hyponyms = [];
-    for (const child of children) {
-        const node = await buildTreeByWord(child, depth - 1);
-        if (node) hyponyms.push(node);
-    }
-
+function toTreeNode(word, extra = {}) {
     const language = /[а-яё]/i.test(word.ru || '') ? 'ru' : 'uz';
 
     return {
@@ -51,6 +31,7 @@ async function buildTreeByWord(word, depth) {
         word: word.ru || word.uz || '',
         ru: word.ru,
         uz: word.uz,
+        level: word.level || 1,
         language,
         definition: word.description_ru || word.description_uz || '',
         description_ru: word.description_ru || '',
@@ -58,9 +39,155 @@ async function buildTreeByWord(word, depth) {
         category: word.category,
         parent_semantic_key: word.parent_semantic_key || null,
         children_semantic_keys: word.children_semantic_keys || [],
-        hypernyms: parentNode ? [parentNode] : [],
-        hyponyms
+        hypernyms: extra.hypernyms || [],
+        hyponyms: extra.hyponyms || []
     };
+}
+
+async function getDirectChildren(word) {
+    if (!word?.children_semantic_keys?.length) {
+        return [];
+    }
+
+    const children = await Word.find({ semantic_key: { $in: word.children_semantic_keys } });
+
+    return children.sort((a, b) => {
+        const levelDiff = (a.level || 0) - (b.level || 0);
+        if (levelDiff !== 0) return levelDiff;
+
+        const aWord = (a.ru || a.uz || '').toLowerCase();
+        const bWord = (b.ru || b.uz || '').toLowerCase();
+        return aWord.localeCompare(bWord, 'ru');
+    });
+}
+
+async function buildAncestorBranch(word, depth) {
+    if (!word?.parent_semantic_key || depth <= 0) {
+        return null;
+    }
+
+    const parent = await Word.findOne({ semantic_key: word.parent_semantic_key });
+    if (!parent) {
+        return null;
+    }
+
+    const upperBranch = await buildAncestorBranch(parent, depth - 1);
+    const siblings = await getDirectChildren(parent);
+
+    return toTreeNode(parent, {
+        hypernyms: upperBranch ? [upperBranch] : [],
+        hyponyms: siblings.map((child) => toTreeNode(child))
+    });
+}
+
+async function buildTreeByWord(word, depth) {
+    if (!word || depth <= 0) return null;
+
+    const parentNode = await buildAncestorBranch(word, depth - 1);
+    const children = await getDirectChildren(word);
+
+    return toTreeNode(word, {
+        hypernyms: parentNode ? [parentNode] : [],
+        hyponyms: children.map((child) => toTreeNode(child))
+    });
+}
+
+function normalizeSearchText(value) {
+    return String(value || '')
+        .trim()
+        .toLowerCase()
+        .replace(/ё/g, 'е')
+        .replace(/\s+/g, ' ');
+}
+
+function escapeRegex(value) {
+    return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function getCategoryBoost(category = '') {
+    const boosts = {
+        daily_core_pack: 220,
+        daily_core_category: 200,
+        daily_core_word: 190,
+        common_noun_index: 180,
+        common_noun_entry: 170,
+        common_noun_wordform: 160,
+        common_noun_lemma: 120,
+        education: 85,
+        family: 85,
+        food: 85,
+        daily_life: 85,
+        medicine: 85,
+        transport: 85,
+        people: 80,
+        nature: 80,
+        ruwordnet_noun_concept: 30,
+        ruwordnet_noun_sense: 10
+    };
+
+    return boosts[category] || 40;
+}
+
+function computeSearchScore(word, query, lang) {
+    const normalizedQuery = normalizeSearchText(query);
+    const ru = normalizeSearchText(word.ru);
+    const uz = normalizeSearchText(word.uz);
+    const candidates = [];
+    const wordCount = String(word.ru || word.uz || '').trim().split(/\s+/).filter(Boolean).length;
+
+    if (lang === 'ru') {
+        candidates.push(ru, normalizeSearchText(word.normalized_ru));
+    } else if (lang === 'uz') {
+        candidates.push(uz, normalizeSearchText(word.normalized_uz));
+    } else {
+        candidates.push(
+            ru,
+            uz,
+            normalizeSearchText(word.normalized_ru),
+            normalizeSearchText(word.normalized_uz)
+        );
+    }
+
+    let score = getCategoryBoost(word.category);
+
+    for (const candidate of candidates.filter(Boolean)) {
+        if (candidate === normalizedQuery) score += 500;
+        else if (candidate.startsWith(normalizedQuery)) score += 260;
+        else if (candidate.includes(normalizedQuery)) score += 120;
+    }
+
+    if (word.semantic_key?.startsWith('entry_')) score += 90;
+    if (word.semantic_key?.startsWith('lemma_')) score += 40;
+    if (word.semantic_key?.startsWith('sense_')) score -= 30;
+    if (word.semantic_key?.startsWith('concept_')) score -= 10;
+
+    if (word.ru && !/\s/.test(word.ru)) score += 35;
+    if (word.uz && !/\s/.test(word.uz)) score += 20;
+    if (word.ru && /^[А-ЯЁ0-9 -]+$/.test(word.ru) && /[А-ЯЁ]/.test(word.ru)) score -= 180;
+    if (wordCount > 1) score -= Math.min(180, (wordCount - 1) * 90);
+
+    score += Math.max(0, 20 - String(word.ru || '').length);
+    score += Math.max(0, 10 - ((word.level || 3) * 2));
+
+    return score;
+}
+
+function dedupeSearchResults(results, lang) {
+    const seen = new Set();
+    const deduped = [];
+
+    for (const word of results) {
+        const keyBase = lang === 'uz'
+            ? normalizeSearchText(word.uz || word.ru)
+            : normalizeSearchText(word.ru || word.uz);
+
+        if (!keyBase || seen.has(keyBase)) continue;
+
+        seen.add(keyBase);
+        deduped.push(word);
+    }
+
+    return deduped;
 }
 
 /**
@@ -78,35 +205,87 @@ async function searchWords(req, res) {
             });
         }
         
-        const searchRegex = new RegExp(q.trim(), 'i');
-        let query;
+        const trimmedQuery = q.trim();
+        const normalizedQuery = normalizeSearchText(trimmedQuery);
+        const exactRegex = new RegExp(`^${escapeRegex(trimmedQuery)}$`, 'i');
+        const prefixRegex = new RegExp(`^${escapeRegex(trimmedQuery)}`, 'i');
+        const broadRegex = new RegExp(escapeRegex(trimmedQuery), 'i');
+        const exactConditions = [];
+        const prefixConditions = [];
+        const broadConditions = [];
 
         if (lang === 'ru') {
-            query = {
-                $or: [
-                    { ru: searchRegex },
-                    { normalized_ru: searchRegex }
-                ]
-            };
+            exactConditions.push(
+                { ru: exactRegex },
+                { normalized_ru: normalizedQuery }
+            );
+            prefixConditions.push(
+                { ru: prefixRegex },
+                { normalized_ru: prefixRegex }
+            );
+            broadConditions.push(
+                { ru: broadRegex },
+                { normalized_ru: broadRegex }
+            );
         } else if (lang === 'uz') {
-            query = {
-                $or: [
-                    { uz: searchRegex },
-                    { normalized_uz: searchRegex }
-                ]
-            };
+            exactConditions.push(
+                { uz: exactRegex },
+                { normalized_uz: normalizeSearchText(trimmedQuery) }
+            );
+            prefixConditions.push(
+                { uz: prefixRegex },
+                { normalized_uz: prefixRegex }
+            );
+            broadConditions.push(
+                { uz: broadRegex },
+                { normalized_uz: broadRegex }
+            );
         } else {
-            query = {
-                $or: [
-                    { ru: searchRegex },
-                    { uz: searchRegex },
-                    { normalized_ru: searchRegex },
-                    { normalized_uz: searchRegex }
-                ]
-            };
+            exactConditions.push(
+                { ru: exactRegex },
+                { uz: exactRegex },
+                { normalized_ru: normalizedQuery },
+                { normalized_uz: normalizedQuery }
+            );
+            prefixConditions.push(
+                { ru: prefixRegex },
+                { uz: prefixRegex },
+                { normalized_ru: prefixRegex },
+                { normalized_uz: prefixRegex }
+            );
+            broadConditions.push(
+                { ru: broadRegex },
+                { uz: broadRegex },
+                { normalized_ru: broadRegex },
+                { normalized_uz: broadRegex }
+            );
         }
 
-        const results = await Word.find(query).limit(50);
+        const [exactResults, prefixResults, broadResults] = await Promise.all([
+            Word.find({ $or: exactConditions }).limit(120).lean(),
+            Word.find({ $or: prefixConditions }).limit(220).lean(),
+            Word.find({ $or: broadConditions }).limit(320).lean()
+        ]);
+
+        const rawResults = [...exactResults, ...prefixResults, ...broadResults];
+        const rankedResults = rawResults
+            .map((word) => ({
+                ...word,
+                _searchScore: computeSearchScore(word, trimmedQuery, lang)
+            }))
+            .sort((a, b) => {
+                if (b._searchScore !== a._searchScore) {
+                    return b._searchScore - a._searchScore;
+                }
+
+                const aWord = normalizeSearchText(a.ru || a.uz);
+                const bWord = normalizeSearchText(b.ru || b.uz);
+                return aWord.localeCompare(bWord, 'ru');
+            });
+
+        const results = dedupeSearchResults(rankedResults, lang)
+            .slice(0, 50)
+            .map(({ _searchScore, ...word }) => word);
         
         res.json({
             success: true,

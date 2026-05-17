@@ -1,0 +1,17 @@
+{
+  "curatedMapSize": 2162,
+  "files": [
+    {
+      "filePath": "/home/r1ppa/Desktop/New Folder/hyperlex demo/server/data/generated/common_noun_index_97k.json",
+      "updated": 5811,
+      "matchedCurated": 1831
+    },
+    {
+      "filePath": "/home/r1ppa/Desktop/New Folder/hyperlex demo/server/data/generated/ruwordnet_nouns_106k.json",
+      "updated": 106105,
+      "matchedCurated": 2965
+    }
+  ],
+  "updatedTotal": 111916,
+  "matchedCuratedTotal": 4796
+}

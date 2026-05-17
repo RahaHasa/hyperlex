@@ -1,0 +1,2257 @@
+{
+  "people": {
+    "ru": "Люди",
+    "uz": "Odamlar",
+    "description_ru": "Человеческие существа.",
+    "description_uz": "Insonlar.",
+    "category": "people",
+    "related": [
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance"
+    ],
+    "level": 1
+  },
+  "abilities": {
+    "ru": "Способности",
+    "uz": "Qobiliyatlar",
+    "parent": "people",
+    "description_ru": "Навыки и умения человека.",
+    "description_uz": "Inson ko‘nikmalari.",
+    "category": "people",
+    "related": [
+      "people",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "body",
+      "creativity",
+      "intelligence",
+      "memory"
+    ],
+    "level": 2
+  },
+  "achievements": {
+    "ru": "Достижения",
+    "uz": "Yutuqlar",
+    "parent": "people",
+    "description_ru": "Успехи человека.",
+    "description_uz": "Inson erishgan natijalar.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "age_groups",
+      "appearance",
+      "body",
+      "award",
+      "promotion",
+      "recognition"
+    ],
+    "level": 2
+  },
+  "age_groups": {
+    "ru": "Возрастные группы",
+    "uz": "Yosh guruhlari",
+    "parent": "people",
+    "description_ru": "Этапы жизни человека.",
+    "description_uz": "Inson hayoti bosqichlari.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "appearance",
+      "body",
+      "adult",
+      "child",
+      "elderly"
+    ],
+    "level": 2
+  },
+  "appearance": {
+    "ru": "Внешность",
+    "uz": "Tashqi ko‘rinish",
+    "parent": "people",
+    "description_ru": "Физические характеристики человека.",
+    "description_uz": "Insonning tashqi belgilar.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "body",
+      "short",
+      "strong",
+      "tall"
+    ],
+    "level": 2
+  },
+  "body": {
+    "ru": "Тело человека",
+    "uz": "Inson tanasi",
+    "parent": "people",
+    "description_ru": "Физическая структура человека.",
+    "description_uz": "Insonning jismoniy tuzilishi.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "hand",
+      "head",
+      "heart"
+    ],
+    "level": 2
+  },
+  "character_traits": {
+    "ru": "Черты характера",
+    "uz": "Xarakter xususiyatlari",
+    "parent": "people",
+    "description_ru": "Личностные особенности.",
+    "description_uz": "Shaxsiy belgilar.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "ambitious",
+      "generous",
+      "optimistic"
+    ],
+    "level": 2
+  },
+  "communication": {
+    "ru": "Общение",
+    "uz": "Muloqot",
+    "parent": "people",
+    "description_ru": "Взаимодействие между людьми.",
+    "description_uz": "Odamlar orasidagi aloqa.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "argument",
+      "conversation",
+      "discussion"
+    ],
+    "level": 2
+  },
+  "conflicts": {
+    "ru": "Конфликты",
+    "uz": "Mojarolar",
+    "parent": "people",
+    "description_ru": "Разногласия между людьми.",
+    "description_uz": "Odamlar o‘rtasidagi kelishmovchilik.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "argument_conflict",
+      "fight",
+      "jealousy"
+    ],
+    "level": 2
+  },
+  "cultural_identity": {
+    "ru": "Культурная идентичность",
+    "uz": "Madaniy o‘zlik",
+    "parent": "people",
+    "description_ru": "Принадлежность к культуре.",
+    "description_uz": "Madaniyatga mansublik.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "language",
+      "nationality",
+      "religion"
+    ],
+    "level": 2
+  },
+  "daily_activities": {
+    "ru": "Ежедневные действия",
+    "uz": "Kundalik harakatlar",
+    "parent": "people",
+    "description_ru": "Повседневная деятельность.",
+    "description_uz": "Har kunlik faoliyat.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "eating",
+      "sleeping",
+      "studying"
+    ],
+    "level": 2
+  },
+  "education_status": {
+    "ru": "Образовательный статус",
+    "uz": "Ta'lim holati",
+    "parent": "people",
+    "description_ru": "Степень образования человека.",
+    "description_uz": "Insonning ta'lim darajasi.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "dropout",
+      "graduate",
+      "researcher"
+    ],
+    "level": 2
+  },
+  "emotions": {
+    "ru": "Эмоции",
+    "uz": "His-tuyg‘ular",
+    "parent": "people",
+    "description_ru": "Чувства человека.",
+    "description_uz": "Inson hislari.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "anger",
+      "fear",
+      "happiness"
+    ],
+    "level": 2
+  },
+  "goals": {
+    "ru": "Цели",
+    "uz": "Maqsadlar",
+    "parent": "people",
+    "description_ru": "Стремления человека.",
+    "description_uz": "Inson intilishlari.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "career_goal",
+      "education_goal",
+      "financial_goal"
+    ],
+    "level": 2
+  },
+  "habits": {
+    "ru": "Привычки",
+    "uz": "Odatlar",
+    "parent": "people",
+    "description_ru": "Регулярные действия человека.",
+    "description_uz": "Insonning muntazam harakatlari.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "exercising",
+      "late_sleep",
+      "reading_books"
+    ],
+    "level": 2
+  },
+  "health": {
+    "ru": "Здоровье",
+    "uz": "Salomatlik",
+    "parent": "people",
+    "description_ru": "Физическое состояние человека.",
+    "description_uz": "Insonning sog‘lig‘i.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "healthy",
+      "injury",
+      "medicine"
+    ],
+    "level": 2
+  },
+  "hobbies": {
+    "ru": "Хобби",
+    "uz": "Sevimli mashg‘ulotlar",
+    "parent": "people",
+    "description_ru": "Любимые занятия человека.",
+    "description_uz": "Insonning sevimli faoliyati.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "gaming",
+      "music_playing",
+      "painting"
+    ],
+    "level": 2
+  },
+  "life_events": {
+    "ru": "Жизненные события",
+    "uz": "Hayot voqealari",
+    "parent": "people",
+    "description_ru": "Важные этапы жизни.",
+    "description_uz": "Hayotdagi muhim bosqichlar.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "birth",
+      "graduation",
+      "marriage"
+    ],
+    "level": 2
+  },
+  "lifestyle": {
+    "ru": "Образ жизни",
+    "uz": "Hayot tarzi",
+    "parent": "people",
+    "description_ru": "Стиль жизни человека.",
+    "description_uz": "Insonning yashash uslubi.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "active_lifestyle",
+      "healthy_lifestyle",
+      "luxury_lifestyle"
+    ],
+    "level": 2
+  },
+  "mental_states": {
+    "ru": "Психические состояния",
+    "uz": "Ruhiy holatlar",
+    "parent": "people",
+    "description_ru": "Внутренние психологические состояния.",
+    "description_uz": "Ichki ruhiy holatlar.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "confidence",
+      "doubt",
+      "motivation"
+    ],
+    "level": 2
+  },
+  "personal_finance": {
+    "ru": "Личные финансы",
+    "uz": "Shaxsiy moliya",
+    "parent": "people",
+    "description_ru": "Финансовое положение человека.",
+    "description_uz": "Insonning moliyaviy holati.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "debt",
+      "investment",
+      "salary"
+    ],
+    "level": 2
+  },
+  "personality": {
+    "ru": "Характер",
+    "uz": "Xarakter",
+    "parent": "people",
+    "description_ru": "Личностные качества.",
+    "description_uz": "Shaxsiy xususiyatlar.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "brave",
+      "honest",
+      "kind"
+    ],
+    "level": 2
+  },
+  "professions": {
+    "ru": "Профессии",
+    "uz": "Kasblar",
+    "parent": "people",
+    "description_ru": "Виды деятельности человека.",
+    "description_uz": "Inson kasblari.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "doctor",
+      "driver",
+      "engineer"
+    ],
+    "level": 2
+  },
+  "relationships": {
+    "ru": "Отношения",
+    "uz": "Munosa­batlar",
+    "parent": "people",
+    "description_ru": "Связи между людьми.",
+    "description_uz": "Odamlar orasidagi aloqa.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "colleague",
+      "friend",
+      "neighbor"
+    ],
+    "level": 2
+  },
+  "social_problems": {
+    "ru": "Социальные проблемы",
+    "uz": "Ijtimoiy muammolar",
+    "parent": "people",
+    "description_ru": "Проблемы общества.",
+    "description_uz": "Jamiyat muammolari.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "crime_victim",
+      "discrimination",
+      "poverty"
+    ],
+    "level": 2
+  },
+  "social_status": {
+    "ru": "Социальный статус",
+    "uz": "Ijtimoiy maqom",
+    "parent": "people",
+    "description_ru": "Положение человека в обществе.",
+    "description_uz": "Jamiyatdagi o‘rni.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "employee",
+      "leader",
+      "manager"
+    ],
+    "level": 2
+  },
+  "values": {
+    "ru": "Ценности",
+    "uz": "Qadriyatlar",
+    "parent": "people",
+    "description_ru": "Важные принципы человека.",
+    "description_uz": "Inson uchun muhim tamoyillar.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "freedom",
+      "honesty",
+      "loyalty"
+    ],
+    "level": 2
+  },
+  "workplace_roles": {
+    "ru": "Рабочие роли",
+    "uz": "Ishdagi rollar",
+    "parent": "people",
+    "description_ru": "Позиции человека на работе.",
+    "description_uz": "Ishdagi vazifalar.",
+    "category": "people",
+    "related": [
+      "people",
+      "abilities",
+      "achievements",
+      "age_groups",
+      "appearance",
+      "entrepreneur",
+      "freelancer",
+      "intern"
+    ],
+    "level": 2
+  },
+  "active_lifestyle": {
+    "ru": "Активный образ жизни",
+    "uz": "Faol hayot tarzi",
+    "parent": "lifestyle",
+    "description_ru": "Много движения.",
+    "description_uz": "Ko‘p harakat.",
+    "category": "people",
+    "related": [
+      "lifestyle",
+      "healthy_lifestyle",
+      "luxury_lifestyle",
+      "sedentary_lifestyle",
+      "people"
+    ],
+    "level": 3
+  },
+  "adult": {
+    "ru": "Взрослый",
+    "uz": "Voyaga yetgan",
+    "parent": "age_groups",
+    "description_ru": "Зрелый человек.",
+    "description_uz": "Katta yoshli inson.",
+    "category": "people",
+    "related": [
+      "age_groups",
+      "child",
+      "elderly",
+      "teenager",
+      "people"
+    ],
+    "level": 3
+  },
+  "ambitious": {
+    "ru": "Амбициозный",
+    "uz": "Ambitsiyali",
+    "parent": "character_traits",
+    "description_ru": "Стремится к успеху.",
+    "description_uz": "Muvaffaqiyatga intiladi.",
+    "category": "people",
+    "related": [
+      "character_traits",
+      "generous",
+      "optimistic",
+      "pessimistic",
+      "people"
+    ],
+    "level": 3
+  },
+  "anger": {
+    "ru": "Гнев",
+    "uz": "G‘azab",
+    "parent": "emotions",
+    "description_ru": "Сильное раздражение.",
+    "description_uz": "Kuchli jahldorlik.",
+    "category": "people",
+    "related": [
+      "emotions",
+      "fear",
+      "happiness",
+      "sadness",
+      "people"
+    ],
+    "level": 3
+  },
+  "argument": {
+    "ru": "Спор",
+    "uz": "Bahs",
+    "parent": "communication",
+    "description_ru": "Конфликт мнений.",
+    "description_uz": "Fikr to‘qnashuvi.",
+    "category": "people",
+    "related": [
+      "communication",
+      "conversation",
+      "discussion",
+      "greeting",
+      "people"
+    ],
+    "level": 3
+  },
+  "argument_conflict": {
+    "ru": "Ссора",
+    "uz": "Janjal",
+    "parent": "conflicts",
+    "description_ru": "Словесный конфликт.",
+    "description_uz": "Og‘zaki mojaro.",
+    "category": "people",
+    "related": [
+      "conflicts",
+      "fight",
+      "jealousy",
+      "misunderstanding",
+      "people"
+    ],
+    "level": 3
+  },
+  "award": {
+    "ru": "Награда",
+    "uz": "Mukofot",
+    "parent": "achievements",
+    "description_ru": "Признание успеха.",
+    "description_uz": "Yutuq uchun mukofot.",
+    "category": "people",
+    "related": [
+      "achievements",
+      "promotion",
+      "recognition",
+      "success",
+      "people"
+    ],
+    "level": 3
+  },
+  "birth": {
+    "ru": "Рождение",
+    "uz": "Tug‘ilish",
+    "parent": "life_events",
+    "description_ru": "Начало жизни.",
+    "description_uz": "Hayot boshlanishi.",
+    "category": "people",
+    "related": [
+      "life_events",
+      "graduation",
+      "marriage",
+      "retirement",
+      "people"
+    ],
+    "level": 3
+  },
+  "brave": {
+    "ru": "Смелый",
+    "uz": "Jasur",
+    "parent": "personality",
+    "description_ru": "Не боится риска.",
+    "description_uz": "Qo‘rqmaydigan.",
+    "category": "people",
+    "related": [
+      "personality",
+      "honest",
+      "kind",
+      "lazy",
+      "people"
+    ],
+    "level": 3
+  },
+  "career_goal": {
+    "ru": "Карьерная цель",
+    "uz": "Kasbiy maqsad",
+    "parent": "goals",
+    "description_ru": "Достижение в профессии.",
+    "description_uz": "Kasbda yutuq.",
+    "category": "people",
+    "related": [
+      "goals",
+      "education_goal",
+      "financial_goal",
+      "personal_growth",
+      "people"
+    ],
+    "level": 3
+  },
+  "child": {
+    "ru": "Ребёнок",
+    "uz": "Bola",
+    "parent": "age_groups",
+    "description_ru": "Маленький человек.",
+    "description_uz": "Kichik yoshdagi inson.",
+    "category": "people",
+    "related": [
+      "age_groups",
+      "adult",
+      "elderly",
+      "teenager",
+      "people"
+    ],
+    "level": 3
+  },
+  "colleague": {
+    "ru": "Коллега",
+    "uz": "Hamkasb",
+    "parent": "relationships",
+    "description_ru": "Человек по работе.",
+    "description_uz": "Ishdagi sherik.",
+    "category": "people",
+    "related": [
+      "relationships",
+      "friend",
+      "neighbor",
+      "partner",
+      "people"
+    ],
+    "level": 3
+  },
+  "confidence": {
+    "ru": "Уверенность",
+    "uz": "Ishonch",
+    "parent": "mental_states",
+    "description_ru": "Вера в себя.",
+    "description_uz": "O‘ziga ishonish.",
+    "category": "people",
+    "related": [
+      "mental_states",
+      "doubt",
+      "motivation",
+      "stress",
+      "people"
+    ],
+    "level": 3
+  },
+  "conversation": {
+    "ru": "Разговор",
+    "uz": "Suhbat",
+    "parent": "communication",
+    "description_ru": "Обмен словами.",
+    "description_uz": "So‘z almashish.",
+    "category": "people",
+    "related": [
+      "communication",
+      "argument",
+      "discussion",
+      "greeting",
+      "people"
+    ],
+    "level": 3
+  },
+  "creativity": {
+    "ru": "Креативность",
+    "uz": "Ijodkorlik",
+    "parent": "abilities",
+    "description_ru": "Способность создавать новое.",
+    "description_uz": "Yangi narsani yaratish qobiliyati.",
+    "category": "people",
+    "related": [
+      "abilities",
+      "intelligence",
+      "memory",
+      "strength",
+      "people"
+    ],
+    "level": 3
+  },
+  "crime_victim": {
+    "ru": "Жертва преступления",
+    "uz": "Jinoyat qurboni",
+    "parent": "social_problems",
+    "description_ru": "Пострадавший от преступления.",
+    "description_uz": "Jinoyatdan jabrlangan.",
+    "category": "people",
+    "related": [
+      "social_problems",
+      "discrimination",
+      "poverty",
+      "unemployment",
+      "people"
+    ],
+    "level": 3
+  },
+  "debt": {
+    "ru": "Долг",
+    "uz": "Qarz",
+    "parent": "personal_finance",
+    "description_ru": "Финансовое обязательство.",
+    "description_uz": "Moliyaviy majburiyat.",
+    "category": "people",
+    "related": [
+      "personal_finance",
+      "investment",
+      "salary",
+      "savings",
+      "people"
+    ],
+    "level": 3
+  },
+  "discrimination": {
+    "ru": "Дискриминация",
+    "uz": "Kamsitish",
+    "parent": "social_problems",
+    "description_ru": "Несправедливое отношение.",
+    "description_uz": "Adolatsiz munosabat.",
+    "category": "people",
+    "related": [
+      "social_problems",
+      "crime_victim",
+      "poverty",
+      "unemployment",
+      "people"
+    ],
+    "level": 3
+  },
+  "discussion": {
+    "ru": "Обсуждение",
+    "uz": "Muhokama",
+    "parent": "communication",
+    "description_ru": "Разбор темы.",
+    "description_uz": "Mavzuni tahlil qilish.",
+    "category": "people",
+    "related": [
+      "communication",
+      "argument",
+      "conversation",
+      "greeting",
+      "people"
+    ],
+    "level": 3
+  },
+  "doctor": {
+    "ru": "Врач",
+    "uz": "Shifokor",
+    "parent": "professions",
+    "description_ru": "Лечит людей.",
+    "description_uz": "Odamlarni davolaydi.",
+    "category": "people",
+    "related": [
+      "professions",
+      "driver",
+      "engineer",
+      "teacher",
+      "people"
+    ],
+    "level": 3
+  },
+  "doubt": {
+    "ru": "Сомнение",
+    "uz": "Shubha",
+    "parent": "mental_states",
+    "description_ru": "Неуверенность.",
+    "description_uz": "Ishonchsizlik.",
+    "category": "people",
+    "related": [
+      "mental_states",
+      "confidence",
+      "motivation",
+      "stress",
+      "people"
+    ],
+    "level": 3
+  },
+  "driver": {
+    "ru": "Водитель",
+    "uz": "Haydovchi",
+    "parent": "professions",
+    "description_ru": "Управляет транспортом.",
+    "description_uz": "Transport boshqaradi.",
+    "category": "people",
+    "related": [
+      "professions",
+      "doctor",
+      "engineer",
+      "teacher",
+      "people"
+    ],
+    "level": 3
+  },
+  "dropout": {
+    "ru": "Отчисленный",
+    "uz": "O‘qishni tark etgan",
+    "parent": "education_status",
+    "description_ru": "Прекратил обучение.",
+    "description_uz": "O‘qishni to‘xtatgan.",
+    "category": "people",
+    "related": [
+      "education_status",
+      "graduate",
+      "researcher",
+      "student_status",
+      "people"
+    ],
+    "level": 3
+  },
+  "eating": {
+    "ru": "Еда",
+    "uz": "Ovqatlanish",
+    "parent": "daily_activities",
+    "description_ru": "Приём пищи.",
+    "description_uz": "Ovqat iste'mol qilish.",
+    "category": "people",
+    "related": [
+      "daily_activities",
+      "sleeping",
+      "studying",
+      "working",
+      "people"
+    ],
+    "level": 3
+  },
+  "education_goal": {
+    "ru": "Учебная цель",
+    "uz": "Ta'lim maqsadi",
+    "parent": "goals",
+    "description_ru": "Получение знаний.",
+    "description_uz": "Bilim olish.",
+    "category": "people",
+    "related": [
+      "goals",
+      "career_goal",
+      "financial_goal",
+      "personal_growth",
+      "people"
+    ],
+    "level": 3
+  },
+  "elderly": {
+    "ru": "Пожилой",
+    "uz": "Keksaygan",
+    "parent": "age_groups",
+    "description_ru": "Человек старшего возраста.",
+    "description_uz": "Yoshi katta inson.",
+    "category": "people",
+    "related": [
+      "age_groups",
+      "adult",
+      "child",
+      "teenager",
+      "people"
+    ],
+    "level": 3
+  },
+  "employee": {
+    "ru": "Сотрудник",
+    "uz": "Xodim",
+    "parent": "social_status",
+    "description_ru": "Работник организации.",
+    "description_uz": "Tashkilot ishchisi.",
+    "category": "people",
+    "related": [
+      "social_status",
+      "leader",
+      "manager",
+      "unemployed",
+      "people"
+    ],
+    "level": 3
+  },
+  "engineer": {
+    "ru": "Инженер",
+    "uz": "Muhandis",
+    "parent": "professions",
+    "description_ru": "Создаёт технологии.",
+    "description_uz": "Texnologiya yaratadi.",
+    "category": "people",
+    "related": [
+      "professions",
+      "doctor",
+      "driver",
+      "teacher",
+      "people"
+    ],
+    "level": 3
+  },
+  "entrepreneur": {
+    "ru": "Предприниматель",
+    "uz": "Tadbirkor",
+    "parent": "workplace_roles",
+    "description_ru": "Создаёт бизнес.",
+    "description_uz": "Biznes ochadi.",
+    "category": "people",
+    "related": [
+      "workplace_roles",
+      "freelancer",
+      "intern",
+      "team_leader",
+      "people"
+    ],
+    "level": 3
+  },
+  "exercising": {
+    "ru": "Тренировки",
+    "uz": "Mashq qilish",
+    "parent": "habits",
+    "description_ru": "Регулярная физическая активность.",
+    "description_uz": "Doimiy jismoniy mashq.",
+    "category": "people",
+    "related": [
+      "habits",
+      "late_sleep",
+      "reading_books",
+      "smoking",
+      "people"
+    ],
+    "level": 3
+  },
+  "fear": {
+    "ru": "Страх",
+    "uz": "Qo‘rquv",
+    "parent": "emotions",
+    "description_ru": "Чувство опасности.",
+    "description_uz": "Xavf hissi.",
+    "category": "people",
+    "related": [
+      "emotions",
+      "anger",
+      "happiness",
+      "sadness",
+      "people"
+    ],
+    "level": 3
+  },
+  "fight": {
+    "ru": "Драка",
+    "uz": "Urushish",
+    "parent": "conflicts",
+    "description_ru": "Физический конфликт.",
+    "description_uz": "Jismoniy mojaro.",
+    "category": "people",
+    "related": [
+      "conflicts",
+      "argument_conflict",
+      "jealousy",
+      "misunderstanding",
+      "people"
+    ],
+    "level": 3
+  },
+  "financial_goal": {
+    "ru": "Финансовая цель",
+    "uz": "Moliyaviy maqsad",
+    "parent": "goals",
+    "description_ru": "Достижение дохода.",
+    "description_uz": "Daromadga erishish.",
+    "category": "people",
+    "related": [
+      "goals",
+      "career_goal",
+      "education_goal",
+      "personal_growth",
+      "people"
+    ],
+    "level": 3
+  },
+  "freedom": {
+    "ru": "Свобода",
+    "uz": "Erkinlik",
+    "parent": "values",
+    "description_ru": "Независимость действий.",
+    "description_uz": "Mustaqillik.",
+    "category": "people",
+    "related": [
+      "values",
+      "honesty",
+      "loyalty",
+      "respect",
+      "people"
+    ],
+    "level": 3
+  },
+  "freelancer": {
+    "ru": "Фрилансер",
+    "uz": "Frilanser",
+    "parent": "workplace_roles",
+    "description_ru": "Работает самостоятельно.",
+    "description_uz": "Mustaqil ishlaydi.",
+    "category": "people",
+    "related": [
+      "workplace_roles",
+      "entrepreneur",
+      "intern",
+      "team_leader",
+      "people"
+    ],
+    "level": 3
+  },
+  "friend": {
+    "ru": "Друг",
+    "uz": "Do‘st",
+    "parent": "relationships",
+    "description_ru": "Близкий человек.",
+    "description_uz": "Yaqin inson.",
+    "category": "people",
+    "related": [
+      "relationships",
+      "colleague",
+      "neighbor",
+      "partner",
+      "people"
+    ],
+    "level": 3
+  },
+  "gaming": {
+    "ru": "Компьютерные игры",
+    "uz": "Kompyuter o‘yinlari",
+    "parent": "hobbies",
+    "description_ru": "Игровая активность.",
+    "description_uz": "O‘yin faoliyati.",
+    "category": "people",
+    "related": [
+      "hobbies",
+      "music_playing",
+      "painting",
+      "traveling",
+      "people"
+    ],
+    "level": 3
+  },
+  "generous": {
+    "ru": "Щедрый",
+    "uz": "Saxiy",
+    "parent": "character_traits",
+    "description_ru": "Готов делиться.",
+    "description_uz": "Boshqalar bilan bo‘lishadi.",
+    "category": "people",
+    "related": [
+      "character_traits",
+      "ambitious",
+      "optimistic",
+      "pessimistic",
+      "people"
+    ],
+    "level": 3
+  },
+  "graduate": {
+    "ru": "Выпускник",
+    "uz": "Bitiruvchi",
+    "parent": "education_status",
+    "description_ru": "Закончил обучение.",
+    "description_uz": "O‘qishni tugatgan.",
+    "category": "people",
+    "related": [
+      "education_status",
+      "dropout",
+      "researcher",
+      "student_status",
+      "people"
+    ],
+    "level": 3
+  },
+  "graduation": {
+    "ru": "Выпускной",
+    "uz": "Bitiruv",
+    "parent": "life_events",
+    "description_ru": "Окончание обучения.",
+    "description_uz": "O‘qishni tugatish.",
+    "category": "people",
+    "related": [
+      "life_events",
+      "birth",
+      "marriage",
+      "retirement",
+      "people"
+    ],
+    "level": 3
+  },
+  "greeting": {
+    "ru": "Приветствие",
+    "uz": "Salomlashish",
+    "parent": "communication",
+    "description_ru": "Начало общения.",
+    "description_uz": "Muloqot boshlanishi.",
+    "category": "people",
+    "related": [
+      "communication",
+      "argument",
+      "conversation",
+      "discussion",
+      "people"
+    ],
+    "level": 3
+  },
+  "hand": {
+    "ru": "Рука",
+    "uz": "Qo‘l",
+    "parent": "body",
+    "description_ru": "Конечность для работы.",
+    "description_uz": "Ishlash uchun a'zo.",
+    "category": "people",
+    "related": [
+      "body",
+      "head",
+      "heart",
+      "leg",
+      "people"
+    ],
+    "level": 3
+  },
+  "happiness": {
+    "ru": "Счастье",
+    "uz": "Baxt",
+    "parent": "emotions",
+    "description_ru": "Положительная эмоция.",
+    "description_uz": "Ijobiy tuyg‘u.",
+    "category": "people",
+    "related": [
+      "emotions",
+      "anger",
+      "fear",
+      "sadness",
+      "people"
+    ],
+    "level": 3
+  },
+  "head": {
+    "ru": "Голова",
+    "uz": "Bosh",
+    "parent": "body",
+    "description_ru": "Верхняя часть тела.",
+    "description_uz": "Tananing yuqori qismi.",
+    "category": "people",
+    "related": [
+      "body",
+      "hand",
+      "heart",
+      "leg",
+      "people"
+    ],
+    "level": 3
+  },
+  "healthy": {
+    "ru": "Здоровый",
+    "uz": "Sog‘lom",
+    "parent": "health",
+    "description_ru": "Без болезней.",
+    "description_uz": "Kasalliksiz.",
+    "category": "people",
+    "related": [
+      "health",
+      "injury",
+      "medicine",
+      "sick",
+      "people"
+    ],
+    "level": 3
+  },
+  "healthy_lifestyle": {
+    "ru": "Здоровый образ жизни",
+    "uz": "Sog‘lom turmush tarzi",
+    "parent": "lifestyle",
+    "description_ru": "Полезные привычки.",
+    "description_uz": "Sog‘lom odatlar.",
+    "category": "people",
+    "related": [
+      "lifestyle",
+      "active_lifestyle",
+      "luxury_lifestyle",
+      "sedentary_lifestyle",
+      "people"
+    ],
+    "level": 3
+  },
+  "heart": {
+    "ru": "Сердце",
+    "uz": "Yurak",
+    "parent": "body",
+    "description_ru": "Орган кровообращения.",
+    "description_uz": "Qon aylanish organi.",
+    "category": "people",
+    "related": [
+      "body",
+      "hand",
+      "head",
+      "leg",
+      "people"
+    ],
+    "level": 3
+  },
+  "honest": {
+    "ru": "Честный",
+    "uz": "Halol",
+    "parent": "personality",
+    "description_ru": "Говорит правду.",
+    "description_uz": "To‘g‘ri so‘zlovchi.",
+    "category": "people",
+    "related": [
+      "personality",
+      "brave",
+      "kind",
+      "lazy",
+      "people"
+    ],
+    "level": 3
+  },
+  "honesty": {
+    "ru": "Честность",
+    "uz": "Halollik",
+    "parent": "values",
+    "description_ru": "Говорить правду.",
+    "description_uz": "Rostgo‘ylik.",
+    "category": "people",
+    "related": [
+      "values",
+      "freedom",
+      "loyalty",
+      "respect",
+      "people"
+    ],
+    "level": 3
+  },
+  "injury": {
+    "ru": "Травма",
+    "uz": "Jarohat",
+    "parent": "health",
+    "description_ru": "Повреждение тела.",
+    "description_uz": "Tana shikasti.",
+    "category": "people",
+    "related": [
+      "health",
+      "healthy",
+      "medicine",
+      "sick",
+      "people"
+    ],
+    "level": 3
+  },
+  "intelligence": {
+    "ru": "Интеллект",
+    "uz": "Aql",
+    "parent": "abilities",
+    "description_ru": "Способность мыслить.",
+    "description_uz": "Fikrlash qobiliyati.",
+    "category": "people",
+    "related": [
+      "abilities",
+      "creativity",
+      "memory",
+      "strength",
+      "people"
+    ],
+    "level": 3
+  },
+  "intern": {
+    "ru": "Стажёр",
+    "uz": "Stajyor",
+    "parent": "workplace_roles",
+    "description_ru": "Обучается на практике.",
+    "description_uz": "Amaliyotchi.",
+    "category": "people",
+    "related": [
+      "workplace_roles",
+      "entrepreneur",
+      "freelancer",
+      "team_leader",
+      "people"
+    ],
+    "level": 3
+  },
+  "investment": {
+    "ru": "Инвестиция",
+    "uz": "Investitsiya",
+    "parent": "personal_finance",
+    "description_ru": "Вложение средств.",
+    "description_uz": "Mablag‘ kiritish.",
+    "category": "people",
+    "related": [
+      "personal_finance",
+      "debt",
+      "salary",
+      "savings",
+      "people"
+    ],
+    "level": 3
+  },
+  "jealousy": {
+    "ru": "Ревность",
+    "uz": "Hasad",
+    "parent": "conflicts",
+    "description_ru": "Негативное чувство.",
+    "description_uz": "Salbiy his.",
+    "category": "people",
+    "related": [
+      "conflicts",
+      "argument_conflict",
+      "fight",
+      "misunderstanding",
+      "people"
+    ],
+    "level": 3
+  },
+  "kind": {
+    "ru": "Добрый",
+    "uz": "Mehribon",
+    "parent": "personality",
+    "description_ru": "Проявляющий заботу.",
+    "description_uz": "Yaxshilik qiluvchi.",
+    "category": "people",
+    "related": [
+      "personality",
+      "brave",
+      "honest",
+      "lazy",
+      "people"
+    ],
+    "level": 3
+  },
+  "language": {
+    "ru": "Язык",
+    "uz": "Til",
+    "parent": "cultural_identity",
+    "description_ru": "Средство общения.",
+    "description_uz": "Muloqot vositasi.",
+    "category": "people",
+    "related": [
+      "cultural_identity",
+      "nationality",
+      "religion",
+      "tradition",
+      "people"
+    ],
+    "level": 3
+  },
+  "late_sleep": {
+    "ru": "Поздний сон",
+    "uz": "Kech uxlash",
+    "parent": "habits",
+    "description_ru": "Привычка поздно ложиться.",
+    "description_uz": "Kech yotish odati.",
+    "category": "people",
+    "related": [
+      "habits",
+      "exercising",
+      "reading_books",
+      "smoking",
+      "people"
+    ],
+    "level": 3
+  },
+  "lazy": {
+    "ru": "Ленивый",
+    "uz": "Dangasa",
+    "parent": "personality",
+    "description_ru": "Не любит труд.",
+    "description_uz": "Ishlashni yoqtirmaydigan.",
+    "category": "people",
+    "related": [
+      "personality",
+      "brave",
+      "honest",
+      "kind",
+      "people"
+    ],
+    "level": 3
+  },
+  "leader": {
+    "ru": "Лидер",
+    "uz": "Yetakchi",
+    "parent": "social_status",
+    "description_ru": "Руководит группой.",
+    "description_uz": "Guruhni boshqaradi.",
+    "category": "people",
+    "related": [
+      "social_status",
+      "employee",
+      "manager",
+      "unemployed",
+      "people"
+    ],
+    "level": 3
+  },
+  "leg": {
+    "ru": "Нога",
+    "uz": "Oyoq",
+    "parent": "body",
+    "description_ru": "Часть для ходьбы.",
+    "description_uz": "Yurish uchun a'zo.",
+    "category": "people",
+    "related": [
+      "body",
+      "hand",
+      "head",
+      "heart",
+      "people"
+    ],
+    "level": 3
+  },
+  "loyalty": {
+    "ru": "Верность",
+    "uz": "Sadoqat",
+    "parent": "values",
+    "description_ru": "Преданность.",
+    "description_uz": "Vafodorlik.",
+    "category": "people",
+    "related": [
+      "values",
+      "freedom",
+      "honesty",
+      "respect",
+      "people"
+    ],
+    "level": 3
+  },
+  "luxury_lifestyle": {
+    "ru": "Роскошный образ жизни",
+    "uz": "Hashamatli hayot",
+    "parent": "lifestyle",
+    "description_ru": "Жизнь с богатством.",
+    "description_uz": "Boy hayot.",
+    "category": "people",
+    "related": [
+      "lifestyle",
+      "active_lifestyle",
+      "healthy_lifestyle",
+      "sedentary_lifestyle",
+      "people"
+    ],
+    "level": 3
+  },
+  "manager": {
+    "ru": "Менеджер",
+    "uz": "Menejer",
+    "parent": "social_status",
+    "description_ru": "Управляет процессами.",
+    "description_uz": "Jarayonni boshqaradi.",
+    "category": "people",
+    "related": [
+      "social_status",
+      "employee",
+      "leader",
+      "unemployed",
+      "people"
+    ],
+    "level": 3
+  },
+  "marriage": {
+    "ru": "Брак",
+    "uz": "Nikoh",
+    "parent": "life_events",
+    "description_ru": "Создание семьи.",
+    "description_uz": "Oila qurish.",
+    "category": "people",
+    "related": [
+      "life_events",
+      "birth",
+      "graduation",
+      "retirement",
+      "people"
+    ],
+    "level": 3
+  },
+  "medicine": {
+    "ru": "Лекарство",
+    "uz": "Dori",
+    "parent": "health",
+    "description_ru": "Средство лечения.",
+    "description_uz": "Davolash vositasi.",
+    "category": "people",
+    "related": [
+      "health",
+      "healthy",
+      "injury",
+      "sick",
+      "people"
+    ],
+    "level": 3
+  },
+  "memory": {
+    "ru": "Память",
+    "uz": "Xotira",
+    "parent": "abilities",
+    "description_ru": "Способность запоминать.",
+    "description_uz": "Eslab qolish qobiliyati.",
+    "category": "people",
+    "related": [
+      "abilities",
+      "creativity",
+      "intelligence",
+      "strength",
+      "people"
+    ],
+    "level": 3
+  },
+  "misunderstanding": {
+    "ru": "Недопонимание",
+    "uz": "Tushunmovchilik",
+    "parent": "conflicts",
+    "description_ru": "Ошибка в понимании.",
+    "description_uz": "Noto‘g‘ri tushunish.",
+    "category": "people",
+    "related": [
+      "conflicts",
+      "argument_conflict",
+      "fight",
+      "jealousy",
+      "people"
+    ],
+    "level": 3
+  },
+  "motivation": {
+    "ru": "Мотивация",
+    "uz": "Motivatsiya",
+    "parent": "mental_states",
+    "description_ru": "Стремление к действию.",
+    "description_uz": "Harakatga undovchi kuch.",
+    "category": "people",
+    "related": [
+      "mental_states",
+      "confidence",
+      "doubt",
+      "stress",
+      "people"
+    ],
+    "level": 3
+  },
+  "music_playing": {
+    "ru": "Игра на инструменте",
+    "uz": "Musiqa chalish",
+    "parent": "hobbies",
+    "description_ru": "Исполнение музыки.",
+    "description_uz": "Musiqa ijro etish.",
+    "category": "people",
+    "related": [
+      "hobbies",
+      "gaming",
+      "painting",
+      "traveling",
+      "people"
+    ],
+    "level": 3
+  },
+  "nationality": {
+    "ru": "Национальность",
+    "uz": "Millat",
+    "parent": "cultural_identity",
+    "description_ru": "Этническая принадлежность.",
+    "description_uz": "Etnik mansublik.",
+    "category": "people",
+    "related": [
+      "cultural_identity",
+      "language",
+      "religion",
+      "tradition",
+      "people"
+    ],
+    "level": 3
+  },
+  "neighbor": {
+    "ru": "Сосед",
+    "uz": "Qo‘shni",
+    "parent": "relationships",
+    "description_ru": "Живёт рядом.",
+    "description_uz": "Yaqin joyda yashovchi.",
+    "category": "people",
+    "related": [
+      "relationships",
+      "colleague",
+      "friend",
+      "partner",
+      "people"
+    ],
+    "level": 3
+  },
+  "optimistic": {
+    "ru": "Оптимист",
+    "uz": "Optimist",
+    "parent": "character_traits",
+    "description_ru": "Смотрит позитивно.",
+    "description_uz": "Ijobiy fikrlaydi.",
+    "category": "people",
+    "related": [
+      "character_traits",
+      "ambitious",
+      "generous",
+      "pessimistic",
+      "people"
+    ],
+    "level": 3
+  },
+  "painting": {
+    "ru": "Рисование",
+    "uz": "Rasm chizish",
+    "parent": "hobbies",
+    "description_ru": "Создание изображений.",
+    "description_uz": "Tasvir yaratish.",
+    "category": "people",
+    "related": [
+      "hobbies",
+      "gaming",
+      "music_playing",
+      "traveling",
+      "people"
+    ],
+    "level": 3
+  },
+  "partner": {
+    "ru": "Партнёр",
+    "uz": "Sherik",
+    "parent": "relationships",
+    "description_ru": "Человек в отношениях.",
+    "description_uz": "Munosa­batdagi inson.",
+    "category": "people",
+    "related": [
+      "relationships",
+      "colleague",
+      "friend",
+      "neighbor",
+      "people"
+    ],
+    "level": 3
+  },
+  "personal_growth": {
+    "ru": "Личностный рост",
+    "uz": "Shaxsiy rivojlanish",
+    "parent": "goals",
+    "description_ru": "Развитие личности.",
+    "description_uz": "O‘zini rivojlantirish.",
+    "category": "people",
+    "related": [
+      "goals",
+      "career_goal",
+      "education_goal",
+      "financial_goal",
+      "people"
+    ],
+    "level": 3
+  },
+  "pessimistic": {
+    "ru": "Пессимист",
+    "uz": "Pessimist",
+    "parent": "character_traits",
+    "description_ru": "Ожидает плохого.",
+    "description_uz": "Salbiy kutadi.",
+    "category": "people",
+    "related": [
+      "character_traits",
+      "ambitious",
+      "generous",
+      "optimistic",
+      "people"
+    ],
+    "level": 3
+  },
+  "poverty": {
+    "ru": "Бедность",
+    "uz": "Qashshoqlik",
+    "parent": "social_problems",
+    "description_ru": "Низкий уровень дохода.",
+    "description_uz": "Past daromad.",
+    "category": "people",
+    "related": [
+      "social_problems",
+      "crime_victim",
+      "discrimination",
+      "unemployment",
+      "people"
+    ],
+    "level": 3
+  },
+  "promotion": {
+    "ru": "Повышение",
+    "uz": "Lavozim oshishi",
+    "parent": "achievements",
+    "description_ru": "Рост по карьере.",
+    "description_uz": "Kasbiy o‘sish.",
+    "category": "people",
+    "related": [
+      "achievements",
+      "award",
+      "recognition",
+      "success",
+      "people"
+    ],
+    "level": 3
+  },
+  "reading_books": {
+    "ru": "Чтение книг",
+    "uz": "Kitob o‘qish",
+    "parent": "habits",
+    "description_ru": "Полезная привычка.",
+    "description_uz": "Foydali odat.",
+    "category": "people",
+    "related": [
+      "habits",
+      "exercising",
+      "late_sleep",
+      "smoking",
+      "people"
+    ],
+    "level": 3
+  },
+  "recognition": {
+    "ru": "Признание",
+    "uz": "E'tirof",
+    "parent": "achievements",
+    "description_ru": "Общественное уважение.",
+    "description_uz": "Jamiyat tomonidan tan olinishi.",
+    "category": "people",
+    "related": [
+      "achievements",
+      "award",
+      "promotion",
+      "success",
+      "people"
+    ],
+    "level": 3
+  },
+  "religion": {
+    "ru": "Религия",
+    "uz": "Din",
+    "parent": "cultural_identity",
+    "description_ru": "Система верований.",
+    "description_uz": "E'tiqod tizimi.",
+    "category": "people",
+    "related": [
+      "cultural_identity",
+      "language",
+      "nationality",
+      "tradition",
+      "people"
+    ],
+    "level": 3
+  },
+  "researcher": {
+    "ru": "Исследователь",
+    "uz": "Tadqiqotchi",
+    "parent": "education_status",
+    "description_ru": "Занимается наукой.",
+    "description_uz": "Ilmiy ish bilan shug‘ullanadi.",
+    "category": "people",
+    "related": [
+      "education_status",
+      "dropout",
+      "graduate",
+      "student_status",
+      "people"
+    ],
+    "level": 3
+  },
+  "respect": {
+    "ru": "Уважение",
+    "uz": "Hurmat",
+    "parent": "values",
+    "description_ru": "Признание достоинства.",
+    "description_uz": "Qadr-qimmatni tan olish.",
+    "category": "people",
+    "related": [
+      "values",
+      "freedom",
+      "honesty",
+      "loyalty",
+      "people"
+    ],
+    "level": 3
+  },
+  "retirement": {
+    "ru": "Пенсия",
+    "uz": "Nafaqa",
+    "parent": "life_events",
+    "description_ru": "Завершение карьеры.",
+    "description_uz": "Ish faoliyatining tugashi.",
+    "category": "people",
+    "related": [
+      "life_events",
+      "birth",
+      "graduation",
+      "marriage",
+      "people"
+    ],
+    "level": 3
+  },
+  "sadness": {
+    "ru": "Грусть",
+    "uz": "Xafa bo‘lish",
+    "parent": "emotions",
+    "description_ru": "Чувство печали.",
+    "description_uz": "Qayg‘u hissi.",
+    "category": "people",
+    "related": [
+      "emotions",
+      "anger",
+      "fear",
+      "happiness",
+      "people"
+    ],
+    "level": 3
+  },
+  "salary": {
+    "ru": "Зарплата",
+    "uz": "Maosh",
+    "parent": "personal_finance",
+    "description_ru": "Доход от работы.",
+    "description_uz": "Ish haqi.",
+    "category": "people",
+    "related": [
+      "personal_finance",
+      "debt",
+      "investment",
+      "savings",
+      "people"
+    ],
+    "level": 3
+  },
+  "savings": {
+    "ru": "Сбережения",
+    "uz": "Jamg‘arma",
+    "parent": "personal_finance",
+    "description_ru": "Отложенные деньги.",
+    "description_uz": "Saqlangan mablag‘.",
+    "category": "people",
+    "related": [
+      "personal_finance",
+      "debt",
+      "investment",
+      "salary",
+      "people"
+    ],
+    "level": 3
+  },
+  "sedentary_lifestyle": {
+    "ru": "Малоподвижный образ жизни",
+    "uz": "Harakatsiz hayot",
+    "parent": "lifestyle",
+    "description_ru": "Мало активности.",
+    "description_uz": "Kam harakat.",
+    "category": "people",
+    "related": [
+      "lifestyle",
+      "active_lifestyle",
+      "healthy_lifestyle",
+      "luxury_lifestyle",
+      "people"
+    ],
+    "level": 3
+  },
+  "short": {
+    "ru": "Низкий",
+    "uz": "Past bo‘yli",
+    "parent": "appearance",
+    "description_ru": "Малого роста.",
+    "description_uz": "Bo‘yi past.",
+    "category": "people",
+    "related": [
+      "appearance",
+      "strong",
+      "tall",
+      "thin",
+      "people"
+    ],
+    "level": 3
+  },
+  "sick": {
+    "ru": "Больной",
+    "uz": "Kasal",
+    "parent": "health",
+    "description_ru": "Страдает заболеванием.",
+    "description_uz": "Kasallikka chalingan.",
+    "category": "people",
+    "related": [
+      "health",
+      "healthy",
+      "injury",
+      "medicine",
+      "people"
+    ],
+    "level": 3
+  },
+  "sleeping": {
+    "ru": "Сон",
+    "uz": "Uxlash",
+    "parent": "daily_activities",
+    "description_ru": "Отдых организма.",
+    "description_uz": "Organizm dam olishi.",
+    "category": "people",
+    "related": [
+      "daily_activities",
+      "eating",
+      "studying",
+      "working",
+      "people"
+    ],
+    "level": 3
+  },
+  "smoking": {
+    "ru": "Курение",
+    "uz": "Chekish",
+    "parent": "habits",
+    "description_ru": "Вредная привычка.",
+    "description_uz": "Zararli odat.",
+    "category": "people",
+    "related": [
+      "habits",
+      "exercising",
+      "late_sleep",
+      "reading_books",
+      "people"
+    ],
+    "level": 3
+  },
+  "strength": {
+    "ru": "Сила",
+    "uz": "Kuch",
+    "parent": "abilities",
+    "description_ru": "Физическая мощь.",
+    "description_uz": "Jismoniy quvvat.",
+    "category": "people",
+    "related": [
+      "abilities",
+      "creativity",
+      "intelligence",
+      "memory",
+      "people"
+    ],
+    "level": 3
+  },
+  "stress": {
+    "ru": "Стресс",
+    "uz": "Stress",
+    "parent": "mental_states",
+    "description_ru": "Состояние напряжения.",
+    "description_uz": "Zo‘riqish holati.",
+    "category": "people",
+    "related": [
+      "mental_states",
+      "confidence",
+      "doubt",
+      "motivation",
+      "people"
+    ],
+    "level": 3
+  },
+  "strong": {
+    "ru": "Сильный",
+    "uz": "Kuchli",
+    "parent": "appearance",
+    "description_ru": "Обладает силой.",
+    "description_uz": "Kuchga ega.",
+    "category": "people",
+    "related": [
+      "appearance",
+      "short",
+      "tall",
+      "thin",
+      "people"
+    ],
+    "level": 3
+  },
+  "student_status": {
+    "ru": "Студент",
+    "uz": "Talaba",
+    "parent": "education_status",
+    "description_ru": "Получает образование.",
+    "description_uz": "Ta'lim olayotgan.",
+    "category": "people",
+    "related": [
+      "education_status",
+      "dropout",
+      "graduate",
+      "researcher",
+      "people"
+    ],
+    "level": 3
+  },
+  "studying": {
+    "ru": "Учёба",
+    "uz": "O‘qish",
+    "parent": "daily_activities",
+    "description_ru": "Получение знаний.",
+    "description_uz": "Bilim olish.",
+    "category": "people",
+    "related": [
+      "daily_activities",
+      "eating",
+      "sleeping",
+      "working",
+      "people"
+    ],
+    "level": 3
+  },
+  "success": {
+    "ru": "Успех",
+    "uz": "Muvaffaqiyat",
+    "parent": "achievements",
+    "description_ru": "Достижение цели.",
+    "description_uz": "Maqsadga erishish.",
+    "category": "people",
+    "related": [
+      "achievements",
+      "award",
+      "promotion",
+      "recognition",
+      "people"
+    ],
+    "level": 3
+  },
+  "tall": {
+    "ru": "Высокий",
+    "uz": "Baland",
+    "parent": "appearance",
+    "description_ru": "Большого роста.",
+    "description_uz": "Bo‘yi baland.",
+    "category": "people",
+    "related": [
+      "appearance",
+      "short",
+      "strong",
+      "thin",
+      "people"
+    ],
+    "level": 3
+  },
+  "teacher": {
+    "ru": "Учитель",
+    "uz": "O‘qituvchi",
+    "parent": "professions",
+    "description_ru": "Обучает учеников.",
+    "description_uz": "O‘quvchilarga dars beradi.",
+    "category": "people",
+    "related": [
+      "professions",
+      "doctor",
+      "driver",
+      "engineer",
+      "people"
+    ],
+    "level": 3
+  },
+  "team_leader": {
+    "ru": "Руководитель команды",
+    "uz": "Jamoa rahbari",
+    "parent": "workplace_roles",
+    "description_ru": "Управляет командой.",
+    "description_uz": "Jamoani boshqaradi.",
+    "category": "people",
+    "related": [
+      "workplace_roles",
+      "entrepreneur",
+      "freelancer",
+      "intern",
+      "people"
+    ],
+    "level": 3
+  },
+  "teenager": {
+    "ru": "Подросток",
+    "uz": "O‘smir",
+    "parent": "age_groups",
+    "description_ru": "Юный человек.",
+    "description_uz": "Yosh o‘smir.",
+    "category": "people",
+    "related": [
+      "age_groups",
+      "adult",
+      "child",
+      "elderly",
+      "people"
+    ],
+    "level": 3
+  },
+  "thin": {
+    "ru": "Худой",
+    "uz": "Oriq",
+    "parent": "appearance",
+    "description_ru": "Стройный.",
+    "description_uz": "Yupqa tana.",
+    "category": "people",
+    "related": [
+      "appearance",
+      "short",
+      "strong",
+      "tall",
+      "people"
+    ],
+    "level": 3
+  },
+  "tradition": {
+    "ru": "Традиция",
+    "uz": "An'ana",
+    "parent": "cultural_identity",
+    "description_ru": "Культурный обычай.",
+    "description_uz": "Madaniy urf-odat.",
+    "category": "people",
+    "related": [
+      "cultural_identity",
+      "language",
+      "nationality",
+      "religion",
+      "people"
+    ],
+    "level": 3
+  },
+  "traveling": {
+    "ru": "Путешествия",
+    "uz": "Sayohat qilish",
+    "parent": "hobbies",
+    "description_ru": "Посещение новых мест.",
+    "description_uz": "Yangi joylarga borish.",
+    "category": "people",
+    "related": [
+      "hobbies",
+      "gaming",
+      "music_playing",
+      "painting",
+      "people"
+    ],
+    "level": 3
+  },
+  "unemployed": {
+    "ru": "Безработный",
+    "uz": "Ishsiz",
+    "parent": "social_status",
+    "description_ru": "Не имеет работы.",
+    "description_uz": "Ishi yo‘q.",
+    "category": "people",
+    "related": [
+      "social_status",
+      "employee",
+      "leader",
+      "manager",
+      "people"
+    ],
+    "level": 3
+  },
+  "unemployment": {
+    "ru": "Безработица",
+    "uz": "Ishsizlik",
+    "parent": "social_problems",
+    "description_ru": "Отсутствие работы.",
+    "description_uz": "Ish yo‘qligi.",
+    "category": "people",
+    "related": [
+      "social_problems",
+      "crime_victim",
+      "discrimination",
+      "poverty",
+      "people"
+    ],
+    "level": 3
+  },
+  "working": {
+    "ru": "Работа",
+    "uz": "Ishlash",
+    "parent": "daily_activities",
+    "description_ru": "Трудовая деятельность.",
+    "description_uz": "Mehnat faoliyati.",
+    "category": "people",
+    "related": [
+      "daily_activities",
+      "eating",
+      "sleeping",
+      "studying",
+      "people"
+    ],
+    "level": 3
+  }
+}

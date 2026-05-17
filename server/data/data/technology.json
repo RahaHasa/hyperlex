@@ -1,22 +1,4570 @@
 {
+  "technology": {
+    "ru": "Технологии",
+    "uz": "Texnologiyalar",
+    "description_ru": "Общая категория устройств, систем и цифровых решений.",
+    "description_uz": "Qurilmalar, tizimlar va raqamli yechimlarning umumiy toifasi.",
+    "category": "technology",
+    "related": [
+      "internet",
+      "electricity",
+      "computer_technology",
+      "media_technology",
+      "ai_technology",
+      "automation_technology",
+      "3d_scanner",
+      "5g_network"
+    ],
+    "level": 1
+  },
+  "3d_scanner": {
+    "ru": "3D-сканер",
+    "uz": "3D skaner",
+    "parent": "technology",
+    "description_ru": "Устройство для создания трёхмерной модели объекта.",
+    "description_uz": "Obyektning 3D modelini yaratuvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "air_purifier"
+    ],
+    "level": 2
+  },
+  "5g_network": {
+    "ru": "Сеть 5G",
+    "uz": "5G tarmog‘i",
+    "parent": "technology",
+    "description_ru": "Высокоскоростная мобильная сеть.",
+    "description_uz": "Yuqori tezlikdagi mobil tarmoq.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "ai_technology",
+      "air_conditioner",
+      "air_purifier"
+    ],
+    "level": 2
+  },
+  "ai_technology": {
+    "ru": "Искусственный интеллект",
+    "uz": "Sun’iy intellekt",
+    "parent": "technology",
+    "description_ru": "Технологии машинного обучения, анализа и интеллектуальной автоматизации.",
+    "description_uz": "Mashinali o‘rganish, tahlil va aqlli avtomatlashtirish texnologiyalari.",
+    "category": "technology",
+    "related": [
+      "robotics",
+      "automation_technology",
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "air_conditioner",
+      "air_purifier",
+      "ai_assistant"
+    ],
+    "level": 2
+  },
+  "air_conditioner": {
+    "ru": "Кондиционер",
+    "uz": "Konditsioner",
+    "parent": "technology",
+    "description_ru": "Устройство для охлаждения воздуха.",
+    "description_uz": "Havoni sovutuvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_purifier"
+    ],
+    "level": 2
+  },
+  "air_purifier": {
+    "ru": "Очиститель воздуха",
+    "uz": "Havo tozalagich",
+    "parent": "technology",
+    "description_ru": "Устройство для очистки воздуха в помещении.",
+    "description_uz": "Xonadagi havoni tozalovchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "atm": {
+    "ru": "Банкомат",
+    "uz": "Bankomat",
+    "parent": "technology",
+    "description_ru": "Устройство для снятия и внесения денег.",
+    "description_uz": "Pul yechish va kiritish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "automation_technology": {
+    "ru": "Технологии автоматизации",
+    "uz": "Avtomatlashtirish texnologiyalari",
+    "parent": "technology",
+    "description_ru": "Технологии для автоматического выполнения процессов и задач.",
+    "description_uz": "Jarayon va vazifalarni avtomatik bajarish texnologiyalari.",
+    "category": "technology",
+    "related": [
+      "industrial_technology",
+      "ai_technology",
+      "robotics",
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "air_conditioner",
+      "automated_lighting"
+    ],
+    "level": 2
+  },
+  "barcode_scanner": {
+    "ru": "Сканер штрихкода",
+    "uz": "Shtrixkod skaneri",
+    "parent": "technology",
+    "description_ru": "Устройство для считывания штрихкодов.",
+    "description_uz": "Shtrixkodni o‘qiydigan qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "battery": {
+    "ru": "Батарея",
+    "uz": "Batareya",
+    "parent": "technology",
+    "description_ru": "Источник хранения электрической энергии.",
+    "description_uz": "Elektr energiyasini saqlovchi manba.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "biotechnology": {
+    "ru": "Биотехнологии",
+    "uz": "Biotexnologiya",
+    "parent": "technology",
+    "description_ru": "Технологии на стыке биологии, медицины и инженерии.",
+    "description_uz": "Biologiya, tibbiyot va muhandislik kesishmasidagi texnologiyalar.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "biochip",
+      "bioinformatics",
+      "bioplastic"
+    ],
+    "level": 2
+  },
+  "blockchain_technology": {
+    "ru": "Блокчейн-технологии",
+    "uz": "Blokcheyn texnologiyalari",
+    "parent": "technology",
+    "description_ru": "Технологии распределённых реестров и цифровых транзакций.",
+    "description_uz": "Taqsimlangan reyestr va raqamli tranzaksiya texnologiyalari.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "block_explorer",
+      "crypto_exchange_platform",
+      "crypto_wallet"
+    ],
+    "level": 2
+  },
+  "bluetooth_speaker": {
+    "ru": "Bluetooth-колонка",
+    "uz": "Bluetooth kolonka",
+    "parent": "technology",
+    "description_ru": "Беспроводное устройство для воспроизведения звука.",
+    "description_uz": "Simsiz ovoz chiqaruvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "cash_register": {
+    "ru": "Кассовый аппарат",
+    "uz": "Kassa apparati",
+    "parent": "technology",
+    "description_ru": "Устройство для регистрации продаж.",
+    "description_uz": "Savdoni ro‘yxatga oluvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "cloud_technology": {
+    "ru": "Облачные технологии",
+    "uz": "Bulutli texnologiyalar",
+    "parent": "technology",
+    "description_ru": "Технологии хранения, обработки и запуска сервисов в облаке.",
+    "description_uz": "Bulutda saqlash, qayta ishlash va servislarni ishga tushirish texnologiyalari.",
+    "category": "technology",
+    "related": [
+      "internet",
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "cloud_backup",
+      "cloud_database"
+    ],
+    "level": 2
+  },
+  "computer_technology": {
+    "ru": "Компьютерные технологии",
+    "uz": "Kompyuter texnologiyalari",
+    "parent": "technology",
+    "description_ru": "Технологии, связанные с компьютерами и вычислительными устройствами.",
+    "description_uz": "Kompyuterlar va hisoblash qurilmalari bilan bog‘liq texnologiyalar.",
+    "category": "technology",
+    "related": [
+      "laptop_device",
+      "tablet_device",
+      "printer",
+      "scanner",
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology"
+    ],
+    "level": 2
+  },
+  "conference_system": {
+    "ru": "Система видеоконференции",
+    "uz": "Videokonferensiya tizimi",
+    "parent": "technology",
+    "description_ru": "Оборудование для онлайн-встреч.",
+    "description_uz": "Onlayn uchrashuv tizimi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "construction_technology": {
+    "ru": "Строительные технологии",
+    "uz": "Qurilish texnologiyalari",
+    "parent": "technology",
+    "description_ru": "Технологии, применяемые в строительстве и инфраструктуре.",
+    "description_uz": "Qurilish va infratuzilmada qo‘llaniladigan texnologiyalar.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "3d_house_printing",
+      "automated_crane",
+      "building_information_modeling"
+    ],
+    "level": 2
+  },
+  "contactless_payment": {
+    "ru": "Бесконтактная оплата",
+    "uz": "Kontaktsiz to‘lov",
+    "parent": "technology",
+    "description_ru": "Оплата картой или телефоном без ввода PIN.",
+    "description_uz": "Karta yoki telefon orqali tegmasdan to‘lov.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "crypto_exchange": {
+    "ru": "Криптобиржа",
+    "uz": "Kriptobirja",
+    "parent": "technology",
+    "description_ru": "Платформа для торговли криптовалютой.",
+    "description_uz": "Kriptovalyuta savdo platformasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "digital_id_card": {
+    "ru": "Цифровое удостоверение личности",
+    "uz": "Raqamli shaxs guvohnomasi",
+    "parent": "technology",
+    "description_ru": "Электронный документ для идентификации.",
+    "description_uz": "Shaxsni tasdiqlovchi raqamli hujjat.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "digital_invoice": {
+    "ru": "Электронный счёт",
+    "uz": "Elektron hisob",
+    "parent": "technology",
+    "description_ru": "Цифровая форма выставления счета.",
+    "description_uz": "Hisob-fakturaning raqamli shakli.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "digital_passport": {
+    "ru": "Цифровой паспорт",
+    "uz": "Raqamli pasport",
+    "parent": "technology",
+    "description_ru": "Электронная версия паспорта.",
+    "description_uz": "Pasportning elektron shakli.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "digital_signature": {
+    "ru": "Электронная подпись",
+    "uz": "Elektron imzo",
+    "parent": "technology",
+    "description_ru": "Цифровое подтверждение личности.",
+    "description_uz": "Raqamli shaxs tasdiqlash vositasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "digital_thermometer": {
+    "ru": "Электронный термометр",
+    "uz": "Elektron termometr",
+    "parent": "technology",
+    "description_ru": "Устройство для измерения температуры тела.",
+    "description_uz": "Tana haroratini o‘lchovchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "digital_wallet": {
+    "ru": "Цифровой кошелёк",
+    "uz": "Raqamli hamyon",
+    "parent": "technology",
+    "description_ru": "Приложение для хранения денег.",
+    "description_uz": "Pul saqlash ilovasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "e_book_reader": {
+    "ru": "Электронная книга",
+    "uz": "Elektron kitob qurilmasi",
+    "parent": "technology",
+    "description_ru": "Устройство для чтения цифровых книг.",
+    "description_uz": "Raqamli kitob o‘qish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "e_government": {
+    "ru": "Электронное правительство",
+    "uz": "Elektron hukumat",
+    "parent": "technology",
+    "description_ru": "Цифровые государственные услуги.",
+    "description_uz": "Raqamli davlat xizmatlari.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "earbuds": {
+    "ru": "Беспроводные наушники",
+    "uz": "Simsiz quloqchin",
+    "parent": "technology",
+    "description_ru": "Устройство для прослушивания аудио без проводов.",
+    "description_uz": "Simsiz audio tinglash qurilmasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "educational_technology": {
+    "ru": "Образовательные технологии",
+    "uz": "Ta’lim texnologiyalari",
+    "parent": "technology",
+    "description_ru": "Цифровые и технические решения для обучения.",
+    "description_uz": "Ta’lim uchun raqamli va texnik yechimlar.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "ai_tutor",
+      "digital_library",
+      "educational_app"
+    ],
+    "level": 2
+  },
+  "electric_air_taxi": {
+    "ru": "Электрическое воздушное такси",
+    "uz": "Elektr havo taksisi",
+    "parent": "technology",
+    "description_ru": "Воздушный транспорт для городских перевозок.",
+    "description_uz": "Shahar ichida uchuvchi transport.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "electric_bus_system": {
+    "ru": "Система электробусов",
+    "uz": "Elektr avtobus tizimi",
+    "parent": "technology",
+    "description_ru": "Городская транспортная система на электричестве.",
+    "description_uz": "Elektr asosidagi shahar transport tizimi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "electric_scooter_system": {
+    "ru": "Система аренды электросамокатов",
+    "uz": "Elektr samokat ijarasi tizimi",
+    "parent": "technology",
+    "description_ru": "Городская система аренды транспорта.",
+    "description_uz": "Shahardagi transport ijarasi tizimi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
   "electricity": {
     "ru": "Электричество",
     "uz": "Elektr energiyasi",
+    "parent": "technology",
     "description_ru": "Источник энергии для работы устройств.",
     "description_uz": "Qurilmalar ishlashi uchun energiya manbai.",
     "category": "technology",
-    "related": []
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
   },
-
+  "electronic_queue": {
+    "ru": "Электронная очередь",
+    "uz": "Elektron navbat",
+    "parent": "technology",
+    "description_ru": "Система управления очередями.",
+    "description_uz": "Navbatni boshqarish tizimi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "electronic_ticket": {
+    "ru": "Электронный билет",
+    "uz": "Elektron chipta",
+    "parent": "technology",
+    "description_ru": "Цифровая система покупки билетов.",
+    "description_uz": "Chipta sotib olishning raqamli tizimi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "elevator": {
+    "ru": "Лифт",
+    "uz": "Lift",
+    "parent": "technology",
+    "description_ru": "Устройство для перемещения людей между этажами.",
+    "description_uz": "Qavatlar orasida odam tashuvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "escalator": {
+    "ru": "Эскалатор",
+    "uz": "Eskalyator",
+    "parent": "technology",
+    "description_ru": "Движущаяся лестница.",
+    "description_uz": "Harakatlanuvchi zinapoya.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "fiber_optic": {
+    "ru": "Оптоволоконная связь",
+    "uz": "Optik tolali aloqa",
+    "parent": "technology",
+    "description_ru": "Передача данных по оптоволоконным кабелям.",
+    "description_uz": "Ma'lumotni optik tolali kabel orqali uzatish.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "fitness_tracker": {
+    "ru": "Фитнес-браслет",
+    "uz": "Fitnes bilaguzuk",
+    "parent": "technology",
+    "description_ru": "Устройство для отслеживания физической активности.",
+    "description_uz": "Jismoniy faollikni kuzatuvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "gaming_technology": {
+    "ru": "Игровые технологии",
+    "uz": "O‘yin texnologiyalari",
+    "parent": "technology",
+    "description_ru": "Технологии для видеоигр, игровых платформ и интерактивных систем.",
+    "description_uz": "Videoo‘yinlar, platformalar va interaktiv tizimlar texnologiyalari.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "augmented_reality_game",
+      "cloud_gaming",
+      "esports_platform"
+    ],
+    "level": 2
+  },
+  "gps": {
+    "ru": "GPS",
+    "uz": "GPS",
+    "parent": "technology",
+    "description_ru": "Система определения местоположения.",
+    "description_uz": "Joylashuvni aniqlash tizimi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "heater": {
+    "ru": "Обогреватель",
+    "uz": "Isitgich",
+    "parent": "technology",
+    "description_ru": "Устройство для обогрева помещения.",
+    "description_uz": "Xonani isituvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "home_appliance_technology": {
+    "ru": "Бытовая техника",
+    "uz": "Maishiy texnologiyalar",
+    "parent": "technology",
+    "description_ru": "Домашние электрические устройства для повседневного использования.",
+    "description_uz": "Kundalik foydalanish uchun uy elektr qurilmalari.",
+    "category": "technology",
+    "related": [
+      "refrigerator",
+      "washing_machine",
+      "vacuum_cleaner",
+      "microwave",
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology"
+    ],
+    "level": 2
+  },
+  "industrial_technology": {
+    "ru": "Промышленные технологии",
+    "uz": "Sanoat texnologiyalari",
+    "parent": "technology",
+    "description_ru": "Технологии для производства и промышленной автоматизации.",
+    "description_uz": "Ishlab chiqarish va sanoat avtomatlashtirish texnologiyalari.",
+    "category": "technology",
+    "related": [
+      "automation_technology",
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "3d_printer",
+      "assembly_line"
+    ],
+    "level": 2
+  },
   "internet": {
     "ru": "Интернет",
     "uz": "Internet",
+    "parent": "technology",
     "description_ru": "Глобальная сеть передачи данных.",
     "description_uz": "Global ma'lumot almashish tarmog‘i.",
     "category": "technology",
-    "related": []
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "wifi"
+    ],
+    "level": 2
   },
-
+  "laminator": {
+    "ru": "Ламинатор",
+    "uz": "Laminator",
+    "parent": "technology",
+    "description_ru": "Устройство для покрытия документов плёнкой.",
+    "description_uz": "Hujjatni plyonka bilan qoplash qurilmasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "laptop_device": {
+    "ru": "Ноутбук",
+    "uz": "Noutbuk",
+    "parent": "technology",
+    "description_ru": "Портативный компьютер.",
+    "description_uz": "Ko‘chma kompyuter.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "media_technology": {
+    "ru": "Медиатехнологии",
+    "uz": "Media texnologiyalari",
+    "parent": "technology",
+    "description_ru": "Технологии для создания, передачи и потребления медиа.",
+    "description_uz": "Media yaratish, uzatish va iste’mol qilish texnologiyalari.",
+    "category": "technology",
+    "related": [
+      "television",
+      "internet",
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "animation_software"
+    ],
+    "level": 2
+  },
+  "medical_monitor": {
+    "ru": "Медицинский монитор",
+    "uz": "Tibbiy monitor",
+    "parent": "technology",
+    "description_ru": "Устройство для контроля состояния пациента.",
+    "description_uz": "Bemor holatini kuzatuvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "medical_technology": {
+    "ru": "Медицинские технологии",
+    "uz": "Tibbiy texnologiyalar",
+    "parent": "technology",
+    "description_ru": "Технологии диагностики, мониторинга и лечения в медицине.",
+    "description_uz": "Tibbiyotda diagnostika, monitoring va davolash texnologiyalari.",
+    "category": "technology",
+    "related": [
+      "mri_machine",
+      "ultrasound_machine",
+      "blood_pressure_monitor",
+      "glucose_meter",
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology"
+    ],
+    "level": 2
+  },
+  "messenger_app": {
+    "ru": "Мессенджер",
+    "uz": "Xabar almashish ilovasi",
+    "parent": "technology",
+    "description_ru": "Приложение для обмена сообщениями.",
+    "description_uz": "Xabar almashish uchun ilova.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "microwave": {
+    "ru": "Микроволновка",
+    "uz": "Mikroto‘lqinli pech",
+    "parent": "technology",
+    "description_ru": "Устройство для разогрева пищи.",
+    "description_uz": "Ovqatni isitish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "mobile_banking": {
+    "ru": "Мобильный банкинг",
+    "uz": "Mobil bank xizmati",
+    "parent": "technology",
+    "description_ru": "Банковские операции через смартфон.",
+    "description_uz": "Smartfon orqali bank xizmatlari.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "mobile_network": {
+    "ru": "Мобильная связь",
+    "uz": "Mobil aloqa",
+    "parent": "technology",
+    "description_ru": "Технология связи через мобильные сети.",
+    "description_uz": "Mobil tarmoqlar orqali aloqa.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "music_streaming": {
+    "ru": "Музыкальный стриминг",
+    "uz": "Musiqa striming xizmati",
+    "parent": "technology",
+    "description_ru": "Онлайн-прослушивание музыки.",
+    "description_uz": "Musiqani onlayn tinglash xizmati.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "nanotechnology": {
+    "ru": "Нанотехнологии",
+    "uz": "Nanotexnologiya",
+    "parent": "technology",
+    "description_ru": "Технологии работы с материалами на наноуровне.",
+    "description_uz": "Materiallar bilan nano darajada ishlash texnologiyalari.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "nano_battery",
+      "nano_sensor",
+      "nanochip"
+    ],
+    "level": 2
+  },
+  "online_banking": {
+    "ru": "Онлайн-банкинг",
+    "uz": "Onlayn bank xizmati",
+    "parent": "technology",
+    "description_ru": "Система управления счетами через интернет.",
+    "description_uz": "Internet orqali hisobni boshqarish tizimi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "online_exchange": {
+    "ru": "Онлайн-обмен валют",
+    "uz": "Onlayn valyuta ayirboshlash",
+    "parent": "technology",
+    "description_ru": "Сервис обмена валют через интернет.",
+    "description_uz": "Internet orqali valyuta ayirboshlash.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "online_learning_platform": {
+    "ru": "Онлайн-платформа обучения",
+    "uz": "Onlayn ta'lim platformasi",
+    "parent": "technology",
+    "description_ru": "Система для дистанционного обучения.",
+    "description_uz": "Masofaviy ta'lim tizimi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "online_marketplace": {
+    "ru": "Онлайн-маркетплейс",
+    "uz": "Onlayn savdo maydoni",
+    "parent": "technology",
+    "description_ru": "Платформа для интернет-торговли.",
+    "description_uz": "Internet savdo platformasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "online_tax_system": {
+    "ru": "Онлайн-система налогов",
+    "uz": "Onlayn soliq tizimi",
+    "parent": "technology",
+    "description_ru": "Цифровая подача налоговых деклараций.",
+    "description_uz": "Soliqni onlayn topshirish tizimi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "parking_sensor": {
+    "ru": "Парковочный датчик",
+    "uz": "Parkovka sensori",
+    "parent": "technology",
+    "description_ru": "Устройство для помощи при парковке.",
+    "description_uz": "Parkovkada yordam beruvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "payment_terminal": {
+    "ru": "Платёжный терминал",
+    "uz": "To‘lov terminali",
+    "parent": "technology",
+    "description_ru": "Устройство для безналичной оплаты.",
+    "description_uz": "Naqd pulsiz to‘lov qurilmasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "photocopier": {
+    "ru": "Ксерокс",
+    "uz": "Kseroks",
+    "parent": "technology",
+    "description_ru": "Устройство для копирования документов.",
+    "description_uz": "Hujjat nusxa ko‘chirish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "pos_terminal": {
+    "ru": "POS-терминал",
+    "uz": "POS terminal",
+    "parent": "technology",
+    "description_ru": "Устройство для приёма банковских карт.",
+    "description_uz": "Bank kartalarini qabul qiluvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "power_bank": {
+    "ru": "Пауэрбанк",
+    "uz": "Powerbank",
+    "parent": "technology",
+    "description_ru": "Портативное устройство для зарядки.",
+    "description_uz": "Ko‘chma zaryadlash qurilmasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "power_plant": {
+    "ru": "Электростанция",
+    "uz": "Elektr stansiya",
+    "parent": "technology",
+    "description_ru": "Объект для производства электроэнергии.",
+    "description_uz": "Elektr energiyasi ishlab chiqaruvchi obyekt.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "printer": {
+    "ru": "Принтер",
+    "uz": "Printer",
+    "parent": "technology",
+    "description_ru": "Устройство для печати документов.",
+    "description_uz": "Hujjatlarni chop etuvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "qr_payment": {
+    "ru": "QR-оплата",
+    "uz": "QR to‘lov",
+    "parent": "technology",
+    "description_ru": "Безналичная оплата с помощью QR-кода.",
+    "description_uz": "QR kod orqali naqd pulsiz to‘lov.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "radar_detector": {
+    "ru": "Радар",
+    "uz": "Radar",
+    "parent": "technology",
+    "description_ru": "Устройство для обнаружения объектов.",
+    "description_uz": "Obyektlarni aniqlovchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "ride_sharing_app": {
+    "ru": "Приложение для заказа такси",
+    "uz": "Taksi chaqirish ilovasi",
+    "parent": "technology",
+    "description_ru": "Сервис для вызова автомобиля через смартфон.",
+    "description_uz": "Smartfon orqali mashina chaqirish xizmati.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "robot_vacuum": {
+    "ru": "Робот-пылесос",
+    "uz": "Robot changyutgich",
+    "parent": "technology",
+    "description_ru": "Автоматический пылесос.",
+    "description_uz": "Avtomatik chang tozalovchi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "robotics": {
+    "ru": "Робототехника",
+    "uz": "Robototexnika",
+    "parent": "technology",
+    "description_ru": "Технологии создания и управления роботами.",
+    "description_uz": "Robotlarni yaratish va boshqarish texnologiyalari.",
+    "category": "technology",
+    "related": [
+      "ai_technology",
+      "automation_technology",
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "air_conditioner",
+      "agricultural_robot",
+      "humanoid_robot"
+    ],
+    "level": 2
+  },
+  "satellite_communication": {
+    "ru": "Спутниковая связь",
+    "uz": "Sun'iy yo‘ldosh aloqasi",
+    "parent": "technology",
+    "description_ru": "Передача сигнала через спутники.",
+    "description_uz": "Signalni sun'iy yo‘ldosh orqali uzatish.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "scanner": {
+    "ru": "Сканер",
+    "uz": "Skaner",
+    "parent": "technology",
+    "description_ru": "Устройство для цифрового копирования документов.",
+    "description_uz": "Hujjatlarni raqamlashtiruvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "security_technology": {
+    "ru": "Технологии безопасности",
+    "uz": "Xavfsizlik texnologiyalari",
+    "parent": "technology",
+    "description_ru": "Технологии для защиты людей, данных и объектов.",
+    "description_uz": "Odamlar, ma’lumotlar va obyektlarni himoya qiluvchi texnologiyalar.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "alarm_system",
+      "biometric_authentication",
+      "cyber_security_system"
+    ],
+    "level": 2
+  },
+  "self_service_kiosk": {
+    "ru": "Терминал самообслуживания",
+    "uz": "O‘z-o‘ziga xizmat terminali",
+    "parent": "technology",
+    "description_ru": "Автомат для самостоятельной оплаты услуг.",
+    "description_uz": "Xizmatlarni mustaqil to‘lash qurilmasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "shredder": {
+    "ru": "Шредер",
+    "uz": "Hujjat maydalagich",
+    "parent": "technology",
+    "description_ru": "Устройство для уничтожения документов.",
+    "description_uz": "Hujjatlarni maydalovchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "smart_doorbell": {
+    "ru": "Умный дверной звонок",
+    "uz": "Aqlli eshik qo‘ng‘irog‘i",
+    "parent": "technology",
+    "description_ru": "Звонок с видеонаблюдением.",
+    "description_uz": "Video kuzatuvli eshik qo‘ng‘irog‘i.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "smart_light": {
+    "ru": "Умная лампа",
+    "uz": "Aqlli chiroq",
+    "parent": "technology",
+    "description_ru": "Лампа с управлением через приложение.",
+    "description_uz": "Ilova orqali boshqariladigan chiroq.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "smart_microphone": {
+    "ru": "Умный микрофон",
+    "uz": "Aqlli mikrofon",
+    "parent": "technology",
+    "description_ru": "Микрофон с цифровой обработкой звука.",
+    "description_uz": "Raqamli tovush qayta ishlovchi mikrofon.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "smart_plug": {
+    "ru": "Умная розетка",
+    "uz": "Aqlli rozetka",
+    "parent": "technology",
+    "description_ru": "Розетка с удалённым управлением.",
+    "description_uz": "Masofadan boshqariladigan rozetka.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "smart_thermostat": {
+    "ru": "Умный термостат",
+    "uz": "Aqlli termostat",
+    "parent": "technology",
+    "description_ru": "Устройство для автоматического контроля температуры.",
+    "description_uz": "Haroratni avtomatik boshqaruvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "smart_tv": {
+    "ru": "Смарт-телевизор",
+    "uz": "Smart televizor",
+    "parent": "technology",
+    "description_ru": "Телевизор с доступом к интернету.",
+    "description_uz": "Internetga ulangan televizor.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "smart_watch": {
+    "ru": "Умные часы",
+    "uz": "Aqlli soat",
+    "parent": "technology",
+    "description_ru": "Носимое цифровое устройство.",
+    "description_uz": "Taqiladigan raqamli qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "smart_water_meter": {
+    "ru": "Умный счётчик воды",
+    "uz": "Aqlli suv hisoblagich",
+    "parent": "technology",
+    "description_ru": "Устройство для цифрового контроля расхода воды.",
+    "description_uz": "Suv sarfini raqamli nazorat qiluvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "smartphone_device": {
+    "ru": "Смартфон",
+    "uz": "Smartfon",
+    "parent": "technology",
+    "description_ru": "Мобильное устройство связи и интернета.",
+    "description_uz": "Aloqa va internet uchun mobil qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "solar_panel": {
+    "ru": "Солнечная панель",
+    "uz": "Quyosh paneli",
+    "parent": "technology",
+    "description_ru": "Устройство для преобразования солнечной энергии.",
+    "description_uz": "Quyosh energiyasini elektrga aylantiruvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "space_technology": {
+    "ru": "Космические технологии",
+    "uz": "Kosmik texnologiyalar",
+    "parent": "technology",
+    "description_ru": "Технологии исследования космоса и спутниковых систем.",
+    "description_uz": "Kosmosni o‘rganish va sun’iy yo‘ldosh tizimlari texnologiyalari.",
+    "category": "technology",
+    "related": [
+      "gps",
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "astronaut_suit",
+      "deep_space_antenna"
+    ],
+    "level": 2
+  },
+  "speed_camera": {
+    "ru": "Камера контроля скорости",
+    "uz": "Tezlik kamerasi",
+    "parent": "technology",
+    "description_ru": "Устройство для фиксации превышения скорости.",
+    "description_uz": "Tezlikni nazorat qiluvchi kamera.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "tablet_device": {
+    "ru": "Планшет",
+    "uz": "Planshet",
+    "parent": "technology",
+    "description_ru": "Сенсорное портативное устройство.",
+    "description_uz": "Sensorli ko‘chma qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "telemedicine_platform": {
+    "ru": "Телемедицина",
+    "uz": "Telemeditsina",
+    "parent": "technology",
+    "description_ru": "Удалённые медицинские консультации.",
+    "description_uz": "Masofaviy tibbiy maslahatlar.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "traffic_light": {
+    "ru": "Светофор",
+    "uz": "Svetofor",
+    "parent": "technology",
+    "description_ru": "Устройство для регулирования дорожного движения.",
+    "description_uz": "Yo‘l harakatini boshqaruvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "traffic_monitoring_system": {
+    "ru": "Система мониторинга движения",
+    "uz": "Harakat monitoring tizimi",
+    "parent": "technology",
+    "description_ru": "Технология контроля дорожной ситуации.",
+    "description_uz": "Yo‘l holatini nazorat qiluvchi tizim.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "transport_technology": {
+    "ru": "Транспортные технологии",
+    "uz": "Transport texnologiyalari",
+    "parent": "technology",
+    "description_ru": "Технологии, применяемые в транспорте и навигации.",
+    "description_uz": "Transport va navigatsiyada qo‘llaniladigan texnologiyalar.",
+    "category": "technology",
+    "related": [
+      "gps",
+      "mobile_network",
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner",
+      "car_navigator"
+    ],
+    "level": 2
+  },
+  "ventilator_machine": {
+    "ru": "Аппарат ИВЛ",
+    "uz": "Sun'iy nafas oldirish apparati",
+    "parent": "technology",
+    "description_ru": "Устройство для поддержки дыхания.",
+    "description_uz": "Nafas olishni qo‘llab-quvvatlovchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "video_call": {
+    "ru": "Видеозвонок",
+    "uz": "Video qo‘ng‘iroq",
+    "parent": "technology",
+    "description_ru": "Связь с передачей видео в реальном времени.",
+    "description_uz": "Real vaqt rejimida video aloqa.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "virtual_assistant": {
+    "ru": "Голосовой помощник",
+    "uz": "Ovozli yordamchi",
+    "parent": "technology",
+    "description_ru": "Программа для голосового управления устройствами.",
+    "description_uz": "Qurilmalarni ovoz orqali boshqarish dasturi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "warehouse_management_system": {
+    "ru": "Система управления складом",
+    "uz": "Ombor boshqaruv tizimi",
+    "parent": "technology",
+    "description_ru": "Программа для контроля складских запасов.",
+    "description_uz": "Ombordagi mahsulotlarni boshqarish tizimi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "waste_recycling_system": {
+    "ru": "Система переработки отходов",
+    "uz": "Chiqindilarni qayta ishlash tizimi",
+    "parent": "technology",
+    "description_ru": "Технология переработки мусора.",
+    "description_uz": "Chiqindilarni qayta ishlash texnologiyasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "water_purifier": {
+    "ru": "Фильтр для воды",
+    "uz": "Suv filtri",
+    "parent": "technology",
+    "description_ru": "Устройство для очистки воды.",
+    "description_uz": "Suvni tozalovchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "water_treatment_plant": {
+    "ru": "Очистная станция воды",
+    "uz": "Suv tozalash stansiyasi",
+    "parent": "technology",
+    "description_ru": "Система очистки питьевой воды.",
+    "description_uz": "Ichimlik suvini tozalash tizimi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "wind_turbine": {
+    "ru": "Ветрогенератор",
+    "uz": "Shamol turbinası",
+    "parent": "technology",
+    "description_ru": "Устройство для выработки энергии от ветра.",
+    "description_uz": "Shamoldan elektr ishlab chiqaruvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "x_ray_machine": {
+    "ru": "Рентген-аппарат",
+    "uz": "Rentgen apparati",
+    "parent": "technology",
+    "description_ru": "Устройство для получения рентгеновских снимков.",
+    "description_uz": "Rentgen tasvirlarini olish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "technology",
+      "3d_scanner",
+      "5g_network",
+      "ai_technology",
+      "air_conditioner"
+    ],
+    "level": 2
+  },
+  "3d_house_printing": {
+    "ru": "3D-печать домов",
+    "uz": "3D uy qurish",
+    "parent": "construction_technology",
+    "description_ru": "Строительство домов с помощью 3D-принтера.",
+    "description_uz": "3D printer orqali uy qurish.",
+    "category": "technology",
+    "related": [
+      "construction_technology",
+      "automated_crane",
+      "building_information_modeling",
+      "construction_drone",
+      "green_building_technology",
+      "technology"
+    ],
+    "level": 3
+  },
+  "3d_printer": {
+    "ru": "3D-принтер",
+    "uz": "3D printer",
+    "parent": "industrial_technology",
+    "description_ru": "Устройство для послойной печати объектов.",
+    "description_uz": "Qatlamlab obyekt chop etuvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "industrial_technology",
+      "assembly_line",
+      "cnc_machine",
+      "factory_automation_system",
+      "hydraulic_press",
+      "technology"
+    ],
+    "level": 3
+  },
+  "agricultural_robot": {
+    "ru": "Сельскохозяйственный робот",
+    "uz": "Qishloq xo‘jaligi roboti",
+    "parent": "robotics",
+    "description_ru": "Робот для работы в сельском хозяйстве.",
+    "description_uz": "Qishloq xo‘jaligida ishlovchi robot.",
+    "category": "technology",
+    "related": [
+      "robotics",
+      "humanoid_robot",
+      "medical_robot",
+      "robot_arm",
+      "robot_dog",
+      "technology"
+    ],
+    "level": 3
+  },
+  "ai_assistant": {
+    "ru": "ИИ-помощник",
+    "uz": "Sun'iy intellekt yordamchisi",
+    "parent": "ai_technology",
+    "description_ru": "Программа для голосового управления.",
+    "description_uz": "Ovoz orqali boshqariluvchi dastur.",
+    "category": "technology",
+    "related": [
+      "ai_technology",
+      "ai_model",
+      "chatbot",
+      "computer_vision",
+      "deep_learning",
+      "technology"
+    ],
+    "level": 3
+  },
+  "ai_model": {
+    "ru": "Модель ИИ",
+    "uz": "Sun'iy intellekt modeli",
+    "parent": "ai_technology",
+    "description_ru": "Обученная модель для решения задач.",
+    "description_uz": "Muammolarni hal qiluvchi o‘qitilgan model.",
+    "category": "technology",
+    "related": [
+      "ai_technology",
+      "ai_assistant",
+      "chatbot",
+      "computer_vision",
+      "deep_learning",
+      "technology"
+    ],
+    "level": 3
+  },
+  "ai_tutor": {
+    "ru": "ИИ-репетитор",
+    "uz": "Sun'iy intellekt o‘qituvchi",
+    "parent": "educational_technology",
+    "description_ru": "Система обучения на основе ИИ.",
+    "description_uz": "Sun'iy intellekt asosidagi o‘quv tizimi.",
+    "category": "technology",
+    "related": [
+      "educational_technology",
+      "digital_library",
+      "educational_app",
+      "exam_software",
+      "interactive_whiteboard",
+      "technology"
+    ],
+    "level": 3
+  },
+  "alarm_system": {
+    "ru": "Сигнализация",
+    "uz": "Signalizatsiya",
+    "parent": "security_technology",
+    "description_ru": "Система защиты от взлома.",
+    "description_uz": "Buzib kirishga qarshi himoya tizimi.",
+    "category": "technology",
+    "related": [
+      "security_technology",
+      "biometric_authentication",
+      "cyber_security_system",
+      "encryption_system",
+      "technology",
+      "face_recognition_system"
+    ],
+    "level": 3
+  },
+  "animation_software": {
+    "ru": "Программа для анимации",
+    "uz": "Animatsiya dasturi",
+    "parent": "media_technology",
+    "description_ru": "ПО для создания анимации.",
+    "description_uz": "Animatsiya yaratish dasturi.",
+    "category": "technology",
+    "related": [
+      "media_technology",
+      "audio_editor",
+      "digital_camera",
+      "digital_tv",
+      "microphone",
+      "technology"
+    ],
+    "level": 3
+  },
+  "assembly_line": {
+    "ru": "Конвейерная линия",
+    "uz": "Konveyer liniyasi",
+    "parent": "industrial_technology",
+    "description_ru": "Система массового производства.",
+    "description_uz": "Ommaviy ishlab chiqarish tizimi.",
+    "category": "technology",
+    "related": [
+      "industrial_technology",
+      "3d_printer",
+      "cnc_machine",
+      "factory_automation_system",
+      "hydraulic_press",
+      "technology"
+    ],
+    "level": 3
+  },
+  "astronaut_suit": {
+    "ru": "Скафандр",
+    "uz": "Skafandr",
+    "parent": "space_technology",
+    "description_ru": "Костюм для работы в космосе.",
+    "description_uz": "Kosmosda ishlash kiyimi.",
+    "category": "technology",
+    "related": [
+      "space_technology",
+      "deep_space_antenna",
+      "launch_pad",
+      "mars_rover",
+      "orbital_satellite_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "audio_editor": {
+    "ru": "Аудиоредактор",
+    "uz": "Audio tahrirlash dasturi",
+    "parent": "media_technology",
+    "description_ru": "Программа для обработки звука.",
+    "description_uz": "Ovoz tahrirlash dasturi.",
+    "category": "technology",
+    "related": [
+      "media_technology",
+      "animation_software",
+      "digital_camera",
+      "digital_tv",
+      "microphone",
+      "technology"
+    ],
+    "level": 3
+  },
+  "augmented_reality_game": {
+    "ru": "Игра с дополненной реальностью",
+    "uz": "AR o‘yin",
+    "parent": "gaming_technology",
+    "description_ru": "Игра с использованием AR.",
+    "description_uz": "Kengaytirilgan reallik o‘yini.",
+    "category": "technology",
+    "related": [
+      "gaming_technology",
+      "cloud_gaming",
+      "esports_platform",
+      "game_controller",
+      "game_engine",
+      "technology"
+    ],
+    "level": 3
+  },
+  "automated_crane": {
+    "ru": "Автоматизированный кран",
+    "uz": "Avtomatik kran",
+    "parent": "construction_technology",
+    "description_ru": "Кран с автоматическим управлением.",
+    "description_uz": "Avtomatik boshqaruvli kran.",
+    "category": "technology",
+    "related": [
+      "construction_technology",
+      "3d_house_printing",
+      "building_information_modeling",
+      "construction_drone",
+      "green_building_technology",
+      "technology"
+    ],
+    "level": 3
+  },
+  "automated_lighting": {
+    "ru": "Автоматическое освещение",
+    "uz": "Avtomatik yoritish",
+    "parent": "automation_technology",
+    "description_ru": "Система управления освещением.",
+    "description_uz": "Yoritishni boshqarish tizimi.",
+    "category": "technology",
+    "related": [
+      "automation_technology",
+      "automated_warehouse",
+      "automation_software",
+      "home_automation_system",
+      "industrial_automation",
+      "technology"
+    ],
+    "level": 3
+  },
+  "automated_warehouse": {
+    "ru": "Автоматизированный склад",
+    "uz": "Avtomatlashtirilgan ombor",
+    "parent": "automation_technology",
+    "description_ru": "Склад с роботизированной системой.",
+    "description_uz": "Robot tizimli ombor.",
+    "category": "technology",
+    "related": [
+      "automation_technology",
+      "automated_lighting",
+      "automation_software",
+      "home_automation_system",
+      "industrial_automation",
+      "technology"
+    ],
+    "level": 3
+  },
+  "automation_software": {
+    "ru": "Программа автоматизации",
+    "uz": "Avtomatlashtirish dasturi",
+    "parent": "automation_technology",
+    "description_ru": "ПО для автоматизации процессов.",
+    "description_uz": "Jarayonlarni avtomatlashtiruvchi dastur.",
+    "category": "technology",
+    "related": [
+      "automation_technology",
+      "automated_lighting",
+      "automated_warehouse",
+      "home_automation_system",
+      "industrial_automation",
+      "technology"
+    ],
+    "level": 3
+  },
+  "biochip": {
+    "ru": "Биочип",
+    "uz": "Biochip",
+    "parent": "biotechnology",
+    "description_ru": "Микрочип для биологических исследований.",
+    "description_uz": "Biologik tadqiqot chipi.",
+    "category": "technology",
+    "related": [
+      "biotechnology",
+      "bioinformatics",
+      "bioplastic",
+      "bioreactor",
+      "cloning_technology",
+      "technology"
+    ],
+    "level": 3
+  },
+  "bioinformatics": {
+    "ru": "Биоинформатика",
+    "uz": "Bioinformatika",
+    "parent": "biotechnology",
+    "description_ru": "Анализ биологических данных.",
+    "description_uz": "Biologik ma'lumot tahlili.",
+    "category": "technology",
+    "related": [
+      "biotechnology",
+      "biochip",
+      "bioplastic",
+      "bioreactor",
+      "cloning_technology",
+      "technology"
+    ],
+    "level": 3
+  },
+  "biometric_authentication": {
+    "ru": "Биометрическая аутентификация",
+    "uz": "Biometrik autentifikatsiya",
+    "parent": "security_technology",
+    "description_ru": "Подтверждение личности по биометрическим данным.",
+    "description_uz": "Biometrik ma'lumot orqali tasdiqlash.",
+    "category": "technology",
+    "related": [
+      "security_technology",
+      "alarm_system",
+      "cyber_security_system",
+      "encryption_system",
+      "technology",
+      "face_recognition_system"
+    ],
+    "level": 3
+  },
+  "bioplastic": {
+    "ru": "Биопластик",
+    "uz": "Bioplastik",
+    "parent": "biotechnology",
+    "description_ru": "Экологичный пластик из биоматериалов.",
+    "description_uz": "Biomaterialdan tayyorlangan plastik.",
+    "category": "technology",
+    "related": [
+      "biotechnology",
+      "biochip",
+      "bioinformatics",
+      "bioreactor",
+      "cloning_technology",
+      "technology"
+    ],
+    "level": 3
+  },
+  "bioreactor": {
+    "ru": "Биореактор",
+    "uz": "Bioreaktor",
+    "parent": "biotechnology",
+    "description_ru": "Устройство для выращивания клеток.",
+    "description_uz": "Hujayra yetishtirish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "biotechnology",
+      "biochip",
+      "bioinformatics",
+      "bioplastic",
+      "cloning_technology",
+      "technology"
+    ],
+    "level": 3
+  },
+  "block_explorer": {
+    "ru": "Блокчейн-обозреватель",
+    "uz": "Blokcheyn kuzatuvchi",
+    "parent": "blockchain_technology",
+    "description_ru": "Просмотр транзакций в блокчейне.",
+    "description_uz": "Blokcheyn tranzaksiyalarini ko‘rish.",
+    "category": "technology",
+    "related": [
+      "blockchain_technology",
+      "crypto_exchange_platform",
+      "crypto_wallet",
+      "cryptocurrency",
+      "defi_platform",
+      "technology"
+    ],
+    "level": 3
+  },
+  "blood_pressure_monitor": {
+    "ru": "Тонометр",
+    "uz": "Qon bosimi o‘lchagich",
+    "parent": "medical_technology",
+    "description_ru": "Устройство для измерения давления.",
+    "description_uz": "Qon bosimini o‘lchovchi qurilma.",
+    "category": "technology",
+    "related": [
+      "medical_technology",
+      "glucose_meter",
+      "mri_machine",
+      "ultrasound_machine",
+      "technology"
+    ],
+    "level": 3
+  },
+  "building_information_modeling": {
+    "ru": "BIM-технология",
+    "uz": "BIM texnologiyasi",
+    "parent": "construction_technology",
+    "description_ru": "Цифровое моделирование зданий.",
+    "description_uz": "Binolarni raqamli modellashtirish.",
+    "category": "technology",
+    "related": [
+      "construction_technology",
+      "3d_house_printing",
+      "automated_crane",
+      "construction_drone",
+      "green_building_technology",
+      "technology"
+    ],
+    "level": 3
+  },
+  "car_navigator": {
+    "ru": "Автомобильный навигатор",
+    "uz": "Avtomobil navigatori",
+    "parent": "transport_technology",
+    "description_ru": "Устройство для определения маршрута.",
+    "description_uz": "Yo‘nalishni ko‘rsatuvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "transport_technology",
+      "drone_delivery",
+      "electric_bus",
+      "electric_car",
+      "electric_charging_station",
+      "technology"
+    ],
+    "level": 3
+  },
+  "chatbot": {
+    "ru": "Чат-бот",
+    "uz": "Chat-bot",
+    "parent": "ai_technology",
+    "description_ru": "Программа для автоматического общения.",
+    "description_uz": "Avtomatik muloqot dasturi.",
+    "category": "technology",
+    "related": [
+      "ai_technology",
+      "ai_assistant",
+      "ai_model",
+      "computer_vision",
+      "deep_learning",
+      "technology"
+    ],
+    "level": 3
+  },
+  "cloning_technology": {
+    "ru": "Клонирование",
+    "uz": "Klonlash",
+    "parent": "biotechnology",
+    "description_ru": "Создание генетически идентичных организмов.",
+    "description_uz": "Genetik bir xil organizm yaratish.",
+    "category": "technology",
+    "related": [
+      "biotechnology",
+      "biochip",
+      "bioinformatics",
+      "bioplastic",
+      "bioreactor",
+      "technology"
+    ],
+    "level": 3
+  },
+  "cloud_backup": {
+    "ru": "Облачное резервное копирование",
+    "uz": "Bulutli zaxira nusxa",
+    "parent": "cloud_technology",
+    "description_ru": "Создание копий данных в облаке.",
+    "description_uz": "Ma'lumotning bulutdagi nusxasi.",
+    "category": "technology",
+    "related": [
+      "cloud_technology",
+      "cloud_database",
+      "cloud_hosting",
+      "cloud_monitoring",
+      "cloud_security",
+      "technology"
+    ],
+    "level": 3
+  },
+  "cloud_database": {
+    "ru": "Облачная база данных",
+    "uz": "Bulutli ma'lumotlar bazasi",
+    "parent": "cloud_technology",
+    "description_ru": "База данных, размещённая в облаке.",
+    "description_uz": "Bulutda joylashgan ma'lumotlar bazasi.",
+    "category": "technology",
+    "related": [
+      "cloud_technology",
+      "cloud_backup",
+      "cloud_hosting",
+      "cloud_monitoring",
+      "cloud_security",
+      "technology"
+    ],
+    "level": 3
+  },
+  "cloud_gaming": {
+    "ru": "Облачный гейминг",
+    "uz": "Bulutli o‘yin",
+    "parent": "gaming_technology",
+    "description_ru": "Игры через интернет без установки.",
+    "description_uz": "Internet orqali o‘yin.",
+    "category": "technology",
+    "related": [
+      "gaming_technology",
+      "augmented_reality_game",
+      "esports_platform",
+      "game_controller",
+      "game_engine",
+      "technology"
+    ],
+    "level": 3
+  },
+  "cloud_hosting": {
+    "ru": "Облачный хостинг",
+    "uz": "Bulutli hosting",
+    "parent": "cloud_technology",
+    "description_ru": "Размещение сайтов в облачной среде.",
+    "description_uz": "Saytlarni bulutda joylashtirish.",
+    "category": "technology",
+    "related": [
+      "cloud_technology",
+      "cloud_backup",
+      "cloud_database",
+      "cloud_monitoring",
+      "cloud_security",
+      "technology"
+    ],
+    "level": 3
+  },
+  "cloud_monitoring": {
+    "ru": "Мониторинг облака",
+    "uz": "Bulut monitoringi",
+    "parent": "cloud_technology",
+    "description_ru": "Контроль работы облачных сервисов.",
+    "description_uz": "Bulut xizmatlarini kuzatish tizimi.",
+    "category": "technology",
+    "related": [
+      "cloud_technology",
+      "cloud_backup",
+      "cloud_database",
+      "cloud_hosting",
+      "cloud_security",
+      "technology"
+    ],
+    "level": 3
+  },
+  "cloud_security": {
+    "ru": "Облачная безопасность",
+    "uz": "Bulut xavfsizligi",
+    "parent": "cloud_technology",
+    "description_ru": "Защита облачных данных.",
+    "description_uz": "Bulutdagi ma'lumotni himoya qilish.",
+    "category": "technology",
+    "related": [
+      "cloud_technology",
+      "cloud_backup",
+      "cloud_database",
+      "cloud_hosting",
+      "cloud_monitoring",
+      "technology"
+    ],
+    "level": 3
+  },
+  "cloud_server": {
+    "ru": "Облачный сервер",
+    "uz": "Bulut serveri",
+    "parent": "cloud_technology",
+    "description_ru": "Удалённый сервер для обработки данных.",
+    "description_uz": "Ma'lumotni qayta ishlovchi masofaviy server.",
+    "category": "technology",
+    "related": [
+      "cloud_technology",
+      "cloud_backup",
+      "cloud_database",
+      "cloud_hosting",
+      "cloud_monitoring",
+      "technology"
+    ],
+    "level": 3
+  },
+  "cloud_storage": {
+    "ru": "Облачное хранилище",
+    "uz": "Bulutli saqlash",
+    "parent": "cloud_technology",
+    "description_ru": "Хранение данных на удалённых серверах.",
+    "description_uz": "Ma'lumotni masofaviy serverda saqlash.",
+    "category": "technology",
+    "related": [
+      "cloud_technology",
+      "cloud_backup",
+      "cloud_database",
+      "cloud_hosting",
+      "cloud_monitoring",
+      "technology"
+    ],
+    "level": 3
+  },
+  "cnc_machine": {
+    "ru": "Станок с ЧПУ",
+    "uz": "CNC stanok",
+    "parent": "industrial_technology",
+    "description_ru": "Станок с числовым программным управлением.",
+    "description_uz": "Raqamli boshqaruvli stanok.",
+    "category": "technology",
+    "related": [
+      "industrial_technology",
+      "3d_printer",
+      "assembly_line",
+      "factory_automation_system",
+      "hydraulic_press",
+      "technology"
+    ],
+    "level": 3
+  },
+  "computer_vision": {
+    "ru": "Компьютерное зрение",
+    "uz": "Kompyuter ko‘rish",
+    "parent": "ai_technology",
+    "description_ru": "Анализ изображений с помощью ИИ.",
+    "description_uz": "Tasvirni sun'iy intellekt orqali tahlil qilish.",
+    "category": "technology",
+    "related": [
+      "ai_technology",
+      "ai_assistant",
+      "ai_model",
+      "chatbot",
+      "deep_learning",
+      "technology"
+    ],
+    "level": 3
+  },
+  "construction_drone": {
+    "ru": "Строительный дрон",
+    "uz": "Qurilish droni",
+    "parent": "construction_technology",
+    "description_ru": "Дрон для мониторинга стройки.",
+    "description_uz": "Qurilishni kuzatuvchi dron.",
+    "category": "technology",
+    "related": [
+      "construction_technology",
+      "3d_house_printing",
+      "automated_crane",
+      "building_information_modeling",
+      "green_building_technology",
+      "technology"
+    ],
+    "level": 3
+  },
+  "container_technology": {
+    "ru": "Контейнерная технология",
+    "uz": "Konteyner texnologiyasi",
+    "parent": "cloud_technology",
+    "description_ru": "Изоляция приложений в контейнерах.",
+    "description_uz": "Ilovalarni konteynerda izolyatsiya qilish.",
+    "category": "technology",
+    "related": [
+      "cloud_technology",
+      "cloud_backup",
+      "cloud_database",
+      "cloud_hosting",
+      "cloud_monitoring",
+      "technology"
+    ],
+    "level": 3
+  },
+  "crispr_technology": {
+    "ru": "Технология CRISPR",
+    "uz": "CRISPR texnologiyasi",
+    "parent": "biotechnology",
+    "description_ru": "Редактирование генома.",
+    "description_uz": "Genomni tahrirlash usuli.",
+    "category": "technology",
+    "related": [
+      "biotechnology",
+      "biochip",
+      "bioinformatics",
+      "bioplastic",
+      "bioreactor",
+      "technology"
+    ],
+    "level": 3
+  },
+  "crypto_exchange_platform": {
+    "ru": "Криптобиржевая платформа",
+    "uz": "Kriptobirja platformasi",
+    "parent": "blockchain_technology",
+    "description_ru": "Обмен криптовалют.",
+    "description_uz": "Kriptovalyuta almashinuvi.",
+    "category": "technology",
+    "related": [
+      "blockchain_technology",
+      "block_explorer",
+      "crypto_wallet",
+      "cryptocurrency",
+      "defi_platform",
+      "technology"
+    ],
+    "level": 3
+  },
+  "crypto_wallet": {
+    "ru": "Криптокошелёк",
+    "uz": "Kripto hamyon",
+    "parent": "blockchain_technology",
+    "description_ru": "Хранение криптовалюты.",
+    "description_uz": "Kriptovalyuta saqlash.",
+    "category": "technology",
+    "related": [
+      "blockchain_technology",
+      "block_explorer",
+      "crypto_exchange_platform",
+      "cryptocurrency",
+      "defi_platform",
+      "technology"
+    ],
+    "level": 3
+  },
+  "cryptocurrency": {
+    "ru": "Криптовалюта",
+    "uz": "Kriptovalyuta",
+    "parent": "blockchain_technology",
+    "description_ru": "Цифровая валюта на блокчейне.",
+    "description_uz": "Blokcheynga asoslangan raqamli valyuta.",
+    "category": "technology",
+    "related": [
+      "blockchain_technology",
+      "block_explorer",
+      "crypto_exchange_platform",
+      "crypto_wallet",
+      "defi_platform",
+      "technology"
+    ],
+    "level": 3
+  },
+  "cyber_security_system": {
+    "ru": "Кибербезопасность",
+    "uz": "Kiberxavfsizlik",
+    "parent": "security_technology",
+    "description_ru": "Защита цифровых систем от атак.",
+    "description_uz": "Raqamli tizimlarni hujumlardan himoya qilish.",
+    "category": "technology",
+    "related": [
+      "security_technology",
+      "alarm_system",
+      "biometric_authentication",
+      "encryption_system",
+      "technology",
+      "face_recognition_system"
+    ],
+    "level": 3
+  },
+  "deep_learning": {
+    "ru": "Глубинное обучение",
+    "uz": "Chuqur o‘rganish",
+    "parent": "ai_technology",
+    "description_ru": "Метод обучения многослойных нейросетей.",
+    "description_uz": "Ko‘p qatlamli neyron tarmoqlarni o‘qitish.",
+    "category": "technology",
+    "related": [
+      "ai_technology",
+      "ai_assistant",
+      "ai_model",
+      "chatbot",
+      "computer_vision",
+      "technology"
+    ],
+    "level": 3
+  },
+  "deep_space_antenna": {
+    "ru": "Антенна дальнего космоса",
+    "uz": "Uzoq kosmos antennasi",
+    "parent": "space_technology",
+    "description_ru": "Связь с космическими аппаратами.",
+    "description_uz": "Kosmik apparatlar bilan aloqa.",
+    "category": "technology",
+    "related": [
+      "space_technology",
+      "astronaut_suit",
+      "launch_pad",
+      "mars_rover",
+      "orbital_satellite_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "defi_platform": {
+    "ru": "DeFi-платформа",
+    "uz": "DeFi platformasi",
+    "parent": "blockchain_technology",
+    "description_ru": "Децентрализованные финансы.",
+    "description_uz": "Markazlashmagan moliya tizimi.",
+    "category": "technology",
+    "related": [
+      "blockchain_technology",
+      "block_explorer",
+      "crypto_exchange_platform",
+      "crypto_wallet",
+      "cryptocurrency",
+      "technology"
+    ],
+    "level": 3
+  },
+  "desktop_computer": {
+    "ru": "Настольный компьютер",
+    "uz": "Stol kompyuteri",
+    "parent": "computer_technology",
+    "description_ru": "Персональный компьютер для работы.",
+    "description_uz": "Ish uchun shaxsiy kompyuter.",
+    "category": "technology",
+    "related": [
+      "laptop",
+      "computer_technology",
+      "hard_drive",
+      "keyboard",
+      "monitor",
+      "technology"
+    ],
+    "level": 3
+  },
+  "digital_camera": {
+    "ru": "Цифровая камера",
+    "uz": "Raqamli kamera",
+    "parent": "media_technology",
+    "description_ru": "Устройство для цифровой съёмки.",
+    "description_uz": "Raqamli suratga olish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "media_technology",
+      "animation_software",
+      "audio_editor",
+      "digital_tv",
+      "microphone",
+      "technology"
+    ],
+    "level": 3
+  },
+  "digital_library": {
+    "ru": "Цифровая библиотека",
+    "uz": "Raqamli kutubxona",
+    "parent": "educational_technology",
+    "description_ru": "Онлайн-хранилище книг и материалов.",
+    "description_uz": "Kitob va materiallar onlayn ombori.",
+    "category": "technology",
+    "related": [
+      "educational_technology",
+      "ai_tutor",
+      "educational_app",
+      "exam_software",
+      "interactive_whiteboard",
+      "technology"
+    ],
+    "level": 3
+  },
+  "digital_tv": {
+    "ru": "Цифровое телевидение",
+    "uz": "Raqamli televideniye",
+    "parent": "media_technology",
+    "description_ru": "Передача телевизионного сигнала в цифровом формате.",
+    "description_uz": "Televizion signalni raqamli uzatish.",
+    "category": "technology",
+    "related": [
+      "media_technology",
+      "animation_software",
+      "audio_editor",
+      "digital_camera",
+      "microphone",
+      "technology"
+    ],
+    "level": 3
+  },
+  "distributed_ledger": {
+    "ru": "Распределённый реестр",
+    "uz": "Tarqatilgan reyestr",
+    "parent": "blockchain_technology",
+    "description_ru": "Децентрализованная база данных.",
+    "description_uz": "Markazlashmagan ma'lumotlar bazasi.",
+    "category": "technology",
+    "related": [
+      "blockchain_technology",
+      "block_explorer",
+      "crypto_exchange_platform",
+      "crypto_wallet",
+      "cryptocurrency",
+      "technology"
+    ],
+    "level": 3
+  },
+  "dna_sequencer": {
+    "ru": "Секвенатор ДНК",
+    "uz": "DNK sekvenatori",
+    "parent": "biotechnology",
+    "description_ru": "Аппарат для анализа ДНК.",
+    "description_uz": "DNKni tahlil qiluvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "biotechnology",
+      "biochip",
+      "bioinformatics",
+      "bioplastic",
+      "bioreactor",
+      "technology"
+    ],
+    "level": 3
+  },
+  "drone_delivery": {
+    "ru": "Доставка дроном",
+    "uz": "Dron orqali yetkazish",
+    "parent": "transport_technology",
+    "description_ru": "Доставка товаров беспилотниками.",
+    "description_uz": "Dron yordamida tovar yetkazish.",
+    "category": "technology",
+    "related": [
+      "transport_technology",
+      "car_navigator",
+      "electric_bus",
+      "electric_car",
+      "electric_charging_station",
+      "technology"
+    ],
+    "level": 3
+  },
+  "educational_app": {
+    "ru": "Образовательное приложение",
+    "uz": "Ta'lim ilovasi",
+    "parent": "educational_technology",
+    "description_ru": "Мобильное приложение для обучения.",
+    "description_uz": "O‘rganish uchun mobil ilova.",
+    "category": "technology",
+    "related": [
+      "educational_technology",
+      "ai_tutor",
+      "digital_library",
+      "exam_software",
+      "interactive_whiteboard",
+      "technology"
+    ],
+    "level": 3
+  },
+  "electric_bus": {
+    "ru": "Электробус",
+    "uz": "Elektr avtobus",
+    "parent": "transport_technology",
+    "description_ru": "Общественный транспорт на электричестве.",
+    "description_uz": "Elektr energiyasida ishlovchi avtobus.",
+    "category": "technology",
+    "related": [
+      "transport_technology",
+      "car_navigator",
+      "drone_delivery",
+      "electric_car",
+      "electric_charging_station",
+      "technology"
+    ],
+    "level": 3
+  },
+  "electric_car": {
+    "ru": "Электромобиль",
+    "uz": "Elektromobil",
+    "parent": "transport_technology",
+    "description_ru": "Автомобиль на электрической тяге.",
+    "description_uz": "Elektr energiyasida ishlaydigan avtomobil.",
+    "category": "technology",
+    "related": [
+      "electric_charging_station",
+      "transport_technology",
+      "car_navigator",
+      "drone_delivery",
+      "electric_bus",
+      "technology"
+    ],
+    "level": 3
+  },
+  "electric_charging_station": {
+    "ru": "Зарядная станция",
+    "uz": "Zaryadlash stansiyasi",
+    "parent": "transport_technology",
+    "description_ru": "Станция для зарядки электромобилей.",
+    "description_uz": "Elektromobillarni zaryadlovchi stansiya.",
+    "category": "technology",
+    "related": [
+      "electric_car",
+      "transport_technology",
+      "car_navigator",
+      "drone_delivery",
+      "electric_bus",
+      "technology"
+    ],
+    "level": 3
+  },
+  "electric_scooter": {
+    "ru": "Электросамокат",
+    "uz": "Elektr samokat",
+    "parent": "transport_technology",
+    "description_ru": "Лёгкий городской электротранспорт.",
+    "description_uz": "Yengil shahar elektr transporti.",
+    "category": "technology",
+    "related": [
+      "transport_technology",
+      "car_navigator",
+      "drone_delivery",
+      "electric_bus",
+      "electric_car",
+      "technology"
+    ],
+    "level": 3
+  },
+  "electric_train": {
+    "ru": "Электропоезд",
+    "uz": "Elektr poyezd",
+    "parent": "transport_technology",
+    "description_ru": "Поезд на электрической тяге.",
+    "description_uz": "Elektr energiyasida harakatlanuvchi poyezd.",
+    "category": "technology",
+    "related": [
+      "transport_technology",
+      "car_navigator",
+      "drone_delivery",
+      "electric_bus",
+      "electric_car",
+      "technology"
+    ],
+    "level": 3
+  },
+  "encryption_system": {
+    "ru": "Система шифрования",
+    "uz": "Shifrlash tizimi",
+    "parent": "security_technology",
+    "description_ru": "Технология защиты данных с помощью шифрования.",
+    "description_uz": "Ma'lumotni shifrlash orqali himoya qilish.",
+    "category": "technology",
+    "related": [
+      "security_technology",
+      "alarm_system",
+      "biometric_authentication",
+      "cyber_security_system",
+      "technology",
+      "face_recognition_system"
+    ],
+    "level": 3
+  },
+  "esports_platform": {
+    "ru": "Киберспортивная платформа",
+    "uz": "Kiber sport platformasi",
+    "parent": "gaming_technology",
+    "description_ru": "Платформа для онлайн-турниров.",
+    "description_uz": "Onlayn turnir platformasi.",
+    "category": "technology",
+    "related": [
+      "gaming_technology",
+      "augmented_reality_game",
+      "cloud_gaming",
+      "game_controller",
+      "game_engine",
+      "technology"
+    ],
+    "level": 3
+  },
+  "exam_software": {
+    "ru": "Программа для тестирования",
+    "uz": "Test dasturi",
+    "parent": "educational_technology",
+    "description_ru": "ПО для проведения экзаменов.",
+    "description_uz": "Imtihon o‘tkazish dasturi.",
+    "category": "technology",
+    "related": [
+      "educational_technology",
+      "ai_tutor",
+      "digital_library",
+      "educational_app",
+      "interactive_whiteboard",
+      "technology"
+    ],
+    "level": 3
+  },
+  "face_recognition_system": {
+    "ru": "Система распознавания лиц",
+    "uz": "Yuzni aniqlash tizimi",
+    "parent": "security_technology",
+    "description_ru": "Технология идентификации человека по лицу.",
+    "description_uz": "Insonni yuz orqali aniqlash texnologiyasi.",
+    "category": "technology",
+    "related": [
+      "security_technology",
+      "alarm_system",
+      "biometric_authentication",
+      "cyber_security_system",
+      "technology",
+      "encryption_system"
+    ],
+    "level": 3
+  },
+  "factory_automation_system": {
+    "ru": "Система автоматизации завода",
+    "uz": "Zavod avtomatlashtirish tizimi",
+    "parent": "industrial_technology",
+    "description_ru": "Цифровая система управления производством.",
+    "description_uz": "Ishlab chiqarishni boshqaruvchi raqamli tizim.",
+    "category": "technology",
+    "related": [
+      "industrial_technology",
+      "3d_printer",
+      "assembly_line",
+      "cnc_machine",
+      "hydraulic_press",
+      "technology"
+    ],
+    "level": 3
+  },
+  "game_controller": {
+    "ru": "Игровой контроллер",
+    "uz": "O‘yin boshqaruvchisi",
+    "parent": "gaming_technology",
+    "description_ru": "Устройство управления в игре.",
+    "description_uz": "O‘yin boshqaruv qurilmasi.",
+    "category": "technology",
+    "related": [
+      "gaming_technology",
+      "augmented_reality_game",
+      "cloud_gaming",
+      "esports_platform",
+      "game_engine",
+      "technology"
+    ],
+    "level": 3
+  },
+  "game_engine": {
+    "ru": "Игровой движок",
+    "uz": "O‘yin dvijogi",
+    "parent": "gaming_technology",
+    "description_ru": "Программная среда создания игр.",
+    "description_uz": "O‘yin yaratish muhiti.",
+    "category": "technology",
+    "related": [
+      "gaming_technology",
+      "augmented_reality_game",
+      "cloud_gaming",
+      "esports_platform",
+      "game_controller",
+      "technology"
+    ],
+    "level": 3
+  },
+  "game_server": {
+    "ru": "Игровой сервер",
+    "uz": "O‘yin serveri",
+    "parent": "gaming_technology",
+    "description_ru": "Сервер для многопользовательских игр.",
+    "description_uz": "Ko‘p foydalanuvchi o‘yin serveri.",
+    "category": "technology",
+    "related": [
+      "gaming_technology",
+      "augmented_reality_game",
+      "cloud_gaming",
+      "esports_platform",
+      "game_controller",
+      "technology"
+    ],
+    "level": 3
+  },
+  "game_streaming": {
+    "ru": "Стриминг игр",
+    "uz": "O‘yin strimingi",
+    "parent": "gaming_technology",
+    "description_ru": "Трансляция игрового процесса.",
+    "description_uz": "O‘yin jarayonini jonli uzatish.",
+    "category": "technology",
+    "related": [
+      "gaming_technology",
+      "augmented_reality_game",
+      "cloud_gaming",
+      "esports_platform",
+      "game_controller",
+      "technology"
+    ],
+    "level": 3
+  },
+  "gaming_console": {
+    "ru": "Игровая консоль",
+    "uz": "O‘yin konsoli",
+    "parent": "gaming_technology",
+    "description_ru": "Устройство для видеоигр.",
+    "description_uz": "Video o‘yin qurilmasi.",
+    "category": "technology",
+    "related": [
+      "gaming_technology",
+      "augmented_reality_game",
+      "cloud_gaming",
+      "esports_platform",
+      "game_controller",
+      "technology"
+    ],
+    "level": 3
+  },
+  "gaming_pc": {
+    "ru": "Игровой ПК",
+    "uz": "O‘yin kompyuteri",
+    "parent": "gaming_technology",
+    "description_ru": "Компьютер для видеоигр.",
+    "description_uz": "Video o‘yin uchun kompyuter.",
+    "category": "technology",
+    "related": [
+      "gaming_technology",
+      "augmented_reality_game",
+      "cloud_gaming",
+      "esports_platform",
+      "game_controller",
+      "technology"
+    ],
+    "level": 3
+  },
+  "genetic_engineering": {
+    "ru": "Генная инженерия",
+    "uz": "Gen muhandisligi",
+    "parent": "biotechnology",
+    "description_ru": "Изменение генетического материала организмов.",
+    "description_uz": "Organizm genini o‘zgartirish.",
+    "category": "technology",
+    "related": [
+      "biotechnology",
+      "biochip",
+      "bioinformatics",
+      "bioplastic",
+      "bioreactor",
+      "technology"
+    ],
+    "level": 3
+  },
+  "glucose_meter": {
+    "ru": "Глюкометр",
+    "uz": "Glyukometr",
+    "parent": "medical_technology",
+    "description_ru": "Прибор для измерения уровня сахара.",
+    "description_uz": "Qondagi shakar miqdorini o‘lchovchi qurilma.",
+    "category": "technology",
+    "related": [
+      "medical_technology",
+      "blood_pressure_monitor",
+      "mri_machine",
+      "ultrasound_machine",
+      "technology"
+    ],
+    "level": 3
+  },
+  "green_building_technology": {
+    "ru": "Экологическое строительство",
+    "uz": "Ekologik qurilish",
+    "parent": "construction_technology",
+    "description_ru": "Строительство с минимальным вредом для природы.",
+    "description_uz": "Tabiatga zarar yetkazmaydigan qurilish.",
+    "category": "technology",
+    "related": [
+      "construction_technology",
+      "3d_house_printing",
+      "automated_crane",
+      "building_information_modeling",
+      "construction_drone",
+      "technology"
+    ],
+    "level": 3
+  },
+  "hard_drive": {
+    "ru": "Жёсткий диск",
+    "uz": "Qattiq disk",
+    "parent": "computer_technology",
+    "description_ru": "Устройство хранения данных.",
+    "description_uz": "Ma'lumot saqlash qurilmasi.",
+    "category": "technology",
+    "related": [
+      "computer_technology",
+      "desktop_computer",
+      "keyboard",
+      "laptop",
+      "monitor",
+      "technology"
+    ],
+    "level": 3
+  },
+  "home_automation_system": {
+    "ru": "Система домашней автоматизации",
+    "uz": "Uy avtomatizatsiya tizimi",
+    "parent": "automation_technology",
+    "description_ru": "Автоматизация бытовых процессов.",
+    "description_uz": "Uy jarayonlarini avtomatlashtirish.",
+    "category": "technology",
+    "related": [
+      "automation_technology",
+      "automated_lighting",
+      "automated_warehouse",
+      "automation_software",
+      "industrial_automation",
+      "technology"
+    ],
+    "level": 3
+  },
+  "humanoid_robot": {
+    "ru": "Гуманоидный робот",
+    "uz": "Gumanoid robot",
+    "parent": "robotics",
+    "description_ru": "Робот, похожий на человека.",
+    "description_uz": "Inson shaklidagi robot.",
+    "category": "technology",
+    "related": [
+      "robotics",
+      "agricultural_robot",
+      "medical_robot",
+      "robot_arm",
+      "robot_dog",
+      "technology"
+    ],
+    "level": 3
+  },
+  "hydraulic_press": {
+    "ru": "Гидравлический пресс",
+    "uz": "Gidravlik press",
+    "parent": "industrial_technology",
+    "description_ru": "Оборудование для прессования материалов.",
+    "description_uz": "Materialni siqish uskunasi.",
+    "category": "technology",
+    "related": [
+      "industrial_technology",
+      "3d_printer",
+      "assembly_line",
+      "cnc_machine",
+      "factory_automation_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "hyperloop": {
+    "ru": "Гиперлуп",
+    "uz": "Hyperloop",
+    "parent": "transport_technology",
+    "description_ru": "Высокоскоростная вакуумная транспортная система.",
+    "description_uz": "Vakuumli yuqori tezlikdagi transport.",
+    "category": "technology",
+    "related": [
+      "transport_technology",
+      "car_navigator",
+      "drone_delivery",
+      "electric_bus",
+      "electric_car",
+      "technology"
+    ],
+    "level": 3
+  },
+  "industrial_automation": {
+    "ru": "Промышленная автоматизация",
+    "uz": "Sanoat avtomatizatsiyasi",
+    "parent": "automation_technology",
+    "description_ru": "Автоматизация производства.",
+    "description_uz": "Ishlab chiqarishni avtomatlashtirish.",
+    "category": "technology",
+    "related": [
+      "automation_technology",
+      "automated_lighting",
+      "automated_warehouse",
+      "automation_software",
+      "home_automation_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "industrial_drill": {
+    "ru": "Промышленная дрель",
+    "uz": "Sanoat burg‘usi",
+    "parent": "industrial_technology",
+    "description_ru": "Инструмент для сверления материалов.",
+    "description_uz": "Materiallarni burg‘ulash asbobi.",
+    "category": "technology",
+    "related": [
+      "industrial_technology",
+      "3d_printer",
+      "assembly_line",
+      "cnc_machine",
+      "factory_automation_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "industrial_generator": {
+    "ru": "Промышленный генератор",
+    "uz": "Sanoat generatori",
+    "parent": "industrial_technology",
+    "description_ru": "Устройство выработки электроэнергии.",
+    "description_uz": "Elektr energiya ishlab chiqaruvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "industrial_technology",
+      "3d_printer",
+      "assembly_line",
+      "cnc_machine",
+      "factory_automation_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "industrial_robot": {
+    "ru": "Промышленный робот",
+    "uz": "Sanoat roboti",
+    "parent": "industrial_technology",
+    "description_ru": "Автоматизированный робот для производства.",
+    "description_uz": "Ishlab chiqarish uchun avtomatlashtirilgan robot.",
+    "category": "technology",
+    "related": [
+      "industrial_technology",
+      "3d_printer",
+      "assembly_line",
+      "cnc_machine",
+      "factory_automation_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "interactive_whiteboard": {
+    "ru": "Интерактивная доска",
+    "uz": "Interaktiv doska",
+    "parent": "educational_technology",
+    "description_ru": "Цифровая доска для обучения.",
+    "description_uz": "Raqamli o‘quv doskasi.",
+    "category": "technology",
+    "related": [
+      "educational_technology",
+      "ai_tutor",
+      "digital_library",
+      "educational_app",
+      "exam_software",
+      "technology"
+    ],
+    "level": 3
+  },
+  "keyboard": {
+    "ru": "Клавиатура",
+    "uz": "Klaviatura",
+    "parent": "computer_technology",
+    "description_ru": "Устройство ввода текста.",
+    "description_uz": "Matn kiritish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "computer_technology",
+      "desktop_computer",
+      "hard_drive",
+      "laptop",
+      "monitor",
+      "technology"
+    ],
+    "level": 3
+  },
+  "laptop": {
+    "ru": "Ноутбук",
+    "uz": "Noutbuk",
+    "parent": "computer_technology",
+    "description_ru": "Портативный компьютер.",
+    "description_uz": "Ko‘chma kompyuter.",
+    "category": "technology",
+    "related": [
+      "desktop_computer",
+      "computer_technology",
+      "hard_drive",
+      "keyboard",
+      "monitor",
+      "technology"
+    ],
+    "level": 3
+  },
+  "laser_cutter": {
+    "ru": "Лазерный резак",
+    "uz": "Lazer kesuvchi",
+    "parent": "industrial_technology",
+    "description_ru": "Оборудование для лазерной резки.",
+    "description_uz": "Lazer yordamida kesish uskunasi.",
+    "category": "technology",
+    "related": [
+      "industrial_technology",
+      "3d_printer",
+      "assembly_line",
+      "cnc_machine",
+      "factory_automation_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "launch_pad": {
+    "ru": "Стартовая площадка",
+    "uz": "Uchirish maydoni",
+    "parent": "space_technology",
+    "description_ru": "Площадка для запуска ракет.",
+    "description_uz": "Raketalni uchirish joyi.",
+    "category": "technology",
+    "related": [
+      "space_technology",
+      "astronaut_suit",
+      "deep_space_antenna",
+      "mars_rover",
+      "orbital_satellite_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "learning_management_system": {
+    "ru": "Система управления обучением",
+    "uz": "Ta'lim boshqaruv tizimi",
+    "parent": "educational_technology",
+    "description_ru": "Платформа для организации обучения.",
+    "description_uz": "Ta'lim jarayonini boshqarish platformasi.",
+    "category": "technology",
+    "related": [
+      "educational_technology",
+      "ai_tutor",
+      "digital_library",
+      "educational_app",
+      "exam_software",
+      "technology"
+    ],
+    "level": 3
+  },
+  "machine_learning": {
+    "ru": "Машинное обучение",
+    "uz": "Mashinali o‘rganish",
+    "parent": "ai_technology",
+    "description_ru": "Методы обучения алгоритмов на данных.",
+    "description_uz": "Algoritmlarni ma'lumot asosida o‘rganish usuli.",
+    "category": "technology",
+    "related": [
+      "ai_technology",
+      "ai_assistant",
+      "ai_model",
+      "chatbot",
+      "computer_vision",
+      "technology"
+    ],
+    "level": 3
+  },
+  "mars_rover": {
+    "ru": "Марсоход",
+    "uz": "Mars roboti",
+    "parent": "space_technology",
+    "description_ru": "Робот для исследования Марса.",
+    "description_uz": "Marsni o‘rganish roboti.",
+    "category": "technology",
+    "related": [
+      "space_technology",
+      "astronaut_suit",
+      "deep_space_antenna",
+      "launch_pad",
+      "orbital_satellite_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "medical_robot": {
+    "ru": "Медицинский робот",
+    "uz": "Tibbiy robot",
+    "parent": "robotics",
+    "description_ru": "Робот для медицинских процедур.",
+    "description_uz": "Tibbiy muolajalar uchun robot.",
+    "category": "technology",
+    "related": [
+      "robotics",
+      "agricultural_robot",
+      "humanoid_robot",
+      "robot_arm",
+      "robot_dog",
+      "technology"
+    ],
+    "level": 3
+  },
+  "metro_system": {
+    "ru": "Метро",
+    "uz": "Metro tizimi",
+    "parent": "transport_technology",
+    "description_ru": "Подземная транспортная система.",
+    "description_uz": "Yer osti transport tizimi.",
+    "category": "technology",
+    "related": [
+      "transport_technology",
+      "car_navigator",
+      "drone_delivery",
+      "electric_bus",
+      "electric_car",
+      "technology"
+    ],
+    "level": 3
+  },
+  "microphone": {
+    "ru": "Микрофон",
+    "uz": "Mikrofon",
+    "parent": "media_technology",
+    "description_ru": "Устройство для записи звука.",
+    "description_uz": "Ovoz yozish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "media_technology",
+      "animation_software",
+      "audio_editor",
+      "digital_camera",
+      "digital_tv",
+      "technology"
+    ],
+    "level": 3
+  },
+  "mining_rig": {
+    "ru": "Майнинг-ферма",
+    "uz": "Mayning qurilmasi",
+    "parent": "blockchain_technology",
+    "description_ru": "Оборудование для добычи криптовалют.",
+    "description_uz": "Kriptovalyuta qazib olish uskunasi.",
+    "category": "technology",
+    "related": [
+      "blockchain_technology",
+      "block_explorer",
+      "crypto_exchange_platform",
+      "crypto_wallet",
+      "cryptocurrency",
+      "technology"
+    ],
+    "level": 3
+  },
+  "modular_construction": {
+    "ru": "Модульное строительство",
+    "uz": "Modulli qurilish",
+    "parent": "construction_technology",
+    "description_ru": "Строительство из готовых модулей.",
+    "description_uz": "Tayyor bloklardan qurish.",
+    "category": "technology",
+    "related": [
+      "construction_technology",
+      "3d_house_printing",
+      "automated_crane",
+      "building_information_modeling",
+      "construction_drone",
+      "technology"
+    ],
+    "level": 3
+  },
+  "monitor": {
+    "ru": "Монитор",
+    "uz": "Monitor",
+    "parent": "computer_technology",
+    "description_ru": "Устройство отображения изображения.",
+    "description_uz": "Tasvir ko‘rsatish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "computer_technology",
+      "desktop_computer",
+      "hard_drive",
+      "keyboard",
+      "laptop",
+      "technology"
+    ],
+    "level": 3
+  },
+  "motherboard": {
+    "ru": "Материнская плата",
+    "uz": "Ona plata",
+    "parent": "computer_technology",
+    "description_ru": "Главная плата компьютера.",
+    "description_uz": "Kompyuterning asosiy platası.",
+    "category": "technology",
+    "related": [
+      "computer_technology",
+      "desktop_computer",
+      "hard_drive",
+      "keyboard",
+      "laptop",
+      "technology"
+    ],
+    "level": 3
+  },
+  "motion_sensor": {
+    "ru": "Датчик движения",
+    "uz": "Harakat sensori",
+    "parent": "security_technology",
+    "description_ru": "Устройство обнаружения движения.",
+    "description_uz": "Harakatni aniqlovchi qurilma.",
+    "category": "technology",
+    "related": [
+      "security_technology",
+      "alarm_system",
+      "biometric_authentication",
+      "cyber_security_system",
+      "technology",
+      "encryption_system"
+    ],
+    "level": 3
+  },
+  "mouse": {
+    "ru": "Компьютерная мышь",
+    "uz": "Kompyuter sichqonchasi",
+    "parent": "computer_technology",
+    "description_ru": "Устройство управления курсором.",
+    "description_uz": "Kursorni boshqarish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "computer_technology",
+      "desktop_computer",
+      "hard_drive",
+      "keyboard",
+      "laptop",
+      "technology"
+    ],
+    "level": 3
+  },
+  "mri_machine": {
+    "ru": "МРТ-аппарат",
+    "uz": "MRT apparati",
+    "parent": "medical_technology",
+    "description_ru": "Аппарат для магнитно-резонансной томографии.",
+    "description_uz": "Magnit-rezonans tomografiya qurilmasi.",
+    "category": "technology",
+    "related": [
+      "medical_technology",
+      "blood_pressure_monitor",
+      "glucose_meter",
+      "ultrasound_machine",
+      "technology"
+    ],
+    "level": 3
+  },
+  "nano_battery": {
+    "ru": "Наноаккумулятор",
+    "uz": "Nano batareya",
+    "parent": "nanotechnology",
+    "description_ru": "Миниатюрный источник энергии.",
+    "description_uz": "Kichik energiya manbai.",
+    "category": "technology",
+    "related": [
+      "nanotechnology",
+      "nano_sensor",
+      "nanochip",
+      "nanocoating",
+      "nanoelectronics",
+      "technology"
+    ],
+    "level": 3
+  },
+  "nano_sensor": {
+    "ru": "Наносенсор",
+    "uz": "Nanosensor",
+    "parent": "nanotechnology",
+    "description_ru": "Сенсор на наноуровне.",
+    "description_uz": "Nano darajadagi sensor.",
+    "category": "technology",
+    "related": [
+      "nanotechnology",
+      "nano_battery",
+      "nanochip",
+      "nanocoating",
+      "nanoelectronics",
+      "technology"
+    ],
+    "level": 3
+  },
+  "nanochip": {
+    "ru": "Наночип",
+    "uz": "Nanochip",
+    "parent": "nanotechnology",
+    "description_ru": "Микрочип наноразмера.",
+    "description_uz": "Nano o‘lchamdagi chip.",
+    "category": "technology",
+    "related": [
+      "nanotechnology",
+      "nano_battery",
+      "nano_sensor",
+      "nanocoating",
+      "nanoelectronics",
+      "technology"
+    ],
+    "level": 3
+  },
+  "nanocoating": {
+    "ru": "Нанопокрытие",
+    "uz": "Nanopokrytiye",
+    "parent": "nanotechnology",
+    "description_ru": "Защитное покрытие на основе наночастиц.",
+    "description_uz": "Nanozarrachali himoya qatlami.",
+    "category": "technology",
+    "related": [
+      "nanotechnology",
+      "nano_battery",
+      "nano_sensor",
+      "nanochip",
+      "nanoelectronics",
+      "technology"
+    ],
+    "level": 3
+  },
+  "nanoelectronics": {
+    "ru": "Наноэлектроника",
+    "uz": "Nanoelektronika",
+    "parent": "nanotechnology",
+    "description_ru": "Электроника на наноуровне.",
+    "description_uz": "Nano darajadagi elektronika.",
+    "category": "technology",
+    "related": [
+      "nanotechnology",
+      "nano_battery",
+      "nano_sensor",
+      "nanochip",
+      "nanocoating",
+      "technology"
+    ],
+    "level": 3
+  },
+  "nanofiber": {
+    "ru": "Нановолокно",
+    "uz": "Nanotola",
+    "parent": "nanotechnology",
+    "description_ru": "Сверхтонкое волокно.",
+    "description_uz": "Juda yupqa tola.",
+    "category": "technology",
+    "related": [
+      "nanotechnology",
+      "nano_battery",
+      "nano_sensor",
+      "nanochip",
+      "nanocoating",
+      "technology"
+    ],
+    "level": 3
+  },
+  "nanomaterial": {
+    "ru": "Наноматериал",
+    "uz": "Nanomaterial",
+    "parent": "nanotechnology",
+    "description_ru": "Материал с наноразмерной структурой.",
+    "description_uz": "Nano o‘lchamli tuzilishga ega material.",
+    "category": "technology",
+    "related": [
+      "nanotechnology",
+      "nano_battery",
+      "nano_sensor",
+      "nanochip",
+      "nanocoating",
+      "technology"
+    ],
+    "level": 3
+  },
+  "nanomedicine": {
+    "ru": "Наномедицина",
+    "uz": "Nanomeditsina",
+    "parent": "nanotechnology",
+    "description_ru": "Использование нанотехнологий в медицине.",
+    "description_uz": "Tibbiyotda nanoteknologiya qo‘llash.",
+    "category": "technology",
+    "related": [
+      "nanotechnology",
+      "nano_battery",
+      "nano_sensor",
+      "nanochip",
+      "nanocoating",
+      "technology"
+    ],
+    "level": 3
+  },
+  "nanorobot": {
+    "ru": "Наноробот",
+    "uz": "Nanorobot",
+    "parent": "nanotechnology",
+    "description_ru": "Микроскопический робот.",
+    "description_uz": "Mikroskopik robot.",
+    "category": "technology",
+    "related": [
+      "nanotechnology",
+      "nano_battery",
+      "nano_sensor",
+      "nanochip",
+      "nanocoating",
+      "technology"
+    ],
+    "level": 3
+  },
+  "nanotube": {
+    "ru": "Нанотрубка",
+    "uz": "Nanotrubka",
+    "parent": "nanotechnology",
+    "description_ru": "Углеродная структура наноразмера.",
+    "description_uz": "Nano o‘lchamli uglerod tuzilmasi.",
+    "category": "technology",
+    "related": [
+      "nanotechnology",
+      "nano_battery",
+      "nano_sensor",
+      "nanochip",
+      "nanocoating",
+      "technology"
+    ],
+    "level": 3
+  },
+  "natural_language_processing": {
+    "ru": "Обработка естественного языка",
+    "uz": "Tabiiy tilni qayta ishlash",
+    "parent": "ai_technology",
+    "description_ru": "Анализ текста и речи алгоритмами.",
+    "description_uz": "Matn va nutqni algoritm orqali tahlil qilish.",
+    "category": "technology",
+    "related": [
+      "ai_technology",
+      "ai_assistant",
+      "ai_model",
+      "chatbot",
+      "computer_vision",
+      "technology"
+    ],
+    "level": 3
+  },
+  "neural_network": {
+    "ru": "Нейронная сеть",
+    "uz": "Neyron tarmoq",
+    "parent": "ai_technology",
+    "description_ru": "Модель ИИ, имитирующая работу мозга.",
+    "description_uz": "Miya faoliyatini taqlid qiluvchi model.",
+    "category": "technology",
+    "related": [
+      "ai_technology",
+      "ai_assistant",
+      "ai_model",
+      "chatbot",
+      "computer_vision",
+      "technology"
+    ],
+    "level": 3
+  },
+  "nft_platform": {
+    "ru": "NFT-платформа",
+    "uz": "NFT platformasi",
+    "parent": "blockchain_technology",
+    "description_ru": "Платформа для цифровых токенов.",
+    "description_uz": "Raqamli token platformasi.",
+    "category": "technology",
+    "related": [
+      "blockchain_technology",
+      "block_explorer",
+      "crypto_exchange_platform",
+      "crypto_wallet",
+      "cryptocurrency",
+      "technology"
+    ],
+    "level": 3
+  },
+  "online_course_platform": {
+    "ru": "Платформа онлайн-курсов",
+    "uz": "Onlayn kurs platformasi",
+    "parent": "educational_technology",
+    "description_ru": "Платформа для дистанционного обучения.",
+    "description_uz": "Masofaviy ta'lim platformasi.",
+    "category": "technology",
+    "related": [
+      "educational_technology",
+      "ai_tutor",
+      "digital_library",
+      "educational_app",
+      "exam_software",
+      "technology"
+    ],
+    "level": 3
+  },
+  "orbital_satellite_system": {
+    "ru": "Орбитальная спутниковая система",
+    "uz": "Orbital yo‘ldosh tizimi",
+    "parent": "space_technology",
+    "description_ru": "Сеть спутников на орбите.",
+    "description_uz": "Orbital sun'iy yo‘ldosh tarmog‘i.",
+    "category": "technology",
+    "related": [
+      "space_technology",
+      "astronaut_suit",
+      "deep_space_antenna",
+      "launch_pad",
+      "mars_rover",
+      "technology"
+    ],
+    "level": 3
+  },
+  "photo_editor": {
+    "ru": "Фоторедактор",
+    "uz": "Foto tahrirlash dasturi",
+    "parent": "media_technology",
+    "description_ru": "Программа для редактирования изображений.",
+    "description_uz": "Rasm tahrirlash dasturi.",
+    "category": "technology",
+    "related": [
+      "media_technology",
+      "animation_software",
+      "audio_editor",
+      "digital_camera",
+      "digital_tv",
+      "technology"
+    ],
+    "level": 3
+  },
+  "podcast_platform": {
+    "ru": "Платформа подкастов",
+    "uz": "Podkast platformasi",
+    "parent": "media_technology",
+    "description_ru": "Сервис для прослушивания аудиопрограмм.",
+    "description_uz": "Audio dasturlarni tinglash xizmati.",
+    "category": "technology",
+    "related": [
+      "media_technology",
+      "animation_software",
+      "audio_editor",
+      "digital_camera",
+      "digital_tv",
+      "technology"
+    ],
+    "level": 3
+  },
+  "predictive_analytics": {
+    "ru": "Прогнозная аналитика",
+    "uz": "Prognoz tahlili",
+    "parent": "ai_technology",
+    "description_ru": "Прогнозирование на основе данных.",
+    "description_uz": "Ma'lumot asosida bashorat qilish.",
+    "category": "technology",
+    "related": [
+      "ai_technology",
+      "ai_assistant",
+      "ai_model",
+      "chatbot",
+      "computer_vision",
+      "technology"
+    ],
+    "level": 3
+  },
+  "processor": {
+    "ru": "Процессор",
+    "uz": "Protsessor",
+    "parent": "computer_technology",
+    "description_ru": "Основной вычислительный элемент компьютера.",
+    "description_uz": "Kompyuterning asosiy hisoblash qismi.",
+    "category": "technology",
+    "related": [
+      "computer_technology",
+      "desktop_computer",
+      "hard_drive",
+      "keyboard",
+      "laptop",
+      "technology"
+    ],
+    "level": 3
+  },
+  "projector": {
+    "ru": "Проектор",
+    "uz": "Proyektor",
+    "parent": "media_technology",
+    "description_ru": "Устройство для вывода изображения на экран.",
+    "description_uz": "Tasvirni katta ekranga chiqaruvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "media_technology",
+      "animation_software",
+      "audio_editor",
+      "digital_camera",
+      "digital_tv",
+      "technology"
+    ],
+    "level": 3
+  },
+  "radar_system": {
+    "ru": "Радарная система",
+    "uz": "Radar tizimi",
+    "parent": "security_technology",
+    "description_ru": "Система обнаружения объектов.",
+    "description_uz": "Obyektlarni aniqlovchi tizim.",
+    "category": "technology",
+    "related": [
+      "security_technology",
+      "alarm_system",
+      "biometric_authentication",
+      "cyber_security_system",
+      "technology",
+      "encryption_system"
+    ],
+    "level": 3
+  },
+  "refrigerator": {
+    "ru": "Холодильник",
+    "uz": "Muzlatgich",
+    "parent": "home_appliance_technology",
+    "description_ru": "Устройство для хранения продуктов в холоде.",
+    "description_uz": "Oziq-ovqatni sovuqda saqlovchi qurilma.",
+    "category": "technology",
+    "related": [
+      "home_appliance_technology",
+      "vacuum_cleaner",
+      "washing_machine",
+      "technology"
+    ],
+    "level": 3
+  },
+  "robot_arm": {
+    "ru": "Роботизированная рука",
+    "uz": "Robot qo‘li",
+    "parent": "robotics",
+    "description_ru": "Механическая рука для автоматизации.",
+    "description_uz": "Avtomatlashtirish uchun mexanik qo‘l.",
+    "category": "technology",
+    "related": [
+      "robotics",
+      "agricultural_robot",
+      "humanoid_robot",
+      "medical_robot",
+      "robot_dog",
+      "technology"
+    ],
+    "level": 3
+  },
+  "robot_dog": {
+    "ru": "Робот-собака",
+    "uz": "Robot it",
+    "parent": "robotics",
+    "description_ru": "Четвероногий робот.",
+    "description_uz": "To‘rt oyoqli robot.",
+    "category": "technology",
+    "related": [
+      "robotics",
+      "agricultural_robot",
+      "humanoid_robot",
+      "medical_robot",
+      "robot_arm",
+      "technology"
+    ],
+    "level": 3
+  },
+  "robot_drone": {
+    "ru": "Робот-дрон",
+    "uz": "Robot dron",
+    "parent": "robotics",
+    "description_ru": "Беспилотный летательный аппарат.",
+    "description_uz": "Uchuvchisiz uchish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "robotics",
+      "agricultural_robot",
+      "humanoid_robot",
+      "medical_robot",
+      "robot_arm",
+      "technology"
+    ],
+    "level": 3
+  },
+  "robot_vacuum_system": {
+    "ru": "Система робота-пылесоса",
+    "uz": "Robot changyutgich tizimi",
+    "parent": "robotics",
+    "description_ru": "Автоматическая система уборки.",
+    "description_uz": "Avtomatik tozalash tizimi.",
+    "category": "technology",
+    "related": [
+      "robotics",
+      "agricultural_robot",
+      "humanoid_robot",
+      "medical_robot",
+      "robot_arm",
+      "technology"
+    ],
+    "level": 3
+  },
+  "robotic_process_automation": {
+    "ru": "RPA-технология",
+    "uz": "RPA texnologiyasi",
+    "parent": "automation_technology",
+    "description_ru": "Автоматизация цифровых задач.",
+    "description_uz": "Raqamli vazifalarni avtomatlashtirish.",
+    "category": "technology",
+    "related": [
+      "automation_technology",
+      "automated_lighting",
+      "automated_warehouse",
+      "automation_software",
+      "home_automation_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "rocket_engine": {
+    "ru": "Ракетный двигатель",
+    "uz": "Raketa dvigateli",
+    "parent": "space_technology",
+    "description_ru": "Двигатель для запуска ракет.",
+    "description_uz": "Raketani uchirish dvigateli.",
+    "category": "technology",
+    "related": [
+      "space_technology",
+      "astronaut_suit",
+      "deep_space_antenna",
+      "launch_pad",
+      "mars_rover",
+      "technology"
+    ],
+    "level": 3
+  },
+  "satellite": {
+    "ru": "Спутник",
+    "uz": "Sun'iy yo‘ldosh",
+    "parent": "space_technology",
+    "description_ru": "Космический аппарат на орбите.",
+    "description_uz": "Orbita bo‘ylab harakatlanuvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "space_technology",
+      "astronaut_suit",
+      "deep_space_antenna",
+      "launch_pad",
+      "mars_rover",
+      "technology"
+    ],
+    "level": 3
+  },
+  "security_camera": {
+    "ru": "Камера видеонаблюдения",
+    "uz": "Kuzatuv kamerasi",
+    "parent": "security_technology",
+    "description_ru": "Устройство для записи видео в целях безопасности.",
+    "description_uz": "Xavfsizlik uchun video yozuvchi qurilma.",
+    "category": "technology",
+    "related": [
+      "security_technology",
+      "alarm_system",
+      "biometric_authentication",
+      "cyber_security_system",
+      "technology",
+      "encryption_system"
+    ],
+    "level": 3
+  },
+  "security_robot": {
+    "ru": "Охранный робот",
+    "uz": "Qo‘riqlash roboti",
+    "parent": "robotics",
+    "description_ru": "Робот для охраны объектов.",
+    "description_uz": "Obyektlarni qo‘riqlovchi robot.",
+    "category": "technology",
+    "related": [
+      "robotics",
+      "agricultural_robot",
+      "humanoid_robot",
+      "medical_robot",
+      "robot_arm",
+      "technology"
+    ],
+    "level": 3
+  },
+  "self_driving_car": {
+    "ru": "Беспилотный автомобиль",
+    "uz": "Avtopilot avtomobil",
+    "parent": "transport_technology",
+    "description_ru": "Автомобиль без водителя.",
+    "description_uz": "Haydovchisiz avtomobil.",
+    "category": "technology",
+    "related": [
+      "transport_technology",
+      "car_navigator",
+      "drone_delivery",
+      "electric_bus",
+      "electric_car",
+      "technology"
+    ],
+    "level": 3
+  },
+  "serverless_computing": {
+    "ru": "Бессерверные вычисления",
+    "uz": "Serversiz hisoblash",
+    "parent": "cloud_technology",
+    "description_ru": "Модель облачных вычислений без управления сервером.",
+    "description_uz": "Server boshqaruvisiz bulutli hisoblash modeli.",
+    "category": "technology",
+    "related": [
+      "cloud_technology",
+      "cloud_backup",
+      "cloud_database",
+      "cloud_hosting",
+      "cloud_monitoring",
+      "technology"
+    ],
+    "level": 3
+  },
+  "service_robot": {
+    "ru": "Сервисный робот",
+    "uz": "Xizmat ko‘rsatuvchi robot",
+    "parent": "robotics",
+    "description_ru": "Робот для помощи людям.",
+    "description_uz": "Odamlarga yordam beruvchi robot.",
+    "category": "technology",
+    "related": [
+      "robotics",
+      "agricultural_robot",
+      "humanoid_robot",
+      "medical_robot",
+      "robot_arm",
+      "technology"
+    ],
+    "level": 3
+  },
+  "smart_building_system": {
+    "ru": "Система умного здания",
+    "uz": "Aqlli bino tizimi",
+    "parent": "construction_technology",
+    "description_ru": "Автоматизация управления зданием.",
+    "description_uz": "Binoni avtomatik boshqarish tizimi.",
+    "category": "technology",
+    "related": [
+      "construction_technology",
+      "3d_house_printing",
+      "automated_crane",
+      "building_information_modeling",
+      "construction_drone",
+      "technology"
+    ],
+    "level": 3
+  },
+  "smart_contract": {
+    "ru": "Смарт-контракт",
+    "uz": "Aqlli shartnoma",
+    "parent": "blockchain_technology",
+    "description_ru": "Автоматический цифровой контракт.",
+    "description_uz": "Avtomatik raqamli shartnoma.",
+    "category": "technology",
+    "related": [
+      "blockchain_technology",
+      "block_explorer",
+      "crypto_exchange_platform",
+      "crypto_wallet",
+      "cryptocurrency",
+      "technology"
+    ],
+    "level": 3
+  },
+  "smart_control_panel": {
+    "ru": "Умная панель управления",
+    "uz": "Aqlli boshqaruv paneli",
+    "parent": "automation_technology",
+    "description_ru": "Центральное устройство управления.",
+    "description_uz": "Markaziy boshqaruv qurilmasi.",
+    "category": "technology",
+    "related": [
+      "automation_technology",
+      "automated_lighting",
+      "automated_warehouse",
+      "automation_software",
+      "home_automation_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "smart_elevator": {
+    "ru": "Умный лифт",
+    "uz": "Aqlli lift",
+    "parent": "construction_technology",
+    "description_ru": "Лифт с интеллектуальной системой управления.",
+    "description_uz": "Aqlli boshqaruvli lift.",
+    "category": "technology",
+    "related": [
+      "construction_technology",
+      "3d_house_printing",
+      "automated_crane",
+      "building_information_modeling",
+      "construction_drone",
+      "technology"
+    ],
+    "level": 3
+  },
+  "smart_factory": {
+    "ru": "Умный завод",
+    "uz": "Aqlli zavod",
+    "parent": "automation_technology",
+    "description_ru": "Автоматизированное производство.",
+    "description_uz": "Avtomatlashtirilgan ishlab chiqarish.",
+    "category": "technology",
+    "related": [
+      "automation_technology",
+      "automated_lighting",
+      "automated_warehouse",
+      "automation_software",
+      "home_automation_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "smart_lock": {
+    "ru": "Умный замок",
+    "uz": "Aqlli qulf",
+    "parent": "security_technology",
+    "description_ru": "Электронный замок с удалённым управлением.",
+    "description_uz": "Masofadan boshqariladigan elektron qulf.",
+    "category": "technology",
+    "related": [
+      "security_technology",
+      "alarm_system",
+      "biometric_authentication",
+      "cyber_security_system",
+      "technology",
+      "encryption_system"
+    ],
+    "level": 3
+  },
+  "smart_notebook": {
+    "ru": "Умная тетрадь",
+    "uz": "Aqlli daftar",
+    "parent": "educational_technology",
+    "description_ru": "Цифровая тетрадь для заметок.",
+    "description_uz": "Raqamli yozuv daftari.",
+    "category": "technology",
+    "related": [
+      "educational_technology",
+      "ai_tutor",
+      "digital_library",
+      "educational_app",
+      "exam_software",
+      "technology"
+    ],
+    "level": 3
+  },
+  "smart_sensor_system": {
+    "ru": "Система умных датчиков",
+    "uz": "Aqlli sensor tizimi",
+    "parent": "automation_technology",
+    "description_ru": "Сеть датчиков для автоматизации.",
+    "description_uz": "Avtomatlashtirish uchun sensorlar tarmog‘i.",
+    "category": "technology",
+    "related": [
+      "automation_technology",
+      "automated_lighting",
+      "automated_warehouse",
+      "automation_software",
+      "home_automation_system",
+      "technology"
+    ],
+    "level": 3
+  },
+  "smoke_detector": {
+    "ru": "Датчик дыма",
+    "uz": "Tutun sensori",
+    "parent": "security_technology",
+    "description_ru": "Устройство обнаружения дыма.",
+    "description_uz": "Tutunni aniqlovchi qurilma.",
+    "category": "technology",
+    "related": [
+      "security_technology",
+      "alarm_system",
+      "biometric_authentication",
+      "cyber_security_system",
+      "technology",
+      "encryption_system"
+    ],
+    "level": 3
+  },
+  "solar_panel_installation": {
+    "ru": "Установка солнечных панелей",
+    "uz": "Quyosh paneli o‘rnatish",
+    "parent": "construction_technology",
+    "description_ru": "Монтаж солнечных панелей.",
+    "description_uz": "Quyosh panellarini o‘rnatish.",
+    "category": "technology",
+    "related": [
+      "construction_technology",
+      "3d_house_printing",
+      "automated_crane",
+      "building_information_modeling",
+      "construction_drone",
+      "technology"
+    ],
+    "level": 3
+  },
+  "space_probe": {
+    "ru": "Космический зонд",
+    "uz": "Kosmik zond",
+    "parent": "space_technology",
+    "description_ru": "Аппарат для исследования космоса.",
+    "description_uz": "Kosmosni o‘rganish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "space_technology",
+      "astronaut_suit",
+      "deep_space_antenna",
+      "launch_pad",
+      "mars_rover",
+      "technology"
+    ],
+    "level": 3
+  },
+  "space_station": {
+    "ru": "Космическая станция",
+    "uz": "Kosmik stansiya",
+    "parent": "space_technology",
+    "description_ru": "Орбитальная лаборатория.",
+    "description_uz": "Orbital laboratoriya.",
+    "category": "technology",
+    "related": [
+      "space_technology",
+      "astronaut_suit",
+      "deep_space_antenna",
+      "launch_pad",
+      "mars_rover",
+      "technology"
+    ],
+    "level": 3
+  },
+  "space_telescope": {
+    "ru": "Космический телескоп",
+    "uz": "Kosmik teleskop",
+    "parent": "space_technology",
+    "description_ru": "Телескоп для наблюдения из космоса.",
+    "description_uz": "Kosmosdan kuzatuv teleskopi.",
+    "category": "technology",
+    "related": [
+      "space_technology",
+      "astronaut_suit",
+      "deep_space_antenna",
+      "launch_pad",
+      "mars_rover",
+      "technology"
+    ],
+    "level": 3
+  },
+  "speech_recognition": {
+    "ru": "Распознавание речи",
+    "uz": "Nutqni aniqlash",
+    "parent": "ai_technology",
+    "description_ru": "Преобразование речи в текст.",
+    "description_uz": "Ovozni matnga aylantirish.",
+    "category": "technology",
+    "related": [
+      "ai_technology",
+      "ai_assistant",
+      "ai_model",
+      "chatbot",
+      "computer_vision",
+      "technology"
+    ],
+    "level": 3
+  },
+  "ssd": {
+    "ru": "SSD-диск",
+    "uz": "SSD disk",
+    "parent": "computer_technology",
+    "description_ru": "Быстрое устройство хранения данных.",
+    "description_uz": "Tezkor ma'lumot saqlash qurilmasi.",
+    "category": "technology",
+    "related": [
+      "computer_technology",
+      "desktop_computer",
+      "hard_drive",
+      "keyboard",
+      "laptop",
+      "technology"
+    ],
+    "level": 3
+  },
+  "stem_cell_therapy": {
+    "ru": "Терапия стволовыми клетками",
+    "uz": "Ildiz hujayra terapiyasi",
+    "parent": "biotechnology",
+    "description_ru": "Лечение с использованием стволовых клеток.",
+    "description_uz": "Ildiz hujayralar bilan davolash.",
+    "category": "technology",
+    "related": [
+      "biotechnology",
+      "biochip",
+      "bioinformatics",
+      "bioplastic",
+      "bioreactor",
+      "technology"
+    ],
+    "level": 3
+  },
+  "streaming_service": {
+    "ru": "Стриминговый сервис",
+    "uz": "Striming xizmati",
+    "parent": "media_technology",
+    "description_ru": "Платформа для просмотра видео онлайн.",
+    "description_uz": "Onlayn video ko‘rish platformasi.",
+    "category": "technology",
+    "related": [
+      "media_technology",
+      "animation_software",
+      "audio_editor",
+      "digital_camera",
+      "digital_tv",
+      "technology"
+    ],
+    "level": 3
+  },
+  "television": {
+    "ru": "Телевизор",
+    "uz": "Televizor",
+    "parent": "media_technology",
+    "description_ru": "Устройство для просмотра видео и передач.",
+    "description_uz": "Video va ko‘rsatuvlarni ko‘rish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "media_technology",
+      "animation_software",
+      "audio_editor",
+      "digital_camera",
+      "digital_tv",
+      "technology"
+    ],
+    "level": 3
+  },
+  "thermal_insulation_system": {
+    "ru": "Система теплоизоляции",
+    "uz": "Issiqlik izolyatsiya tizimi",
+    "parent": "construction_technology",
+    "description_ru": "Материалы для сохранения тепла.",
+    "description_uz": "Issiqlikni saqlovchi materiallar.",
+    "category": "technology",
+    "related": [
+      "construction_technology",
+      "3d_house_printing",
+      "automated_crane",
+      "building_information_modeling",
+      "construction_drone",
+      "technology"
+    ],
+    "level": 3
+  },
+  "tokenization_platform": {
+    "ru": "Платформа токенизации",
+    "uz": "Tokenlash platformasi",
+    "parent": "blockchain_technology",
+    "description_ru": "Создание цифровых токенов.",
+    "description_uz": "Raqamli token yaratish.",
+    "category": "technology",
+    "related": [
+      "blockchain_technology",
+      "block_explorer",
+      "crypto_exchange_platform",
+      "crypto_wallet",
+      "cryptocurrency",
+      "technology"
+    ],
+    "level": 3
+  },
+  "ultrasound_machine": {
+    "ru": "Аппарат УЗИ",
+    "uz": "UZI apparati",
+    "parent": "medical_technology",
+    "description_ru": "Устройство для ультразвуковой диагностики.",
+    "description_uz": "Ultratovush tekshiruv qurilmasi.",
+    "category": "technology",
+    "related": [
+      "medical_technology",
+      "blood_pressure_monitor",
+      "glucose_meter",
+      "mri_machine",
+      "technology"
+    ],
+    "level": 3
+  },
+  "vaccine_technology": {
+    "ru": "Технология вакцин",
+    "uz": "Vaksina texnologiyasi",
+    "parent": "biotechnology",
+    "description_ru": "Методы разработки вакцин.",
+    "description_uz": "Vaksina ishlab chiqish usullari.",
+    "category": "technology",
+    "related": [
+      "biotechnology",
+      "biochip",
+      "bioinformatics",
+      "bioplastic",
+      "bioreactor",
+      "technology"
+    ],
+    "level": 3
+  },
+  "vacuum_cleaner": {
+    "ru": "Пылесос",
+    "uz": "Changyutgich",
+    "parent": "home_appliance_technology",
+    "description_ru": "Устройство для уборки пыли.",
+    "description_uz": "Chang tozalash qurilmasi.",
+    "category": "technology",
+    "related": [
+      "home_appliance_technology",
+      "refrigerator",
+      "washing_machine",
+      "technology"
+    ],
+    "level": 3
+  },
+  "video_editor": {
+    "ru": "Видеоредактор",
+    "uz": "Video tahrirlash dasturi",
+    "parent": "media_technology",
+    "description_ru": "Программа для монтажа видео.",
+    "description_uz": "Video montaj qilish dasturi.",
+    "category": "technology",
+    "related": [
+      "media_technology",
+      "animation_software",
+      "audio_editor",
+      "digital_camera",
+      "digital_tv",
+      "technology"
+    ],
+    "level": 3
+  },
+  "virtual_classroom": {
+    "ru": "Виртуальный класс",
+    "uz": "Virtual sinf",
+    "parent": "educational_technology",
+    "description_ru": "Онлайн-среда для обучения.",
+    "description_uz": "Onlayn o‘quv muhiti.",
+    "category": "technology",
+    "related": [
+      "educational_technology",
+      "ai_tutor",
+      "digital_library",
+      "educational_app",
+      "exam_software",
+      "technology"
+    ],
+    "level": 3
+  },
+  "virtual_machine": {
+    "ru": "Виртуальная машина",
+    "uz": "Virtual mashina",
+    "parent": "cloud_technology",
+    "description_ru": "Программная имитация компьютера.",
+    "description_uz": "Kompyuterning dasturiy modeli.",
+    "category": "technology",
+    "related": [
+      "cloud_technology",
+      "cloud_backup",
+      "cloud_database",
+      "cloud_hosting",
+      "cloud_monitoring",
+      "technology"
+    ],
+    "level": 3
+  },
+  "virtual_reality_learning": {
+    "ru": "Обучение в VR",
+    "uz": "VR orqali ta'lim",
+    "parent": "educational_technology",
+    "description_ru": "Использование VR для обучения.",
+    "description_uz": "VR texnologiyasi orqali o‘rganish.",
+    "category": "technology",
+    "related": [
+      "educational_technology",
+      "ai_tutor",
+      "digital_library",
+      "educational_app",
+      "exam_software",
+      "technology"
+    ],
+    "level": 3
+  },
+  "vr_headset": {
+    "ru": "VR-гарнитура",
+    "uz": "VR ko‘zoynak",
+    "parent": "gaming_technology",
+    "description_ru": "Устройство виртуальной реальности.",
+    "description_uz": "Virtual reallik qurilmasi.",
+    "category": "technology",
+    "related": [
+      "gaming_technology",
+      "augmented_reality_game",
+      "cloud_gaming",
+      "esports_platform",
+      "game_controller",
+      "technology"
+    ],
+    "level": 3
+  },
+  "warehouse_robot": {
+    "ru": "Складской робот",
+    "uz": "Ombor roboti",
+    "parent": "robotics",
+    "description_ru": "Робот для работы на складе.",
+    "description_uz": "Omborda ishlovchi robot.",
+    "category": "technology",
+    "related": [
+      "robotics",
+      "agricultural_robot",
+      "humanoid_robot",
+      "medical_robot",
+      "robot_arm",
+      "technology"
+    ],
+    "level": 3
+  },
+  "washing_machine": {
+    "ru": "Стиральная машина",
+    "uz": "Kir yuvish mashinasi",
+    "parent": "home_appliance_technology",
+    "description_ru": "Устройство для автоматической стирки одежды.",
+    "description_uz": "Kiyimlarni avtomatik yuvish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "home_appliance_technology",
+      "refrigerator",
+      "vacuum_cleaner",
+      "technology"
+    ],
+    "level": 3
+  },
+  "webcam": {
+    "ru": "Веб-камера",
+    "uz": "Veb-kamera",
+    "parent": "computer_technology",
+    "description_ru": "Камера для видеосвязи.",
+    "description_uz": "Video aloqa kamerasi.",
+    "category": "technology",
+    "related": [
+      "computer_technology",
+      "desktop_computer",
+      "hard_drive",
+      "keyboard",
+      "laptop",
+      "technology"
+    ],
+    "level": 3
+  },
+  "welding_machine": {
+    "ru": "Сварочный аппарат",
+    "uz": "Payvandlash apparati",
+    "parent": "industrial_technology",
+    "description_ru": "Аппарат для соединения металлов.",
+    "description_uz": "Metallni birlashtirish qurilmasi.",
+    "category": "technology",
+    "related": [
+      "industrial_technology",
+      "3d_printer",
+      "assembly_line",
+      "cnc_machine",
+      "factory_automation_system",
+      "technology"
+    ],
+    "level": 3
+  },
   "wifi": {
     "ru": "Wi-Fi",
     "uz": "Wi-Fi",
@@ -24,2449 +4572,27 @@
     "description_ru": "Беспроводной доступ к интернету.",
     "description_uz": "Simsiz internet ulanishi.",
     "category": "technology",
-    "related": []
-  },
-
-  "gps": {
-    "ru": "GPS",
-    "uz": "GPS",
-    "description_ru": "Система определения местоположения.",
-    "description_uz": "Joylashuvni aniqlash tizimi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "mobile_network": {
-    "ru": "Мобильная связь",
-    "uz": "Mobil aloqa",
-    "description_ru": "Технология связи через мобильные сети.",
-    "description_uz": "Mobil tarmoqlar orqali aloqa.",
-    "category": "technology",
-    "related": []
-  },
-    "television": {
-    "ru": "Телевизор",
-    "uz": "Televizor",
-    "description_ru": "Устройство для просмотра видео и передач.",
-    "description_uz": "Video va ko‘rsatuvlarni ko‘rish qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "refrigerator": {
-    "ru": "Холодильник",
-    "uz": "Muzlatgich",
-    "description_ru": "Устройство для хранения продуктов в холоде.",
-    "description_uz": "Oziq-ovqatni sovuqda saqlovchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "washing_machine": {
-    "ru": "Стиральная машина",
-    "uz": "Kir yuvish mashinasi",
-    "description_ru": "Устройство для автоматической стирки одежды.",
-    "description_uz": "Kiyimlarni avtomatik yuvish qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "microwave": {
-    "ru": "Микроволновка",
-    "uz": "Mikroto‘lqinli pech",
-    "description_ru": "Устройство для разогрева пищи.",
-    "description_uz": "Ovqatni isitish qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "vacuum_cleaner": {
-    "ru": "Пылесос",
-    "uz": "Changyutgich",
-    "description_ru": "Устройство для уборки пыли.",
-    "description_uz": "Chang tozalash qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-    "smartphone_device": {
-    "ru": "Смартфон",
-    "uz": "Smartfon",
-    "description_ru": "Мобильное устройство связи и интернета.",
-    "description_uz": "Aloqa va internet uchun mobil qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "laptop_device": {
-    "ru": "Ноутбук",
-    "uz": "Noutbuk",
-    "description_ru": "Портативный компьютер.",
-    "description_uz": "Ko‘chma kompyuter.",
-    "category": "technology",
-    "related": []
-  },
-
-  "tablet_device": {
-    "ru": "Планшет",
-    "uz": "Planshet",
-    "description_ru": "Сенсорное портативное устройство.",
-    "description_uz": "Sensorli ko‘chma qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "smart_watch": {
-    "ru": "Умные часы",
-    "uz": "Aqlli soat",
-    "description_ru": "Носимое цифровое устройство.",
-    "description_uz": "Taqiladigan raqamli qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "earbuds": {
-    "ru": "Беспроводные наушники",
-    "uz": "Simsiz quloqchin",
-    "description_ru": "Устройство для прослушивания аудио без проводов.",
-    "description_uz": "Simsiz audio tinglash qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-    "atm": {
-    "ru": "Банкомат",
-    "uz": "Bankomat",
-    "description_ru": "Устройство для снятия и внесения денег.",
-    "description_uz": "Pul yechish va kiritish qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  
-
-  "printer": {
-    "ru": "Принтер",
-    "uz": "Printer",
-    "description_ru": "Устройство для печати документов.",
-    "description_uz": "Hujjatlarni chop etuvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "scanner": {
-    "ru": "Сканер",
-    "uz": "Skaner",
-    "description_ru": "Устройство для цифрового копирования документов.",
-    "description_uz": "Hujjatlarni raqamlashtiruvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "payment_terminal": {
-    "ru": "Платёжный терминал",
-    "uz": "To‘lov terminali",
-    "description_ru": "Устройство для безналичной оплаты.",
-    "description_uz": "Naqd pulsiz to‘lov qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-    "solar_panel": {
-    "ru": "Солнечная панель",
-    "uz": "Quyosh paneli",
-    "description_ru": "Устройство для преобразования солнечной энергии.",
-    "description_uz": "Quyosh energiyasini elektrga aylantiruvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "wind_turbine": {
-    "ru": "Ветрогенератор",
-    "uz": "Shamol turbinası",
-    "description_ru": "Устройство для выработки энергии от ветра.",
-    "description_uz": "Shamoldan elektr ishlab chiqaruvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "power_plant": {
-    "ru": "Электростанция",
-    "uz": "Elektr stansiya",
-    "description_ru": "Объект для производства электроэнергии.",
-    "description_uz": "Elektr energiyasi ishlab chiqaruvchi obyekt.",
-    "category": "technology",
-    "related": []
-  },
-
-  "battery": {
-    "ru": "Батарея",
-    "uz": "Batareya",
-    "description_ru": "Источник хранения электрической энергии.",
-    "description_uz": "Elektr energiyasini saqlovchi manba.",
-    "category": "technology",
-    "related": []
-  },
-
-  "power_bank": {
-    "ru": "Пауэрбанк",
-    "uz": "Powerbank",
-    "description_ru": "Портативное устройство для зарядки.",
-    "description_uz": "Ko‘chma zaryadlash qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-  
-    "x_ray_machine": {
-    "ru": "Рентген-аппарат",
-    "uz": "Rentgen apparati",
-    "description_ru": "Устройство для получения рентгеновских снимков.",
-    "description_uz": "Rentgen tasvirlarini olish qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "mri_machine": {
-    "ru": "МРТ-аппарат",
-    "uz": "MRT apparati",
-    "description_ru": "Аппарат для магнитно-резонансной томографии.",
-    "description_uz": "Magnit-rezonans tomografiya qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "ultrasound_machine": {
-    "ru": "Аппарат УЗИ",
-    "uz": "UZI apparati",
-    "description_ru": "Устройство для ультразвуковой диагностики.",
-    "description_uz": "Ultratovush tekshiruv qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "ventilator_machine": {
-    "ru": "Аппарат ИВЛ",
-    "uz": "Sun'iy nafas oldirish apparati",
-    "description_ru": "Устройство для поддержки дыхания.",
-    "description_uz": "Nafas olishni qo‘llab-quvvatlovchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "medical_monitor": {
-    "ru": "Медицинский монитор",
-    "uz": "Tibbiy monitor",
-    "description_ru": "Устройство для контроля состояния пациента.",
-    "description_uz": "Bemor holatini kuzatuvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-    "elevator": {
-    "ru": "Лифт",
-    "uz": "Lift",
-    "description_ru": "Устройство для перемещения людей между этажами.",
-    "description_uz": "Qavatlar orasida odam tashuvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "escalator": {
-    "ru": "Эскалатор",
-    "uz": "Eskalyator",
-    "description_ru": "Движущаяся лестница.",
-    "description_uz": "Harakatlanuvchi zinapoya.",
-    "category": "technology",
-    "related": []
-  },
-
-  "air_conditioner": {
-    "ru": "Кондиционер",
-    "uz": "Konditsioner",
-    "description_ru": "Устройство для охлаждения воздуха.",
-    "description_uz": "Havoni sovutuvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "heater": {
-    "ru": "Обогреватель",
-    "uz": "Isitgich",
-    "description_ru": "Устройство для обогрева помещения.",
-    "description_uz": "Xonani isituvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "water_purifier": {
-    "ru": "Фильтр для воды",
-    "uz": "Suv filtri",
-    "description_ru": "Устройство для очистки воды.",
-    "description_uz": "Suvni tozalovchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-    "traffic_light": {
-    "ru": "Светофор",
-    "uz": "Svetofor",
-    "description_ru": "Устройство для регулирования дорожного движения.",
-    "description_uz": "Yo‘l harakatini boshqaruvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "speed_camera": {
-    "ru": "Камера контроля скорости",
-    "uz": "Tezlik kamerasi",
-    "description_ru": "Устройство для фиксации превышения скорости.",
-    "description_uz": "Tezlikni nazorat qiluvchi kamera.",
-    "category": "technology",
-    "related": []
-  },
-
- 
-
-  "radar_detector": {
-    "ru": "Радар",
-    "uz": "Radar",
-    "description_ru": "Устройство для обнаружения объектов.",
-    "description_uz": "Obyektlarni aniqlovchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-
-  "online_learning_platform": {
-    "ru": "Онлайн-платформа обучения",
-    "uz": "Onlayn ta'lim platformasi",
-    "description_ru": "Система для дистанционного обучения.",
-    "description_uz": "Masofaviy ta'lim tizimi.",
-    "category": "technology",
-    "related": []
-  },
-
-  
-
-  "e_book_reader": {
-    "ru": "Электронная книга",
-    "uz": "Elektron kitob qurilmasi",
-    "description_ru": "Устройство для чтения цифровых книг.",
-    "description_uz": "Raqamli kitob o‘qish qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-
-
-  "3d_scanner": {
-    "ru": "3D-сканер",
-    "uz": "3D skaner",
-    "description_ru": "Устройство для создания трёхмерной модели объекта.",
-    "description_uz": "Obyektning 3D modelini yaratuvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-    "online_banking": {
-    "ru": "Онлайн-банкинг",
-    "uz": "Onlayn bank xizmati",
-    "description_ru": "Система управления счетами через интернет.",
-    "description_uz": "Internet orqali hisobni boshqarish tizimi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "mobile_banking": {
-    "ru": "Мобильный банкинг",
-    "uz": "Mobil bank xizmati",
-    "description_ru": "Банковские операции через смартфон.",
-    "description_uz": "Smartfon orqali bank xizmatlari.",
-    "category": "technology",
-    "related": []
-  },
-
-  "qr_payment": {
-    "ru": "QR-оплата",
-    "uz": "QR to‘lov",
-    "description_ru": "Безналичная оплата с помощью QR-кода.",
-    "description_uz": "QR kod orqali naqd pulsiz to‘lov.",
-    "category": "technology",
-    "related": []
-  },
-
-  "contactless_payment": {
-    "ru": "Бесконтактная оплата",
-    "uz": "Kontaktsiz to‘lov",
-    "description_ru": "Оплата картой или телефоном без ввода PIN.",
-    "description_uz": "Karta yoki telefon orqali tegmasdan to‘lov.",
-    "category": "technology",
-    "related": []
-  },
-
-  
-    "satellite_communication": {
-    "ru": "Спутниковая связь",
-    "uz": "Sun'iy yo‘ldosh aloqasi",
-    "description_ru": "Передача сигнала через спутники.",
-    "description_uz": "Signalni sun'iy yo‘ldosh orqali uzatish.",
-    "category": "technology",
-    "related": []
-  },
-
-  "fiber_optic": {
-    "ru": "Оптоволоконная связь",
-    "uz": "Optik tolali aloqa",
-    "description_ru": "Передача данных по оптоволоконным кабелям.",
-    "description_uz": "Ma'lumotni optik tolali kabel orqali uzatish.",
-    "category": "technology",
-    "related": []
-  },
-
-  "5g_network": {
-    "ru": "Сеть 5G",
-    "uz": "5G tarmog‘i",
-    "description_ru": "Высокоскоростная мобильная сеть.",
-    "description_uz": "Yuqori tezlikdagi mobil tarmoq.",
-    "category": "technology",
-    "related": []
-  },
-
-  "video_call": {
-    "ru": "Видеозвонок",
-    "uz": "Video qo‘ng‘iroq",
-    "description_ru": "Связь с передачей видео в реальном времени.",
-    "description_uz": "Real vaqt rejimida video aloqa.",
-    "category": "technology",
-    "related": []
-  },
-
-  "messenger_app": {
-    "ru": "Мессенджер",
-    "uz": "Xabar almashish ilovasi",
-    "description_ru": "Приложение для обмена сообщениями.",
-    "description_uz": "Xabar almashish uchun ilova.",
-    "category": "technology",
-    "related": []
-  },
-
-
-
-  "smart_tv": {
-    "ru": "Смарт-телевизор",
-    "uz": "Smart televizor",
-    "description_ru": "Телевизор с доступом к интернету.",
-    "description_uz": "Internetga ulangan televizor.",
-    "category": "technology",
-    "related": []
-  },
-
-
-
-  "virtual_assistant": {
-    "ru": "Голосовой помощник",
-    "uz": "Ovozli yordamchi",
-    "description_ru": "Программа для голосового управления устройствами.",
-    "description_uz": "Qurilmalarni ovoz orqali boshqarish dasturi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "bluetooth_speaker": {
-    "ru": "Bluetooth-колонка",
-    "uz": "Bluetooth kolonka",
-    "description_ru": "Беспроводное устройство для воспроизведения звука.",
-    "description_uz": "Simsiz ovoz chiqaruvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-    "cash_register": {
-    "ru": "Кассовый аппарат",
-    "uz": "Kassa apparati",
-    "description_ru": "Устройство для регистрации продаж.",
-    "description_uz": "Savdoni ro‘yxatga oluvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "barcode_scanner": {
-    "ru": "Сканер штрихкода",
-    "uz": "Shtrixkod skaneri",
-    "description_ru": "Устройство для считывания штрихкодов.",
-    "description_uz": "Shtrixkodni o‘qiydigan qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "pos_terminal": {
-    "ru": "POS-терминал",
-    "uz": "POS terminal",
-    "description_ru": "Устройство для приёма банковских карт.",
-    "description_uz": "Bank kartalarini qabul qiluvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "self_service_kiosk": {
-    "ru": "Терминал самообслуживания",
-    "uz": "O‘z-o‘ziga xizmat terminali",
-    "description_ru": "Автомат для самостоятельной оплаты услуг.",
-    "description_uz": "Xizmatlarni mustaqil to‘lash qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "warehouse_management_system": {
-    "ru": "Система управления складом",
-    "uz": "Ombor boshqaruv tizimi",
-    "description_ru": "Программа для контроля складских запасов.",
-    "description_uz": "Ombordagi mahsulotlarni boshqarish tizimi.",
-    "category": "technology",
-    "related": []
-  },
-    "traffic_monitoring_system": {
-    "ru": "Система мониторинга движения",
-    "uz": "Harakat monitoring tizimi",
-    "description_ru": "Технология контроля дорожной ситуации.",
-    "description_uz": "Yo‘l holatini nazorat qiluvchi tizim.",
-    "category": "technology",
-    "related": []
-  },
-
-  "electronic_ticket": {
-    "ru": "Электронный билет",
-    "uz": "Elektron chipta",
-    "description_ru": "Цифровая система покупки билетов.",
-    "description_uz": "Chipta sotib olishning raqamli tizimi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "ride_sharing_app": {
-    "ru": "Приложение для заказа такси",
-    "uz": "Taksi chaqirish ilovasi",
-    "description_ru": "Сервис для вызова автомобиля через смартфон.",
-    "description_uz": "Smartfon orqali mashina chaqirish xizmati.",
-    "category": "technology",
-    "related": []
-  },
-
-  "electric_scooter_system": {
-    "ru": "Система аренды электросамокатов",
-    "uz": "Elektr samokat ijarasi tizimi",
-    "description_ru": "Городская система аренды транспорта.",
-    "description_uz": "Shahardagi transport ijarasi tizimi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "parking_sensor": {
-    "ru": "Парковочный датчик",
-    "uz": "Parkovka sensori",
-    "description_ru": "Устройство для помощи при парковке.",
-    "description_uz": "Parkovkada yordam beruvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-    "air_purifier": {
-    "ru": "Очиститель воздуха",
-    "uz": "Havo tozalagich",
-    "description_ru": "Устройство для очистки воздуха в помещении.",
-    "description_uz": "Xonadagi havoni tozalovchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "water_treatment_plant": {
-    "ru": "Очистная станция воды",
-    "uz": "Suv tozalash stansiyasi",
-    "description_ru": "Система очистки питьевой воды.",
-    "description_uz": "Ichimlik suvini tozalash tizimi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "waste_recycling_system": {
-    "ru": "Система переработки отходов",
-    "uz": "Chiqindilarni qayta ishlash tizimi",
-    "description_ru": "Технология переработки мусора.",
-    "description_uz": "Chiqindilarni qayta ishlash texnologiyasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "electric_bus_system": {
-    "ru": "Система электробусов",
-    "uz": "Elektr avtobus tizimi",
-    "description_ru": "Городская транспортная система на электричестве.",
-    "description_uz": "Elektr asosidagi shahar transport tizimi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "smart_water_meter": {
-    "ru": "Умный счётчик воды",
-    "uz": "Aqlli suv hisoblagich",
-    "description_ru": "Устройство для цифрового контроля расхода воды.",
-    "description_uz": "Suv sarfini raqamli nazorat qiluvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-    "fitness_tracker": {
-    "ru": "Фитнес-браслет",
-    "uz": "Fitnes bilaguzuk",
-    "description_ru": "Устройство для отслеживания физической активности.",
-    "description_uz": "Jismoniy faollikni kuzatuvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "digital_thermometer": {
-    "ru": "Электронный термометр",
-    "uz": "Elektron termometr",
-    "description_ru": "Устройство для измерения температуры тела.",
-    "description_uz": "Tana haroratini o‘lchovchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "blood_pressure_monitor": {
-    "ru": "Тонометр",
-    "uz": "Qon bosimi o‘lchagich",
-    "description_ru": "Устройство для измерения давления.",
-    "description_uz": "Qon bosimini o‘lchovchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "glucose_meter": {
-    "ru": "Глюкометр",
-    "uz": "Glyukometr",
-    "description_ru": "Прибор для измерения уровня сахара.",
-    "description_uz": "Qondagi shakar miqdorini o‘lchovchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "telemedicine_platform": {
-    "ru": "Телемедицина",
-    "uz": "Telemeditsina",
-    "description_ru": "Удалённые медицинские консультации.",
-    "description_uz": "Masofaviy tibbiy maslahatlar.",
-    "category": "technology",
-    "related": []
-  },
-    "photocopier": {
-    "ru": "Ксерокс",
-    "uz": "Kseroks",
-    "description_ru": "Устройство для копирования документов.",
-    "description_uz": "Hujjat nusxa ko‘chirish qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "laminator": {
-    "ru": "Ламинатор",
-    "uz": "Laminator",
-    "description_ru": "Устройство для покрытия документов плёнкой.",
-    "description_uz": "Hujjatni plyonka bilan qoplash qurilmasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "shredder": {
-    "ru": "Шредер",
-    "uz": "Hujjat maydalagich",
-    "description_ru": "Устройство для уничтожения документов.",
-    "description_uz": "Hujjatlarni maydalovchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "conference_system": {
-    "ru": "Система видеоконференции",
-    "uz": "Videokonferensiya tizimi",
-    "description_ru": "Оборудование для онлайн-встреч.",
-    "description_uz": "Onlayn uchrashuv tizimi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "digital_signature": {
-    "ru": "Электронная подпись",
-    "uz": "Elektron imzo",
-    "description_ru": "Цифровое подтверждение личности.",
-    "description_uz": "Raqamli shaxs tasdiqlash vositasi.",
-    "category": "technology",
-    "related": []
-  },
-    "smart_light": {
-    "ru": "Умная лампа",
-    "uz": "Aqlli chiroq",
-    "description_ru": "Лампа с управлением через приложение.",
-    "description_uz": "Ilova orqali boshqariladigan chiroq.",
-    "category": "technology",
-    "related": []
-  },
-
-  "smart_thermostat": {
-    "ru": "Умный термостат",
-    "uz": "Aqlli termostat",
-    "description_ru": "Устройство для автоматического контроля температуры.",
-    "description_uz": "Haroratni avtomatik boshqaruvchi qurilma.",
-    "category": "technology",
-    "related": []
-  },
-
-  "smart_doorbell": {
-    "ru": "Умный дверной звонок",
-    "uz": "Aqlli eshik qo‘ng‘irog‘i",
-    "description_ru": "Звонок с видеонаблюдением.",
-    "description_uz": "Video kuzatuvli eshik qo‘ng‘irog‘i.",
-    "category": "technology",
-    "related": []
-  },
-
-  "robot_vacuum": {
-    "ru": "Робот-пылесос",
-    "uz": "Robot changyutgich",
-    "description_ru": "Автоматический пылесос.",
-    "description_uz": "Avtomatik chang tozalovchi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "smart_plug": {
-    "ru": "Умная розетка",
-    "uz": "Aqlli rozetka",
-    "description_ru": "Розетка с удалённым управлением.",
-    "description_uz": "Masofadan boshqariladigan rozetka.",
-    "category": "technology",
-    "related": []
-  },
- 
-
-  "music_streaming": {
-    "ru": "Музыкальный стриминг",
-    "uz": "Musiqa striming xizmati",
-    "description_ru": "Онлайн-прослушивание музыки.",
-    "description_uz": "Musiqani onlayn tinglash xizmati.",
-    "category": "technology",
-    "related": []
-  },
-
- 
-
-  "smart_microphone": {
-    "ru": "Умный микрофон",
-    "uz": "Aqlli mikrofon",
-    "description_ru": "Микрофон с цифровой обработкой звука.",
-    "description_uz": "Raqamli tovush qayta ishlovchi mikrofon.",
-    "category": "technology",
-    "related": []
-  },
-  
-
-
- 
-  "electric_air_taxi": {
-    "ru": "Электрическое воздушное такси",
-    "uz": "Elektr havo taksisi",
-    "description_ru": "Воздушный транспорт для городских перевозок.",
-    "description_uz": "Shahar ichida uchuvchi transport.",
-    "category": "technology",
-    "related": []
-  },
-    "digital_wallet": {
-    "ru": "Цифровой кошелёк",
-    "uz": "Raqamli hamyon",
-    "description_ru": "Приложение для хранения денег.",
-    "description_uz": "Pul saqlash ilovasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "online_exchange": {
-    "ru": "Онлайн-обмен валют",
-    "uz": "Onlayn valyuta ayirboshlash",
-    "description_ru": "Сервис обмена валют через интернет.",
-    "description_uz": "Internet orqali valyuta ayirboshlash.",
-    "category": "technology",
-    "related": []
-  },
-
-  "crypto_exchange": {
-    "ru": "Криптобиржа",
-    "uz": "Kriptobirja",
-    "description_ru": "Платформа для торговли криптовалютой.",
-    "description_uz": "Kriptovalyuta savdo platformasi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "digital_invoice": {
-    "ru": "Электронный счёт",
-    "uz": "Elektron hisob",
-    "description_ru": "Цифровая форма выставления счета.",
-    "description_uz": "Hisob-fakturaning raqamli shakli.",
-    "category": "technology",
-    "related": []
-  },
-
-  "online_marketplace": {
-    "ru": "Онлайн-маркетплейс",
-    "uz": "Onlayn savdo maydoni",
-    "description_ru": "Платформа для интернет-торговли.",
-    "description_uz": "Internet savdo platformasi.",
-    "category": "technology",
-    "related": []
-  },
-    "e_government": {
-    "ru": "Электронное правительство",
-    "uz": "Elektron hukumat",
-    "description_ru": "Цифровые государственные услуги.",
-    "description_uz": "Raqamli davlat xizmatlari.",
-    "category": "technology",
-    "related": []
-  },
-
-  "digital_passport": {
-    "ru": "Цифровой паспорт",
-    "uz": "Raqamli pasport",
-    "description_ru": "Электронная версия паспорта.",
-    "description_uz": "Pasportning elektron shakli.",
-    "category": "technology",
-    "related": []
-  },
-
-  "online_tax_system": {
-    "ru": "Онлайн-система налогов",
-    "uz": "Onlayn soliq tizimi",
-    "description_ru": "Цифровая подача налоговых деклараций.",
-    "description_uz": "Soliqni onlayn topshirish tizimi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "electronic_queue": {
-    "ru": "Электронная очередь",
-    "uz": "Elektron navbat",
-    "description_ru": "Система управления очередями.",
-    "description_uz": "Navbatni boshqarish tizimi.",
-    "category": "technology",
-    "related": []
-  },
-
-  "digital_id_card": {
-    "ru": "Цифровое удостоверение личности",
-    "uz": "Raqamli shaxs guvohnomasi",
-    "description_ru": "Электронный документ для идентификации.",
-    "description_uz": "Shaxsni tasdiqlovchi raqamli hujjat.",
-    "category": "technology",
-    "related": []
-  },
-"desktop_computer": {
-  "ru": "Настольный компьютер",
-  "uz": "Stol kompyuteri",
-  "parent": "computer_technology",
-  "description_ru": "Персональный компьютер для работы.",
-  "description_uz": "Ish uchun shaxsiy kompyuter.",
-  "category": "technology",
-  "related": ["laptop"]
-},
-
-"laptop": {
-  "ru": "Ноутбук",
-  "uz": "Noutbuk",
-  "parent": "computer_technology",
-  "description_ru": "Портативный компьютер.",
-  "description_uz": "Ko‘chma kompyuter.",
-  "category": "technology",
-  "related": ["desktop_computer"]
-},
-
-"keyboard": {
-  "ru": "Клавиатура",
-  "uz": "Klaviatura",
-  "parent": "computer_technology",
-  "description_ru": "Устройство ввода текста.",
-  "description_uz": "Matn kiritish qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"mouse": {
-  "ru": "Компьютерная мышь",
-  "uz": "Kompyuter sichqonchasi",
-  "parent": "computer_technology",
-  "description_ru": "Устройство управления курсором.",
-  "description_uz": "Kursorni boshqarish qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"monitor": {
-  "ru": "Монитор",
-  "uz": "Monitor",
-  "parent": "computer_technology",
-  "description_ru": "Устройство отображения изображения.",
-  "description_uz": "Tasvir ko‘rsatish qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"processor": {
-  "ru": "Процессор",
-  "uz": "Protsessor",
-  "parent": "computer_technology",
-  "description_ru": "Основной вычислительный элемент компьютера.",
-  "description_uz": "Kompyuterning asosiy hisoblash qismi.",
-  "category": "technology",
-  "related": []
-},
-
-"motherboard": {
-  "ru": "Материнская плата",
-  "uz": "Ona plata",
-  "parent": "computer_technology",
-  "description_ru": "Главная плата компьютера.",
-  "description_uz": "Kompyuterning asosiy platası.",
-  "category": "technology",
-  "related": []
-},
-
-"hard_drive": {
-  "ru": "Жёсткий диск",
-  "uz": "Qattiq disk",
-  "parent": "computer_technology",
-  "description_ru": "Устройство хранения данных.",
-  "description_uz": "Ma'lumot saqlash qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"ssd": {
-  "ru": "SSD-диск",
-  "uz": "SSD disk",
-  "parent": "computer_technology",
-  "description_ru": "Быстрое устройство хранения данных.",
-  "description_uz": "Tezkor ma'lumot saqlash qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"webcam": {
-  "ru": "Веб-камера",
-  "uz": "Veb-kamera",
-  "parent": "computer_technology",
-  "description_ru": "Камера для видеосвязи.",
-  "description_uz": "Video aloqa kamerasi.",
-  "category": "technology",
-  "related": []
-},
-
-
-
-
-"electric_car": {
-  "ru": "Электромобиль",
-  "uz": "Elektromobil",
-  "parent": "transport_technology",
-  "description_ru": "Автомобиль на электрической тяге.",
-  "description_uz": "Elektr energiyasida ishlaydigan avtomobil.",
-  "category": "technology",
-  "related": ["electric_charging_station"]
-},
-
-"self_driving_car": {
-  "ru": "Беспилотный автомобиль",
-  "uz": "Avtopilot avtomobil",
-  "parent": "transport_technology",
-  "description_ru": "Автомобиль без водителя.",
-  "description_uz": "Haydovchisiz avtomobil.",
-  "category": "technology",
-  "related": []
-},
-
-"electric_bus": {
-  "ru": "Электробус",
-  "uz": "Elektr avtobus",
-  "parent": "transport_technology",
-  "description_ru": "Общественный транспорт на электричестве.",
-  "description_uz": "Elektr energiyasida ishlovchi avtobus.",
-  "category": "technology",
-  "related": []
-},
-
-"electric_train": {
-  "ru": "Электропоезд",
-  "uz": "Elektr poyezd",
-  "parent": "transport_technology",
-  "description_ru": "Поезд на электрической тяге.",
-  "description_uz": "Elektr energiyasida harakatlanuvchi poyezd.",
-  "category": "technology",
-  "related": []
-},
-
-"metro_system": {
-  "ru": "Метро",
-  "uz": "Metro tizimi",
-  "parent": "transport_technology",
-  "description_ru": "Подземная транспортная система.",
-  "description_uz": "Yer osti transport tizimi.",
-  "category": "technology",
-  "related": []
-},
-
-"electric_scooter": {
-  "ru": "Электросамокат",
-  "uz": "Elektr samokat",
-  "parent": "transport_technology",
-  "description_ru": "Лёгкий городской электротранспорт.",
-  "description_uz": "Yengil shahar elektr transporti.",
-  "category": "technology",
-  "related": []
-},
-
-"drone_delivery": {
-  "ru": "Доставка дроном",
-  "uz": "Dron orqali yetkazish",
-  "parent": "transport_technology",
-  "description_ru": "Доставка товаров беспилотниками.",
-  "description_uz": "Dron yordamida tovar yetkazish.",
-  "category": "technology",
-  "related": []
-},
-
-"hyperloop": {
-  "ru": "Гиперлуп",
-  "uz": "Hyperloop",
-  "parent": "transport_technology",
-  "description_ru": "Высокоскоростная вакуумная транспортная система.",
-  "description_uz": "Vakuumli yuqori tezlikdagi transport.",
-  "category": "technology",
-  "related": []
-},
-
-"electric_charging_station": {
-  "ru": "Зарядная станция",
-  "uz": "Zaryadlash stansiyasi",
-  "parent": "transport_technology",
-  "description_ru": "Станция для зарядки электромобилей.",
-  "description_uz": "Elektromobillarni zaryadlovchi stansiya.",
-  "category": "technology",
-  "related": ["electric_car"]
-},
-
-"car_navigator": {
-  "ru": "Автомобильный навигатор",
-  "uz": "Avtomobil navigatori",
-  "parent": "transport_technology",
-  "description_ru": "Устройство для определения маршрута.",
-  "description_uz": "Yo‘nalishni ko‘rsatuvchi qurilma.",
-  "category": "technology",
-  "related": []
-},
-
-
-
-
-"biometric_authentication": {
-  "ru": "Биометрическая аутентификация",
-  "uz": "Biometrik autentifikatsiya",
-  "parent": "security_technology",
-  "description_ru": "Подтверждение личности по биометрическим данным.",
-  "description_uz": "Biometrik ma'lumot orqali tasdiqlash.",
-  "category": "technology",
-  "related": []
-},
-
-
-"security_camera": {
-  "ru": "Камера видеонаблюдения",
-  "uz": "Kuzatuv kamerasi",
-  "parent": "security_technology",
-  "description_ru": "Устройство для записи видео в целях безопасности.",
-  "description_uz": "Xavfsizlik uchun video yozuvchi qurilma.",
-  "category": "technology",
-  "related": []
-},
-
-"alarm_system": {
-  "ru": "Сигнализация",
-  "uz": "Signalizatsiya",
-  "parent": "security_technology",
-  "description_ru": "Система защиты от взлома.",
-  "description_uz": "Buzib kirishga qarshi himoya tizimi.",
-  "category": "technology",
-  "related": []
-},
-
-"motion_sensor": {
-  "ru": "Датчик движения",
-  "uz": "Harakat sensori",
-  "parent": "security_technology",
-  "description_ru": "Устройство обнаружения движения.",
-  "description_uz": "Harakatni aniqlovchi qurilma.",
-  "category": "technology",
-  "related": []
-},
-
-"smoke_detector": {
-  "ru": "Датчик дыма",
-  "uz": "Tutun sensori",
-  "parent": "security_technology",
-  "description_ru": "Устройство обнаружения дыма.",
-  "description_uz": "Tutunni aniqlovchi qurilma.",
-  "category": "technology",
-  "related": []
-},
-
-"face_recognition_system": {
-  "ru": "Система распознавания лиц",
-  "uz": "Yuzni aniqlash tizimi",
-  "parent": "security_technology",
-  "description_ru": "Технология идентификации человека по лицу.",
-  "description_uz": "Insonni yuz orqali aniqlash texnologiyasi.",
-  "category": "technology",
-  "related": []
-},
-
-"": {
-  "ru": "Биометрическая аутентификация",
-  "uz": "Biometrik autentifikatsiya",
-  "parent": "security_technology",
-  "description_ru": "Подтверждение личности по биометрическим данным.",
-  "description_uz": "Biometrik ma'lumot orqali tasdiqlash.",
-  "category": "technology",
-  "related": []
-},
-
-"smart_lock": {
-  "ru": "Умный замок",
-  "uz": "Aqlli qulf",
-  "parent": "security_technology",
-  "description_ru": "Электронный замок с удалённым управлением.",
-  "description_uz": "Masofadan boshqariladigan elektron qulf.",
-  "category": "technology",
-  "related": []
-},
-
-"radar_system": {
-  "ru": "Радарная система",
-  "uz": "Radar tizimi",
-  "parent": "security_technology",
-  "description_ru": "Система обнаружения объектов.",
-  "description_uz": "Obyektlarni aniqlovchi tizim.",
-  "category": "technology",
-  "related": []
-},
-
-"cyber_security_system": {
-  "ru": "Кибербезопасность",
-  "uz": "Kiberxavfsizlik",
-  "parent": "security_technology",
-  "description_ru": "Защита цифровых систем от атак.",
-  "description_uz": "Raqamli tizimlarni hujumlardan himoya qilish.",
-  "category": "technology",
-  "related": []
-},
-
-"encryption_system": {
-  "ru": "Система шифрования",
-  "uz": "Shifrlash tizimi",
-  "parent": "security_technology",
-  "description_ru": "Технология защиты данных с помощью шифрования.",
-  "description_uz": "Ma'lumotni shifrlash orqali himoya qilish.",
-  "category": "technology",
-  "related": []
-},
-"industrial_robot": {
-  "ru": "Промышленный робот",
-  "uz": "Sanoat roboti",
-  "parent": "industrial_technology",
-  "description_ru": "Автоматизированный робот для производства.",
-  "description_uz": "Ishlab chiqarish uchun avtomatlashtirilgan robot.",
-  "category": "technology",
-  "related": []
-},
-
-"cnc_machine": {
-  "ru": "Станок с ЧПУ",
-  "uz": "CNC stanok",
-  "parent": "industrial_technology",
-  "description_ru": "Станок с числовым программным управлением.",
-  "description_uz": "Raqamli boshqaruvli stanok.",
-  "category": "technology",
-  "related": []
-},
-
-"3d_printer": {
-  "ru": "3D-принтер",
-  "uz": "3D printer",
-  "parent": "industrial_technology",
-  "description_ru": "Устройство для послойной печати объектов.",
-  "description_uz": "Qatlamlab obyekt chop etuvchi qurilma.",
-  "category": "technology",
-  "related": []
-},
-
-"assembly_line": {
-  "ru": "Конвейерная линия",
-  "uz": "Konveyer liniyasi",
-  "parent": "industrial_technology",
-  "description_ru": "Система массового производства.",
-  "description_uz": "Ommaviy ishlab chiqarish tizimi.",
-  "category": "technology",
-  "related": []
-},
-
-"laser_cutter": {
-  "ru": "Лазерный резак",
-  "uz": "Lazer kesuvchi",
-  "parent": "industrial_technology",
-  "description_ru": "Оборудование для лазерной резки.",
-  "description_uz": "Lazer yordamida kesish uskunasi.",
-  "category": "technology",
-  "related": []
-},
-
-"industrial_drill": {
-  "ru": "Промышленная дрель",
-  "uz": "Sanoat burg‘usi",
-  "parent": "industrial_technology",
-  "description_ru": "Инструмент для сверления материалов.",
-  "description_uz": "Materiallarni burg‘ulash asbobi.",
-  "category": "technology",
-  "related": []
-},
-
-"welding_machine": {
-  "ru": "Сварочный аппарат",
-  "uz": "Payvandlash apparati",
-  "parent": "industrial_technology",
-  "description_ru": "Аппарат для соединения металлов.",
-  "description_uz": "Metallni birlashtirish qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"hydraulic_press": {
-  "ru": "Гидравлический пресс",
-  "uz": "Gidravlik press",
-  "parent": "industrial_technology",
-  "description_ru": "Оборудование для прессования материалов.",
-  "description_uz": "Materialni siqish uskunasi.",
-  "category": "technology",
-  "related": []
-},
-
-"industrial_generator": {
-  "ru": "Промышленный генератор",
-  "uz": "Sanoat generatori",
-  "parent": "industrial_technology",
-  "description_ru": "Устройство выработки электроэнергии.",
-  "description_uz": "Elektr energiya ishlab chiqaruvchi qurilma.",
-  "category": "technology",
-  "related": []
-},
-
-"factory_automation_system": {
-  "ru": "Система автоматизации завода",
-  "uz": "Zavod avtomatlashtirish tizimi",
-  "parent": "industrial_technology",
-  "description_ru": "Цифровая система управления производством.",
-  "description_uz": "Ishlab chiqarishni boshqaruvchi raqamli tizim.",
-  "category": "technology",
-  "related": []
-},
-"online_course_platform": {
-  "ru": "Платформа онлайн-курсов",
-  "uz": "Onlayn kurs platformasi",
-  "parent": "educational_technology",
-  "description_ru": "Платформа для дистанционного обучения.",
-  "description_uz": "Masofaviy ta'lim platformasi.",
-  "category": "technology",
-  "related": []
-},
-
-"virtual_classroom": {
-  "ru": "Виртуальный класс",
-  "uz": "Virtual sinf",
-  "parent": "educational_technology",
-  "description_ru": "Онлайн-среда для обучения.",
-  "description_uz": "Onlayn o‘quv muhiti.",
-  "category": "technology",
-  "related": []
-},
-
-"interactive_whiteboard": {
-  "ru": "Интерактивная доска",
-  "uz": "Interaktiv doska",
-  "parent": "educational_technology",
-  "description_ru": "Цифровая доска для обучения.",
-  "description_uz": "Raqamli o‘quv doskasi.",
-  "category": "technology",
-  "related": []
-},
-
-"learning_management_system": {
-  "ru": "Система управления обучением",
-  "uz": "Ta'lim boshqaruv tizimi",
-  "parent": "educational_technology",
-  "description_ru": "Платформа для организации обучения.",
-  "description_uz": "Ta'lim jarayonini boshqarish platformasi.",
-  "category": "technology",
-  "related": []
-},
-
-"educational_app": {
-  "ru": "Образовательное приложение",
-  "uz": "Ta'lim ilovasi",
-  "parent": "educational_technology",
-  "description_ru": "Мобильное приложение для обучения.",
-  "description_uz": "O‘rganish uchun mobil ilova.",
-  "category": "technology",
-  "related": []
-},
-
-"digital_library": {
-  "ru": "Цифровая библиотека",
-  "uz": "Raqamli kutubxona",
-  "parent": "educational_technology",
-  "description_ru": "Онлайн-хранилище книг и материалов.",
-  "description_uz": "Kitob va materiallar onlayn ombori.",
-  "category": "technology",
-  "related": []
-},
-
-"exam_software": {
-  "ru": "Программа для тестирования",
-  "uz": "Test dasturi",
-  "parent": "educational_technology",
-  "description_ru": "ПО для проведения экзаменов.",
-  "description_uz": "Imtihon o‘tkazish dasturi.",
-  "category": "technology",
-  "related": []
-},
-
-"virtual_reality_learning": {
-  "ru": "Обучение в VR",
-  "uz": "VR orqali ta'lim",
-  "parent": "educational_technology",
-  "description_ru": "Использование VR для обучения.",
-  "description_uz": "VR texnologiyasi orqali o‘rganish.",
-  "category": "technology",
-  "related": []
-},
-
-"smart_notebook": {
-  "ru": "Умная тетрадь",
-  "uz": "Aqlli daftar",
-  "parent": "educational_technology",
-  "description_ru": "Цифровая тетрадь для заметок.",
-  "description_uz": "Raqamli yozuv daftari.",
-  "category": "technology",
-  "related": []
-},
-
-"ai_tutor": {
-  "ru": "ИИ-репетитор",
-  "uz": "Sun'iy intellekt o‘qituvchi",
-  "parent": "educational_technology",
-  "description_ru": "Система обучения на основе ИИ.",
-  "description_uz": "Sun'iy intellekt asosidagi o‘quv tizimi.",
-  "category": "technology",
-  "related": []
-},
-"streaming_service": {
-  "ru": "Стриминговый сервис",
-  "uz": "Striming xizmati",
-  "parent": "media_technology",
-  "description_ru": "Платформа для просмотра видео онлайн.",
-  "description_uz": "Onlayn video ko‘rish platformasi.",
-  "category": "technology",
-  "related": []
-},
-
-"digital_camera": {
-  "ru": "Цифровая камера",
-  "uz": "Raqamli kamera",
-  "parent": "media_technology",
-  "description_ru": "Устройство для цифровой съёмки.",
-  "description_uz": "Raqamli suratga olish qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"microphone": {
-  "ru": "Микрофон",
-  "uz": "Mikrofon",
-  "parent": "media_technology",
-  "description_ru": "Устройство для записи звука.",
-  "description_uz": "Ovoz yozish qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"video_editor": {
-  "ru": "Видеоредактор",
-  "uz": "Video tahrirlash dasturi",
-  "parent": "media_technology",
-  "description_ru": "Программа для монтажа видео.",
-  "description_uz": "Video montaj qilish dasturi.",
-  "category": "technology",
-  "related": []
-},
-
-"audio_editor": {
-  "ru": "Аудиоредактор",
-  "uz": "Audio tahrirlash dasturi",
-  "parent": "media_technology",
-  "description_ru": "Программа для обработки звука.",
-  "description_uz": "Ovoz tahrirlash dasturi.",
-  "category": "technology",
-  "related": []
-},
-
-"projector": {
-  "ru": "Проектор",
-  "uz": "Proyektor",
-  "parent": "media_technology",
-  "description_ru": "Устройство для вывода изображения на экран.",
-  "description_uz": "Tasvirni katta ekranga chiqaruvchi qurilma.",
-  "category": "technology",
-  "related": []
-},
-
-"digital_tv": {
-  "ru": "Цифровое телевидение",
-  "uz": "Raqamli televideniye",
-  "parent": "media_technology",
-  "description_ru": "Передача телевизионного сигнала в цифровом формате.",
-  "description_uz": "Televizion signalni raqamli uzatish.",
-  "category": "technology",
-  "related": []
-},
-
-"podcast_platform": {
-  "ru": "Платформа подкастов",
-  "uz": "Podkast platformasi",
-  "parent": "media_technology",
-  "description_ru": "Сервис для прослушивания аудиопрограмм.",
-  "description_uz": "Audio dasturlarni tinglash xizmati.",
-  "category": "technology",
-  "related": []
-},
-"cloud_storage": {
-  "ru": "Облачное хранилище",
-  "uz": "Bulutli saqlash",
-  "parent": "cloud_technology",
-  "description_ru": "Хранение данных на удалённых серверах.",
-  "description_uz": "Ma'lumotni masofaviy serverda saqlash.",
-  "category": "technology",
-  "related": []
-},
-
-"cloud_server": {
-  "ru": "Облачный сервер",
-  "uz": "Bulut serveri",
-  "parent": "cloud_technology",
-  "description_ru": "Удалённый сервер для обработки данных.",
-  "description_uz": "Ma'lumotni qayta ishlovchi masofaviy server.",
-  "category": "technology",
-  "related": []
-},
-
-"cloud_backup": {
-  "ru": "Облачное резервное копирование",
-  "uz": "Bulutli zaxira nusxa",
-  "parent": "cloud_technology",
-  "description_ru": "Создание копий данных в облаке.",
-  "description_uz": "Ma'lumotning bulutdagi nusxasi.",
-  "category": "technology",
-  "related": []
-},
-
-"cloud_database": {
-  "ru": "Облачная база данных",
-  "uz": "Bulutli ma'lumotlar bazasi",
-  "parent": "cloud_technology",
-  "description_ru": "База данных, размещённая в облаке.",
-  "description_uz": "Bulutda joylashgan ma'lumotlar bazasi.",
-  "category": "technology",
-  "related": []
-},
-
-"virtual_machine": {
-  "ru": "Виртуальная машина",
-  "uz": "Virtual mashina",
-  "parent": "cloud_technology",
-  "description_ru": "Программная имитация компьютера.",
-  "description_uz": "Kompyuterning dasturiy modeli.",
-  "category": "technology",
-  "related": []
-},
-
-"cloud_hosting": {
-  "ru": "Облачный хостинг",
-  "uz": "Bulutli hosting",
-  "parent": "cloud_technology",
-  "description_ru": "Размещение сайтов в облачной среде.",
-  "description_uz": "Saytlarni bulutda joylashtirish.",
-  "category": "technology",
-  "related": []
-},
-
-"cloud_security": {
-  "ru": "Облачная безопасность",
-  "uz": "Bulut xavfsizligi",
-  "parent": "cloud_technology",
-  "description_ru": "Защита облачных данных.",
-  "description_uz": "Bulutdagi ma'lumotni himoya qilish.",
-  "category": "technology",
-  "related": []
-},
-
-"container_technology": {
-  "ru": "Контейнерная технология",
-  "uz": "Konteyner texnologiyasi",
-  "parent": "cloud_technology",
-  "description_ru": "Изоляция приложений в контейнерах.",
-  "description_uz": "Ilovalarni konteynerda izolyatsiya qilish.",
-  "category": "technology",
-  "related": []
-},
-"machine_learning": {
-  "ru": "Машинное обучение",
-  "uz": "Mashinali o‘rganish",
-  "parent": "ai_technology",
-  "description_ru": "Методы обучения алгоритмов на данных.",
-  "description_uz": "Algoritmlarni ma'lumot asosida o‘rganish usuli.",
-  "category": "technology",
-  "related": []
-},
-
-"neural_network": {
-  "ru": "Нейронная сеть",
-  "uz": "Neyron tarmoq",
-  "parent": "ai_technology",
-  "description_ru": "Модель ИИ, имитирующая работу мозга.",
-  "description_uz": "Miya faoliyatini taqlid qiluvchi model.",
-  "category": "technology",
-  "related": []
-},
-
-"chatbot": {
-  "ru": "Чат-бот",
-  "uz": "Chat-bot",
-  "parent": "ai_technology",
-  "description_ru": "Программа для автоматического общения.",
-  "description_uz": "Avtomatik muloqot dasturi.",
-  "category": "technology",
-  "related": []
-},
-
-"computer_vision": {
-  "ru": "Компьютерное зрение",
-  "uz": "Kompyuter ko‘rish",
-  "parent": "ai_technology",
-  "description_ru": "Анализ изображений с помощью ИИ.",
-  "description_uz": "Tasvirni sun'iy intellekt orqali tahlil qilish.",
-  "category": "technology",
-  "related": []
-},
-
-"speech_recognition": {
-  "ru": "Распознавание речи",
-  "uz": "Nutqni aniqlash",
-  "parent": "ai_technology",
-  "description_ru": "Преобразование речи в текст.",
-  "description_uz": "Ovozni matnga aylantirish.",
-  "category": "technology",
-  "related": []
-},
-
-"natural_language_processing": {
-  "ru": "Обработка естественного языка",
-  "uz": "Tabiiy tilni qayta ishlash",
-  "parent": "ai_technology",
-  "description_ru": "Анализ текста и речи алгоритмами.",
-  "description_uz": "Matn va nutqni algoritm orqali tahlil qilish.",
-  "category": "technology",
-  "related": []
-},
-
-"ai_assistant": {
-  "ru": "ИИ-помощник",
-  "uz": "Sun'iy intellekt yordamchisi",
-  "parent": "ai_technology",
-  "description_ru": "Программа для голосового управления.",
-  "description_uz": "Ovoz orqali boshqariluvchi dastur.",
-  "category": "technology",
-  "related": []
-},
-
-"predictive_analytics": {
-  "ru": "Прогнозная аналитика",
-  "uz": "Prognoz tahlili",
-  "parent": "ai_technology",
-  "description_ru": "Прогнозирование на основе данных.",
-  "description_uz": "Ma'lumot asosida bashorat qilish.",
-  "category": "technology",
-  "related": []
-},
-"service_robot": {
-  "ru": "Сервисный робот",
-  "uz": "Xizmat ko‘rsatuvchi robot",
-  "parent": "robotics",
-  "description_ru": "Робот для помощи людям.",
-  "description_uz": "Odamlarga yordam beruvchi robot.",
-  "category": "technology",
-  "related": []
-},
-
-"humanoid_robot": {
-  "ru": "Гуманоидный робот",
-  "uz": "Gumanoid robot",
-  "parent": "robotics",
-  "description_ru": "Робот, похожий на человека.",
-  "description_uz": "Inson shaklidagi robot.",
-  "category": "technology",
-  "related": []
-},
-
-"robot_arm": {
-  "ru": "Роботизированная рука",
-  "uz": "Robot qo‘li",
-  "parent": "robotics",
-  "description_ru": "Механическая рука для автоматизации.",
-  "description_uz": "Avtomatlashtirish uchun mexanik qo‘l.",
-  "category": "technology",
-  "related": []
-},
-
-"warehouse_robot": {
-  "ru": "Складской робот",
-  "uz": "Ombor roboti",
-  "parent": "robotics",
-  "description_ru": "Робот для работы на складе.",
-  "description_uz": "Omborda ishlovchi robot.",
-  "category": "technology",
-  "related": []
-},
-
-"robot_drone": {
-  "ru": "Робот-дрон",
-  "uz": "Robot dron",
-  "parent": "robotics",
-  "description_ru": "Беспилотный летательный аппарат.",
-  "description_uz": "Uchuvchisiz uchish qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"robot_dog": {
-  "ru": "Робот-собака",
-  "uz": "Robot it",
-  "parent": "robotics",
-  "description_ru": "Четвероногий робот.",
-  "description_uz": "To‘rt oyoqli robot.",
-  "category": "technology",
-  "related": []
-},
-
-"robot_vacuum_system": {
-  "ru": "Система робота-пылесоса",
-  "uz": "Robot changyutgich tizimi",
-  "parent": "robotics",
-  "description_ru": "Автоматическая система уборки.",
-  "description_uz": "Avtomatik tozalash tizimi.",
-  "category": "technology",
-  "related": []
-},
-
-"agricultural_robot": {
-  "ru": "Сельскохозяйственный робот",
-  "uz": "Qishloq xo‘jaligi roboti",
-  "parent": "robotics",
-  "description_ru": "Робот для работы в сельском хозяйстве.",
-  "description_uz": "Qishloq xo‘jaligida ishlovchi robot.",
-  "category": "technology",
-  "related": []
-},
-
-"medical_robot": {
-  "ru": "Медицинский робот",
-  "uz": "Tibbiy robot",
-  "parent": "robotics",
-  "description_ru": "Робот для медицинских процедур.",
-  "description_uz": "Tibbiy muolajalar uchun robot.",
-  "category": "technology",
-  "related": []
-},
-
-"security_robot": {
-  "ru": "Охранный робот",
-  "uz": "Qo‘riqlash roboti",
-  "parent": "robotics",
-  "description_ru": "Робот для охраны объектов.",
-  "description_uz": "Obyektlarni qo‘riqlovchi robot.",
-  "category": "technology",
-  "related": []
-},
-
-"deep_learning": {
-  "ru": "Глубинное обучение",
-  "uz": "Chuqur o‘rganish",
-  "parent": "ai_technology",
-  "description_ru": "Метод обучения многослойных нейросетей.",
-  "description_uz": "Ko‘p qatlamli neyron tarmoqlarni o‘qitish.",
-  "category": "technology",
-  "related": []
-},
-
-"ai_model": {
-  "ru": "Модель ИИ",
-  "uz": "Sun'iy intellekt modeli",
-  "parent": "ai_technology",
-  "description_ru": "Обученная модель для решения задач.",
-  "description_uz": "Muammolarni hal qiluvchi o‘qitilgan model.",
-  "category": "technology",
-  "related": []
-},
-
-"serverless_computing": {
-  "ru": "Бессерверные вычисления",
-  "uz": "Serversiz hisoblash",
-  "parent": "cloud_technology",
-  "description_ru": "Модель облачных вычислений без управления сервером.",
-  "description_uz": "Server boshqaruvisiz bulutli hisoblash modeli.",
-  "category": "technology",
-  "related": []
-},
-
-"cloud_monitoring": {
-  "ru": "Мониторинг облака",
-  "uz": "Bulut monitoringi",
-  "parent": "cloud_technology",
-  "description_ru": "Контроль работы облачных сервисов.",
-  "description_uz": "Bulut xizmatlarini kuzatish tizimi.",
-  "category": "technology",
-  "related": []
-},
-
-"photo_editor": {
-  "ru": "Фоторедактор",
-  "uz": "Foto tahrirlash dasturi",
-  "parent": "media_technology",
-  "description_ru": "Программа для редактирования изображений.",
-  "description_uz": "Rasm tahrirlash dasturi.",
-  "category": "technology",
-  "related": []
-},
-
-"animation_software": {
-  "ru": "Программа для анимации",
-  "uz": "Animatsiya dasturi",
-  "parent": "media_technology",
-  "description_ru": "ПО для создания анимации.",
-  "description_uz": "Animatsiya yaratish dasturi.",
-  "category": "technology",
-  "related": []
-},
-"genetic_engineering": {
-  "ru": "Генная инженерия",
-  "uz": "Gen muhandisligi",
-  "parent": "biotechnology",
-  "description_ru": "Изменение генетического материала организмов.",
-  "description_uz": "Organizm genini o‘zgartirish.",
-  "category": "technology",
-  "related": []
-},
-
-"bioreactor": {
-  "ru": "Биореактор",
-  "uz": "Bioreaktor",
-  "parent": "biotechnology",
-  "description_ru": "Устройство для выращивания клеток.",
-  "description_uz": "Hujayra yetishtirish qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"dna_sequencer": {
-  "ru": "Секвенатор ДНК",
-  "uz": "DNK sekvenatori",
-  "parent": "biotechnology",
-  "description_ru": "Аппарат для анализа ДНК.",
-  "description_uz": "DNKni tahlil qiluvchi qurilma.",
-  "category": "technology",
-  "related": []
-},
-
-"biochip": {
-  "ru": "Биочип",
-  "uz": "Biochip",
-  "parent": "biotechnology",
-  "description_ru": "Микрочип для биологических исследований.",
-  "description_uz": "Biologik tadqiqot chipi.",
-  "category": "technology",
-  "related": []
-},
-
-"vaccine_technology": {
-  "ru": "Технология вакцин",
-  "uz": "Vaksina texnologiyasi",
-  "parent": "biotechnology",
-  "description_ru": "Методы разработки вакцин.",
-  "description_uz": "Vaksina ishlab chiqish usullari.",
-  "category": "technology",
-  "related": []
-},
-
-"cloning_technology": {
-  "ru": "Клонирование",
-  "uz": "Klonlash",
-  "parent": "biotechnology",
-  "description_ru": "Создание генетически идентичных организмов.",
-  "description_uz": "Genetik bir xil organizm yaratish.",
-  "category": "technology",
-  "related": []
-},
-
-"bioinformatics": {
-  "ru": "Биоинформатика",
-  "uz": "Bioinformatika",
-  "parent": "biotechnology",
-  "description_ru": "Анализ биологических данных.",
-  "description_uz": "Biologik ma'lumot tahlili.",
-  "category": "technology",
-  "related": []
-},
-
-"stem_cell_therapy": {
-  "ru": "Терапия стволовыми клетками",
-  "uz": "Ildiz hujayra terapiyasi",
-  "parent": "biotechnology",
-  "description_ru": "Лечение с использованием стволовых клеток.",
-  "description_uz": "Ildiz hujayralar bilan davolash.",
-  "category": "technology",
-  "related": []
-},
-
-"crispr_technology": {
-  "ru": "Технология CRISPR",
-  "uz": "CRISPR texnologiyasi",
-  "parent": "biotechnology",
-  "description_ru": "Редактирование генома.",
-  "description_uz": "Genomni tahrirlash usuli.",
-  "category": "technology",
-  "related": []
-},
-
-"bioplastic": {
-  "ru": "Биопластик",
-  "uz": "Bioplastik",
-  "parent": "biotechnology",
-  "description_ru": "Экологичный пластик из биоматериалов.",
-  "description_uz": "Biomaterialdan tayyorlangan plastik.",
-  "category": "technology",
-  "related": []
-},
-
-
-
-
-"nanomaterial": {
-  "ru": "Наноматериал",
-  "uz": "Nanomaterial",
-  "parent": "nanotechnology",
-  "description_ru": "Материал с наноразмерной структурой.",
-  "description_uz": "Nano o‘lchamli tuzilishga ega material.",
-  "category": "technology",
-  "related": []
-},
-
-"nanorobot": {
-  "ru": "Наноробот",
-  "uz": "Nanorobot",
-  "parent": "nanotechnology",
-  "description_ru": "Микроскопический робот.",
-  "description_uz": "Mikroskopik robot.",
-  "category": "technology",
-  "related": []
-},
-
-"nanochip": {
-  "ru": "Наночип",
-  "uz": "Nanochip",
-  "parent": "nanotechnology",
-  "description_ru": "Микрочип наноразмера.",
-  "description_uz": "Nano o‘lchamdagi chip.",
-  "category": "technology",
-  "related": []
-},
-
-"nanocoating": {
-  "ru": "Нанопокрытие",
-  "uz": "Nanopokrytiye",
-  "parent": "nanotechnology",
-  "description_ru": "Защитное покрытие на основе наночастиц.",
-  "description_uz": "Nanozarrachali himoya qatlami.",
-  "category": "technology",
-  "related": []
-},
-
-"nanofiber": {
-  "ru": "Нановолокно",
-  "uz": "Nanotola",
-  "parent": "nanotechnology",
-  "description_ru": "Сверхтонкое волокно.",
-  "description_uz": "Juda yupqa tola.",
-  "category": "technology",
-  "related": []
-},
-
-"nanotube": {
-  "ru": "Нанотрубка",
-  "uz": "Nanotrubka",
-  "parent": "nanotechnology",
-  "description_ru": "Углеродная структура наноразмера.",
-  "description_uz": "Nano o‘lchamli uglerod tuzilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"nano_sensor": {
-  "ru": "Наносенсор",
-  "uz": "Nanosensor",
-  "parent": "nanotechnology",
-  "description_ru": "Сенсор на наноуровне.",
-  "description_uz": "Nano darajadagi sensor.",
-  "category": "technology",
-  "related": []
-},
-
-"nano_battery": {
-  "ru": "Наноаккумулятор",
-  "uz": "Nano batareya",
-  "parent": "nanotechnology",
-  "description_ru": "Миниатюрный источник энергии.",
-  "description_uz": "Kichik energiya manbai.",
-  "category": "technology",
-  "related": []
-},
-
-"nanomedicine": {
-  "ru": "Наномедицина",
-  "uz": "Nanomeditsina",
-  "parent": "nanotechnology",
-  "description_ru": "Использование нанотехнологий в медицине.",
-  "description_uz": "Tibbiyotda nanoteknologiya qo‘llash.",
-  "category": "technology",
-  "related": []
-},
-
-"nanoelectronics": {
-  "ru": "Наноэлектроника",
-  "uz": "Nanoelektronika",
-  "parent": "nanotechnology",
-  "description_ru": "Электроника на наноуровне.",
-  "description_uz": "Nano darajadagi elektronika.",
-  "category": "technology",
-  "related": []
-},
-
-
-
-"3d_house_printing": {
-  "ru": "3D-печать домов",
-  "uz": "3D uy qurish",
-  "parent": "construction_technology",
-  "description_ru": "Строительство домов с помощью 3D-принтера.",
-  "description_uz": "3D printer orqali uy qurish.",
-  "category": "technology",
-  "related": []
-},
-
-"smart_building_system": {
-  "ru": "Система умного здания",
-  "uz": "Aqlli bino tizimi",
-  "parent": "construction_technology",
-  "description_ru": "Автоматизация управления зданием.",
-  "description_uz": "Binoni avtomatik boshqarish tizimi.",
-  "category": "technology",
-  "related": []
-},
-
-"solar_panel_installation": {
-  "ru": "Установка солнечных панелей",
-  "uz": "Quyosh paneli o‘rnatish",
-  "parent": "construction_technology",
-  "description_ru": "Монтаж солнечных панелей.",
-  "description_uz": "Quyosh panellarini o‘rnatish.",
-  "category": "technology",
-  "related": []
-},
-
-"modular_construction": {
-  "ru": "Модульное строительство",
-  "uz": "Modulli qurilish",
-  "parent": "construction_technology",
-  "description_ru": "Строительство из готовых модулей.",
-  "description_uz": "Tayyor bloklardan qurish.",
-  "category": "technology",
-  "related": []
-},
-
-"construction_drone": {
-  "ru": "Строительный дрон",
-  "uz": "Qurilish droni",
-  "parent": "construction_technology",
-  "description_ru": "Дрон для мониторинга стройки.",
-  "description_uz": "Qurilishni kuzatuvchi dron.",
-  "category": "technology",
-  "related": []
-},
-
-"building_information_modeling": {
-  "ru": "BIM-технология",
-  "uz": "BIM texnologiyasi",
-  "parent": "construction_technology",
-  "description_ru": "Цифровое моделирование зданий.",
-  "description_uz": "Binolarni raqamli modellashtirish.",
-  "category": "technology",
-  "related": []
-},
-
-"smart_elevator": {
-  "ru": "Умный лифт",
-  "uz": "Aqlli lift",
-  "parent": "construction_technology",
-  "description_ru": "Лифт с интеллектуальной системой управления.",
-  "description_uz": "Aqlli boshqaruvli lift.",
-  "category": "technology",
-  "related": []
-},
-
-"automated_crane": {
-  "ru": "Автоматизированный кран",
-  "uz": "Avtomatik kran",
-  "parent": "construction_technology",
-  "description_ru": "Кран с автоматическим управлением.",
-  "description_uz": "Avtomatik boshqaruvli kran.",
-  "category": "technology",
-  "related": []
-},
-
-"thermal_insulation_system": {
-  "ru": "Система теплоизоляции",
-  "uz": "Issiqlik izolyatsiya tizimi",
-  "parent": "construction_technology",
-  "description_ru": "Материалы для сохранения тепла.",
-  "description_uz": "Issiqlikni saqlovchi materiallar.",
-  "category": "technology",
-  "related": []
-},
-
-"green_building_technology": {
-  "ru": "Экологическое строительство",
-  "uz": "Ekologik qurilish",
-  "parent": "construction_technology",
-  "description_ru": "Строительство с минимальным вредом для природы.",
-  "description_uz": "Tabiatga zarar yetkazmaydigan qurilish.",
-  "category": "technology",
-  "related": []
-},
-"satellite": {
-  "ru": "Спутник",
-  "uz": "Sun'iy yo‘ldosh",
-  "parent": "space_technology",
-  "description_ru": "Космический аппарат на орбите.",
-  "description_uz": "Orbita bo‘ylab harakatlanuvchi qurilma.",
-  "category": "technology",
-  "related": []
-},
-
-"space_station": {
-  "ru": "Космическая станция",
-  "uz": "Kosmik stansiya",
-  "parent": "space_technology",
-  "description_ru": "Орбитальная лаборатория.",
-  "description_uz": "Orbital laboratoriya.",
-  "category": "technology",
-  "related": []
-},
-
-"rocket_engine": {
-  "ru": "Ракетный двигатель",
-  "uz": "Raketa dvigateli",
-  "parent": "space_technology",
-  "description_ru": "Двигатель для запуска ракет.",
-  "description_uz": "Raketani uchirish dvigateli.",
-  "category": "technology",
-  "related": []
-},
-
-"space_probe": {
-  "ru": "Космический зонд",
-  "uz": "Kosmik zond",
-  "parent": "space_technology",
-  "description_ru": "Аппарат для исследования космоса.",
-  "description_uz": "Kosmosni o‘rganish qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"space_telescope": {
-  "ru": "Космический телескоп",
-  "uz": "Kosmik teleskop",
-  "parent": "space_technology",
-  "description_ru": "Телескоп для наблюдения из космоса.",
-  "description_uz": "Kosmosdan kuzatuv teleskopi.",
-  "category": "technology",
-  "related": []
-},
-
-"mars_rover": {
-  "ru": "Марсоход",
-  "uz": "Mars roboti",
-  "parent": "space_technology",
-  "description_ru": "Робот для исследования Марса.",
-  "description_uz": "Marsni o‘rganish roboti.",
-  "category": "technology",
-  "related": []
-},
-
-"launch_pad": {
-  "ru": "Стартовая площадка",
-  "uz": "Uchirish maydoni",
-  "parent": "space_technology",
-  "description_ru": "Площадка для запуска ракет.",
-  "description_uz": "Raketalni uchirish joyi.",
-  "category": "technology",
-  "related": []
-},
-
-"astronaut_suit": {
-  "ru": "Скафандр",
-  "uz": "Skafandr",
-  "parent": "space_technology",
-  "description_ru": "Костюм для работы в космосе.",
-  "description_uz": "Kosmosda ishlash kiyimi.",
-  "category": "technology",
-  "related": []
-},
-
-"orbital_satellite_system": {
-  "ru": "Орбитальная спутниковая система",
-  "uz": "Orbital yo‘ldosh tizimi",
-  "parent": "space_technology",
-  "description_ru": "Сеть спутников на орбите.",
-  "description_uz": "Orbital sun'iy yo‘ldosh tarmog‘i.",
-  "category": "technology",
-  "related": []
-},
-
-"deep_space_antenna": {
-  "ru": "Антенна дальнего космоса",
-  "uz": "Uzoq kosmos antennasi",
-  "parent": "space_technology",
-  "description_ru": "Связь с космическими аппаратами.",
-  "description_uz": "Kosmik apparatlar bilan aloqa.",
-  "category": "technology",
-  "related": []
-},
-"gaming_console": {
-  "ru": "Игровая консоль",
-  "uz": "O‘yin konsoli",
-  "parent": "gaming_technology",
-  "description_ru": "Устройство для видеоигр.",
-  "description_uz": "Video o‘yin qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"vr_headset": {
-  "ru": "VR-гарнитура",
-  "uz": "VR ko‘zoynak",
-  "parent": "gaming_technology",
-  "description_ru": "Устройство виртуальной реальности.",
-  "description_uz": "Virtual reallik qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"game_controller": {
-  "ru": "Игровой контроллер",
-  "uz": "O‘yin boshqaruvchisi",
-  "parent": "gaming_technology",
-  "description_ru": "Устройство управления в игре.",
-  "description_uz": "O‘yin boshqaruv qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"game_engine": {
-  "ru": "Игровой движок",
-  "uz": "O‘yin dvijogi",
-  "parent": "gaming_technology",
-  "description_ru": "Программная среда создания игр.",
-  "description_uz": "O‘yin yaratish muhiti.",
-  "category": "technology",
-  "related": []
-},
-
-"cloud_gaming": {
-  "ru": "Облачный гейминг",
-  "uz": "Bulutli o‘yin",
-  "parent": "gaming_technology",
-  "description_ru": "Игры через интернет без установки.",
-  "description_uz": "Internet orqali o‘yin.",
-  "category": "technology",
-  "related": []
-},
-
-"gaming_pc": {
-  "ru": "Игровой ПК",
-  "uz": "O‘yin kompyuteri",
-  "parent": "gaming_technology",
-  "description_ru": "Компьютер для видеоигр.",
-  "description_uz": "Video o‘yin uchun kompyuter.",
-  "category": "technology",
-  "related": []
-},
-
-"esports_platform": {
-  "ru": "Киберспортивная платформа",
-  "uz": "Kiber sport platformasi",
-  "parent": "gaming_technology",
-  "description_ru": "Платформа для онлайн-турниров.",
-  "description_uz": "Onlayn turnir platformasi.",
-  "category": "technology",
-  "related": []
-},
-
-"game_streaming": {
-  "ru": "Стриминг игр",
-  "uz": "O‘yin strimingi",
-  "parent": "gaming_technology",
-  "description_ru": "Трансляция игрового процесса.",
-  "description_uz": "O‘yin jarayonini jonli uzatish.",
-  "category": "technology",
-  "related": []
-},
-
-"augmented_reality_game": {
-  "ru": "Игра с дополненной реальностью",
-  "uz": "AR o‘yin",
-  "parent": "gaming_technology",
-  "description_ru": "Игра с использованием AR.",
-  "description_uz": "Kengaytirilgan reallik o‘yini.",
-  "category": "technology",
-  "related": []
-},
-
-"game_server": {
-  "ru": "Игровой сервер",
-  "uz": "O‘yin serveri",
-  "parent": "gaming_technology",
-  "description_ru": "Сервер для многопользовательских игр.",
-  "description_uz": "Ko‘p foydalanuvchi o‘yin serveri.",
-  "category": "technology",
-  "related": []
-},
-"cryptocurrency": {
-  "ru": "Криптовалюта",
-  "uz": "Kriptovalyuta",
-  "parent": "blockchain_technology",
-  "description_ru": "Цифровая валюта на блокчейне.",
-  "description_uz": "Blokcheynga asoslangan raqamli valyuta.",
-  "category": "technology",
-  "related": []
-},
-
-"smart_contract": {
-  "ru": "Смарт-контракт",
-  "uz": "Aqlli shartnoma",
-  "parent": "blockchain_technology",
-  "description_ru": "Автоматический цифровой контракт.",
-  "description_uz": "Avtomatik raqamli shartnoma.",
-  "category": "technology",
-  "related": []
-},
-
-"crypto_wallet": {
-  "ru": "Криптокошелёк",
-  "uz": "Kripto hamyon",
-  "parent": "blockchain_technology",
-  "description_ru": "Хранение криптовалюты.",
-  "description_uz": "Kriptovalyuta saqlash.",
-  "category": "technology",
-  "related": []
-},
-
-"mining_rig": {
-  "ru": "Майнинг-ферма",
-  "uz": "Mayning qurilmasi",
-  "parent": "blockchain_technology",
-  "description_ru": "Оборудование для добычи криптовалют.",
-  "description_uz": "Kriptovalyuta qazib olish uskunasi.",
-  "category": "technology",
-  "related": []
-},
-
-"defi_platform": {
-  "ru": "DeFi-платформа",
-  "uz": "DeFi platformasi",
-  "parent": "blockchain_technology",
-  "description_ru": "Децентрализованные финансы.",
-  "description_uz": "Markazlashmagan moliya tizimi.",
-  "category": "technology",
-  "related": []
-},
-
-"nft_platform": {
-  "ru": "NFT-платформа",
-  "uz": "NFT platformasi",
-  "parent": "blockchain_technology",
-  "description_ru": "Платформа для цифровых токенов.",
-  "description_uz": "Raqamli token platformasi.",
-  "category": "technology",
-  "related": []
-},
-
-"block_explorer": {
-  "ru": "Блокчейн-обозреватель",
-  "uz": "Blokcheyn kuzatuvchi",
-  "parent": "blockchain_technology",
-  "description_ru": "Просмотр транзакций в блокчейне.",
-  "description_uz": "Blokcheyn tranzaksiyalarini ko‘rish.",
-  "category": "technology",
-  "related": []
-},
-
-"tokenization_platform": {
-  "ru": "Платформа токенизации",
-  "uz": "Tokenlash platformasi",
-  "parent": "blockchain_technology",
-  "description_ru": "Создание цифровых токенов.",
-  "description_uz": "Raqamli token yaratish.",
-  "category": "technology",
-  "related": []
-},
-
-"crypto_exchange_platform": {
-  "ru": "Криптобиржевая платформа",
-  "uz": "Kriptobirja platformasi",
-  "parent": "blockchain_technology",
-  "description_ru": "Обмен криптовалют.",
-  "description_uz": "Kriptovalyuta almashinuvi.",
-  "category": "technology",
-  "related": []
-},
-
-"distributed_ledger": {
-  "ru": "Распределённый реестр",
-  "uz": "Tarqatilgan reyestr",
-  "parent": "blockchain_technology",
-  "description_ru": "Децентрализованная база данных.",
-  "description_uz": "Markazlashmagan ma'lumotlar bazasi.",
-  "category": "technology",
-  "related": []
-},
-"home_automation_system": {
-  "ru": "Система домашней автоматизации",
-  "uz": "Uy avtomatizatsiya tizimi",
-  "parent": "automation_technology",
-  "description_ru": "Автоматизация бытовых процессов.",
-  "description_uz": "Uy jarayonlarini avtomatlashtirish.",
-  "category": "technology",
-  "related": []
-},
-
-"industrial_automation": {
-  "ru": "Промышленная автоматизация",
-  "uz": "Sanoat avtomatizatsiyasi",
-  "parent": "automation_technology",
-  "description_ru": "Автоматизация производства.",
-  "description_uz": "Ishlab chiqarishni avtomatlashtirish.",
-  "category": "technology",
-  "related": []
-},
-
-"automation_software": {
-  "ru": "Программа автоматизации",
-  "uz": "Avtomatlashtirish dasturi",
-  "parent": "automation_technology",
-  "description_ru": "ПО для автоматизации процессов.",
-  "description_uz": "Jarayonlarni avtomatlashtiruvchi dastur.",
-  "category": "technology",
-  "related": []
-},
-
-"robotic_process_automation": {
-  "ru": "RPA-технология",
-  "uz": "RPA texnologiyasi",
-  "parent": "automation_technology",
-  "description_ru": "Автоматизация цифровых задач.",
-  "description_uz": "Raqamli vazifalarni avtomatlashtirish.",
-  "category": "technology",
-  "related": []
-},
-
-"smart_factory": {
-  "ru": "Умный завод",
-  "uz": "Aqlli zavod",
-  "parent": "automation_technology",
-  "description_ru": "Автоматизированное производство.",
-  "description_uz": "Avtomatlashtirilgan ishlab chiqarish.",
-  "category": "technology",
-  "related": []
-},
-
-"automated_warehouse": {
-  "ru": "Автоматизированный склад",
-  "uz": "Avtomatlashtirilgan ombor",
-  "parent": "automation_technology",
-  "description_ru": "Склад с роботизированной системой.",
-  "description_uz": "Robot tizimli ombor.",
-  "category": "technology",
-  "related": []
-},
-
-"smart_sensor_system": {
-  "ru": "Система умных датчиков",
-  "uz": "Aqlli sensor tizimi",
-  "parent": "automation_technology",
-  "description_ru": "Сеть датчиков для автоматизации.",
-  "description_uz": "Avtomatlashtirish uchun sensorlar tarmog‘i.",
-  "category": "technology",
-  "related": []
-},
-
-"automated_lighting": {
-  "ru": "Автоматическое освещение",
-  "uz": "Avtomatik yoritish",
-  "parent": "automation_technology",
-  "description_ru": "Система управления освещением.",
-  "description_uz": "Yoritishni boshqarish tizimi.",
-  "category": "technology",
-  "related": []
-},
-
-"smart_control_panel": {
-  "ru": "Умная панель управления",
-  "uz": "Aqlli boshqaruv paneli",
-  "parent": "automation_technology",
-  "description_ru": "Центральное устройство управления.",
-  "description_uz": "Markaziy boshqaruv qurilmasi.",
-  "category": "technology",
-  "related": []
-},
-
-"workflow_automation": {
-  "ru": "Автоматизация процессов",
-  "uz": "Jarayonlarni avtomatlashtirish",
-  "parent": "automation_technology",
-  "description_ru": "Автоматическое выполнение задач.",
-  "description_uz": "Vazifalarni avtomatik bajarish.",
-  "category": "technology",
-  "related": []
-}
-
+    "related": [
+      "internet",
+      "technology"
+    ],
+    "level": 3
+  },
+  "workflow_automation": {
+    "ru": "Автоматизация процессов",
+    "uz": "Jarayonlarni avtomatlashtirish",
+    "parent": "automation_technology",
+    "description_ru": "Автоматическое выполнение задач.",
+    "description_uz": "Vazifalarni avtomatik bajarish.",
+    "category": "technology",
+    "related": [
+      "automation_technology",
+      "automated_lighting",
+      "automated_warehouse",
+      "automation_software",
+      "home_automation_system",
+      "technology"
+    ],
+    "level": 3
+  }
 }

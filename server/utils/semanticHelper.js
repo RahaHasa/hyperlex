@@ -105,6 +105,7 @@ function buildSemanticGraph(words) {
             description_ru: word.description_ru || '',
             description_uz: word.description_uz || '',
             category: word.category || 'general',
+            level: 1,
             parent_semantic_key: null,
             children_semantic_keys: [],
             related: []
@@ -147,6 +148,28 @@ function buildSemanticGraph(words) {
             }
         }
     }
+    // Третий проход: вычисляем уровень (level) для каждого узла
+    // 1 - корень (нет родителя), 2 - дети корня, 3 - внуки и т.д.
+    const calculateLevels = () => {
+        // Находим все корневые узлы
+        const roots = Object.values(graph).filter(node => !node.parent_semantic_key);
+        
+        const queue = roots.map(root => ({ key: root.semantic_key, level: 1 }));
+        
+        while (queue.length > 0) {
+            const { key, level } = queue.shift();
+            const node = graph[key];
+            if (node) {
+                node.level = level;
+                // Добавляем детей в очередь со следующим уровнем
+                for (const childKey of node.children_semantic_keys) {
+                    queue.push({ key: childKey, level: level + 1 });
+                }
+            }
+        }
+    };
+    
+    calculateLevels();
     
     return graph;
 }

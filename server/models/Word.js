@@ -65,6 +65,12 @@ const wordSchema = new mongoose.Schema({
         default: 'general'
     },
     
+    // Уровень иерархии (1 - корень, 2 - подкатегория, 3 - вид и т.д.)
+    level: {
+        type: Number,
+        default: 1
+    },
+    
     // Связанные слова (внутри той же иерархии)
     related: [{
         type: String,  // semantic_key других слов

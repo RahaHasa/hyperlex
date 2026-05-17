@@ -1,0 +1,644 @@
+{
+  "home_daily_life": {
+    "ru": "Дом и повседневная жизнь",
+    "uz": "Uy va kundalik hayot",
+    "description_ru": "Предметы и процессы повседневной домашней жизни.",
+    "description_uz": "Uy-ro‘zg‘or va kundalik hayot buyumlari.",
+    "category": "daily_life",
+    "related": [
+      "furniture",
+      "appliances",
+      "clothing",
+      "cleaning",
+      "tools",
+      "shopping",
+      "kitchen",
+      "bathroom"
+    ],
+    "level": 1
+  },
+  "appliances": {
+    "ru": "Бытовая техника",
+    "uz": "Maishiy texnika",
+    "parent": "home_daily_life",
+    "description_ru": "Электрические устройства для дома.",
+    "description_uz": "Uy uchun elektr qurilmalar.",
+    "category": "daily_life",
+    "related": [
+      "refrigerator",
+      "washing_machine",
+      "oven",
+      "vacuum_cleaner",
+      "television",
+      "cleaning",
+      "kitchen",
+      "bathroom"
+    ],
+    "level": 2
+  },
+  "bathroom": {
+    "ru": "Ванная комната",
+    "uz": "Hammom",
+    "parent": "home_daily_life",
+    "description_ru": "Помещение для гигиены.",
+    "description_uz": "Gigiyena uchun xona.",
+    "category": "daily_life",
+    "related": [
+      "shower",
+      "toilet",
+      "sink",
+      "cleaning",
+      "home_daily_life",
+      "appliances",
+      "clothing",
+      "electronics"
+    ],
+    "level": 2
+  },
+  "cleaning": {
+    "ru": "Уборка",
+    "uz": "Tozalash",
+    "parent": "home_daily_life",
+    "description_ru": "Процесс поддержания чистоты.",
+    "description_uz": "Tozalikni saqlash jarayoni.",
+    "category": "daily_life",
+    "related": [
+      "vacuum_cleaner",
+      "detergent",
+      "washing_machine",
+      "furniture",
+      "clothing",
+      "bathroom",
+      "kitchen",
+      "tools"
+    ],
+    "level": 2
+  },
+  "clothing": {
+    "ru": "Одежда",
+    "uz": "Kiyim-kechak",
+    "parent": "home_daily_life",
+    "description_ru": "Предметы для ношения на теле.",
+    "description_uz": "Tana uchun kiyiladigan buyumlar.",
+    "category": "daily_life",
+    "related": [
+      "shirt",
+      "pants",
+      "jacket",
+      "shoes",
+      "wardrobe",
+      "washing_machine",
+      "detergent",
+      "shopping"
+    ],
+    "level": 2
+  },
+  "electronics": {
+    "ru": "Электроника",
+    "uz": "Elektronika",
+    "parent": "home_daily_life",
+    "description_ru": "Электронные устройства для дома.",
+    "description_uz": "Uy uchun elektron qurilmalar.",
+    "category": "daily_life",
+    "related": [
+      "television",
+      "computer",
+      "lamp",
+      "appliances",
+      "furniture",
+      "desk",
+      "chair",
+      "home_daily_life"
+    ],
+    "level": 2
+  },
+  "furniture": {
+    "ru": "Мебель",
+    "uz": "Mebel",
+    "parent": "home_daily_life",
+    "description_ru": "Предметы обстановки дома.",
+    "description_uz": "Uy jihozlari.",
+    "category": "daily_life",
+    "related": [
+      "sofa",
+      "chair",
+      "table",
+      "bed",
+      "wardrobe",
+      "desk",
+      "storage",
+      "cleaning"
+    ],
+    "level": 2
+  },
+  "kitchen": {
+    "ru": "Кухня",
+    "uz": "Oshxona",
+    "parent": "home_daily_life",
+    "description_ru": "Помещение для приготовления пищи.",
+    "description_uz": "Ovqat tayyorlanadigan joy.",
+    "category": "daily_life",
+    "related": [
+      "refrigerator",
+      "oven",
+      "sink",
+      "table",
+      "chair",
+      "cleaning",
+      "detergent",
+      "appliances"
+    ],
+    "level": 2
+  },
+  "lighting": {
+    "ru": "Освещение",
+    "uz": "Yoritish",
+    "parent": "home_daily_life",
+    "description_ru": "Источники света в доме.",
+    "description_uz": "Uy ichidagi yorug‘lik manbalari.",
+    "category": "daily_life",
+    "related": [
+      "lamp",
+      "electronics",
+      "home_daily_life",
+      "appliances",
+      "bathroom",
+      "cleaning",
+      "clothing"
+    ],
+    "level": 2
+  },
+  "shopping": {
+    "ru": "Покупки",
+    "uz": "Xarid qilish",
+    "parent": "home_daily_life",
+    "description_ru": "Процесс приобретения товаров.",
+    "description_uz": "Mahsulot sotib olish jarayoni.",
+    "category": "daily_life",
+    "related": [
+      "store",
+      "money",
+      "clothing",
+      "tools",
+      "appliances",
+      "furniture",
+      "electronics",
+      "kitchen"
+    ],
+    "level": 2
+  },
+  "storage": {
+    "ru": "Хранение",
+    "uz": "Saqlash",
+    "parent": "home_daily_life",
+    "description_ru": "Системы хранения вещей.",
+    "description_uz": "Buyumlarni saqlash tizimi.",
+    "category": "daily_life",
+    "related": [
+      "wardrobe",
+      "furniture",
+      "tools",
+      "home_daily_life",
+      "appliances",
+      "bathroom",
+      "cleaning",
+      "clothing"
+    ],
+    "level": 2
+  },
+  "tools": {
+    "ru": "Инструменты",
+    "uz": "Asboblar",
+    "parent": "home_daily_life",
+    "description_ru": "Предметы для ремонта и работы.",
+    "description_uz": "Ta’mirlash va ish uchun asboblar.",
+    "category": "daily_life",
+    "related": [
+      "hammer",
+      "screwdriver",
+      "furniture",
+      "appliances",
+      "electronics",
+      "cleaning",
+      "storage",
+      "home_daily_life"
+    ],
+    "level": 2
+  },
+  "bed": {
+    "ru": "Кровать",
+    "uz": "Krovat",
+    "parent": "furniture",
+    "description_ru": "Мебель для сна.",
+    "description_uz": "Uxlash uchun mebel.",
+    "category": "daily_life",
+    "related": [
+      "wardrobe",
+      "cleaning",
+      "home_daily_life",
+      "furniture",
+      "chair",
+      "desk",
+      "sofa",
+      "table"
+    ],
+    "level": 3
+  },
+  "chair": {
+    "ru": "Стул",
+    "uz": "Stul",
+    "parent": "furniture",
+    "description_ru": "Предмет мебели для сидения.",
+    "description_uz": "O‘tirish uchun mebel.",
+    "category": "daily_life",
+    "related": [
+      "sofa",
+      "table",
+      "desk",
+      "cleaning",
+      "furniture",
+      "bed",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "computer": {
+    "ru": "Компьютер",
+    "uz": "Kompyuter",
+    "parent": "electronics",
+    "description_ru": "Устройство для обработки информации.",
+    "description_uz": "Ma’lumot qayta ishlash qurilmasi.",
+    "category": "daily_life",
+    "related": [
+      "desk",
+      "chair",
+      "electronics",
+      "television",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "desk": {
+    "ru": "Письменный стол",
+    "uz": "Yozuv stoli",
+    "parent": "furniture",
+    "description_ru": "Стол для работы, учёбы и размещения техники.",
+    "description_uz": "Ish, o‘qish va texnika joylashtirish uchun stol.",
+    "category": "daily_life",
+    "related": [
+      "table",
+      "chair",
+      "computer",
+      "lamp",
+      "furniture",
+      "bed",
+      "sofa",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "detergent": {
+    "ru": "Моющее средство",
+    "uz": "Yuvish vositasi",
+    "parent": "cleaning",
+    "description_ru": "Средство для стирки и мытья.",
+    "description_uz": "Yuvish va tozalash vositasi.",
+    "category": "daily_life",
+    "related": [
+      "washing_machine",
+      "cleaning",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "hammer": {
+    "ru": "Молоток",
+    "uz": "Bolg‘a",
+    "parent": "tools",
+    "description_ru": "Инструмент для забивания гвоздей.",
+    "description_uz": "Mix qoqish uchun asbob.",
+    "category": "daily_life",
+    "related": [
+      "screwdriver",
+      "furniture",
+      "tools",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "jacket": {
+    "ru": "Куртка",
+    "uz": "Kurtka",
+    "parent": "clothing",
+    "description_ru": "Верхняя одежда для защиты от холода.",
+    "description_uz": "Sovuqdan himoya qiluvchi ustki kiyim.",
+    "category": "daily_life",
+    "related": [
+      "shirt",
+      "pants",
+      "wardrobe",
+      "clothing",
+      "shoes",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "lamp": {
+    "ru": "Лампа",
+    "uz": "Chiroq",
+    "parent": "lighting",
+    "description_ru": "Источник искусственного света.",
+    "description_uz": "Sun’iy yorug‘lik manbai.",
+    "category": "daily_life",
+    "related": [
+      "desk",
+      "bed",
+      "lighting",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "money": {
+    "ru": "Деньги",
+    "uz": "Pul",
+    "parent": "shopping",
+    "description_ru": "Средство оплаты.",
+    "description_uz": "To‘lov vositasi.",
+    "category": "daily_life",
+    "related": [
+      "shopping",
+      "store",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "oven": {
+    "ru": "Духовка",
+    "uz": "Pech",
+    "parent": "appliances",
+    "description_ru": "Устройство для приготовления пищи.",
+    "description_uz": "Ovqat pishirish qurilmasi.",
+    "category": "daily_life",
+    "related": [
+      "kitchen",
+      "cleaning",
+      "appliances",
+      "refrigerator",
+      "vacuum_cleaner",
+      "washing_machine",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "pants": {
+    "ru": "Брюки",
+    "uz": "Shim",
+    "parent": "clothing",
+    "description_ru": "Одежда для нижней части тела.",
+    "description_uz": "Tananing pastki qismi uchun kiyim.",
+    "category": "daily_life",
+    "related": [
+      "shirt",
+      "jacket",
+      "shoes",
+      "washing_machine",
+      "clothing",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "refrigerator": {
+    "ru": "Холодильник",
+    "uz": "Muzlatgich",
+    "parent": "appliances",
+    "description_ru": "Устройство для хранения продуктов.",
+    "description_uz": "Oziq-ovqat saqlash qurilmasi.",
+    "category": "daily_life",
+    "related": [
+      "kitchen",
+      "cleaning",
+      "appliances",
+      "oven",
+      "vacuum_cleaner",
+      "washing_machine",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "screwdriver": {
+    "ru": "Отвёртка",
+    "uz": "Otvertka",
+    "parent": "tools",
+    "description_ru": "Инструмент для закручивания винтов.",
+    "description_uz": "Vint burash uchun asbob.",
+    "category": "daily_life",
+    "related": [
+      "hammer",
+      "furniture",
+      "tools",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "shirt": {
+    "ru": "Рубашка",
+    "uz": "Ko‘ylak",
+    "parent": "clothing",
+    "description_ru": "Предмет одежды для верхней части тела.",
+    "description_uz": "Tananing yuqori qismi uchun kiyim.",
+    "category": "daily_life",
+    "related": [
+      "pants",
+      "jacket",
+      "shoes",
+      "washing_machine",
+      "clothing",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "shoes": {
+    "ru": "Обувь",
+    "uz": "Poyabzal",
+    "parent": "clothing",
+    "description_ru": "Предметы для защиты ног.",
+    "description_uz": "Oyoqni himoya qiluvchi kiyim.",
+    "category": "daily_life",
+    "related": [
+      "pants",
+      "shopping",
+      "wardrobe",
+      "clothing",
+      "jacket",
+      "shirt",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "shower": {
+    "ru": "Душ",
+    "uz": "Dush",
+    "parent": "bathroom",
+    "description_ru": "Устройство для мытья тела.",
+    "description_uz": "Tana yuvish qurilmasi.",
+    "category": "daily_life",
+    "related": [
+      "bathroom",
+      "cleaning",
+      "toilet",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "sink": {
+    "ru": "Раковина",
+    "uz": "Rakvina",
+    "parent": "kitchen",
+    "description_ru": "Место для мытья посуды.",
+    "description_uz": "Idish yuvish joyi.",
+    "category": "daily_life",
+    "related": [
+      "cleaning",
+      "detergent",
+      "kitchen",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "sofa": {
+    "ru": "Диван",
+    "uz": "Divan",
+    "parent": "furniture",
+    "description_ru": "Мягкая мебель для сидения.",
+    "description_uz": "O‘tirish uchun yumshoq mebel.",
+    "category": "daily_life",
+    "related": [
+      "chair",
+      "table",
+      "bed",
+      "cleaning",
+      "home_daily_life",
+      "furniture",
+      "desk"
+    ],
+    "level": 3
+  },
+  "store": {
+    "ru": "Магазин",
+    "uz": "Do‘kon",
+    "parent": "shopping",
+    "description_ru": "Место для покупки товаров.",
+    "description_uz": "Mahsulot sotib olinadigan joy.",
+    "category": "daily_life",
+    "related": [
+      "shopping",
+      "money",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "table": {
+    "ru": "Стол",
+    "uz": "Stol",
+    "parent": "furniture",
+    "description_ru": "Мебель для работы или еды.",
+    "description_uz": "Ish yoki ovqatlanish uchun mebel.",
+    "category": "daily_life",
+    "related": [
+      "chair",
+      "desk",
+      "sofa",
+      "cleaning",
+      "furniture",
+      "bed",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "television": {
+    "ru": "Телевизор",
+    "uz": "Televizor",
+    "parent": "electronics",
+    "description_ru": "Устройство для просмотра видео.",
+    "description_uz": "Video ko‘rish qurilmasi.",
+    "category": "daily_life",
+    "related": [
+      "sofa",
+      "home_daily_life",
+      "electronics",
+      "computer"
+    ],
+    "level": 3
+  },
+  "toilet": {
+    "ru": "Туалет",
+    "uz": "Hojatxona",
+    "parent": "bathroom",
+    "description_ru": "Санитарное устройство.",
+    "description_uz": "Sanitariya qurilmasi.",
+    "category": "daily_life",
+    "related": [
+      "bathroom",
+      "cleaning",
+      "shower",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "vacuum_cleaner": {
+    "ru": "Пылесос",
+    "uz": "Changyutgich",
+    "parent": "appliances",
+    "description_ru": "Устройство для очистки пола.",
+    "description_uz": "Polni tozalash qurilmasi.",
+    "category": "daily_life",
+    "related": [
+      "cleaning",
+      "furniture",
+      "tools",
+      "appliances",
+      "oven",
+      "refrigerator",
+      "washing_machine",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "wardrobe": {
+    "ru": "Шкаф",
+    "uz": "Shkaf",
+    "parent": "furniture",
+    "description_ru": "Мебель для хранения одежды.",
+    "description_uz": "Kiyim saqlash uchun mebel.",
+    "category": "daily_life",
+    "related": [
+      "clothing",
+      "bed",
+      "cleaning",
+      "furniture",
+      "chair",
+      "desk",
+      "sofa",
+      "home_daily_life"
+    ],
+    "level": 3
+  },
+  "washing_machine": {
+    "ru": "Стиральная машина",
+    "uz": "Kir yuvish mashinasi",
+    "parent": "appliances",
+    "description_ru": "Устройство для стирки одежды.",
+    "description_uz": "Kiyim yuvish qurilmasi.",
+    "category": "daily_life",
+    "related": [
+      "clothing",
+      "cleaning",
+      "appliances",
+      "oven",
+      "refrigerator",
+      "vacuum_cleaner",
+      "home_daily_life"
+    ],
+    "level": 3
+  }
+}

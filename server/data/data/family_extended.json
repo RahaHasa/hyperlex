@@ -1,0 +1,873 @@
+{
+  "family": {
+    "ru": "Семья",
+    "uz": "Oila",
+    "description_ru": "Родственная группа людей, связанных кровными или брачными узами.",
+    "description_uz": "Qon yoki nikoh orqali bog‘langan qarindoshlar guruhi.",
+    "category": "people",
+    "related": [
+      "ancestors",
+      "children",
+      "clan_and_lineage",
+      "daughter_in_law"
+    ],
+    "level": 1
+  },
+  "ancestors": {
+    "ru": "Предки",
+    "uz": "Ajdodlar",
+    "parent": "family",
+    "description_ru": "Предыдущие поколения семьи.",
+    "description_uz": "Oldingi avlod vakillari.",
+    "category": "people",
+    "related": [
+      "family",
+      "children",
+      "clan_and_lineage",
+      "daughter_in_law",
+      "extended_siblings_and_branches",
+      "great_grandfather",
+      "great_grandmother"
+    ],
+    "level": 2
+  },
+  "children": {
+    "ru": "Дети",
+    "uz": "Farzandlar",
+    "parent": "family",
+    "description_ru": "Сыновья и дочери.",
+    "description_uz": "O‘g‘il va qiz farzandlar.",
+    "category": "people",
+    "related": [
+      "family",
+      "ancestors",
+      "clan_and_lineage",
+      "daughter_in_law",
+      "extended_siblings_and_branches",
+      "adopted_child"
+    ],
+    "level": 2
+  },
+  "clan_and_lineage": {
+    "ru": "Род и происхождение",
+    "uz": "Nasl va urug‘",
+    "parent": "family",
+    "description_ru": "Происхождение и родственные линии.",
+    "description_uz": "Nasl-nasab va qarindoshlik yo‘nalishlari.",
+    "category": "people",
+    "related": [
+      "family",
+      "ancestors",
+      "children",
+      "daughter_in_law",
+      "extended_siblings_and_branches",
+      "ancestor",
+      "clan",
+      "descendant"
+    ],
+    "level": 2
+  },
+  "daughter_in_law": {
+    "ru": "Невестка",
+    "uz": "Kelin",
+    "parent": "family",
+    "description_ru": "Жена сына.",
+    "description_uz": "O‘g‘ilning xotini.",
+    "category": "people",
+    "related": [
+      "family",
+      "ancestors",
+      "children",
+      "clan_and_lineage",
+      "extended_siblings_and_branches"
+    ],
+    "level": 2
+  },
+  "extended_siblings_and_branches": {
+    "ru": "Расширенные родственные ветви",
+    "uz": "Kengaytirilgan qarindoshlik tarmoqlari",
+    "parent": "family",
+    "description_ru": "Братья, сёстры и их линии потомков.",
+    "description_uz": "Aka-uka va opa-singillar hamda ularning avlodlari.",
+    "category": "people",
+    "related": [
+      "family",
+      "ancestors",
+      "children",
+      "clan_and_lineage",
+      "daughter_in_law",
+      "half_brother",
+      "half_sister",
+      "nephew"
+    ],
+    "level": 2
+  },
+  "family_roles_and_responsibilities": {
+    "ru": "Семейные роли и обязанности",
+    "uz": "Oilaviy rollar va majburiyatlar",
+    "parent": "family",
+    "description_ru": "Распределение обязанностей в семье.",
+    "description_uz": "Oiladagi vazifalar taqsimoti.",
+    "category": "people",
+    "related": [
+      "family",
+      "ancestors",
+      "children",
+      "clan_and_lineage",
+      "daughter_in_law",
+      "breadwinner",
+      "caregiver",
+      "guardian"
+    ],
+    "level": 2
+  },
+  "family_structure_types": {
+    "ru": "Типы семей",
+    "uz": "Oila turlari",
+    "parent": "family",
+    "description_ru": "Различные формы организации семьи.",
+    "description_uz": "Oilaviy tuzilish shakllari.",
+    "category": "people",
+    "related": [
+      "family",
+      "ancestors",
+      "children",
+      "clan_and_lineage",
+      "daughter_in_law",
+      "childless_family",
+      "extended_family",
+      "large_family"
+    ],
+    "level": 2
+  },
+  "grandparents": {
+    "ru": "Бабушка и дедушка",
+    "uz": "Bobo va buvi",
+    "parent": "family",
+    "description_ru": "Родители родителей.",
+    "description_uz": "Ota-onaning ota-onasi.",
+    "category": "people",
+    "related": [
+      "family",
+      "ancestors",
+      "children",
+      "clan_and_lineage",
+      "daughter_in_law",
+      "maternal_grandfather",
+      "maternal_grandmother",
+      "paternal_grandfather"
+    ],
+    "level": 2
+  },
+  "marriage_connections": {
+    "ru": "Брачные связи",
+    "uz": "Nikoh orqali qarindoshlik",
+    "parent": "family",
+    "description_ru": "Родственные отношения через брак.",
+    "description_uz": "Nikoh sababli yuzaga kelgan qarindoshlik.",
+    "category": "people",
+    "related": [
+      "family",
+      "ancestors",
+      "children",
+      "clan_and_lineage",
+      "daughter_in_law",
+      "brother_in_law",
+      "co_father_in_law",
+      "co_mother_in_law"
+    ],
+    "level": 2
+  },
+  "parents": {
+    "ru": "Родители",
+    "uz": "Ota-ona",
+    "parent": "family",
+    "description_ru": "Отец и мать.",
+    "description_uz": "Ota va ona.",
+    "category": "people",
+    "related": [
+      "family",
+      "ancestors",
+      "children",
+      "clan_and_lineage",
+      "daughter_in_law",
+      "stepfather",
+      "stepmother"
+    ],
+    "level": 2
+  },
+  "son_in_law": {
+    "ru": "Зять",
+    "uz": "Kuyov",
+    "parent": "family",
+    "description_ru": "Муж дочери.",
+    "description_uz": "Qizning eri.",
+    "category": "people",
+    "related": [
+      "family",
+      "ancestors",
+      "children",
+      "clan_and_lineage",
+      "daughter_in_law"
+    ],
+    "level": 2
+  },
+  "spouse": {
+    "ru": "Супруг",
+    "uz": "Turmush o‘rtog‘i",
+    "parent": "family",
+    "description_ru": "Муж или жена.",
+    "description_uz": "Er yoki xotin.",
+    "category": "people",
+    "related": [
+      "family",
+      "ancestors",
+      "children",
+      "clan_and_lineage",
+      "daughter_in_law",
+      "father_in_law",
+      "husband",
+      "mother_in_law"
+    ],
+    "level": 2
+  },
+  "adopted_child": {
+    "ru": "Приёмный ребёнок",
+    "uz": "Asrab olingan bola",
+    "parent": "children",
+    "description_ru": "Ребёнок, принятый в семью юридически.",
+    "description_uz": "Huquqiy asosda oila tarkibiga olingan bola.",
+    "category": "people",
+    "related": [
+      "children",
+      "family"
+    ],
+    "level": 3
+  },
+  "ancestor": {
+    "ru": "Предок",
+    "uz": "Ajdod",
+    "parent": "clan_and_lineage",
+    "description_ru": "Человек предыдущего поколения.",
+    "description_uz": "Oldingi avlod vakili.",
+    "category": "people",
+    "related": [
+      "clan_and_lineage",
+      "clan",
+      "descendant",
+      "lineage",
+      "tribe",
+      "family"
+    ],
+    "level": 3
+  },
+  "breadwinner": {
+    "ru": "Кормилец",
+    "uz": "Boquvchi",
+    "parent": "family_roles_and_responsibilities",
+    "description_ru": "Основной источник дохода.",
+    "description_uz": "Asosiy daromad manbai.",
+    "category": "people",
+    "related": [
+      "family_roles_and_responsibilities",
+      "caregiver",
+      "guardian",
+      "head_of_family",
+      "homemaker",
+      "family"
+    ],
+    "level": 3
+  },
+  "brother_in_law": {
+    "ru": "Шурин / Деверь",
+    "uz": "Qaynog‘a",
+    "parent": "marriage_connections",
+    "description_ru": "Брат супруга.",
+    "description_uz": "Turmush o‘rtog‘ining akasi yoki ukasi.",
+    "category": "people",
+    "related": [
+      "marriage_connections",
+      "co_father_in_law",
+      "co_mother_in_law",
+      "engaged",
+      "sister_in_law",
+      "family"
+    ],
+    "level": 3
+  },
+  "caregiver": {
+    "ru": "Опекун",
+    "uz": "Vasiy",
+    "parent": "family_roles_and_responsibilities",
+    "description_ru": "Человек, заботящийся о ребёнке.",
+    "description_uz": "Bolaga g‘amxo‘rlik qiluvchi.",
+    "category": "people",
+    "related": [
+      "family_roles_and_responsibilities",
+      "breadwinner",
+      "guardian",
+      "head_of_family",
+      "homemaker",
+      "family"
+    ],
+    "level": 3
+  },
+  "childless_family": {
+    "ru": "Бездетная семья",
+    "uz": "Farzandsiz oila",
+    "parent": "family_structure_types",
+    "description_ru": "Семья без детей.",
+    "description_uz": "Farzandlari yo‘q oila.",
+    "category": "people",
+    "related": [
+      "family_structure_types",
+      "extended_family",
+      "large_family",
+      "nuclear_family",
+      "single_parent_family",
+      "family"
+    ],
+    "level": 3
+  },
+  "clan": {
+    "ru": "Клан",
+    "uz": "Urug‘",
+    "parent": "clan_and_lineage",
+    "description_ru": "Группа людей одного происхождения.",
+    "description_uz": "Bir nasldan kelib chiqqan guruh.",
+    "category": "people",
+    "related": [
+      "clan_and_lineage",
+      "ancestor",
+      "descendant",
+      "lineage",
+      "tribe",
+      "family"
+    ],
+    "level": 3
+  },
+  "co_father_in_law": {
+    "ru": "Сваты (отцы)",
+    "uz": "Quda (erkak)",
+    "parent": "marriage_connections",
+    "description_ru": "Отцы супругов по отношению друг к другу.",
+    "description_uz": "Kuyov va kelinning otalari o‘rtasidagi aloqa.",
+    "category": "people",
+    "related": [
+      "marriage_connections",
+      "brother_in_law",
+      "co_mother_in_law",
+      "engaged",
+      "sister_in_law",
+      "family"
+    ],
+    "level": 3
+  },
+  "co_mother_in_law": {
+    "ru": "Сваты (матери)",
+    "uz": "Quda (ayol)",
+    "parent": "marriage_connections",
+    "description_ru": "Матери супругов по отношению друг к другу.",
+    "description_uz": "Kuyov va kelinning onalari o‘rtasidagi aloqa.",
+    "category": "people",
+    "related": [
+      "marriage_connections",
+      "brother_in_law",
+      "co_father_in_law",
+      "engaged",
+      "sister_in_law",
+      "family"
+    ],
+    "level": 3
+  },
+  "descendant": {
+    "ru": "Потомок",
+    "uz": "Avlod",
+    "parent": "clan_and_lineage",
+    "description_ru": "Человек следующего поколения.",
+    "description_uz": "Keyingi avlod vakili.",
+    "category": "people",
+    "related": [
+      "clan_and_lineage",
+      "ancestor",
+      "clan",
+      "lineage",
+      "tribe",
+      "family"
+    ],
+    "level": 3
+  },
+  "engaged": {
+    "ru": "Помолвка",
+    "uz": "Fotiha",
+    "parent": "marriage_connections",
+    "description_ru": "Предварительное соглашение о браке.",
+    "description_uz": "Nikohdan oldingi kelishuv.",
+    "category": "people",
+    "related": [
+      "marriage_connections",
+      "brother_in_law",
+      "co_father_in_law",
+      "co_mother_in_law",
+      "sister_in_law",
+      "family"
+    ],
+    "level": 3
+  },
+  "extended_family": {
+    "ru": "Расширенная семья",
+    "uz": "Katta oila",
+    "parent": "family_structure_types",
+    "description_ru": "Несколько поколений под одной крышей.",
+    "description_uz": "Bir necha avlod birga yashaydi.",
+    "category": "people",
+    "related": [
+      "family_structure_types",
+      "childless_family",
+      "large_family",
+      "nuclear_family",
+      "single_parent_family",
+      "family"
+    ],
+    "level": 3
+  },
+  "father_in_law": {
+    "ru": "Свёкор / Тесть",
+    "uz": "Qaynota",
+    "parent": "spouse",
+    "description_ru": "Отец супруга.",
+    "description_uz": "Turmush o‘rtog‘ining otasi.",
+    "category": "people",
+    "related": [
+      "spouse",
+      "husband",
+      "mother_in_law",
+      "wife",
+      "family"
+    ],
+    "level": 3
+  },
+  "great_grandfather": {
+    "ru": "Прадедушка",
+    "uz": "Boboning otasi",
+    "parent": "ancestors",
+    "description_ru": "Отец дедушки или бабушки.",
+    "description_uz": "Bobo yoki buvining otasi.",
+    "category": "people",
+    "related": [
+      "ancestors",
+      "great_grandmother",
+      "family"
+    ],
+    "level": 3
+  },
+  "great_grandmother": {
+    "ru": "Прабабушка",
+    "uz": "Buvining onasi",
+    "parent": "ancestors",
+    "description_ru": "Мать дедушки или бабушки.",
+    "description_uz": "Bobo yoki buvining onasi.",
+    "category": "people",
+    "related": [
+      "ancestors",
+      "great_grandfather",
+      "family"
+    ],
+    "level": 3
+  },
+  "guardian": {
+    "ru": "Попечитель",
+    "uz": "Homiy",
+    "parent": "family_roles_and_responsibilities",
+    "description_ru": "Юридический защитник ребёнка.",
+    "description_uz": "Huquqiy himoyachi.",
+    "category": "people",
+    "related": [
+      "family_roles_and_responsibilities",
+      "breadwinner",
+      "caregiver",
+      "head_of_family",
+      "homemaker",
+      "family"
+    ],
+    "level": 3
+  },
+  "half_brother": {
+    "ru": "Единокровный брат",
+    "uz": "Yarim aka",
+    "parent": "extended_siblings_and_branches",
+    "description_ru": "Брат с одним общим родителем.",
+    "description_uz": "Bir ota-onaga ega aka.",
+    "category": "people",
+    "related": [
+      "extended_siblings_and_branches",
+      "half_sister",
+      "nephew",
+      "niece",
+      "stepbrother",
+      "family"
+    ],
+    "level": 3
+  },
+  "half_sister": {
+    "ru": "Единокровная сестра",
+    "uz": "Yarim opa",
+    "parent": "extended_siblings_and_branches",
+    "description_ru": "Сестра с одним общим родителем.",
+    "description_uz": "Bir ota-onaga ega opa.",
+    "category": "people",
+    "related": [
+      "extended_siblings_and_branches",
+      "half_brother",
+      "nephew",
+      "niece",
+      "stepbrother",
+      "family"
+    ],
+    "level": 3
+  },
+  "head_of_family": {
+    "ru": "Глава семьи",
+    "uz": "Oila boshlig‘i",
+    "parent": "family_roles_and_responsibilities",
+    "description_ru": "Лицо, принимающее основные решения.",
+    "description_uz": "Asosiy qarorlarni qabul qiluvchi.",
+    "category": "people",
+    "related": [
+      "family_roles_and_responsibilities",
+      "breadwinner",
+      "caregiver",
+      "guardian",
+      "homemaker",
+      "family"
+    ],
+    "level": 3
+  },
+  "homemaker": {
+    "ru": "Домохозяйка",
+    "uz": "Uy bekasi",
+    "parent": "family_roles_and_responsibilities",
+    "description_ru": "Занимается домашним хозяйством.",
+    "description_uz": "Uy ishlari bilan shug‘ullanadi.",
+    "category": "people",
+    "related": [
+      "family_roles_and_responsibilities",
+      "breadwinner",
+      "caregiver",
+      "guardian",
+      "head_of_family",
+      "family"
+    ],
+    "level": 3
+  },
+  "husband": {
+    "ru": "Муж",
+    "uz": "Er",
+    "parent": "spouse",
+    "description_ru": "Мужчина в браке.",
+    "description_uz": "Nikohdagi erkak.",
+    "category": "people",
+    "related": [
+      "spouse",
+      "father_in_law",
+      "mother_in_law",
+      "wife",
+      "family"
+    ],
+    "level": 3
+  },
+  "large_family": {
+    "ru": "Многодетная семья",
+    "uz": "Ko‘p farzandli oila",
+    "parent": "family_structure_types",
+    "description_ru": "Семья с тремя и более детьми.",
+    "description_uz": "Uch yoki undan ko‘p farzandli oila.",
+    "category": "people",
+    "related": [
+      "family_structure_types",
+      "childless_family",
+      "extended_family",
+      "nuclear_family",
+      "single_parent_family",
+      "family"
+    ],
+    "level": 3
+  },
+  "lineage": {
+    "ru": "Родословная",
+    "uz": "Nasabnoma",
+    "parent": "clan_and_lineage",
+    "description_ru": "История рода.",
+    "description_uz": "Avlod tarixi.",
+    "category": "people",
+    "related": [
+      "clan_and_lineage",
+      "ancestor",
+      "clan",
+      "descendant",
+      "tribe",
+      "family"
+    ],
+    "level": 3
+  },
+  "maternal_grandfather": {
+    "ru": "Дедушка по матери",
+    "uz": "Onaning otasi",
+    "parent": "grandparents",
+    "description_ru": "Отец матери.",
+    "description_uz": "Onaning otasi.",
+    "category": "people",
+    "related": [
+      "grandparents",
+      "maternal_grandmother",
+      "paternal_grandfather",
+      "paternal_grandmother",
+      "family"
+    ],
+    "level": 3
+  },
+  "maternal_grandmother": {
+    "ru": "Бабушка по матери",
+    "uz": "Onaning onasi",
+    "parent": "grandparents",
+    "description_ru": "Мать матери.",
+    "description_uz": "Onaning onasi.",
+    "category": "people",
+    "related": [
+      "grandparents",
+      "maternal_grandfather",
+      "paternal_grandfather",
+      "paternal_grandmother",
+      "family"
+    ],
+    "level": 3
+  },
+  "mother_in_law": {
+    "ru": "Свекровь / Тёща",
+    "uz": "Qaynona",
+    "parent": "spouse",
+    "description_ru": "Мать супруга.",
+    "description_uz": "Turmush o‘rtog‘ining onasi.",
+    "category": "people",
+    "related": [
+      "spouse",
+      "father_in_law",
+      "husband",
+      "wife",
+      "family"
+    ],
+    "level": 3
+  },
+  "nephew": {
+    "ru": "Племянник",
+    "uz": "Jiyan (erkak)",
+    "parent": "extended_siblings_and_branches",
+    "description_ru": "Сын брата или сестры.",
+    "description_uz": "Aka yoki opa farzandi.",
+    "category": "people",
+    "related": [
+      "extended_siblings_and_branches",
+      "half_brother",
+      "half_sister",
+      "niece",
+      "stepbrother",
+      "family"
+    ],
+    "level": 3
+  },
+  "niece": {
+    "ru": "Племянница",
+    "uz": "Jiyan (ayol)",
+    "parent": "extended_siblings_and_branches",
+    "description_ru": "Дочь брата или сестры.",
+    "description_uz": "Aka yoki opa qizi.",
+    "category": "people",
+    "related": [
+      "extended_siblings_and_branches",
+      "half_brother",
+      "half_sister",
+      "nephew",
+      "stepbrother",
+      "family"
+    ],
+    "level": 3
+  },
+  "nuclear_family": {
+    "ru": "Нуклеарная семья",
+    "uz": "Yadro oila",
+    "parent": "family_structure_types",
+    "description_ru": "Родители и их дети.",
+    "description_uz": "Ota-ona va farzandlar.",
+    "category": "people",
+    "related": [
+      "family_structure_types",
+      "childless_family",
+      "extended_family",
+      "large_family",
+      "single_parent_family",
+      "family"
+    ],
+    "level": 3
+  },
+  "paternal_grandfather": {
+    "ru": "Дедушка по отцу",
+    "uz": "Otaning otasi",
+    "parent": "grandparents",
+    "description_ru": "Отец отца.",
+    "description_uz": "Otaning otasi.",
+    "category": "people",
+    "related": [
+      "grandparents",
+      "maternal_grandfather",
+      "maternal_grandmother",
+      "paternal_grandmother",
+      "family"
+    ],
+    "level": 3
+  },
+  "paternal_grandmother": {
+    "ru": "Бабушка по отцу",
+    "uz": "Otaning onasi",
+    "parent": "grandparents",
+    "description_ru": "Мать отца.",
+    "description_uz": "Otaning onasi.",
+    "category": "people",
+    "related": [
+      "grandparents",
+      "maternal_grandfather",
+      "maternal_grandmother",
+      "paternal_grandfather",
+      "family"
+    ],
+    "level": 3
+  },
+  "single_parent_family": {
+    "ru": "Неполная семья",
+    "uz": "Yolg‘iz ota-onali oila",
+    "parent": "family_structure_types",
+    "description_ru": "Один родитель воспитывает ребёнка.",
+    "description_uz": "Bitta ota yoki ona farzandni tarbiyalaydi.",
+    "category": "people",
+    "related": [
+      "family_structure_types",
+      "childless_family",
+      "extended_family",
+      "large_family",
+      "nuclear_family",
+      "family"
+    ],
+    "level": 3
+  },
+  "sister_in_law": {
+    "ru": "Золовка / Свояченица",
+    "uz": "Qayn-singil",
+    "parent": "marriage_connections",
+    "description_ru": "Сестра супруга.",
+    "description_uz": "Turmush o‘rtog‘ining opa yoki singlisi.",
+    "category": "people",
+    "related": [
+      "marriage_connections",
+      "brother_in_law",
+      "co_father_in_law",
+      "co_mother_in_law",
+      "engaged",
+      "family"
+    ],
+    "level": 3
+  },
+  "stepbrother": {
+    "ru": "Сводный брат",
+    "uz": "O‘gay aka / uka",
+    "parent": "extended_siblings_and_branches",
+    "description_ru": "Брат по одному из родителей.",
+    "description_uz": "Bir ota yoki onadan tug‘ilgan aka/uka.",
+    "category": "people",
+    "related": [
+      "extended_siblings_and_branches",
+      "half_brother",
+      "half_sister",
+      "nephew",
+      "niece",
+      "family"
+    ],
+    "level": 3
+  },
+  "stepfather": {
+    "ru": "Отчим",
+    "uz": "O‘gay ota",
+    "parent": "parents",
+    "description_ru": "Муж матери, не являющийся биологическим отцом.",
+    "description_uz": "Onaning turmush o‘rtog‘i, biologik ota emas.",
+    "category": "people",
+    "related": [
+      "parents",
+      "stepmother",
+      "family"
+    ],
+    "level": 3
+  },
+  "stepmother": {
+    "ru": "Мачеха",
+    "uz": "O‘gay ona",
+    "parent": "parents",
+    "description_ru": "Жена отца, не являющаяся биологической матерью.",
+    "description_uz": "Otaning turmush o‘rtog‘i, biologik ona emas.",
+    "category": "people",
+    "related": [
+      "parents",
+      "stepfather",
+      "family"
+    ],
+    "level": 3
+  },
+  "stepsister": {
+    "ru": "Сводная сестра",
+    "uz": "O‘gay opa / singil",
+    "parent": "extended_siblings_and_branches",
+    "description_ru": "Сестра по одному из родителей.",
+    "description_uz": "Bir ota yoki onadan tug‘ilgan opa/singil.",
+    "category": "people",
+    "related": [
+      "extended_siblings_and_branches",
+      "half_brother",
+      "half_sister",
+      "nephew",
+      "niece",
+      "family"
+    ],
+    "level": 3
+  },
+  "tribe": {
+    "ru": "Племя",
+    "uz": "Qabila",
+    "parent": "clan_and_lineage",
+    "description_ru": "Объединение родов.",
+    "description_uz": "Urug‘lar birlashmasi.",
+    "category": "people",
+    "related": [
+      "clan_and_lineage",
+      "ancestor",
+      "clan",
+      "descendant",
+      "lineage",
+      "family"
+    ],
+    "level": 3
+  },
+  "wife": {
+    "ru": "Жена",
+    "uz": "Xotin",
+    "parent": "spouse",
+    "description_ru": "Женщина в браке.",
+    "description_uz": "Nikohdagi ayol.",
+    "category": "people",
+    "related": [
+      "spouse",
+      "father_in_law",
+      "husband",
+      "mother_in_law",
+      "family"
+    ],
+    "level": 3
+  }
+}
