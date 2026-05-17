@@ -87,7 +87,7 @@ export default function Search() {
             }
             
             // Загружаем иерархию
-            const treeData = await getWordTree(wordId, 3);
+            const treeData = await getWordTree(wordId, 6);
             setRelatedWord(currentWord?.relatedWord || null);
             
             // Загружаем дерево
@@ -112,7 +112,7 @@ export default function Search() {
                 setBreadcrumb(bc);
             }
         } catch (err) {
-            setError('Не удалось загрузить данные слова.');
+            setError(err?.error || err?.message || 'Не удалось загрузить данные слова.');
         } finally {
             setLoading(false);
         }

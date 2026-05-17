@@ -45,55 +45,16 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
         };
         
         // Конвертируем дерево в иерархию для D3
-        const hierarchy = d3.hierarchy(tree);
+        let root = d3.hierarchy(tree);
         
-        // Кастомный layout: корень в центре, прямые дети — по окружности,
-        // более глубокие уровни — на концентрических кольцах.
-        const customLayout = (node, depth = 0, parentAngle = 0) => {
-            const cx = width / 2;
-            const cy = height / 2;
-
-            if (depth === 0) {
-                // Корень в центре
-                node.x = cx;
-                node.y = cy;
+        // По умолчанию сворачиваем все уровни глубже 2 (depth > 0)
+        root.descendants().forEach(d => {
+            if (d.depth > 0 && d.children) {
+                d._children = d.children;
+                d.children = null;
             }
+        });
 
-            if (node.children && node.children.length > 0) {
-                const baseRadius = 220;
-                const radius = baseRadius * (depth === 0 ? 1 : (depth + 0.9));
-
-                if (depth === 0) {
-                    // Распределяем прямых детей равномерно по всей окружности
-                    const angleStep = (2 * Math.PI) / node.children.length;
-                    node.children.forEach((child, i) => {
-                        const angle = i * angleStep;
-                        child.x = cx + radius * Math.cos(angle);
-                        child.y = cy + radius * Math.sin(angle);
-                        // передаём угол родителя дальше
-                        customLayout(child, depth + 1, angle);
-                    });
-                } else {
-                    // Для глубинных детей ставим их в небольшой сектор вокруг parentAngle
-                    const sector = Math.min(Math.PI / 2, (Math.PI * 0.8) / node.children.length);
-                    const start = parentAngle - sector * (node.children.length - 1) / 2;
-                    node.children.forEach((child, i) => {
-                        const angle = start + i * sector;
-                        child.x = cx + radius * Math.cos(angle);
-                        child.y = cy + radius * Math.sin(angle);
-                        customLayout(child, depth + 1, angle);
-                    });
-                }
-            }
-
-            return node;
-        };
-        
-        customLayout(hierarchy);
-        const nodes = hierarchy.descendants();
-        const links = hierarchy.links();
-        
-        // SVG группа для трансформации
         const g = svg.append('g');
         let currentZoomScale = 1; // track zoom scale to disable clicks when zoomed
         
@@ -102,182 +63,145 @@ export default function GraphVisualization({ data, width = 1000, height = 600 })
             .on('zoom', (event) => {
                 g.attr('transform', event.transform);
                 currentZoomScale = event.transform.k;
-                // when user zooms in, hide selected details to avoid accidental clicks
                 if (currentZoomScale > 1.2) {
                     setSelectedNode(null);
                 }
             });
         
         svg.call(zoom);
-        
-        // === СВЯЗИ (рёбра) ===
-        const linkGroup = g.append('g')
-            .selectAll('path')
-            .data(links)
-            .enter()
-            .append('path')
-            .attr('class', d => {
-                // Гиперонимы (вверх) - зелёные
-                // Гипонимы (вниз) - синие
-                return d.target.data.isHypernym ? 'link hypernym' : 'link hyponym';
-            })
-            .attr('d', d3.linkVertical()
-                .x(d => d.x)
-                .y(d => d.y)
-            )
-            .attr('stroke-width', 2)
-            .attr('fill', 'none')
-            .attr('marker-end', d => `url(#arrowhead-${d.target.data.isHypernym ? 'hyper' : 'hypo'})`)
-            .style('opacity', 0.6)
-            .on('mouseenter', function() {
-                d3.select(this).style('opacity', 1).attr('stroke-width', 3);
-            })
-            .on('mouseleave', function() {
-                d3.select(this).style('opacity', 0.6).attr('stroke-width', 2);
-            });
-        
-        // === СТРЕЛКИ (маркеры) ===
-        svg.append('defs').selectAll('marker')
-            .data(['hypernym', 'hyponym'])
-            .enter()
-            .append('marker')
-            .attr('id', d => `arrowhead-${d}`)
-            .attr('markerWidth', 10)
-            .attr('markerHeight', 10)
-            .attr('refX', 9)
-            .attr('refY', 3)
-            .attr('orient', 'auto')
-            .append('polygon')
-            .attr('points', '0 0, 10 3, 0 6')
-            .attr('fill', d => d === 'hypernym' ? '#27ae60' : '#3498db');
-        
-        // === УЗЛЫ ===
-        const nodeEnter = g.append('g')
-            .selectAll('g')
-            .data(nodes)
-            .enter()
-            .append('g')
-            .attr('class', 'node')
-            .attr('transform', d => `translate(${d.x},${d.y})`)
-            .on('mouseenter', function(event, d) {
-                const nodeId = d.data._id || d.data.id;
-                const rootId = tree._id || tree.id;
-                const isRoot = nodeId === rootId;
-                setHoveredNode(nodeId);
-                d3.select(this).select('rect')
-                    .transition()
-                    .duration(200)
-                    .attr('stroke-width', 4);
-            })
-            .on('mouseleave', function(event, d) {
-                const nodeId = d.data._id || d.data.id;
-                const rootId = tree._id || tree.id;
-                const isRoot = nodeId === rootId;
-                const isSelected = nodeId === selectedNode;
-                if (!isSelected) {
-                    setHoveredNode(null);
-                    d3.select(this).select('rect')
-                        .transition()
-                        .duration(200)
-                        .attr('stroke-width', isRoot ? 3 : 2);
+
+        const updateLayout = (source) => {
+            // Кастомный layout: корень в центре, прямые дети — по окружности,
+            // более глубокие уровни — на концентрических кольцах.
+            const customLayout = (node, depth = 0, parentAngle = 0) => {
+                // Если корень 0, то cx, cy это 0, 0, т.к. потом g центруется? 
+                // Нет, раньше они брали width/2 
+                const cx = width / 2;
+                const cy = height / 2;
+
+                if (depth === 0) {
+                    node.x = cx;
+                    node.y = cy;
                 }
-            })
-            .on('click', function(event, d) {
-                // ignore clicks when zoomed in past threshold
-                if (currentZoomScale > 1.2) return;
-                event.stopPropagation();
-                const nodeId = d.data._id || d.data.id;
-                const rootId = tree._id || tree.id;
-                setSelectedNode(nodeId);
-                
-                // Обновляем все узлы
-                g.selectAll('.node').select('rect')
-                    .attr('stroke-width', node => {
-                        const id = node.data._id || node.data.id;
-                        const isRoot = id === rootId;
-                        return (id === nodeId || isRoot) ? 4 : 2;
-                    });
-            });
+
+                if (node.children && node.children.length > 0) {
+                    const baseRadius = 180;
+                    const radius = baseRadius * (depth === 0 ? 1 : (depth + 1.2));
+
+                    if (depth === 0) {
+                        const angleStep = (2 * Math.PI) / Math.min(node.children.length, 5);
+                        // Ограничиваем до 5 узлов для текущего уровня
+                        const visibleChildren = node.children.slice(0, 5);
+                        visibleChildren.forEach((child, i) => {
+                            const angle = i * angleStep;
+                            child.x = cx + radius * Math.cos(angle);
+                            child.y = cy + radius * Math.sin(angle);
+                            customLayout(child, depth + 1, angle);
+                        });
+                        // Скрываем остальных детей (чтобы не загромождать, если их больше 5)
+                        for(let i = 5; i < node.children.length; i++) {
+                             node.children[i].x = cx;
+                             node.children[i].y = cy;
+                        }
+                    } else {
+                        const maxSector = Math.PI * 0.8;
+                        const visibleChildren = node.children.slice(0, 5);
+                        const sectorWidth = Math.min(Math.PI / 4, maxSector / visibleChildren.length);
+                        const start = parentAngle - (sectorWidth * (visibleChildren.length - 1)) / 2;
+                        visibleChildren.forEach((child, i) => {
+                            const angle = start + i * sectorWidth;
+                            child.x = cx + radius * Math.cos(angle);
+                            child.y = cy + radius * Math.sin(angle);
+                            customLayout(child, depth + 1, angle);
+                        });
+                    }
+                }
+                return node;
+            };
+            
+            customLayout(root);
+            const nodes = root.descendants();
+            const links = root.links();
+            
+            // Очищаем старые элементы перед перерисовкой
+            g.selectAll('*').remove();
+
+            // === СВЯЗИ (рёбра) ===
+            const linkGroup = g.append('g')
+                .selectAll('path')
+                .data(links, d => (d.source.data._id || d.source.data.id) + "-" + (d.target.data._id || d.target.data.id))
+                .enter()
+                .append('path')
+                .attr('class', d => d.target.data.isHypernym ? 'link hypernym' : 'link hyponym')
+                .attr('d', d3.linkVertical().x(d => d.x).y(d => d.y))
+                .attr('stroke-width', 2)
+                .attr('fill', 'none')
+                .attr('marker-end', d => `url(#arrowhead-${d.target.data.isHypernym ? 'hyper' : 'hypo'})`)
+                .style('opacity', 0.6)
+                .on('mouseenter', function() { d3.select(this).style('opacity', 1).attr('stroke-width', 3); })
+                .on('mouseleave', function() { d3.select(this).style('opacity', 0.6).attr('stroke-width', 2); });
+
+            // === УЗЛЫ ===
+            const nodeEnter = g.append('g')
+                .selectAll('g.node')
+                .data(nodes, d => d.data._id || d.data.id)
+                .enter()
+                .append('g')
+                .attr('class', 'node')
+                .attr('transform', d => `translate(${d.x},${d.y})`)
+                .on('click', function(event, d) {
+                    event.stopPropagation();
+                    const nodeId = d.data._id || d.data.id;
+                    setSelectedNode(nodeId);
+                    
+                    // Переключаем children и перерисовываем дерево
+                    if (d.children) {
+                        d._children = d.children;
+                        d.children = null;
+                    } else if (d._children) {
+                        d.children = d._children;
+                        d._children = null;
+                    }
+                    updateLayout(root);
+                });
+
+            // Прямоугольники узлов (зеленый ободок если есть свернутые дети)
+            nodeEnter.append('rect')
+                .attr('width', d => getRectDimensions(d.data.word, d.depth === 0).width)
+                .attr('height', d => getRectDimensions(d.data.word, d.depth === 0).height)
+                .attr('x', d => -(getRectDimensions(d.data.word, d.depth === 0).width / 2))
+                .attr('y', d => -(getRectDimensions(d.data.word, d.depth === 0).height / 2))
+                .attr('class', d => d.depth === 0 ? 'node-rect root' : 'node-rect')
+                .attr('fill', d => d.depth === 0 ? '#e74c3c' : (d.data.isHypernym ? '#27ae60' : '#3498db'))
+                // Если есть свернутые дети, выделяем обводку
+                .attr('stroke', d => d._children ? '#f1c40f' : '#2c3e50')
+                .attr('stroke-width', d => d.depth === 0 ? 3 : (d._children ? 4 : 2))
+                .attr('rx', 8)
+                .attr('ry', 8);
+
+            nodeEnter.append('text')
+                .attr('text-anchor', 'middle')
+                .attr('class', 'node-label')
+                .attr('fill', '#fff')
+                .attr('font-size', d => getFontSize(d.depth === 0))
+                .attr('font-weight', d => d.depth === 0 ? 'bold' : 'normal')
+                .attr('pointer-events', 'none')
+                .attr('dominant-baseline', 'middle')
+                .text(d => d.data.word);
+
+            nodeEnter.append('text')
+                .attr('text-anchor', 'middle')
+                .attr('dy', '1.8em')
+                .attr('class', 'node-lang')
+                .text(d => d.data.language === 'ru' ? 'RU' : 'UZ')
+                .attr('font-size', '10px')
+                .attr('pointer-events', 'none');
+        };
+
+        // Запуск первой отрисовки
+        updateLayout(root);
         
-        // Прямоугольники узлов
-        nodeEnter.append('rect')
-            .attr('width', d => {
-                const nodeId = d.data._id || d.data.id;
-                const rootId = tree._id || tree.id;
-                const isRoot = nodeId === rootId;
-                return getRectDimensions(d.data.word, isRoot).width;
-            })
-            .attr('height', d => {
-                const nodeId = d.data._id || d.data.id;
-                const rootId = tree._id || tree.id;
-                const isRoot = nodeId === rootId;
-                return getRectDimensions(d.data.word, isRoot).height;
-            })
-            .attr('x', d => {
-                const nodeId = d.data._id || d.data.id;
-                const rootId = tree._id || tree.id;
-                const isRoot = nodeId === rootId;
-                const w = getRectDimensions(d.data.word, isRoot).width;
-                return -(w / 2);
-            })
-            .attr('y', d => {
-                const nodeId = d.data._id || d.data.id;
-                const rootId = tree._id || tree.id;
-                const isRoot = nodeId === rootId;
-                const h = getRectDimensions(d.data.word, isRoot).height;
-                return -(h / 2);
-            })
-            .attr('class', d => {
-                const nodeId = d.data._id || d.data.id;
-                const rootId = tree._id || tree.id;
-                if (nodeId === rootId) return 'node-rect root';
-                return 'node-rect';
-            })
-            .attr('fill', d => {
-                const nodeId = d.data._id || d.data.id;
-                const rootId = tree._id || tree.id;
-                if (nodeId === rootId) return '#e74c3c'; // Красный - корень
-                if (d.data.isHypernym) return '#27ae60'; // Зелёный - гипероним
-                return '#3498db'; // Синий - гипоним
-            })
-            .attr('stroke', '#2c3e50')
-            .attr('stroke-width', d => {
-                const nodeId = d.data._id || d.data.id;
-                const rootId = tree._id || tree.id;
-                const isRoot = nodeId === rootId;
-                return isRoot ? 3 : 2;
-            })
-            .attr('rx', 8)
-            .attr('ry', 8);
-        
-        // Текст (слова) — одна строка, ширина карточки увеличивается под длину
-        nodeEnter.append('text')
-            .attr('text-anchor', 'middle')
-            .attr('class', 'node-label')
-            .attr('fill', '#fff')
-            .attr('font-size', d => {
-                const nodeId = d.data._id || d.data.id;
-                const rootId = tree._id || tree.id;
-                const isRoot = nodeId === rootId;
-                return getFontSize(isRoot);
-            })
-            .attr('font-weight', d => {
-                const nodeId = d.data._id || d.data.id;
-                const rootId = tree._id || tree.id;
-                return nodeId === rootId ? 'bold' : 'normal';
-            })
-            .attr('pointer-events', 'none')
-            .attr('dominant-baseline', 'middle')
-            .text(d => d.data.word);
-        
-        // Язык (значок)
-        nodeEnter.append('text')
-            .attr('text-anchor', 'middle')
-            .attr('dy', '1.8em')
-            .attr('class', 'node-lang')
-            .text(d => d.data.language === 'ru' ? 'RU' : 'UZ')
-            .attr('font-size', '10px')
-            .attr('pointer-events', 'none');
+        // === СТРЕЛКИ (маркеры) выносим в дефы ===
         
         // === ЛЕГЕНДА ===
         const legend = svg.append('g')

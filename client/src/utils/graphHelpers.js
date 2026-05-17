@@ -1,247 +1,200 @@
 /**
- * Утилиты для работы с графами и визуализацией
- * Преобразование данных API в формат для D3.js
+ * Утилиты для уровневой визуализации графа.
+ * Показываем путь от корня до текущего слова и до 5 слов на активном уровне.
  */
 
-/**
- * Преобразует дерево из API в формат nodes/links для D3
- * @param {Object} treeData - Данные дерева из API (корень это сам центральный узел)
- * @returns {Object} { nodes, links }
- */
-export function treeToGraph(treeData) {
-    if (!treeData) return { nodes: [], links: [] };
-    
-    const nodes = [];
-    const links = [];
-    const nodeMap = new Map();
-    const levelMap = new Map(); // Отслеживаем уровень каждого узла
-    
-    // treeData сам является центральным узлом
-    const centerNode = {
-        id: treeData.id,
-        word: treeData.word,
-        language: treeData.language,
-        definition: treeData.definition,
-        type: 'center',
-        level: 0
+function normalizeNode(node, type = 'sibling') {
+    if (!node) return null;
+
+    return {
+        id: node.id || node.semantic_key || node._id,
+        word: node.word || node.ru || node.uz || '',
+        language: node.language || 'ru',
+        definition: node.definition || node.description_ru || node.description_uz || '',
+        ru: node.ru || node.word || '',
+        uz: node.uz || '',
+        level: node.level || 1,
+        type,
+        semantic_key: node.semantic_key || node.id || node._id
     };
-    nodes.push(centerNode);
-    nodeMap.set(centerNode.id, centerNode);
-    levelMap.set(centerNode.id, 0);
-    
-    // Рекурсивная функция для добавления гиперонимов
-    const addHypernyms = (parent, hypernyms, level) => {
-        if (!hypernyms || hypernyms.length === 0) return;
-        
-        hypernyms.forEach((hypernym, index) => {
-            if (nodeMap.has(hypernym.id)) return; // Уже добавлен
-            
-            const currentLevel = level - 1;
-            const node = {
-                id: hypernym.id,
-                word: hypernym.word,
-                language: hypernym.language,
-                definition: hypernym.definition,
-                type: 'hypernym',
-                level: currentLevel
-            };
-            nodes.push(node);
-            nodeMap.set(node.id, node);
-            levelMap.set(node.id, currentLevel);
-            
-            // Связь с текущим узлом
-            links.push({
-                source: parent.id,
-                target: hypernym.id,
-                type: 'hypernym'
-            });
-            
-            // Рекурсивно добавляем гиперонимы
-            if (hypernym.hypernyms && hypernym.hypernyms.length > 0) {
-                addHypernyms(node, hypernym.hypernyms, currentLevel);
-            }
-        });
-    };
-    
-    // Рекурсивная функция для добавления гипонимов
-    const addHyponyms = (parent, hyponyms, level) => {
-        if (!hyponyms || hyponyms.length === 0) return;
-        
-        hyponyms.forEach(hyponym => {
-            if (nodeMap.has(hyponym.id)) return; // Уже добавлен
-            
-            const currentLevel = level + 1;
-            const node = {
-                id: hyponym.id,
-                word: hyponym.word,
-                language: hyponym.language,
-                definition: hyponym.definition,
-                type: 'hyponym',
-                level: currentLevel
-            };
-            nodes.push(node);
-            nodeMap.set(node.id, node);
-            levelMap.set(node.id, currentLevel);
-            
-            // Связь с родительским узлом
-            links.push({
-                source: parent.id,
-                target: hyponym.id,
-                type: 'hyponym'
-            });
-            
-            // Рекурсивно добавляем гипонимы
-            if (hyponym.hyponyms && hyponym.hyponyms.length > 0) {
-                addHyponyms(node, hyponym.hyponyms, currentLevel);
-            }
-        });
-    };
-    
-    // Добавляем гиперонимы
-    if (treeData.hypernyms && treeData.hypernyms.length > 0) {
-        addHypernyms(centerNode, treeData.hypernyms, -1);
-    }
-    
-    // Добавляем гипонимы
-    if (treeData.hyponyms && treeData.hyponyms.length > 0) {
-        addHyponyms(centerNode, treeData.hyponyms, 1);
-    }
-    
-    return { nodes, links };
 }
 
-/**
- * Вычисляет позиции узлов для вертикального дерева
- * @param {Array} nodes - Узлы графа
- * @param {number} width - Ширина области
- * @param {number} height - Высота области
- * @returns {Array} Узлы с координатами
- */
-export function calculateTreeLayout(nodes, width, height) {
-    if (!nodes.length) return [];
-    
-    const centerY = height / 2;
-    const levelHeight = 100;
-    const minNodeSpacing = 120;
-    
-    // Группируем узлы по уровням
-    const levels = new Map();
-    nodes.forEach(node => {
-        const level = node.level || 0;
-        if (!levels.has(level)) levels.set(level, []);
-        levels.get(level).push(node);
-    });
-    
-    // Расставляем узлы по уровням
+function getParentNode(node) {
+    if (!node?.hypernyms || node.hypernyms.length === 0) {
+        return null;
+    }
+
+    return node.hypernyms[0] || null;
+}
+
+function buildAncestorChain(node) {
+    if (!node) return [];
+
+    const chain = [];
+    let current = node;
+
+    while (current) {
+        chain.unshift(current);
+        current = getParentNode(current);
+    }
+
+    return chain;
+}
+
+function buildFocusedSiblingWindow(siblings, selectedId, maxVisible = 5) {
+    if (!Array.isArray(siblings) || siblings.length === 0) {
+        return [];
+    }
+
+    const normalizedSiblings = siblings.filter(Boolean);
+    const selectedIndex = Math.max(
+        0,
+        normalizedSiblings.findIndex((item) => (item.id || item.semantic_key || item._id) === selectedId)
+    );
+
+    const left = [];
+    const right = [];
+    let offset = 1;
+
+    while ((left.length + right.length + 1) < maxVisible && (selectedIndex - offset >= 0 || selectedIndex + offset < normalizedSiblings.length)) {
+        if (selectedIndex - offset >= 0 && left.length < 2) {
+            left.unshift(normalizedSiblings[selectedIndex - offset]);
+        }
+
+        if ((left.length + right.length + 1) < maxVisible && selectedIndex + offset < normalizedSiblings.length && right.length < 2) {
+            right.push(normalizedSiblings[selectedIndex + offset]);
+        }
+
+        offset += 1;
+    }
+
+    return [...left, normalizedSiblings[selectedIndex], ...right];
+}
+
+export function treeToGraph(treeData) {
+    if (!treeData) {
+        return { nodes: [], links: [], rows: [], activeLevel: 1 };
+    }
+
+    const chain = buildAncestorChain(treeData);
+    const currentNode = normalizeNode(treeData, 'center');
+    const parentNode = getParentNode(treeData);
+    const siblingSource = parentNode?.hyponyms?.length ? parentNode.hyponyms : [treeData];
+    const focusedSiblings = buildFocusedSiblingWindow(siblingSource, currentNode.id, 5)
+        .map((node) => normalizeNode(node, (node.id || node.semantic_key || node._id) === currentNode.id ? 'center' : 'sibling'));
+
+    const ancestorRows = chain
+        .slice(0, -1)
+        .map((node) => [normalizeNode(node, 'ancestor')]);
+
+    const rows = [...ancestorRows, focusedSiblings];
+    const nodes = rows.flat();
+    const links = [];
+
+    for (let index = 1; index < chain.length - 1; index += 1) {
+        const child = chain[index];
+        const parent = chain[index - 1];
+
+        links.push({
+            source: parent.id,
+            target: child.id,
+            type: 'path'
+        });
+    }
+
+    if (parentNode) {
+        for (const sibling of focusedSiblings) {
+            links.push({
+                source: parentNode.id,
+                target: sibling.id,
+                type: sibling.type === 'center' ? 'focus' : 'sibling'
+            });
+        }
+    }
+
+    return {
+        nodes,
+        links,
+        rows,
+        activeLevel: currentNode.level || rows.length || 1
+    };
+}
+
+export function calculateFocusedLayout(rows, width, height, isMobile = false) {
+    if (!rows.length) return [];
+
+    const topPadding = isMobile ? 60 : 80;
+    const bottomPadding = isMobile ? 50 : 70;
+    const rowCount = rows.length;
+    const usableHeight = Math.max(180, height - topPadding - bottomPadding);
+    const rowGap = rowCount === 1 ? 0 : usableHeight / (rowCount - 1);
+    const centerX = width / 2;
+
     const positionedNodes = [];
-    
-    levels.forEach((levelNodes, level) => {
-        const y = centerY - (level * levelHeight);
-        const totalWidth = levelNodes.length * minNodeSpacing;
-        const startX = (width - totalWidth) / 2 + minNodeSpacing / 2;
-        
-        levelNodes.forEach((node, index) => {
+
+    rows.forEach((row, rowIndex) => {
+        const y = topPadding + rowGap * rowIndex;
+        const rowWidth = row.length > 1 ? Math.min(width * 0.7, isMobile ? 260 : 560) : 0;
+        const xStep = row.length > 1 ? rowWidth / Math.max(row.length - 1, 1) : 0;
+        const startX = centerX - rowWidth / 2;
+
+        row.forEach((node, nodeIndex) => {
             positionedNodes.push({
                 ...node,
-                x: startX + index * minNodeSpacing,
-                y: y
+                x: row.length === 1 ? centerX : startX + xStep * nodeIndex,
+                y,
+                rowIndex,
+                rowSize: row.length
             });
         });
     });
-    
+
     return positionedNodes;
 }
 
-/**
- * Генерирует путь для криволинейной связи
- * @param {Object} source - Начальный узел { x, y }
- * @param {Object} target - Конечный узел { x, y }
- * @returns {string} SVG path
- */
 export function generateLinkPath(source, target) {
+    if (!source || !target) return '';
+
     const midY = (source.y + target.y) / 2;
-    return `M ${source.x} ${source.y} 
-            C ${source.x} ${midY}, 
-              ${target.x} ${midY}, 
+    return `M ${source.x} ${source.y}
+            C ${source.x} ${midY},
+              ${target.x} ${midY},
               ${target.x} ${target.y}`;
 }
 
-/**
- * Возвращает цвет для узла в зависимости от типа и языка
- * @param {Object} node - Узел
- * @returns {string} CSS цвет
- */
 export function getNodeColor(node) {
-    const colors = {
+    const byLanguage = {
         ru: {
+            ancestor: '#7a8f57',
             center: '#2d5a27',
-            hypernym: '#4a7c42',
-            hyponym: '#6b9d62'
+            sibling: '#5f8f4d'
         },
         uz: {
+            ancestor: '#c08c61',
             center: '#b35a3a',
-            hypernym: '#c97a5a',
-            hyponym: '#d99a7a'
+            sibling: '#c9774f'
         }
     };
-    
-    const lang = node.language || 'ru';
-    const type = node.type || 'hyponym';
-    
-    return colors[lang]?.[type] || colors.ru.hyponym;
+
+    const palette = byLanguage[node.language] || byLanguage.ru;
+    return palette[node.type] || palette.sibling;
 }
 
-/**
- * Форматирует слово для отображения (обрезка длинных)
- * @param {string} word - Слово
- * @param {number} maxLength - Максимальная длина
- * @returns {string} Форматированное слово
- */
-export function formatWord(word, maxLength = 15) {
-    if (!word) return '';
-    if (word.length <= maxLength) return word;
-    return word.substring(0, maxLength - 2) + '…';
-}
-
-/**
- * Создаёт breadcrumb путь от корня до текущего слова
- * @param {Array} hypernyms - Массив гиперонимов
- * @param {Object} center - Центральное слово
- * @returns {Array} Путь от корня
- */
 export function createBreadcrumb(hypernyms, center) {
-    const path = [];
-    
-    // Добавляем гиперонимы в обратном порядке (от корня)
-    if (hypernyms && hypernyms.length) {
-        const reversed = [...hypernyms].reverse();
-        reversed.forEach(h => {
-            path.push({
-                id: h.id,
-                word: h.word,
-                language: h.language
-            });
-        });
-    }
-    
-    // Добавляем текущее слово
-    if (center) {
-        path.push({
-            id: center.id,
-            word: center.word,
-            language: center.language,
-            current: true
-        });
-    }
-    
-    return path;
+    const chain = buildAncestorChain(center);
+
+    return chain.map((node, index) => ({
+        id: node.id,
+        word: node.word,
+        language: node.language,
+        current: index === chain.length - 1
+    }));
 }
 
 export default {
     treeToGraph,
-    calculateTreeLayout,
+    calculateFocusedLayout,
     generateLinkPath,
     getNodeColor,
-    formatWord,
     createBreadcrumb
 };

@@ -56,7 +56,7 @@ export default function Compare() {
         setRuResults([]);
         
         try {
-            const treeData = await getWordTree(word.id, 3);
+            const treeData = await getWordTree(word.id, 6);
             setRuTree(treeData.tree);
         } catch (err) {
             console.error(err);
@@ -69,7 +69,7 @@ export default function Compare() {
         setUzResults([]);
         
         try {
-            const treeData = await getWordTree(word.id, 3);
+            const treeData = await getWordTree(word.id, 6);
             setUzTree(treeData.tree);
         } catch (err) {
             console.error(err);
@@ -78,7 +78,7 @@ export default function Compare() {
     
     // Клик по узлу в русском графе
     const handleRuNodeClick = async (nodeId) => {
-        const treeData = await getWordTree(nodeId, 3);
+        const treeData = await getWordTree(nodeId, 6);
         if (treeData.tree) {
             setRuWord(treeData.tree);
             setRuTree(treeData.tree);
@@ -87,7 +87,7 @@ export default function Compare() {
     
     // Клик по узлу в узбекском графе
     const handleUzNodeClick = async (nodeId) => {
-        const treeData = await getWordTree(nodeId, 3);
+        const treeData = await getWordTree(nodeId, 6);
         if (treeData.tree) {
             setUzWord(treeData.tree);
             setUzTree(treeData.tree);

@@ -150,7 +150,8 @@ export async function getWordTree(id, depth = 3) {
         id: w.id || w.semantic_key || w._id,
         word: w.word || w.ru || w.uz || '',
         ru: w.ru || w.word || '',
-        uz: w.uz || ''
+        uz: w.uz || '',
+        level: w.level || 1
     });
     
     const normalizeNode = (node) => {
@@ -183,7 +184,8 @@ export async function compareWords(ruId, uzId) {
         id: w.id || w.semantic_key || w._id,
         word: w.word || w.ru || w.uz || '',
         ru: w.ru || w.word || '',
-        uz: w.uz || ''
+        uz: w.uz || '',
+        level: w.level || 1
     });
     
     const normalizeNode = (node) => {
